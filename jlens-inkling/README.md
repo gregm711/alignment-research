@@ -679,7 +679,8 @@ are "re-derived away" is a proposed mechanism the data do not establish.
 
 **Answer to question 4 (narrower after review).** On this template, an edit in the last pass
 moved more answers than the same edit earlier or in every pass. An edit made only earlier is mostly
-re-derived away, because each pass restarts from the unedited pre-loop state. This is the
+re-derived away, because each pass restarts from the unedited pre-loop state (a proposed
+mechanism, not established; see the review note above). This is the
 opposite of what Wang & Reid found on Ouro, where an edit must be held across every remaining
 loop, and close to what they found on Huginn, where the last window alone is as effective as
 all of them. They attribute the difference to boundary design, and this result fits that.
@@ -1147,7 +1148,8 @@ for that model's earlier transplants.)
   now holds on three table designs, two wordings and held-out tables, with the prediction
   made in advance the last time.
 - **The messages therefore say *where* the answer is, not *what* it is.** The donor's
-  answer, colour and animal all lose to the position.
+  answer, colour and animal all lose to the position. *(Narrowed by the second review, below:
+  the behaviour is supported; several other accounts of what crosses remain.)*
 - **But the marker is not stored at the place it points to.** Transplanting the messages at
   that row alone does nothing, and removing them from a full transplant still leaves the
   rule working a third of the time. We predicted the opposite on both counts.
@@ -1188,7 +1190,7 @@ released model, pass 3. A full transplant gave the pointer fruit on 145 of these
 
 **What we see.** The effect needs the messages at the second table *and* at the question
 together; either alone mostly breaks the answer or leaves it alone. The first table's
-messages are irrelevant. The prediction (question necessary, not sufficient) held.
+messages contribute little (not nothing: see the second review, below). The prediction (question necessary, not sufficient) held.
 
 **Reading.** A matched pair: something at the question that selects a place, and something
 at the second table that marks the place to be selected. Each message has four parts, for
@@ -1367,11 +1369,29 @@ Script: `oversight.py`.
 | new tables, other wording | 0.49 [0.41, 0.57] | 0.51 [0.43, 0.59] | 0.52 [0.43, 0.60] |
 
 **Internal access did not help.** The readout is at chance on new tables, no better than
-output confidence, and by the criterion written in advance that is a no. It was not a near
-miss: the cross-validated score on the training tables was already below chance at every
-one of the 49 steps (best 0.37; scores below chance are a known artefact of cross-validating a
-difference-of-means direction when there is no signal), and no step would have exceeded 0.53 on the test tables even if
-chosen afterwards.
+output confidence, and by the criterion written in advance that is a no. No step would have
+exceeded 0.53 on the test tables even if chosen afterwards.
+
+**Two faults in how this readout was chosen, found by a later review.** Neither rescues it,
+but the headline number is less meaningful than it looks.
+
+- *The frozen step could not have seen the intervention.* Selection ran over all 49 steps
+  and picked layer 6 of pass 1. The transplant only changes what enters pass 3, so every
+  state before pass 3 is identical between the two kinds of trial for the same recipient.
+  The 0.48 above is from a step that carries no information by construction. The 19 steps
+  that could carry it (pass 3 onward) score between 0.48 and 0.53 on both test sets.
+- *The cross-validation was leaky in a way that pushed scores below chance.* About two
+  thirds of recipients appear once in each class. Folds were split by trial, not by
+  recipient, so a recipient's wrong-route trial in the training folds pulled its identical
+  pre-pass-3 state toward "wrong route" and mis-scored its right-route twin in the held-out
+  fold. That, not a generic artefact as first written here, is why every cross-validated
+  score was below 0.5 (best 0.37).
+
+**What the null does and does not say.** "Wrong route" is a mismatch between the row read
+and the correct row; neither row has a fixed identity across tables. A single fixed
+direction at the final token can only detect it if the model computes something like a
+mismatch signal there. So the result is narrower than "internal states do not help": there
+is no linearly dominant wrong-route signal at the final token under this recipe.
 
 **Against the predictions.**
 
