@@ -87,7 +87,7 @@ From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the orde
 | # | Question | Method | Status |
 |---|---|---|---|
 | 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | answered (see below) |
-| 1 | What crosses the pass boundary through the message channel? | Jacobian lens with a target at each pass end | not started |
+| 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens if needed | running |
 | 4 | Must an edit be held across all passes to stick? | Clamp a concept direction in one pass vs all | not started |
 | 3 | Is the loop state robust to noise, including for refusals? | Noise at the loop entry state; record refusal yes/no only | not started |
 
@@ -201,6 +201,48 @@ first lens run: pass 1 is not empty.
 appears in the output can be read off by running fewer passes, with no trained probe and no
 lens. That is a cheap window onto latent reasoning for this design. Whether it stays readable
 on harder tasks, or when a model has a reason to hide it, is untested.
+
+## Question 1: what crosses the pass boundary through the message channel?
+
+### Plan and predictions (written before running)
+
+**A fact from the code, not an experiment.** Passes 2 and 3 start from the same pre-loop state
+as pass 1 and run the same weights. The only other input they receive is the message tensor
+built from the previous pass (four messages per loop layer per position: for the attention
+query, key and value, and for the expert layer). Each position's message is built only from
+that same position's states in the previous pass. So everything a later pass knows beyond
+pass 1 arrives through messages, and the question becomes: what do the messages carry?
+
+**Measurement 1, forward-only: message swapping.** Take two prompts A and B with the same
+wording and token length but different answers. Run B and save its messages. Run A, replacing
+its messages with B's, and see what A now answers. Conditions: swap into pass 2 only, pass 3
+only, or both; at every position or at the last position only. Control: swapping A's own
+messages back in must reproduce the unpatched output exactly. Two prompt families:
+
+- *Two-hop:* "The language spoken in the country whose capital is X is" for eight capitals.
+- *Arithmetic:* single additions and single multiplications, paired within the same operation.
+
+Outcome per pair: does A's top answer become B's answer, stay A's, or become something else.
+Run on Inkling 2 Mini (where the sweep showed passes matter) and on the variable-loop
+checkpoint at three passes for comparison.
+
+**Measurement 2, gradients, only if measurement 1 leaves the question open:** a Jacobian lens
+fitted per pass count, as described in `fit.py`.
+
+**Predictions.**
+
+1. The self-swap control reproduces the unpatched output on every prompt.
+2. Swapping all positions in both later passes moves A's answer to B's answer in most pairs:
+   the messages carry the specific content, and the restarted state carries only the question.
+3. Swapping at the last position only moves fewer answers than swapping everywhere, because
+   the intermediate fact is worked out at earlier positions and reaches the end by attention.
+4. Swapping into pass 3 only moves at least as many answers as swapping into pass 2 only,
+   because pass 3 can partly re-derive from the restarted state what a pass-2 edit removed.
+   (This is also a first look at question 4.)
+
+**What this will not show.** A swap replaces the whole message, so it shows that messages
+carry enough to determine the answer, not which part of the message does. Two prompt
+families in one format. An answer that moves to "something else" is hard to interpret.
 
 ## Results
 
