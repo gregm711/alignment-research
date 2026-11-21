@@ -1615,6 +1615,34 @@ pairs and was copied only twice, so a verbatim answer is not what crosses. Why t
 is a token position and where in the messages it lives are still unknown; three earlier
 guesses about that failed. One invented task; filler lines are a new format.
 
+## The oversight test on mistakes we did not induce: a first measurement
+
+### Plan and predictions (written before running)
+
+The attention readout caught hidden mistakes that we created by transplant. The question
+that matters is whether it catches a wrong route the model takes by itself. Before designing
+that test we need to know how often the unmodified model takes one in this task, and what
+the frozen readout does on unmodified runs.
+
+**Measurement.** Fresh tables (new seeds, both wordings) with pairs of colours sharing a
+fruit, as before. No transplants. For every prompt the model answers correctly:
+
+- edit the *intended* row's fruit to a new one, and separately edit the *other* row with the
+  same fruit, and see which edit changes the answer. Intended only: right route. Other
+  only: a wrong route taken spontaneously. Both, or neither: reported as such.
+- on the original, unedited run, record the frozen readout (head 23 at layer 11 of the final
+  pass, threshold 0.45, both fixed from the earlier experiment) and output confidence.
+
+**Predictions.**
+
+1. Spontaneous wrong routes are rare here: under 5% of correct answers.
+2. On unmodified right-route runs the frozen threshold raises false alarms on at most 15%.
+
+**Why run it if we expect almost none.** If they are as rare as predicted, this task cannot
+test the readout on natural mistakes and a harder task is needed; knowing that costs about
+twenty cents. The false-alarm rate on unmodified runs is needed either way: the earlier
+right-route trials had all been through a transplant.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
