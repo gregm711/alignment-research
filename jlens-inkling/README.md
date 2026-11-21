@@ -1168,6 +1168,40 @@ fruit is the answer.
 **Prediction, held loosely after two misses:** the question region at the end is necessary
 (transplants that leave it out rarely give the pointer fruit) and is not sufficient alone.
 
+### Result
+
+Raw data: [`results/transplant-regions.json`](results/transplant-regions.json). 150 pairs,
+released model, pass 3. A full transplant gave the pointer fruit on 145 of these.
+
+| Transplant only within… | pointer fruit | recipient's | donor's | other |
+|---|---|---|---|---|
+| first table | 0 | 147 | 0 | 3 |
+| second table | 6 | 67 | 15 | 62 |
+| question | 34 | 15 | 5 | 96 |
+| final token | 0 | 150 | 0 | 0 |
+| first + second table | 8 | 41 | 18 | 83 |
+| first table + question | 26 | 18 | 10 | 96 |
+| **second table + question** | **140** | 2 | 1 | 7 |
+
+**What we see.** The effect needs the messages at the second table *and* at the question
+together; either alone mostly breaks the answer or leaves it alone. The first table's
+messages are irrelevant. The prediction (question necessary, not sufficient) held.
+
+**Reading.** A matched pair: something at the question that selects a place, and something
+at the second table that marks the place to be selected. Each message has four parts, for
+the attention query, key and value and for the expert layer, so the obvious candidate is a
+query at the question matching a key at the table.
+
+## Follow-up: which part of the message? Queries and keys
+
+### Plan and prediction (written before running)
+
+Same 150 pairs. Transplant, into pass 3, only chosen parts of the messages in chosen regions.
+
+**Prediction.** Key parts at the second table plus query parts at the question reproduce most
+of the effect (pointer fruit in more than half the pairs). Value parts and expert-layer parts
+alone, in both regions, do not (under 10%).
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

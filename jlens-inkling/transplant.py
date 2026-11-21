@@ -150,7 +150,7 @@ def fact_items(wording):
 
 
 @app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=40 * 60)
-def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = False, pointer: bool = False, regions: bool = False):
+def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = False, pointer: bool = False, regions: bool = False, parts: bool = False):
     import gc, time
     import torch, transformers
     from huggingface_hub import model_info
@@ -175,6 +175,11 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
                 if state["pos"] is None:
                     return src
                 out_ = output.clone()
+                if state["pos"] and isinstance(state["pos"][0], tuple):  # [(positions, message parts)]: 0 query, 1 key, 2 value, 3 expert layer
+                    for pos_, parts_ in state["pos"]:
+                        ii, jj = torch.tensor(pos_, device=out_.device)[:, None], torch.tensor(parts_, device=out_.device)[None, :]
+                        out_[0][ii, jj] = src[0][ii, jj]
+                    return out_
                 out_[:, state["pos"]] = src[:, state["pos"]]
                 return out_
 
@@ -227,8 +232,10 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
             sample = random.Random(0).sample(cands, min(150, len(cands)))
             conds = ["full", "only_row", "all_but_row", "only_fruit_token", "other_row"] if released else ["full", "only_row"]
             region_names = ["table1", "table2", "question", "last_token", "table1+table2", "table1+question", "table2+question"]
+            part_names = ["all four parts", "keys at table 2 + queries at question", "queries and keys",
+                          "keys and values at table 2 + queries at question", "values only", "expert-layer only", "values and expert-layer"]
             if regions:
-                conds = region_names
+                conds = part_names if parts else region_names
             rows = []
             for R, D, j, ptr, k in sample:
                 row_pos, fruit_pos = token_positions(D, D["row_spans"][j][0]), token_positions(D, D["row_spans"][j][1])
@@ -242,6 +249,13 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
                     reg = {"table1": token_positions(D, (0, b1)), "table2": token_positions(D, (b1, b2)),
                            "question": token_positions(D, (b2, len(pr))), "last_token": [everything[-1]]}
                     where = {n: sorted({x for part in n.split("+") for x in reg[part]}) for n in region_names}
+                    if parts:  # everything below is confined to the second table and the question
+                        t2q = sorted(set(reg["table2"]) | set(reg["question"]))
+                        where = {"all four parts": [(t2q, [0, 1, 2, 3])],
+                                 "keys at table 2 + queries at question": [(reg["table2"], [1]), (reg["question"], [0])],
+                                 "queries and keys": [(t2q, [0, 1])],
+                                 "keys and values at table 2 + queries at question": [(reg["table2"], [1, 2]), (reg["question"], [0])],
+                                 "values only": [(t2q, [2])], "expert-layer only": [(t2q, [3])], "values and expert-layer": [(t2q, [2, 3])]}
                 words = {"pointer": ptr, "recipient": R["answer"], "donor": D["answer"], "other_row_fruit": R["t2"][R["order2"][k]]}
                 expected = {a_: token(b_) for a_, b_ in words.items()}
                 row = {"recipient": R["prompt"], "donor": D["prompt"], "expected": words, "row_token_positions": row_pos}
@@ -254,9 +268,9 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
             unaided = f"{sum(it['right'] for it in items)}/{len(items)}"
             print(f"\n=== {name.split('/')[-1]} | wording {wording!r} | unaided {unaided} | {len(cands)} qualifying pairs, {len(rows)} sampled")
             for c, v in counts.items():
-                print(f"    {c:<17} " + "  ".join(f"{a_} {b_}" for a_, b_ in v.items()), flush=True)
+                print(f"    {c:<50} " + "  ".join(f"{a_} {b_}" for a_, b_ in v.items()), flush=True)
             return {"revision": model_info(name).sha, "wording": wording, "unaided": unaided, "n_qualifying": len(cands),
-                    ("region_test" if regions else "pointer_test"): {"n_pairs": len(rows), "counts": counts, "rows": rows}}
+                    ("parts_test" if parts else "region_test" if regions else "pointer_test"): {"n_pairs": len(rows), "counts": counts, "rows": rows}}
 
         if shuffled:
             tried = {w: prepare(shuffled_items(w)) for w in ("so", "qa")}
@@ -368,11 +382,12 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
 
 
 @app.local_entrypoint()
-def main(clean_only: bool = False, two_table: bool = False, shuffled: bool = False, pointer: bool = False, regions: bool = False):
-    out = run.remote(clean_only, two_table, shuffled, pointer or regions, regions)
+def main(clean_only: bool = False, two_table: bool = False, shuffled: bool = False, pointer: bool = False,
+         regions: bool = False, parts: bool = False):
+    out = run.remote(clean_only, two_table, shuffled, pointer or regions or parts, regions or parts, parts)
     if not clean_only:
-        name = ("transplant-regions.json" if regions else "transplant-pointer.json" if pointer else "transplant-shuffled.json" if shuffled
-                else "transplant-two-table.json" if two_table else "transplant-four-way.json")
+        name = ("transplant-parts.json" if parts else "transplant-regions.json" if regions else "transplant-pointer.json" if pointer
+                else "transplant-shuffled.json" if shuffled else "transplant-two-table.json" if two_table else "transplant-four-way.json")
         path = pathlib.Path(__file__).parent / "results" / name
         path.write_text(json.dumps(out, indent=1))
         print("wrote", path)
