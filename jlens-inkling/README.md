@@ -1,6 +1,6 @@
 # Jacobian lens on Inkling 2 Mini
 
-**Status: in progress.** A 3-prompt lens gives a first look (see Results); a ~20-prompt fit is running.
+**Status: in progress, being redesigned.** A 3-prompt lens gave a first look (see Results). Prior work shows our lens target was wrong for the early passes, so the longer fit was stopped and the next step is a forward-only sweep over the number of passes.
 
 ## Question
 
@@ -15,16 +15,21 @@ per layer that reads out which words the model is poised to say at that point.
 
 ## Prior art
 
-Found after the first run (titles and dates checked on arXiv; papers not yet read):
+Read after the first run; full notes in [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md).
 
-- [Looped Transformers under the Jacobian Lens: Does the Global Workspace Survive Recurrence?](https://arxiv.org/abs/2609.01924) (September 2026)
-- [Monitoring latent reasoning in looped language models](https://arxiv.org/abs/2610.18127) (October 2026)
+- [Wang & Reid, 2026](https://arxiv.org/abs/2609.01924) applied the Jacobian lens and a causal
+  suite to two smaller looped models (Ouro-2.6B, Huginn-0125) using the same unrolling trick
+  as `PassView`.
+- [Olszowiec et al., 2026](https://arxiv.org/abs/2610.18127) read eight looped models at every
+  iteration through the model's own output head.
 
-So the Jacobian lens has already been applied to looped models. A secondhand summary says they
-used Ouro-2.6B and Huginn and found the lens degrades across loop boundaries; that needs
-checking against the papers. What we have found no prior work on is this model's design, where
-each pass restarts from the pre-loop state and passes exchange gated messages, or on its
-variable-loop research checkpoint. Reading both papers is the next step before any claim of novelty.
+Neither covers this model. Its design (each pass restarts from the pre-loop state; passes are
+linked by gated messages) is different from both designs they study, and its variable-loop
+companion checkpoint allows the recurrence sweep Wang & Reid list as future work.
+
+**Their key warning applies to our first run.** A lens aimed at the final output reads
+punctuation in early loops "not because those loops are empty, but because the transport to
+the final target dies crossing loop boundaries". The fix is one lens per loop end.
 
 ## Predictions (written before the first results)
 
@@ -96,6 +101,12 @@ What the lens shows at the last token of each two-step question:
 The same shape appears on four of the six probes (Italy/euro, France/Paris, Japan/Japanese,
 yellow/green). Concepts in pass 3 are read out in many languages at once (`France` appears as
 `Frankreich`, `فرانس`, `फ्रांस`), which suggests a language-independent representation.
+
+**Correction after reading the prior work (same day):** the "pass 1: punctuation and noise"
+row is most likely the instrument failing, not the model. A final-target lens is known to read
+punctuation in early loops of other looped models. Claims about passes 1 and 2 need a lens
+aimed at each pass's own end, or a direct read of the model's output with fewer passes. The
+pass-3 and post-loop rows are within the lens's reach and stand as a preliminary observation.
 
 Against the predictions:
 
