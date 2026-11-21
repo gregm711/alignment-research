@@ -1,7 +1,7 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). The work was done on 2026-11-21 for about $12 of GPU time (see
+[`results/`](results/). The work was done on 2026-11-21 for about $12.30 of GPU time (see
 [`SPEND.md`](SPEND.md)). It has had three independent
 reviews: [the earlier experiments](../notes/independent-review-2026-11-21.md),
 [the lookup-table experiments](../notes/independent-review-lookup.md) and
@@ -91,7 +91,12 @@ confidence gives any sign (AUC 0.49 to 0.51, where 0.5 is chance).
   answer are identical, the head ranked the hidden mistake higher; confidence did so in 70.
   What the scores show is the head looking away from the correct row.
 
-*What it does not show:* that this would catch a mistake nobody induced. Our intervention
+On unmodified runs the same frozen threshold raises false alarms on 12% of correct,
+right-route answers, the same as on transplanted ones. The unmodified model took a wrong
+route by itself once in 236 correct answers, and the readout did not flag that one case.
+
+*What it does not show:* that this would catch a mistake nobody induced. This task cannot
+test that: the model almost never makes one. Our intervention
 moves the model's attention and the readout reads attention, so this is the most favourable
 case. The reviewer must also already know which row is correct, and the readout was
 calibrated with some trials an overseer could not have labelled. It is one invented task.
@@ -121,9 +126,6 @@ re-tested on other people's prompts or reproduced by someone else's code.
 
 ## Next
 
-- The same test on a mistake we did not induce: a case where the model takes a shortcut by
-  itself, with the route established by a twin prompt.
-- Separate the surviving explanations of the transplant result, as the second review
-  proposes: one donor crossed with many independently generated recipient layouts, and lists
-  of different lengths.
+- A task where the model takes a shortcut by itself often enough to measure, so the frozen
+  readout can be tested on mistakes we did not induce. The lookup task is not it.
 - Whether any of this appears on questions about real facts.

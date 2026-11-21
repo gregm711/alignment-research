@@ -37,5 +37,6 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Oversight test, second attempt: pilot | ~1.5 | $0.08 | $11.24 |
 | 2026-11-21 | Oversight test, second attempt: attention readout with controls | 15.3 | $0.79 | $12.03 |
 | 2026-11-21 | Front / end / token-position transplant, released model | 1.3 | $0.07 | $12.10 |
+| 2026-11-21 | Spontaneous wrong routes and readout false alarms on unmodified runs | 3.4 | $0.18 | $12.28 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

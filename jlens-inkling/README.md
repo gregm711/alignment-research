@@ -1643,6 +1643,32 @@ test the readout on natural mistakes and a harder task is needed; knowing that c
 twenty cents. The false-alarm rate on unmodified runs is needed either way: the earlier
 right-route trials had all been through a transplant.
 
+### Result
+
+Raw data, every prompt: [`results/natural-routes.json`](results/natural-routes.json). Script: `natural.py`.
+
+**What the unmodified model does on 240 prompts.**
+
+| Pattern | prompts | flagged by the frozen readout |
+|---|---|---|
+| answer correct, follows the intended row only (right route) | 231 | 28 |
+| answer correct, follows the *other* row only (spontaneous wrong route) | 1 | 0 |
+| answer correct, neither edit changes it | 4 | 2 |
+| answer wrong | 4 | 2 |
+
+**Both predictions held.** Spontaneous wrong routes are almost absent: 1 of 236 correct
+answers. The frozen threshold raises false alarms on 12% of unmodified right-route runs
+(28 of 231), the same rate as on the transplanted right-route trials, so the readout is not
+simply detecting that a transplant happened.
+
+**The one spontaneous wrong route was not flagged.** One case says nothing about a rate, but
+it is the only natural example we have and the readout missed it.
+
+**What this means.** This task cannot test the readout on mistakes the model makes by
+itself: the model is too reliable at it. The result on induced mistakes stands as it was,
+with its caveats. A test on natural mistakes needs a task where the model takes a shortcut
+often enough to measure, and we do not have one yet.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
