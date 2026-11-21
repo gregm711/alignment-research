@@ -40,6 +40,8 @@ unrelated things); download figures are Hugging Face's own.
 
 ## What it teaches
 
-Safety training in open models is shallow enough to remove in minutes, and millions of people
-run the result. That is direct evidence about the robustness of current alignment methods, and
-it means the models people run locally are increasingly ones nobody has evaluated.
+Safety training in open models is shallow enough to remove in minutes, and the results are
+downloaded millions of times. Download counts are not users, and a keyword search cannot
+establish how much evaluation these models have had; both points are from the independent
+review of this repo. What the snapshot supports is that modified models are widely
+distributed and that we found little public evaluation of them by this method.

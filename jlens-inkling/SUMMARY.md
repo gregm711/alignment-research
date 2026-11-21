@@ -2,7 +2,9 @@
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
 [`results/`](results/). Everything here was produced on 2026-11-21 for about $6.60 of GPU time
-(see [`SPEND.md`](SPEND.md)), and has not yet been independently reviewed.
+before the independent review (see [`SPEND.md`](SPEND.md)). The review reproduced the
+message swap, corrected the arithmetic noise measurement and rescored the public evaluation.
+[Independent review and revised counts](../notes/independent-review-2026-11-21.md).
 
 ## The model
 

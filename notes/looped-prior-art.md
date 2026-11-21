@@ -71,7 +71,8 @@ iteration; Huginn, Rec-OLMo, Parcae).
 
 ## Where Inkling 2 Mini sits, and what is still open
 
-Neither paper covers it (it was released on 2026-11-20). Its design is a third kind:
+Neither paper covers it (it was released on 2026-11-20), but two release-day publications
+do; see the next section. Its design is a third kind:
 
 - Passes 2 and 3 **restart from the pre-loop state**, which makes it re-read-like.
 - Passes are linked by **gated messages** built from the previous pass's states, which is
@@ -89,6 +90,38 @@ Open questions this leaves for us:
 3. **Does the noise-robustness split hold?** The carry/re-read result predicts this design
    should be robust to noise in the loop state, including for refusals. Testable cheaply.
 4. **Do interventions need to be held across all passes**, as on Ouro, or only the last?
+
+## Prior work on Inkling 2 Mini itself (found late, via the independent review)
+
+We searched arXiv and missed both of these.
+
+**Goodfire, "Interpreting Inkling 2 Mini"** ([link](https://www.goodfire.com/research/interpreting-inkling-2-mini), 2026-11-20). Read in full.
+
+- The model has no single residual stream. Four blocks of six layers each keep a running sum
+  of their layers' outputs, and every layer reads a learned softmax mix of block sums
+  ("attention residuals"). The loop is blocks 2 and 3.
+- The cross-loop message is a softmax mix of the previous loop's block 2 and block 3 sums,
+  blended in with a learned "keep" and "gain". Because each layer's input is a weighted sum
+  of earlier outputs, they can attribute every layer's input to its sources.
+- Later loops read almost entirely from block 3 of the previous loop. The last layers of each
+  block write strongly along the readers' query directions, "tagging" what to read.
+- One coordinate (2027 of 2304) carries about 46% of the normalised squared norm, surges at
+  the end of loops 1 and 2, is cleaned up at the end of loop 3, and is a top contributor to
+  the decision to read block 3.
+- Decoding: the logit lens works poorly except near the end of each loop; a tuned lens and a
+  "coda lens" (apply the final block, then unembed) work well. They leave the Jacobian lens
+  on looped models for future work.
+
+**Thinking Machines' release post** ([link](https://thinkingmachines.ai/news/inkling-2-mini/)).
+Has a section on monitorability of looped models: sweeps of pass count on the variable-loop
+checkpoint, a fictional lookup-chain task that keeps improving out to ten passes, and the
+claim that looping raises what the model can do without written reasoning without, at this
+scale, reducing how monitorable that reasoning is.
+
+**What this does to our four questions.** Question 2's sweep on the variable-loop model is
+largely their result at smaller scale, and early exit is a case of the coda lens. Goodfire
+describe the message channel's structure; they do not transplant messages or test what a
+transplant does to an answer, which is the part of our work that is new as far as we know.
 
 ## What this changes in our experiment
 

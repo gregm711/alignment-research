@@ -23,5 +23,6 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Diagnostic look at raw TwoHopFact outputs | ~2 | $0.10 | $6.38 |
 | 2026-11-21 | Pilot of TwoHopFact with "Fact:" framing (led to not running the full set) | ~2 | $0.10 | $6.48 |
 | 2026-11-21 | Lens readout of intermediates on Anthropic's multi-hop set | 2.6 | $0.13 | $6.61 |
+| 2026-11-21 | Independent review, arithmetic and capital swaps including one failed import (elapsed job time used as a conservative proxy) | ~5.1 | $0.26 | $6.87 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

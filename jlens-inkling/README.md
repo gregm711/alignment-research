@@ -1,6 +1,6 @@
 # Jacobian lens on Inkling 2 Mini
 
-**Status:** the four questions below each have a first answer. Start with [`SUMMARY.md`](SUMMARY.md). Not yet independently reviewed.
+**Status:** the four questions below each have a first answer. Start with [`SUMMARY.md`](SUMMARY.md). See the [independent review](../notes/independent-review-2026-11-21.md) for replications and scoring corrections.
 
 ## Question
 
@@ -23,9 +23,24 @@ Read after the first run; full notes in [`../notes/looped-prior-art.md`](../note
 - [Olszowiec et al., 2026](https://arxiv.org/abs/2610.18127) read eight looped models at every
   iteration through the model's own output head.
 
-Neither covers this model. Its design (each pass restarts from the pre-loop state; passes are
-linked by gated messages) is different from both designs they study, and its variable-loop
-companion checkpoint allows the recurrence sweep Wang & Reid list as future work.
+Neither of those covers this model, but two release-day publications do, and we missed both
+until the independent review pointed them out:
+
+- [Goodfire, "Interpreting Inkling 2 Mini"](https://www.goodfire.com/research/interpreting-inkling-2-mini)
+  (2026-11-20) maps how information flows across blocks and loops on this exact model. They
+  show later loops read almost entirely from the previous loop's second looped block, find a
+  single outlier coordinate that tags which block to read, and compare three ways of decoding
+  internal states (logit lens, tuned lens, and a "coda lens" that applies the final block).
+  They explicitly leave the Jacobian lens for future work.
+- [Thinking Machines' release post](https://thinkingmachines.ai/news/inkling-2-mini/) has a
+  section on the monitorability of looped models. It sweeps the number of passes on the
+  variable-loop checkpoint and reports that a fictional lookup-chain task keeps improving with
+  more passes.
+
+What that leaves as ours: the pass sweep on the *released* (fixed) model, which is a special
+case of Goodfire's coda lens; and the causal test of what the messages do when transplanted,
+which neither does. Statements below that nobody had studied this model are wrong and
+should be read with this.
 
 **Their key warning applies to our first run.** A lens aimed at the final output reads
 punctuation in early loops "not because those loops are empty, but because the transport to
@@ -49,6 +64,11 @@ three times" picture:
   attention and expert inputs of every loop layer.
 - Outputs at block boundaries are kept and attended over; a final mixing step combines them
   before the output norm. That final mix is the lens target.
+- There is no single residual stream. Layers are grouped in blocks of six, each block keeps
+  a running sum of its own layers' outputs starting from zero, and each layer reads a learned
+  mix of the block sums. The "layer outputs" our hooks read are these per-block running sums.
+  (Goodfire's write-up explains this clearly; we had not appreciated it.) It is the likely
+  reason every pass reads as blanks from layer 12 on: that is where a new block's sum restarts.
 - Weights ship in 4-bit and 8-bit formats and are expanded to bf16 on load (about 49GB on GPU).
 
 ## How it works here
@@ -179,6 +199,12 @@ Raw data: [`results/pass-sweep.json`](results/pass-sweep.json) (ordinary text),
 3. *The fixed checkpoint loses more at one or two passes:* held.
 4. *Past three passes the fixed checkpoint does not improve:* held; it gets worse.
 
+**After independent review.** The pass counts above were reproduced from the saved rows.
+Two things narrow the claim. The pass sweep on the variable-loop checkpoint repeats, on a
+much smaller scale, what Thinking Machines report in their release post. And an early-exit
+output still runs the six post-loop layers, so it includes their decoding work; it is a
+special case of what Goodfire call the coda lens.
+
 **How this sits with the prior work.** It agrees with Wang & Reid (harder questions settle in
 later loops) and with Olszowiec et al. on early decisions and on fixed-depth models peaking at
 their trained depth. It is in tension with Olszowiec et al.'s finding that harder problems do
@@ -298,6 +324,19 @@ on all 24 prompts on both models.
   mostly washed out: pass 2 re-derives from the restarted state.
 - **The variable-loop model leans on messages less.** That fits the sweep: it can answer
   these questions in one pass, so the restarted state alone often suffices.
+
+**After independent review.** A separately written hook reproduced 33 of 42 and 8 of 42, and
+every self-swap reproduced the logits exactly. The reviewer's caveats, which we accept:
+
+- **What the messages carry is not identified.** In these pairs the city, the country and
+  the language all change together. The swap shows the messages can redirect the answer. It
+  cannot show that the country, as opposed to the answer itself, is what travels. The first
+  bullet above states an interpretation as a finding.
+- **42 pairs come from 7 prompts,** so they are not 42 independent questions.
+- **The 13 of 112 cross-operation cases are pooled over both directions,** so the count does
+  not say they all come from multiplication donors.
+
+The follow-up "What exactly crosses?" below is designed to separate these.
 
 **Against the predictions.**
 
@@ -491,6 +530,8 @@ unperturbed model finds as likely as its own (the model refuses 13 of the 24 ben
 even without noise on this prefilled path). For harmful requests only the refusal flag and a
 likelihood score were kept.
 
+**Independent review correction.** The arithmetic column below counts retention of a space before the number. At the numerical answer position, pass-3 message noise at α=2 gives 0/12 correct. [Per-setting replication](../notes/independent-review-2026-11-21.md#1-arithmetic-robustness-fails-at-the-answer-position).
+
 | Noise site | α | One-hop facts kept | Two-hop kept | Arithmetic kept | Benign replies intact | Harmful still refused |
 |---|---|---|---|---|---|---|
 | none | – | 16/16 | 16/16 | 12/12 | 21/24 | 24/24 |
@@ -513,9 +554,10 @@ likelihood score were kept.
 - **Refusals fall when everything else falls, not before.** In every setting where refusals
   dropped, benign replies were broken at a similar or higher rate. We found no setting where
   the model keeps replying sensibly to benign requests but stops refusing harmful ones.
-- **Arithmetic is nearly immune.** 12 of 12 sums survive in nine of the ten noisy settings,
-  including noise that erases every factual answer. The numbers are evidently recoverable
-  from the copies of the earliest states that later layers read back.
+- ~~Arithmetic is nearly immune.~~ **Withdrawn.** The arithmetic column scored the space
+  token before the number, which survives almost anything. Scored at the number, noise in
+  the messages into pass 3 at α = 2 leaves 0 of 12 sums correct (the reviewer's rerun; see
+  the note above the table). The explanation we offered for the immunity is withdrawn with it.
 - **Well-formed and random are different.** Question 1 found that another prompt's messages
   at the last position change nothing, and that another prompt's messages into pass 2 are
   mostly ignored. Random noise at either place is destructive. The channel tolerates a
@@ -538,10 +580,18 @@ the restart state at one position, leaves single-word facts intact at α = 16 bu
 multi-word replies. And this design has a second kind of state, the messages, with no
 counterpart in the models they studied; it is the most fragile thing we measured.
 
-**Answer to question 3.** Partly. The state each pass restarts from tolerates noise at a
-single position reasonably well for short factual answers. The messages between passes do
-not: modest noise there breaks answers and refusals alike. We saw no sign of the specific
-failure reported for carry-loop models, where refusals erode while fluent answers remain.
+**Answer to question 3 (revised after review).** Narrower than first written. Noise in the
+messages into the last pass, at twice each vector's size, breaks factual answers, sums and
+refusal phrases alike; noise in the restart state at one position mostly does not. We cannot
+call the messages "the most fragile channel": the message sites perturb four vectors at each
+of twelve layers and the restart site perturbs one, so equal ratios are not equal budgets.
+And the refusal and benign-quality columns are two rough proxies that move together; they
+cannot show the order in which safety and competence fail.
+
+**After independent review, further limits we accept.** The fact columns measure agreement
+with the noise-free top token, not correctness, and were not checked for the same
+space-token problem. "Benign intact" counts every detected refusal as intact, and 13 of 24
+benign requests already trigger the detector without noise.
 
 **What this does not show, including a flaw in our own measure.**
 
@@ -621,8 +671,14 @@ mostly damage that any strong edit along these directions causes.
    needed), but it moved fewer, not as many.
 3. *Rates well below the message swap's:* held (14 of 42 against 33 of 42).
 
-**Answer to question 4.** No. In this design an edit does not have to be held across passes.
-Both kinds of edit agree: what matters is the last pass. An edit made only earlier is mostly
+**After independent review.** Three weaknesses we accept. The control records only "stayed"
+or "changed", so our statement that it can never produce the target was unsupported; and it
+was run only for the all-passes condition. The coordinate swap is exact only for orthogonal
+directions, and we did not report how correlated these are. And the claim that earlier edits
+are "re-derived away" is a proposed mechanism the data do not establish.
+
+**Answer to question 4 (narrower after review).** On this template, an edit in the last pass
+moved more answers than the same edit earlier or in every pass. An edit made only earlier is mostly
 re-derived away, because each pass restarts from the unedited pre-loop state. This is the
 opposite of what Wang & Reid found on Ouro, where an edit must be held across every remaining
 loop, and close to what they found on Huginn, where the last window alone is as effective as
@@ -687,6 +743,15 @@ with 95% intervals.**
 | order of operations (n=55) | 1 | 7% [2, 15] | 60% [47, 73] |
 | | 2 | 29% [18, 42] | 66% [53, 78] |
 | | 3 | 64% [51, 76] | 71% [58, 82] |
+
+**After independent review: the scorer was faulty in both directions.** It expected a leading
+space even after an opening quotation mark (rejecting correct answers such as `up` and
+`January`) and credited some prefixes (` begin` for `beginnings`). Rescoring the saved
+outputs by whole decoded token gives, for the released model on multi-hop, **16 of 80 at one
+pass and 40 of 80 at three** (we reported 13 and 32); order of operations 3 and 35 of 55 (we
+reported 4 and 35). The variable-loop model goes 39 to 45 of 80 and 33 to 39 of 55. The
+one-pass output names an intermediate on 5 of 80, not 2. Every conclusion below keeps its
+direction; the percentages in the table above are superseded by these counts.
 
 **The same sets: share of items where the top prediction after one pass is a named
 intermediate.** Multi-hop: 2 of 80 on the released model, 0 of 80 at three passes.
@@ -782,12 +847,78 @@ item's intermediate).
   fitted on 3 prompts that is not a fair contest, but it means nothing in this repo shows the
   Jacobian lens earning its cost on this model.
 
+**After independent review.** This is not the upstream pass@k. Upstream scores each listed
+intermediate separately and averages within an item; we took the single best rank over all
+listed intermediates and spellings, and deeper runs get more steps to score on. The
+reviewer's matched comparison is the cleaner statement: on the 75 items shared with the
+early-exit test, at one pass, the plain logit lens has the intermediate as its top word
+somewhere in the network on 24, the output names it on 5, and **20 have a lens hit without
+an output hit**. The lens was told which word to look for and searched every layer, so this
+shows some intermediate words are recoverable. It is not a monitor.
+
 **Against the expectation.** Above the control at every pass count, for both lenses: held.
 
 **What this does not show.** Taking the best rank over roughly 25 to 50 steps is generous;
 the control bounds how generous. No intervals were computed. It says the intermediate is
 present and linearly readable somewhere in the network, not at which pass, and not that the
 model uses it.
+
+## Follow-up: what exactly crosses? A transplant with four distinguishable answers
+
+Proposed by the independent review. The earlier swap could not say whether the messages
+carry an intermediate that the next pass reuses, or the finished answer, because both
+changed together.
+
+### Plan and predictions (written before running)
+
+**Design.** Every prompt is a two-step question: a first step picks an intermediate, a second
+step maps it to an answer. Donor and recipient differ in *both* the item and the second
+step. A transplant of the donor's messages into the recipient's final pass can then give:
+
+| Outcome | Meaning |
+|---|---|
+| recipient's answer | the messages were ignored |
+| donor's answer | the messages carry a finished answer |
+| recipient's second step on the donor's intermediate | the messages hand over a reusable intermediate |
+| donor's second step on the recipient's intermediate | the messages carry which second step to do |
+| anything else | uninterpreted |
+
+A pair is used only if all four named answers are different words, both prompts tokenize to
+the same length, and the model answers both correctly without any transplant. The expected
+answer for each outcome is computed before the transplant is run.
+
+**Two task families.**
+
+- *Fictional lookup tables given in the prompt* (fresh, so nothing can come from memory):
+  one table maps four animals to colours, a second maps colours to fruits. Donor and
+  recipient share the first table and have different second tables.
+- *Real facts:* "The language / currency of the country whose capital is X". Donor and
+  recipient ask for different properties of different countries. Two wordings are tried; the
+  one the model answers correctly more often *without any transplant* is used, a choice made
+  before any transplant is run.
+
+Transplants go into pass 3 and, separately, pass 2, at every position, on both checkpoints.
+Every eligible pair is saved with its prompts, expected answers and outcome, along with the
+model and library revisions.
+
+**Predictions.** We do not have a confident one, which is the reason to run it.
+
+1. The capital experiment suggests the messages carry something answer-determining, and the
+   arithmetic cross-operation result (an addition given a multiplication's messages sometimes
+   multiplies) suggests they can carry the *second step*. Our best guess is that the
+   recipient's-second-step-on-donor's-intermediate outcome is the most common outcome other
+   than the recipient's own answer in both families, on the released model, for pass 3.
+2. Transplants into pass 2 will move fewer answers than into pass 3, as before.
+3. The sibling will move less than the released model.
+
+**What would change our mind.** If the donor's finished answer dominates, the "reusable
+intermediate" reading is wrong for these tasks. If the recipient's answer dominates in the
+lookup family but not the real-facts family, then the earlier result depended on the two
+questions sharing a second step.
+
+**What this will not show.** Two families, one wording each. A transplant replaces whole
+messages at every position; it cannot say where in the message the information sits. If few
+pairs are eligible (the model must get both questions right), the counts will be small.
 
 ## Results
 

@@ -1,0 +1,769 @@
+{
+  "reviewed_commit": "71098e5637c0b8592e1546ae68463935a1a985b4",
+  "model": "thinkingmachines/Inkling-2-Mini",
+  "transformers_revision": "046bdb8cc2cee29d233964bb77fe6fd37cfe4aa3",
+  "arithmetic": {
+    "as_written": [
+      {
+        "prompt": "7 + 5 =",
+        "answer": "12",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "9 + 8 =",
+        "answer": "17",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "6 * 7 =",
+        "answer": "42",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "8 * 9 =",
+        "answer": "72",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " *",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "15 + 27 =",
+        "answer": "42",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " \"",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "47 + 38 =",
+        "answer": "85",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": "\n",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "63 - 28 =",
+        "answer": "35",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " -",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "12 * 12 =",
+        "answer": "144",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": "Fact",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "100 - 37 =",
+        "answer": "63",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " `",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "25 * 4 =",
+        "answer": "100",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "81 / 9 =",
+        "answer": "9",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "144 / 12 =",
+        "answer": "12",
+        "top": {
+          "clean": " ",
+          "restart_last_position/alpha2": " ",
+          "restart_last_position/alpha16": " ",
+          "restart_every_position/alpha2": " ",
+          "restart_every_position/alpha16": " ",
+          "messages_into_pass2/alpha2": " ",
+          "messages_into_pass2/alpha16": " ",
+          "messages_into_pass3/alpha2": " ",
+          "messages_into_pass3/alpha16": " ",
+          "messages_into_pass3_last_position/alpha2": " ",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      }
+    ],
+    "after_space": [
+      {
+        "prompt": "7 + 5 =",
+        "answer": "12",
+        "top": {
+          "clean": "12",
+          "restart_last_position/alpha2": "12",
+          "restart_last_position/alpha16": "12",
+          "restart_every_position/alpha2": "12",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "12",
+          "messages_into_pass2/alpha16": "7",
+          "messages_into_pass3/alpha2": "7",
+          "messages_into_pass3/alpha16": "7",
+          "messages_into_pass3_last_position/alpha2": "12",
+          "messages_into_pass3_last_position/alpha16": "12"
+        }
+      },
+      {
+        "prompt": "9 + 8 =",
+        "answer": "17",
+        "top": {
+          "clean": "17",
+          "restart_last_position/alpha2": "17",
+          "restart_last_position/alpha16": "17",
+          "restart_every_position/alpha2": "17",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "17",
+          "messages_into_pass2/alpha16": "9",
+          "messages_into_pass3/alpha2": "1",
+          "messages_into_pass3/alpha16": "9",
+          "messages_into_pass3_last_position/alpha2": "17",
+          "messages_into_pass3_last_position/alpha16": "9"
+        }
+      },
+      {
+        "prompt": "6 * 7 =",
+        "answer": "42",
+        "top": {
+          "clean": "42",
+          "restart_last_position/alpha2": "42",
+          "restart_last_position/alpha16": "42",
+          "restart_every_position/alpha2": "42",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "42",
+          "messages_into_pass2/alpha16": "6",
+          "messages_into_pass3/alpha2": "6",
+          "messages_into_pass3/alpha16": "0",
+          "messages_into_pass3_last_position/alpha2": "42",
+          "messages_into_pass3_last_position/alpha16": "6"
+        }
+      },
+      {
+        "prompt": "8 * 9 =",
+        "answer": "72",
+        "top": {
+          "clean": "72",
+          "restart_last_position/alpha2": "72",
+          "restart_last_position/alpha16": "72",
+          "restart_every_position/alpha2": "72",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "72",
+          "messages_into_pass2/alpha16": "8",
+          "messages_into_pass3/alpha2": "8",
+          "messages_into_pass3/alpha16": " *",
+          "messages_into_pass3_last_position/alpha2": "72",
+          "messages_into_pass3_last_position/alpha16": "72"
+        }
+      },
+      {
+        "prompt": "15 + 27 =",
+        "answer": "42",
+        "top": {
+          "clean": "42",
+          "restart_last_position/alpha2": "42",
+          "restart_last_position/alpha16": "42",
+          "restart_every_position/alpha2": "42",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "42",
+          "messages_into_pass2/alpha16": "15",
+          "messages_into_pass3/alpha2": "15",
+          "messages_into_pass3/alpha16": "\u00a0",
+          "messages_into_pass3_last_position/alpha2": "42",
+          "messages_into_pass3_last_position/alpha16": "15"
+        }
+      },
+      {
+        "prompt": "47 + 38 =",
+        "answer": "85",
+        "top": {
+          "clean": "85",
+          "restart_last_position/alpha2": "85",
+          "restart_last_position/alpha16": "85",
+          "restart_every_position/alpha2": "85",
+          "restart_every_position/alpha16": "13",
+          "messages_into_pass2/alpha2": "85",
+          "messages_into_pass2/alpha16": "47",
+          "messages_into_pass3/alpha2": "47",
+          "messages_into_pass3/alpha16": "4",
+          "messages_into_pass3_last_position/alpha2": "85",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "63 - 28 =",
+        "answer": "35",
+        "top": {
+          "clean": "35",
+          "restart_last_position/alpha2": "35",
+          "restart_last_position/alpha16": "35",
+          "restart_every_position/alpha2": "35",
+          "restart_every_position/alpha16": "28",
+          "messages_into_pass2/alpha2": "35",
+          "messages_into_pass2/alpha16": "63",
+          "messages_into_pass3/alpha2": "63",
+          "messages_into_pass3/alpha16": "1",
+          "messages_into_pass3_last_position/alpha2": "35",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "12 * 12 =",
+        "answer": "144",
+        "top": {
+          "clean": "144",
+          "restart_last_position/alpha2": "144",
+          "restart_last_position/alpha16": "144",
+          "restart_every_position/alpha2": "144",
+          "restart_every_position/alpha16": "12",
+          "messages_into_pass2/alpha2": "144",
+          "messages_into_pass2/alpha16": "0",
+          "messages_into_pass3/alpha2": "12",
+          "messages_into_pass3/alpha16": "11",
+          "messages_into_pass3_last_position/alpha2": "144",
+          "messages_into_pass3_last_position/alpha16": "12"
+        }
+      },
+      {
+        "prompt": "100 - 37 =",
+        "answer": "63",
+        "top": {
+          "clean": "63",
+          "restart_last_position/alpha2": "63",
+          "restart_last_position/alpha16": "63",
+          "restart_every_position/alpha2": "63",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "63",
+          "messages_into_pass2/alpha16": "100",
+          "messages_into_pass3/alpha2": "100",
+          "messages_into_pass3/alpha16": "1",
+          "messages_into_pass3_last_position/alpha2": "37",
+          "messages_into_pass3_last_position/alpha16": "100"
+        }
+      },
+      {
+        "prompt": "25 * 4 =",
+        "answer": "100",
+        "top": {
+          "clean": "100",
+          "restart_last_position/alpha2": "100",
+          "restart_last_position/alpha16": "100",
+          "restart_every_position/alpha2": "100",
+          "restart_every_position/alpha16": "0",
+          "messages_into_pass2/alpha2": "100",
+          "messages_into_pass2/alpha16": "25",
+          "messages_into_pass3/alpha2": "25",
+          "messages_into_pass3/alpha16": "25",
+          "messages_into_pass3_last_position/alpha2": "100",
+          "messages_into_pass3_last_position/alpha16": " "
+        }
+      },
+      {
+        "prompt": "81 / 9 =",
+        "answer": "9",
+        "top": {
+          "clean": "9",
+          "restart_last_position/alpha2": "9",
+          "restart_last_position/alpha16": "9",
+          "restart_every_position/alpha2": "9",
+          "restart_every_position/alpha16": "202",
+          "messages_into_pass2/alpha2": "9",
+          "messages_into_pass2/alpha16": "0",
+          "messages_into_pass3/alpha2": "1",
+          "messages_into_pass3/alpha16": "0",
+          "messages_into_pass3_last_position/alpha2": "9",
+          "messages_into_pass3_last_position/alpha16": "9"
+        }
+      },
+      {
+        "prompt": "144 / 12 =",
+        "answer": "12",
+        "top": {
+          "clean": "12",
+          "restart_last_position/alpha2": "12",
+          "restart_last_position/alpha16": "12",
+          "restart_every_position/alpha2": "12",
+          "restart_every_position/alpha16": "144",
+          "messages_into_pass2/alpha2": "12",
+          "messages_into_pass2/alpha16": "144",
+          "messages_into_pass3/alpha2": "0",
+          "messages_into_pass3/alpha16": "12",
+          "messages_into_pass3_last_position/alpha2": "12",
+          "messages_into_pass3_last_position/alpha16": "12"
+        }
+      }
+    ]
+  },
+  "capital_swaps": {
+    "rows": [
+      {
+        "recipient": "Tokyo",
+        "donor": "Moscow",
+        "donor_language": "Russian",
+        "pass2": " Japanese",
+        "pass3": " the",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Tokyo",
+        "donor": "Berlin",
+        "donor_language": "German",
+        "pass2": " Japanese",
+        "pass3": " German",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Tokyo",
+        "donor": "Paris",
+        "donor_language": "French",
+        "pass2": " called",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Tokyo",
+        "donor": "Rome",
+        "donor_language": "Italian",
+        "pass2": " Japanese",
+        "pass3": " Italian",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Tokyo",
+        "donor": "London",
+        "donor_language": "English",
+        "pass2": " Japanese",
+        "pass3": " English",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Tokyo",
+        "donor": "Madrid",
+        "donor_language": "Spanish",
+        "pass2": " Spanish",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Moscow",
+        "donor": "Tokyo",
+        "donor_language": "Japanese",
+        "pass2": " Japanese",
+        "pass3": " Japanese",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Moscow",
+        "donor": "Berlin",
+        "donor_language": "German",
+        "pass2": " Russian",
+        "pass3": " German",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Moscow",
+        "donor": "Paris",
+        "donor_language": "French",
+        "pass2": " Russian",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Moscow",
+        "donor": "Rome",
+        "donor_language": "Italian",
+        "pass2": " Russian",
+        "pass3": " Italian",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Moscow",
+        "donor": "London",
+        "donor_language": "English",
+        "pass2": " Russian",
+        "pass3": " English",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Moscow",
+        "donor": "Madrid",
+        "donor_language": "Spanish",
+        "pass2": " Spanish",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Berlin",
+        "donor": "Tokyo",
+        "donor_language": "Japanese",
+        "pass2": " German",
+        "pass3": " Japanese",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Berlin",
+        "donor": "Moscow",
+        "donor_language": "Russian",
+        "pass2": " German",
+        "pass3": " the",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Berlin",
+        "donor": "Paris",
+        "donor_language": "French",
+        "pass2": " German",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Berlin",
+        "donor": "Rome",
+        "donor_language": "Italian",
+        "pass2": " German",
+        "pass3": " Italian",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Berlin",
+        "donor": "London",
+        "donor_language": "English",
+        "pass2": " German",
+        "pass3": " English",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Berlin",
+        "donor": "Madrid",
+        "donor_language": "Spanish",
+        "pass2": " German",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Paris",
+        "donor": "Tokyo",
+        "donor_language": "Japanese",
+        "pass2": " Japanese",
+        "pass3": " Japanese",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Paris",
+        "donor": "Moscow",
+        "donor_language": "Russian",
+        "pass2": " French",
+        "pass3": " the",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Paris",
+        "donor": "Berlin",
+        "donor_language": "German",
+        "pass2": " French",
+        "pass3": " German",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Paris",
+        "donor": "Rome",
+        "donor_language": "Italian",
+        "pass2": " French",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Paris",
+        "donor": "London",
+        "donor_language": "English",
+        "pass2": " French",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Paris",
+        "donor": "Madrid",
+        "donor_language": "Spanish",
+        "pass2": " French",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Rome",
+        "donor": "Tokyo",
+        "donor_language": "Japanese",
+        "pass2": " called",
+        "pass3": " Japanese",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Rome",
+        "donor": "Moscow",
+        "donor_language": "Russian",
+        "pass2": " the",
+        "pass3": " the",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Rome",
+        "donor": "Berlin",
+        "donor_language": "German",
+        "pass2": " Italian",
+        "pass3": " German",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Rome",
+        "donor": "Paris",
+        "donor_language": "French",
+        "pass2": " French",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Rome",
+        "donor": "London",
+        "donor_language": "English",
+        "pass2": " Italian",
+        "pass3": " English",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Rome",
+        "donor": "Madrid",
+        "donor_language": "Spanish",
+        "pass2": " Spanish",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "London",
+        "donor": "Tokyo",
+        "donor_language": "Japanese",
+        "pass2": " English",
+        "pass3": " Japanese",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "London",
+        "donor": "Moscow",
+        "donor_language": "Russian",
+        "pass2": " English",
+        "pass3": " the",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "London",
+        "donor": "Berlin",
+        "donor_language": "German",
+        "pass2": " English",
+        "pass3": " German",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "London",
+        "donor": "Paris",
+        "donor_language": "French",
+        "pass2": " French",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "London",
+        "donor": "Rome",
+        "donor_language": "Italian",
+        "pass2": " English",
+        "pass3": " Italian",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "London",
+        "donor": "Madrid",
+        "donor_language": "Spanish",
+        "pass2": " Spanish",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Madrid",
+        "donor": "Tokyo",
+        "donor_language": "Japanese",
+        "pass2": " Spanish",
+        "pass3": " Japanese",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Madrid",
+        "donor": "Moscow",
+        "donor_language": "Russian",
+        "pass2": " Spanish",
+        "pass3": " the",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Madrid",
+        "donor": "Berlin",
+        "donor_language": "German",
+        "pass2": " Spanish",
+        "pass3": " German",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Madrid",
+        "donor": "Paris",
+        "donor_language": "French",
+        "pass2": " Spanish",
+        "pass3": " French",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Madrid",
+        "donor": "Rome",
+        "donor_language": "Italian",
+        "pass2": " Spanish",
+        "pass3": " Spanish",
+        "max_difference_both_vs_three": 0.0
+      },
+      {
+        "recipient": "Madrid",
+        "donor": "London",
+        "donor_language": "English",
+        "pass2": " Spanish",
+        "pass3": " English",
+        "max_difference_both_vs_three": 0.0
+      }
+    ],
+    "self_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}
