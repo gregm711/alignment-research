@@ -13,5 +13,7 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Pass sweep, probes only, after fixing the scorer | 2.0 | $0.10 | $1.60 |
 | 2026-11-21 | Message swap, first attempt (released model only; crashed loading the second: my bug) | ~4 | $0.20 | $1.80 |
 | 2026-11-21 | Message swap, both checkpoints, with cross-operation control | 12.7 | $0.65 | $2.45 |
+| 2026-11-21 | Lenses at 1, 2 and 3 passes, 3 prompts each, with readouts | 11.1 | $0.57 | $3.02 |
+| 2026-11-21 | Noise pilot, 4 requests (showed the design could not answer the question) | 10.2 | $0.53 | $3.55 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

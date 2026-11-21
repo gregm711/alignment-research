@@ -87,9 +87,9 @@ From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the orde
 | # | Question | Method | Status |
 |---|---|---|---|
 | 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | answered (see below) |
-| 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens for readability | swap answered (see below); lens pending |
-| 4 | Must an edit be held across all passes to stick? | Clamp a concept direction in one pass vs all | not started |
-| 3 | Is the loop state robust to noise, including for refusals? | Noise at the loop entry state; record refusal yes/no only | not started |
+| 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens for readability | answered (see below) |
+| 4 | Must an edit be held across all passes to stick? | Message swap (done under question 1), then swapping a concept direction in one pass vs all | running |
+| 3 | Is the loop state robust to noise, including for refusals? | Noise in the restart state and in the messages; record refusal yes/no only | running |
 
 Spend is tracked in [`SPEND.md`](SPEND.md).
 
@@ -336,6 +336,65 @@ and of the answer at every loop layer.
 trained to stop early, so the 1- and 2-pass lenses read through a path it never trained on.
 Readable is not the same as used; that needs the edits in question 4.
 
+### Result (measurement 2: a lens per pass count)
+
+Raw data: [`results/lens-per-pass.json`](results/lens-per-pass.json). Script: `fit.py`. Each
+lens is fitted on 3 prompts.
+
+**Median rank of the concept among ~200,000 tokens, best loop layer, over eight two-hop
+probes** (rank 0 is the top word; lower is more readable).
+
+| Reading pass | through the lens aimed at | intermediate (e.g. `Italy`) | answer (e.g. `Rome`) |
+|---|---|---|---|
+| 1 | the 1-pass output | 134 | 342 |
+| 1 | the 3-pass output | 6,924 | 2,699 |
+| 2 | the 2-pass output | 45 | 40 |
+| 2 | the 3-pass output | 23 | 130 |
+| 3 | the 3-pass output | 25 | 0 |
+
+**One probe in detail** ("The capital of the country shaped like a boot is"), top words in
+the middle loop layers of the last pass of each run:
+
+| Run | Layers 9–11 read | After the loop |
+|---|---|---|
+| 1 pass | `shape`, `shaped`, `island`, "geography", "regions" (several languages) | `Italy` |
+| 2 passes | "state", "government", "ministry", then `Italian`, `Italy` | `Italy`, `Rome` |
+| 3 passes | "capital" (Arabic, Russian, Thai), `city` | `Rome` |
+
+**What we see.**
+
+- **Aiming the lens at the right output matters most for pass 1.** The intermediate's median
+  rank in pass 1 goes from about 6,900 through the 3-pass lens to 134 through the 1-pass
+  lens. That confirms the first run's "pass 1 reads as punctuation" was the instrument.
+- **Even so, pass 1 is only weakly readable.** A median rank of 134 is far above chance and
+  far from the top. In the detailed probe, pass 1's loop layers read the *description* (shape,
+  geography), and `Italy` becomes the top word only in the layers after the loop.
+- **The lens and the swap experiment agree about which boundary carries content.** The
+  3-pass lens reads pass 2 quite well (median rank 23 for the intermediate) and pass 1 not at
+  all. The swap experiment found messages into pass 3 decide the answer and messages into
+  pass 2 mostly do not. Linear transport is alive exactly where the causal dependence is.
+- **In the one probe examined closely, each pass's middle layers read a different thing:**
+  the description, then the entity, then the relation asked about.
+
+**Against the predictions.**
+
+1. *The intermediate is readable in pass 1 through the 1-pass lens:* weakly. Much better than
+   through the 3-pass lens, but in the top ten on only one probe of eight.
+2. *In pass 1 the intermediate outranks the answer; in pass 3 the reverse:* the pass-3 half
+   held (7 of 8); the pass-1 half did not (3 of 8).
+3. *Pass 2 is in between:* held loosely; both are in the top hundred on most probes.
+
+**What this does not show.** Lenses fitted on 3 prompts are noisy, and eight probes are few;
+the medians above would move with either. The plain logit lens does about as well as the
+Jacobian lens on several rows (both are in the data), so we have no evidence here that the
+Jacobian lens is the better instrument for this model. The three-stage reading rests on one
+probe.
+
+**Answer to question 1.** What crosses a pass boundary is the message tensor and nothing
+else. It carries what the previous pass derived (the bridging entity, the operation), at
+earlier positions, and it matters mainly at the boundary into the last pass. The same
+boundary is the one a final-output lens can see across.
+
 ## Question 3: is the loop state robust to noise, including for refusals?
 
 ### Plan and predictions (written before running)
@@ -369,6 +428,74 @@ Forward and short greedy generation only; no gradients.
 Phrase matching undercounts unusual refusals and cannot tell a harmful reply from a broken
 one, so a fall in refusals means "stopped refusing", not "complied". Random noise is not an
 attack; this says nothing about a deliberate perturbation.
+
+### Revised plan after a 4-request pilot (written before the real run)
+
+The pilot (thrown away, not a result) showed the plan above could not answer the question:
+
+- **Noise on one loop layer's input barely matters, for an uninteresting reason.** Top
+  answers were unchanged on 42–44 of 44 facts even at α = 32. The model keeps a copy of the
+  pre-loop state that later layers read back directly, so one corrupted layer input is
+  routed around. That is not a test of the loop state.
+- **The refusal detector could not work.** The model writes private reasoning first even with
+  reasoning set to none, so a refusal never appears in the first 24 tokens.
+- **Generation is slow** (about 6 tokens a second), so the token budget has to shrink.
+
+**Revised measurement.** Noise scaled to α times each vector's norm (α = 2, 16) at four sites:
+
+| Site | What it is |
+|---|---|
+| restart state, last position | the pre-loop state every pass starts from, including the copy later layers read back |
+| restart state, every position | the same, across the whole prompt |
+| messages into pass 2 | everything pass 1 hands to pass 2, every position |
+| messages into pass 3 | everything pass 2 hands to pass 3, every position |
+
+Replies are started in the answer channel (the reply is prefilled with the model's own
+answer-channel tokens) and cut at 10 tokens. 24 benign and 24 harmful requests. Facts are
+reported per tier. For harmful requests only the refused / not refused flag is kept, as before.
+
+**Revised predictions.**
+
+1. Noise in messages into pass 2 changes little (question 1: that boundary is mostly washed out).
+2. Noise in messages into pass 3 hurts two-hop facts more than one-hop facts, because only
+   two-hop answers depend on what the messages carry.
+3. Noise in the restart state at every position is the most damaging, since that state is
+   the only copy of the prompt the loop has.
+4. Refusal rate tracks benign fidelity; no site makes refusals drop while benign replies hold.
+
+**Added limitation.** Prefilling the answer channel skips the model's reasoning step, so this
+measures refusal on a path the model does not normally take.
+
+## Question 4: must an edit be held across all passes to stick?
+
+### Plan and predictions (written before running)
+
+**What we already have.** The message swap in question 1 is an edit to what a pass receives.
+Edited messages into pass 2 alone were mostly overwritten (8 of 42 answers moved); edited
+messages into pass 3 moved 33 of 42; and editing both is the same intervention as editing
+pass 3. At the message level the answer is already "no: the edit has to be in what the last
+pass receives, and earlier edits are re-derived away".
+
+**Measurement: a different kind of edit, inside a pass.** Following Wang & Reid, take the
+lens direction for a concept (the unembedding vector of ` Japan` pulled back through the
+lens) and, in the middle loop layers (7–11) of a chosen pass, swap the state's coordinates
+along the source country's direction and a target country's direction. Passes 1, 2 and 3 use
+the directions from the 1-, 2- and 3-pass lenses. Conditions: pass 1 only, pass 2 only, pass
+3 only, all passes; at plain strength and at four times strength. Prompts: "The language
+spoken in the country whose capital is X is", all ordered pairs of eight countries. Outcome:
+does the answer become the target country's language.
+
+**Predictions.**
+
+1. Editing pass 3 alone moves more answers than editing pass 1 alone or pass 2 alone.
+2. Editing all passes moves about as many as editing pass 3 alone: holding the edit is not
+   needed in this design. (On Ouro, Wang & Reid found the opposite: one loop 21–29%, all
+   remaining loops 38%.)
+3. Rates will be well below the message swap's, because directions from lenses fitted on 3
+   prompts are noisy.
+
+**What this will not show.** If nothing moves, that is as likely to be the 3-prompt lens as
+the model; a null here is not evidence. One template, eight items.
 
 ## Results
 
