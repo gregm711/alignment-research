@@ -18,5 +18,8 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Direction swap inside a pass (question 4) | 2.3 | $0.12 | $3.67 |
 | 2026-11-21 | Noise pilot 2, 4 requests | 3.6 | $0.19 | $3.86 |
 | 2026-11-21 | Noise, full run (took twice as long as estimated: generation is slow) | 29.0 | $1.50 | $5.36 |
+| 2026-11-21 | Early-exit follow-up, first attempt (failed preparing the data) | ~1 | $0.05 | $5.41 |
+| 2026-11-21 | Early-exit follow-up on public datasets, both checkpoints | 16.9 | $0.87 | $6.28 |
+| 2026-11-21 | Diagnostic look at raw TwoHopFact outputs | ~2 | $0.10 | $6.38 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

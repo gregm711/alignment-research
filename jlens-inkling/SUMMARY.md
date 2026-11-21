@@ -1,7 +1,7 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). Everything here was produced on 2026-11-21 for about $6 of GPU time
+[`results/`](results/). Everything here was produced on 2026-11-21 for about $6.50 of GPU time
 (see [`SPEND.md`](SPEND.md)), and has not yet been independently reviewed.
 
 ## The model
@@ -37,10 +37,12 @@ two, and 7 when held in all three). Earlier edits are re-derived away from the r
 ## Why it might matter
 
 Looped models move reasoning out of visible text and into hidden passes, which is bad for
-anyone who monitors models by reading their reasoning. In this model the hidden intermediate
-step can be read by running fewer passes, with no trained probe. That is a point in favour
-of being able to oversee this design. It is untested on hard problems, and untested on a
-model that has any reason to hide its reasoning.
+anyone who monitors models by reading their reasoning. Three things here bear on that. The
+content handed between passes can be transplanted and steers the answer, so it is a real
+causal channel and a natural place to look. A lens aimed at the right pass can read some of
+it. And the channel is fragile to noise. We first thought the intermediate step could simply
+be read by running fewer passes; the follow-up below shows that was an artefact of our
+prompts.
 
 ## How much to trust this
 
@@ -55,10 +57,23 @@ model that has any reason to hide its reasoning.
 - **One of our own measures turned out to be uninformative** (the likelihood score for
   replies to harmful requests); see question 3 in the README.
 
-## Follow-up on public data
+## Follow-up on public data: one claim weakened
 
-Running: the early-exit finding re-tested on TwoHopFact (400 items) and Anthropic's lens
-evaluation sets (148 items), with failure criteria written in advance. Result to be added.
+We re-tested the pass-sweep finding on prompts written by others, with failure criteria
+committed in advance.
+
+- **Survived:** on Anthropic's 135 public multi-step items the released model's accuracy
+  rises steeply over passes one to three (16% to 40%; 7% to 64%) while the sibling stays
+  flat. The later passes are needed for multi-step answers in the released model.
+- **Did not survive:** the claim that stopping early *shows* the intermediate step. On 80
+  multi-hop prompts the one-pass output named the intermediate twice. It did so in our own
+  probes because our wording made it a natural next word.
+- **Could not be tested:** a 400-item sample of TwoHopFact was unusable with next-token
+  scoring on this model. That was our measurement failing, and it means the comparison
+  against one-hop recall has still only been made on our own 32 probes.
+
+So answer 2 above should be read as: later passes do the composing. Whether the hidden
+intermediate step can be read cheaply, which is what would matter for oversight, is open.
 
 ## For an independent reviewer
 

@@ -84,7 +84,7 @@ def run():
     t0 = time.time()
     df = pd.read_csv(hf_hub_download("soheeyang/TwoHopFact", "TwoHopFact.csv", repo_type="dataset"))
     per_type = -(-N_TWOHOP // df["fact_comp_type"].nunique())  # ceil: spread the sample across fact types
-    sample = (df.groupby("fact_comp_type", group_keys=False).apply(lambda g: g.sample(min(len(g), per_type), random_state=0))
+    sample = (df.sample(frac=1, random_state=0).groupby("fact_comp_type").head(per_type)
               .sample(frac=1, random_state=0).head(N_TWOHOP))
     aliases = lambda cell: [a for group in ast.literal_eval(cell) for a in group]
     twohop = [{"type": r["fact_comp_type"], "two": r["r2(r1(e1)).prompt"], "hop1": r["r1(e1).prompt"], "hop2": r["r2(e2).prompt"],
@@ -169,7 +169,31 @@ def run():
     return out
 
 
+@app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=15 * 60)
+def peek(n: int):
+    """Diagnostic: print what the released model actually says on the first n TwoHopFact one-hop and two-hop prompts."""
+    import pandas as pd
+    import torch, transformers
+    from huggingface_hub import hf_hub_download
+
+    df = pd.read_csv(hf_hub_download("soheeyang/TwoHopFact", "TwoHopFact.csv", repo_type="dataset"))
+    per_type = -(-N_TWOHOP // df["fact_comp_type"].nunique())
+    sample = (df.sample(frac=1, random_state=0).groupby("fact_comp_type").head(per_type)
+              .sample(frac=1, random_state=0).head(n))
+    tok = transformers.AutoTokenizer.from_pretrained(MODELS[0])
+    hf = transformers.AutoModelForMultimodalLM.from_pretrained(MODELS[0], dtype=torch.bfloat16, device_map="cuda").eval()
+    for _, r in sample.iterrows():
+        for label, col, gold in (("hop1", "r1(e1).prompt", "e2.value"), ("two ", "r2(r1(e1)).prompt", "e3.value")):
+            ids = tok(r[col], return_tensors="pt", add_special_tokens=False).input_ids.cuda()
+            with torch.no_grad():
+                top = hf(input_ids=ids, use_cache=False).logits[0, -1].float().topk(3).indices.tolist()
+                cont = tok.decode(hf.generate(input_ids=ids, max_new_tokens=8, do_sample=False)[0][ids.shape[1]:])
+            print(f"{label} | gold {r[gold]!r:<28} | top3 {[tok.decode([t]) for t in top]} | continues {cont!r} | {r[col][-70:]}", flush=True)
+
+
 @app.local_entrypoint()
-def main():
+def main(peek_n: int = 0):
+    if peek_n:
+        return peek.remote(peek_n)
     RESULTS.write_text(json.dumps(run.remote(), indent=1))
     print("wrote", RESULTS)

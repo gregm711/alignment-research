@@ -202,6 +202,10 @@ appears in the output can be read off by running fewer passes, with no trained p
 lens. That is a cheap window onto latent reasoning for this design. Whether it stays readable
 on harder tasks, or when a model has a reason to hide it, is untested.
 
+**Later correction:** this did not hold up on prompts written by others. See "Follow-up:
+does the early-exit finding survive other people's prompts?" below. Early exit showed the
+intermediate step here because our wording made it a natural next word.
+
 ## Question 1: what crosses the pass boundary through the message channel?
 
 ### Plan and predictions (written before running)
@@ -666,6 +670,63 @@ correctly, so that failures are failures of composition and not of knowledge. In
 that starts the same way) and strict (it misses a correct answer phrased differently); the
 control in claim 2 bounds the first. TwoHopFact's answers are Wikidata entities, many of
 them obscure, so absolute accuracy will be low. Still one position, one decoding rule.
+
+### Result
+
+Raw data: [`results/early-exit-public.json`](results/early-exit-public.json). Script and
+analysis: `earlyexit.py` (`--analyse` prints the intervals).
+
+**Anthropic's lens evaluation sets: share of items where the top prediction is the target,
+with 95% intervals.**
+
+| Set | Passes | Inkling 2 Mini | Variable-loop |
+|---|---|---|---|
+| multi-hop (n=80) | 1 | 16% [9, 25] | 40% [29, 51] |
+| | 2 | 35% [25, 45] | 40% [30, 50] |
+| | 3 | 40% [29, 50] | 45% [34, 56] |
+| order of operations (n=55) | 1 | 7% [2, 15] | 60% [47, 73] |
+| | 2 | 29% [18, 42] | 66% [53, 78] |
+| | 3 | 64% [51, 76] | 71% [58, 82] |
+
+**The same sets: share of items where the top prediction after one pass is a named
+intermediate.** Multi-hop: 2 of 80 on the released model, 0 of 80 at three passes.
+Order of operations: 3 of 55 at one pass, 6 of 55 at three.
+
+**TwoHopFact (n=332 scorable of 400): uninformative.** Two-hop accuracy was 8–12% and
+single-hop accuracy 4–8% at every pass count on both models. A look at the raw outputs shows
+why: the dataset's prompts have no "Fact:" framing, and this chat-tuned model continues them
+with filler (a colon, `the`, a multiple-choice list) even when it goes on to state the right
+entity a few tokens later. Scoring the next token therefore measures nothing here. Only 4
+items had both single hops scored correct.
+
+**Against the criteria.**
+
+1. *Composition needs the later passes; recall does not.* **Not tested as specified.** The
+   test needed TwoHopFact's one-hop control, and that dataset was unusable. On Anthropic's
+   sets, which have no one-hop control, multi-step accuracy on the released model rises from
+   16% to 40% and from 7% to 64% over passes one to three, with intervals that do not
+   overlap between one pass and three. That supports "the released model needs its later
+   passes for multi-step questions" on prompts we did not write. It does not test the
+   comparison with recall.
+2. *Stopping early reveals the bridge.* **Failed.** On 80 multi-hop prompts written by
+   others, the one-pass output named the intermediate twice. It is mostly `the`, a space, or
+   a wrong number. In our own probes the bridge was a natural next word ("The capital of the
+   country where the Eiffel Tower stands is … France"); in these it is not ("The color of
+   the planet fourth from the Sun is …"). Our probes were leading for this effect.
+3. *The variable-loop sibling composes in one pass.* **Held on Anthropic's sets** (flat at
+   40–45% and 60–71% across passes, against the released model's steep rise), though the
+   criterion as written was about TwoHopFact.
+
+**What changes.** The pass-sweep claim that survives is the weaker one: the released model's
+later passes are needed for multi-step answers, and a sibling trained to stop early does not
+need them. The stronger claim, that stopping early lets you *read off* the intermediate
+step, does not generalise. It appeared when our prompt wording made the intermediate a
+grammatical continuation. The paragraph "Why it matters for monitoring" under question 2
+overstated this and should be read with this result.
+
+**A process failure worth recording.** This run was launched without the small pilot the
+earlier runs had. A ten-item pilot would have shown the TwoHopFact scoring problem for a few
+cents instead of about ninety.
 
 ## Results
 
