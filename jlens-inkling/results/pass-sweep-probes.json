@@ -1,0 +1,4227 @@
+{
+ "passes": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "ref": 3,
+ "models": {
+  "thinkingmachines/Inkling-2-Mini": {
+   "n_text_tokens": 0,
+   "text": {},
+   "settled_by_pass": {},
+   "probes": {
+    "one_hop": {
+     "n": 16,
+     "top1_rate": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 0.9375,
+      "4": 0.8125,
+      "5": 1.0
+     }
+    },
+    "two_hop": {
+     "n": 16,
+     "top1_rate": {
+      "1": 0.1875,
+      "2": 0.6875,
+      "3": 0.9375,
+      "4": 0.4375,
+      "5": 0.75
+     }
+    },
+    "arithmetic": {
+     "n": 12,
+     "top1_rate": {
+      "1": 0.0,
+      "2": 0.25,
+      "3": 1.0,
+      "4": 0.9166666666666666,
+      "5": 0.9166666666666666
+     }
+    }
+   },
+   "probe_rows": [
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of France is",
+     "answer": "Paris",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " France"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " ",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " in",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " in"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Japan is",
+     "answer": "Tokyo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " the",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " the",
+        " located"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Italy is",
+     "answer": "Rome",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " the",
+        " Italy"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " the",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " in",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " the",
+        " in"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " the",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Egypt is",
+     "answer": "Cairo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "1",
+        "2"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of England is",
+     "answer": "London",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " England"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " ",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " in",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " in"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Russia is",
+     "answer": "Moscow",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " the",
+        " Russia"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " St",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " in",
+        " ________"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " the",
+        " in"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " St",
+        " in"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Canada is",
+     "answer": "Ottawa",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Vancouver",
+        "Montreal"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Montreal",
+        "Vancouver"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "otta",
+        "Quebec"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Montreal",
+        "Vancouver"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Montreal",
+        "Vancouver"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of China is",
+     "answer": "Beijing",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " the",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " the",
+        " Shanghai"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " in",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " the",
+        " located"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The currency used in Italy is the",
+     "answer": "euro",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " EUR"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The currency used in Japan is the",
+     "answer": "yen",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Japan is",
+     "answer": "Japanese",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " a"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 1,
+       "top3": [
+        " called",
+        " Japanese",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " the",
+        " a"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Portugal is",
+     "answer": "Portuguese",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Romance",
+        "portuguese"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Romance",
+        "portuguese"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Portugues"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Romance"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Romance",
+        "90"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Russia is",
+     "answer": "Russian",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " the",
+        " a"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " ",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 4,
+       "top3": [
+        " the",
+        " spoken",
+        " a"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in France is",
+     "answer": "French",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " the",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 1,
+       "top3": [
+        " the",
+        " French",
+        " spoken"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Germany is",
+     "answer": "German",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " the",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 2,
+       "top3": [
+        " the",
+        " called",
+        " German"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The colour you get by mixing blue with yellow is",
+     "answer": "green",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " blue",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " blue",
+        " yellow"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " not",
+        "..."
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " the",
+        "..."
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " blue",
+        "..."
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where the Eiffel Tower stands is",
+     "answer": "Paris",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        " France",
+        " Paris",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " also"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " also"
+       ]
+      },
+      "4": {
+       "rank": 5,
+       "top3": [
+        " located",
+        " named",
+        " the"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " France"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country famous for sushi is",
+     "answer": "Tokyo",
+     "by_pass": {
+      "1": {
+       "rank": 16,
+       "top3": [
+        " Japan",
+        " ",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " the",
+        " Japan"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " not",
+        " in"
+       ]
+      },
+      "4": {
+       "rank": 1,
+       "top3": [
+        " the",
+        " Tokyo",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " not",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country shaped like a boot is",
+     "answer": "Rome",
+     "by_pass": {
+      "1": {
+       "rank": 59,
+       "top3": [
+        " Italy",
+        " the",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        " Italy",
+        " Rome",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " in"
+       ]
+      },
+      "4": {
+       "rank": 2,
+       "top3": [
+        " Italy",
+        " the",
+        " Rome"
+       ]
+      },
+      "5": {
+       "rank": 1,
+       "top3": [
+        " Italy",
+        " Rome",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where the pyramids of Giza stand is",
+     "answer": "Cairo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "Giza",
+        "Memphis"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "Giza",
+        "Memphis"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "Giza",
+        "Locat"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "Giza",
+        "Memphis"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where Big Ben stands is",
+     "answer": "London",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        " the",
+        " London",
+        " Great"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " not"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 2,
+       "top3": [
+        " located",
+        " the",
+        " London"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where the Kremlin stands is",
+     "answer": "Moscow",
+     "by_pass": {
+      "1": {
+       "rank": 3,
+       "top3": [
+        " Russia",
+        " the",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        " Russia",
+        " Moscow",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " not",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 2,
+       "top3": [
+        " the",
+        " located",
+        " Moscow"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " the",
+        " Russia"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country whose flag is a red maple leaf is",
+     "answer": "Ottawa",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        "maple",
+        "Ottawa",
+        "Montreal"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Montreal",
+        "Quebec"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "4": {
+       "rank": 2,
+       "top3": [
+        "Montreal",
+        "Quebec",
+        "Ottawa"
+       ]
+      },
+      "5": {
+       "rank": 4,
+       "top3": [
+        "maple",
+        "Quebec",
+        "Montreal"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country that hosted the 2008 Summer Olympics is",
+     "answer": "Beijing",
+     "by_pass": {
+      "1": {
+       "rank": 7,
+       "top3": [
+        " the",
+        " ",
+        " a"
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        " the",
+        " Beijing",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " located",
+        " in"
+       ]
+      },
+      "4": {
+       "rank": 6,
+       "top3": [
+        " the",
+        " located",
+        " in"
+       ]
+      },
+      "5": {
+       "rank": 6,
+       "top3": [
+        " the",
+        " ",
+        " located"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The currency used in the country shaped like a boot is the",
+     "answer": "euro",
+     "by_pass": {
+      "1": {
+       "rank": 4,
+       "top3": [
+        " currency",
+        " country",
+        " world"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The currency used in the country famous for sushi is the",
+     "answer": "yen",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        " ",
+        " yen",
+        " dollar"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " dollar"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Tokyo is",
+     "answer": "Japanese",
+     "by_pass": {
+      "1": {
+       "rank": 3,
+       "top3": [
+        " Japan",
+        " Tokyo",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " the",
+        " Japan"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 1,
+       "top3": [
+        " Tokyo",
+        " Japanese",
+        " Japan"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " Japan",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Lisbon is",
+     "answer": "Portuguese",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Lisbon",
+        "Romance"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Lisbon",
+        "Romance"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Romance",
+        "portuguese"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Lisbon",
+        "portuguese"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Lisbon",
+        "Romance"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Moscow is",
+     "answer": "Russian",
+     "by_pass": {
+      "1": {
+       "rank": 4,
+       "top3": [
+        " the",
+        " Russia",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        " the",
+        " Russian",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " the",
+        " also"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " the",
+        " Russia"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " the",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country where the Eiffel Tower stands is",
+     "answer": "French",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " France",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " the",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " the",
+        " called"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " the",
+        " called"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " the",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Berlin is",
+     "answer": "German",
+     "by_pass": {
+      "1": {
+       "rank": 2,
+       "top3": [
+        " the",
+        " Germany",
+        " German"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " the",
+        " spoken"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " Berlin",
+        " called"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " the",
+        " Germany"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The colour you get by mixing the colour of the sky with the colour of a lemon is",
+     "answer": "green",
+     "by_pass": {
+      "1": {
+       "rank": 6,
+       "top3": [
+        " the",
+        " yellow",
+        " a"
+       ]
+      },
+      "2": {
+       "rank": 3,
+       "top3": [
+        " the",
+        " a",
+        " yellow"
+       ]
+      },
+      "3": {
+       "rank": 3,
+       "top3": [
+        " yellow",
+        " not",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 1,
+       "top3": [
+        " the",
+        " green",
+        " a"
+       ]
+      },
+      "5": {
+       "rank": 5,
+       "top3": [
+        " yellow",
+        " the",
+        " a"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "7 + 5 =",
+     "answer": "12",
+     "by_pass": {
+      "1": {
+       "rank": 9,
+       "top3": [
+        "7",
+        "5",
+        "8"
+       ]
+      },
+      "2": {
+       "rank": 6,
+       "top3": [
+        "7",
+        "8",
+        "10"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "10",
+        "5"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "10",
+        "5"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "10",
+        "7"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "9 + 8 =",
+     "answer": "17",
+     "by_pass": {
+      "1": {
+       "rank": 18,
+       "top3": [
+        "9",
+        "10",
+        "8"
+       ]
+      },
+      "2": {
+       "rank": 8,
+       "top3": [
+        "9",
+        "10",
+        "8"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "9",
+        "12"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "12",
+        "18"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "9",
+        "13"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "6 * 7 =",
+     "answer": "42",
+     "by_pass": {
+      "1": {
+       "rank": 4,
+       "top3": [
+        "7",
+        "6",
+        "8"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "8 * 9 =",
+     "answer": "72",
+     "by_pass": {
+      "1": {
+       "rank": 4,
+       "top3": [
+        "8",
+        "9",
+        "12"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "7"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "7"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "15 + 27 =",
+     "answer": "42",
+     "by_pass": {
+      "1": {
+       "rank": 14,
+       "top3": [
+        "27",
+        "15",
+        "28"
+       ]
+      },
+      "2": {
+       "rank": 19,
+       "top3": [
+        "27",
+        "15",
+        "9"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "15"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "32"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "15"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "47 + 38 =",
+     "answer": "85",
+     "by_pass": {
+      "1": {
+       "rank": 96,
+       "top3": [
+        "38",
+        "47",
+        "48"
+       ]
+      },
+      "2": {
+       "rank": 82,
+       "top3": [
+        "48",
+        "47",
+        "38"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "38",
+        "47"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "38",
+        "75"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "75",
+        "47"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "63 - 28 =",
+     "answer": "35",
+     "by_pass": {
+      "1": {
+       "rank": 30,
+       "top3": [
+        "63",
+        "28",
+        "4"
+       ]
+      },
+      "2": {
+       "rank": 36,
+       "top3": [
+        "63",
+        "28",
+        "0"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "63",
+        "28"
+       ]
+      },
+      "4": {
+       "rank": 20,
+       "top3": [
+        "63",
+        "28",
+        "32"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "37",
+        "29"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "12 * 12 =",
+     "answer": "144",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        "12",
+        "144",
+        "3"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "121"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "1"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "24"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "24"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "100 - 37 =",
+     "answer": "63",
+     "by_pass": {
+      "1": {
+       "rank": 39,
+       "top3": [
+        "37",
+        "100",
+        "0"
+       ]
+      },
+      "2": {
+       "rank": 46,
+       "top3": [
+        "37",
+        "100",
+        "0"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "100",
+        "37"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "37",
+        "100"
+       ]
+      },
+      "5": {
+       "rank": 1,
+       "top3": [
+        "37",
+        "63",
+        "43"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "25 * 4 =",
+     "answer": "100",
+     "by_pass": {
+      "1": {
+       "rank": 5,
+       "top3": [
+        "25",
+        "4",
+        "5"
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        "25",
+        "100",
+        "4"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "10"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "25",
+        "10"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "10"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "81 / 9 =",
+     "answer": "9",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        "81",
+        "9",
+        "3"
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        "81",
+        "9",
+        "3"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "8",
+        "0"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "1",
+        "0"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "81",
+        "0"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "144 / 12 =",
+     "answer": "12",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        "144",
+        "12",
+        "3"
+       ]
+      },
+      "2": {
+       "rank": 1,
+       "top3": [
+        "144",
+        "12",
+        "72"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "1",
+        "0"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "144",
+        "1"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "144",
+        "0"
+       ]
+      }
+     }
+    }
+   ]
+  },
+  "thinkingmachines/TML-d24-varloop-research": {
+   "n_text_tokens": 0,
+   "text": {},
+   "settled_by_pass": {},
+   "probes": {
+    "one_hop": {
+     "n": 16,
+     "top1_rate": {
+      "1": 0.9375,
+      "2": 1.0,
+      "3": 0.9375,
+      "4": 1.0,
+      "5": 0.9375
+     }
+    },
+    "two_hop": {
+     "n": 16,
+     "top1_rate": {
+      "1": 0.875,
+      "2": 0.9375,
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0
+     }
+    },
+    "arithmetic": {
+     "n": 12,
+     "top1_rate": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0
+     }
+    }
+   },
+   "probe_rows": [
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of France is",
+     "answer": "Paris",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " ________",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " ________",
+        " ____"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " ________",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " ________",
+        " not"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " ________",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Japan is",
+     "answer": "Tokyo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " called"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " ________"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " called"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " called"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Italy is",
+     "answer": "Rome",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " ____"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " ____"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ",
+        " ________"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Egypt is",
+     "answer": "Cairo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of England is",
+     "answer": "London",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " ________"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " "
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " ________"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " called"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " called"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Russia is",
+     "answer": "Moscow",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " ________",
+        " ____"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " ________",
+        " called"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " ________",
+        " called"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " ________"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " ________"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of Canada is",
+     "answer": "Ottawa",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "otta"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The capital of China is",
+     "answer": "Beijing",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " ________"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " called"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " called"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " called"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The currency used in Italy is the",
+     "answer": "euro",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " ____"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " ____"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " ____"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " ____"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Euro",
+        " euro",
+        " ____"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The currency used in Japan is the",
+     "answer": "yen",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Japan is",
+     "answer": "Japanese",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        " called",
+        " Japanese",
+        " a"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " ________"
+       ]
+      },
+      "3": {
+       "rank": 1,
+       "top3": [
+        " called",
+        " Japanese",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " not"
+       ]
+      },
+      "5": {
+       "rank": 1,
+       "top3": [
+        " called",
+        " Japanese",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Portugal is",
+     "answer": "Portuguese",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Catalan"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Portugues"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Catalan"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Romance"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Lus",
+        "Romance"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Russia is",
+     "answer": "Russian",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " ________"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in France is",
+     "answer": "French",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " ________"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " ________"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " ________"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " ________"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " ________"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The language spoken in Germany is",
+     "answer": "German",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " not"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " ________"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " ________"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " ________"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " ________"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "one_hop",
+     "prompt": "The colour you get by mixing blue with yellow is",
+     "answer": "green",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " not",
+        " Green"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " called",
+        " orange"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " ________",
+        "..."
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " ________",
+        "..."
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " ________",
+        "..."
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where the Eiffel Tower stands is",
+     "answer": "Paris",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " also",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " the",
+        " also"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " also",
+        " called"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " called",
+        " also"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Paris",
+        " called",
+        " also"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country famous for sushi is",
+     "answer": "Tokyo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " ________"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " ________"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " ",
+        " called"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " called",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Tokyo",
+        " called",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country shaped like a boot is",
+     "answer": "Rome",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ",
+        " ________"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " ____"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " not"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Rome",
+        " ________",
+        " ____"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where the pyramids of Giza stand is",
+     "answer": "Cairo",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Cairo",
+        "cairo",
+        "Giza"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where Big Ben stands is",
+     "answer": "London",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " called"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " the",
+        " not"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " called"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " the"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " London",
+        " not",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country where the Kremlin stands is",
+     "answer": "Moscow",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " named"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " named"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " named"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " named"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Moscow",
+        " called",
+        " named"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country whose flag is a red maple leaf is",
+     "answer": "Ottawa",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Quebec",
+        "Montreal"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Ottawa",
+        "Montreal",
+        "Quebec"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The capital of the country that hosted the 2008 Summer Olympics is",
+     "answer": "Beijing",
+     "by_pass": {
+      "1": {
+       "rank": 2,
+       "top3": [
+        " ",
+        " the",
+        " Beijing"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " the"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Beijing",
+        " ",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The currency used in the country shaped like a boot is the",
+     "answer": "euro",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " ____"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " ____"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " ____"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " ____"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " euro",
+        " Euro",
+        " ____"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The currency used in the country famous for sushi is the",
+     "answer": "yen",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " Japanese",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " yen",
+        " ",
+        " Japanese"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Tokyo is",
+     "answer": "Japanese",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " not"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " not"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " not"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Japanese",
+        " called",
+        " not"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Lisbon is",
+     "answer": "Portuguese",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Catalan",
+        "portuguese"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Romance"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Catalan",
+        "portuguese"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "portuguese",
+        "Romance"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "Portuguese",
+        "Romance",
+        "portuguese"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Moscow is",
+     "answer": "Russian",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " Russian",
+        " called",
+        " "
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country where the Eiffel Tower stands is",
+     "answer": "French",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " the"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " called",
+        " the"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " French",
+        " the",
+        " also"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The language spoken in the country whose capital is Berlin is",
+     "answer": "German",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " also"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " also"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " also"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " German",
+        " called",
+        " also"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "two_hop",
+     "prompt": "The colour you get by mixing the colour of the sky with the colour of a lemon is",
+     "answer": "green",
+     "by_pass": {
+      "1": {
+       "rank": 1,
+       "top3": [
+        " yellow",
+        " green",
+        " the"
+       ]
+      },
+      "2": {
+       "rank": 2,
+       "top3": [
+        " yellow",
+        " the",
+        " green"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " yellow",
+        " the"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " yellow",
+        " the"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        " green",
+        " yellow",
+        " the"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "7 + 5 =",
+     "answer": "12",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "5",
+        "7"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "5",
+        "7"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "5",
+        "7"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "5",
+        "2"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "5",
+        "2"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "9 + 8 =",
+     "answer": "17",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "8",
+        "9"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "8",
+        "9"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "8",
+        "9"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "8",
+        "9"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "17",
+        "8",
+        "9"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "6 * 7 =",
+     "answer": "42",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "7",
+        "6"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "8 * 9 =",
+     "answer": "72",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "72",
+        "9",
+        "8"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "15 + 27 =",
+     "answer": "42",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "15"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "15"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "15"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "15"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "42",
+        "27",
+        "2"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "47 + 38 =",
+     "answer": "85",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "38",
+        "47"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "38",
+        "47"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "47",
+        "38"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "47",
+        "38"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "85",
+        "47",
+        "38"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "63 - 28 =",
+     "answer": "35",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "63",
+        "28"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "28",
+        "63"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "63",
+        "28"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "63",
+        "28"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "35",
+        "63",
+        "28"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "12 * 12 =",
+     "answer": "144",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "1"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "1"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "1"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "1"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "144",
+        "12",
+        "1"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "100 - 37 =",
+     "answer": "63",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "100",
+        "37"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "37",
+        "100"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "100",
+        "37"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "100",
+        "37"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "63",
+        "100",
+        "37"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "25 * 4 =",
+     "answer": "100",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "25"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "25"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "5"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "5"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "100",
+        "4",
+        "5"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "81 / 9 =",
+     "answer": "9",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "81",
+        "8"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "81",
+        "1"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "81",
+        "8"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "81",
+        "8"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "9",
+        "81",
+        "27"
+       ]
+      }
+     }
+    },
+    {
+     "tier": "arithmetic",
+     "prompt": "144 / 12 =",
+     "answer": "12",
+     "by_pass": {
+      "1": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "1",
+        "11"
+       ]
+      },
+      "2": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "144",
+        "1"
+       ]
+      },
+      "3": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "1",
+        "0"
+       ]
+      },
+      "4": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "1",
+        "144"
+       ]
+      },
+      "5": {
+       "rank": 0,
+       "top3": [
+        "12",
+        "1",
+        "144"
+       ]
+      }
+     }
+    }
+   ]
+  }
+ },
+ "gpu_minutes": 2.0364046971003216
+}

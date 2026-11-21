@@ -86,7 +86,7 @@ From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the orde
 
 | # | Question | Method | Status |
 |---|---|---|---|
-| 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | running |
+| 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | answered (see below) |
 | 1 | What crosses the pass boundary through the message channel? | Jacobian lens with a target at each pass end | not started |
 | 4 | Must an edit be held across all passes to stick? | Clamp a concept direction in one pass vs all | not started |
 | 3 | Is the loop state robust to noise, including for refusals? | Noise at the loop entry state; record refusal yes/no only | not started |
@@ -105,7 +105,7 @@ Spend is tracked in [`SPEND.md`](SPEND.md).
 - *Ordinary text:* 60 WikiText-103 paragraphs, 128 tokens each, scored at every position
   after the first 16: next-token accuracy, log-loss, and how often the top prediction already
   equals the 3-pass top prediction.
-- *Probes:* 44 hand-written prompts with a single-token answer in three tiers: one-hop facts,
+- *Probes:* 44 hand-written prompts with a one-word answer in three tiers: one-hop facts,
   two-hop facts built to share answers with the one-hop tier, and arithmetic. Scored by
   whether the answer is the top prediction.
 
@@ -124,6 +124,83 @@ Spend is tracked in [`SPEND.md`](SPEND.md).
 **What this will not show.** Reading the output after *k* passes measures what the post-loop
 layers can decode from pass *k*, not everything pass *k* has computed. The probes are few and
 hand-written. One prompt format, one position per probe.
+
+### Result
+
+Raw data: [`results/pass-sweep.json`](results/pass-sweep.json) (ordinary text),
+[`results/pass-sweep-probes.json`](results/pass-sweep-probes.json) (probes). Scripts: `sweep.py`.
+
+**Probes: share answered correctly (answer is the top prediction), by number of passes.**
+
+| Passes | Inkling 2 Mini: one-hop | two-hop | arithmetic | Variable-loop: one-hop | two-hop | arithmetic |
+|---|---|---|---|---|---|---|
+| 1 | 16/16 | 3/16 | 0/12 | 15/16 | 14/16 | 12/12 |
+| 2 | 16/16 | 11/16 | 3/12 | 16/16 | 15/16 | 12/12 |
+| 3 (trained) | 15/16 | 15/16 | 12/12 | 15/16 | 16/16 | 12/12 |
+| 4 | 13/16 | 7/16 | 11/12 | 16/16 | 16/16 | 12/12 |
+| 5 | 16/16 | 12/16 | 11/12 | 15/16 | 16/16 | 12/12 |
+
+**Ordinary text (6,660 WikiText tokens).**
+
+| Passes | Inkling 2 Mini: accuracy | same top word as 3 passes | Variable-loop: accuracy | same top word as 3 passes |
+|---|---|---|---|---|
+| 1 | 38.3% | 56.8% | 48.5% | 86.2% |
+| 2 | 41.4% | 65.8% | 48.6% | 90.3% |
+| 3 (trained) | 49.5% | 100% | 49.6% | 100% |
+| 4 | 44.9% | 71.4% | 49.8% | 94.2% |
+| 5 | 45.9% | 75.0% | 49.9% | 93.1% |
+
+**What we see.**
+
+- **In the released 3-pass model, stopping after one pass gives the first step of the
+  reasoning, not the answer.** On two-hop questions the top word after one pass is the
+  intermediate entity: `France` (then `Paris` from pass 2), `Japan` (then `Tokyo`), `Italy`
+  (then `Rome` at pass 3), `Russia` (then `Moscow` at pass 3). On arithmetic it is an operand
+  copied from the prompt (`7 + 5 =` gives `7`, then `12` at pass 3). One-hop facts are already
+  right after one pass.
+- **Composition completes at different passes.** Multiplications are right after two passes
+  and additions and subtractions only after three. Two-hop facts split between passes 2 and 3.
+- **The variable-loop sibling answers almost all of the same questions after a single pass.**
+  So these questions do not *need* three passes. A model trained to exit after one pass does
+  both steps in one pass; the model trained only at three spreads them out, or at least leaves
+  its pass-1 state in a form that reads as "step one".
+- **On ordinary text extra passes buy very little** when the model is trained for them: one
+  point of next-word accuracy from one pass to three on the variable-loop checkpoint, and
+  86% of top predictions are already final after one pass.
+- **Off its trained depth the fixed model gets worse in both directions**, and not smoothly:
+  four passes is worse than five on every measure. We have no explanation for that.
+
+**Against the predictions.**
+
+1. *More than half of tokens already agree after one pass:* held on both (56.8% and 86.2%).
+2. *Two-hop gains more from later passes than one-hop:* held strongly on the fixed model
+   (3/16 to 15/16, against no change for one-hop). On the variable-loop model the gain is two
+   probes out of sixteen, which is too few to call.
+3. *The fixed checkpoint loses more at one or two passes:* held.
+4. *Past three passes the fixed checkpoint does not improve:* held; it gets worse.
+
+**How this sits with the prior work.** It agrees with Wang & Reid (harder questions settle in
+later loops) and with Olszowiec et al. on early decisions and on fixed-depth models peaking at
+their trained depth. It is in tension with Olszowiec et al.'s finding that harder problems do
+not make the loop work harder, though they measured something different (prediction flips
+across difficulty levels of one maths dataset). It also confirms the correction to our own
+first lens run: pass 1 is not empty.
+
+**What this does not show.**
+
+- Stopping the fixed model early is off its training distribution. We cannot separate "pass 1
+  has only computed step one" from "pass 1 has more, but the post-loop layers decode an early
+  state as step one". The lens fitted per pass count (question 1) is meant to help with this.
+- The probes are 44 hand-written prompts in one format, and the variable-loop model is at
+  ceiling on them, so they cannot show where extra passes help *that* model.
+- Twelve answers are written by this tokenizer as a space token followed by the word; for
+  those the space was appended to the prompt and the word scored at the next position. The
+  first run scored them one position early; those numbers were discarded.
+
+**Why it matters for monitoring.** In the fixed model, intermediate reasoning that never
+appears in the output can be read off by running fewer passes, with no trained probe and no
+lens. That is a cheap window onto latent reasoning for this design. Whether it stays readable
+on harder tasks, or when a model has a reason to hide it, is untested.
 
 ## Results
 

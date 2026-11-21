@@ -1,0 +1,94 @@
+{
+ "passes": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "ref": 3,
+ "models": {
+  "thinkingmachines/Inkling-2-Mini": {
+   "n_text_tokens": 6660,
+   "text": {
+    "1": {
+     "accuracy": 0.38333333333333336,
+     "log_loss": 3.1604301933769707,
+     "agrees_with_ref_top1": 0.5678678678678679,
+     "kl_from_ref": 0.8778067190725882
+    },
+    "2": {
+     "accuracy": 0.41366366366366364,
+     "log_loss": 2.913148219019801,
+     "agrees_with_ref_top1": 0.6576576576576577,
+     "kl_from_ref": 0.6043632255302177
+    },
+    "3": {
+     "accuracy": 0.49534534534534536,
+     "log_loss": 2.364672704931494,
+     "agrees_with_ref_top1": 1.0,
+     "kl_from_ref": 0.0
+    },
+    "4": {
+     "accuracy": 0.4487987987987988,
+     "log_loss": 2.717329035578547,
+     "agrees_with_ref_top1": 0.7142642642642643,
+     "kl_from_ref": 0.3943255541918872
+    },
+    "5": {
+     "accuracy": 0.4593093093093093,
+     "log_loss": 2.6291695626290355,
+     "agrees_with_ref_top1": 0.7495495495495496,
+     "kl_from_ref": 0.3186646011856583
+    }
+   },
+   "settled_by_pass": {
+    "1": 0.5183183183183183,
+    "2": 0.6576576576576577,
+    "3": 1.0
+   }
+  },
+  "thinkingmachines/TML-d24-varloop-research": {
+   "n_text_tokens": 6660,
+   "text": {
+    "1": {
+     "accuracy": 0.4846846846846847,
+     "log_loss": 2.4454857445335962,
+     "agrees_with_ref_top1": 0.8617117117117117,
+     "kl_from_ref": 0.08752765827350788
+    },
+    "2": {
+     "accuracy": 0.4861861861861862,
+     "log_loss": 2.4303701039907093,
+     "agrees_with_ref_top1": 0.9028528528528529,
+     "kl_from_ref": 0.04454749511168884
+    },
+    "3": {
+     "accuracy": 0.49564564564564567,
+     "log_loss": 2.3938642255536786,
+     "agrees_with_ref_top1": 1.0,
+     "kl_from_ref": 0.0
+    },
+    "4": {
+     "accuracy": 0.4981981981981982,
+     "log_loss": 2.3936277463987423,
+     "agrees_with_ref_top1": 0.9423423423423424,
+     "kl_from_ref": 0.01435620906474712
+    },
+    "5": {
+     "accuracy": 0.4987987987987988,
+     "log_loss": 2.3932182793144707,
+     "agrees_with_ref_top1": 0.9312312312312312,
+     "kl_from_ref": 0.023223423599838852
+    }
+   },
+   "settled_by_pass": {
+    "1": 0.8312312312312312,
+    "2": 0.9028528528528529,
+    "3": 1.0
+   }
+  }
+ },
+ "gpu_minutes": 4.7699617346127825,
+ "note": "Ordinary-text statistics only. Probe scores from this run were mis-scored (answers written as space-token + word were looked for one position early) and have been removed; see pass-sweep-probes.json."
+}
