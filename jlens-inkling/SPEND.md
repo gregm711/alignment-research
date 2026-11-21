@@ -29,5 +29,6 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Two-table message transplant, both checkpoints | 7.3 | $0.38 | $7.82 |
 | 2026-11-21 | Shuffled-rows transplant, first attempt (out of GPU memory) | ~1 | $0.05 | $7.87 |
 | 2026-11-21 | Shuffled-rows transplant, both checkpoints | 11.2 | $0.58 | $8.45 |
+| 2026-11-21 | Held-out pointer and localisation test, both checkpoints | 7.3 | $0.38 | $8.83 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

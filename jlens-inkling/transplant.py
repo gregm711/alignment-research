@@ -4,6 +4,7 @@
     modal run transplant.py                  # writes results/transplant-four-way.json (every eligible pair)
     modal run transplant.py --two-table      # both tables differ: separates carried intermediate from carried query
     modal run transplant.py --shuffled       # rows shuffled too: separates carried animal from carried row position
+    modal run transplant.py --pointer        # held-out tables: does a position marker explain it, and where does it sit?
 
 Donor and recipient are two-step questions that differ in both the item and the second step, so the
 recipient's answer after receiving the donor's messages says what the messages carried:
@@ -89,11 +90,11 @@ def five_outcomes(R, D):
             "d_step_on_r": D["t2"][R["mid"]]}                 # recipient's colour, donor's second table
 
 
-def shuffled_items(wording):
+def shuffled_items(wording, seed=2, n_tables=N_TABLES):
     """Two sides with different first and second tables (seven entries), and every list printed in its own
     random row order, so the row a fact sits in says nothing about which other fact it goes with."""
-    rng, items = random.Random(2), []
-    for t in range(N_TABLES):
+    rng, items = random.Random(seed), []
+    for t in range(n_tables):
         animals, colors, fruits = (rng.sample(pool, 7) for pool in (ANIMALS, COLORS, FRUITS))
         sides = {"a": (dict(zip(animals, colors)), dict(zip(colors, fruits))),
                  "b": (dict(zip(animals, colors[1:] + colors[:1])), dict(zip(colors, fruits[2:] + fruits[:2])))}
@@ -106,6 +107,13 @@ def shuffled_items(wording):
                               "order1": order1, "order2": order2, "same_row": t2[order2[order1.index(q)]],
                               "prompt": f"Fact sheet.\nColors of animals: {first}.\nFruits for colors: {second}.\n"
                                         + LOOKUP_WORDINGS[wording].format(q=q)})
+                # character span of each row of the second list, and of its fruit word, within the prompt
+                pr, spans = items[-1]["prompt"], []
+                for c in order2:
+                    entry = f"{c} goes with the {t2[c]}"
+                    start = pr.index(entry, pr.index("Fruits for colors:"))
+                    spans.append(((start, start + len(entry)), (start + len(entry) - len(t2[c]), start + len(entry))))
+                items[-1]["row_spans"] = spans
     return items
 
 
@@ -142,7 +150,7 @@ def fact_items(wording):
 
 
 @app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=40 * 60)
-def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = False):
+def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = False, pointer: bool = False, regions: bool = False):
     import gc, time
     import torch, transformers
     from huggingface_hub import model_info
@@ -156,19 +164,24 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
         vol.commit()
         text = hf.model.language_model
         text.config.loop_num_passes = 3
-        state = {"mode": None, "i": 0, "saved": [], "src": None, "calls": ()}
+        state = {"mode": None, "i": 0, "saved": [], "src": None, "calls": (), "pos": None}
 
         def on_message(mod, args, output):
             i, state["i"] = state["i"], state["i"] + 1
             if state["mode"] == "record":
                 state["saved"].append(output.detach().cpu())  # kept off the GPU: hundreds of prompts do not fit beside the model
             elif state["mode"] == "patch" and i in state["calls"]:
-                return state["src"][i].to(output.device)
+                src = state["src"][i].to(output.device)
+                if state["pos"] is None:
+                    return src
+                out_ = output.clone()
+                out_[:, state["pos"]] = src[:, state["pos"]]
+                return out_
 
         text.message_input.register_forward_hook(on_message)
 
-        def forward(ids, mode=None, src=None, calls=()):
-            state.update(mode=mode, i=0, saved=[], src=src, calls=set(calls))
+        def forward(ids, mode=None, src=None, calls=(), pos=None):
+            state.update(mode=mode, i=0, saved=[], src=src, calls=set(calls), pos=pos)
             with torch.no_grad():
                 top = int(hf(input_ids=ids, use_cache=False).logits[0, -1].argmax())
             assert state["i"] == 24, state["i"]
@@ -186,6 +199,64 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
                 it["clean_top"], it["msgs"] = forward(it["ids"], "record")
                 it["right"] = it["ans_id"] is not None and it["clean_top"] == it["ans_id"]
             return items
+
+        if pointer:
+            # Held-out tables and the wording this model was not tested with in the shuffled run.
+            released = name == MODELS[0]
+            wording = "qa" if released else "so"
+            items = prepare(shuffled_items(wording, seed=3, n_tables=8))
+            n_tok = None
+
+            def token_positions(it, span):
+                offs = tok(it["prompt"], return_offsets_mapping=True, add_special_tokens=False)["offset_mapping"]
+                return [i for i, (a_, b_) in enumerate(offs) if a_ < span[1] and b_ > span[0]]
+
+            cands = []
+            for R, D in itertools.permutations(items, 2):
+                if R["group"] != D["group"] or R["step"] == D["step"] or R["item"] == D["item"]:
+                    continue
+                if not (R["right"] and D["right"]) or R["ids"].shape != D["ids"].shape:
+                    continue
+                j = D["order2"].index(D["mid"])                      # the row the donor's answer sits in
+                ptr = R["t2"][R["order2"][j]]                        # what the recipient's prompt has in that row
+                free = [k for k in range(7) if k != j and R["order2"][k] != R["mid"]
+                        and R["t2"][R["order2"][k]] not in (D["answer"], R["answer"])]
+                if ptr in (R["answer"], D["answer"]) or not free:
+                    continue
+                cands.append((R, D, j, ptr, free[(len(cands)) % len(free)]))
+            sample = random.Random(0).sample(cands, min(150, len(cands)))
+            conds = ["full", "only_row", "all_but_row", "only_fruit_token", "other_row"] if released else ["full", "only_row"]
+            region_names = ["table1", "table2", "question", "last_token", "table1+table2", "table1+question", "table2+question"]
+            if regions:
+                conds = region_names
+            rows = []
+            for R, D, j, ptr, k in sample:
+                row_pos, fruit_pos = token_positions(D, D["row_spans"][j][0]), token_positions(D, D["row_spans"][j][1])
+                other_pos = token_positions(D, D["row_spans"][k][0])
+                everything = list(range(R["ids"].shape[1]))
+                where = {"full": None, "only_row": row_pos, "all_but_row": [x for x in everything if x not in row_pos],
+                         "only_fruit_token": fruit_pos, "other_row": other_pos}
+                if regions:  # character regions of the prompt: the two table lines and the question after them
+                    pr = D["prompt"]
+                    b1, b2 = pr.index("\nFruits for colors:"), pr.index("\n", pr.index("\nFruits for colors:") + 1)
+                    reg = {"table1": token_positions(D, (0, b1)), "table2": token_positions(D, (b1, b2)),
+                           "question": token_positions(D, (b2, len(pr))), "last_token": [everything[-1]]}
+                    where = {n: sorted({x for part in n.split("+") for x in reg[part]}) for n in region_names}
+                words = {"pointer": ptr, "recipient": R["answer"], "donor": D["answer"], "other_row_fruit": R["t2"][R["order2"][k]]}
+                expected = {a_: token(b_) for a_, b_ in words.items()}
+                row = {"recipient": R["prompt"], "donor": D["prompt"], "expected": words, "row_token_positions": row_pos}
+                for c in conds:
+                    top, _ = forward(R["ids"], "patch", D["msgs"], PASS_SETS["pass3"], where[c])
+                    row[c] = {"top": tok.decode([top]), "outcome": next((a_ for a_, b_ in expected.items() if b_ == top), "other")}
+                rows.append(row)
+            kinds = ("pointer", "recipient", "donor", "other_row_fruit", "other")
+            counts = {c: {k_: sum(r[c]["outcome"] == k_ for r in rows) for k_ in kinds} for c in conds}
+            unaided = f"{sum(it['right'] for it in items)}/{len(items)}"
+            print(f"\n=== {name.split('/')[-1]} | wording {wording!r} | unaided {unaided} | {len(cands)} qualifying pairs, {len(rows)} sampled")
+            for c, v in counts.items():
+                print(f"    {c:<17} " + "  ".join(f"{a_} {b_}" for a_, b_ in v.items()), flush=True)
+            return {"revision": model_info(name).sha, "wording": wording, "unaided": unaided, "n_qualifying": len(cands),
+                    ("region_test" if regions else "pointer_test"): {"n_pairs": len(rows), "counts": counts, "rows": rows}}
 
         if shuffled:
             tried = {w: prepare(shuffled_items(w)) for w in ("so", "qa")}
@@ -288,7 +359,7 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
                 print(f"    into {ps}: " + "  ".join(f"{k} {v}" for k, v in c.items()), flush=True)
         return res
 
-    for name in MODELS[:1] if clean_only else MODELS:
+    for name in MODELS[:1] if (clean_only or regions) else MODELS:
         out["models"][name] = one_model(name)  # locals die on return, freeing the model
         gc.collect(); torch.cuda.empty_cache()
     out["gpu_minutes"] = (time.time() - t0) / 60
@@ -297,10 +368,11 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
 
 
 @app.local_entrypoint()
-def main(clean_only: bool = False, two_table: bool = False, shuffled: bool = False):
-    out = run.remote(clean_only, two_table, shuffled)
+def main(clean_only: bool = False, two_table: bool = False, shuffled: bool = False, pointer: bool = False, regions: bool = False):
+    out = run.remote(clean_only, two_table, shuffled, pointer or regions, regions)
     if not clean_only:
-        name = "transplant-shuffled.json" if shuffled else "transplant-two-table.json" if two_table else "transplant-four-way.json"
+        name = ("transplant-regions.json" if regions else "transplant-pointer.json" if pointer else "transplant-shuffled.json" if shuffled
+                else "transplant-two-table.json" if two_table else "transplant-four-way.json")
         path = pathlib.Path(__file__).parent / "results" / name
         path.write_text(json.dumps(out, indent=1))
         print("wrote", path)

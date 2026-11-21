@@ -1117,6 +1117,57 @@ the row still produces the pointer fruit, the information is not at that positio
 Whether real-fact questions use the same mechanism is untested, and the capital result is
 only consistent with it.
 
+### Result
+
+Raw data, every sampled pair: [`results/transplant-pointer.json`](results/transplant-pointer.json).
+
+**Test 1, replication on new tables and unseen wording: held.**
+
+| Model | pairs | pointer fruit | recipient's | donor's | other |
+|---|---|---|---|---|---|
+| Inkling 2 Mini | 150 | **145** | 2 | 0 | 3 |
+| variable-loop | 150 | 123 | 5 | 1 | 21 |
+
+**Test 2, localisation on the released model: both predictions failed.**
+
+| Transplant only… | pointer fruit | recipient's | donor's | other |
+|---|---|---|---|---|
+| the donor's answer row | **1** | 149 | 0 | 0 |
+| everything except that row | **47** | 20 | 16 | 67 |
+| the row's fruit token | 0 | 150 | 0 | 0 |
+| an unrelated row | 0 | 149 | 0 | 1 |
+
+**What we see.**
+
+- **The behavioural rule is real.** After a full transplant into the final pass, the model
+  answers with whatever its own prompt has in the row where the donor's answer sat. That
+  now holds on three table designs, two wordings and held-out tables, with the prediction
+  made in advance the last time.
+- **The messages therefore say *where* the answer is, not *what* it is.** The donor's
+  answer, colour and animal all lose to the position.
+- **But the marker is not stored at the place it points to.** Transplanting the messages at
+  that row alone does nothing, and removing them from a full transplant still leaves the
+  rule working a third of the time. We predicted the opposite on both counts.
+
+**Against the predictions.** Test 1: held (97% against a stated 85%). Test 2: wrong on the
+row-only transplant (1 of 150, predicted most) and on the all-but-row transplant (47 of 150,
+predicted under 10%). The unrelated-row control came out as expected, trivially.
+
+**What this does not show.** Where the pointer is stored; the next section looks. Whether
+anything like it happens on questions about real facts. One invented task.
+
+## Follow-up: where is the pointer stored? Transplanting by region
+
+### Plan (written before running)
+
+Same 150 held-out pairs on the released model, pass 3. Transplant the donor's messages only
+within one region of the prompt at a time: the first table, the second table, the question
+at the end, the final token alone, and pairs of regions. Outcome: how often the pointer
+fruit is the answer.
+
+**Prediction, held loosely after two misses:** the question region at the end is necessary
+(transplants that leave it out rarely give the pointer fruit) and is not sufficient alone.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
