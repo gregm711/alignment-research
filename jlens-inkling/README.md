@@ -13,6 +13,19 @@ The tool is the [Jacobian lens](https://github.com/anthropics/jacobian-lens) fro
 [Gurnee et al., 2026](https://transformer-circuits.pub/2026/workspace/index.html): a linear map
 per layer that reads out which words the model is poised to say at that point.
 
+## Prior art
+
+Found after the first run (titles and dates checked on arXiv; papers not yet read):
+
+- [Looped Transformers under the Jacobian Lens: Does the Global Workspace Survive Recurrence?](https://arxiv.org/abs/2609.01924) (September 2026)
+- [Monitoring latent reasoning in looped language models](https://arxiv.org/abs/2610.18127) (October 2026)
+
+So the Jacobian lens has already been applied to looped models. A secondhand summary says they
+used Ouro-2.6B and Huginn and found the lens degrades across loop boundaries; that needs
+checking against the papers. What we have found no prior work on is this model's design, where
+each pass restarts from the pre-loop state and passes exchange gated messages, or on its
+variable-loop research checkpoint. Reading both papers is the next step before any claim of novelty.
+
 ## Predictions (written before the first results)
 
 1. The intermediate answer on multi-step questions becomes readable at a specific pass, not

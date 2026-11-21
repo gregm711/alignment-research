@@ -10,6 +10,9 @@ and less in visible text, which works against chain-of-thought monitoring. If a 
 readout still recovers intermediate reasoning from inside the loop, that is good news for
 oversight of this design; if it doesn't, that is worth saying too.
 
+The lens has already been applied to other looped models (see the experiment's README for the
+prior art). Our angle is this model's restart-and-message design and its variable-loop checkpoint.
+
 ## 2. A side-effects scorecard for abliterated models
 
 Abliterated and "uncensored" models have millions of downloads on Hugging Face and almost no
@@ -32,6 +35,11 @@ poisoning all show fine-tuning changes more than intended. Introspection adapter
 AuditBench are the lab-side versions.
 
 ## 5. Expert routing as a free monitor
+
+**Update, 2026-11-21: this is crowded.** RouterInterp (arXiv 2610.11775) and The Expert Strikes
+Back (arXiv 2604.02178) already study routing and expert-level interpretation, and a secondhand
+list names several more. Only worth doing tied to something unstudied, such as how routing
+drifts across loop passes.
 
 In mixture-of-experts models the router's choices are discrete and cheap to log. Do routing
 patterns predict refusals, deception or "I'm being tested" behaviour? Can pinning or removing
