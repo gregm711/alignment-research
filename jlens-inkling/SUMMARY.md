@@ -1,10 +1,12 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). The work was done on 2026-11-21 for about $10 of GPU time (see
-[`SPEND.md`](SPEND.md)). It has had one
-[independent review](../notes/independent-review-2026-11-21.md), which reproduced the main
-result, corrected two measurements and narrowed several claims. This page reflects that review.
+[`results/`](results/). The work was done on 2026-11-21 for about $11 of GPU time (see
+[`SPEND.md`](SPEND.md)). It has had two independent
+reviews, [one of the earlier experiments](../notes/independent-review-2026-11-21.md) and
+[one of the lookup-table experiments](../notes/independent-review-lookup.md). Between them
+they reproduced the main results, corrected several measurements and narrowed many claims.
+This page reflects both.
 
 ## The model
 
@@ -35,20 +37,21 @@ Goodfire nor Thinking Machines did, as far as we know.
 *What it does not show:* which information the messages carry. In these pairs the city, the
 country and the language all change together. The 42 pairs come from 7 prompts.
 
-**2. What the final pass takes from those messages is a place to read, not an answer.
-(Held up on new tables with the prediction made first; not yet independently reproduced.)**
-Give the model two small invented lookup tables and a two-step question. Transplant another
+**2. After a transplant, the final pass answers from its own prompt, at the place the donor's
+answer occupied. (Counts reproduced by a second independent review; mechanism open.)** Give
+the model two small invented lookup tables and a two-step question. Transplant another
 prompt's messages into the final pass, and the model answers with whatever *its own* prompt
-has in the row where the other prompt's answer sat. That beat every alternative we could
-separate: the donor's finished answer, its intermediate, the item it asked about, and that
-item's row. On fresh tables and a new wording it did so in 145 of 150 pairs on the released
-model and 123 of 150 on the sibling. With rows shuffled the model still answers 168 of 168
-unaided, so it is doing the lookup and not reading across rows.
+has in the row where the other prompt's answer sat. On new tables this held in 145 of 150
+pairs on the released model (criterion set in advance: 85%) and 123 of 150 on the sibling.
+When the fruit in that row of the recipient's prompt is changed, the answer follows the
+change in 84 to 90% of trials.
 
-*What it does not show:* how. The marker is not stored at the row it points to (1 of 150),
-it needs the messages at both the second table and the question (140 of 150 together; 6 and
-34 apart), and no subset of the message's four parts reproduces it. Three of our guesses
-about the mechanism failed. It is one invented task; we could not build a real-facts version.
+*What it does not show:* what the messages contain. A second review found several
+explanations the data cannot separate: counting the row from the front or the end, token
+position, a "translated" finished answer, and donor-specific mappings, because every list
+has the same length and each donor was paired with one recipient layout. We wrote that the
+messages "say where, not what"; the behaviour supports that description and the evidence
+does not establish it. It is one invented task.
 
 **3. The released model needs its later passes for multi-step questions; its sibling does
 not.** On 135 public items written by Anthropic, rescored by the reviewer: multi-hop accuracy
@@ -66,6 +69,16 @@ lens hits without an output hit.
 
 *What it does not show:* a monitor. The lens was told which word to look for and searched
 every layer.
+
+## A negative result on the question that matters most
+
+We built 330 confirmed cases where the model gives the right answer by reading the wrong
+row, which neither the answer nor the model's confidence reveals. A fixed direction in the
+model's internal state at the final token, chosen on training tables, could not tell them
+from right-route cases on new tables: AUC 0.48, against 0.49 for output confidence. We
+predicted above 0.8. The simplest form of "give the overseer the internal state" did not
+help here. The test looked only at the final token and had no positive control, so it does
+not show that no internal readout would.
 
 ## What we withdrew or would not lean on
 
@@ -86,14 +99,15 @@ every layer.
 
 One day, one author, small hand-written test sets, and at least four scoring or memory
 bugs, three caught at the time and one found by the reviewer. Two of the claims we were
-most pleased with did not survive checking, and on the lookup-table work five of our eight
-written predictions were wrong. The parts that held are the ones that were
+most pleased with did not survive checking, and on the lookup-table and oversight work seven
+of our eleven written predictions were wrong. The parts that held are the ones that were
 re-tested on other people's prompts or reproduced by someone else's code.
 
 ## Next
 
-- An independent check of the lookup-table results, which are newer than the review.
-- Whether the "place to read" behaviour appears on questions about real facts.
-- Then the question that connects this to oversight: when two routes give the same visible
-  answer, can a fixed readout of the model's internal state tell a reviewer which route it
-  took, on examples it has not seen?
+- Separate the surviving explanations of the transplant result, as the second review
+  proposes: one donor crossed with many independently generated recipient layouts, lists of
+  different lengths, and the same donor answer at different positions.
+- Give the oversight test a fair second attempt: a readout of where the final pass attends,
+  with a positive control showing the pipeline can detect something known to be there.
+- Whether any of this appears on questions about real facts.

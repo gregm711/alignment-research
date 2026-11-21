@@ -1,0 +1,5768 @@
+{
+ "row_indexing": "1-based within each original model rows array; group IDs are generator IDs (0-based). Full outcomes in regions/parts joined from pointer by both complete prompts; no full run in those files.",
+ "sha256_inputs": {
+  "transplant-four-way.json": "4bedaddf555ec51f28b32f11ddfc6e84201ad7efb61ce59dbcc6b7f993fb2092",
+  "transplant-two-table.json": "81a5f1eb4b0710471876a0e9dcbd4facc24997cb4d58b439bf579f5c349adf4a",
+  "transplant-shuffled.json": "855ac01b46ade8dd173230bdbb80544a53be500ee32944cd90d35530d287ee21",
+  "transplant-pointer.json": "0cdde8a6b7bb91dce5328078a13fdc3871a5790f4c4ce7c35e602839e238436c",
+  "transplant-regions.json": "7295cf11c939d62dc4f75828126954bfd9089ce98e90cc0874673fc99c5dd078",
+  "transplant-parts.json": "8ef5c8f93cb36f62228569725d876ab13a1330edd6159f3fdfc45a94ffa69588",
+  "transplant.py": "fda539582ee80d435d08a14fb3eaba13ad435ac0ac39c66e48ddac03abbfc892",
+  "model.py": "1c8e65b45a11c13ecad86c088105acd5e4567123ef6599844a95912d242e9f28",
+  "tokenizer.json": "7f332727f9a3f093dd452a39cc978e6757627e5dad1b0673aa4e75174f236dd6"
+ },
+ "checks": {
+  "held_out_overlaps_old_new_shared": {
+   "rendered_tables": [
+    24,
+    16,
+    0
+   ],
+   "assignments": [
+    24,
+    16,
+    0
+   ],
+   "first_table": [
+    24,
+    16,
+    0
+   ],
+   "second_table": [
+    24,
+    16,
+    0
+   ],
+   "animal_set": [
+    12,
+    8,
+    0
+   ],
+   "colour_set": [
+    12,
+    8,
+    0
+   ],
+   "fruit_set": [
+    1,
+    1,
+    1
+   ],
+   "first_facts": [
+    103,
+    78,
+    58
+   ],
+   "second_facts": [
+    69,
+    65,
+    53
+   ]
+  },
+  "eligibility_reconstruction": {
+   "mini": {
+    "qualifying": 504,
+    "preclean": 526,
+    "possible_missing": 5,
+    "unique_clean_mask_solutions": 1,
+    "clean_from_sample": 107,
+    "sample_indices": [
+     432,
+     197,
+     388,
+     455,
+     215,
+     20,
+     132,
+     494,
+     261,
+     248,
+     207,
+     470,
+     401,
+     424,
+     155,
+     244,
+     183,
+     298,
+     456,
+     464,
+     111,
+     258,
+     71,
+     144,
+     481,
+     386,
+     48,
+     316,
+     409,
+     128,
+     465,
+     272,
+     361,
+     414,
+     308,
+     461,
+     75,
+     158,
+     50,
+     373,
+     37,
+     460,
+     435,
+     350,
+     169,
+     241,
+     286,
+     51,
+     181,
+     222,
+     161,
+     312,
+     327,
+     104,
+     282,
+     488,
+     226,
+     443,
+     266,
+     133,
+     31,
+     412,
+     280,
+     7,
+     47,
+     368,
+     430,
+     204,
+     363,
+     422,
+     491,
+     342,
+     320,
+     0,
+     313,
+     252,
+     423,
+     170,
+     124,
+     484,
+     166,
+     360,
+     32,
+     97,
+     290,
+     113,
+     122,
+     411,
+     72,
+     416,
+     278,
+     229,
+     46,
+     41,
+     163,
+     260,
+     250,
+     55,
+     154,
+     449,
+     149,
+     471,
+     63,
+     441,
+     426,
+     276,
+     450,
+     469,
+     400,
+     300,
+     147,
+     227,
+     492,
+     305,
+     502,
+     162,
+     294,
+     123,
+     148,
+     94,
+     96,
+     95,
+     16,
+     429,
+     336,
+     444,
+     243,
+     35,
+     45,
+     347,
+     66,
+     76,
+     19,
+     410,
+     358,
+     398,
+     349,
+     200,
+     402,
+     268,
+     141,
+     267,
+     120,
+     110,
+     374,
+     301,
+     214,
+     296,
+     140,
+     230
+    ],
+    "excluded_inferred": [
+     "Fact sheet.\nColors of animals: the cat is purple, the yak is pink, the ant is gold, the bee is blue, the dog is gray, the hen is white, the cow is red.\nFruits for colors: pink goes with the fig, gray goes with the lime, blue goes with the olive, white goes with the orange, purple goes with the apple, gold goes with the date, red goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+     "Fact sheet.\nColors of animals: the rat is pink, the cow is gold, the bee is green, the ram is black, the cat is red, the pig is brown, the ant is purple.\nFruits for colors: black goes with the date, pink goes with the orange, red goes with the fig, gold goes with the olive, green goes with the apple, purple goes with the grape, brown goes with the lime.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the"
+    ]
+   },
+   "sibling": {
+    "qualifying": 440,
+    "preclean": 526,
+    "possible_missing": 14,
+    "unique_clean_mask_solutions": 1,
+    "clean_from_sample": 98,
+    "sample_indices": [
+     432,
+     197,
+     388,
+     215,
+     20,
+     132,
+     261,
+     248,
+     207,
+     401,
+     424,
+     155,
+     244,
+     183,
+     298,
+     111,
+     258,
+     71,
+     144,
+     422,
+     386,
+     48,
+     316,
+     409,
+     128,
+     272,
+     361,
+     308,
+     75,
+     158,
+     50,
+     373,
+     37,
+     350,
+     169,
+     241,
+     286,
+     51,
+     181,
+     222,
+     161,
+     312,
+     327,
+     104,
+     282,
+     427,
+     226,
+     266,
+     133,
+     31,
+     280,
+     7,
+     47,
+     368,
+     204,
+     363,
+     342,
+     320,
+     0,
+     313,
+     252,
+     170,
+     124,
+     408,
+     166,
+     360,
+     32,
+     97,
+     290,
+     113,
+     122,
+     72,
+     278,
+     229,
+     46,
+     41,
+     163,
+     260,
+     250,
+     55,
+     154,
+     395,
+     149,
+     63,
+     389,
+     378,
+     276,
+     396,
+     412,
+     355,
+     300,
+     147,
+     227,
+     365,
+     305,
+     438,
+     162,
+     294,
+     123,
+     148,
+     94,
+     96,
+     95,
+     16,
+     380,
+     391,
+     243,
+     35,
+     45,
+     66,
+     76,
+     19,
+     364,
+     353,
+     200,
+     268,
+     141,
+     267,
+     120,
+     110,
+     301,
+     214,
+     296,
+     140,
+     230,
+     379,
+     182,
+     42,
+     375,
+     59,
+     249,
+     349,
+     171,
+     372,
+     377,
+     8,
+     138,
+     310,
+     112,
+     190,
+     87,
+     354,
+     218,
+     390,
+     402,
+     74,
+     319,
+     23,
+     273,
+     407
+    ],
+    "excluded_inferred": [
+     "Fact sheet.\nColors of animals: the bee is pink, the hen is red, the ant is blue, the cat is gray, the dog is white, the yak is purple, the cow is gold.\nFruits for colors: purple goes with the orange, red goes with the olive, gray goes with the grape, blue goes with the apple, white goes with the date, pink goes with the lime, gold goes with the fig.\nSo the fruit that goes with the yak is the",
+     "Fact sheet.\nColors of animals: the cat is purple, the yak is pink, the ant is gold, the bee is blue, the dog is gray, the hen is white, the cow is red.\nFruits for colors: pink goes with the fig, gray goes with the lime, blue goes with the olive, white goes with the orange, purple goes with the apple, gold goes with the date, red goes with the grape.\nSo the fruit that goes with the yak is the",
+     "Fact sheet.\nColors of animals: the hen is gold, the pig is white, the elk is pink, the cat is red, the bee is purple, the rat is gray, the ant is yellow.\nFruits for colors: gray goes with the fig, purple goes with the grape, red goes with the date, white goes with the lime, pink goes with the orange, yellow goes with the apple, gold goes with the olive.\nSo the fruit that goes with the bee is the",
+     "Fact sheet.\nColors of animals: the hen is gold, the pig is white, the elk is pink, the cat is red, the bee is purple, the rat is gray, the ant is yellow.\nFruits for colors: gray goes with the fig, purple goes with the grape, red goes with the date, white goes with the lime, pink goes with the orange, yellow goes with the apple, gold goes with the olive.\nSo the fruit that goes with the elk is the",
+     "Fact sheet.\nColors of animals: the hen is white, the elk is pink, the bat is yellow, the ram is brown, the bee is red, the ant is gray, the cat is purple.\nFruits for colors: yellow goes with the fig, red goes with the date, purple goes with the grape, brown goes with the orange, white goes with the apple, gray goes with the lime, pink goes with the olive.\nSo the fruit that goes with the bat is the",
+     "Fact sheet.\nColors of animals: the hen is white, the elk is pink, the bat is yellow, the ram is brown, the bee is red, the ant is gray, the cat is purple.\nFruits for colors: yellow goes with the fig, red goes with the date, purple goes with the grape, brown goes with the orange, white goes with the apple, gray goes with the lime, pink goes with the olive.\nSo the fruit that goes with the cat is the",
+     "Fact sheet.\nColors of animals: the rat is black, the elk is purple, the cow is gold, the yak is gray, the bat is brown, the ram is red, the ant is white.\nFruits for colors: gray goes with the fig, red goes with the grape, brown goes with the orange, gold goes with the apple, black goes with the date, purple goes with the lime, white goes with the olive.\nSo the fruit that goes with the ram is the",
+     "Fact sheet.\nColors of animals: the rat is pink, the cow is gold, the bee is green, the ram is black, the cat is red, the pig is brown, the ant is purple.\nFruits for colors: black goes with the date, pink goes with the orange, red goes with the fig, gold goes with the olive, green goes with the apple, purple goes with the grape, brown goes with the lime.\nSo the fruit that goes with the ram is the"
+    ]
+   }
+  },
+  "same_pair_across_pointer_models": 62,
+  "facts": {
+   "mini": {
+    "pairs": 0,
+    "counts": {
+     "pass3": {},
+     "pass2": {}
+    },
+    "recipients": 0
+   },
+   "sibling": {
+    "pairs": 12,
+    "counts": {
+     "pass3": {
+      "other": 9,
+      "d_step_on_r": 1,
+      "donor": 1,
+      "recipient": 1
+     },
+     "pass2": {
+      "recipient": 12
+     }
+    },
+    "recipients": 8
+   }
+  },
+  "paired_conditions": {
+   "pointer/all_but_row": {
+    "(True, True)": 47,
+    "(True, False)": 98,
+    "(False, False)": 5
+   },
+   "regions/table1+table2": {
+    "(True, False)": 137,
+    "same_top": 10,
+    "(True, True)": 8,
+    "(False, False)": 5
+   },
+   "regions/table1+question": {
+    "(True, True)": 26,
+    "same_top": 27,
+    "(True, False)": 119,
+    "(False, False)": 5
+   },
+   "regions/table2+question": {
+    "(True, True)": 140,
+    "same_top": 145,
+    "(False, False)": 5,
+    "(True, False)": 5
+   },
+   "parts/all four parts": {
+    "(True, True)": 140,
+    "same_top": 145,
+    "(False, False)": 5,
+    "(True, False)": 5
+   },
+   "parts/values and expert-layer vs all four parts": {
+    "(True, True)": 51,
+    "(False, True)": 89,
+    "(False, False)": 10
+   },
+   "regions/question vs table2+question": {
+    "(False, True)": 106,
+    "(True, True)": 34,
+    "(False, False)": 10
+   },
+   "regions/table2 vs table2+question": {
+    "(False, True)": 134,
+    "(True, True)": 6,
+    "(False, False)": 10
+   }
+  },
+  "readme_tables_compared": {
+   "tables": 7,
+   "body_rows": 30,
+   "numeric_cells": 142,
+   "mismatches": 0
+  },
+  "pins": [
+   [
+    "046bdb8cc2cee29d233964bb77fe6fd37cfe4aa3"
+   ],
+   {
+    "thinkingmachines/Inkling-2-Mini": [
+     "ed40e7da625f594fc9c4990f5f66be24873c22d7"
+    ],
+    "thinkingmachines/TML-d24-varloop-research": [
+     "657b53ba5da7baefe9ff15dca5cd25f5bd3dbaa2"
+    ]
+   }
+  ],
+  "plan_commit_to_results_commit": {
+   "86ee960": "c5a265d",
+   "c5a265d": "b92f272",
+   "b92f272": "23e5ff5",
+   "23e5ff5": "696eea5",
+   "696eea5": "bb0c503",
+   "bb0c503": "3fb909c"
+  },
+  "cpu_hook_test": {
+   "checkpoint_loaded": false,
+   "message_builder_calls_per_mock_forward": 24,
+   "test_cases": [
+    "all pass 2",
+    "all pass 3",
+    "positions",
+    "two Cartesian position-part masks",
+    "empty positions",
+    "all components within selected positions"
+   ],
+   "incorrect_tensor_cells": 0
+  }
+ },
+ "files": {
+  "four-way/mini": {
+   "n": 96,
+   "conditions": {
+    "pass3": {
+     "r_step_on_d": 96
+    },
+    "pass2": {
+     "r_step_on_d": 71,
+     "recipient": 23,
+     "d_step_on_r": 1,
+     "other": 1
+    }
+   },
+   "raw_donor_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "extra_tie_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "clean": {
+    "lookup": {
+     "is_the": "76/96",
+     "so": "96/96",
+     "qa": "96/96",
+     "used": "so"
+    },
+    "facts": {
+     "speak_pay": "6/14",
+     "language_continent": "8/14",
+     "language_currency_the": "4/14",
+     "used": "language_continent"
+    }
+   },
+   "qualifying": {
+    "structural": 288,
+    "preclean": 96,
+    "pointer_pass2": 71
+   },
+   "recipient_prompts": 96,
+   "donor_prompts": 96,
+   "tables": 12,
+   "seen_endpoints": 96,
+   "num_regenerated_prompts": 96,
+   "display_first_row_clean": 96,
+   "sampled_other_row_hist": {},
+   "pointer_hits": 96,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 96,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 96,
+    "animal": 96,
+    "animal_row": 96,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 96,
+    "end_row": 96,
+    "fruit_token": 96,
+    "colour_token": 96,
+    "fruit_from_end": 96,
+    "read_rec_key": 96,
+    "replacement_dictionary": 96,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 24
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 96,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 96,
+    "animal": 96,
+    "animal_row": 96,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 96,
+    "end_row": 96,
+    "fruit_token": 96,
+    "colour_token": 96,
+    "fruit_from_end": 96,
+    "read_rec_key": 96,
+    "replacement_dictionary": 96,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 24
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     96,
+     96,
+     0
+    ],
+    "donor": [
+     96,
+     96,
+     0
+    ],
+    "donor_map_rec_colour": [
+     96,
+     96,
+     0
+    ],
+    "mirror": [
+     96,
+     96,
+     0
+    ],
+    "first_fruit": [
+     72,
+     72,
+     0
+    ],
+    "last_fruit": [
+     72,
+     72,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 96,
+    "pointer|donor": 96,
+    "pointer|colour": 0,
+    "pointer|animal": 0,
+    "pointer|animal_row": 0,
+    "pointer|donor_map_rec_colour": 96,
+    "pointer|first_row_colour": 0,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 96,
+    "pointer|first_fruit": 72,
+    "pointer|last_fruit": 72,
+    "recipient|donor": 96,
+    "recipient|colour": 96,
+    "recipient|animal": 96,
+    "recipient|animal_row": 96,
+    "recipient|donor_map_rec_colour": 96,
+    "recipient|first_row_colour": 96,
+    "recipient|end_row": 96,
+    "recipient|fruit_token": 96,
+    "recipient|colour_token": 96,
+    "recipient|fruit_from_end": 96,
+    "recipient|read_rec_key": 96,
+    "recipient|replacement_dictionary": 96,
+    "recipient|mirror": 96,
+    "recipient|first_fruit": 72,
+    "recipient|last_fruit": 72,
+    "donor|colour": 96,
+    "donor|animal": 96,
+    "donor|animal_row": 96,
+    "donor|donor_map_rec_colour": 96,
+    "donor|first_row_colour": 96,
+    "donor|end_row": 96,
+    "donor|fruit_token": 96,
+    "donor|colour_token": 96,
+    "donor|fruit_from_end": 96,
+    "donor|read_rec_key": 96,
+    "donor|replacement_dictionary": 96,
+    "donor|mirror": 48,
+    "donor|first_fruit": 72,
+    "donor|last_fruit": 72,
+    "colour|animal": 0,
+    "colour|animal_row": 0,
+    "colour|donor_map_rec_colour": 96,
+    "colour|first_row_colour": 0,
+    "colour|end_row": 0,
+    "colour|fruit_token": 0,
+    "colour|colour_token": 0,
+    "colour|fruit_from_end": 0,
+    "colour|read_rec_key": 0,
+    "colour|replacement_dictionary": 0,
+    "colour|mirror": 96,
+    "colour|first_fruit": 72,
+    "colour|last_fruit": 72,
+    "animal|animal_row": 0,
+    "animal|donor_map_rec_colour": 96,
+    "animal|first_row_colour": 0,
+    "animal|end_row": 0,
+    "animal|fruit_token": 0,
+    "animal|colour_token": 0,
+    "animal|fruit_from_end": 0,
+    "animal|read_rec_key": 0,
+    "animal|replacement_dictionary": 0,
+    "animal|mirror": 96,
+    "animal|first_fruit": 72,
+    "animal|last_fruit": 72,
+    "animal_row|donor_map_rec_colour": 96,
+    "animal_row|first_row_colour": 0,
+    "animal_row|end_row": 0,
+    "animal_row|fruit_token": 0,
+    "animal_row|colour_token": 0,
+    "animal_row|fruit_from_end": 0,
+    "animal_row|read_rec_key": 0,
+    "animal_row|replacement_dictionary": 0,
+    "animal_row|mirror": 96,
+    "animal_row|first_fruit": 72,
+    "animal_row|last_fruit": 72,
+    "donor_map_rec_colour|first_row_colour": 96,
+    "donor_map_rec_colour|end_row": 96,
+    "donor_map_rec_colour|fruit_token": 96,
+    "donor_map_rec_colour|colour_token": 96,
+    "donor_map_rec_colour|fruit_from_end": 96,
+    "donor_map_rec_colour|read_rec_key": 96,
+    "donor_map_rec_colour|replacement_dictionary": 96,
+    "donor_map_rec_colour|mirror": 48,
+    "donor_map_rec_colour|first_fruit": 72,
+    "donor_map_rec_colour|last_fruit": 72,
+    "first_row_colour|end_row": 0,
+    "first_row_colour|fruit_token": 0,
+    "first_row_colour|colour_token": 0,
+    "first_row_colour|fruit_from_end": 0,
+    "first_row_colour|read_rec_key": 0,
+    "first_row_colour|replacement_dictionary": 0,
+    "first_row_colour|mirror": 96,
+    "first_row_colour|first_fruit": 72,
+    "first_row_colour|last_fruit": 72,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 96,
+    "end_row|first_fruit": 72,
+    "end_row|last_fruit": 72,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 96,
+    "fruit_token|first_fruit": 72,
+    "fruit_token|last_fruit": 72,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 96,
+    "colour_token|first_fruit": 72,
+    "colour_token|last_fruit": 72,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 96,
+    "fruit_from_end|first_fruit": 72,
+    "fruit_from_end|last_fruit": 72,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 96,
+    "read_rec_key|first_fruit": 72,
+    "read_rec_key|last_fruit": 72,
+    "replacement_dictionary|mirror": 96,
+    "replacement_dictionary|first_fruit": 72,
+    "replacement_dictionary|last_fruit": 72,
+    "mirror|first_fruit": 72,
+    "mirror|last_fruit": 72,
+    "first_fruit|last_fruit": 96
+   },
+   "failures": [],
+   "by_group": {
+    "0": [
+     8,
+     8
+    ],
+    "1": [
+     8,
+     8
+    ],
+    "2": [
+     8,
+     8
+    ],
+    "3": [
+     8,
+     8
+    ],
+    "4": [
+     8,
+     8
+    ],
+    "5": [
+     8,
+     8
+    ],
+    "6": [
+     8,
+     8
+    ],
+    "7": [
+     8,
+     8
+    ],
+    "8": [
+     8,
+     8
+    ],
+    "9": [
+     8,
+     8
+    ],
+    "10": [
+     8,
+     8
+    ],
+    "11": [
+     8,
+     8
+    ]
+   },
+   "by_target_row": {
+    "3": [
+     24,
+     24
+    ],
+    "4": [
+     24,
+     24
+    ],
+    "1": [
+     24,
+     24
+    ],
+    "2": [
+     24,
+     24
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 96,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(96, 96)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 96,
+    "nearest_absolute_fruit_character_start_same": 96,
+    "nearest_list_relative_fruit_character_start_hits": 96,
+    "nearest_list_relative_fruit_character_start_same": 96
+   }
+  },
+  "four-way/sibling": {
+   "n": 96,
+   "conditions": {
+    "pass3": {
+     "r_step_on_d": 96
+    },
+    "pass2": {
+     "recipient": 31,
+     "r_step_on_d": 61,
+     "donor": 3,
+     "d_step_on_r": 1
+    }
+   },
+   "raw_donor_hits": {
+    "pass3": 0,
+    "pass2": 3
+   },
+   "extra_tie_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "clean": {
+    "lookup": {
+     "is_the": "17/96",
+     "so": "94/96",
+     "qa": "96/96",
+     "used": "qa"
+    },
+    "facts": {
+     "speak_pay": "9/14",
+     "language_continent": "11/14",
+     "language_currency_the": "5/14",
+     "used": "language_continent"
+    }
+   },
+   "qualifying": {
+    "structural": 288,
+    "preclean": 96,
+    "pointer_pass2": 61
+   },
+   "recipient_prompts": 96,
+   "donor_prompts": 96,
+   "tables": 12,
+   "seen_endpoints": 96,
+   "num_regenerated_prompts": 96,
+   "display_first_row_clean": 96,
+   "sampled_other_row_hist": {},
+   "pointer_hits": 96,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 96,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 96,
+    "animal": 96,
+    "animal_row": 96,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 96,
+    "end_row": 96,
+    "fruit_token": 96,
+    "colour_token": 96,
+    "fruit_from_end": 96,
+    "read_rec_key": 96,
+    "replacement_dictionary": 96,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 24
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 96,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 96,
+    "animal": 96,
+    "animal_row": 96,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 96,
+    "end_row": 96,
+    "fruit_token": 96,
+    "colour_token": 96,
+    "fruit_from_end": 96,
+    "read_rec_key": 96,
+    "replacement_dictionary": 96,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 24
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     96,
+     96,
+     0
+    ],
+    "donor": [
+     96,
+     96,
+     0
+    ],
+    "donor_map_rec_colour": [
+     96,
+     96,
+     0
+    ],
+    "mirror": [
+     96,
+     96,
+     0
+    ],
+    "first_fruit": [
+     72,
+     72,
+     0
+    ],
+    "last_fruit": [
+     72,
+     72,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 96,
+    "pointer|donor": 96,
+    "pointer|colour": 0,
+    "pointer|animal": 0,
+    "pointer|animal_row": 0,
+    "pointer|donor_map_rec_colour": 96,
+    "pointer|first_row_colour": 0,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 96,
+    "pointer|first_fruit": 72,
+    "pointer|last_fruit": 72,
+    "recipient|donor": 96,
+    "recipient|colour": 96,
+    "recipient|animal": 96,
+    "recipient|animal_row": 96,
+    "recipient|donor_map_rec_colour": 96,
+    "recipient|first_row_colour": 96,
+    "recipient|end_row": 96,
+    "recipient|fruit_token": 96,
+    "recipient|colour_token": 96,
+    "recipient|fruit_from_end": 96,
+    "recipient|read_rec_key": 96,
+    "recipient|replacement_dictionary": 96,
+    "recipient|mirror": 96,
+    "recipient|first_fruit": 72,
+    "recipient|last_fruit": 72,
+    "donor|colour": 96,
+    "donor|animal": 96,
+    "donor|animal_row": 96,
+    "donor|donor_map_rec_colour": 96,
+    "donor|first_row_colour": 96,
+    "donor|end_row": 96,
+    "donor|fruit_token": 96,
+    "donor|colour_token": 96,
+    "donor|fruit_from_end": 96,
+    "donor|read_rec_key": 96,
+    "donor|replacement_dictionary": 96,
+    "donor|mirror": 48,
+    "donor|first_fruit": 72,
+    "donor|last_fruit": 72,
+    "colour|animal": 0,
+    "colour|animal_row": 0,
+    "colour|donor_map_rec_colour": 96,
+    "colour|first_row_colour": 0,
+    "colour|end_row": 0,
+    "colour|fruit_token": 0,
+    "colour|colour_token": 0,
+    "colour|fruit_from_end": 0,
+    "colour|read_rec_key": 0,
+    "colour|replacement_dictionary": 0,
+    "colour|mirror": 96,
+    "colour|first_fruit": 72,
+    "colour|last_fruit": 72,
+    "animal|animal_row": 0,
+    "animal|donor_map_rec_colour": 96,
+    "animal|first_row_colour": 0,
+    "animal|end_row": 0,
+    "animal|fruit_token": 0,
+    "animal|colour_token": 0,
+    "animal|fruit_from_end": 0,
+    "animal|read_rec_key": 0,
+    "animal|replacement_dictionary": 0,
+    "animal|mirror": 96,
+    "animal|first_fruit": 72,
+    "animal|last_fruit": 72,
+    "animal_row|donor_map_rec_colour": 96,
+    "animal_row|first_row_colour": 0,
+    "animal_row|end_row": 0,
+    "animal_row|fruit_token": 0,
+    "animal_row|colour_token": 0,
+    "animal_row|fruit_from_end": 0,
+    "animal_row|read_rec_key": 0,
+    "animal_row|replacement_dictionary": 0,
+    "animal_row|mirror": 96,
+    "animal_row|first_fruit": 72,
+    "animal_row|last_fruit": 72,
+    "donor_map_rec_colour|first_row_colour": 96,
+    "donor_map_rec_colour|end_row": 96,
+    "donor_map_rec_colour|fruit_token": 96,
+    "donor_map_rec_colour|colour_token": 96,
+    "donor_map_rec_colour|fruit_from_end": 96,
+    "donor_map_rec_colour|read_rec_key": 96,
+    "donor_map_rec_colour|replacement_dictionary": 96,
+    "donor_map_rec_colour|mirror": 48,
+    "donor_map_rec_colour|first_fruit": 72,
+    "donor_map_rec_colour|last_fruit": 72,
+    "first_row_colour|end_row": 0,
+    "first_row_colour|fruit_token": 0,
+    "first_row_colour|colour_token": 0,
+    "first_row_colour|fruit_from_end": 0,
+    "first_row_colour|read_rec_key": 0,
+    "first_row_colour|replacement_dictionary": 0,
+    "first_row_colour|mirror": 96,
+    "first_row_colour|first_fruit": 72,
+    "first_row_colour|last_fruit": 72,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 96,
+    "end_row|first_fruit": 72,
+    "end_row|last_fruit": 72,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 96,
+    "fruit_token|first_fruit": 72,
+    "fruit_token|last_fruit": 72,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 96,
+    "colour_token|first_fruit": 72,
+    "colour_token|last_fruit": 72,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 96,
+    "fruit_from_end|first_fruit": 72,
+    "fruit_from_end|last_fruit": 72,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 96,
+    "read_rec_key|first_fruit": 72,
+    "read_rec_key|last_fruit": 72,
+    "replacement_dictionary|mirror": 96,
+    "replacement_dictionary|first_fruit": 72,
+    "replacement_dictionary|last_fruit": 72,
+    "mirror|first_fruit": 72,
+    "mirror|last_fruit": 72,
+    "first_fruit|last_fruit": 96
+   },
+   "failures": [],
+   "by_group": {
+    "0": [
+     8,
+     8
+    ],
+    "1": [
+     8,
+     8
+    ],
+    "2": [
+     8,
+     8
+    ],
+    "3": [
+     8,
+     8
+    ],
+    "4": [
+     8,
+     8
+    ],
+    "5": [
+     8,
+     8
+    ],
+    "6": [
+     8,
+     8
+    ],
+    "7": [
+     8,
+     8
+    ],
+    "8": [
+     8,
+     8
+    ],
+    "9": [
+     8,
+     8
+    ],
+    "10": [
+     8,
+     8
+    ],
+    "11": [
+     8,
+     8
+    ]
+   },
+   "by_target_row": {
+    "3": [
+     24,
+     24
+    ],
+    "4": [
+     24,
+     24
+    ],
+    "1": [
+     24,
+     24
+    ],
+    "2": [
+     24,
+     24
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 96,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(96, 96)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 96,
+    "nearest_absolute_fruit_character_start_same": 96,
+    "nearest_list_relative_fruit_character_start_hits": 96,
+    "nearest_list_relative_fruit_character_start_same": 96
+   }
+  },
+  "two-table/mini": {
+   "n": 144,
+   "conditions": {
+    "pass3": {
+     "carried_query": 144
+    },
+    "pass2": {
+     "carried_query": 111,
+     "recipient": 32,
+     "other": 1
+    }
+   },
+   "raw_donor_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "extra_tie_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "clean": {
+    "so": "144/144",
+    "qa": "144/144",
+    "used": "so"
+   },
+   "qualifying": {
+    "structural": 720,
+    "preclean": 144,
+    "pointer_pass2": 111
+   },
+   "recipient_prompts": 144,
+   "donor_prompts": 144,
+   "tables": 12,
+   "seen_endpoints": 144,
+   "num_regenerated_prompts": 144,
+   "display_first_row_clean": 144,
+   "sampled_other_row_hist": {},
+   "pointer_hits": 144,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 144,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 0,
+    "animal": 144,
+    "animal_row": 144,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 144,
+    "end_row": 144,
+    "fruit_token": 144,
+    "colour_token": 144,
+    "fruit_from_end": 144,
+    "read_rec_key": 144,
+    "replacement_dictionary": 144,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 24
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 144,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 0,
+    "animal": 144,
+    "animal_row": 144,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 144,
+    "end_row": 144,
+    "fruit_token": 144,
+    "colour_token": 144,
+    "fruit_from_end": 144,
+    "read_rec_key": 144,
+    "replacement_dictionary": 144,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 24
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     144,
+     144,
+     0
+    ],
+    "donor": [
+     144,
+     144,
+     0
+    ],
+    "colour": [
+     144,
+     144,
+     0
+    ],
+    "donor_map_rec_colour": [
+     144,
+     144,
+     0
+    ],
+    "mirror": [
+     144,
+     144,
+     0
+    ],
+    "first_fruit": [
+     120,
+     120,
+     0
+    ],
+    "last_fruit": [
+     120,
+     120,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 144,
+    "pointer|donor": 144,
+    "pointer|colour": 144,
+    "pointer|animal": 0,
+    "pointer|animal_row": 0,
+    "pointer|donor_map_rec_colour": 144,
+    "pointer|first_row_colour": 0,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 144,
+    "pointer|first_fruit": 120,
+    "pointer|last_fruit": 120,
+    "recipient|donor": 144,
+    "recipient|colour": 144,
+    "recipient|animal": 144,
+    "recipient|animal_row": 144,
+    "recipient|donor_map_rec_colour": 144,
+    "recipient|first_row_colour": 144,
+    "recipient|end_row": 144,
+    "recipient|fruit_token": 144,
+    "recipient|colour_token": 144,
+    "recipient|fruit_from_end": 144,
+    "recipient|read_rec_key": 144,
+    "recipient|replacement_dictionary": 144,
+    "recipient|mirror": 144,
+    "recipient|first_fruit": 120,
+    "recipient|last_fruit": 120,
+    "donor|colour": 144,
+    "donor|animal": 144,
+    "donor|animal_row": 144,
+    "donor|donor_map_rec_colour": 144,
+    "donor|first_row_colour": 144,
+    "donor|end_row": 144,
+    "donor|fruit_token": 144,
+    "donor|colour_token": 144,
+    "donor|fruit_from_end": 144,
+    "donor|read_rec_key": 144,
+    "donor|replacement_dictionary": 144,
+    "donor|mirror": 96,
+    "donor|first_fruit": 120,
+    "donor|last_fruit": 120,
+    "colour|animal": 144,
+    "colour|animal_row": 144,
+    "colour|donor_map_rec_colour": 144,
+    "colour|first_row_colour": 144,
+    "colour|end_row": 144,
+    "colour|fruit_token": 144,
+    "colour|colour_token": 144,
+    "colour|fruit_from_end": 144,
+    "colour|read_rec_key": 144,
+    "colour|replacement_dictionary": 144,
+    "colour|mirror": 96,
+    "colour|first_fruit": 120,
+    "colour|last_fruit": 120,
+    "animal|animal_row": 0,
+    "animal|donor_map_rec_colour": 144,
+    "animal|first_row_colour": 0,
+    "animal|end_row": 0,
+    "animal|fruit_token": 0,
+    "animal|colour_token": 0,
+    "animal|fruit_from_end": 0,
+    "animal|read_rec_key": 0,
+    "animal|replacement_dictionary": 0,
+    "animal|mirror": 144,
+    "animal|first_fruit": 120,
+    "animal|last_fruit": 120,
+    "animal_row|donor_map_rec_colour": 144,
+    "animal_row|first_row_colour": 0,
+    "animal_row|end_row": 0,
+    "animal_row|fruit_token": 0,
+    "animal_row|colour_token": 0,
+    "animal_row|fruit_from_end": 0,
+    "animal_row|read_rec_key": 0,
+    "animal_row|replacement_dictionary": 0,
+    "animal_row|mirror": 144,
+    "animal_row|first_fruit": 120,
+    "animal_row|last_fruit": 120,
+    "donor_map_rec_colour|first_row_colour": 144,
+    "donor_map_rec_colour|end_row": 144,
+    "donor_map_rec_colour|fruit_token": 144,
+    "donor_map_rec_colour|colour_token": 144,
+    "donor_map_rec_colour|fruit_from_end": 144,
+    "donor_map_rec_colour|read_rec_key": 144,
+    "donor_map_rec_colour|replacement_dictionary": 144,
+    "donor_map_rec_colour|mirror": 144,
+    "donor_map_rec_colour|first_fruit": 120,
+    "donor_map_rec_colour|last_fruit": 120,
+    "first_row_colour|end_row": 0,
+    "first_row_colour|fruit_token": 0,
+    "first_row_colour|colour_token": 0,
+    "first_row_colour|fruit_from_end": 0,
+    "first_row_colour|read_rec_key": 0,
+    "first_row_colour|replacement_dictionary": 0,
+    "first_row_colour|mirror": 144,
+    "first_row_colour|first_fruit": 120,
+    "first_row_colour|last_fruit": 120,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 144,
+    "end_row|first_fruit": 120,
+    "end_row|last_fruit": 120,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 144,
+    "fruit_token|first_fruit": 120,
+    "fruit_token|last_fruit": 120,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 144,
+    "colour_token|first_fruit": 120,
+    "colour_token|last_fruit": 120,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 144,
+    "fruit_from_end|first_fruit": 120,
+    "fruit_from_end|last_fruit": 120,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 144,
+    "read_rec_key|first_fruit": 120,
+    "read_rec_key|last_fruit": 120,
+    "replacement_dictionary|mirror": 144,
+    "replacement_dictionary|first_fruit": 120,
+    "replacement_dictionary|last_fruit": 120,
+    "mirror|first_fruit": 120,
+    "mirror|last_fruit": 120,
+    "first_fruit|last_fruit": 144
+   },
+   "failures": [],
+   "by_group": {
+    "0": [
+     12,
+     12
+    ],
+    "1": [
+     12,
+     12
+    ],
+    "2": [
+     12,
+     12
+    ],
+    "3": [
+     12,
+     12
+    ],
+    "4": [
+     12,
+     12
+    ],
+    "5": [
+     12,
+     12
+    ],
+    "6": [
+     12,
+     12
+    ],
+    "7": [
+     12,
+     12
+    ],
+    "8": [
+     12,
+     12
+    ],
+    "9": [
+     12,
+     12
+    ],
+    "10": [
+     12,
+     12
+    ],
+    "11": [
+     12,
+     12
+    ]
+   },
+   "by_target_row": {
+    "5": [
+     24,
+     24
+    ],
+    "6": [
+     24,
+     24
+    ],
+    "1": [
+     24,
+     24
+    ],
+    "2": [
+     24,
+     24
+    ],
+    "3": [
+     24,
+     24
+    ],
+    "4": [
+     24,
+     24
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 144,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(144, 144)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 144,
+    "nearest_absolute_fruit_character_start_same": 144,
+    "nearest_list_relative_fruit_character_start_hits": 144,
+    "nearest_list_relative_fruit_character_start_same": 144
+   }
+  },
+  "two-table/sibling": {
+   "n": 138,
+   "conditions": {
+    "pass3": {
+     "carried_query": 133,
+     "recipient": 3,
+     "carried_intermediate": 1,
+     "other": 1
+    },
+    "pass2": {
+     "recipient": 114,
+     "carried_intermediate": 2,
+     "other": 1,
+     "carried_query": 20,
+     "donor": 1
+    }
+   },
+   "raw_donor_hits": {
+    "pass3": 0,
+    "pass2": 1
+   },
+   "extra_tie_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "clean": {
+    "so": "141/144",
+    "qa": "141/144",
+    "used": "so"
+   },
+   "qualifying": {
+    "structural": 720,
+    "preclean": 144,
+    "pointer_pass2": 20
+   },
+   "recipient_prompts": 138,
+   "donor_prompts": 138,
+   "tables": 12,
+   "seen_endpoints": 138,
+   "num_regenerated_prompts": 144,
+   "display_first_row_clean": 144,
+   "sampled_other_row_hist": {},
+   "pointer_hits": 133,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 133,
+    "recipient": 3,
+    "donor": 0,
+    "colour": 1,
+    "animal": 133,
+    "animal_row": 133,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 133,
+    "end_row": 133,
+    "fruit_token": 133,
+    "colour_token": 133,
+    "fruit_from_end": 133,
+    "read_rec_key": 133,
+    "replacement_dictionary": 133,
+    "mirror": 1,
+    "first_fruit": 21,
+    "last_fruit": 23
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 138,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 0,
+    "animal": 138,
+    "animal_row": 138,
+    "donor_map_rec_colour": 0,
+    "first_row_colour": 138,
+    "end_row": 138,
+    "fruit_token": 138,
+    "colour_token": 138,
+    "fruit_from_end": 138,
+    "read_rec_key": 138,
+    "replacement_dictionary": 138,
+    "mirror": 0,
+    "first_fruit": 24,
+    "last_fruit": 22
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     138,
+     133,
+     3
+    ],
+    "donor": [
+     138,
+     133,
+     0
+    ],
+    "colour": [
+     138,
+     133,
+     1
+    ],
+    "donor_map_rec_colour": [
+     138,
+     133,
+     0
+    ],
+    "mirror": [
+     138,
+     133,
+     1
+    ],
+    "first_fruit": [
+     114,
+     112,
+     0
+    ],
+    "last_fruit": [
+     116,
+     111,
+     1
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 138,
+    "pointer|donor": 138,
+    "pointer|colour": 138,
+    "pointer|animal": 0,
+    "pointer|animal_row": 0,
+    "pointer|donor_map_rec_colour": 138,
+    "pointer|first_row_colour": 0,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 138,
+    "pointer|first_fruit": 114,
+    "pointer|last_fruit": 116,
+    "recipient|donor": 138,
+    "recipient|colour": 138,
+    "recipient|animal": 138,
+    "recipient|animal_row": 138,
+    "recipient|donor_map_rec_colour": 138,
+    "recipient|first_row_colour": 138,
+    "recipient|end_row": 138,
+    "recipient|fruit_token": 138,
+    "recipient|colour_token": 138,
+    "recipient|fruit_from_end": 138,
+    "recipient|read_rec_key": 138,
+    "recipient|replacement_dictionary": 138,
+    "recipient|mirror": 138,
+    "recipient|first_fruit": 114,
+    "recipient|last_fruit": 116,
+    "donor|colour": 138,
+    "donor|animal": 138,
+    "donor|animal_row": 138,
+    "donor|donor_map_rec_colour": 138,
+    "donor|first_row_colour": 138,
+    "donor|end_row": 138,
+    "donor|fruit_token": 138,
+    "donor|colour_token": 138,
+    "donor|fruit_from_end": 138,
+    "donor|read_rec_key": 138,
+    "donor|replacement_dictionary": 138,
+    "donor|mirror": 93,
+    "donor|first_fruit": 114,
+    "donor|last_fruit": 115,
+    "colour|animal": 138,
+    "colour|animal_row": 138,
+    "colour|donor_map_rec_colour": 138,
+    "colour|first_row_colour": 138,
+    "colour|end_row": 138,
+    "colour|fruit_token": 138,
+    "colour|colour_token": 138,
+    "colour|fruit_from_end": 138,
+    "colour|read_rec_key": 138,
+    "colour|replacement_dictionary": 138,
+    "colour|mirror": 93,
+    "colour|first_fruit": 118,
+    "colour|last_fruit": 114,
+    "animal|animal_row": 0,
+    "animal|donor_map_rec_colour": 138,
+    "animal|first_row_colour": 0,
+    "animal|end_row": 0,
+    "animal|fruit_token": 0,
+    "animal|colour_token": 0,
+    "animal|fruit_from_end": 0,
+    "animal|read_rec_key": 0,
+    "animal|replacement_dictionary": 0,
+    "animal|mirror": 138,
+    "animal|first_fruit": 114,
+    "animal|last_fruit": 116,
+    "animal_row|donor_map_rec_colour": 138,
+    "animal_row|first_row_colour": 0,
+    "animal_row|end_row": 0,
+    "animal_row|fruit_token": 0,
+    "animal_row|colour_token": 0,
+    "animal_row|fruit_from_end": 0,
+    "animal_row|read_rec_key": 0,
+    "animal_row|replacement_dictionary": 0,
+    "animal_row|mirror": 138,
+    "animal_row|first_fruit": 114,
+    "animal_row|last_fruit": 116,
+    "donor_map_rec_colour|first_row_colour": 138,
+    "donor_map_rec_colour|end_row": 138,
+    "donor_map_rec_colour|fruit_token": 138,
+    "donor_map_rec_colour|colour_token": 138,
+    "donor_map_rec_colour|fruit_from_end": 138,
+    "donor_map_rec_colour|read_rec_key": 138,
+    "donor_map_rec_colour|replacement_dictionary": 138,
+    "donor_map_rec_colour|mirror": 138,
+    "donor_map_rec_colour|first_fruit": 116,
+    "donor_map_rec_colour|last_fruit": 114,
+    "first_row_colour|end_row": 0,
+    "first_row_colour|fruit_token": 0,
+    "first_row_colour|colour_token": 0,
+    "first_row_colour|fruit_from_end": 0,
+    "first_row_colour|read_rec_key": 0,
+    "first_row_colour|replacement_dictionary": 0,
+    "first_row_colour|mirror": 138,
+    "first_row_colour|first_fruit": 114,
+    "first_row_colour|last_fruit": 116,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 138,
+    "end_row|first_fruit": 114,
+    "end_row|last_fruit": 116,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 138,
+    "fruit_token|first_fruit": 114,
+    "fruit_token|last_fruit": 116,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 138,
+    "colour_token|first_fruit": 114,
+    "colour_token|last_fruit": 116,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 138,
+    "fruit_from_end|first_fruit": 114,
+    "fruit_from_end|last_fruit": 116,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 138,
+    "read_rec_key|first_fruit": 114,
+    "read_rec_key|last_fruit": 116,
+    "replacement_dictionary|mirror": 138,
+    "replacement_dictionary|first_fruit": 114,
+    "replacement_dictionary|last_fruit": 116,
+    "mirror|first_fruit": 116,
+    "mirror|last_fruit": 114,
+    "first_fruit|last_fruit": 138
+   },
+   "failures": [
+    {
+     "row": 77,
+     "group": 6,
+     "recipient": "a/rat",
+     "donor": "b/ram",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " orange"
+    },
+    {
+     "row": 86,
+     "group": 7,
+     "recipient": "a/rat",
+     "donor": "b/bee",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " date"
+    },
+    {
+     "row": 87,
+     "group": 7,
+     "recipient": "a/elk",
+     "donor": "b/hen",
+     "row_in_table": 2,
+     "predicted": "lime",
+     "observed": " date"
+    },
+    {
+     "row": 96,
+     "group": 8,
+     "recipient": "a/dog",
+     "donor": "b/cat",
+     "row_in_table": 1,
+     "predicted": "orange",
+     "observed": " apple"
+    },
+    {
+     "row": 104,
+     "group": 8,
+     "recipient": "b/yak",
+     "donor": "a/cat",
+     "row_in_table": 1,
+     "predicted": "olive",
+     "observed": " lime"
+    }
+   ],
+   "by_group": {
+    "0": [
+     12,
+     12
+    ],
+    "1": [
+     12,
+     12
+    ],
+    "2": [
+     12,
+     12
+    ],
+    "3": [
+     12,
+     12
+    ],
+    "4": [
+     12,
+     12
+    ],
+    "5": [
+     12,
+     12
+    ],
+    "6": [
+     11,
+     12
+    ],
+    "7": [
+     8,
+     10
+    ],
+    "8": [
+     8,
+     10
+    ],
+    "9": [
+     12,
+     12
+    ],
+    "10": [
+     12,
+     12
+    ],
+    "11": [
+     10,
+     10
+    ]
+   },
+   "by_target_row": {
+    "5": [
+     23,
+     23
+    ],
+    "6": [
+     22,
+     22
+    ],
+    "1": [
+     21,
+     24
+    ],
+    "2": [
+     21,
+     22
+    ],
+    "3": [
+     22,
+     23
+    ],
+    "4": [
+     24,
+     24
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 138,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(141, 138)": 8,
+    "(140, 138)": 12,
+    "(139, 138)": 6,
+    "(138, 138)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 133,
+    "nearest_absolute_fruit_character_start_same": 138,
+    "nearest_list_relative_fruit_character_start_hits": 133,
+    "nearest_list_relative_fruit_character_start_same": 138
+   }
+  },
+  "shuffled/mini": {
+   "n": 324,
+   "conditions": {
+    "pass3": {
+     "carried_colour_row": 110,
+     "donor": 60,
+     "recipient": 56,
+     "carried_animal": 33,
+     "carried_row": 24,
+     "carried_colour": 37,
+     "other": 4
+    },
+    "pass2": {
+     "other": 68,
+     "carried_colour": 32,
+     "donor": 41,
+     "carried_animal": 45,
+     "recipient": 124,
+     "carried_colour_row": 4,
+     "carried_row": 10
+    }
+   },
+   "raw_donor_hits": {
+    "pass3": 60,
+    "pass2": 41
+   },
+   "extra_tie_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "clean": {
+    "so": "168/168",
+    "qa": "168/168",
+    "used": "so",
+    "mistakes_that_are_same_row_fruit": "0/0",
+    "prompts_where_same_row_fruit_is_the_answer": 14
+   },
+   "qualifying": {
+    "structural": 1008,
+    "preclean": 324,
+    "sixth_preclean": 112,
+    "pointer_pass2": 54
+   },
+   "recipient_prompts": 156,
+   "donor_prompts": 108,
+   "tables": 12,
+   "seen_endpoints": 162,
+   "num_regenerated_prompts": 168,
+   "display_first_row_clean": 14,
+   "sampled_other_row_hist": {},
+   "pointer_hits": 316,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 316,
+    "recipient": 56,
+    "donor": 60,
+    "colour": 37,
+    "animal": 33,
+    "animal_row": 24,
+    "donor_map_rec_colour": 32,
+    "first_row_colour": 36,
+    "end_row": 316,
+    "fruit_token": 316,
+    "colour_token": 316,
+    "fruit_from_end": 316,
+    "read_rec_key": 316,
+    "replacement_dictionary": 316,
+    "mirror": 44,
+    "first_fruit": 41,
+    "last_fruit": 39
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 324,
+    "recipient": 56,
+    "donor": 57,
+    "colour": 39,
+    "animal": 36,
+    "animal_row": 24,
+    "donor_map_rec_colour": 34,
+    "first_row_colour": 33,
+    "end_row": 324,
+    "fruit_token": 324,
+    "colour_token": 324,
+    "fruit_from_end": 324,
+    "read_rec_key": 324,
+    "replacement_dictionary": 324,
+    "mirror": 45,
+    "first_fruit": 45,
+    "last_fruit": 39
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     268,
+     260,
+     0
+    ],
+    "donor": [
+     267,
+     259,
+     3
+    ],
+    "colour": [
+     285,
+     280,
+     1
+    ],
+    "animal": [
+     288,
+     283,
+     0
+    ],
+    "animal_row": [
+     300,
+     292,
+     0
+    ],
+    "donor_map_rec_colour": [
+     290,
+     284,
+     0
+    ],
+    "first_row_colour": [
+     291,
+     283,
+     3
+    ],
+    "mirror": [
+     279,
+     272,
+     0
+    ],
+    "last_fruit": [
+     285,
+     277,
+     0
+    ],
+    "first_fruit": [
+     279,
+     275,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 268,
+    "pointer|donor": 267,
+    "pointer|colour": 285,
+    "pointer|animal": 288,
+    "pointer|animal_row": 300,
+    "pointer|donor_map_rec_colour": 290,
+    "pointer|first_row_colour": 291,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 279,
+    "pointer|first_fruit": 279,
+    "pointer|last_fruit": 285,
+    "recipient|donor": 324,
+    "recipient|colour": 324,
+    "recipient|animal": 324,
+    "recipient|animal_row": 324,
+    "recipient|donor_map_rec_colour": 324,
+    "recipient|first_row_colour": 271,
+    "recipient|end_row": 268,
+    "recipient|fruit_token": 268,
+    "recipient|colour_token": 268,
+    "recipient|fruit_from_end": 268,
+    "recipient|read_rec_key": 268,
+    "recipient|replacement_dictionary": 268,
+    "recipient|mirror": 274,
+    "recipient|first_fruit": 287,
+    "recipient|last_fruit": 279,
+    "donor|colour": 324,
+    "donor|animal": 324,
+    "donor|animal_row": 324,
+    "donor|donor_map_rec_colour": 324,
+    "donor|first_row_colour": 255,
+    "donor|end_row": 267,
+    "donor|fruit_token": 267,
+    "donor|colour_token": 267,
+    "donor|fruit_from_end": 267,
+    "donor|read_rec_key": 267,
+    "donor|replacement_dictionary": 267,
+    "donor|mirror": 282,
+    "donor|first_fruit": 279,
+    "donor|last_fruit": 273,
+    "colour|animal": 324,
+    "colour|animal_row": 324,
+    "colour|donor_map_rec_colour": 246,
+    "colour|first_row_colour": 291,
+    "colour|end_row": 285,
+    "colour|fruit_token": 285,
+    "colour|colour_token": 285,
+    "colour|fruit_from_end": 285,
+    "colour|read_rec_key": 285,
+    "colour|replacement_dictionary": 285,
+    "colour|mirror": 279,
+    "colour|first_fruit": 270,
+    "colour|last_fruit": 273,
+    "animal|animal_row": 324,
+    "animal|donor_map_rec_colour": 236,
+    "animal|first_row_colour": 288,
+    "animal|end_row": 288,
+    "animal|fruit_token": 288,
+    "animal|colour_token": 288,
+    "animal|fruit_from_end": 288,
+    "animal|read_rec_key": 288,
+    "animal|replacement_dictionary": 288,
+    "animal|mirror": 276,
+    "animal|first_fruit": 270,
+    "animal|last_fruit": 285,
+    "animal_row|donor_map_rec_colour": 263,
+    "animal_row|first_row_colour": 297,
+    "animal_row|end_row": 300,
+    "animal_row|fruit_token": 300,
+    "animal_row|colour_token": 300,
+    "animal_row|fruit_from_end": 300,
+    "animal_row|read_rec_key": 300,
+    "animal_row|replacement_dictionary": 300,
+    "animal_row|mirror": 285,
+    "animal_row|first_fruit": 264,
+    "animal_row|last_fruit": 276,
+    "donor_map_rec_colour|first_row_colour": 283,
+    "donor_map_rec_colour|end_row": 290,
+    "donor_map_rec_colour|fruit_token": 290,
+    "donor_map_rec_colour|colour_token": 290,
+    "donor_map_rec_colour|fruit_from_end": 290,
+    "donor_map_rec_colour|read_rec_key": 290,
+    "donor_map_rec_colour|replacement_dictionary": 290,
+    "donor_map_rec_colour|mirror": 284,
+    "donor_map_rec_colour|first_fruit": 271,
+    "donor_map_rec_colour|last_fruit": 281,
+    "first_row_colour|end_row": 291,
+    "first_row_colour|fruit_token": 291,
+    "first_row_colour|colour_token": 291,
+    "first_row_colour|fruit_from_end": 291,
+    "first_row_colour|read_rec_key": 291,
+    "first_row_colour|replacement_dictionary": 291,
+    "first_row_colour|mirror": 255,
+    "first_row_colour|first_fruit": 288,
+    "first_row_colour|last_fruit": 279,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 279,
+    "end_row|first_fruit": 279,
+    "end_row|last_fruit": 285,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 279,
+    "fruit_token|first_fruit": 279,
+    "fruit_token|last_fruit": 285,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 279,
+    "colour_token|first_fruit": 279,
+    "colour_token|last_fruit": 285,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 279,
+    "fruit_from_end|first_fruit": 279,
+    "fruit_from_end|last_fruit": 285,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 279,
+    "read_rec_key|first_fruit": 279,
+    "read_rec_key|last_fruit": 285,
+    "replacement_dictionary|mirror": 279,
+    "replacement_dictionary|first_fruit": 279,
+    "replacement_dictionary|last_fruit": 285,
+    "mirror|first_fruit": 285,
+    "mirror|last_fruit": 279,
+    "first_fruit|last_fruit": 324
+   },
+   "failures": [
+    {
+     "row": 72,
+     "group": 2,
+     "recipient": "b/bat",
+     "donor": "a/ant",
+     "row_in_table": 3,
+     "predicted": "olive",
+     "observed": " ____"
+    },
+    {
+     "row": 77,
+     "group": 2,
+     "recipient": "b/pig",
+     "donor": "a/ant",
+     "row_in_table": 3,
+     "predicted": "olive",
+     "observed": " ____"
+    },
+    {
+     "row": 81,
+     "group": 2,
+     "recipient": "b/cat",
+     "donor": "a/ant",
+     "row_in_table": 3,
+     "predicted": "olive",
+     "observed": " ____"
+    },
+    {
+     "row": 200,
+     "group": 6,
+     "recipient": "b/dog",
+     "donor": "a/yak",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " ____"
+    },
+    {
+     "row": 210,
+     "group": 7,
+     "recipient": "a/ant",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " fig"
+    },
+    {
+     "row": 213,
+     "group": 7,
+     "recipient": "a/cow",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " fig"
+    },
+    {
+     "row": 222,
+     "group": 7,
+     "recipient": "a/hen",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " fig"
+    },
+    {
+     "row": 322,
+     "group": 11,
+     "recipient": "b/dog",
+     "donor": "a/rat",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " apple"
+    }
+   ],
+   "by_group": {
+    "0": [
+     27,
+     27
+    ],
+    "1": [
+     27,
+     27
+    ],
+    "2": [
+     27,
+     30
+    ],
+    "3": [
+     36,
+     36
+    ],
+    "4": [
+     24,
+     24
+    ],
+    "5": [
+     27,
+     27
+    ],
+    "6": [
+     32,
+     33
+    ],
+    "7": [
+     30,
+     33
+    ],
+    "8": [
+     21,
+     21
+    ],
+    "9": [
+     21,
+     21
+    ],
+    "10": [
+     30,
+     30
+    ],
+    "11": [
+     14,
+     15
+    ]
+   },
+   "by_target_row": {
+    "1": [
+     41,
+     45
+    ],
+    "3": [
+     60,
+     63
+    ],
+    "2": [
+     51,
+     51
+    ],
+    "6": [
+     42,
+     42
+    ],
+    "4": [
+     44,
+     45
+    ],
+    "5": [
+     39,
+     39
+    ],
+    "7": [
+     39,
+     39
+    ]
+   },
+   "sixth_aliases": {
+    "distinct": 112,
+    "donor": 57,
+    "recipient": 56,
+    "carried_animal": 36,
+    "carried_row": 24,
+    "carried_colour": 39
+   },
+   "sixth_alias_pointer_hits": {
+    "distinct": 110,
+    "donor": 57,
+    "recipient": 56,
+    "carried_animal": 33,
+    "carried_row": 24,
+    "carried_colour": 36
+   },
+   "donor_specific_lookup_training_ceiling": 322,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(168, 324)": 1,
+    "(167, 324)": 6,
+    "(166, 324)": 15,
+    "(165, 324)": 20,
+    "(164, 324)": 15,
+    "(163, 324)": 6,
+    "(162, 324)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 316,
+    "nearest_absolute_fruit_character_start_same": 324,
+    "nearest_list_relative_fruit_character_start_hits": 316,
+    "nearest_list_relative_fruit_character_start_same": 324,
+    "decoupled": 112,
+    "decoupled_hits": 110
+   }
+  },
+  "shuffled/sibling": {
+   "n": 312,
+   "conditions": {
+    "pass3": {
+     "carried_colour_row": 81,
+     "donor": 52,
+     "recipient": 51,
+     "carried_row": 20,
+     "other": 10,
+     "carried_animal": 34,
+     "carried_colour": 64
+    },
+    "pass2": {
+     "other": 32,
+     "carried_colour": 22,
+     "carried_animal": 33,
+     "recipient": 187,
+     "donor": 27,
+     "carried_row": 10,
+     "carried_colour_row": 1
+    }
+   },
+   "raw_donor_hits": {
+    "pass3": 52,
+    "pass2": 27
+   },
+   "extra_tie_hits": {
+    "pass3": 0,
+    "pass2": 0
+   },
+   "clean": {
+    "so": "158/168",
+    "qa": "166/168",
+    "used": "qa",
+    "mistakes_that_are_same_row_fruit": "0/2",
+    "prompts_where_same_row_fruit_is_the_answer": 14
+   },
+   "qualifying": {
+    "structural": 1008,
+    "preclean": 324,
+    "sixth_preclean": 112,
+    "pointer_pass2": 46
+   },
+   "recipient_prompts": 152,
+   "donor_prompts": 106,
+   "tables": 12,
+   "seen_endpoints": 159,
+   "num_regenerated_prompts": 168,
+   "display_first_row_clean": 14,
+   "sampled_other_row_hist": {},
+   "pointer_hits": 259,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 259,
+    "recipient": 51,
+    "donor": 52,
+    "colour": 64,
+    "animal": 34,
+    "animal_row": 20,
+    "donor_map_rec_colour": 39,
+    "first_row_colour": 52,
+    "end_row": 259,
+    "fruit_token": 259,
+    "colour_token": 259,
+    "fruit_from_end": 259,
+    "read_rec_key": 259,
+    "replacement_dictionary": 259,
+    "mirror": 42,
+    "first_fruit": 32,
+    "last_fruit": 53
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 312,
+    "recipient": 53,
+    "donor": 55,
+    "colour": 39,
+    "animal": 35,
+    "animal_row": 24,
+    "donor_map_rec_colour": 33,
+    "first_row_colour": 33,
+    "end_row": 312,
+    "fruit_token": 312,
+    "colour_token": 312,
+    "fruit_from_end": 312,
+    "read_rec_key": 312,
+    "replacement_dictionary": 312,
+    "mirror": 41,
+    "first_fruit": 44,
+    "last_fruit": 38
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     259,
+     214,
+     6
+    ],
+    "donor": [
+     257,
+     214,
+     7
+    ],
+    "colour": [
+     273,
+     220,
+     25
+    ],
+    "animal": [
+     277,
+     229,
+     4
+    ],
+    "animal_row": [
+     288,
+     240,
+     1
+    ],
+    "donor_map_rec_colour": [
+     279,
+     231,
+     11
+    ],
+    "first_row_colour": [
+     279,
+     230,
+     23
+    ],
+    "mirror": [
+     271,
+     226,
+     9
+    ],
+    "last_fruit": [
+     274,
+     221,
+     15
+    ],
+    "first_fruit": [
+     268,
+     230,
+     3
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 259,
+    "pointer|donor": 257,
+    "pointer|colour": 273,
+    "pointer|animal": 277,
+    "pointer|animal_row": 288,
+    "pointer|donor_map_rec_colour": 279,
+    "pointer|first_row_colour": 279,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 271,
+    "pointer|first_fruit": 268,
+    "pointer|last_fruit": 274,
+    "recipient|donor": 312,
+    "recipient|colour": 312,
+    "recipient|animal": 312,
+    "recipient|animal_row": 312,
+    "recipient|donor_map_rec_colour": 312,
+    "recipient|first_row_colour": 263,
+    "recipient|end_row": 259,
+    "recipient|fruit_token": 259,
+    "recipient|colour_token": 259,
+    "recipient|fruit_from_end": 259,
+    "recipient|read_rec_key": 259,
+    "recipient|replacement_dictionary": 259,
+    "recipient|mirror": 266,
+    "recipient|first_fruit": 275,
+    "recipient|last_fruit": 268,
+    "donor|colour": 312,
+    "donor|animal": 312,
+    "donor|animal_row": 312,
+    "donor|donor_map_rec_colour": 312,
+    "donor|first_row_colour": 245,
+    "donor|end_row": 257,
+    "donor|fruit_token": 257,
+    "donor|colour_token": 257,
+    "donor|fruit_from_end": 257,
+    "donor|read_rec_key": 257,
+    "donor|replacement_dictionary": 257,
+    "donor|mirror": 272,
+    "donor|first_fruit": 269,
+    "donor|last_fruit": 262,
+    "colour|animal": 312,
+    "colour|animal_row": 312,
+    "colour|donor_map_rec_colour": 237,
+    "colour|first_row_colour": 279,
+    "colour|end_row": 273,
+    "colour|fruit_token": 273,
+    "colour|colour_token": 273,
+    "colour|fruit_from_end": 273,
+    "colour|read_rec_key": 273,
+    "colour|replacement_dictionary": 273,
+    "colour|mirror": 267,
+    "colour|first_fruit": 263,
+    "colour|last_fruit": 261,
+    "animal|animal_row": 312,
+    "animal|donor_map_rec_colour": 227,
+    "animal|first_row_colour": 276,
+    "animal|end_row": 277,
+    "animal|fruit_token": 277,
+    "animal|colour_token": 277,
+    "animal|fruit_from_end": 277,
+    "animal|read_rec_key": 277,
+    "animal|replacement_dictionary": 277,
+    "animal|mirror": 264,
+    "animal|first_fruit": 258,
+    "animal|last_fruit": 277,
+    "animal_row|donor_map_rec_colour": 253,
+    "animal_row|first_row_colour": 285,
+    "animal_row|end_row": 288,
+    "animal_row|fruit_token": 288,
+    "animal_row|colour_token": 288,
+    "animal_row|fruit_from_end": 288,
+    "animal_row|read_rec_key": 288,
+    "animal_row|replacement_dictionary": 288,
+    "animal_row|mirror": 274,
+    "animal_row|first_fruit": 257,
+    "animal_row|last_fruit": 265,
+    "donor_map_rec_colour|first_row_colour": 272,
+    "donor_map_rec_colour|end_row": 279,
+    "donor_map_rec_colour|fruit_token": 279,
+    "donor_map_rec_colour|colour_token": 279,
+    "donor_map_rec_colour|fruit_from_end": 279,
+    "donor_map_rec_colour|read_rec_key": 279,
+    "donor_map_rec_colour|replacement_dictionary": 279,
+    "donor_map_rec_colour|mirror": 272,
+    "donor_map_rec_colour|first_fruit": 261,
+    "donor_map_rec_colour|last_fruit": 270,
+    "first_row_colour|end_row": 279,
+    "first_row_colour|fruit_token": 279,
+    "first_row_colour|colour_token": 279,
+    "first_row_colour|fruit_from_end": 279,
+    "first_row_colour|read_rec_key": 279,
+    "first_row_colour|replacement_dictionary": 279,
+    "first_row_colour|mirror": 248,
+    "first_row_colour|first_fruit": 276,
+    "first_row_colour|last_fruit": 271,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 271,
+    "end_row|first_fruit": 268,
+    "end_row|last_fruit": 274,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 271,
+    "fruit_token|first_fruit": 268,
+    "fruit_token|last_fruit": 274,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 271,
+    "colour_token|first_fruit": 268,
+    "colour_token|last_fruit": 274,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 271,
+    "fruit_from_end|first_fruit": 268,
+    "fruit_from_end|last_fruit": 274,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 271,
+    "read_rec_key|first_fruit": 268,
+    "read_rec_key|last_fruit": 274,
+    "replacement_dictionary|mirror": 271,
+    "replacement_dictionary|first_fruit": 268,
+    "replacement_dictionary|last_fruit": 274,
+    "mirror|first_fruit": 274,
+    "mirror|last_fruit": 268,
+    "first_fruit|last_fruit": 312
+   },
+   "failures": [
+    {
+     "row": 9,
+     "group": 0,
+     "recipient": "a/rat",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "orange",
+     "observed": " apple"
+    },
+    {
+     "row": 11,
+     "group": 0,
+     "recipient": "b/cat",
+     "donor": "a/ant",
+     "row_in_table": 4,
+     "predicted": "orange",
+     "observed": " grape"
+    },
+    {
+     "row": 13,
+     "group": 0,
+     "recipient": "b/dog",
+     "donor": "a/ant",
+     "row_in_table": 4,
+     "predicted": "orange",
+     "observed": " grape"
+    },
+    {
+     "row": 18,
+     "group": 0,
+     "recipient": "b/hen",
+     "donor": "a/ant",
+     "row_in_table": 4,
+     "predicted": "orange",
+     "observed": " grape"
+    },
+    {
+     "row": 30,
+     "group": 1,
+     "recipient": "a/bat",
+     "donor": "b/pig",
+     "row_in_table": 1,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 33,
+     "group": 1,
+     "recipient": "a/rat",
+     "donor": "b/pig",
+     "row_in_table": 1,
+     "predicted": "grape",
+     "observed": " olive"
+    },
+    {
+     "row": 46,
+     "group": 1,
+     "recipient": "b/rat",
+     "donor": "a/pig",
+     "row_in_table": 3,
+     "predicted": "date",
+     "observed": " grape"
+    },
+    {
+     "row": 86,
+     "group": 3,
+     "recipient": "a/rat",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "olive",
+     "observed": " date"
+    },
+    {
+     "row": 88,
+     "group": 3,
+     "recipient": "a/ram",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "olive",
+     "observed": " date"
+    },
+    {
+     "row": 97,
+     "group": 3,
+     "recipient": "a/pig",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "olive",
+     "observed": " date"
+    },
+    {
+     "row": 104,
+     "group": 3,
+     "recipient": "b/rat",
+     "donor": "a/pig",
+     "row_in_table": 2,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 109,
+     "group": 3,
+     "recipient": "b/bat",
+     "donor": "a/pig",
+     "row_in_table": 2,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 118,
+     "group": 3,
+     "recipient": "b/cat",
+     "donor": "a/pig",
+     "row_in_table": 2,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 121,
+     "group": 4,
+     "recipient": "a/ram",
+     "donor": "b/yak",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " fig"
+    },
+    {
+     "row": 124,
+     "group": 4,
+     "recipient": "a/cow",
+     "donor": "b/yak",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " fig"
+    },
+    {
+     "row": 125,
+     "group": 4,
+     "recipient": "a/bat",
+     "donor": "b/yak",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " fig"
+    },
+    {
+     "row": 136,
+     "group": 4,
+     "recipient": "b/cow",
+     "donor": "a/hen",
+     "row_in_table": 1,
+     "predicted": "orange",
+     "observed": " olive"
+    },
+    {
+     "row": 157,
+     "group": 5,
+     "recipient": "b/cow",
+     "donor": "a/rat",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 158,
+     "group": 5,
+     "recipient": "b/cow",
+     "donor": "a/bee",
+     "row_in_table": 4,
+     "predicted": "grape",
+     "observed": " orange"
+    },
+    {
+     "row": 159,
+     "group": 5,
+     "recipient": "b/hen",
+     "donor": "a/bee",
+     "row_in_table": 4,
+     "predicted": "grape",
+     "observed": " orange"
+    },
+    {
+     "row": 161,
+     "group": 5,
+     "recipient": "b/yak",
+     "donor": "a/rat",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 162,
+     "group": 5,
+     "recipient": "b/yak",
+     "donor": "a/bee",
+     "row_in_table": 4,
+     "predicted": "grape",
+     "observed": " orange"
+    },
+    {
+     "row": 163,
+     "group": 5,
+     "recipient": "b/cat",
+     "donor": "a/yak",
+     "row_in_table": 2,
+     "predicted": "apple",
+     "observed": " olive"
+    },
+    {
+     "row": 165,
+     "group": 5,
+     "recipient": "b/rat",
+     "donor": "a/yak",
+     "row_in_table": 2,
+     "predicted": "apple",
+     "observed": " olive"
+    },
+    {
+     "row": 166,
+     "group": 5,
+     "recipient": "b/rat",
+     "donor": "a/cat",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " orange"
+    },
+    {
+     "row": 167,
+     "group": 5,
+     "recipient": "b/ant",
+     "donor": "a/yak",
+     "row_in_table": 2,
+     "predicted": "apple",
+     "observed": " olive"
+    },
+    {
+     "row": 168,
+     "group": 5,
+     "recipient": "b/ant",
+     "donor": "a/cat",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " orange"
+    },
+    {
+     "row": 170,
+     "group": 5,
+     "recipient": "b/bee",
+     "donor": "a/cat",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " orange"
+    },
+    {
+     "row": 171,
+     "group": 5,
+     "recipient": "b/bee",
+     "donor": "a/rat",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 172,
+     "group": 6,
+     "recipient": "a/bee",
+     "donor": "b/cow",
+     "row_in_table": 4,
+     "predicted": "grape",
+     "observed": " olive"
+    },
+    {
+     "row": 174,
+     "group": 6,
+     "recipient": "a/cow",
+     "donor": "b/hen",
+     "row_in_table": 3,
+     "predicted": "orange",
+     "observed": " fig"
+    },
+    {
+     "row": 180,
+     "group": 6,
+     "recipient": "a/dog",
+     "donor": "b/hen",
+     "row_in_table": 3,
+     "predicted": "orange",
+     "observed": " fig"
+    },
+    {
+     "row": 183,
+     "group": 6,
+     "recipient": "a/bat",
+     "donor": "b/cow",
+     "row_in_table": 4,
+     "predicted": "grape",
+     "observed": " olive"
+    },
+    {
+     "row": 184,
+     "group": 6,
+     "recipient": "b/yak",
+     "donor": "a/elk",
+     "row_in_table": 1,
+     "predicted": "lime",
+     "observed": " apple"
+    },
+    {
+     "row": 195,
+     "group": 6,
+     "recipient": "b/dog",
+     "donor": "a/elk",
+     "row_in_table": 1,
+     "predicted": "lime",
+     "observed": " apple"
+    },
+    {
+     "row": 200,
+     "group": 7,
+     "recipient": "a/yak",
+     "donor": "b/cow",
+     "row_in_table": 6,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 202,
+     "group": 7,
+     "recipient": "a/ant",
+     "donor": "b/cow",
+     "row_in_table": 6,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 204,
+     "group": 7,
+     "recipient": "a/ant",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " fig"
+    },
+    {
+     "row": 207,
+     "group": 7,
+     "recipient": "a/cow",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " fig"
+    },
+    {
+     "row": 211,
+     "group": 7,
+     "recipient": "a/elk",
+     "donor": "b/cow",
+     "row_in_table": 6,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 216,
+     "group": 7,
+     "recipient": "a/hen",
+     "donor": "b/elk",
+     "row_in_table": 1,
+     "predicted": "date",
+     "observed": " fig"
+    },
+    {
+     "row": 236,
+     "group": 8,
+     "recipient": "a/rat",
+     "donor": "b/pig",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " olive"
+    },
+    {
+     "row": 241,
+     "group": 8,
+     "recipient": "a/yak",
+     "donor": "b/pig",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " olive"
+    },
+    {
+     "row": 242,
+     "group": 8,
+     "recipient": "a/bat",
+     "donor": "b/pig",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " olive"
+    },
+    {
+     "row": 248,
+     "group": 8,
+     "recipient": "b/yak",
+     "donor": "a/ant",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 249,
+     "group": 8,
+     "recipient": "b/bat",
+     "donor": "a/ant",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 251,
+     "group": 8,
+     "recipient": "b/hen",
+     "donor": "a/ant",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 259,
+     "group": 9,
+     "recipient": "a/cat",
+     "donor": "b/ram",
+     "row_in_table": 1,
+     "predicted": "grape",
+     "observed": " apple"
+    },
+    {
+     "row": 269,
+     "group": 10,
+     "recipient": "a/dog",
+     "donor": "b/hen",
+     "row_in_table": 2,
+     "predicted": "orange",
+     "observed": " date"
+    },
+    {
+     "row": 270,
+     "group": 10,
+     "recipient": "a/yak",
+     "donor": "b/pig",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " orange"
+    },
+    {
+     "row": 273,
+     "group": 10,
+     "recipient": "a/rat",
+     "donor": "b/hen",
+     "row_in_table": 2,
+     "predicted": "orange",
+     "observed": " date"
+    },
+    {
+     "row": 276,
+     "group": 10,
+     "recipient": "a/hen",
+     "donor": "b/pig",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " orange"
+    },
+    {
+     "row": 282,
+     "group": 10,
+     "recipient": "a/bat",
+     "donor": "b/hen",
+     "row_in_table": 2,
+     "predicted": "orange",
+     "observed": " date"
+    }
+   ],
+   "by_group": {
+    "0": [
+     23,
+     27
+    ],
+    "1": [
+     24,
+     27
+    ],
+    "2": [
+     30,
+     30
+    ],
+    "3": [
+     30,
+     36
+    ],
+    "4": [
+     20,
+     24
+    ],
+    "5": [
+     15,
+     27
+    ],
+    "6": [
+     21,
+     27
+    ],
+    "7": [
+     27,
+     33
+    ],
+    "8": [
+     15,
+     21
+    ],
+    "9": [
+     14,
+     15
+    ],
+    "10": [
+     25,
+     30
+    ],
+    "11": [
+     15,
+     15
+    ]
+   },
+   "by_target_row": {
+    "1": [
+     29,
+     44
+    ],
+    "3": [
+     44,
+     62
+    ],
+    "2": [
+     39,
+     48
+    ],
+    "6": [
+     38,
+     41
+    ],
+    "4": [
+     33,
+     41
+    ],
+    "5": [
+     38,
+     38
+    ],
+    "7": [
+     38,
+     38
+    ]
+   },
+   "sixth_aliases": {
+    "distinct": 106,
+    "donor": 55,
+    "recipient": 53,
+    "carried_animal": 35,
+    "carried_row": 24,
+    "carried_colour": 39
+   },
+   "sixth_alias_pointer_hits": {
+    "distinct": 81,
+    "donor": 45,
+    "recipient": 45,
+    "carried_animal": 30,
+    "carried_row": 19,
+    "carried_colour": 39
+   },
+   "donor_specific_lookup_training_ceiling": 304,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(166, 312)": 1,
+    "(165, 312)": 7,
+    "(164, 312)": 21,
+    "(163, 312)": 35,
+    "(162, 312)": 35,
+    "(161, 312)": 21,
+    "(160, 312)": 7,
+    "(159, 312)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 259,
+    "nearest_absolute_fruit_character_start_same": 312,
+    "nearest_list_relative_fruit_character_start_hits": 259,
+    "nearest_list_relative_fruit_character_start_same": 312,
+    "decoupled": 106,
+    "decoupled_hits": 81
+   }
+  },
+  "pointer/mini": {
+   "n": 150,
+   "conditions": {
+    "full": {
+     "pointer": 145,
+     "other": 3,
+     "recipient": 2
+    },
+    "only_row": {
+     "recipient": 149,
+     "pointer": 1
+    },
+    "all_but_row": {
+     "pointer": 47,
+     "other": 53,
+     "recipient": 20,
+     "other_row_fruit": 14,
+     "donor": 16
+    },
+    "only_fruit_token": {
+     "recipient": 150
+    },
+    "other_row": {
+     "recipient": 149,
+     "other_row_fruit": 1
+    }
+   },
+   "raw_donor_hits": {
+    "full": 0,
+    "only_row": 28,
+    "all_but_row": 20,
+    "only_fruit_token": 29,
+    "other_row": 29
+   },
+   "extra_tie_hits": {
+    "recipient=donor": 29,
+    "full": 0,
+    "only_row": 28,
+    "all_but_row": 4,
+    "only_fruit_token": 29,
+    "other_row": 29
+   },
+   "clean": "110/112",
+   "qualifying": {
+    "structural": 672,
+    "preclean": 526
+   },
+   "recipient_prompts": 88,
+   "donor_prompts": 80,
+   "tables": 8,
+   "seen_endpoints": 107,
+   "num_regenerated_prompts": 112,
+   "display_first_row_clean": 18,
+   "sampled_other_row_hist": {
+    "5": 23,
+    "4": 19,
+    "6": 20,
+    "7": 15,
+    "2": 23,
+    "3": 29,
+    "1": 21
+   },
+   "pointer_hits": 145,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 145,
+    "recipient": 2,
+    "donor": 0,
+    "colour": 28,
+    "animal": 40,
+    "animal_row": 26,
+    "donor_map_rec_colour": 30,
+    "first_row_colour": 12,
+    "end_row": 145,
+    "fruit_token": 145,
+    "colour_token": 145,
+    "fruit_from_end": 145,
+    "read_rec_key": 145,
+    "replacement_dictionary": 145,
+    "mirror": 28,
+    "first_fruit": 20,
+    "last_fruit": 26
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 150,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 28,
+    "animal": 42,
+    "animal_row": 23,
+    "donor_map_rec_colour": 29,
+    "first_row_colour": 12,
+    "end_row": 150,
+    "fruit_token": 150,
+    "colour_token": 150,
+    "fruit_from_end": 150,
+    "read_rec_key": 150,
+    "replacement_dictionary": 150,
+    "mirror": 29,
+    "first_fruit": 22,
+    "last_fruit": 24
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     150,
+     145,
+     2
+    ],
+    "donor": [
+     150,
+     145,
+     0
+    ],
+    "animal": [
+     108,
+     105,
+     0
+    ],
+    "animal_row": [
+     127,
+     122,
+     3
+    ],
+    "donor_map_rec_colour": [
+     121,
+     116,
+     1
+    ],
+    "first_row_colour": [
+     138,
+     133,
+     0
+    ],
+    "mirror": [
+     121,
+     119,
+     2
+    ],
+    "last_fruit": [
+     126,
+     121,
+     2
+    ],
+    "colour": [
+     122,
+     117,
+     0
+    ],
+    "first_fruit": [
+     128,
+     125,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 150,
+    "pointer|donor": 150,
+    "pointer|colour": 122,
+    "pointer|animal": 108,
+    "pointer|animal_row": 127,
+    "pointer|donor_map_rec_colour": 121,
+    "pointer|first_row_colour": 138,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 121,
+    "pointer|first_fruit": 128,
+    "pointer|last_fruit": 126,
+    "recipient|donor": 121,
+    "recipient|colour": 130,
+    "recipient|animal": 150,
+    "recipient|animal_row": 134,
+    "recipient|donor_map_rec_colour": 150,
+    "recipient|first_row_colour": 132,
+    "recipient|end_row": 150,
+    "recipient|fruit_token": 150,
+    "recipient|colour_token": 150,
+    "recipient|fruit_from_end": 150,
+    "recipient|read_rec_key": 150,
+    "recipient|replacement_dictionary": 150,
+    "recipient|mirror": 131,
+    "recipient|first_fruit": 134,
+    "recipient|last_fruit": 131,
+    "donor|colour": 150,
+    "donor|animal": 150,
+    "donor|animal_row": 141,
+    "donor|donor_map_rec_colour": 130,
+    "donor|first_row_colour": 133,
+    "donor|end_row": 150,
+    "donor|fruit_token": 150,
+    "donor|colour_token": 150,
+    "donor|fruit_from_end": 150,
+    "donor|read_rec_key": 150,
+    "donor|replacement_dictionary": 150,
+    "donor|mirror": 126,
+    "donor|first_fruit": 131,
+    "donor|last_fruit": 136,
+    "colour|animal": 150,
+    "colour|animal_row": 122,
+    "colour|donor_map_rec_colour": 127,
+    "colour|first_row_colour": 126,
+    "colour|end_row": 122,
+    "colour|fruit_token": 122,
+    "colour|colour_token": 122,
+    "colour|fruit_from_end": 122,
+    "colour|read_rec_key": 122,
+    "colour|replacement_dictionary": 122,
+    "colour|mirror": 137,
+    "colour|first_fruit": 120,
+    "colour|last_fruit": 132,
+    "animal|animal_row": 122,
+    "animal|donor_map_rec_colour": 124,
+    "animal|first_row_colour": 122,
+    "animal|end_row": 108,
+    "animal|fruit_token": 108,
+    "animal|colour_token": 108,
+    "animal|fruit_from_end": 108,
+    "animal|read_rec_key": 108,
+    "animal|replacement_dictionary": 108,
+    "animal|mirror": 139,
+    "animal|first_fruit": 124,
+    "animal|last_fruit": 129,
+    "animal_row|donor_map_rec_colour": 126,
+    "animal_row|first_row_colour": 120,
+    "animal_row|end_row": 127,
+    "animal_row|fruit_token": 127,
+    "animal_row|colour_token": 127,
+    "animal_row|fruit_from_end": 127,
+    "animal_row|read_rec_key": 127,
+    "animal_row|replacement_dictionary": 127,
+    "animal_row|mirror": 122,
+    "animal_row|first_fruit": 129,
+    "animal_row|last_fruit": 133,
+    "donor_map_rec_colour|first_row_colour": 124,
+    "donor_map_rec_colour|end_row": 121,
+    "donor_map_rec_colour|fruit_token": 121,
+    "donor_map_rec_colour|colour_token": 121,
+    "donor_map_rec_colour|fruit_from_end": 121,
+    "donor_map_rec_colour|read_rec_key": 121,
+    "donor_map_rec_colour|replacement_dictionary": 121,
+    "donor_map_rec_colour|mirror": 130,
+    "donor_map_rec_colour|first_fruit": 122,
+    "donor_map_rec_colour|last_fruit": 127,
+    "first_row_colour|end_row": 138,
+    "first_row_colour|fruit_token": 138,
+    "first_row_colour|colour_token": 138,
+    "first_row_colour|fruit_from_end": 138,
+    "first_row_colour|read_rec_key": 138,
+    "first_row_colour|replacement_dictionary": 138,
+    "first_row_colour|mirror": 127,
+    "first_row_colour|first_fruit": 132,
+    "first_row_colour|last_fruit": 131,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 121,
+    "end_row|first_fruit": 128,
+    "end_row|last_fruit": 126,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 121,
+    "fruit_token|first_fruit": 128,
+    "fruit_token|last_fruit": 126,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 121,
+    "colour_token|first_fruit": 128,
+    "colour_token|last_fruit": 126,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 121,
+    "fruit_from_end|first_fruit": 128,
+    "fruit_from_end|last_fruit": 126,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 121,
+    "read_rec_key|first_fruit": 128,
+    "read_rec_key|last_fruit": 126,
+    "replacement_dictionary|mirror": 121,
+    "replacement_dictionary|first_fruit": 128,
+    "replacement_dictionary|last_fruit": 126,
+    "mirror|first_fruit": 126,
+    "mirror|last_fruit": 128,
+    "first_fruit|last_fruit": 150
+   },
+   "failures": [
+    {
+     "row": 7,
+     "group": 2,
+     "recipient": "a/cat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 82,
+     "group": 5,
+     "recipient": "b/dog",
+     "donor": "a/yak",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 111,
+     "group": 2,
+     "recipient": "a/rat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 137,
+     "group": 5,
+     "recipient": "b/cow",
+     "donor": "a/yak",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 143,
+     "group": 2,
+     "recipient": "a/ant",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    }
+   ],
+   "by_group": {
+    "7": [
+     24,
+     24
+    ],
+    "3": [
+     17,
+     17
+    ],
+    "6": [
+     19,
+     19
+    ],
+    "0": [
+     10,
+     10
+    ],
+    "2": [
+     20,
+     23
+    ],
+    "4": [
+     20,
+     20
+    ],
+    "1": [
+     21,
+     21
+    ],
+    "5": [
+     14,
+     16
+    ]
+   },
+   "by_target_row": {
+    "1": [
+     20,
+     22
+    ],
+    "6": [
+     15,
+     15
+    ],
+    "4": [
+     26,
+     29
+    ],
+    "7": [
+     24,
+     24
+    ],
+    "5": [
+     26,
+     26
+    ],
+    "2": [
+     14,
+     14
+    ],
+    "3": [
+     20,
+     20
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 150,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(110, 504)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 145,
+    "nearest_absolute_fruit_character_start_same": 150,
+    "nearest_list_relative_fruit_character_start_hits": 145,
+    "nearest_list_relative_fruit_character_start_same": 150,
+    "decoupled": 70,
+    "decoupled_hits": 67
+   }
+  },
+  "pointer/sibling": {
+   "n": 150,
+   "conditions": {
+    "full": {
+     "other": 15,
+     "pointer": 123,
+     "other_row_fruit": 6,
+     "recipient": 5,
+     "donor": 1
+    },
+    "only_row": {
+     "recipient": 148,
+     "other": 1,
+     "other_row_fruit": 1
+    }
+   },
+   "raw_donor_hits": {
+    "full": 1,
+    "only_row": 30
+   },
+   "extra_tie_hits": {
+    "recipient=donor": 30,
+    "full": 0,
+    "only_row": 30
+   },
+   "clean": "104/112",
+   "qualifying": {
+    "structural": 672,
+    "preclean": 526
+   },
+   "recipient_prompts": 86,
+   "donor_prompts": 77,
+   "tables": 8,
+   "seen_endpoints": 98,
+   "num_regenerated_prompts": 112,
+   "display_first_row_clean": 18,
+   "sampled_other_row_hist": {
+    "1": 25,
+    "4": 19,
+    "6": 19,
+    "2": 19,
+    "5": 21,
+    "7": 23,
+    "3": 24
+   },
+   "pointer_hits": 123,
+   "independently_present_full": true,
+   "rule_hits": {
+    "pointer": 123,
+    "recipient": 5,
+    "donor": 1,
+    "colour": 37,
+    "animal": 29,
+    "animal_row": 28,
+    "donor_map_rec_colour": 27,
+    "first_row_colour": 26,
+    "end_row": 123,
+    "fruit_token": 123,
+    "colour_token": 123,
+    "fruit_from_end": 123,
+    "read_rec_key": 123,
+    "replacement_dictionary": 123,
+    "mirror": 32,
+    "first_fruit": 12,
+    "last_fruit": 29
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 150,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 19,
+    "animal": 40,
+    "animal_row": 26,
+    "donor_map_rec_colour": 31,
+    "first_row_colour": 24,
+    "end_row": 150,
+    "fruit_token": 150,
+    "colour_token": 150,
+    "fruit_from_end": 150,
+    "read_rec_key": 150,
+    "replacement_dictionary": 150,
+    "mirror": 32,
+    "first_fruit": 13,
+    "last_fruit": 23
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     150,
+     123,
+     5
+    ],
+    "donor": [
+     150,
+     123,
+     1
+    ],
+    "animal": [
+     110,
+     94,
+     0
+    ],
+    "animal_row": [
+     124,
+     101,
+     6
+    ],
+    "first_row_colour": [
+     126,
+     104,
+     7
+    ],
+    "mirror": [
+     118,
+     92,
+     1
+    ],
+    "first_fruit": [
+     137,
+     113,
+     2
+    ],
+    "last_fruit": [
+     127,
+     100,
+     6
+    ],
+    "colour": [
+     131,
+     105,
+     19
+    ],
+    "donor_map_rec_colour": [
+     119,
+     100,
+     4
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 150,
+    "pointer|donor": 150,
+    "pointer|colour": 131,
+    "pointer|animal": 110,
+    "pointer|animal_row": 124,
+    "pointer|donor_map_rec_colour": 119,
+    "pointer|first_row_colour": 126,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 118,
+    "pointer|first_fruit": 137,
+    "pointer|last_fruit": 127,
+    "recipient|donor": 120,
+    "recipient|colour": 122,
+    "recipient|animal": 150,
+    "recipient|animal_row": 135,
+    "recipient|donor_map_rec_colour": 150,
+    "recipient|first_row_colour": 137,
+    "recipient|end_row": 150,
+    "recipient|fruit_token": 150,
+    "recipient|colour_token": 150,
+    "recipient|fruit_from_end": 150,
+    "recipient|read_rec_key": 150,
+    "recipient|replacement_dictionary": 150,
+    "recipient|mirror": 128,
+    "recipient|first_fruit": 131,
+    "recipient|last_fruit": 130,
+    "donor|colour": 150,
+    "donor|animal": 150,
+    "donor|animal_row": 134,
+    "donor|donor_map_rec_colour": 122,
+    "donor|first_row_colour": 137,
+    "donor|end_row": 150,
+    "donor|fruit_token": 150,
+    "donor|colour_token": 150,
+    "donor|fruit_from_end": 150,
+    "donor|read_rec_key": 150,
+    "donor|replacement_dictionary": 150,
+    "donor|mirror": 125,
+    "donor|first_fruit": 133,
+    "donor|last_fruit": 123,
+    "colour|animal": 150,
+    "colour|animal_row": 117,
+    "colour|donor_map_rec_colour": 129,
+    "colour|first_row_colour": 128,
+    "colour|end_row": 131,
+    "colour|fruit_token": 131,
+    "colour|colour_token": 131,
+    "colour|fruit_from_end": 131,
+    "colour|read_rec_key": 131,
+    "colour|replacement_dictionary": 131,
+    "colour|mirror": 134,
+    "colour|first_fruit": 129,
+    "colour|last_fruit": 130,
+    "animal|animal_row": 125,
+    "animal|donor_map_rec_colour": 131,
+    "animal|first_row_colour": 110,
+    "animal|end_row": 110,
+    "animal|fruit_token": 110,
+    "animal|colour_token": 110,
+    "animal|fruit_from_end": 110,
+    "animal|read_rec_key": 110,
+    "animal|replacement_dictionary": 110,
+    "animal|mirror": 136,
+    "animal|first_fruit": 129,
+    "animal|last_fruit": 128,
+    "animal_row|donor_map_rec_colour": 122,
+    "animal_row|first_row_colour": 123,
+    "animal_row|end_row": 124,
+    "animal_row|fruit_token": 124,
+    "animal_row|colour_token": 124,
+    "animal_row|fruit_from_end": 124,
+    "animal_row|read_rec_key": 124,
+    "animal_row|replacement_dictionary": 124,
+    "animal_row|mirror": 127,
+    "animal_row|first_fruit": 137,
+    "animal_row|last_fruit": 130,
+    "donor_map_rec_colour|first_row_colour": 126,
+    "donor_map_rec_colour|end_row": 119,
+    "donor_map_rec_colour|fruit_token": 119,
+    "donor_map_rec_colour|colour_token": 119,
+    "donor_map_rec_colour|fruit_from_end": 119,
+    "donor_map_rec_colour|read_rec_key": 119,
+    "donor_map_rec_colour|replacement_dictionary": 119,
+    "donor_map_rec_colour|mirror": 126,
+    "donor_map_rec_colour|first_fruit": 124,
+    "donor_map_rec_colour|last_fruit": 133,
+    "first_row_colour|end_row": 126,
+    "first_row_colour|fruit_token": 126,
+    "first_row_colour|colour_token": 126,
+    "first_row_colour|fruit_from_end": 126,
+    "first_row_colour|read_rec_key": 126,
+    "first_row_colour|replacement_dictionary": 126,
+    "first_row_colour|mirror": 129,
+    "first_row_colour|first_fruit": 130,
+    "first_row_colour|last_fruit": 138,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 118,
+    "end_row|first_fruit": 137,
+    "end_row|last_fruit": 127,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 118,
+    "fruit_token|first_fruit": 137,
+    "fruit_token|last_fruit": 127,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 118,
+    "colour_token|first_fruit": 137,
+    "colour_token|last_fruit": 127,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 118,
+    "fruit_from_end|first_fruit": 137,
+    "fruit_from_end|last_fruit": 127,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 118,
+    "read_rec_key|first_fruit": 137,
+    "read_rec_key|last_fruit": 127,
+    "replacement_dictionary|mirror": 118,
+    "replacement_dictionary|first_fruit": 137,
+    "replacement_dictionary|last_fruit": 127,
+    "mirror|first_fruit": 127,
+    "mirror|last_fruit": 137,
+    "first_fruit|last_fruit": 150
+   },
+   "failures": [
+    {
+     "row": 1,
+     "group": 7,
+     "recipient": "b/ant",
+     "donor": "a/rat",
+     "row_in_table": 5,
+     "predicted": "orange",
+     "observed": " lime"
+    },
+    {
+     "row": 11,
+     "group": 7,
+     "recipient": "b/rat",
+     "donor": "a/cat",
+     "row_in_table": 2,
+     "predicted": "grape",
+     "observed": " lime"
+    },
+    {
+     "row": 12,
+     "group": 2,
+     "recipient": "b/cow",
+     "donor": "a/rat",
+     "row_in_table": 2,
+     "predicted": "apple",
+     "observed": " lime"
+    },
+    {
+     "row": 14,
+     "group": 3,
+     "recipient": "a/bee",
+     "donor": "b/ram",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " apple"
+    },
+    {
+     "row": 19,
+     "group": 2,
+     "recipient": "b/pig",
+     "donor": "a/ant",
+     "row_in_table": 6,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 22,
+     "group": 1,
+     "recipient": "a/rat",
+     "donor": "b/yak",
+     "row_in_table": 1,
+     "predicted": "lime",
+     "observed": " date"
+    },
+    {
+     "row": 24,
+     "group": 7,
+     "recipient": "a/pig",
+     "donor": "b/cat",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " apple"
+    },
+    {
+     "row": 31,
+     "group": 1,
+     "recipient": "a/rat",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "fig",
+     "observed": " olive"
+    },
+    {
+     "row": 34,
+     "group": 6,
+     "recipient": "a/yak",
+     "donor": "b/elk",
+     "row_in_table": 3,
+     "predicted": "apple",
+     "observed": " fig"
+    },
+    {
+     "row": 41,
+     "group": 2,
+     "recipient": "b/bee",
+     "donor": "a/ant",
+     "row_in_table": 6,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 51,
+     "group": 5,
+     "recipient": "a/ant",
+     "donor": "b/bee",
+     "row_in_table": 3,
+     "predicted": "grape",
+     "observed": " apple"
+    },
+    {
+     "row": 65,
+     "group": 2,
+     "recipient": "b/rat",
+     "donor": "a/ant",
+     "row_in_table": 6,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 70,
+     "group": 2,
+     "recipient": "a/ant",
+     "donor": "b/rat",
+     "row_in_table": 5,
+     "predicted": "apple",
+     "observed": " grape"
+    },
+    {
+     "row": 79,
+     "group": 4,
+     "recipient": "b/elk",
+     "donor": "a/dog",
+     "row_in_table": 2,
+     "predicted": "olive",
+     "observed": " orange"
+    },
+    {
+     "row": 84,
+     "group": 1,
+     "recipient": "a/ant",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "fig",
+     "observed": " orange"
+    },
+    {
+     "row": 92,
+     "group": 2,
+     "recipient": "b/pig",
+     "donor": "a/rat",
+     "row_in_table": 2,
+     "predicted": "apple",
+     "observed": " lime"
+    },
+    {
+     "row": 100,
+     "group": 2,
+     "recipient": "b/cat",
+     "donor": "a/ant",
+     "row_in_table": 6,
+     "predicted": "olive",
+     "observed": " fig"
+    },
+    {
+     "row": 102,
+     "group": 1,
+     "recipient": "b/yak",
+     "donor": "a/bat",
+     "row_in_table": 3,
+     "predicted": "orange",
+     "observed": " lime"
+    },
+    {
+     "row": 109,
+     "group": 1,
+     "recipient": "a/elk",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "fig",
+     "observed": " olive"
+    },
+    {
+     "row": 112,
+     "group": 0,
+     "recipient": "a/yak",
+     "donor": "b/ram",
+     "row_in_table": 1,
+     "predicted": "olive",
+     "observed": " apple"
+    },
+    {
+     "row": 114,
+     "group": 6,
+     "recipient": "a/ram",
+     "donor": "b/elk",
+     "row_in_table": 3,
+     "predicted": "apple",
+     "observed": " fig"
+    },
+    {
+     "row": 119,
+     "group": 2,
+     "recipient": "a/cat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 126,
+     "group": 6,
+     "recipient": "b/yak",
+     "donor": "a/cow",
+     "row_in_table": 3,
+     "predicted": "date",
+     "observed": " orange"
+    },
+    {
+     "row": 129,
+     "group": 6,
+     "recipient": "b/rat",
+     "donor": "a/cow",
+     "row_in_table": 3,
+     "predicted": "date",
+     "observed": " orange"
+    },
+    {
+     "row": 130,
+     "group": 1,
+     "recipient": "a/yak",
+     "donor": "b/bat",
+     "row_in_table": 3,
+     "predicted": "fig",
+     "observed": " olive"
+    },
+    {
+     "row": 144,
+     "group": 7,
+     "recipient": "a/hen",
+     "donor": "b/cat",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " apple"
+    },
+    {
+     "row": 145,
+     "group": 7,
+     "recipient": "a/rat",
+     "donor": "b/cat",
+     "row_in_table": 3,
+     "predicted": "lime",
+     "observed": " apple"
+    }
+   ],
+   "by_group": {
+    "7": [
+     13,
+     18
+    ],
+    "3": [
+     12,
+     13
+    ],
+    "0": [
+     11,
+     12
+    ],
+    "2": [
+     18,
+     26
+    ],
+    "4": [
+     19,
+     20
+    ],
+    "5": [
+     18,
+     19
+    ],
+    "1": [
+     16,
+     22
+    ],
+    "6": [
+     16,
+     20
+    ]
+   },
+   "by_target_row": {
+    "5": [
+     19,
+     21
+    ],
+    "2": [
+     15,
+     19
+    ],
+    "6": [
+     19,
+     23
+    ],
+    "7": [
+     23,
+     23
+    ],
+    "3": [
+     6,
+     19
+    ],
+    "4": [
+     31,
+     32
+    ],
+    "1": [
+     10,
+     13
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 146,
+   "compatible_clean_and_pool_counts_without_aggregates": {
+    "(104, 440)": 1
+   },
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 123,
+    "nearest_absolute_fruit_character_start_same": 150,
+    "nearest_list_relative_fruit_character_start_hits": 123,
+    "nearest_list_relative_fruit_character_start_same": 150,
+    "decoupled": 78,
+    "decoupled_hits": 67
+   }
+  },
+  "regions/mini": {
+   "n": 150,
+   "conditions": {
+    "table1": {
+     "recipient": 147,
+     "other": 2,
+     "other_row_fruit": 1
+    },
+    "table2": {
+     "other": 51,
+     "recipient": 67,
+     "pointer": 6,
+     "other_row_fruit": 11,
+     "donor": 15
+    },
+    "question": {
+     "other_row_fruit": 22,
+     "other": 74,
+     "pointer": 34,
+     "donor": 5,
+     "recipient": 15
+    },
+    "last_token": {
+     "recipient": 150
+    },
+    "table1+table2": {
+     "other": 68,
+     "other_row_fruit": 15,
+     "recipient": 41,
+     "pointer": 8,
+     "donor": 18
+    },
+    "table1+question": {
+     "pointer": 26,
+     "other": 74,
+     "recipient": 18,
+     "donor": 10,
+     "other_row_fruit": 22
+    },
+    "table2+question": {
+     "pointer": 140,
+     "other": 4,
+     "other_row_fruit": 3,
+     "donor": 1,
+     "recipient": 2
+    }
+   },
+   "raw_donor_hits": {
+    "table1": 28,
+    "table2": 32,
+    "question": 7,
+    "last_token": 29,
+    "table1+table2": 28,
+    "table1+question": 12,
+    "table2+question": 1
+   },
+   "extra_tie_hits": {
+    "recipient=donor": 29,
+    "table1": 28,
+    "table2": 17,
+    "question": 2,
+    "last_token": 29,
+    "table1+table2": 10,
+    "table1+question": 2,
+    "table2+question": 0
+   },
+   "clean": "110/112",
+   "qualifying": {
+    "structural": 672,
+    "preclean": 526
+   },
+   "recipient_prompts": 88,
+   "donor_prompts": 80,
+   "tables": 8,
+   "seen_endpoints": 107,
+   "num_regenerated_prompts": 112,
+   "display_first_row_clean": 18,
+   "sampled_other_row_hist": {
+    "5": 23,
+    "4": 19,
+    "6": 20,
+    "7": 15,
+    "2": 23,
+    "3": 29,
+    "1": 21
+   },
+   "pointer_hits": 145,
+   "independently_present_full": false,
+   "rule_hits": {
+    "pointer": 145,
+    "recipient": 2,
+    "donor": 0,
+    "colour": 28,
+    "animal": 40,
+    "animal_row": 26,
+    "donor_map_rec_colour": 30,
+    "first_row_colour": 12,
+    "end_row": 145,
+    "fruit_token": 145,
+    "colour_token": 145,
+    "fruit_from_end": 145,
+    "read_rec_key": 145,
+    "replacement_dictionary": 145,
+    "mirror": 28,
+    "first_fruit": 20,
+    "last_fruit": 26
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 150,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 28,
+    "animal": 42,
+    "animal_row": 23,
+    "donor_map_rec_colour": 29,
+    "first_row_colour": 12,
+    "end_row": 150,
+    "fruit_token": 150,
+    "colour_token": 150,
+    "fruit_from_end": 150,
+    "read_rec_key": 150,
+    "replacement_dictionary": 150,
+    "mirror": 29,
+    "first_fruit": 22,
+    "last_fruit": 24
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     150,
+     145,
+     2
+    ],
+    "donor": [
+     150,
+     145,
+     0
+    ],
+    "animal": [
+     108,
+     105,
+     0
+    ],
+    "animal_row": [
+     127,
+     122,
+     3
+    ],
+    "donor_map_rec_colour": [
+     121,
+     116,
+     1
+    ],
+    "first_row_colour": [
+     138,
+     133,
+     0
+    ],
+    "mirror": [
+     121,
+     119,
+     2
+    ],
+    "last_fruit": [
+     126,
+     121,
+     2
+    ],
+    "colour": [
+     122,
+     117,
+     0
+    ],
+    "first_fruit": [
+     128,
+     125,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 150,
+    "pointer|donor": 150,
+    "pointer|colour": 122,
+    "pointer|animal": 108,
+    "pointer|animal_row": 127,
+    "pointer|donor_map_rec_colour": 121,
+    "pointer|first_row_colour": 138,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 121,
+    "pointer|first_fruit": 128,
+    "pointer|last_fruit": 126,
+    "recipient|donor": 121,
+    "recipient|colour": 130,
+    "recipient|animal": 150,
+    "recipient|animal_row": 134,
+    "recipient|donor_map_rec_colour": 150,
+    "recipient|first_row_colour": 132,
+    "recipient|end_row": 150,
+    "recipient|fruit_token": 150,
+    "recipient|colour_token": 150,
+    "recipient|fruit_from_end": 150,
+    "recipient|read_rec_key": 150,
+    "recipient|replacement_dictionary": 150,
+    "recipient|mirror": 131,
+    "recipient|first_fruit": 134,
+    "recipient|last_fruit": 131,
+    "donor|colour": 150,
+    "donor|animal": 150,
+    "donor|animal_row": 141,
+    "donor|donor_map_rec_colour": 130,
+    "donor|first_row_colour": 133,
+    "donor|end_row": 150,
+    "donor|fruit_token": 150,
+    "donor|colour_token": 150,
+    "donor|fruit_from_end": 150,
+    "donor|read_rec_key": 150,
+    "donor|replacement_dictionary": 150,
+    "donor|mirror": 126,
+    "donor|first_fruit": 131,
+    "donor|last_fruit": 136,
+    "colour|animal": 150,
+    "colour|animal_row": 122,
+    "colour|donor_map_rec_colour": 127,
+    "colour|first_row_colour": 126,
+    "colour|end_row": 122,
+    "colour|fruit_token": 122,
+    "colour|colour_token": 122,
+    "colour|fruit_from_end": 122,
+    "colour|read_rec_key": 122,
+    "colour|replacement_dictionary": 122,
+    "colour|mirror": 137,
+    "colour|first_fruit": 120,
+    "colour|last_fruit": 132,
+    "animal|animal_row": 122,
+    "animal|donor_map_rec_colour": 124,
+    "animal|first_row_colour": 122,
+    "animal|end_row": 108,
+    "animal|fruit_token": 108,
+    "animal|colour_token": 108,
+    "animal|fruit_from_end": 108,
+    "animal|read_rec_key": 108,
+    "animal|replacement_dictionary": 108,
+    "animal|mirror": 139,
+    "animal|first_fruit": 124,
+    "animal|last_fruit": 129,
+    "animal_row|donor_map_rec_colour": 126,
+    "animal_row|first_row_colour": 120,
+    "animal_row|end_row": 127,
+    "animal_row|fruit_token": 127,
+    "animal_row|colour_token": 127,
+    "animal_row|fruit_from_end": 127,
+    "animal_row|read_rec_key": 127,
+    "animal_row|replacement_dictionary": 127,
+    "animal_row|mirror": 122,
+    "animal_row|first_fruit": 129,
+    "animal_row|last_fruit": 133,
+    "donor_map_rec_colour|first_row_colour": 124,
+    "donor_map_rec_colour|end_row": 121,
+    "donor_map_rec_colour|fruit_token": 121,
+    "donor_map_rec_colour|colour_token": 121,
+    "donor_map_rec_colour|fruit_from_end": 121,
+    "donor_map_rec_colour|read_rec_key": 121,
+    "donor_map_rec_colour|replacement_dictionary": 121,
+    "donor_map_rec_colour|mirror": 130,
+    "donor_map_rec_colour|first_fruit": 122,
+    "donor_map_rec_colour|last_fruit": 127,
+    "first_row_colour|end_row": 138,
+    "first_row_colour|fruit_token": 138,
+    "first_row_colour|colour_token": 138,
+    "first_row_colour|fruit_from_end": 138,
+    "first_row_colour|read_rec_key": 138,
+    "first_row_colour|replacement_dictionary": 138,
+    "first_row_colour|mirror": 127,
+    "first_row_colour|first_fruit": 132,
+    "first_row_colour|last_fruit": 131,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 121,
+    "end_row|first_fruit": 128,
+    "end_row|last_fruit": 126,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 121,
+    "fruit_token|first_fruit": 128,
+    "fruit_token|last_fruit": 126,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 121,
+    "colour_token|first_fruit": 128,
+    "colour_token|last_fruit": 126,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 121,
+    "fruit_from_end|first_fruit": 128,
+    "fruit_from_end|last_fruit": 126,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 121,
+    "read_rec_key|first_fruit": 128,
+    "read_rec_key|last_fruit": 126,
+    "replacement_dictionary|mirror": 121,
+    "replacement_dictionary|first_fruit": 128,
+    "replacement_dictionary|last_fruit": 126,
+    "mirror|first_fruit": 126,
+    "mirror|last_fruit": 128,
+    "first_fruit|last_fruit": 150
+   },
+   "failures": [
+    {
+     "row": 7,
+     "group": 2,
+     "recipient": "a/cat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 82,
+     "group": 5,
+     "recipient": "b/dog",
+     "donor": "a/yak",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 111,
+     "group": 2,
+     "recipient": "a/rat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 137,
+     "group": 5,
+     "recipient": "b/cow",
+     "donor": "a/yak",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 143,
+     "group": 2,
+     "recipient": "a/ant",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    }
+   ],
+   "by_group": {
+    "7": [
+     24,
+     24
+    ],
+    "3": [
+     17,
+     17
+    ],
+    "6": [
+     19,
+     19
+    ],
+    "0": [
+     10,
+     10
+    ],
+    "2": [
+     20,
+     23
+    ],
+    "4": [
+     20,
+     20
+    ],
+    "1": [
+     21,
+     21
+    ],
+    "5": [
+     14,
+     16
+    ]
+   },
+   "by_target_row": {
+    "1": [
+     20,
+     22
+    ],
+    "6": [
+     15,
+     15
+    ],
+    "4": [
+     26,
+     29
+    ],
+    "7": [
+     24,
+     24
+    ],
+    "5": [
+     26,
+     26
+    ],
+    "2": [
+     14,
+     14
+    ],
+    "3": [
+     20,
+     20
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 150,
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 145,
+    "nearest_absolute_fruit_character_start_same": 150,
+    "nearest_list_relative_fruit_character_start_hits": 145,
+    "nearest_list_relative_fruit_character_start_same": 150,
+    "decoupled": 70,
+    "decoupled_hits": 67
+   }
+  },
+  "parts/mini": {
+   "n": 150,
+   "conditions": {
+    "all four parts": {
+     "pointer": 140,
+     "other": 4,
+     "other_row_fruit": 3,
+     "donor": 1,
+     "recipient": 2
+    },
+    "keys at table 2 + queries at question": {
+     "recipient": 132,
+     "other_row_fruit": 1,
+     "pointer": 11,
+     "other": 6
+    },
+    "queries and keys": {
+     "recipient": 136,
+     "pointer": 7,
+     "other_row_fruit": 1,
+     "other": 6
+    },
+    "keys and values at table 2 + queries at question": {
+     "pointer": 30,
+     "other_row_fruit": 10,
+     "recipient": 67,
+     "other": 33,
+     "donor": 10
+    },
+    "values only": {
+     "pointer": 32,
+     "other": 20,
+     "recipient": 90,
+     "other_row_fruit": 4,
+     "donor": 4
+    },
+    "expert-layer only": {
+     "recipient": 147,
+     "other": 3
+    },
+    "values and expert-layer": {
+     "pointer": 51,
+     "recipient": 66,
+     "other": 22,
+     "other_row_fruit": 6,
+     "donor": 5
+    }
+   },
+   "raw_donor_hits": {
+    "all four parts": 1,
+    "keys at table 2 + queries at question": 27,
+    "queries and keys": 26,
+    "keys and values at table 2 + queries at question": 25,
+    "values only": 22,
+    "expert-layer only": 29,
+    "values and expert-layer": 19
+   },
+   "extra_tie_hits": {
+    "recipient=donor": 29,
+    "all four parts": 0,
+    "keys at table 2 + queries at question": 27,
+    "queries and keys": 26,
+    "keys and values at table 2 + queries at question": 15,
+    "values only": 18,
+    "expert-layer only": 29,
+    "values and expert-layer": 14
+   },
+   "clean": "110/112",
+   "qualifying": {
+    "structural": 672,
+    "preclean": 526
+   },
+   "recipient_prompts": 88,
+   "donor_prompts": 80,
+   "tables": 8,
+   "seen_endpoints": 107,
+   "num_regenerated_prompts": 112,
+   "display_first_row_clean": 18,
+   "sampled_other_row_hist": {
+    "5": 23,
+    "4": 19,
+    "6": 20,
+    "7": 15,
+    "2": 23,
+    "3": 29,
+    "1": 21
+   },
+   "pointer_hits": 145,
+   "independently_present_full": false,
+   "rule_hits": {
+    "pointer": 145,
+    "recipient": 2,
+    "donor": 0,
+    "colour": 28,
+    "animal": 40,
+    "animal_row": 26,
+    "donor_map_rec_colour": 30,
+    "first_row_colour": 12,
+    "end_row": 145,
+    "fruit_token": 145,
+    "colour_token": 145,
+    "fruit_from_end": 145,
+    "read_rec_key": 145,
+    "replacement_dictionary": 145,
+    "mirror": 28,
+    "first_fruit": 20,
+    "last_fruit": 26
+   },
+   "rule_agrees_with_pointer": {
+    "pointer": 150,
+    "recipient": 0,
+    "donor": 0,
+    "colour": 28,
+    "animal": 42,
+    "animal_row": 23,
+    "donor_map_rec_colour": 29,
+    "first_row_colour": 12,
+    "end_row": 150,
+    "fruit_token": 150,
+    "colour_token": 150,
+    "fruit_from_end": 150,
+    "read_rec_key": 150,
+    "replacement_dictionary": 150,
+    "mirror": 29,
+    "first_fruit": 22,
+    "last_fruit": 24
+   },
+   "disagreements_with_pointer": {
+    "recipient": [
+     150,
+     145,
+     2
+    ],
+    "donor": [
+     150,
+     145,
+     0
+    ],
+    "animal": [
+     108,
+     105,
+     0
+    ],
+    "animal_row": [
+     127,
+     122,
+     3
+    ],
+    "donor_map_rec_colour": [
+     121,
+     116,
+     1
+    ],
+    "first_row_colour": [
+     138,
+     133,
+     0
+    ],
+    "mirror": [
+     121,
+     119,
+     2
+    ],
+    "last_fruit": [
+     126,
+     121,
+     2
+    ],
+    "colour": [
+     122,
+     117,
+     0
+    ],
+    "first_fruit": [
+     128,
+     125,
+     0
+    ]
+   },
+   "rule_pairwise_prediction_disagreements": {
+    "pointer|recipient": 150,
+    "pointer|donor": 150,
+    "pointer|colour": 122,
+    "pointer|animal": 108,
+    "pointer|animal_row": 127,
+    "pointer|donor_map_rec_colour": 121,
+    "pointer|first_row_colour": 138,
+    "pointer|end_row": 0,
+    "pointer|fruit_token": 0,
+    "pointer|colour_token": 0,
+    "pointer|fruit_from_end": 0,
+    "pointer|read_rec_key": 0,
+    "pointer|replacement_dictionary": 0,
+    "pointer|mirror": 121,
+    "pointer|first_fruit": 128,
+    "pointer|last_fruit": 126,
+    "recipient|donor": 121,
+    "recipient|colour": 130,
+    "recipient|animal": 150,
+    "recipient|animal_row": 134,
+    "recipient|donor_map_rec_colour": 150,
+    "recipient|first_row_colour": 132,
+    "recipient|end_row": 150,
+    "recipient|fruit_token": 150,
+    "recipient|colour_token": 150,
+    "recipient|fruit_from_end": 150,
+    "recipient|read_rec_key": 150,
+    "recipient|replacement_dictionary": 150,
+    "recipient|mirror": 131,
+    "recipient|first_fruit": 134,
+    "recipient|last_fruit": 131,
+    "donor|colour": 150,
+    "donor|animal": 150,
+    "donor|animal_row": 141,
+    "donor|donor_map_rec_colour": 130,
+    "donor|first_row_colour": 133,
+    "donor|end_row": 150,
+    "donor|fruit_token": 150,
+    "donor|colour_token": 150,
+    "donor|fruit_from_end": 150,
+    "donor|read_rec_key": 150,
+    "donor|replacement_dictionary": 150,
+    "donor|mirror": 126,
+    "donor|first_fruit": 131,
+    "donor|last_fruit": 136,
+    "colour|animal": 150,
+    "colour|animal_row": 122,
+    "colour|donor_map_rec_colour": 127,
+    "colour|first_row_colour": 126,
+    "colour|end_row": 122,
+    "colour|fruit_token": 122,
+    "colour|colour_token": 122,
+    "colour|fruit_from_end": 122,
+    "colour|read_rec_key": 122,
+    "colour|replacement_dictionary": 122,
+    "colour|mirror": 137,
+    "colour|first_fruit": 120,
+    "colour|last_fruit": 132,
+    "animal|animal_row": 122,
+    "animal|donor_map_rec_colour": 124,
+    "animal|first_row_colour": 122,
+    "animal|end_row": 108,
+    "animal|fruit_token": 108,
+    "animal|colour_token": 108,
+    "animal|fruit_from_end": 108,
+    "animal|read_rec_key": 108,
+    "animal|replacement_dictionary": 108,
+    "animal|mirror": 139,
+    "animal|first_fruit": 124,
+    "animal|last_fruit": 129,
+    "animal_row|donor_map_rec_colour": 126,
+    "animal_row|first_row_colour": 120,
+    "animal_row|end_row": 127,
+    "animal_row|fruit_token": 127,
+    "animal_row|colour_token": 127,
+    "animal_row|fruit_from_end": 127,
+    "animal_row|read_rec_key": 127,
+    "animal_row|replacement_dictionary": 127,
+    "animal_row|mirror": 122,
+    "animal_row|first_fruit": 129,
+    "animal_row|last_fruit": 133,
+    "donor_map_rec_colour|first_row_colour": 124,
+    "donor_map_rec_colour|end_row": 121,
+    "donor_map_rec_colour|fruit_token": 121,
+    "donor_map_rec_colour|colour_token": 121,
+    "donor_map_rec_colour|fruit_from_end": 121,
+    "donor_map_rec_colour|read_rec_key": 121,
+    "donor_map_rec_colour|replacement_dictionary": 121,
+    "donor_map_rec_colour|mirror": 130,
+    "donor_map_rec_colour|first_fruit": 122,
+    "donor_map_rec_colour|last_fruit": 127,
+    "first_row_colour|end_row": 138,
+    "first_row_colour|fruit_token": 138,
+    "first_row_colour|colour_token": 138,
+    "first_row_colour|fruit_from_end": 138,
+    "first_row_colour|read_rec_key": 138,
+    "first_row_colour|replacement_dictionary": 138,
+    "first_row_colour|mirror": 127,
+    "first_row_colour|first_fruit": 132,
+    "first_row_colour|last_fruit": 131,
+    "end_row|fruit_token": 0,
+    "end_row|colour_token": 0,
+    "end_row|fruit_from_end": 0,
+    "end_row|read_rec_key": 0,
+    "end_row|replacement_dictionary": 0,
+    "end_row|mirror": 121,
+    "end_row|first_fruit": 128,
+    "end_row|last_fruit": 126,
+    "fruit_token|colour_token": 0,
+    "fruit_token|fruit_from_end": 0,
+    "fruit_token|read_rec_key": 0,
+    "fruit_token|replacement_dictionary": 0,
+    "fruit_token|mirror": 121,
+    "fruit_token|first_fruit": 128,
+    "fruit_token|last_fruit": 126,
+    "colour_token|fruit_from_end": 0,
+    "colour_token|read_rec_key": 0,
+    "colour_token|replacement_dictionary": 0,
+    "colour_token|mirror": 121,
+    "colour_token|first_fruit": 128,
+    "colour_token|last_fruit": 126,
+    "fruit_from_end|read_rec_key": 0,
+    "fruit_from_end|replacement_dictionary": 0,
+    "fruit_from_end|mirror": 121,
+    "fruit_from_end|first_fruit": 128,
+    "fruit_from_end|last_fruit": 126,
+    "read_rec_key|replacement_dictionary": 0,
+    "read_rec_key|mirror": 121,
+    "read_rec_key|first_fruit": 128,
+    "read_rec_key|last_fruit": 126,
+    "replacement_dictionary|mirror": 121,
+    "replacement_dictionary|first_fruit": 128,
+    "replacement_dictionary|last_fruit": 126,
+    "mirror|first_fruit": 126,
+    "mirror|last_fruit": 128,
+    "first_fruit|last_fruit": 150
+   },
+   "failures": [
+    {
+     "row": 7,
+     "group": 2,
+     "recipient": "a/cat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 82,
+     "group": 5,
+     "recipient": "b/dog",
+     "donor": "a/yak",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 111,
+     "group": 2,
+     "recipient": "a/rat",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    },
+    {
+     "row": 137,
+     "group": 5,
+     "recipient": "b/cow",
+     "donor": "a/yak",
+     "row_in_table": 1,
+     "predicted": "fig",
+     "observed": " grape"
+    },
+    {
+     "row": 143,
+     "group": 2,
+     "recipient": "a/ant",
+     "donor": "b/pig",
+     "row_in_table": 4,
+     "predicted": "olive",
+     "observed": " grape"
+    }
+   ],
+   "by_group": {
+    "7": [
+     24,
+     24
+    ],
+    "3": [
+     17,
+     17
+    ],
+    "6": [
+     19,
+     19
+    ],
+    "0": [
+     10,
+     10
+    ],
+    "2": [
+     20,
+     23
+    ],
+    "4": [
+     20,
+     20
+    ],
+    "1": [
+     21,
+     21
+    ],
+    "5": [
+     14,
+     16
+    ]
+   },
+   "by_target_row": {
+    "1": [
+     20,
+     22
+    ],
+    "6": [
+     15,
+     15
+    ],
+    "4": [
+     26,
+     29
+    ],
+    "7": [
+     24,
+     24
+    ],
+    "5": [
+     26,
+     26
+    ],
+    "2": [
+     14,
+     14
+    ],
+    "3": [
+     20,
+     20
+    ]
+   },
+   "sixth_aliases": {},
+   "sixth_alias_pointer_hits": {},
+   "donor_specific_lookup_training_ceiling": 150,
+   "extra_rules": {
+    "nearest_absolute_fruit_character_start_hits": 145,
+    "nearest_absolute_fruit_character_start_same": 150,
+    "nearest_list_relative_fruit_character_start_hits": 145,
+    "nearest_list_relative_fruit_character_start_same": 150,
+    "decoupled": 70,
+    "decoupled_hits": 67
+   }
+  }
+ },
+ "extra": {
+  "four-way/mini": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "2": 48
+    },
+    "b": {
+     "2": 48
+    }
+   },
+   "other_row_number_of_choices": {
+    "1": 96
+   },
+   "layout": [
+    [
+     69,
+     [
+      38,
+      44,
+      50,
+      56
+     ],
+     [
+      34,
+      40,
+      46,
+      52
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 96
+   },
+   "leave_one_out_by_donor": [
+    0,
+    0
+   ],
+   "max_donors_per_recipient": 1,
+   "loo_comparison": {
+    "eligible": 0,
+    "row_correct": 0,
+    "reuse_correct": 0,
+    "singleton_hits": 96,
+    "singletons": 96,
+    "fallback_pointer": 96
+   }
+  },
+  "four-way/sibling": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "2": 48
+    },
+    "b": {
+     "2": 48
+    }
+   },
+   "other_row_number_of_choices": {
+    "1": 96
+   },
+   "layout": [
+    [
+     75,
+     [
+      38,
+      44,
+      50,
+      56
+     ],
+     [
+      34,
+      40,
+      46,
+      52
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 96
+   },
+   "leave_one_out_by_donor": [
+    0,
+    0
+   ],
+   "max_donors_per_recipient": 1,
+   "loo_comparison": {
+    "eligible": 0,
+    "row_correct": 0,
+    "reuse_correct": 0,
+    "singleton_hits": 96,
+    "singletons": 96,
+    "fallback_pointer": 96
+   }
+  },
+  "two-table/mini": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "4": 72
+    },
+    "b": {
+     "2": 72
+    }
+   },
+   "other_row_number_of_choices": {
+    "3": 144
+   },
+   "layout": [
+    [
+     91,
+     [
+      48,
+      54,
+      60,
+      66,
+      72,
+      78
+     ],
+     [
+      44,
+      50,
+      56,
+      62,
+      68,
+      74
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 144
+   },
+   "leave_one_out_by_donor": [
+    0,
+    0
+   ],
+   "max_donors_per_recipient": 1,
+   "loo_comparison": {
+    "eligible": 0,
+    "row_correct": 0,
+    "reuse_correct": 0,
+    "singleton_hits": 144,
+    "singletons": 144,
+    "fallback_pointer": 144
+   }
+  },
+  "two-table/sibling": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "4": 69
+    },
+    "b": {
+     "2": 69
+    }
+   },
+   "other_row_number_of_choices": {
+    "3": 138
+   },
+   "layout": [
+    [
+     91,
+     [
+      48,
+      54,
+      60,
+      66,
+      72,
+      78
+     ],
+     [
+      44,
+      50,
+      56,
+      62,
+      68,
+      74
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 138
+   },
+   "leave_one_out_by_donor": [
+    0,
+    0
+   ],
+   "max_donors_per_recipient": 1,
+   "loo_comparison": {
+    "eligible": 0,
+    "row_correct": 0,
+    "reuse_correct": 0,
+    "singleton_hits": 133,
+    "singletons": 138,
+    "fallback_pointer": 133
+   }
+  },
+  "shuffled/mini": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "3": 27,
+     "5": 18,
+     "1": 17,
+     "2": 20,
+     "0": 26,
+     "6": 25,
+     "4": 26
+    },
+    "b": {
+     "0": 30,
+     "5": 24,
+     "1": 20,
+     "2": 24,
+     "6": 25,
+     "3": 17,
+     "4": 25
+    }
+   },
+   "other_row_number_of_choices": {
+    "4": 211,
+    "5": 113
+   },
+   "layout": [
+    [
+     102,
+     [
+      53,
+      59,
+      65,
+      71,
+      77,
+      83,
+      89
+     ],
+     [
+      49,
+      55,
+      61,
+      67,
+      73,
+      79,
+      85
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 324
+   },
+   "leave_one_out_by_donor": [
+    318,
+    324
+   ],
+   "max_donors_per_recipient": 4,
+   "saved_sixth_count": 112,
+   "loo_comparison": {
+    "eligible": 324,
+    "row_correct": 316,
+    "reuse_correct": 318,
+    "singleton_hits": 0,
+    "singletons": 0,
+    "fallback_pointer": 318
+   }
+  },
+  "shuffled/sibling": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "3": 25,
+     "5": 18,
+     "1": 17,
+     "2": 20,
+     "0": 25,
+     "6": 23,
+     "4": 25
+    },
+    "b": {
+     "0": 28,
+     "5": 24,
+     "1": 20,
+     "2": 24,
+     "6": 24,
+     "3": 16,
+     "4": 23
+    }
+   },
+   "other_row_number_of_choices": {
+    "4": 204,
+    "5": 108
+   },
+   "layout": [
+    [
+     108,
+     [
+      53,
+      59,
+      65,
+      71,
+      77,
+      83,
+      89
+     ],
+     [
+      49,
+      55,
+      61,
+      67,
+      73,
+      79,
+      85
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 312
+   },
+   "leave_one_out_by_donor": [
+    296,
+    312
+   ],
+   "max_donors_per_recipient": 4,
+   "saved_sixth_count": 106,
+   "loo_comparison": {
+    "eligible": 312,
+    "row_correct": 259,
+    "reuse_correct": 296,
+    "singleton_hits": 0,
+    "singletons": 0,
+    "fallback_pointer": 296
+   }
+  },
+  "pointer/mini": {
+   "recipient_to_target_offsets": {
+    "a": {
+     "6": 13,
+     "4": 10,
+     "3": 11,
+     "1": 12,
+     "2": 14,
+     "5": 14
+    },
+    "b": {
+     "1": 13,
+     "2": 11,
+     "5": 18,
+     "3": 14,
+     "6": 12,
+     "4": 8
+    }
+   },
+   "other_row_number_of_choices": {
+    "5": 29,
+    "4": 121
+   },
+   "layout": [
+    [
+     108,
+     [
+      53,
+      59,
+      65,
+      71,
+      77,
+      83,
+      89
+     ],
+     [
+      49,
+      55,
+      61,
+      67,
+      73,
+      79,
+      85
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 150,
+    "other row same fruit both prompts": 16,
+    "other row fruit equals recipient lookup of donor animal": 31
+   },
+   "leave_one_out_by_donor": [
+    117,
+    117
+   ],
+   "max_donors_per_recipient": 4,
+   "region_lengths": {
+    "0": 43,
+    "1": 48,
+    "2": 17
+   },
+   "minmax_row_span": [
+    5
+   ],
+   "loo_comparison": {
+    "eligible": 117,
+    "row_correct": 112,
+    "reuse_correct": 117,
+    "singleton_hits": 33,
+    "singletons": 33,
+    "fallback_pointer": 150
+   }
+  },
+  "pointer/sibling": {
+   "recipient_to_target_offsets": {
+    "b": {
+     "6": 10,
+     "3": 6,
+     "4": 15,
+     "2": 14,
+     "5": 15,
+     "1": 14
+    },
+    "a": {
+     "4": 11,
+     "1": 12,
+     "5": 14,
+     "2": 12,
+     "6": 15,
+     "3": 12
+    }
+   },
+   "other_row_number_of_choices": {
+    "4": 120,
+    "5": 30
+   },
+   "layout": [
+    [
+     102,
+     [
+      53,
+      59,
+      65,
+      71,
+      77,
+      83,
+      89
+     ],
+     [
+      49,
+      55,
+      61,
+      67,
+      73,
+      79,
+      85
+     ]
+    ]
+   ],
+   "checks": {
+    "generated row span matches": 150,
+    "other row same fruit both prompts": 22,
+    "other row fruit equals recipient lookup of donor animal": 29
+   },
+   "leave_one_out_by_donor": [
+    114,
+    121
+   ],
+   "max_donors_per_recipient": 4,
+   "region_lengths": {
+    "0": 43,
+    "1": 48,
+    "2": 11
+   },
+   "minmax_row_span": [
+    5
+   ],
+   "loo_comparison": {
+    "eligible": 121,
+    "row_correct": 101,
+    "reuse_correct": 114,
+    "singleton_hits": 22,
+    "singletons": 29,
+    "fallback_pointer": 136
+   }
+  },
+  "tokenizer": {
+   "lookup_ids": {
+    "cat": 151683,
+    "dog": 153350,
+    "bat": 152971,
+    "pig": 156758,
+    "cow": 159764,
+    "hen": 156717,
+    "rat": 153746,
+    "bee": 165049,
+    "ant": 150864,
+    "ram": 155534,
+    "elk": 179927,
+    "yak": 160411,
+    "red": 150682,
+    "blue": 152778,
+    "green": 152373,
+    "gold": 159171,
+    "pink": 154966,
+    "gray": 171421,
+    "black": 151511,
+    "white": 152091,
+    "brown": 161319,
+    "purple": 166789,
+    "silver": 171814,
+    "yellow": 155423,
+    "fig": 155099,
+    "lime": 179878,
+    "grape": 185415,
+    "apple": 169226,
+    "orange": 156764,
+    "date": 150755,
+    "olive": 192553
+   },
+   "fact_token_lengths": {
+    "Asia": 1,
+    "Beijing": 1,
+    "Berlin": 1,
+    "Chinese": 1,
+    "English": 1,
+    "Europe": 1,
+    "French": 1,
+    "German": 1,
+    "Italian": 1,
+    "Japanese": 1,
+    "London": 1,
+    "Madrid": 1,
+    "Paris": 1,
+    "Rome": 1,
+    "Spanish": 1,
+    "Tokyo": 1,
+    "euro": 1,
+    "pound": 1,
+    "yen": 1,
+    "yuan": 1
+   },
+   "nonconcatenative_under_fact_wordings": {
+    "speak_pay": [],
+    "language_continent": [],
+    "language_currency_the": []
+   }
+  },
+  "capital": {
+   "n": 42,
+   "p2_donor": 8,
+   "p2_changed": 11
+  },
+  "verified_rotations": {
+   "four-way": {
+    "(0, 1)": 12
+   },
+   "two-table": {
+    "(1, 2)": 12
+   },
+   "shuffled": {
+    "(1, 2)": 12
+   },
+   "pointer": {
+    "(1, 2)": 8
+   }
+  },
+  "uniform_parts": [
+   4,
+   14,
+   [
+    [
+     0
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     2,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ]
+  ]
+ }
+}

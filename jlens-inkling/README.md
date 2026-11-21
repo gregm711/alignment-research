@@ -947,8 +947,9 @@ prompts unaided, leaving 0 eligible pairs (12 on the sibling, mostly "other"). N
 - **The final pass redoes the second lookup against its own prompt.** The answer is always
   the fruit that the *recipient's* table assigns to the donor's item, even though the
   donor's messages were computed with a different second table in view.
-- **Transplants into pass 2 now move most answers too** (71 and 61 of 96), unlike the
-  capital experiment (8 of 42). An earlier edit is not always washed out.
+- **Transplants into pass 2 now change most answers too** (73 and 65 of 96 changed at all; 71
+  and 61 to the named outcome), unlike the capital experiment (11 of 42 changed; 8 to the
+  donor's language). An earlier edit is not always washed out.
 
 **A gap in this design, found on checking the result.** Donor and recipient share the first
 table. So "the messages carry the donor's intermediate (its colour)" and "the messages carry
@@ -1064,7 +1065,7 @@ The model is doing the two-step lookup, not reading across rows. Prediction 1 he
 
 **Transplants into pass 3, scored against the outcomes listed in advance.**
 
-| Model | pairs | recipient | donor | colour | animal | animal's row | colour's row (scored on the 112 / 105 pairs where distinct) | other |
+| Model | pairs | recipient | donor | colour | animal | animal's row | colour's row (scored on the 112 / 106 pairs where distinct) | other |
 |---|---|---|---|---|---|---|---|---|
 | Inkling 2 Mini | 324 | 56 | 60 | 37 | 33 | 24 | 110 | 4 |
 | variable-loop | 312 | 51 | 52 | 64 | 34 | 20 | 81 | 10 |
@@ -1121,7 +1122,9 @@ only consistent with it.
 
 Raw data, every sampled pair: [`results/transplant-pointer.json`](results/transplant-pointer.json).
 
-**Test 1, replication on new tables and unseen wording: held.**
+**Test 1, replication on new tables: held.** (The wording was not unseen: each model had
+been run unaided on both wordings in the shuffled experiment. It was the wording not used
+for that model's earlier transplants.)
 
 | Model | pairs | pointer fruit | recipient's | donor's | other |
 |---|---|---|---|---|---|
@@ -1217,15 +1220,74 @@ released model, pass 3, everything confined to the second table and the question
 | expert-layer only | 0 | 147 | 0 | 3 |
 | values and expert-layer | 51 | 66 | 5 | 28 |
 
-**The prediction was wrong.** Queries and keys barely matter (11 of 150 against a predicted
-majority), and values alone do more than predicted (32, against under 10%). No part or pair
-of parts comes close to all four together. The effect is spread across the whole message.
+**The prediction was wrong.** Queries and keys alone are not enough (11 of 150 against a
+predicted majority), and values alone do more than predicted (32, against under 10%). None
+of the masks we tested comes close to all four parts together. Queries and keys still
+matter in context: adding them to values plus expert-layer raises hits from 51 to 140. We
+tested four of the fourteen possible subsets, so "spread across the whole message" is our
+reading, not something we exhausted.
 
 **Where this leaves the mechanism.** Known: a full set of messages, at the second table and
 the question together, makes the final pass read its own prompt where the donor's answer
 sat. Not known: how. It is not a marker at the pointed-to row, and it is not an attention
 query matching a key. Three guesses about the mechanism have now failed, and we stop
 guessing here.
+
+## After a second independent review: what the lookup experiments do and do not establish
+
+A [second review](../notes/independent-review-lookup.md), by a different model working
+offline from the saved rows, recomputed every count in the six lookup result files and
+looked for rival explanations. Its verdict, which we accept: the headline counts survive
+and the released model clears the criterion set in advance, but the experiments establish a
+**behavioural regularity under intervention**, not what the messages contain.
+
+**Reproduced.** All 142 table cells; the rule's hit rates (96/96, 144/144, 316/324, 145/150
+on the released model; 96/96, 133/138, 259/312, 123/150 on the sibling); the hook's
+indexing, checked on CPU tensors against a separate implementation.
+
+**Corrections applied above.** A denominator (106, not 105); "changed" versus "moved to the
+named outcome" for pass-2 transplants; the held-out wording was previously screened, not
+unseen; the queries-and-keys reading.
+
+**Rival explanations the data cannot separate from "a place to read".**
+
+- *Position, in several forms.* Counting the row from the front or from the end, the fruit
+  token's absolute index, and nearest character offset all predict the same answers,
+  because every list has the same length and layout.
+- *A translated answer.* Pair the donor's fruits with the recipient's fruits in display
+  order and map the donor's finished answer across. This predicts the same outcomes while
+  requiring the finished answer, not an address, to cross.
+- *A recipient-only rule in the first two designs.* In the ordered four-way and two-table
+  runs, the way the tables were generated (rotations) plus the eligibility filter leaves one
+  donor per recipient, and "move the recipient's own answer row forward by a fixed step"
+  predicts 96 of 96 and 144 of 144 without reading the donor at all.
+- *Paired layouts.* In the shuffled and held-out runs each donor is only ever paired with
+  one recipient table layout, so a donor-specific mapping fits too. Predicting each outcome
+  from other rows with the same donor does as well as the rule, or better.
+
+**Claims we made that go further than the data.**
+
+- "The messages say where, not what": the behaviour is supported; the representation is not.
+- "The marker is not stored at the row it points to": the row alone rarely suffices (1 of
+  150), but restoring the recipient's own messages at that row inside a full transplant loses
+  98 of the 145 hits. The row matters a great deal in context.
+- "The first table's messages are irrelevant": adding them to the second table plus question
+  restores five hits.
+- "The final pass redoes the second lookup", "the model is doing the two-step lookup": these
+  describe an algorithm; the outputs do not establish one.
+
+**What would separate the explanations** (the review's proposal): cross one fixed donor with
+several independently generated recipient layouts and fruit assignments; vary token
+distance while holding the row index fixed; vary list length so counting from the front and
+from the end disagree; give the same donor answer different positions.
+
+**One piece of this the oversight test below already supplies.** There the two sides'
+tables are generated independently, not as rotations, and each transplant is repeated on a
+twin prompt whose only difference is the fruit in the pointed-to row. When the visible
+answer was correct, the twin's answer followed the changed fruit in 84 to 90% of trials.
+That is the "hold the donor fixed and change the recipient" test for the content of one
+row, and it is evidence that the final pass reads the recipient's current prompt at that
+row. It does not separate the position variants.
 
 ## The oversight test: can internal access catch a right answer reached the wrong way?
 
@@ -1283,6 +1345,64 @@ at a layer chosen after seeing test results, it does not.
 readout is trained on labelled examples of that same induced mistake. It would show that an
 internal difference exists and transfers to unseen tables. It would not show that a readout
 can catch a mistake nobody anticipated, which is the harder and more important case.
+
+### Result
+
+Raw data, including every test trial's score: [`results/oversight.json`](results/oversight.json).
+Script: `oversight.py`.
+
+**Constructing and confirming the hidden mistakes.**
+
+| Split | intended wrong-route trials | visible answer correct | confirmed by the twin | right-route trials kept |
+|---|---|---|---|---|
+| training tables | 221 | 190 | 159 | 174 |
+| new tables | 107 | 97 | 83 | 86 |
+| new tables, other wording | 110 | 98 | 88 | 94 |
+
+**Can a reviewer tell the two kinds of trial apart?** Area under the ROC curve; 0.5 is chance.
+
+| Split | internal readout | output top probability | output margin |
+|---|---|---|---|
+| new tables | 0.48 [0.39, 0.57] | 0.49 [0.41, 0.57] | 0.49 [0.41, 0.57] |
+| new tables, other wording | 0.49 [0.41, 0.57] | 0.51 [0.43, 0.59] | 0.52 [0.43, 0.60] |
+
+**Internal access did not help.** The readout is at chance on new tables, no better than
+output confidence, and by the criterion written in advance that is a no. It was not a near
+miss: the cross-validated score on the training tables was already below chance at every
+one of the 49 steps (best 0.37; scores below chance are a known artefact of cross-validating a
+difference-of-means direction when there is no signal), and no step would have exceeded 0.53 on the test tables even if
+chosen afterwards.
+
+**Against the predictions.**
+
+1. *At least 80% of intended wrong-route trials confirmed:* missed. 72% on the training
+   tables (159 of 221), 78% and 80% on the two test sets. Of those with a correct visible
+   answer, 84 to 90% were confirmed.
+2. *Output confidence barely separates them:* held (0.49 to 0.52).
+3. *The internal readout separates them on new tables, AUC above 0.8:* **wrong** (0.48).
+
+**What the experiment did establish.** Hidden mistakes of this kind can be manufactured and
+independently confirmed: 330 trials across the three splits where the model gave the right
+answer, a twin prompt shows it was reading the wrong row, and neither the answer nor the
+model's confidence gives any sign.
+
+**Why the readout may have found nothing, and why this null is weaker than it looks.**
+
+- *It looked in one place.* Only the state at the final token, and only a single
+  difference-of-means direction. When two rows hold the same fruit, whichever row is read
+  delivers the same word to the final token, so the final token's state may simply not
+  differ. The route would show in *where the model attends*, which this readout never saw.
+- *No positive control.* We did not show that the same pipeline can detect something known
+  to be present. Without that, "nothing found" and "pipeline cannot find things" are not
+  separated.
+- *One kind of readout.* A different one (attention to the correct row, or states at the
+  table positions) might work. That is a guess, and our guesses on this task have mostly
+  been wrong.
+
+**What this means for the alignment question.** The simplest version of "give the overseer
+the model's internal state" failed on the first hidden mistake we built. The reviewer's
+question was whether internal access helps when checking the answer is not enough; for this
+readout, here, it did not.
 
 ## Results
 

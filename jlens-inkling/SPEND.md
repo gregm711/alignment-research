@@ -32,5 +32,7 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Held-out pointer and localisation test, both checkpoints | 7.3 | $0.38 | $8.83 |
 | 2026-11-21 | Transplant by prompt region, released model | 6.5 | $0.34 | $9.17 |
 | 2026-11-21 | Transplant by message part, released model | 11.9 | $0.62 | $9.79 |
+| 2026-11-21 | Oversight test pilot, two table sets | ~1.5 | $0.08 | $9.87 |
+| 2026-11-21 | Oversight test, three splits, released model | 25.0 | $1.29 | $11.16 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.
