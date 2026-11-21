@@ -47,12 +47,14 @@ pairs on the released model (criterion set in advance: 85%) and 123 of 150 on th
 When the fruit in that row of the recipient's prompt is changed, the answer follows the
 change in 84 to 90% of trials.
 
-*What it does not show:* what the messages contain. A second review found several
-explanations the data cannot separate: counting the row from the front or the end, token
-position, a "translated" finished answer, and donor-specific mappings, because every list
-has the same length and each donor was paired with one recipient layout. We wrote that the
-messages "say where, not what"; the behaviour supports that description and the evidence
-does not establish it. It is one invented task.
+A follow-up with unrelated donor and recipient tables of different lengths pinned down what
+"the place" means: the same **token position**. That was the answer in 109 of 115 pairs,
+against 3 for the same row counted from either end. It also rules out the donor-specific
+mappings and the "translated answer" that a second review showed the earlier runs could not
+exclude.
+
+*What it does not show:* why, or where in the messages this lives; three guesses about that
+failed. It is one invented task.
 
 **3. The released model needs its later passes for multi-step questions; its sibling does
 not.** On 135 public items written by Anthropic, rescored by the reviewer: multi-hop accuracy

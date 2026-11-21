@@ -1588,6 +1588,33 @@ crosses: with the tables independent, the donor's fruit word may not be in the r
 list at all, which weakens but does not exclude the translated-answer account. Padding with
 filler lines is itself a change of format the earlier runs did not have.
 
+### Result
+
+Raw data, every pair: [`results/discriminate.json`](results/discriminate.json). 115 of the
+118 planned pairs were eligible (the model answered 83 of 84 prompts correctly unaided).
+
+| Direction | pairs | same token position | row from the front | row from the end | recipient's own | donor's copied |
+|---|---|---|---|---|---|---|
+| short donor, long recipient | 75 | **69** | 1 | 2 | 1 | 2 |
+| long donor, short recipient | 40 | **40** | 0 | 0 | 0 | 0 |
+
+**The prediction held.** After a full transplant into the final pass, the model answers with
+the fruit at the same *token position* in its own prompt as the donor's answer occupied:
+109 of 115. Counting rows from either end loses.
+
+**What this settles from the second review's list.**
+
+- *Front, end or token:* token position.
+- *Paired layouts and donor-specific mappings:* out. Donor and recipient tables here are
+  unrelated, and each donor met up to four different recipients.
+- *A finished answer translated by display order:* that rule is the same as "row from the
+  front" here, and it loses.
+
+**What it leaves open.** The donor's fruit word was present in the recipient's list in most
+pairs and was copied only twice, so a verbatim answer is not what crosses. Why the pointer
+is a token position and where in the messages it lives are still unknown; three earlier
+guesses about that failed. One invented task; filler lines are a new format.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
