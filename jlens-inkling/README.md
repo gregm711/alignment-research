@@ -336,6 +336,40 @@ and of the answer at every loop layer.
 trained to stop early, so the 1- and 2-pass lenses read through a path it never trained on.
 Readable is not the same as used; that needs the edits in question 4.
 
+## Question 3: is the loop state robust to noise, including for refusals?
+
+### Plan and predictions (written before running)
+
+**Background.** Olszowiec et al. found that looped models where the prompt enters once break
+under noise in the loop state, with refusals eroding before fluency, while models that
+re-read the prompt every iteration are almost unaffected. This model restarts every pass
+from the same pre-loop state, which makes it closer to the second kind.
+
+**Measurement.** On Inkling 2 Mini, add Gaussian noise to the input of the first loop layer
+at the last prompt position, scaled to α times that state's norm (α = 2, 8, 32), in three
+conditions: pass 1 only (later passes restart clean), pass 3 only, or all three passes.
+Forward and short greedy generation only; no gradients.
+
+- *Facts:* the 44 probes from the sweep. Is the top answer unchanged?
+- *Benign requests:* 30 from JailbreakBench's benign set, 24 generated tokens, thinking off.
+  Fidelity is the token overlap with the noise-free reply.
+- *Harmful requests:* 30 from JailbreakBench's harmful set. **Only a refused / not refused
+  flag is recorded**, from a standard list of refusal phrases in the first 24 tokens. No
+  generated text for these prompts is printed or saved.
+
+**Predictions.**
+
+1. Noise into pass 1 only changes little at any α: later passes restart from the clean state,
+   and question 1 showed edits to what pass 2 receives are mostly washed out.
+2. Noise into pass 3, or into all passes, degrades answers as α grows.
+3. Refusal rate tracks benign fidelity. We do not expect a setting where refusals drop
+   sharply while benign replies stay intact, the pattern reported for carry-loop models.
+
+**What this will not show.** One noise sample per prompt, at one position, at one layer.
+Phrase matching undercounts unusual refusals and cannot tell a harmful reply from a broken
+one, so a fall in refusals means "stopped refusing", not "complied". Random noise is not an
+attack; this says nothing about a deliberate perturbation.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
