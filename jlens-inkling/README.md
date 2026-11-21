@@ -1551,6 +1551,43 @@ And three limits on what we wrote, which we accept:
 - **The no-selection average is a blunt control.** Heads that barely look at the second
   table contribute a constant. It still reaches 0.94 to 0.97.
 
+## Which position? Front, end or token
+
+### Plan and prediction (written before running; every predicted fruit is in the committed plan)
+
+The second review showed that the transplant result cannot tell apart three ways of
+"reading the same place", because every list so far had the same length and layout. This
+run separates them.
+
+**Design.** Donor and recipient tables are generated independently, so no donor is tied to
+a recipient layout. One prompt has a five-row second table padded with two six-token filler
+lines (one before the table, one after); the other has seven rows. The prompts are the same
+length in tokens, but for a donor whose answer sits in row *j*:
+
+| Explanation | Row it predicts in the recipient (short donor, long recipient) | (long donor, short recipient) |
+|---|---|---|
+| same row counted from the front | *j* | *j* |
+| same token position | *j* + 1 | *j* − 1 |
+| same row counted from the end | *j* + 2 | *j* − 2 |
+
+[`results/discriminate-plan.json`](results/discriminate-plan.json) lists all 118 pairs with
+the fruit each explanation predicts, plus the recipient's own answer and the donor's answer
+copied verbatim. It was built offline with the model's tokenizer and is committed before any
+model is run. Pairs are scored only if the model answers both prompts correctly unaided.
+Released model, full transplant into pass 3. Each donor meets up to four unrelated recipients.
+
+**Prediction.** Same token position. The messages are built position by position, so a
+transplant moves whatever was at token *t* in the donor to token *t* in the recipient.
+
+**What would change our mind.** If "from the front" or "from the end" wins, the model is
+using something more like a row count than a raw position. If none of the three wins, the
+"place to read" description of the earlier results is wrong or incomplete.
+
+**What this will not show.** Whether a translated finished answer or an address is what
+crosses: with the tables independent, the donor's fruit word may not be in the recipient's
+list at all, which weakens but does not exclude the translated-answer account. Padding with
+filler lines is itself a change of format the earlier runs did not have.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

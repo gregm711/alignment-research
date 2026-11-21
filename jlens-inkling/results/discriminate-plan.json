@@ -1,0 +1,1898 @@
+{
+ "filler": "This line means nothing.\n",
+ "n_pairs": 118,
+ "pairs": [
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the rat is the",
+   "donor_answer": "olive",
+   "recipient_answer": "fig",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "olive",
+    "row_from_front": "date",
+    "row_from_end": "grape",
+    "same_token_position": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "olive",
+   "recipient_answer": "date",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "olive",
+    "row_from_front": "orange",
+    "row_from_end": "apple",
+    "same_token_position": "lime",
+    "donor_colour": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "olive",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "olive",
+    "row_from_front": "lime",
+    "row_from_end": "orange",
+    "same_token_position": "apple",
+    "donor_colour": "olive",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "olive",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "olive",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "orange",
+   "recipient_answer": "apple",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "orange",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "orange",
+   "recipient_answer": "date",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "orange",
+    "row_from_front": "grape",
+    "row_from_end": "lime",
+    "same_token_position": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "orange",
+   "recipient_answer": "apple",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "orange",
+    "row_from_front": "grape",
+    "row_from_end": "olive",
+    "same_token_position": "date",
+    "donor_colour": "fig",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "orange",
+   "recipient_answer": "date",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "orange",
+    "row_from_front": "apple",
+    "row_from_end": "grape",
+    "same_token_position": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "date",
+   "recipient_answer": "lime",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "date",
+    "row_from_front": "apple",
+    "row_from_end": "olive",
+    "same_token_position": "orange",
+    "donor_animal": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "date",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "date",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "apple",
+    "donor_colour": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "apple",
+   "recipient_answer": "grape",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "apple",
+    "row_from_front": "lime",
+    "row_from_end": "fig",
+    "same_token_position": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "apple",
+   "recipient_answer": "grape",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "apple",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_colour": "olive",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "fig",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "fig",
+    "row_from_front": "olive",
+    "row_from_end": "apple",
+    "same_token_position": "lime",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "fig",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "fig",
+    "row_from_front": "apple",
+    "row_from_end": "olive",
+    "same_token_position": "date",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the pig is the",
+   "donor_answer": "fig",
+   "recipient_answer": "orange",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "fig",
+    "row_from_front": "lime",
+    "row_from_end": "apple",
+    "same_token_position": "date",
+    "donor_colour": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "olive",
+   "recipient_answer": "fig",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "olive",
+    "row_from_front": "lime",
+    "row_from_end": "orange",
+    "same_token_position": "apple",
+    "donor_colour": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "olive",
+   "recipient_answer": "date",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "olive",
+    "row_from_front": "orange",
+    "row_from_end": "apple",
+    "same_token_position": "lime",
+    "donor_colour": "olive",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "olive",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "olive",
+    "row_from_front": "date",
+    "row_from_end": "orange",
+    "same_token_position": "apple",
+    "donor_colour": "olive",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "olive",
+   "recipient_answer": "apple",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "olive",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_colour": "apple",
+    "donor_animal": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "orange",
+   "recipient_answer": "fig",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "orange",
+    "row_from_front": "apple",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_colour": "olive",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "orange",
+   "recipient_answer": "grape",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "orange",
+    "row_from_front": "apple",
+    "row_from_end": "date",
+    "same_token_position": "lime",
+    "donor_colour": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "date",
+   "recipient_answer": "olive",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "date",
+    "row_from_front": "lime",
+    "row_from_end": "orange",
+    "same_token_position": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "olive",
+   "recipient_answer": "orange",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "olive",
+    "row_from_front": "apple",
+    "row_from_end": "date",
+    "same_token_position": "lime",
+    "donor_colour": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "olive",
+   "recipient_answer": "orange",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "olive",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "grape",
+    "donor_colour": "date",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "apple",
+   "recipient_answer": "olive",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "apple",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "apple",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "apple",
+    "row_from_front": "fig",
+    "row_from_end": "olive",
+    "same_token_position": "orange",
+    "donor_colour": "apple",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "apple",
+   "recipient_answer": "orange",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "apple",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "olive",
+    "donor_colour": "apple",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the ram is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "lime",
+   "recipient_answer": "apple",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "fig",
+    "same_token_position": "orange",
+    "donor_colour": "apple",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "orange",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "orange",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "orange",
+   "recipient_answer": "date",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "orange",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "grape",
+    "donor_colour": "date",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "orange",
+   "recipient_answer": "date",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "orange",
+    "row_from_front": "olive",
+    "row_from_end": "grape",
+    "same_token_position": "fig",
+    "donor_colour": "date",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the elk is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "grape",
+   "recipient_answer": "lime",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "grape",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_colour": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the elk is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "grape",
+   "recipient_answer": "olive",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "grape",
+    "row_from_front": "fig",
+    "row_from_end": "date",
+    "same_token_position": "lime",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ram is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "fig",
+   "recipient_answer": "orange",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "fig",
+    "row_from_front": "date",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_colour": "lime",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ram is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "fig",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "fig",
+    "row_from_front": "date",
+    "row_from_end": "orange",
+    "same_token_position": "apple",
+    "donor_colour": "fig",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the yak is the",
+   "donor_answer": "date",
+   "recipient_answer": "grape",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "date",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "apple",
+    "donor_colour": "grape",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "orange",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "orange",
+    "row_from_front": "olive",
+    "row_from_end": "apple",
+    "same_token_position": "lime",
+    "donor_colour": "fig",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "orange",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "orange",
+    "row_from_front": "apple",
+    "row_from_end": "olive",
+    "same_token_position": "date",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "grape",
+   "recipient_answer": "fig",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "grape",
+    "row_from_front": "orange",
+    "row_from_end": "apple",
+    "same_token_position": "lime",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "grape",
+   "recipient_answer": "orange",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "grape",
+    "row_from_front": "apple",
+    "row_from_end": "date",
+    "same_token_position": "lime",
+    "donor_colour": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "lime",
+   "recipient_answer": "grape",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "lime",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_colour": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "lime",
+   "recipient_answer": "date",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "olive",
+    "same_token_position": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "grape",
+   "recipient_answer": "orange",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "grape",
+    "row_from_front": "fig",
+    "row_from_end": "olive",
+    "same_token_position": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "orange",
+   "recipient_answer": "lime",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "orange",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "olive",
+    "donor_colour": "date",
+    "donor_animal": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "lime",
+   "recipient_answer": "olive",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "lime",
+    "row_from_front": "orange",
+    "row_from_end": "date",
+    "same_token_position": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "lime",
+   "recipient_answer": "date",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "orange",
+    "same_token_position": "fig",
+    "donor_colour": "apple",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "fig",
+   "recipient_answer": "apple",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "fig",
+    "row_from_front": "lime",
+    "row_from_end": "orange",
+    "same_token_position": "grape",
+    "donor_colour": "grape",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "lime",
+   "recipient_answer": "orange",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "lime",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "grape",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "lime",
+   "recipient_answer": "apple",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "lime",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "grape",
+    "donor_colour": "lime",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "lime",
+   "recipient_answer": "apple",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "olive",
+    "same_token_position": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ram is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "apple",
+   "recipient_answer": "lime",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "apple",
+    "row_from_front": "fig",
+    "row_from_end": "olive",
+    "same_token_position": "orange",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "date",
+   "recipient_answer": "lime",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "date",
+    "row_from_front": "orange",
+    "row_from_end": "grape",
+    "same_token_position": "olive",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "olive",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "olive",
+    "row_from_front": "fig",
+    "row_from_end": "lime",
+    "same_token_position": "orange",
+    "donor_colour": "date",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "olive",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "olive",
+    "row_from_front": "grape",
+    "row_from_end": "fig",
+    "same_token_position": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "olive",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "olive",
+    "row_from_front": "lime",
+    "row_from_end": "apple",
+    "same_token_position": "date",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "olive",
+   "recipient_answer": "apple",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "olive",
+    "row_from_front": "grape",
+    "row_from_end": "orange",
+    "same_token_position": "fig",
+    "donor_colour": "olive",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "olive",
+   "recipient_answer": "orange",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "olive",
+    "row_from_front": "lime",
+    "row_from_end": "fig",
+    "same_token_position": "date",
+    "donor_colour": "date",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the yak is the",
+   "donor_answer": "olive",
+   "recipient_answer": "apple",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "olive",
+    "row_from_front": "fig",
+    "row_from_end": "date",
+    "same_token_position": "lime",
+    "donor_colour": "olive",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the rat is the",
+   "donor_answer": "date",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "date",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "grape",
+    "donor_colour": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "date",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "date",
+    "row_from_front": "orange",
+    "row_from_end": "lime",
+    "same_token_position": "apple",
+    "donor_colour": "orange",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "date",
+   "recipient_answer": "grape",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "date",
+    "row_from_front": "apple",
+    "row_from_end": "fig",
+    "same_token_position": "orange",
+    "donor_colour": "date",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the yak is the",
+   "donor_answer": "date",
+   "recipient_answer": "grape",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "date",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "grape",
+   "recipient_answer": "olive",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "grape",
+    "row_from_front": "fig",
+    "row_from_end": "lime",
+    "same_token_position": "date",
+    "donor_colour": "orange",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "grape",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "grape",
+    "row_from_front": "fig",
+    "row_from_end": "orange",
+    "same_token_position": "olive"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "grape",
+   "recipient_answer": "apple",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "grape",
+    "row_from_front": "fig",
+    "row_from_end": "lime",
+    "same_token_position": "orange",
+    "donor_colour": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the yak is the",
+   "donor_answer": "fig",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "fig",
+    "row_from_front": "orange",
+    "row_from_end": "apple",
+    "same_token_position": "lime",
+    "donor_colour": "date",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "fig",
+   "recipient_answer": "olive",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "fig",
+    "row_from_front": "lime",
+    "row_from_end": "orange",
+    "same_token_position": "apple",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "fig",
+   "recipient_answer": "orange",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "fig",
+    "row_from_front": "date",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_colour": "grape",
+    "donor_animal": "grape"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "orange",
+   "recipient_answer": "olive",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "orange",
+    "row_from_front": "fig",
+    "row_from_end": "date",
+    "same_token_position": "lime",
+    "donor_colour": "fig",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "orange",
+   "recipient_answer": "fig",
+   "donor_row": 1,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "orange",
+    "row_from_front": "lime",
+    "row_from_end": "date",
+    "same_token_position": "apple",
+    "donor_colour": "orange",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "date",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "date",
+    "row_from_front": "olive",
+    "row_from_end": "apple",
+    "same_token_position": "orange",
+    "donor_colour": "apple",
+    "donor_animal": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "apple",
+   "recipient_answer": "lime",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "apple",
+    "row_from_front": "orange",
+    "row_from_end": "grape",
+    "same_token_position": "olive",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "apple",
+   "recipient_answer": "orange",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "apple",
+    "row_from_front": "olive",
+    "row_from_end": "grape",
+    "same_token_position": "fig",
+    "donor_colour": "olive",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "olive",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "olive",
+    "row_from_front": "fig",
+    "row_from_end": "lime",
+    "same_token_position": "date",
+    "donor_animal": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "olive",
+   "recipient_answer": "fig",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "olive",
+    "row_from_front": "lime",
+    "row_from_end": "apple",
+    "same_token_position": "date"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "olive",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "olive",
+    "row_from_front": "fig",
+    "row_from_end": "lime",
+    "same_token_position": "orange",
+    "donor_colour": "apple"
+   }
+  },
+  {
+   "direction": "donor_short_recipient_long",
+   "donor": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "lime",
+   "recipient_answer": "apple",
+   "donor_row": 0,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "lime",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "grape",
+    "donor_animal": "fig"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "orange",
+   "recipient_answer": "date",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "orange",
+    "row_from_front": "olive",
+    "row_from_end": "apple",
+    "same_token_position": "fig",
+    "donor_colour": "date"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "lime",
+   "recipient_answer": "olive",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "lime",
+    "row_from_front": "date",
+    "row_from_end": "grape",
+    "same_token_position": "fig",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "lime",
+   "recipient_answer": "orange",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "lime",
+    "row_from_front": "apple",
+    "row_from_end": "olive",
+    "same_token_position": "date",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the bee is yellow, the pig is gold, the yak is blue, the cow is gray, the hen is purple, the elk is brown, the ant is white.\nFruits for colors: yellow goes with the date, blue goes with the grape, brown goes with the fig, gold goes with the orange, white goes with the lime, gray goes with the apple, purple goes with the olive.\nSo the fruit that goes with the elk is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "fig",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "fig",
+    "row_from_front": "grape",
+    "row_from_end": "apple",
+    "same_token_position": "olive",
+    "donor_colour": "grape"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "date",
+   "recipient_answer": "olive",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "date",
+    "row_from_front": "fig",
+    "row_from_end": "orange",
+    "same_token_position": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "date",
+   "recipient_answer": "orange",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "date",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "grape",
+    "donor_colour": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "orange",
+   "recipient_answer": "apple",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "orange",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "olive",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is gray, the dog is white, the elk is pink, the bat is green, the cat is blue, the ram is silver, the rat is purple.\nFruits for colors: gray goes with the apple, white goes with the lime, purple goes with the date, pink goes with the fig, green goes with the orange, silver goes with the olive, blue goes with the grape.\nSo the fruit that goes with the elk is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "fig",
+   "recipient_answer": "apple",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "fig",
+    "row_from_front": "date",
+    "row_from_end": "orange",
+    "same_token_position": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "date",
+   "recipient_answer": "olive",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "date",
+    "row_from_front": "apple",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_colour": "orange",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "lime",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "lime",
+    "row_from_front": "date",
+    "row_from_end": "olive",
+    "same_token_position": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the yak is the",
+   "donor_answer": "lime",
+   "recipient_answer": "date",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "fig",
+    "same_token_position": "olive",
+    "donor_animal": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "lime",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "date",
+    "same_token_position": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "fig",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "fig",
+    "row_from_front": "orange",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_colour": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "fig",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "fig",
+    "row_from_front": "olive",
+    "row_from_end": "lime",
+    "same_token_position": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the rat is red, the cat is green, the hen is brown, the cow is gold, the ant is silver, the ram is black, the bee is yellow.\nFruits for colors: gold goes with the apple, brown goes with the orange, red goes with the fig, green goes with the date, silver goes with the lime, yellow goes with the grape, black goes with the olive.\nSo the fruit that goes with the rat is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "fig",
+   "recipient_answer": "apple",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "fig",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "grape"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "apple",
+   "recipient_answer": "olive",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "apple",
+    "row_from_front": "fig",
+    "row_from_end": "orange",
+    "same_token_position": "date",
+    "donor_animal": "grape"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the rat is the",
+   "donor_answer": "apple",
+   "recipient_answer": "grape",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "apple",
+    "row_from_front": "date",
+    "row_from_end": "fig",
+    "same_token_position": "lime",
+    "donor_colour": "lime",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "apple",
+   "recipient_answer": "orange",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "apple",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "grape",
+    "donor_colour": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the pig is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "apple",
+   "recipient_answer": "fig",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "apple",
+    "row_from_front": "orange",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the cat is silver, the yak is yellow, the ant is purple, the bee is brown, the bat is green, the dog is gold, the pig is gray.\nFruits for colors: silver goes with the orange, gold goes with the lime, gray goes with the apple, green goes with the date, yellow goes with the olive, purple goes with the fig, brown goes with the grape.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the yak is the",
+   "donor_answer": "date",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "date",
+    "row_from_front": "fig",
+    "row_from_end": "lime",
+    "same_token_position": "orange",
+    "donor_colour": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the elk is the",
+   "donor_answer": "fig",
+   "recipient_answer": "grape",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "fig",
+    "row_from_front": "orange",
+    "row_from_end": "lime",
+    "same_token_position": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the dog is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "fig",
+   "recipient_answer": "lime",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "fig",
+    "row_from_front": "apple",
+    "row_from_end": "olive",
+    "same_token_position": "date"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the pig is the",
+   "donor_answer": "orange",
+   "recipient_answer": "grape",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "grape",
+    "donor_copied": "orange",
+    "row_from_front": "olive",
+    "row_from_end": "date",
+    "same_token_position": "fig",
+    "donor_colour": "fig"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "grape",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "grape",
+    "row_from_front": "olive",
+    "row_from_end": "lime",
+    "same_token_position": "orange",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "grape",
+   "recipient_answer": "olive",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "grape",
+    "row_from_front": "fig",
+    "row_from_end": "orange",
+    "same_token_position": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the dog is gold, the hen is black, the bat is blue, the ram is purple, the ant is brown, the elk is green, the cow is white.\nFruits for colors: purple goes with the apple, white goes with the lime, brown goes with the grape, blue goes with the orange, gold goes with the fig, black goes with the date, green goes with the olive.\nSo the fruit that goes with the ant is the",
+   "recipient": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ram is the",
+   "donor_answer": "grape",
+   "recipient_answer": "apple",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "grape",
+    "row_from_front": "olive",
+    "row_from_end": "lime",
+    "same_token_position": "fig",
+    "donor_colour": "fig"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the hen is the",
+   "donor_answer": "fig",
+   "recipient_answer": "date",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "fig",
+    "row_from_front": "olive",
+    "row_from_end": "lime",
+    "same_token_position": "orange",
+    "donor_animal": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the cow is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "fig",
+   "recipient_answer": "orange",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "fig",
+    "row_from_front": "lime",
+    "row_from_end": "olive",
+    "same_token_position": "grape",
+    "donor_colour": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the cat is the",
+   "recipient": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "orange",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "orange",
+    "row_from_front": "date",
+    "row_from_end": "olive",
+    "same_token_position": "apple",
+    "donor_colour": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "olive",
+   "recipient_answer": "orange",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "olive",
+    "row_from_front": "apple",
+    "row_from_end": "grape",
+    "same_token_position": "lime"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the hen is blue, the ram is pink, the bee is silver, the dog is red, the ant is yellow, the cow is purple, the cat is black.\nFruits for colors: pink goes with the date, yellow goes with the grape, purple goes with the fig, silver goes with the olive, black goes with the orange, blue goes with the apple, red goes with the lime.\nSo the fruit that goes with the bee is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "olive",
+   "recipient_answer": "fig",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "olive",
+    "row_from_front": "orange",
+    "row_from_end": "lime",
+    "same_token_position": "date",
+    "donor_animal": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "lime",
+   "recipient_answer": "date",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "lime",
+    "row_from_front": "olive",
+    "row_from_end": "apple",
+    "same_token_position": "fig"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the bat is brown, the ant is red, the ram is black, the bee is yellow, the hen is white, the dog is gold, the rat is purple.\nThis line means nothing.\nFruits for colors: white goes with the lime, brown goes with the fig, yellow goes with the olive, black goes with the apple, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "lime",
+   "recipient_answer": "date",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "date",
+    "donor_copied": "lime",
+    "row_from_front": "apple",
+    "row_from_end": "fig",
+    "same_token_position": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the rat is purple, the ant is silver, the cow is green, the bat is yellow, the cat is gray, the pig is pink, the hen is blue.\nThis line means nothing.\nFruits for colors: green goes with the lime, silver goes with the orange, gray goes with the olive, blue goes with the date, yellow goes with the apple.\nThis line means nothing.\nSo the fruit that goes with the bat is the",
+   "donor_answer": "lime",
+   "recipient_answer": "apple",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "apple",
+    "donor_copied": "lime",
+    "row_from_front": "date",
+    "row_from_end": "orange",
+    "same_token_position": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is silver, the bee is blue, the dog is red, the pig is green, the cow is white, the hen is gray, the yak is pink.\nThis line means nothing.\nFruits for colors: pink goes with the grape, green goes with the lime, red goes with the orange, silver goes with the fig, blue goes with the date.\nThis line means nothing.\nSo the fruit that goes with the pig is the",
+   "donor_answer": "apple",
+   "recipient_answer": "lime",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "lime",
+    "donor_copied": "apple",
+    "row_from_front": "date",
+    "row_from_end": "orange",
+    "same_token_position": "fig",
+    "donor_colour": "fig"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the yak is purple, the elk is gray, the dog is black, the bat is silver, the cat is red, the bee is green, the cow is pink.\nFruits for colors: pink goes with the grape, black goes with the date, gray goes with the olive, purple goes with the lime, silver goes with the apple, green goes with the orange, red goes with the fig.\nSo the fruit that goes with the bat is the",
+   "recipient": "Fact sheet.\nColors of animals: the cat is blue, the bat is pink, the cow is green, the yak is red, the dog is yellow, the ant is purple, the pig is brown.\nThis line means nothing.\nFruits for colors: green goes with the orange, red goes with the date, blue goes with the fig, purple goes with the olive, brown goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the cow is the",
+   "donor_answer": "apple",
+   "recipient_answer": "orange",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "apple",
+    "row_from_front": "grape",
+    "row_from_end": "fig",
+    "same_token_position": "olive"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the bee is green, the rat is pink, the bat is brown, the cow is gold, the elk is yellow, the dog is black, the pig is gray.\nThis line means nothing.\nFruits for colors: black goes with the fig, gray goes with the lime, brown goes with the date, green goes with the orange, pink goes with the grape.\nThis line means nothing.\nSo the fruit that goes with the dog is the",
+   "donor_answer": "apple",
+   "recipient_answer": "fig",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "apple",
+    "row_from_front": "grape",
+    "row_from_end": "date",
+    "same_token_position": "orange"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the yak is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the ant is the",
+   "donor_answer": "apple",
+   "recipient_answer": "olive",
+   "donor_row": 4,
+   "predicted": {
+    "recipient": "olive",
+    "donor_copied": "apple",
+    "row_from_front": "date",
+    "row_from_end": "grape",
+    "same_token_position": "fig"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the elk is the",
+   "recipient": "Fact sheet.\nColors of animals: the hen is pink, the cat is green, the elk is yellow, the pig is white, the cow is brown, the bat is gray, the ram is purple.\nThis line means nothing.\nFruits for colors: pink goes with the olive, yellow goes with the grape, purple goes with the lime, gray goes with the apple, green goes with the orange.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "date",
+   "recipient_answer": "orange",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "date",
+    "row_from_front": "apple",
+    "row_from_end": "grape",
+    "same_token_position": "lime",
+    "donor_animal": "grape"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the elk is the",
+   "recipient": "Fact sheet.\nColors of animals: the ram is brown, the cow is black, the dog is gold, the hen is blue, the rat is purple, the bat is gray, the cat is red.\nThis line means nothing.\nFruits for colors: red goes with the orange, black goes with the apple, blue goes with the fig, gray goes with the olive, gold goes with the date.\nThis line means nothing.\nSo the fruit that goes with the cat is the",
+   "donor_answer": "date",
+   "recipient_answer": "orange",
+   "donor_row": 3,
+   "predicted": {
+    "recipient": "orange",
+    "donor_copied": "date",
+    "row_from_front": "olive",
+    "row_from_end": "apple",
+    "same_token_position": "fig",
+    "donor_colour": "apple"
+   }
+  },
+  {
+   "direction": "donor_long_recipient_short",
+   "donor": "Fact sheet.\nColors of animals: the ant is silver, the yak is blue, the dog is pink, the pig is white, the elk is black, the ram is green, the bee is purple.\nFruits for colors: pink goes with the grape, silver goes with the fig, green goes with the lime, black goes with the date, blue goes with the apple, white goes with the orange, purple goes with the olive.\nSo the fruit that goes with the ram is the",
+   "recipient": "Fact sheet.\nColors of animals: the ant is purple, the rat is brown, the hen is green, the elk is gray, the dog is black, the bee is yellow, the cat is pink.\nThis line means nothing.\nFruits for colors: pink goes with the apple, purple goes with the olive, brown goes with the grape, yellow goes with the fig, black goes with the date.\nThis line means nothing.\nSo the fruit that goes with the bee is the",
+   "donor_answer": "lime",
+   "recipient_answer": "fig",
+   "donor_row": 2,
+   "predicted": {
+    "recipient": "fig",
+    "donor_copied": "lime",
+    "row_from_front": "grape",
+    "row_from_end": "apple",
+    "same_token_position": "olive"
+   }
+  }
+ ]
+}
