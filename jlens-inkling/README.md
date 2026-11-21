@@ -728,6 +728,31 @@ overstated this and should be read with this result.
 earlier runs had. A ten-item pilot would have shown the TwoHopFact scoring problem for a few
 cents instead of about ninety.
 
+**Not pursued: TwoHopFact with "Fact:" framing.** A 14-item pilot showed the framing fixes
+the format but the model does not know most of these (often obscure) facts, so few items
+would have both single hops right. A dataset of well-known two-hop facts, or scoring a short
+generated answer instead of one token, would be the way to make the one-hop comparison on
+independent data. That comparison remains untested.
+
+## Follow-up: can a lens read the intermediate step on others' prompts?
+
+### Plan (written before running)
+
+The previous section left open whether the intermediate step is readable at all on prompts
+we did not write. This uses the instrument built for that and the metric its authors define.
+
+**Measurement.** Anthropic's 80 scorable multi-hop items on Inkling 2 Mini. For runs of 1, 2
+and 3 passes, read the last prompt position at every step through that run's own lens (the
+3-prompt lenses from question 1) and through the plain logit lens. Metric, as defined in
+the evaluation set's README: pass@k is the share of items whose intermediate reaches lens
+rank k or better at any step (k = 1, 10, 100). Control: the same score for another item's
+intermediate, which sets the level reached by chance when taking the best of ~50 steps.
+
+**Expectation.** Above the control at every pass count for both lenses. With lenses fitted
+on 3 prompts we make no prediction that the Jacobian lens beats the logit lens.
+
+**What this will not show.** Readable is not the same as used. The lenses are barely fitted.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

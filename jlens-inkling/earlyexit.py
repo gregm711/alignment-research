@@ -170,7 +170,7 @@ def run():
 
 
 @app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=15 * 60)
-def peek(n: int):
+def peek(n: int, prefix: str = ""):
     """Diagnostic: print what the released model actually says on the first n TwoHopFact one-hop and two-hop prompts."""
     import pandas as pd
     import torch, transformers
@@ -184,7 +184,7 @@ def peek(n: int):
     hf = transformers.AutoModelForMultimodalLM.from_pretrained(MODELS[0], dtype=torch.bfloat16, device_map="cuda").eval()
     for _, r in sample.iterrows():
         for label, col, gold in (("hop1", "r1(e1).prompt", "e2.value"), ("two ", "r2(r1(e1)).prompt", "e3.value")):
-            ids = tok(r[col], return_tensors="pt", add_special_tokens=False).input_ids.cuda()
+            ids = tok(prefix + r[col], return_tensors="pt", add_special_tokens=False).input_ids.cuda()
             with torch.no_grad():
                 top = hf(input_ids=ids, use_cache=False).logits[0, -1].float().topk(3).indices.tolist()
                 cont = tok.decode(hf.generate(input_ids=ids, max_new_tokens=8, do_sample=False)[0][ids.shape[1]:])
@@ -192,8 +192,8 @@ def peek(n: int):
 
 
 @app.local_entrypoint()
-def main(peek_n: int = 0):
+def main(peek_n: int = 0, prefix: str = ""):
     if peek_n:
-        return peek.remote(peek_n)
+        return peek.remote(peek_n, prefix)
     RESULTS.write_text(json.dumps(run.remote(), indent=1))
     print("wrote", RESULTS)
