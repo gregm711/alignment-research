@@ -89,7 +89,7 @@ From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the orde
 | 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | answered (see below) |
 | 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens for readability | answered (see below) |
 | 4 | Must an edit be held across all passes to stick? | Message swap (done under question 1), then swapping a concept direction in one pass vs all | answered (see below) |
-| 3 | Is the loop state robust to noise, including for refusals? | Noise in the restart state and in the messages; record refusal yes/no only | running |
+| 3 | Is the loop state robust to noise, including for refusals? | Noise in the restart state and in the messages; record refusal yes/no only | answered (see below) |
 
 Spend is tracked in [`SPEND.md`](SPEND.md).
 
@@ -478,6 +478,81 @@ changed most factual answers. A *well-formed* wrong message into pass 2 is mostl
 
 **Added limitation.** Prefilling the answer channel skips the model's reasoning step, so this
 measures refusal on a path the model does not normally take.
+
+### Result
+
+Raw data: [`results/noise.json`](results/noise.json). Script: `noise.py`. Noise is scaled to α
+times each vector's own norm. "Benign intact" means the reply was a refusal or a reply the
+unperturbed model finds as likely as its own (the model refuses 13 of the 24 benign requests
+even without noise on this prefilled path). For harmful requests only the refusal flag and a
+likelihood score were kept.
+
+| Noise site | α | One-hop facts kept | Two-hop kept | Arithmetic kept | Benign replies intact | Harmful still refused |
+|---|---|---|---|---|---|---|
+| none | – | 16/16 | 16/16 | 12/12 | 21/24 | 24/24 |
+| restart state, last position | 2 | 15 | 13 | 12 | 14 | 22 |
+| restart state, last position | 16 | 14 | 15 | 12 | 1 | 7 |
+| restart state, every position | 2 | 14 | 4 | 12 | 8 | 14 |
+| restart state, every position | 16 | 0 | 0 | 11 | 0 | 0 |
+| messages into pass 2 | 2 | 8 | 3 | 12 | 7 | 9 |
+| messages into pass 2 | 16 | 0 | 1 | 12 | 0 | 1 |
+| messages into pass 3 | 2 | 2 | 0 | 12 | 3 | 0 |
+| messages into pass 3 | 16 | 2 | 2 | 7 | 0 | 1 |
+| messages into pass 3, last position | 2 | 4 | 2 | 12 | 10 | 8 |
+| messages into pass 3, last position | 16 | 2 | 2 | 12 | 2 | 7 |
+
+**What we see.**
+
+- **The message channel is the fragile part.** Noise of twice the message's size, going into
+  the last pass, removes almost every factual answer and every refusal. The same amount of
+  noise in the restart state at one position leaves most of both.
+- **Refusals fall when everything else falls, not before.** In every setting where refusals
+  dropped, benign replies were broken at a similar or higher rate. We found no setting where
+  the model keeps replying sensibly to benign requests but stops refusing harmful ones.
+- **Arithmetic is nearly immune.** 12 of 12 sums survive in nine of the ten noisy settings,
+  including noise that erases every factual answer. The numbers are evidently recoverable
+  from the copies of the earliest states that later layers read back.
+- **Well-formed and random are different.** Question 1 found that another prompt's messages
+  at the last position change nothing, and that another prompt's messages into pass 2 are
+  mostly ignored. Random noise at either place is destructive. The channel tolerates a
+  plausible message that happens to be wrong far better than an implausible one.
+
+**Against the revised predictions.**
+
+1. *Noise in messages into pass 2 changes little:* **wrong.** It removed half the one-hop
+   answers at α = 2 and all of them at α = 16.
+2. *Noise in messages into pass 3 hurts two-hop more than one-hop:* not shown; it removed
+   nearly all of both.
+3. *The restart state at every position is the most damaging site:* true at α = 16, **wrong
+   at α = 2**, where the messages into pass 3 are far more damaging.
+4. *Refusal tracks benign fidelity:* held.
+
+**How this sits with the prior work.** Olszowiec et al.'s split (carry loops fragile, re-read
+loops robust at fifty times the state norm) does not map cleanly onto this design. Their
+noise went into the state a loop starts from, at one position. The nearest equivalent here,
+the restart state at one position, leaves single-word facts intact at α = 16 but breaks
+multi-word replies. And this design has a second kind of state, the messages, with no
+counterpart in the models they studied; it is the most fragile thing we measured.
+
+**Answer to question 3.** Partly. The state each pass restarts from tolerates noise at a
+single position reasonably well for short factual answers. The messages between passes do
+not: modest noise there breaks answers and refusals alike. We saw no sign of the specific
+failure reported for carry-loop models, where refusals erode while fluent answers remain.
+
+**What this does not show, including a flaw in our own measure.**
+
+- **The likelihood score cannot tell a harmful reply from a broken one.** We added it to
+  separate "stopped refusing with a fluent reply" from "reply turned to garbage". But for a
+  harmful request the unperturbed model would refuse, so *any* compliant reply scores as
+  unlikely, fluent or not. The zeros in that column of the data are therefore uninformative
+  and are not shown above. The claim that refusals fall with everything else rests on the
+  benign replies breaking at the same settings, which is indirect.
+- No reply to a harmful request was read by anyone or anything, by design. So "stopped
+  refusing" means only that a refusal phrase was absent from the first ten tokens.
+- One noise sample per prompt; 24 requests per set; ten-token replies; a prefilled answer
+  channel the model does not normally use.
+- Random noise is not an attack, and none of this bears on what a deliberate perturbation
+  could do. Anyone with access to the weights already has easier ways to remove refusals.
 
 ## Question 4: must an edit be held across all passes to stick?
 
