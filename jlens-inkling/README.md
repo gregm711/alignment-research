@@ -1404,6 +1404,50 @@ the model's internal state" failed on the first hidden mistake we built. The rev
 question was whether internal access helps when checking the answer is not enough; for this
 readout, here, it did not.
 
+## The oversight test, second attempt: where the model looks
+
+### Plan and predictions (written before running)
+
+The first attempt read only the state at the final token and had no positive control. This
+attempt changes the readout and adds two controls. The trials are built the same way.
+
+**The readout.** For each attention head in the final pass and the layers after it, the
+share of the final token's attention to the second table that lands on the *correct* row.
+A reviewer with the prompt can work out which row that is. Low share on the correct row
+means the model was looking elsewhere.
+
+**Calibrated on visible mistakes, tested on hidden ones.** An overseer can only label
+mistakes they can see. So the head is chosen on the training tables using *visible*
+mistakes: transplants that point at a row holding a different fruit, where the answer comes
+out wrong. That one head and its threshold are then frozen and applied, on new tables, to
+the hidden mistakes, where the answer is right. No hidden-mistake label is used to build it.
+
+**Controls.**
+
+- *The attention pipeline can see a route change when one is visible:* the frozen head,
+  on new tables, separating visible mistakes from right-route trials.
+- *The state pipeline from the first attempt can detect something known to be there:* the
+  same difference-of-means recipe on final-token states, asked which fruit the answer is.
+- *A training-free version:* the average over all those heads, with no selection at all.
+
+**Data.** 12 training sets of tables, 10 new sets with the same wording, 10 new sets with
+the other wording. Released model, transplants into pass 3.
+
+**Predictions** (record so far on this task: 4 right of 11).
+
+1. Both controls pass: AUC above 0.9 on new tables.
+2. The frozen head separates hidden mistakes from right-route trials on new tables with AUC
+   above 0.8.
+
+**What would count.** Internal access helps if the frozen head's interval on new tables lies
+entirely above the output-confidence baseline's, with the controls passing. If the controls
+pass and the head is at chance, the negative result stands on firmer ground. If the
+attention control fails, this readout cannot see routes at all and the test is uninformative.
+
+**What this will not show.** As before: an induced mistake in an invented task. A reviewer
+here knows which row is correct because the task is simple enough to solve by hand; in the
+cases that matter, they would not.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

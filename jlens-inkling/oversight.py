@@ -57,6 +57,7 @@ def groups(wording, seed, n_groups):
                 twins = [c for c in colors if c != mid and t2[c] == ans]  # the other colour with the same fruit
                 it = {"group": g, "side": side, "item": q, "answer": ans, "spare": f[4],
                       "true_row": order2.index(mid), "other_row": order2.index(twins[0]) if twins else None,
+                      "row_fruits": [t2[c] for c in order2], "row_entries": [f"{c} goes with the {t2[c]}" for c in order2],
                       "prompt": render(order1, order2, t1, t2, q, wording)}
                 if twins:  # same prompt with the other row's fruit replaced by the spare fruit
                     it["twin_prompt"] = render(order1, order2, t1, {**t2, twins[0]: f[4]}, q, wording)
