@@ -2,6 +2,8 @@
 
     modal run transplant.py --clean-only     # pilot: how many prompts does each model answer correctly?
     modal run transplant.py                  # writes results/transplant-four-way.json (every eligible pair)
+    modal run transplant.py --two-table      # both tables differ: separates carried intermediate from carried query
+    modal run transplant.py --shuffled       # rows shuffled too: separates carried animal from carried row position
 
 Donor and recipient are two-step questions that differ in both the item and the second step, so the
 recipient's answer after receiving the donor's messages says what the messages carried:
@@ -65,6 +67,58 @@ def lookup_items(wording):
     return items
 
 
+def lookup2_items(wording):
+    """Like lookup_items, but the two sides differ in the first table as well as the second (six entries each)."""
+    rng, items = random.Random(1), []
+    for t in range(N_TABLES):
+        animals, colors, fruits = (rng.sample(pool, 6) for pool in (ANIMALS, COLORS, FRUITS))
+        sides = {"a": (dict(zip(animals, colors)), dict(zip(colors, fruits))),
+                 "b": (dict(zip(animals, colors[1:] + colors[:1])), dict(zip(colors, fruits[2:] + fruits[:2])))}
+        for side, (t1, t2) in sides.items():
+            for q in animals:
+                items.append({"group": t, "step": side, "item": q, "mid": t1[q], "answer": t2[t1[q]], "t1": t1, "t2": t2,
+                              "prompt": lookup_prompt(animals, t1, t2, q, wording)})
+    return items
+
+
+def five_outcomes(R, D):
+    """The five answers a transplant of D's messages into R could give, as words."""
+    return {"recipient": R["answer"], "donor": D["answer"],
+            "carried_intermediate": R["t2"][D["mid"]],        # donor's colour, recipient's second table
+            "carried_query": R["t2"][R["t1"][D["item"]]],     # donor's animal, recipient's both tables
+            "d_step_on_r": D["t2"][R["mid"]]}                 # recipient's colour, donor's second table
+
+
+def shuffled_items(wording):
+    """Two sides with different first and second tables (seven entries), and every list printed in its own
+    random row order, so the row a fact sits in says nothing about which other fact it goes with."""
+    rng, items = random.Random(2), []
+    for t in range(N_TABLES):
+        animals, colors, fruits = (rng.sample(pool, 7) for pool in (ANIMALS, COLORS, FRUITS))
+        sides = {"a": (dict(zip(animals, colors)), dict(zip(colors, fruits))),
+                 "b": (dict(zip(animals, colors[1:] + colors[:1])), dict(zip(colors, fruits[2:] + fruits[:2])))}
+        for side, (t1, t2) in sides.items():
+            order1, order2 = rng.sample(animals, 7), rng.sample(colors, 7)
+            first = ", ".join(f"the {a} is {t1[a]}" for a in order1)
+            second = ", ".join(f"{c} goes with the {t2[c]}" for c in order2)
+            for q in animals:
+                items.append({"group": t, "step": side, "item": q, "mid": t1[q], "answer": t2[t1[q]], "t1": t1, "t2": t2,
+                              "order1": order1, "order2": order2, "same_row": t2[order2[order1.index(q)]],
+                              "prompt": f"Fact sheet.\nColors of animals: {first}.\nFruits for colors: {second}.\n"
+                                        + LOOKUP_WORDINGS[wording].format(q=q)})
+    return items
+
+
+def shuffled_outcomes(R, D):
+    """What a transplant of D's messages into R would answer, by what the messages carry."""
+    row = lambda i: R["t2"][R["order2"][i]]  # the fruit printed in row i of the recipient's second list
+    return {"recipient": R["answer"], "donor": D["answer"],
+            "carried_colour": R["t2"][D["mid"]],                      # the donor's intermediate
+            "carried_animal": R["t2"][R["t1"][D["item"]]],            # which animal the donor was asked about
+            "carried_row": row(D["order1"].index(D["item"])),         # the row the donor's animal sat in
+            "carried_colour_row": row(D["order2"].index(D["mid"]))}   # the row the donor's colour sat in
+
+
 # ---- Family 2: real facts ---------------------------------------------------------------------------
 # (capital, country, language, currency, continent). Capitals, languages and currencies are single tokens.
 COUNTRIES = [("Tokyo", "Japan", "Japanese", "yen", "Asia"), ("London", "England", "English", "pound", "Europe"),
@@ -88,7 +142,7 @@ def fact_items(wording):
 
 
 @app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=40 * 60)
-def run(clean_only: bool = False):
+def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = False):
     import gc, time
     import torch, transformers
     from huggingface_hub import model_info
@@ -132,6 +186,67 @@ def run(clean_only: bool = False):
                 it["clean_top"], it["msgs"] = forward(it["ids"], "record")
                 it["right"] = it["ans_id"] is not None and it["clean_top"] == it["ans_id"]
             return items
+
+        if shuffled:
+            tried = {w: prepare(shuffled_items(w)) for w in ("so", "qa")}
+            best = max(tried, key=lambda w: sum(it["right"] for it in tried[w]))  # chosen before any transplant
+            items, rows = tried[best], []
+            wrong = [it for it in items if not it["right"]]
+            clean = {**{w: f"{sum(it['right'] for it in v)}/{len(v)}" for w, v in tried.items()}, "used": best,
+                     # of the unaided mistakes, how many are the fruit printed in the same row as the queried animal?
+                     "mistakes_that_are_same_row_fruit": f"{sum(it['clean_top'] == token(it['same_row']) for it in wrong)}/{len(wrong)}",
+                     "prompts_where_same_row_fruit_is_the_answer": sum(it["same_row"] == it["answer"] for it in items)}
+            core = ("recipient", "donor", "carried_colour", "carried_animal", "carried_row")
+            for R, D in itertools.permutations(items, 2):
+                if R["group"] != D["group"] or R["step"] == D["step"] or R["item"] == D["item"]:
+                    continue
+                words = shuffled_outcomes(R, D)
+                if len({words[k] for k in core}) < 5 or not (R["right"] and D["right"]) or R["ids"].shape != D["ids"].shape:
+                    continue
+                if words["carried_colour_row"] in {words[k] for k in core}:
+                    del words["carried_colour_row"]  # not distinguishable on this pair
+                expected = {k: token(v) for k, v in words.items()}
+                row = {"recipient": R["prompt"], "donor": D["prompt"], "expected": words}
+                for ps, calls in PASS_SETS.items():
+                    top, _ = forward(R["ids"], "patch", D["msgs"], calls)
+                    row[ps] = {"top": tok.decode([top]), "outcome": next((k for k, v in expected.items() if v == top), "other")}
+                rows.append(row)
+            kinds = core + ("carried_colour_row", "other")
+            counts = {ps: {k: sum(r[ps]["outcome"] == k for r in rows) for k in kinds} for ps in PASS_SETS}
+            print(f"\n=== {name.split('/')[-1]} | unaided {clean} | {len(rows)} eligible pairs over "
+                  f"{len({r['recipient'] for r in rows})} recipient prompts")
+            for ps, c in counts.items():
+                print(f"    into {ps}: " + "  ".join(f"{k} {v}" for k, v in c.items()), flush=True)
+            return {"revision": model_info(name).sha, "clean": clean,
+                    "lookup_shuffled": {"n_pairs": len(rows), "n_recipient_prompts": len({r["recipient"] for r in rows}),
+                                        "counts": counts, "rows": rows}}
+
+        if two_table:
+            tried = {w: prepare(lookup2_items(w)) for w in ("so", "qa")}
+            best = max(tried, key=lambda w: sum(it["right"] for it in tried[w]))  # chosen before any transplant
+            items, rows = tried[best], []
+            clean = {**{w: f"{sum(it['right'] for it in v)}/{len(v)}" for w, v in tried.items()}, "used": best}
+            for R, D in itertools.permutations(items, 2):
+                if R["group"] != D["group"] or R["step"] == D["step"] or R["item"] == D["item"]:
+                    continue
+                words = five_outcomes(R, D)
+                if len(set(words.values())) < 5 or not (R["right"] and D["right"]) or R["ids"].shape != D["ids"].shape:
+                    continue
+                expected = {k: token(v) for k, v in words.items()}
+                row = {"recipient": R["prompt"], "donor": D["prompt"], "expected": words}
+                for ps, calls in PASS_SETS.items():
+                    top, _ = forward(R["ids"], "patch", D["msgs"], calls)
+                    row[ps] = {"top": tok.decode([top]), "outcome": next((k for k, v in expected.items() if v == top), "other")}
+                rows.append(row)
+            kinds = ("recipient", "donor", "carried_intermediate", "carried_query", "d_step_on_r", "other")
+            counts = {ps: {k: sum(r[ps]["outcome"] == k for r in rows) for k in kinds} for ps in PASS_SETS}
+            print(f"\n=== {name.split('/')[-1]} | unaided accuracy {clean} | {len(rows)} eligible pairs over "
+                  f"{len({r['recipient'] for r in rows})} recipient prompts")
+            for ps, c in counts.items():
+                print(f"    into {ps}: " + "  ".join(f"{k} {v}" for k, v in c.items()), flush=True)
+            return {"revision": model_info(name).sha, "clean": clean,
+                    "lookup_two_tables": {"n_pairs": len(rows), "n_recipient_prompts": len({r["recipient"] for r in rows}),
+                                          "counts": counts, "rows": rows}}
 
         res = {"revision": model_info(name).sha, "clean": {}}
         fams = {}
@@ -182,9 +297,10 @@ def run(clean_only: bool = False):
 
 
 @app.local_entrypoint()
-def main(clean_only: bool = False):
-    out = run.remote(clean_only)
+def main(clean_only: bool = False, two_table: bool = False, shuffled: bool = False):
+    out = run.remote(clean_only, two_table, shuffled)
     if not clean_only:
-        path = pathlib.Path(__file__).parent / "results" / "transplant-four-way.json"
+        name = "transplant-shuffled.json" if shuffled else "transplant-two-table.json" if two_table else "transplant-four-way.json"
+        path = pathlib.Path(__file__).parent / "results" / name
         path.write_text(json.dumps(out, indent=1))
         print("wrote", path)

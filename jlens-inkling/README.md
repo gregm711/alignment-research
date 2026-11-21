@@ -992,6 +992,69 @@ the 96 of 96 above was about the query all along.
 
 **What this will not show.** One task family with small invented tables.
 
+### Result
+
+Raw data, every eligible pair: [`results/transplant-two-table.json`](results/transplant-two-table.json).
+
+| Transplant into | Model | recipient | donor | carried intermediate | carried query | donor's 2nd step on recipient's | other |
+|---|---|---|---|---|---|---|---|
+| pass 3 | Inkling 2 Mini (144 pairs) | 0 | 0 | **0** | **144** | 0 | 0 |
+| pass 3 | variable-loop (138 pairs) | 3 | 0 | 1 | 133 | 0 | 1 |
+| pass 2 | Inkling 2 Mini | 32 | 0 | 0 | 111 | 0 | 1 |
+| pass 2 | variable-loop | 114 | 1 | 2 | 20 | 0 | 1 |
+
+**The prediction was wrong.** The donor's colour is never what determines the answer. The
+answer is what the recipient's own two tables give for the donor's animal. So the "derived,
+not given" reading of the earlier swaps does not hold here: a donor's messages overrode
+something the recipient's prompt states outright, namely which animal is being asked about.
+
+**And a second gap, found by a reviewer reading the saved outputs
+([note](../notes/lookup-position-control.md)).** In all the lookup prompts so far, the
+second table is printed in the same row order as the first. A rule that ignores colours
+entirely, "return the fruit in the same row as the animal", gets every prompt right, and
+"carry the donor's row number" predicts all 96 and all 144 transplant outcomes just as well
+as "carry the donor's animal". So these two experiments rule out a carried colour and a
+carried finished answer, and cannot say whether the model used the tables' content at all.
+
+## Follow-up: animal, colour or row? Shuffling the rows
+
+### Plan and predictions (written before running)
+
+**Design.** Same task with seven entries per table and both tables different on the two
+sides, but every list is printed in its own random row order. Row position now says nothing
+about which facts go together: the fruit in the same row as the queried animal is the right
+answer on only 14 of 168 prompts.
+
+**First, unaided accuracy.** If the model was answering by row position, it should now fail,
+and its mistakes should be the same-row fruit. That is reported before anything else.
+
+**Then transplants,** on pairs where these five answers are five different fruits (324 of
+1,008 candidate pairs qualify, checked offline), and where the model answers both prompts
+correctly unaided:
+
+| Outcome | What the messages would have carried |
+|---|---|
+| recipient's answer | nothing that matters |
+| donor's answer | the finished answer |
+| carried colour | the donor's intermediate |
+| carried animal | which animal the donor was asked about |
+| carried row | the row number the donor's animal sat in |
+
+A sixth, "the row the donor's colour sat in", is scored where it is distinct (112 pairs).
+
+**Predictions.**
+
+1. Unaided accuracy stays high. The model's reported lookup-chain ability would be odd if it
+   rested on row alignment. (We were wrong about the last prediction, so hold this loosely.)
+2. If so, "carried animal" dominates in pass 3 and "carried row" does not.
+
+**What would change our mind.** If accuracy collapses, the earlier lookup results were about
+layout and say nothing about two-step reasoning. If "carried row" dominates, the messages
+carry position.
+
+**What this will not show.** One invented task. Whether the same holds for facts the model
+knows, where no aligned wording has yet worked.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

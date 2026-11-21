@@ -1,0 +1,7 @@
+# A row-position control for the lookup transplant
+
+I checked the stored four-way transplant outputs on 2026-11-21. Find the row of the queried animal in the donor’s first list. Return the fruit in the same row of the recipient’s second list. This rule uses neither list’s colour labels. It matches the pass-3 prediction on 96/96 eligible pairs on the released model and 96/96 on the sibling. These are the same 96 pairings across two checkpoints. [Saved outputs](../jlens-inkling/results/transplant-four-way.json)
+
+The generator prints the second list in the order of the corresponding animals in the first. The current two-table follow-up also uses that rendering. Changing the mappings can distinguish some predictions while leaving row position confounded with the queried animal. The calculation shows observational equivalence on the tested pairs. It leaves the model’s actual strategy open. [Prompt construction](../jlens-inkling/transplant.py)
+
+For a discriminating test, independently permute the display order of both lists on both sides while keeping the mappings fixed. Before inference, enumerate the fruits predicted by a transferred animal, colour, answer and row index. Check that the intended alternatives actually yield distinct tokens and report how many pairs qualify. Measure clean accuracy on shuffled prompts as well. If clean accuracy holds, the transplants can distinguish the alternatives. If it collapses, the layout was already doing important work in the original task. Hold out tables and wordings when confirming the winning explanation.

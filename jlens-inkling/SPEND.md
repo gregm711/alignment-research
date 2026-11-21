@@ -26,5 +26,6 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Independent review, arithmetic and capital swaps including one failed import (elapsed job time used as a conservative proxy) | ~5.1 | $0.26 | $6.87 |
 | 2026-11-21 | Transplant pilots: unaided accuracy only, three short runs to fix prompt wording | 5.0 | $0.26 | $7.13 |
 | 2026-11-21 | Four-outcome message transplant, both checkpoints | 6.0 | $0.31 | $7.44 |
+| 2026-11-21 | Two-table message transplant, both checkpoints | 7.3 | $0.38 | $7.82 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.
