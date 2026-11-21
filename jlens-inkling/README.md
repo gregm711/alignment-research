@@ -553,6 +553,45 @@ all of them. They attribute the difference to boundary design, and this result f
 also breaks many answers, and the control shows much of that breakage is unspecific. One
 template, eight items. With a properly fitted lens the picture at plain strength could differ.
 
+## Follow-up: does the early-exit finding survive other people's prompts?
+
+### Plan and criteria (written before running)
+
+The pass-sweep finding rests on 44 prompts written by the same author who was looking for
+the effect. This re-tests it on prompts written by others, in their own formats.
+
+**Data.**
+
+- *TwoHopFact* (Yang et al., 2024; CC BY 4.0): a sample of 400 two-hop facts spread across
+  its fact types. Each has the two-hop prompt ("The author of the novel X was born in the
+  city of"), both one-hop prompts, the bridge entity and the answer, with aliases.
+- *Anthropic's lens evaluation sets* (Apache 2.0): 93 multi-hop items and 55
+  order-of-operations items, each with a prompt, a target and named intermediates.
+
+**Measurement.** Forward-only, both checkpoints, at 1, 2 and 3 passes. A prediction counts
+as naming an entity if the top token is the first token of any of its aliases. Items where
+the bridge and the answer share a first token are dropped. For TwoHopFact, results are
+reported on all items and on the subset where the 3-pass model answers both one-hop prompts
+correctly, so that failures are failures of composition and not of knowledge. Intervals are
+95% bootstrap intervals over items.
+
+**The claims under test, and what would count as failing.**
+
+1. *Composition needs the later passes; recall does not.* On the released model the two-hop
+   accuracy gain from 1 pass to 3 is larger than the one-hop gain. **Fails if** the two
+   intervals overlap.
+2. *Stopping early reveals the bridge.* On two-hop prompts the released model's top
+   prediction at 1 pass is the bridge entity more often than at 3 passes, and more often than
+   a control that scores another item's bridge entity. **Fails if** the 1-pass rate is not
+   above both.
+3. *The variable-loop sibling composes in one pass.* Its two-hop gain from 1 pass to 3 is
+   smaller than the released model's. **Fails if** the intervals overlap.
+
+**What this will not show.** First-token matching is lenient (it can credit a wrong entity
+that starts the same way) and strict (it misses a correct answer phrased differently); the
+control in claim 2 bounds the first. TwoHopFact's answers are Wikidata entities, many of
+them obscure, so absolute accuracy will be low. Still one position, one decoding rule.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
