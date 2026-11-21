@@ -1,10 +1,10 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). Everything here was produced on 2026-11-21 for about $6.60 of GPU time
-before the independent review (see [`SPEND.md`](SPEND.md)). The review reproduced the
-message swap, corrected the arithmetic noise measurement and rescored the public evaluation.
-[Independent review and revised counts](../notes/independent-review-2026-11-21.md).
+[`results/`](results/). The work was done on 2026-11-21 for about $7 of GPU time (see
+[`SPEND.md`](SPEND.md)). It has had one
+[independent review](../notes/independent-review-2026-11-21.md), which reproduced the main
+result, corrected two measurements and narrowed several claims. This page reflects that review.
 
 ## The model
 
@@ -13,93 +13,69 @@ layers three times per token. Each pass restarts from the same pre-loop state; t
 thing a later pass receives from an earlier one is a set of learned "messages". A sibling
 checkpoint was trained to run anywhere from one to five passes.
 
-## Four questions, four answers
+## Prior work we should have started from
 
-**1. What crosses from one pass to the next?** Only the messages, by construction. They carry
-what the previous pass worked out, not what the prompt already states. Transplanting another
-question's messages into the last pass moved the answer to that question's answer in 33 of
-42 two-hop cases, and in 0 of 120 arithmetic cases. Given a multiplication's messages, an
-addition prompt sometimes multiplied its own numbers (13 of 112).
+[Goodfire](https://www.goodfire.com/research/interpreting-inkling-2-mini) mapped how
+information flows across this model's blocks and loops on release day and compared three ways
+of decoding its internal states. [Thinking Machines](https://thinkingmachines.ai/news/inkling-2-mini/)
+reported pass-count sweeps on the sibling checkpoint. [Wang & Reid](https://arxiv.org/abs/2609.01924)
+applied the Jacobian lens to other looped models. We found the first two only through the
+review. Notes on all of them are in [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md).
 
-**2. At which pass is the answer decided?** In the released model, stopping after one pass
-gives the first step of the reasoning: `France` on the way to `Paris`, or `7` for `7 + 5`.
-One-hop facts are right after one pass (16/16); two-hop facts go 3/16, 11/16, 15/16 over
-passes one to three. The sibling trained to stop early gets the same questions right in one
-pass (14/16), so the spreading-out is a product of training, not a requirement of the task.
+## What we would stand behind, strongest first
 
-**3. Is the loop state robust to noise?** The restart state tolerates noise at one position
-fairly well. The messages do not: modest noise in the messages into the last pass removed
-nearly every factual answer and every refusal. Refusals fell when everything else fell, not
-before.
+**1. Transplanting the messages into the final pass can redirect the answer. (Reproduced
+independently.)** Run one question, save its messages, and substitute them into another
+question's final pass: the answer became the first question's answer in 33 of 42 two-hop
+pairs on the released model (17 of 42 on the sibling). Substituting into the second pass did
+so in 8 of 42. Substituting only at the last position did nothing. Sums never moved when the
+messages came from another sum of the same kind (0 of 120). This is the part neither
+Goodfire nor Thinking Machines did, as far as we know.
 
-**4. Must an edit be held across all passes to stick?** No. An edit in the last pass is what
-counts (14 of 42 answers moved by a direction edit there, against 1 and 6 in passes one and
-two, and 7 when held in all three). Earlier edits are re-derived away from the restart state.
+*What it does not show:* which information the messages carry. In these pairs the city, the
+country and the language all change together. The 42 pairs come from 7 prompts.
 
-## Why it might matter
+**2. The released model needs its later passes for multi-step questions; its sibling does
+not.** On 135 public items written by Anthropic, rescored by the reviewer: multi-hop accuracy
+goes from 16 of 80 after one pass to 40 of 80 after three, and order of operations from 3 to
+35 of 55. The sibling goes 39 to 45 and 33 to 39.
 
-Looped models move reasoning out of visible text and into hidden passes, which is bad for
-anyone who monitors models by reading their reasoning. Three things here bear on that. The
-content handed between passes can be transplanted and steers the answer, so it is a real
-causal channel and a natural place to look. A lens aimed at the right pass can read some of
-it. And the channel is fragile to noise. We first thought the intermediate step could simply
-be read by running fewer passes; the follow-up below shows that was an artefact of our
-prompts, and that a lens on internal states is what reads it.
+*What it does not show:* a comparison against single-step recall on independent data; and
+stopping the released model early is outside its training. The sibling's result largely
+repeats Thinking Machines' own.
 
-## How much to trust this
+**3. Some intermediate words can be recovered from internal states when the output does not
+show them.** On 75 public multi-hop items, after one pass the output names the intermediate
+on 5, a plain logit lens finds it as its top word somewhere in the network on 24, and 20 are
+lens hits without an output hit.
 
-- **Small, hand-written test sets.** 44 probes, 42 prompt pairs, 24 requests per set. The
-  directions are clear; the exact numbers would move.
-- **Lenses fitted on 3 prompts** where the library suggests about 100. On this model the
-  plain logit lens did as well as the Jacobian lens everywhere we compared them.
-- **One prompt format** in the main experiments.
-- **Several bugs were made and caught** during the work (two scoring errors with this
-  model's tokenizer, three memory errors). The corrected runs are what is reported.
-- **Stopping the released model early is outside its training.** We cannot fully separate
-  "pass one has only done step one" from "pass one's state decodes as step one".
-- **One of our own measures turned out to be uninformative** (the likelihood score for
-  replies to harmful requests); see question 3 in the README.
+*What it does not show:* a monitor. The lens was told which word to look for and searched
+every layer.
 
-## Follow-up on public data: one claim weakened
+## What we withdrew or would not lean on
 
-We re-tested the pass-sweep finding on prompts written by others, with failure criteria
-committed in advance.
+- **Withdrawn: "stopping early shows the intermediate step".** It appeared in our own probes
+  because our wording made the intermediate a natural next word. On others' prompts it
+  happens in 5 of 80.
+- **Withdrawn: "arithmetic is nearly immune to noise".** We scored the space before the
+  number. Scored at the number, noise in the messages into the last pass leaves 0 of 12.
+- **Weak: the noise and refusal results.** Refusal is a phrase match on ten tokens; the
+  benign-quality measure counts refusals as intact; the noise sites are not matched in size.
+  They show two rough proxies falling together and nothing about which fails first.
+- **Weak: the direction-edit result.** Its control is incomplete and the edit is exact only
+  for orthogonal directions. Only "a late edit moved more answers on this template" survives.
+- **Unsupported: any advantage for the Jacobian lens** on this model. The plain logit lens
+  matched or beat our barely-fitted Jacobian lenses everywhere we compared them.
 
-- **Survived:** on Anthropic's 135 public multi-step items the released model's accuracy
-  rises steeply over passes one to three (16% to 40%; 7% to 64%) while the sibling stays
-  flat. The later passes are needed for multi-step answers in the released model.
-- **Did not survive:** the claim that stopping early *shows* the intermediate step. On 80
-  multi-hop prompts the one-pass output named the intermediate twice. It did so in our own
-  probes because our wording made it a natural next word.
-- **Could not be tested:** a 400-item sample of TwoHopFact was unusable with next-token
-  scoring on this model. That was our measurement failing, and it means the comparison
-  against one-hop recall has still only been made on our own 32 probes.
+## How this was produced, and why that matters
 
-- **A weaker version of the monitoring point did hold.** On the same 88 multi-hop prompts, a
-  plain lens on the model's internal states finds the intermediate as its top word at some
-  step in about a quarter to a third of items, and in the top ten in half to two thirds
-  (control: a few percent, and 5–15%). So the hidden step is often present and readable
-  inside the model even when the output never shows it.
+One afternoon, one author, small hand-written test sets, and at least four scoring or memory
+bugs, three caught at the time and one found by the reviewer. Two of the claims we were
+most pleased with did not survive checking. The parts that held are the ones that were
+re-tested on other people's prompts or reproduced by someone else's code.
 
-So answer 2 above should be read as: later passes do the composing, and the intermediate
-step is not shown by stopping early but is often readable from internal states.
+## Next
 
-## For an independent reviewer
-
-Places a mistake would most likely hide, in the order we would check them:
-
-1. **Scoring by first token** (`sweep.py`, `patch.py`, `earlyexit.py`). This tokenizer writes
-   some words as a space token followed by the word. We handle that by appending the space
-   to the prompt. Is that handling right, and does it bias one condition over another?
-2. **The pass counter in the hooks** (`fit.py` `PassView`, `clamp.py`, `noise.py`). Edits and
-   readouts are assigned to a pass by counting calls. A miscount would silently mislabel
-   every per-pass result.
-3. **Changing `loop_num_passes` at run time** (`sweep.py`). Is that all it takes to run
-   fewer passes, on both checkpoints?
-4. **The claim that "both passes" equals "pass 3" in the message swap** (`patch.py`).
-5. **Whether the probes are leading.** The two-hop and one-hop probes share answers by
-   design. Are there cues in the wording that make the comparison unfair?
-6. **Anything in the README stated more strongly than its table supports.**
-
-Reproducing a result needs a Modal account and one 80GB GPU; each script's docstring gives
-the command. The cheapest to re-run is the pass sweep (about 5 minutes).
+[`README.md`](README.md) ends with the experiment the review recommended: a transplant where
+the donor's answer, the recipient's answer, and each question's second step applied to the
+other's intermediate are all different, so the outcome says what the messages carry.
