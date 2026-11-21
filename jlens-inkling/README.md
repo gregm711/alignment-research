@@ -1227,6 +1227,63 @@ sat. Not known: how. It is not a marker at the pointed-to row, and it is not an 
 query matching a key. Three guesses about the mechanism have now failed, and we stop
 guessing here.
 
+## The oversight test: can internal access catch a right answer reached the wrong way?
+
+This is the question that connects the work to alignment. An overseer often sees a plausible
+answer and cannot tell how the model got there.
+
+### Plan and predictions (written before running)
+
+**Setting.** The same invented two-step lookup, with one change: in the second table, pairs
+of colours share a fruit. So for most questions there is a second row that holds the same
+fruit as the correct row.
+
+**Hidden mistakes.** We know from the work above that transplanting another prompt's
+messages into the final pass makes the model read a chosen row of its own prompt. So:
+
+- *Wrong route, right answer:* transplant from a donor that points at the *other* row with
+  the same fruit. The visible answer is correct. The route is not.
+- *Right route, right answer:* transplant from a donor that points at the correct row. Both
+  kinds of trial have had a transplant, so "something was tampered with" does not separate them.
+
+**Establishing the route independently.** Each trial is repeated on a twin prompt in which
+the other row's fruit is replaced by a new one. If the answer follows the new fruit, the
+model was reading the other row. Only trials whose twin confirms the intended route, and
+whose visible answer is correct, are kept. The label is never given to either reviewer.
+
+**Two reviewers.**
+
+- *Prompt and answer only.* By construction the answer is correct in every kept trial, so
+  this reviewer has nothing to go on. To make the comparison fairer we also give it the
+  model's output confidence (top probability and margin).
+- *Plus a fixed internal readout.* A single direction in the model's internal state at the
+  last token: the difference between the mean state on wrong-route and right-route trials.
+  The layer is chosen by cross-validation on the training tables only, and the direction and
+  its threshold are then frozen.
+
+**Data.** Train on 20 sets of tables with one wording. Test on 10 new sets with the same
+wording, and on 10 new sets with a different wording. Released model, transplants into pass 3.
+
+**Measures.** Area under the ROC curve with a 95% bootstrap interval, and the share of
+hidden mistakes caught at a threshold set for a 10% false-alarm rate on the training tables.
+
+**Predictions** (our record on this task is five wrong out of eight, so hold them loosely).
+
+1. At least 80% of intended wrong-route trials are confirmed by their twin with a correct
+   visible answer.
+2. Output confidence barely separates the two kinds of trial: AUC below 0.65.
+3. The internal readout separates them on new tables with the same wording: AUC above 0.8.
+   On the new wording we expect it to be worse and make no prediction.
+
+**What would count.** Internal access helps if the readout's interval on new tables lies
+entirely above the confidence baseline's. If it only works on the training tables, or only
+at a layer chosen after seeing test results, it does not.
+
+**What this will not show.** The mistake is one we induced, in a task we invented, and the
+readout is trained on labelled examples of that same induced mistake. It would show that an
+internal difference exists and transfers to unseen tables. It would not show that a readout
+can catch a mistake nobody anticipated, which is the harder and more important case.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
