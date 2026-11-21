@@ -1,7 +1,7 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). Everything here was produced on 2026-11-21 for about $6.50 of GPU time
+[`results/`](results/). Everything here was produced on 2026-11-21 for about $6.60 of GPU time
 (see [`SPEND.md`](SPEND.md)), and has not yet been independently reviewed.
 
 ## The model
@@ -42,13 +42,14 @@ content handed between passes can be transplanted and steers the answer, so it i
 causal channel and a natural place to look. A lens aimed at the right pass can read some of
 it. And the channel is fragile to noise. We first thought the intermediate step could simply
 be read by running fewer passes; the follow-up below shows that was an artefact of our
-prompts.
+prompts, and that a lens on internal states is what reads it.
 
 ## How much to trust this
 
 - **Small, hand-written test sets.** 44 probes, 42 prompt pairs, 24 requests per set. The
   directions are clear; the exact numbers would move.
-- **Lenses fitted on 3 prompts** where the library suggests about 100.
+- **Lenses fitted on 3 prompts** where the library suggests about 100. On this model the
+  plain logit lens did as well as the Jacobian lens everywhere we compared them.
 - **One prompt format** in the main experiments.
 - **Several bugs were made and caught** during the work (two scoring errors with this
   model's tokenizer, three memory errors). The corrected runs are what is reported.
@@ -72,8 +73,14 @@ committed in advance.
   scoring on this model. That was our measurement failing, and it means the comparison
   against one-hop recall has still only been made on our own 32 probes.
 
-So answer 2 above should be read as: later passes do the composing. Whether the hidden
-intermediate step can be read cheaply, which is what would matter for oversight, is open.
+- **A weaker version of the monitoring point did hold.** On the same 88 multi-hop prompts, a
+  plain lens on the model's internal states finds the intermediate as its top word at some
+  step in about a quarter to a third of items, and in the top ten in half to two thirds
+  (control: a few percent, and 5–15%). So the hidden step is often present and readable
+  inside the model even when the output never shows it.
+
+So answer 2 above should be read as: later passes do the composing, and the intermediate
+step is not shown by stopping early but is often readable from internal states.
 
 ## For an independent reviewer
 

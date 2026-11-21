@@ -1,0 +1,3007 @@
+{
+ "ks": [
+  1,
+  10,
+  100
+ ],
+ "by_passes": {
+  "1": {
+   "n": 88,
+   "table": {
+    "jacobian": {
+     "intermediate": {
+      "pass@1": 0.26136363636363635,
+      "pass@10": 0.5,
+      "pass@100": 0.75
+     },
+     "control": {
+      "pass@1": 0.011363636363636364,
+      "pass@10": 0.10227272727272728,
+      "pass@100": 0.3181818181818182
+     }
+    },
+    "logit": {
+     "intermediate": {
+      "pass@1": 0.2727272727272727,
+      "pass@10": 0.5909090909090909,
+      "pass@100": 0.9545454545454546
+     },
+     "control": {
+      "pass@1": 0.0,
+      "pass@10": 0.14772727272727273,
+      "pass@100": 0.5227272727272727
+     }
+    }
+   },
+   "rows": [
+    {
+     "name": "amazon-language",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 3270
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 16
+     }
+    },
+    {
+     "name": "mars-color",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 29812
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 15748
+     }
+    },
+    {
+     "name": "paper-continent",
+     "jacobian": {
+      "intermediate": 62,
+      "control": 24299
+     },
+     "logit": {
+      "intermediate": 22,
+      "control": 684
+     }
+    },
+    {
+     "name": "christmas-season",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 640
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 425
+     }
+    },
+    {
+     "name": "osu-rival-mascot",
+     "jacobian": {
+      "intermediate": 59,
+      "control": 415
+     },
+     "logit": {
+      "intermediate": 11,
+      "control": 277
+     }
+    },
+    {
+     "name": "topeka-west",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 2214
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 361
+     }
+    },
+    {
+     "name": "atomic-79-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 22
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 12
+     }
+    },
+    {
+     "name": "atomic-26-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 4
+     }
+    },
+    {
+     "name": "atomic-29-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 65
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 90
+     }
+    },
+    {
+     "name": "atomic-80-state",
+     "jacobian": {
+      "intermediate": 59,
+      "control": 23
+     },
+     "logit": {
+      "intermediate": 101,
+      "control": 29
+     }
+    },
+    {
+     "name": "atomic-29-flame",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 570
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 123
+     }
+    },
+    {
+     "name": "planet-3-moons",
+     "jacobian": {
+      "intermediate": 5,
+      "control": 6596
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 2694
+     }
+    },
+    {
+     "name": "month-3-godof",
+     "jacobian": {
+      "intermediate": 20,
+      "control": 7623
+     },
+     "logit": {
+      "intermediate": 6,
+      "control": 10900
+     }
+    },
+    {
+     "name": "spaceneedle-border",
+     "jacobian": {
+      "intermediate": 39,
+      "control": 6
+     },
+     "logit": {
+      "intermediate": 40,
+      "control": 203
+     }
+    },
+    {
+     "name": "rhyme-rain-neighbor",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 117
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 25
+     }
+    },
+    {
+     "name": "rhyme-door-doubled",
+     "jacobian": {
+      "intermediate": 209,
+      "control": 2030
+     },
+     "logit": {
+      "intermediate": 30,
+      "control": 1228
+     }
+    },
+    {
+     "name": "rhyme-chair-flag",
+     "jacobian": {
+      "intermediate": 128,
+      "control": 3303
+     },
+     "logit": {
+      "intermediate": 78,
+      "control": 1891
+     }
+    },
+    {
+     "name": "rhyme-spoon-orbit",
+     "jacobian": {
+      "intermediate": 120,
+      "control": 26098
+     },
+     "logit": {
+      "intermediate": 80,
+      "control": 3698
+     }
+    },
+    {
+     "name": "etym-wargod-month",
+     "jacobian": {
+      "intermediate": 64,
+      "control": 290
+     },
+     "logit": {
+      "intermediate": 7,
+      "control": 243
+     }
+    },
+    {
+     "name": "etym-frigg-position",
+     "jacobian": {
+      "intermediate": 12,
+      "control": 1395
+     },
+     "logit": {
+      "intermediate": 11,
+      "control": 715
+     }
+    },
+    {
+     "name": "etym-saturn-position",
+     "jacobian": {
+      "intermediate": 16,
+      "control": 591
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 123
+     }
+    },
+    {
+     "name": "chem-photosynthesis-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 3
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 3
+     }
+    },
+    {
+     "name": "chem-atmosphere-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 7
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 15
+     }
+    },
+    {
+     "name": "chem-organic-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 53
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 306
+     }
+    },
+    {
+     "name": "chem-bones-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 734
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 542
+     }
+    },
+    {
+     "name": "func-pumps-chambers",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 44
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 112
+     }
+    },
+    {
+     "name": "func-filters-count",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 6259
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 750
+     }
+    },
+    {
+     "name": "birthstone-emerald-month",
+     "jacobian": {
+      "intermediate": 44,
+      "control": 3652
+     },
+     "logit": {
+      "intermediate": 15,
+      "control": 19518
+     }
+    },
+    {
+     "name": "violin-strings",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 77
+     },
+     "logit": {
+      "intermediate": 119,
+      "control": 16
+     }
+    },
+    {
+     "name": "nhop-primary-planet",
+     "jacobian": {
+      "intermediate": 63,
+      "control": 968
+     },
+     "logit": {
+      "intermediate": 23,
+      "control": 25
+     }
+    },
+    {
+     "name": "nhop-rings-planet",
+     "jacobian": {
+      "intermediate": 1316,
+      "control": 938
+     },
+     "logit": {
+      "intermediate": 50,
+      "control": 49
+     }
+    },
+    {
+     "name": "nhop-guitar-planet",
+     "jacobian": {
+      "intermediate": 636,
+      "control": 636
+     },
+     "logit": {
+      "intermediate": 46,
+      "control": 18
+     }
+    },
+    {
+     "name": "nhop-compass-planet",
+     "jacobian": {
+      "intermediate": 2093,
+      "control": 2813
+     },
+     "logit": {
+      "intermediate": 19,
+      "control": 38
+     }
+    },
+    {
+     "name": "nhop-volleyball-planet",
+     "jacobian": {
+      "intermediate": 1737,
+      "control": 33435
+     },
+     "logit": {
+      "intermediate": 46,
+      "control": 276
+     }
+    },
+    {
+     "name": "nhop-alphabet-element",
+     "jacobian": {
+      "intermediate": 19516,
+      "control": 18434
+     },
+     "logit": {
+      "intermediate": 307,
+      "control": 105
+     }
+    },
+    {
+     "name": "nhop-fortnight-element",
+     "jacobian": {
+      "intermediate": 15581,
+      "control": 1827
+     },
+     "logit": {
+      "intermediate": 78,
+      "control": 53
+     }
+    },
+    {
+     "name": "nhop-cube-element",
+     "jacobian": {
+      "intermediate": 933,
+      "control": 16074
+     },
+     "logit": {
+      "intermediate": 37,
+      "control": 21
+     }
+    },
+    {
+     "name": "nhop-rainbow-element",
+     "jacobian": {
+      "intermediate": 17456,
+      "control": 17844
+     },
+     "logit": {
+      "intermediate": 22,
+      "control": 28
+     }
+    },
+    {
+     "name": "nhop-spider-element",
+     "jacobian": {
+      "intermediate": 17012,
+      "control": 1345
+     },
+     "logit": {
+      "intermediate": 27,
+      "control": 42
+     }
+    },
+    {
+     "name": "nhop-insect-element",
+     "jacobian": {
+      "intermediate": 1150,
+      "control": 15161
+     },
+     "logit": {
+      "intermediate": 44,
+      "control": 16
+     }
+    },
+    {
+     "name": "nhop-week-element",
+     "jacobian": {
+      "intermediate": 16408,
+      "control": 1038
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 946
+     }
+    },
+    {
+     "name": "super-largest-country-capital",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 186
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 301
+     }
+    },
+    {
+     "name": "super-smallest-continent",
+     "jacobian": {
+      "intermediate": 225,
+      "control": 216
+     },
+     "logit": {
+      "intermediate": 99,
+      "control": 118
+     }
+    },
+    {
+     "name": "super-populous-capital",
+     "jacobian": {
+      "intermediate": 22,
+      "control": 10
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 11
+     }
+    },
+    {
+     "name": "super-largest-island-nation",
+     "jacobian": {
+      "intermediate": 174,
+      "control": 1161
+     },
+     "logit": {
+      "intermediate": 84,
+      "control": 718
+     }
+    },
+    {
+     "name": "colosseum-currency",
+     "jacobian": {
+      "intermediate": 98,
+      "control": 6944
+     },
+     "logit": {
+      "intermediate": 67,
+      "control": 1328
+     }
+    },
+    {
+     "name": "greatwall-ocean",
+     "jacobian": {
+      "intermediate": 23,
+      "control": 1742
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 4877
+     }
+    },
+    {
+     "name": "holiday-independence-monthnum",
+     "jacobian": {
+      "intermediate": 23,
+      "control": 19
+     },
+     "logit": {
+      "intermediate": 17,
+      "control": 5
+     }
+    },
+    {
+     "name": "holiday-christmas-monthnum",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 29
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 7
+     }
+    },
+    {
+     "name": "holiday-halloween-monthnum",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 63
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 13
+     }
+    },
+    {
+     "name": "holiday-valentines-monthnum",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 12
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 3
+     }
+    },
+    {
+     "name": "etym-janus-monthnum",
+     "jacobian": {
+      "intermediate": 45,
+      "control": 75
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 46
+     }
+    },
+    {
+     "name": "etym-caesar-monthnum",
+     "jacobian": {
+      "intermediate": 25,
+      "control": 497
+     },
+     "logit": {
+      "intermediate": 15,
+      "control": 27
+     }
+    },
+    {
+     "name": "nhop-soccer-element",
+     "jacobian": {
+      "intermediate": 18965,
+      "control": 27359
+     },
+     "logit": {
+      "intermediate": 53,
+      "control": 62
+     }
+    },
+    {
+     "name": "nhop-chess-element",
+     "jacobian": {
+      "intermediate": 27290,
+      "control": 22225
+     },
+     "logit": {
+      "intermediate": 58,
+      "control": 89
+     }
+    },
+    {
+     "name": "nhop-suit-element",
+     "jacobian": {
+      "intermediate": 17397,
+      "control": 23314
+     },
+     "logit": {
+      "intermediate": 98,
+      "control": 69
+     }
+    },
+    {
+     "name": "nhop-clock-element",
+     "jacobian": {
+      "intermediate": 21090,
+      "control": 15406
+     },
+     "logit": {
+      "intermediate": 70,
+      "control": 334
+     }
+    },
+    {
+     "name": "nhop-deck-element",
+     "jacobian": {
+      "intermediate": 17210,
+      "control": 6696
+     },
+     "logit": {
+      "intermediate": 368,
+      "control": 1633
+     }
+    },
+    {
+     "name": "inv-sunrise-opposite",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 2776
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 521
+     }
+    },
+    {
+     "name": "inv-balloon-opposite",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 0
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 1
+     }
+    },
+    {
+     "name": "inv-roots-opposite",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 9
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 5
+     }
+    },
+    {
+     "name": "inv-antarctica-opposite",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 290
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 723
+     }
+    },
+    {
+     "name": "rhyme-tree-squared",
+     "jacobian": {
+      "intermediate": 57,
+      "control": 53
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 17
+     }
+    },
+    {
+     "name": "rhyme-hive-plusone",
+     "jacobian": {
+      "intermediate": 18,
+      "control": 25
+     },
+     "logit": {
+      "intermediate": 6,
+      "control": 8
+     }
+    },
+    {
+     "name": "rhyme-fix-halved",
+     "jacobian": {
+      "intermediate": 56,
+      "control": 249
+     },
+     "logit": {
+      "intermediate": 9,
+      "control": 20
+     }
+    },
+    {
+     "name": "rhyme-shoe-doubled",
+     "jacobian": {
+      "intermediate": 73,
+      "control": 1833
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 1365
+     }
+    },
+    {
+     "name": "tajmahal-continent",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 205
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 126
+     }
+    },
+    {
+     "name": "louvre-language",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 2703
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 2032
+     }
+    },
+    {
+     "name": "firstletter-halloween-month",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 11
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 11
+     }
+    },
+    {
+     "name": "firstletter-valentines-month",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 524
+     },
+     "logit": {
+      "intermediate": 9,
+      "control": 619
+     }
+    },
+    {
+     "name": "firstletter-populous-country",
+     "jacobian": {
+      "intermediate": 13,
+      "control": 28
+     },
+     "logit": {
+      "intermediate": 18,
+      "control": 37
+     }
+    },
+    {
+     "name": "firstletter-paris-country",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 1419
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 104
+     }
+    },
+    {
+     "name": "firstletter-greatwall-country",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 5455
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 1026
+     }
+    },
+    {
+     "name": "succ-halloween-nextmonth",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 6
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 1
+     }
+    },
+    {
+     "name": "pred-valentines-prevmonth",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 35
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 625
+     }
+    },
+    {
+     "name": "dual-stars-visible-opposite",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 9
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 7
+     }
+    },
+    {
+     "name": "dual-photosynthesis-opposite",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 1362
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 32
+     }
+    },
+    {
+     "name": "roman-rings-olympic",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 6499
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 9
+     }
+    },
+    {
+     "name": "roman-states-us",
+     "jacobian": {
+      "intermediate": 196,
+      "control": 5206
+     },
+     "logit": {
+      "intermediate": 8,
+      "control": 51
+     }
+    },
+    {
+     "name": "half-clock-hours",
+     "jacobian": {
+      "intermediate": 29,
+      "control": 57
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 6
+     }
+    },
+    {
+     "name": "double-dice-faces",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 442
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 17
+     }
+    },
+    {
+     "name": "letterpos-water-symbol",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 993
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 15
+     }
+    },
+    {
+     "name": "letterpos-oxygen-symbol",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 1318
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 114
+     }
+    },
+    {
+     "name": "letterpos-carbon-symbol",
+     "jacobian": {
+      "intermediate": 8,
+      "control": 1798
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 3
+     }
+    },
+    {
+     "name": "letterpos-nitrogen-symbol",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 1028
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 392
+     }
+    },
+    {
+     "name": "dbl-armistice-antonym",
+     "jacobian": {
+      "intermediate": 9,
+      "control": 18
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 24
+     }
+    },
+    {
+     "name": "dbl-obituary-antonym",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1072
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 74
+     }
+    },
+    {
+     "name": "dbl-altitude-antonym",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 7
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 489
+     }
+    }
+   ]
+  },
+  "2": {
+   "n": 88,
+   "table": {
+    "jacobian": {
+     "intermediate": {
+      "pass@1": 0.26136363636363635,
+      "pass@10": 0.5227272727272727,
+      "pass@100": 0.7613636363636364
+     },
+     "control": {
+      "pass@1": 0.011363636363636364,
+      "pass@10": 0.056818181818181816,
+      "pass@100": 0.3181818181818182
+     }
+    },
+    "logit": {
+     "intermediate": {
+      "pass@1": 0.26136363636363635,
+      "pass@10": 0.6022727272727273,
+      "pass@100": 0.9545454545454546
+     },
+     "control": {
+      "pass@1": 0.022727272727272728,
+      "pass@10": 0.06818181818181818,
+      "pass@100": 0.5
+     }
+    }
+   },
+   "rows": [
+    {
+     "name": "amazon-language",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1629
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 16
+     }
+    },
+    {
+     "name": "mars-color",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 17112
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 15748
+     }
+    },
+    {
+     "name": "paper-continent",
+     "jacobian": {
+      "intermediate": 75,
+      "control": 21825
+     },
+     "logit": {
+      "intermediate": 34,
+      "control": 684
+     }
+    },
+    {
+     "name": "christmas-season",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 146
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 203
+     }
+    },
+    {
+     "name": "osu-rival-mascot",
+     "jacobian": {
+      "intermediate": 24,
+      "control": 368
+     },
+     "logit": {
+      "intermediate": 7,
+      "control": 815
+     }
+    },
+    {
+     "name": "topeka-west",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 850
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 361
+     }
+    },
+    {
+     "name": "atomic-79-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 40
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 43
+     }
+    },
+    {
+     "name": "atomic-26-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 37
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 39
+     }
+    },
+    {
+     "name": "atomic-29-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 141
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 193
+     }
+    },
+    {
+     "name": "atomic-80-state",
+     "jacobian": {
+      "intermediate": 73,
+      "control": 44
+     },
+     "logit": {
+      "intermediate": 97,
+      "control": 54
+     }
+    },
+    {
+     "name": "atomic-29-flame",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 237
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 104
+     }
+    },
+    {
+     "name": "planet-3-moons",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1919
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 941
+     }
+    },
+    {
+     "name": "month-3-godof",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 101
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 14539
+     }
+    },
+    {
+     "name": "spaceneedle-border",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 3
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 190
+     }
+    },
+    {
+     "name": "rhyme-rain-neighbor",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 61
+     },
+     "logit": {
+      "intermediate": 7,
+      "control": 15
+     }
+    },
+    {
+     "name": "rhyme-door-doubled",
+     "jacobian": {
+      "intermediate": 194,
+      "control": 1118
+     },
+     "logit": {
+      "intermediate": 18,
+      "control": 1686
+     }
+    },
+    {
+     "name": "rhyme-chair-flag",
+     "jacobian": {
+      "intermediate": 280,
+      "control": 1488
+     },
+     "logit": {
+      "intermediate": 126,
+      "control": 1455
+     }
+    },
+    {
+     "name": "rhyme-spoon-orbit",
+     "jacobian": {
+      "intermediate": 92,
+      "control": 13489
+     },
+     "logit": {
+      "intermediate": 88,
+      "control": 3688
+     }
+    },
+    {
+     "name": "etym-wargod-month",
+     "jacobian": {
+      "intermediate": 34,
+      "control": 150
+     },
+     "logit": {
+      "intermediate": 20,
+      "control": 202
+     }
+    },
+    {
+     "name": "etym-frigg-position",
+     "jacobian": {
+      "intermediate": 19,
+      "control": 448
+     },
+     "logit": {
+      "intermediate": 43,
+      "control": 260
+     }
+    },
+    {
+     "name": "etym-saturn-position",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1137
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 123
+     }
+    },
+    {
+     "name": "chem-photosynthesis-Z",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 6
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 21
+     }
+    },
+    {
+     "name": "chem-atmosphere-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 8
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 13
+     }
+    },
+    {
+     "name": "chem-organic-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 52
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 239
+     }
+    },
+    {
+     "name": "chem-bones-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 696
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 334
+     }
+    },
+    {
+     "name": "func-pumps-chambers",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 24
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 104
+     }
+    },
+    {
+     "name": "func-filters-count",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 2256
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 650
+     }
+    },
+    {
+     "name": "birthstone-emerald-month",
+     "jacobian": {
+      "intermediate": 57,
+      "control": 2212
+     },
+     "logit": {
+      "intermediate": 19,
+      "control": 5251
+     }
+    },
+    {
+     "name": "violin-strings",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 82
+     },
+     "logit": {
+      "intermediate": 58,
+      "control": 17
+     }
+    },
+    {
+     "name": "nhop-primary-planet",
+     "jacobian": {
+      "intermediate": 101,
+      "control": 1790
+     },
+     "logit": {
+      "intermediate": 23,
+      "control": 25
+     }
+    },
+    {
+     "name": "nhop-rings-planet",
+     "jacobian": {
+      "intermediate": 1108,
+      "control": 966
+     },
+     "logit": {
+      "intermediate": 46,
+      "control": 44
+     }
+    },
+    {
+     "name": "nhop-guitar-planet",
+     "jacobian": {
+      "intermediate": 804,
+      "control": 1215
+     },
+     "logit": {
+      "intermediate": 46,
+      "control": 18
+     }
+    },
+    {
+     "name": "nhop-compass-planet",
+     "jacobian": {
+      "intermediate": 731,
+      "control": 837
+     },
+     "logit": {
+      "intermediate": 19,
+      "control": 34
+     }
+    },
+    {
+     "name": "nhop-volleyball-planet",
+     "jacobian": {
+      "intermediate": 646,
+      "control": 7685
+     },
+     "logit": {
+      "intermediate": 40,
+      "control": 276
+     }
+    },
+    {
+     "name": "nhop-alphabet-element",
+     "jacobian": {
+      "intermediate": 11666,
+      "control": 7817
+     },
+     "logit": {
+      "intermediate": 307,
+      "control": 105
+     }
+    },
+    {
+     "name": "nhop-fortnight-element",
+     "jacobian": {
+      "intermediate": 4217,
+      "control": 1505
+     },
+     "logit": {
+      "intermediate": 78,
+      "control": 53
+     }
+    },
+    {
+     "name": "nhop-cube-element",
+     "jacobian": {
+      "intermediate": 1624,
+      "control": 35760
+     },
+     "logit": {
+      "intermediate": 37,
+      "control": 20
+     }
+    },
+    {
+     "name": "nhop-rainbow-element",
+     "jacobian": {
+      "intermediate": 38280,
+      "control": 2352
+     },
+     "logit": {
+      "intermediate": 22,
+      "control": 28
+     }
+    },
+    {
+     "name": "nhop-spider-element",
+     "jacobian": {
+      "intermediate": 3412,
+      "control": 1802
+     },
+     "logit": {
+      "intermediate": 27,
+      "control": 42
+     }
+    },
+    {
+     "name": "nhop-insect-element",
+     "jacobian": {
+      "intermediate": 1980,
+      "control": 46815
+     },
+     "logit": {
+      "intermediate": 44,
+      "control": 16
+     }
+    },
+    {
+     "name": "nhop-week-element",
+     "jacobian": {
+      "intermediate": 36684,
+      "control": 38
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 329
+     }
+    },
+    {
+     "name": "super-largest-country-capital",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 494
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 933
+     }
+    },
+    {
+     "name": "super-smallest-continent",
+     "jacobian": {
+      "intermediate": 36,
+      "control": 231
+     },
+     "logit": {
+      "intermediate": 39,
+      "control": 288
+     }
+    },
+    {
+     "name": "super-populous-capital",
+     "jacobian": {
+      "intermediate": 25,
+      "control": 15
+     },
+     "logit": {
+      "intermediate": 6,
+      "control": 15
+     }
+    },
+    {
+     "name": "super-largest-island-nation",
+     "jacobian": {
+      "intermediate": 350,
+      "control": 613
+     },
+     "logit": {
+      "intermediate": 298,
+      "control": 269
+     }
+    },
+    {
+     "name": "colosseum-currency",
+     "jacobian": {
+      "intermediate": 21,
+      "control": 818
+     },
+     "logit": {
+      "intermediate": 22,
+      "control": 3800
+     }
+    },
+    {
+     "name": "greatwall-ocean",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 19045
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 3695
+     }
+    },
+    {
+     "name": "holiday-independence-monthnum",
+     "jacobian": {
+      "intermediate": 16,
+      "control": 24
+     },
+     "logit": {
+      "intermediate": 14,
+      "control": 15
+     }
+    },
+    {
+     "name": "holiday-christmas-monthnum",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 57
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 38
+     }
+    },
+    {
+     "name": "holiday-halloween-monthnum",
+     "jacobian": {
+      "intermediate": 8,
+      "control": 246
+     },
+     "logit": {
+      "intermediate": 10,
+      "control": 103
+     }
+    },
+    {
+     "name": "holiday-valentines-monthnum",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 36
+     },
+     "logit": {
+      "intermediate": 5,
+      "control": 13
+     }
+    },
+    {
+     "name": "etym-janus-monthnum",
+     "jacobian": {
+      "intermediate": 41,
+      "control": 344
+     },
+     "logit": {
+      "intermediate": 8,
+      "control": 108
+     }
+    },
+    {
+     "name": "etym-caesar-monthnum",
+     "jacobian": {
+      "intermediate": 22,
+      "control": 1456
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 27
+     }
+    },
+    {
+     "name": "nhop-soccer-element",
+     "jacobian": {
+      "intermediate": 9955,
+      "control": 12697
+     },
+     "logit": {
+      "intermediate": 53,
+      "control": 62
+     }
+    },
+    {
+     "name": "nhop-chess-element",
+     "jacobian": {
+      "intermediate": 10200,
+      "control": 4292
+     },
+     "logit": {
+      "intermediate": 58,
+      "control": 89
+     }
+    },
+    {
+     "name": "nhop-suit-element",
+     "jacobian": {
+      "intermediate": 6374,
+      "control": 4444
+     },
+     "logit": {
+      "intermediate": 98,
+      "control": 69
+     }
+    },
+    {
+     "name": "nhop-clock-element",
+     "jacobian": {
+      "intermediate": 3941,
+      "control": 13798
+     },
+     "logit": {
+      "intermediate": 70,
+      "control": 295
+     }
+    },
+    {
+     "name": "nhop-deck-element",
+     "jacobian": {
+      "intermediate": 9346,
+      "control": 4274
+     },
+     "logit": {
+      "intermediate": 368,
+      "control": 1633
+     }
+    },
+    {
+     "name": "inv-sunrise-opposite",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 1480
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 362
+     }
+    },
+    {
+     "name": "inv-balloon-opposite",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 0
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 0
+     }
+    },
+    {
+     "name": "inv-roots-opposite",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 46
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 26
+     }
+    },
+    {
+     "name": "inv-antarctica-opposite",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 1606
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 982
+     }
+    },
+    {
+     "name": "rhyme-tree-squared",
+     "jacobian": {
+      "intermediate": 73,
+      "control": 55
+     },
+     "logit": {
+      "intermediate": 17,
+      "control": 26
+     }
+    },
+    {
+     "name": "rhyme-hive-plusone",
+     "jacobian": {
+      "intermediate": 13,
+      "control": 33
+     },
+     "logit": {
+      "intermediate": 9,
+      "control": 17
+     }
+    },
+    {
+     "name": "rhyme-fix-halved",
+     "jacobian": {
+      "intermediate": 9,
+      "control": 61
+     },
+     "logit": {
+      "intermediate": 6,
+      "control": 11
+     }
+    },
+    {
+     "name": "rhyme-shoe-doubled",
+     "jacobian": {
+      "intermediate": 58,
+      "control": 214
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 682
+     }
+    },
+    {
+     "name": "tajmahal-continent",
+     "jacobian": {
+      "intermediate": 25,
+      "control": 552
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 320
+     }
+    },
+    {
+     "name": "louvre-language",
+     "jacobian": {
+      "intermediate": 8,
+      "control": 5667
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 1494
+     }
+    },
+    {
+     "name": "firstletter-halloween-month",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 48
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 15
+     }
+    },
+    {
+     "name": "firstletter-valentines-month",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 10
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 619
+     }
+    },
+    {
+     "name": "firstletter-populous-country",
+     "jacobian": {
+      "intermediate": 86,
+      "control": 55
+     },
+     "logit": {
+      "intermediate": 34,
+      "control": 53
+     }
+    },
+    {
+     "name": "firstletter-paris-country",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1533
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 743
+     }
+    },
+    {
+     "name": "firstletter-greatwall-country",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 4961
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 697
+     }
+    },
+    {
+     "name": "succ-halloween-nextmonth",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 12
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 4
+     }
+    },
+    {
+     "name": "pred-valentines-prevmonth",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 62
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 625
+     }
+    },
+    {
+     "name": "dual-stars-visible-opposite",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 2
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 0
+     }
+    },
+    {
+     "name": "dual-photosynthesis-opposite",
+     "jacobian": {
+      "intermediate": 14,
+      "control": 3328
+     },
+     "logit": {
+      "intermediate": 13,
+      "control": 32
+     }
+    },
+    {
+     "name": "roman-rings-olympic",
+     "jacobian": {
+      "intermediate": 8,
+      "control": 4854
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 9
+     }
+    },
+    {
+     "name": "roman-states-us",
+     "jacobian": {
+      "intermediate": 454,
+      "control": 8182
+     },
+     "logit": {
+      "intermediate": 8,
+      "control": 51
+     }
+    },
+    {
+     "name": "half-clock-hours",
+     "jacobian": {
+      "intermediate": 13,
+      "control": 16
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 3
+     }
+    },
+    {
+     "name": "double-dice-faces",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 763
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 11
+     }
+    },
+    {
+     "name": "letterpos-water-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 426
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 14
+     }
+    },
+    {
+     "name": "letterpos-oxygen-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 321
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 32
+     }
+    },
+    {
+     "name": "letterpos-carbon-symbol",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 385
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 3
+     }
+    },
+    {
+     "name": "letterpos-nitrogen-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 113
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 392
+     }
+    },
+    {
+     "name": "dbl-armistice-antonym",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 16
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 65
+     }
+    },
+    {
+     "name": "dbl-obituary-antonym",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 1135
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 74
+     }
+    },
+    {
+     "name": "dbl-altitude-antonym",
+     "jacobian": {
+      "intermediate": 25,
+      "control": 106
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 489
+     }
+    }
+   ]
+  },
+  "3": {
+   "n": 88,
+   "table": {
+    "jacobian": {
+     "intermediate": {
+      "pass@1": 0.3068181818181818,
+      "pass@10": 0.5909090909090909,
+      "pass@100": 0.8068181818181818
+     },
+     "control": {
+      "pass@1": 0.022727272727272728,
+      "pass@10": 0.045454545454545456,
+      "pass@100": 0.29545454545454547
+     }
+    },
+    "logit": {
+     "intermediate": {
+      "pass@1": 0.29545454545454547,
+      "pass@10": 0.6590909090909091,
+      "pass@100": 0.9431818181818182
+     },
+     "control": {
+      "pass@1": 0.03409090909090909,
+      "pass@10": 0.10227272727272728,
+      "pass@100": 0.5113636363636364
+     }
+    }
+   },
+   "rows": [
+    {
+     "name": "amazon-language",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 1084
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 16
+     }
+    },
+    {
+     "name": "mars-color",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 20768
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 4474
+     }
+    },
+    {
+     "name": "paper-continent",
+     "jacobian": {
+      "intermediate": 16,
+      "control": 1789
+     },
+     "logit": {
+      "intermediate": 13,
+      "control": 684
+     }
+    },
+    {
+     "name": "christmas-season",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 440
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 425
+     }
+    },
+    {
+     "name": "osu-rival-mascot",
+     "jacobian": {
+      "intermediate": 14,
+      "control": 382
+     },
+     "logit": {
+      "intermediate": 7,
+      "control": 1448
+     }
+    },
+    {
+     "name": "topeka-west",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 490
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 361
+     }
+    },
+    {
+     "name": "atomic-79-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 499
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 160
+     }
+    },
+    {
+     "name": "atomic-26-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 8
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 56
+     }
+    },
+    {
+     "name": "atomic-29-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 281
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 174
+     }
+    },
+    {
+     "name": "atomic-80-state",
+     "jacobian": {
+      "intermediate": 44,
+      "control": 42
+     },
+     "logit": {
+      "intermediate": 28,
+      "control": 118
+     }
+    },
+    {
+     "name": "atomic-29-flame",
+     "jacobian": {
+      "intermediate": 5,
+      "control": 369
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 104
+     }
+    },
+    {
+     "name": "planet-3-moons",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 258
+     },
+     "logit": {
+      "intermediate": 7,
+      "control": 1699
+     }
+    },
+    {
+     "name": "month-3-godof",
+     "jacobian": {
+      "intermediate": 39,
+      "control": 5419
+     },
+     "logit": {
+      "intermediate": 51,
+      "control": 13521
+     }
+    },
+    {
+     "name": "spaceneedle-border",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 51
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 178
+     }
+    },
+    {
+     "name": "rhyme-rain-neighbor",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 4
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 5
+     }
+    },
+    {
+     "name": "rhyme-door-doubled",
+     "jacobian": {
+      "intermediate": 31,
+      "control": 616
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 555
+     }
+    },
+    {
+     "name": "rhyme-chair-flag",
+     "jacobian": {
+      "intermediate": 720,
+      "control": 292
+     },
+     "logit": {
+      "intermediate": 88,
+      "control": 732
+     }
+    },
+    {
+     "name": "rhyme-spoon-orbit",
+     "jacobian": {
+      "intermediate": 88,
+      "control": 111
+     },
+     "logit": {
+      "intermediate": 80,
+      "control": 328
+     }
+    },
+    {
+     "name": "etym-wargod-month",
+     "jacobian": {
+      "intermediate": 9,
+      "control": 1416
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 705
+     }
+    },
+    {
+     "name": "etym-frigg-position",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 113
+     },
+     "logit": {
+      "intermediate": 5,
+      "control": 260
+     }
+    },
+    {
+     "name": "etym-saturn-position",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1077
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 123
+     }
+    },
+    {
+     "name": "chem-photosynthesis-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 10
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 19
+     }
+    },
+    {
+     "name": "chem-atmosphere-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 124
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 129
+     }
+    },
+    {
+     "name": "chem-organic-Z",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 203
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 1132
+     }
+    },
+    {
+     "name": "chem-bones-Z",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 1320
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 334
+     }
+    },
+    {
+     "name": "func-pumps-chambers",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 70
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 53
+     }
+    },
+    {
+     "name": "func-filters-count",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 551
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 650
+     }
+    },
+    {
+     "name": "birthstone-emerald-month",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 6114
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 3503
+     }
+    },
+    {
+     "name": "violin-strings",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 30
+     },
+     "logit": {
+      "intermediate": 242,
+      "control": 0
+     }
+    },
+    {
+     "name": "nhop-primary-planet",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 222
+     },
+     "logit": {
+      "intermediate": 21,
+      "control": 25
+     }
+    },
+    {
+     "name": "nhop-rings-planet",
+     "jacobian": {
+      "intermediate": 46,
+      "control": 531
+     },
+     "logit": {
+      "intermediate": 10,
+      "control": 30
+     }
+    },
+    {
+     "name": "nhop-guitar-planet",
+     "jacobian": {
+      "intermediate": 419,
+      "control": 107
+     },
+     "logit": {
+      "intermediate": 46,
+      "control": 17
+     }
+    },
+    {
+     "name": "nhop-compass-planet",
+     "jacobian": {
+      "intermediate": 140,
+      "control": 462
+     },
+     "logit": {
+      "intermediate": 19,
+      "control": 34
+     }
+    },
+    {
+     "name": "nhop-volleyball-planet",
+     "jacobian": {
+      "intermediate": 78,
+      "control": 2681
+     },
+     "logit": {
+      "intermediate": 38,
+      "control": 276
+     }
+    },
+    {
+     "name": "nhop-alphabet-element",
+     "jacobian": {
+      "intermediate": 5647,
+      "control": 10994
+     },
+     "logit": {
+      "intermediate": 121,
+      "control": 68
+     }
+    },
+    {
+     "name": "nhop-fortnight-element",
+     "jacobian": {
+      "intermediate": 6005,
+      "control": 584
+     },
+     "logit": {
+      "intermediate": 67,
+      "control": 39
+     }
+    },
+    {
+     "name": "nhop-cube-element",
+     "jacobian": {
+      "intermediate": 417,
+      "control": 8107
+     },
+     "logit": {
+      "intermediate": 29,
+      "control": 20
+     }
+    },
+    {
+     "name": "nhop-rainbow-element",
+     "jacobian": {
+      "intermediate": 4946,
+      "control": 1903
+     },
+     "logit": {
+      "intermediate": 22,
+      "control": 28
+     }
+    },
+    {
+     "name": "nhop-spider-element",
+     "jacobian": {
+      "intermediate": 2913,
+      "control": 467
+     },
+     "logit": {
+      "intermediate": 27,
+      "control": 30
+     }
+    },
+    {
+     "name": "nhop-insect-element",
+     "jacobian": {
+      "intermediate": 472,
+      "control": 5207
+     },
+     "logit": {
+      "intermediate": 33,
+      "control": 16
+     }
+    },
+    {
+     "name": "nhop-week-element",
+     "jacobian": {
+      "intermediate": 5771,
+      "control": 17
+     },
+     "logit": {
+      "intermediate": 12,
+      "control": 329
+     }
+    },
+    {
+     "name": "super-largest-country-capital",
+     "jacobian": {
+      "intermediate": 12,
+      "control": 106
+     },
+     "logit": {
+      "intermediate": 7,
+      "control": 95
+     }
+    },
+    {
+     "name": "super-smallest-continent",
+     "jacobian": {
+      "intermediate": 50,
+      "control": 26
+     },
+     "logit": {
+      "intermediate": 302,
+      "control": 56
+     }
+    },
+    {
+     "name": "super-populous-capital",
+     "jacobian": {
+      "intermediate": 180,
+      "control": 30
+     },
+     "logit": {
+      "intermediate": 49,
+      "control": 47
+     }
+    },
+    {
+     "name": "super-largest-island-nation",
+     "jacobian": {
+      "intermediate": 188,
+      "control": 2199
+     },
+     "logit": {
+      "intermediate": 158,
+      "control": 269
+     }
+    },
+    {
+     "name": "colosseum-currency",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1240
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 1547
+     }
+    },
+    {
+     "name": "greatwall-ocean",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 1967
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 2242
+     }
+    },
+    {
+     "name": "holiday-independence-monthnum",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 90
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 280
+     }
+    },
+    {
+     "name": "holiday-christmas-monthnum",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 211
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 166
+     }
+    },
+    {
+     "name": "holiday-halloween-monthnum",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 176
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 584
+     }
+    },
+    {
+     "name": "holiday-valentines-monthnum",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 20
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 40
+     }
+    },
+    {
+     "name": "etym-janus-monthnum",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 128
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 81
+     }
+    },
+    {
+     "name": "etym-caesar-monthnum",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 205
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 27
+     }
+    },
+    {
+     "name": "nhop-soccer-element",
+     "jacobian": {
+      "intermediate": 1919,
+      "control": 5025
+     },
+     "logit": {
+      "intermediate": 53,
+      "control": 62
+     }
+    },
+    {
+     "name": "nhop-chess-element",
+     "jacobian": {
+      "intermediate": 4318,
+      "control": 6846
+     },
+     "logit": {
+      "intermediate": 58,
+      "control": 89
+     }
+    },
+    {
+     "name": "nhop-suit-element",
+     "jacobian": {
+      "intermediate": 10022,
+      "control": 3731
+     },
+     "logit": {
+      "intermediate": 98,
+      "control": 69
+     }
+    },
+    {
+     "name": "nhop-clock-element",
+     "jacobian": {
+      "intermediate": 5208,
+      "control": 8938
+     },
+     "logit": {
+      "intermediate": 70,
+      "control": 82
+     }
+    },
+    {
+     "name": "nhop-deck-element",
+     "jacobian": {
+      "intermediate": 4061,
+      "control": 76
+     },
+     "logit": {
+      "intermediate": 118,
+      "control": 1633
+     }
+    },
+    {
+     "name": "inv-sunrise-opposite",
+     "jacobian": {
+      "intermediate": 3,
+      "control": 1022
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 160
+     }
+    },
+    {
+     "name": "inv-balloon-opposite",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 0
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 0
+     }
+    },
+    {
+     "name": "inv-roots-opposite",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 62
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 57
+     }
+    },
+    {
+     "name": "inv-antarctica-opposite",
+     "jacobian": {
+      "intermediate": 25,
+      "control": 323
+     },
+     "logit": {
+      "intermediate": 9,
+      "control": 752
+     }
+    },
+    {
+     "name": "rhyme-tree-squared",
+     "jacobian": {
+      "intermediate": 21,
+      "control": 13
+     },
+     "logit": {
+      "intermediate": 9,
+      "control": 24
+     }
+    },
+    {
+     "name": "rhyme-hive-plusone",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 13
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 11
+     }
+    },
+    {
+     "name": "rhyme-fix-halved",
+     "jacobian": {
+      "intermediate": 9,
+      "control": 39
+     },
+     "logit": {
+      "intermediate": 9,
+      "control": 15
+     }
+    },
+    {
+     "name": "rhyme-shoe-doubled",
+     "jacobian": {
+      "intermediate": 18,
+      "control": 605
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 682
+     }
+    },
+    {
+     "name": "tajmahal-continent",
+     "jacobian": {
+      "intermediate": 10,
+      "control": 17
+     },
+     "logit": {
+      "intermediate": 4,
+      "control": 91
+     }
+    },
+    {
+     "name": "louvre-language",
+     "jacobian": {
+      "intermediate": 14,
+      "control": 5346
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 2277
+     }
+    },
+    {
+     "name": "firstletter-halloween-month",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 16
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 8
+     }
+    },
+    {
+     "name": "firstletter-valentines-month",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 351
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 619
+     }
+    },
+    {
+     "name": "firstletter-populous-country",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 54
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 115
+     }
+    },
+    {
+     "name": "firstletter-paris-country",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 741
+     },
+     "logit": {
+      "intermediate": 2,
+      "control": 845
+     }
+    },
+    {
+     "name": "firstletter-greatwall-country",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 645
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 2375
+     }
+    },
+    {
+     "name": "succ-halloween-nextmonth",
+     "jacobian": {
+      "intermediate": 2,
+      "control": 16
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 31
+     }
+    },
+    {
+     "name": "pred-valentines-prevmonth",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 604
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 305
+     }
+    },
+    {
+     "name": "dual-stars-visible-opposite",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 0
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 0
+     }
+    },
+    {
+     "name": "dual-photosynthesis-opposite",
+     "jacobian": {
+      "intermediate": 17,
+      "control": 155
+     },
+     "logit": {
+      "intermediate": 11,
+      "control": 32
+     }
+    },
+    {
+     "name": "roman-rings-olympic",
+     "jacobian": {
+      "intermediate": 58,
+      "control": 377
+     },
+     "logit": {
+      "intermediate": 26,
+      "control": 9
+     }
+    },
+    {
+     "name": "roman-states-us",
+     "jacobian": {
+      "intermediate": 32,
+      "control": 388
+     },
+     "logit": {
+      "intermediate": 8,
+      "control": 19
+     }
+    },
+    {
+     "name": "half-clock-hours",
+     "jacobian": {
+      "intermediate": 82,
+      "control": 17
+     },
+     "logit": {
+      "intermediate": 15,
+      "control": 3
+     }
+    },
+    {
+     "name": "double-dice-faces",
+     "jacobian": {
+      "intermediate": 5,
+      "control": 170
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 8
+     }
+    },
+    {
+     "name": "letterpos-water-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 49
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 14
+     }
+    },
+    {
+     "name": "letterpos-oxygen-symbol",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 754
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 69
+     }
+    },
+    {
+     "name": "letterpos-carbon-symbol",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 374
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 3
+     }
+    },
+    {
+     "name": "letterpos-nitrogen-symbol",
+     "jacobian": {
+      "intermediate": 1,
+      "control": 854
+     },
+     "logit": {
+      "intermediate": 1,
+      "control": 392
+     }
+    },
+    {
+     "name": "dbl-armistice-antonym",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 45
+     },
+     "logit": {
+      "intermediate": 0,
+      "control": 55
+     }
+    },
+    {
+     "name": "dbl-obituary-antonym",
+     "jacobian": {
+      "intermediate": 0,
+      "control": 1125
+     },
+     "logit": {
+      "intermediate": 8,
+      "control": 74
+     }
+    },
+    {
+     "name": "dbl-altitude-antonym",
+     "jacobian": {
+      "intermediate": 4,
+      "control": 323
+     },
+     "logit": {
+      "intermediate": 3,
+      "control": 489
+     }
+    }
+   ]
+  }
+ },
+ "gpu_minutes": 2.647192454338074
+}

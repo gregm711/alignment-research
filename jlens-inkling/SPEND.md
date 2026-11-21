@@ -21,5 +21,7 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Early-exit follow-up, first attempt (failed preparing the data) | ~1 | $0.05 | $5.41 |
 | 2026-11-21 | Early-exit follow-up on public datasets, both checkpoints | 16.9 | $0.87 | $6.28 |
 | 2026-11-21 | Diagnostic look at raw TwoHopFact outputs | ~2 | $0.10 | $6.38 |
+| 2026-11-21 | Pilot of TwoHopFact with "Fact:" framing (led to not running the full set) | ~2 | $0.10 | $6.48 |
+| 2026-11-21 | Lens readout of intermediates on Anthropic's multi-hop set | 2.6 | $0.13 | $6.61 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

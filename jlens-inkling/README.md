@@ -753,6 +753,42 @@ on 3 prompts we make no prediction that the Jacobian lens beats the logit lens.
 
 **What this will not show.** Readable is not the same as used. The lenses are barely fitted.
 
+### Result
+
+Raw data: [`results/lens-eval-multihop.json`](results/lens-eval-multihop.json). Script:
+`lenseval.py`. 88 scorable items.
+
+**Share of items whose intermediate reaches the given rank at some step** (control: another
+item's intermediate).
+
+| Run | Lens | top 1 | top 10 | top 100 | control: top 1 | top 10 | top 100 |
+|---|---|---|---|---|---|---|---|
+| 1 pass | Jacobian | 26% | 50% | 75% | 1% | 10% | 32% |
+| 1 pass | logit | 27% | 59% | 95% | 0% | 15% | 52% |
+| 2 passes | Jacobian | 26% | 52% | 76% | 1% | 6% | 32% |
+| 2 passes | logit | 26% | 60% | 95% | 2% | 7% | 50% |
+| 3 passes | Jacobian | 31% | 59% | 81% | 2% | 5% | 30% |
+| 3 passes | logit | 30% | 66% | 94% | 3% | 10% | 51% |
+
+**What we see.**
+
+- **The intermediate step is readable from the model's internal states on prompts we did not
+  write.** It is the lens's top word at some step in about a quarter to a third of items, and
+  in the top ten in half to two thirds, against a few percent and 5–15% for the control.
+- **It is readable even when the output does not show it.** After one pass the model's
+  *output* named the intermediate in 2 of 80 items; a lens on its internal states finds it
+  at rank 1 in about a quarter.
+- **The plain logit lens does as well as or better than the Jacobian lens here.** With lenses
+  fitted on 3 prompts that is not a fair contest, but it means nothing in this repo shows the
+  Jacobian lens earning its cost on this model.
+
+**Against the expectation.** Above the control at every pass count, for both lenses: held.
+
+**What this does not show.** Taking the best rank over roughly 25 to 50 steps is generous;
+the control bounds how generous. No intervals were computed. It says the intermediate is
+present and linearly readable somewhere in the network, not at which pass, and not that the
+model uses it.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
