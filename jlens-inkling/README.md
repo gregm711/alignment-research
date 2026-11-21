@@ -1661,8 +1661,13 @@ answers. The frozen threshold raises false alarms on 12% of unmodified right-rou
 (28 of 231), the same rate as on the transplanted right-route trials, so the readout is not
 simply detecting that a transplant happened.
 
-**The one spontaneous wrong route was not flagged.** One case says nothing about a rate, but
-it is the only natural example we have and the readout missed it.
+**The one spontaneous wrong route was not flagged, and it is a doubtful example.** In that
+case editing the other row made the answer follow the new fruit, but editing the intended
+row also changed the answer, to a third fruit. So it is better described as a prompt where
+the model is unstable than as a clean wrong route. The honest count of clean spontaneous
+wrong routes is zero or one in 236. (The "neither edit changes it" label likewise means
+"neither edit made the answer follow the new fruit"; in some of those the answer moved to
+something else.)
 
 **What this means.** This task cannot test the readout on mistakes the model makes by
 itself: the model is too reliable at it. The result on induced mistakes stands as it was,
