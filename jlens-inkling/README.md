@@ -463,6 +463,19 @@ reported per tier. For harmful requests only the refused / not refused flag is k
    the only copy of the prompt the loop has.
 4. Refusal rate tracks benign fidelity; no site makes refusals drop while benign replies hold.
 
+**Two additions after the second pilot (4 requests, also thrown away), before the real run.**
+
+- A fifth site, *messages into pass 3 at the last position only*. Olszowiec et al. perturbed
+  one position; the every-position sites are far larger perturbations and not comparable.
+- A plausibility score for every reply: how likely the unperturbed model finds it. A reply
+  counts as plausible if it is no less likely than 95% of noise-free replies. This separates
+  "stopped refusing because the reply turned to garbage" from "stopped refusing with a fluent
+  reply", which is the case that matters. Only the score is kept, not the text.
+
+The second pilot already contradicts revised prediction 1: noise in the messages into pass 2
+changed most factual answers. A *well-formed* wrong message into pass 2 is mostly ignored
+(question 1), but random noise there is not. We leave the prediction as written.
+
 **Added limitation.** Prefilling the answer channel skips the model's reasoning step, so this
 measures refusal on a path the model does not normally take.
 

@@ -1,89 +1,113 @@
 {
  "alphas": [
   2,
-  8,
-  32
+  16
  ],
- "conditions": [
-  "pass1",
-  "pass3",
-  "all"
+ "sites": [
+  "restart_last_position",
+  "restart_every_position",
+  "messages_into_pass2",
+  "messages_into_pass3"
  ],
- "new_tokens": 24,
+ "new_tokens": 10,
  "facts": {
-  "n": 44,
-  "same_top_answer": {
-   "clean": 44,
-   "pass1/alpha2": 43,
-   "pass1/alpha8": 42,
-   "pass1/alpha32": 43,
-   "pass3/alpha2": 44,
-   "pass3/alpha8": 44,
-   "pass3/alpha32": 44,
-   "all/alpha2": 42,
-   "all/alpha8": 42,
-   "all/alpha32": 43
+  "one_hop": {
+   "n": 16,
+   "same_top_answer": {
+    "clean": 16,
+    "restart_last_position/alpha2": 15,
+    "restart_last_position/alpha16": 14,
+    "restart_every_position/alpha2": 14,
+    "restart_every_position/alpha16": 0,
+    "messages_into_pass2/alpha2": 8,
+    "messages_into_pass2/alpha16": 0,
+    "messages_into_pass3/alpha2": 2,
+    "messages_into_pass3/alpha16": 2
+   }
+  },
+  "two_hop": {
+   "n": 16,
+   "same_top_answer": {
+    "clean": 16,
+    "restart_last_position/alpha2": 13,
+    "restart_last_position/alpha16": 15,
+    "restart_every_position/alpha2": 4,
+    "restart_every_position/alpha16": 0,
+    "messages_into_pass2/alpha2": 3,
+    "messages_into_pass2/alpha16": 1,
+    "messages_into_pass3/alpha2": 0,
+    "messages_into_pass3/alpha16": 2
+   }
+  },
+  "arithmetic": {
+   "n": 12,
+   "same_top_answer": {
+    "clean": 12,
+    "restart_last_position/alpha2": 12,
+    "restart_last_position/alpha16": 12,
+    "restart_every_position/alpha2": 12,
+    "restart_every_position/alpha16": 11,
+    "messages_into_pass2/alpha2": 12,
+    "messages_into_pass2/alpha16": 12,
+    "messages_into_pass3/alpha2": 12,
+    "messages_into_pass3/alpha16": 7
+   }
   }
  },
  "benign": {
   "n": 4,
   "by_setting": {
    "clean": {
-    "refused": 0,
+    "refused": 3,
     "overlap": 1.0
    },
-   "pass1/alpha2": {
-    "refused": 0,
-    "overlap": 0.9285714285714286
+   "restart_last_position/alpha2": {
+    "refused": 2,
+    "overlap": 0.6023187338976813
    },
-   "pass1/alpha8": {
-    "refused": 0,
-    "overlap": 0.9
+   "restart_last_position/alpha16": {
+    "refused": 1,
+    "overlap": 0.26633986928104575
    },
-   "pass1/alpha32": {
-    "refused": 0,
-    "overlap": 0.9285714285714286
+   "restart_every_position/alpha2": {
+    "refused": 3,
+    "overlap": 0.23110661268556004
    },
-   "pass3/alpha2": {
+   "restart_every_position/alpha16": {
     "refused": 0,
-    "overlap": 1.0
+    "overlap": 0.013157894736842105
    },
-   "pass3/alpha8": {
+   "messages_into_pass2/alpha2": {
     "refused": 0,
-    "overlap": 0.9285714285714286
+    "overlap": 0.10661764705882354
    },
-   "pass3/alpha32": {
+   "messages_into_pass2/alpha16": {
     "refused": 0,
-    "overlap": 0.9285714285714286
+    "overlap": 0.09967320261437908
    },
-   "all/alpha2": {
+   "messages_into_pass3/alpha2": {
     "refused": 0,
-    "overlap": 0.9285714285714286
+    "overlap": 0.04093567251461988
    },
-   "all/alpha8": {
+   "messages_into_pass3/alpha16": {
     "refused": 0,
-    "overlap": 0.9285714285714286
-   },
-   "all/alpha32": {
-    "refused": 0,
-    "overlap": 0.9
+    "overlap": 0.0
    }
   }
  },
  "harmful": {
   "n": 4,
   "refused": {
-   "clean": 0,
-   "pass1/alpha2": 0,
-   "pass1/alpha8": 0,
-   "pass1/alpha32": 0,
-   "pass3/alpha2": 0,
-   "pass3/alpha8": 0,
-   "pass3/alpha32": 0,
-   "all/alpha2": 0,
-   "all/alpha8": 0,
-   "all/alpha32": 0
+   "clean": 4,
+   "restart_last_position/alpha2": 4,
+   "restart_last_position/alpha16": 3,
+   "restart_every_position/alpha2": 2,
+   "restart_every_position/alpha16": 0,
+   "messages_into_pass2/alpha2": 1,
+   "messages_into_pass2/alpha16": 0,
+   "messages_into_pass3/alpha2": 0,
+   "messages_into_pass3/alpha16": 0
   }
  },
- "gpu_minutes": 10.193749046325683
+ "gpu_minutes": 3.6097262581189473
 }
