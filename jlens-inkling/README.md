@@ -80,6 +80,51 @@ Runs resume from the checkpoint on the Modal volume, so spend is incremental. Ea
 - The model support is an unmerged pull request; results may shift if it changes.
 - At the batch size that fits in memory, each prompt needs 576 backward passes.
 
+## Open questions and the plan
+
+From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the order we will take them (cheapest first):
+
+| # | Question | Method | Status |
+|---|---|---|---|
+| 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | running |
+| 1 | What crosses the pass boundary through the message channel? | Jacobian lens with a target at each pass end | not started |
+| 4 | Must an edit be held across all passes to stick? | Clamp a concept direction in one pass vs all | not started |
+| 3 | Is the loop state robust to noise, including for refusals? | Noise at the loop entry state; record refusal yes/no only | not started |
+
+Spend is tracked in [`SPEND.md`](SPEND.md).
+
+## Question 2: at which pass is the answer decided?
+
+### Plan and predictions (written before running)
+
+**Measurement.** The number of passes is a runtime setting (`loop_num_passes`). For each of
+1–5 passes, on both Inkling 2 Mini (trained at 3 passes) and its variable-loop companion
+`TML-d24-varloop-research` (trained with 1–5 passes in a 1:2:6:2:1 ratio, then post-trained at
+3), read the model's own output. No lens, no gradients. Two data sources:
+
+- *Ordinary text:* 60 WikiText-103 paragraphs, 128 tokens each, scored at every position
+  after the first 16: next-token accuracy, log-loss, and how often the top prediction already
+  equals the 3-pass top prediction.
+- *Probes:* 44 hand-written prompts with a single-token answer in three tiers: one-hop facts,
+  two-hop facts built to share answers with the one-hop tier, and arithmetic. Scored by
+  whether the answer is the top prediction.
+
+**Predictions.**
+
+1. On ordinary text, the 1-pass output already agrees with the 3-pass top prediction on more
+   than half of tokens. (Olszowiec et al. found 76–89% decided at the first iteration in six
+   of eight looped models.)
+2. Two-hop probes gain more from passes 2 and 3 than their one-hop counterparts. (Wang & Reid:
+   harder questions settle in later loops.)
+3. The fixed checkpoint loses more than the variable-loop one when run at 1 or 2 passes,
+   since it never trained that way.
+4. Past 3 passes, the fixed checkpoint does not improve on ordinary text and may get worse.
+   (Olszowiec et al.: a fixed-depth model peaks at its trained depth.)
+
+**What this will not show.** Reading the output after *k* passes measures what the post-loop
+layers can decode from pass *k*, not everything pass *k* has computed. The probes are few and
+hand-written. One prompt format, one position per probe.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
