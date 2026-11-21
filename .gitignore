@@ -1,0 +1,5 @@
+papers/*/
+*.log
+__pycache__/
+.DS_Store
+*.pt
