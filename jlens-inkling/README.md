@@ -920,6 +920,78 @@ questions sharing a second step.
 messages at every position; it cannot say where in the message the information sits. If few
 pairs are eligible (the model must get both questions right), the counts will be small.
 
+### Result
+
+Raw data, every eligible pair: [`results/transplant-four-way.json`](results/transplant-four-way.json).
+Script: `transplant.py`. Wordings were chosen on unaided accuracy before any transplant:
+the first three wordings tried gave "the" as the next word and were replaced after two short
+pilots that ran no transplants.
+
+**Fictional lookup tables (96 eligible pairs on each model; the model answers all 96
+prompts correctly unaided).**
+
+| Transplant into | Model | recipient's answer | donor's answer | recipient's second step on donor's item | donor's second step on recipient's | other |
+|---|---|---|---|---|---|---|
+| pass 3 | Inkling 2 Mini | 0 | 0 | **96** | 0 | 0 |
+| pass 3 | variable-loop | 0 | 0 | **96** | 0 | 0 |
+| pass 2 | Inkling 2 Mini | 23 | 0 | 71 | 1 | 1 |
+| pass 2 | variable-loop | 31 | 3 | 61 | 1 | 0 |
+
+**Real facts: no usable test.** No aligned wording got the released model above 8 of 14
+prompts unaided, leaving 0 eligible pairs (12 on the sibling, mostly "other"). Not a result.
+
+**What we see.**
+
+- **The messages do not carry a finished answer.** The donor's own answer never appears
+  after a transplant into the final pass (0 of 192 across both models).
+- **The final pass redoes the second lookup against its own prompt.** The answer is always
+  the fruit that the *recipient's* table assigns to the donor's item, even though the
+  donor's messages were computed with a different second table in view.
+- **Transplants into pass 2 now move most answers too** (71 and 61 of 96), unlike the
+  capital experiment (8 of 42). An earlier edit is not always washed out.
+
+**A gap in this design, found on checking the result.** Donor and recipient share the first
+table. So "the messages carry the donor's intermediate (its colour)" and "the messages carry
+which animal the donor was asked about" predict the same answer. This result separates
+"finished answer" from "something earlier", and nothing finer. The next section separates
+the two.
+
+**Against the predictions.**
+
+1. *Recipient's-second-step-on-donor's-intermediate is the most common changed outcome:* held,
+   far more cleanly than expected, with the caveat above about what "intermediate" means here.
+2. *Pass 2 moves fewer than pass 3:* held (71 against 96; 61 against 96).
+3. *The sibling moves less:* not at pass 3 (both 96 of 96); slightly at pass 2.
+
+## Follow-up: intermediate or query? A transplant where both tables differ
+
+### Plan and prediction (written before running)
+
+**Design.** As above, but the donor and recipient now have different *first* tables as well
+as different second tables, over the same six animals, colours and fruits. For a recipient
+asked about animal R and a donor asked about animal D, a transplant into the final pass can give:
+
+| Outcome | Computed as | Meaning |
+|---|---|---|
+| recipient's answer | recipient's tables on R | ignored |
+| donor's answer | donor's tables on D | a finished answer |
+| carried intermediate | recipient's second table on the *donor's* colour for D | the messages carry the intermediate |
+| carried query | recipient's *both* tables on D | the messages carry only which animal was asked about |
+| donor's second step on recipient's | donor's second table on the recipient's colour for R | the messages carry the second table |
+
+Pairs are used only if the five answers are five different fruits, the prompts are the same
+length, and the model answers both prompts correctly unaided. Both checkpoints, pass 3 and pass 2.
+
+**Prediction.** The carried-intermediate outcome dominates in pass 3. Reason: in the
+arithmetic swaps, information stated in the prompt (the numbers) was never overridden by a
+donor's messages, and the queried animal is stated in the prompt.
+
+**What would change our mind.** If "carried query" dominates, then messages can override
+what the prompt states, the "derived, not given" reading of the earlier swaps is wrong, and
+the 96 of 96 above was about the query all along.
+
+**What this will not show.** One task family with small invented tables.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

@@ -32,20 +32,25 @@ image = (
 )
 
 # ---- Family 1: fictional lookup tables given in the prompt -------------------------------------------
-ANIMALS = ["cat", "dog", "fox", "owl", "bat", "pig", "cow", "hen"]
-COLORS = ["red", "blue", "green", "gold", "pink", "gray", "black", "white"]
-FRUITS = ["plum", "pear", "fig", "lime", "peach", "grape", "apple", "lemon"]
+# Every word below is a single token for this tokenizer when it follows a space (checked offline).
+ANIMALS = ["cat", "dog", "bat", "pig", "cow", "hen", "rat", "bee", "ant", "ram", "elk", "yak"]
+COLORS = ["red", "blue", "green", "gold", "pink", "gray", "black", "white", "brown", "purple", "silver", "yellow"]
+FRUITS = ["fig", "lime", "grape", "apple", "orange", "date", "olive"]
 N_TABLES = 12
 
 
-def lookup_prompt(animals, t1, t2, query):
+LOOKUP_WORDINGS = {"is_the": "Fact: The fruit for the color of the {q} is the",
+                   "so": "So the fruit that goes with the {q} is the",
+                   "qa": "Question: Which fruit goes with the color of the {q}?\nAnswer: the"}
+
+
+def lookup_prompt(animals, t1, t2, query, wording):
     first = ", ".join(f"the {a} is {t1[a]}" for a in animals)
-    second = ", ".join(f"{c} goes with {t2[c]}" for c in (t1[a] for a in animals))
-    return (f"Fact sheet.\nColors of animals: {first}.\nFruits for colors: {second}.\n"
-            f"Fact: The fruit for the color of the {query} is")
+    second = ", ".join(f"{c} goes with the {t2[c]}" for c in (t1[a] for a in animals))
+    return f"Fact sheet.\nColors of animals: {first}.\nFruits for colors: {second}.\n" + LOOKUP_WORDINGS[wording].format(q=query)
 
 
-def lookup_items():
+def lookup_items(wording):
     """Each item is one prompt: (table id, which second table, query animal) with its intermediate and answer."""
     rng, items = random.Random(0), []
     for t in range(N_TABLES):
@@ -56,25 +61,30 @@ def lookup_items():
         for step, t2 in (("a", t2a), ("b", t2b)):
             for q in animals:
                 items.append({"group": t, "step": step, "item": q, "mid": t1[q], "answer": t2[t1[q]],
-                              "prompt": lookup_prompt(animals, t1, t2, q)})
+                              "prompt": lookup_prompt(animals, t1, t2, q, wording)})
     return items
 
 
 # ---- Family 2: real facts ---------------------------------------------------------------------------
-COUNTRIES = [("Tokyo", "Japan", "Japanese", "yen"), ("Moscow", "Russia", "Russian", "ruble"),
-             ("London", "England", "English", "pound"), ("Beijing", "China", "Chinese", "yuan"),
-             ("Paris", "France", "French", "euro"), ("Delhi", "India", "Hindi", "rupee"),
-             ("Bangkok", "Thailand", "Thai", "baht"), ("Seoul", "Korea", "Korean", "won"),
-             ("Warsaw", "Poland", "Polish", "zloty"), ("Ankara", "Turkey", "Turkish", "lira"),
-             ("Stockholm", "Sweden", "Swedish", "krona"), ("Mexico City", "Mexico", "Spanish", "peso")]
-WORDINGS = {"of": "Fact: The {prop} of the country whose capital is {city} is",
-            "uses": "Fact: In the country whose capital is {city}, people use the {prop} called"}
+# (capital, country, language, currency, continent). Capitals, languages and currencies are single tokens.
+COUNTRIES = [("Tokyo", "Japan", "Japanese", "yen", "Asia"), ("London", "England", "English", "pound", "Europe"),
+             ("Beijing", "China", "Chinese", "yuan", "Asia"), ("Paris", "France", "French", "euro", "Europe"),
+             ("Berlin", "Germany", "German", "euro", "Europe"), ("Rome", "Italy", "Italian", "euro", "Europe"),
+             ("Madrid", "Spain", "Spanish", "euro", "Europe")]
+# wording -> (template, the two properties asked about). Chosen by unaided accuracy, before any transplant.
+FACT_WORDINGS = {
+    "speak_pay": ("Fact: In the country whose capital is {city}, people {verb} in", ("language", "currency")),
+    "language_continent": ("Fact: The {prop} of the country whose capital is {city} is", ("language", "continent")),
+    "language_currency_the": ("Fact: The {prop} of the country whose capital is {city} is the", ("language", "currency")),
+}
+FIELD = {"language": 2, "currency": 3, "continent": 4}
+VERB = {"language": "speak", "currency": "pay", "continent": ""}
 
 
 def fact_items(wording):
-    return [{"group": 0, "step": prop, "item": city, "mid": country, "answer": ans,
-             "prompt": WORDINGS[wording].format(prop=prop, city=city)}
-            for city, country, lang, cur in COUNTRIES for prop, ans in (("language", lang), ("currency", cur))]
+    template, props = FACT_WORDINGS[wording]
+    return [{"group": 0, "step": prop, "item": c[0], "mid": c[1], "answer": c[FIELD[prop]],
+             "prompt": template.format(prop=prop, city=c[0], verb=VERB[prop])} for c in COUNTRIES for prop in props]
 
 
 @app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=40 * 60)
@@ -123,18 +133,19 @@ def run(clean_only: bool = False):
                 it["right"] = it["ans_id"] is not None and it["clean_top"] == it["ans_id"]
             return items
 
-        res = {"revision": model_info(name).sha}
-        fams = {"lookup": prepare(lookup_items())}
-        by_wording = {w: prepare(fact_items(w)) for w in WORDINGS}
-        best = max(by_wording, key=lambda w: sum(it["right"] for it in by_wording[w]))  # chosen before any transplant
-        fams["facts"] = by_wording[best]
-        res["clean"] = {"lookup": f"{sum(it['right'] for it in fams['lookup'])}/{len(fams['lookup'])}",
-                        **{f"facts/{w}": f"{sum(it['right'] for it in v)}/{len(v)}" for w, v in by_wording.items()},
-                        "facts_wording_used": best}
-        print(f"\n=== {name.split('/')[-1]} | clean accuracy: {res['clean']}", flush=True)
+        res = {"revision": model_info(name).sha, "clean": {}}
+        fams = {}
+        for fam, wordings, build in (("lookup", LOOKUP_WORDINGS, lookup_items), ("facts", FACT_WORDINGS, fact_items)):
+            tried = {w: prepare(build(w)) for w in wordings}
+            best = max(tried, key=lambda w: sum(it["right"] for it in tried[w]))  # chosen before any transplant
+            fams[fam] = tried[best]
+            res["clean"][fam] = {**{w: f"{sum(it['right'] for it in v)}/{len(v)}" for w, v in tried.items()}, "used": best}
+            if clean_only:
+                for w, v in tried.items():
+                    for it in v[:3] + v[-2:]:
+                        print(f"   [{w}] want {it['answer']!r:<11} got {tok.decode([it['clean_top']])!r:<11} | ...{it['prompt'][-62:]!r}")
+        print(f"\n=== {name.split('/')[-1]} | unaided accuracy: {res['clean']}", flush=True)
         if clean_only:
-            for it in fams["lookup"][:6] + by_wording["of"][:6] + by_wording["uses"][:6]:
-                print(f"   want {it['answer']!r:<12} got {tok.decode([it['clean_top']])!r:<12} | ...{it['prompt'][-70:]!r}")
             return res
 
         for fam, items in fams.items():

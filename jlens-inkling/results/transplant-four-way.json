@@ -1,0 +1,3799 @@
+{
+ "transformers": "046bdb8cc2cee29d233964bb77fe6fd37cfe4aa3",
+ "models": {
+  "thinkingmachines/Inkling-2-Mini": {
+   "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+   "clean": {
+    "lookup": {
+     "is_the": "76/96",
+     "so": "96/96",
+     "qa": "96/96",
+     "used": "so"
+    },
+    "facts": {
+     "speak_pay": "6/14",
+     "language_continent": "8/14",
+     "language_currency_the": "4/14",
+     "used": "language_continent"
+    }
+   },
+   "lookup": {
+    "n_pairs": 96,
+    "n_recipient_prompts": 96,
+    "counts": {
+     "pass3": {
+      "recipient": 0,
+      "donor": 0,
+      "r_step_on_d": 96,
+      "d_step_on_r": 0,
+      "other": 0
+     },
+     "pass2": {
+      "recipient": 23,
+      "donor": 0,
+      "r_step_on_d": 71,
+      "d_step_on_r": 1,
+      "other": 1
+     }
+    },
+    "rows": [
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the rat is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the rat is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the rat is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the rat is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " grape",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the bat is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the elk is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " date",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " date",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "d_step_on_r"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the elk is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the bat is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the bat is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the elk is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " grape",
+       "r_step_on_d": " date",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " date",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nSo the fruit that goes with the elk is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nSo the fruit that goes with the bat is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the bee is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the bee is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the bee is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nSo the fruit that goes with the bee is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the bee is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " apple",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " date",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the bee is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " date",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the bee is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " apple",
+       "r_step_on_d": " date",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the bee is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " date",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " apple",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " olive",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " apple",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " olive",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " grape",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " date",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " date",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " grape",
+       "r_step_on_d": " date",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " date",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the ram is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the ram is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the ram is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the ram is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the bat is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the elk is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the elk is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the bat is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the bat is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the elk is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nSo the fruit that goes with the elk is the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nSo the fruit that goes with the bat is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " apple",
+       "r_step_on_d": " date",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the rat is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " olive",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " lime",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the rat is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " date",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the ant is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " date",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the rat is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " apple",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the ant is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " olive",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nSo the fruit that goes with the rat is the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " lime",
+       "r_step_on_d": " date",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " ____",
+       "outcome": "other"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the ram is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the bee is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the bee is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the ram is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " orange",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " fig",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the ram is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the bee is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " fig",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the cow is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the yak is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the bee is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the ram is the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nSo the fruit that goes with the yak is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nSo the fruit that goes with the cow is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " orange",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the ram is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " olive",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the elk is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " date",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the ram is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " lime",
+       "r_step_on_d": " date",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the elk is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " grape",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the ram is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " grape",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the elk is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the pig is the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " olive",
+       "r_step_on_d": " date",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the ram is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " date",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nSo the fruit that goes with the pig is the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nSo the fruit that goes with the elk is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " lime",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the rat is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " orange",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " date",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the rat is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " date",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the hen is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the cat is the",
+      "expected": {
+       "recipient": " date",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the rat is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the dog is the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the cat is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the hen is the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " orange",
+       "r_step_on_d": " date",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nSo the fruit that goes with the dog is the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nSo the fruit that goes with the rat is the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " date",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     }
+    ]
+   },
+   "facts": {
+    "n_pairs": 0,
+    "n_recipient_prompts": 0,
+    "counts": {
+     "pass3": {
+      "recipient": 0,
+      "donor": 0,
+      "r_step_on_d": 0,
+      "d_step_on_r": 0,
+      "other": 0
+     },
+     "pass2": {
+      "recipient": 0,
+      "donor": 0,
+      "r_step_on_d": 0,
+      "d_step_on_r": 0,
+      "other": 0
+     }
+    },
+    "rows": []
+   }
+  },
+  "thinkingmachines/TML-d24-varloop-research": {
+   "revision": "657b53ba5da7baefe9ff15dca5cd25f5bd3dbaa2",
+   "clean": {
+    "lookup": {
+     "is_the": "17/96",
+     "so": "94/96",
+     "qa": "96/96",
+     "used": "qa"
+    },
+    "facts": {
+     "speak_pay": "9/14",
+     "language_continent": "11/14",
+     "language_currency_the": "5/14",
+     "used": "language_continent"
+    }
+   },
+   "lookup": {
+    "n_pairs": 96,
+    "n_recipient_prompts": 96,
+    "counts": {
+     "pass3": {
+      "recipient": 0,
+      "donor": 0,
+      "r_step_on_d": 96,
+      "d_step_on_r": 0,
+      "other": 0
+     },
+     "pass2": {
+      "recipient": 31,
+      "donor": 3,
+      "r_step_on_d": 61,
+      "d_step_on_r": 1,
+      "other": 0
+     }
+    },
+    "rows": [
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the grape, white goes with the orange, black goes with the lime, pink goes with the apple.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the rat is brown, the yak is white, the cat is black, the cow is pink.\nFruits for colors: brown goes with the apple, white goes with the grape, black goes with the orange, pink goes with the lime.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " grape",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " date",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " date",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "donor"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " grape",
+       "r_step_on_d": " date",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " date",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "donor"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the orange, purple goes with the lime, pink goes with the grape, brown goes with the date.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is blue, the bat is purple, the cow is pink, the elk is brown.\nFruits for colors: blue goes with the date, purple goes with the orange, pink goes with the lime, brown goes with the grape.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the orange, blue goes with the lime, gray goes with the apple, black goes with the grape.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is brown, the yak is blue, the hen is gray, the bee is black.\nFruits for colors: brown goes with the grape, blue goes with the orange, gray goes with the lime, black goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " apple",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " date",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " date",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " apple",
+       "r_step_on_d": " date",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " date",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the olive, red goes with the fig, blue goes with the apple, black goes with the date.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the bee is brown, the ant is red, the cow is blue, the cat is black.\nFruits for colors: brown goes with the date, red goes with the olive, blue goes with the fig, black goes with the apple.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " apple",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " olive",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " apple",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " olive",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the lime, purple goes with the orange, yellow goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is gold, the pig is purple, the yak is yellow, the dog is silver.\nFruits for colors: gold goes with the olive, purple goes with the lime, yellow goes with the orange, silver goes with the apple.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " grape",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " date",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " date",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " grape",
+       "r_step_on_d": " date",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the date, blue goes with the fig, pink goes with the olive, brown goes with the grape.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the dog is white, the yak is blue, the hen is pink, the ant is brown.\nFruits for colors: white goes with the grape, blue goes with the date, pink goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " date",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the apple, pink goes with the grape, white goes with the lime, blue goes with the orange.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ant is purple, the pig is pink, the ram is white, the yak is blue.\nFruits for colors: purple goes with the orange, pink goes with the apple, white goes with the grape, blue goes with the lime.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " orange",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "donor"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " lime",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " lime",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "d_step_on_r"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " orange",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the olive, purple goes with the lime, pink goes with the orange, white goes with the fig.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cow is red, the bat is purple, the pig is pink, the elk is white.\nFruits for colors: red goes with the fig, purple goes with the olive, pink goes with the lime, white goes with the orange.\nQuestion: Which fruit goes with the color of the bat?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " apple",
+       "r_step_on_d": " date",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " olive",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " lime",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " date",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " date",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " apple",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the ant?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " olive",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the lime, brown goes with the date, pink goes with the apple, silver goes with the olive.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the cat is yellow, the dog is brown, the ant is pink, the rat is silver.\nFruits for colors: yellow goes with the olive, brown goes with the lime, pink goes with the date, silver goes with the apple.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " lime",
+       "r_step_on_d": " date",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " apple",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " grape",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " orange",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " fig",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " fig",
+       "r_step_on_d": " apple",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " apple",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the bee?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "expected": {
+       "recipient": " apple",
+       "donor": " grape",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " apple",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the orange, yellow goes with the fig, gray goes with the apple, blue goes with the grape.\nQuestion: Which fruit goes with the color of the yak?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is silver, the cow is yellow, the bee is gray, the yak is blue.\nFruits for colors: silver goes with the grape, yellow goes with the orange, gray goes with the fig, blue goes with the apple.\nQuestion: Which fruit goes with the color of the cow?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " orange",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " apple"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " olive",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " date",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " lime",
+       "r_step_on_d": " date",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " grape",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " lime",
+       "donor": " grape",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "expected": {
+       "recipient": " grape",
+       "donor": " olive",
+       "r_step_on_d": " date",
+       "d_step_on_r": " lime"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the ram?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " date",
+       "r_step_on_d": " lime",
+       "d_step_on_r": " grape"
+      },
+      "pass3": {
+       "top": " lime",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the lime, red goes with the grape, pink goes with the olive, blue goes with the date.\nQuestion: Which fruit goes with the color of the pig?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the ram is gold, the elk is red, the hen is pink, the pig is blue.\nFruits for colors: gold goes with the date, red goes with the lime, pink goes with the grape, blue goes with the olive.\nQuestion: Which fruit goes with the color of the elk?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " lime",
+       "r_step_on_d": " grape",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " grape",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " olive",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " orange",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " date",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " fig",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " fig",
+       "r_step_on_d": " date",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "expected": {
+       "recipient": " date",
+       "donor": " fig",
+       "r_step_on_d": " olive",
+       "d_step_on_r": " orange"
+      },
+      "pass3": {
+       "top": " olive",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " date",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "expected": {
+       "recipient": " fig",
+       "donor": " olive",
+       "r_step_on_d": " orange",
+       "d_step_on_r": " date"
+      },
+      "pass3": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "r_step_on_d"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the cat?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the hen?\nAnswer: the",
+      "expected": {
+       "recipient": " olive",
+       "donor": " orange",
+       "r_step_on_d": " date",
+       "d_step_on_r": " fig"
+      },
+      "pass3": {
+       "top": " date",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " olive",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the date, gold goes with the fig, red goes with the olive, brown goes with the orange.\nQuestion: Which fruit goes with the color of the dog?\nAnswer: the",
+      "donor": "Fact sheet.\nColors of animals: the hen is green, the rat is gold, the cat is red, the dog is brown.\nFruits for colors: green goes with the orange, gold goes with the date, red goes with the fig, brown goes with the olive.\nQuestion: Which fruit goes with the color of the rat?\nAnswer: the",
+      "expected": {
+       "recipient": " orange",
+       "donor": " date",
+       "r_step_on_d": " fig",
+       "d_step_on_r": " olive"
+      },
+      "pass3": {
+       "top": " fig",
+       "outcome": "r_step_on_d"
+      },
+      "pass2": {
+       "top": " orange",
+       "outcome": "recipient"
+      }
+     }
+    ]
+   },
+   "facts": {
+    "n_pairs": 12,
+    "n_recipient_prompts": 8,
+    "counts": {
+     "pass3": {
+      "recipient": 1,
+      "donor": 1,
+      "r_step_on_d": 0,
+      "d_step_on_r": 1,
+      "other": 9
+     },
+     "pass2": {
+      "recipient": 12,
+      "donor": 0,
+      "r_step_on_d": 0,
+      "d_step_on_r": 0,
+      "other": 0
+     }
+    },
+    "rows": [
+     {
+      "recipient": "Fact: The language of the country whose capital is Beijing is",
+      "donor": "Fact: The continent of the country whose capital is Berlin is",
+      "expected": {
+       "recipient": " Chinese",
+       "donor": " Europe",
+       "r_step_on_d": " German",
+       "d_step_on_r": " Asia"
+      },
+      "pass3": {
+       "top": " the",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Chinese",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The language of the country whose capital is Beijing is",
+      "donor": "Fact: The continent of the country whose capital is Rome is",
+      "expected": {
+       "recipient": " Chinese",
+       "donor": " Europe",
+       "r_step_on_d": " Italian",
+       "d_step_on_r": " Asia"
+      },
+      "pass3": {
+       "top": " the",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Chinese",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The language of the country whose capital is Beijing is",
+      "donor": "Fact: The continent of the country whose capital is Madrid is",
+      "expected": {
+       "recipient": " Chinese",
+       "donor": " Europe",
+       "r_step_on_d": " Spanish",
+       "d_step_on_r": " Asia"
+      },
+      "pass3": {
+       "top": " called",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Chinese",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The continent of the country whose capital is Beijing is",
+      "donor": "Fact: The language of the country whose capital is Berlin is",
+      "expected": {
+       "recipient": " Asia",
+       "donor": " German",
+       "r_step_on_d": " Europe",
+       "d_step_on_r": " Chinese"
+      },
+      "pass3": {
+       "top": " called",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Asia",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The continent of the country whose capital is Beijing is",
+      "donor": "Fact: The language of the country whose capital is Rome is",
+      "expected": {
+       "recipient": " Asia",
+       "donor": " Italian",
+       "r_step_on_d": " Europe",
+       "d_step_on_r": " Chinese"
+      },
+      "pass3": {
+       "top": " Chinese",
+       "outcome": "d_step_on_r"
+      },
+      "pass2": {
+       "top": " Asia",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The continent of the country whose capital is Beijing is",
+      "donor": "Fact: The language of the country whose capital is Madrid is",
+      "expected": {
+       "recipient": " Asia",
+       "donor": " Spanish",
+       "r_step_on_d": " Europe",
+       "d_step_on_r": " Chinese"
+      },
+      "pass3": {
+       "top": " Spanish",
+       "outcome": "donor"
+      },
+      "pass2": {
+       "top": " Asia",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The language of the country whose capital is Berlin is",
+      "donor": "Fact: The continent of the country whose capital is Beijing is",
+      "expected": {
+       "recipient": " German",
+       "donor": " Asia",
+       "r_step_on_d": " Chinese",
+       "d_step_on_r": " Europe"
+      },
+      "pass3": {
+       "top": " the",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " German",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The continent of the country whose capital is Berlin is",
+      "donor": "Fact: The language of the country whose capital is Beijing is",
+      "expected": {
+       "recipient": " Europe",
+       "donor": " Chinese",
+       "r_step_on_d": " Asia",
+       "d_step_on_r": " German"
+      },
+      "pass3": {
+       "top": " called",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Europe",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The language of the country whose capital is Rome is",
+      "donor": "Fact: The continent of the country whose capital is Beijing is",
+      "expected": {
+       "recipient": " Italian",
+       "donor": " Asia",
+       "r_step_on_d": " Chinese",
+       "d_step_on_r": " Europe"
+      },
+      "pass3": {
+       "top": " the",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Italian",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The continent of the country whose capital is Rome is",
+      "donor": "Fact: The language of the country whose capital is Beijing is",
+      "expected": {
+       "recipient": " Europe",
+       "donor": " Chinese",
+       "r_step_on_d": " Asia",
+       "d_step_on_r": " Italian"
+      },
+      "pass3": {
+       "top": " called",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Europe",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The language of the country whose capital is Madrid is",
+      "donor": "Fact: The continent of the country whose capital is Beijing is",
+      "expected": {
+       "recipient": " Spanish",
+       "donor": " Asia",
+       "r_step_on_d": " Chinese",
+       "d_step_on_r": " Europe"
+      },
+      "pass3": {
+       "top": " Spanish",
+       "outcome": "recipient"
+      },
+      "pass2": {
+       "top": " Spanish",
+       "outcome": "recipient"
+      }
+     },
+     {
+      "recipient": "Fact: The continent of the country whose capital is Madrid is",
+      "donor": "Fact: The language of the country whose capital is Beijing is",
+      "expected": {
+       "recipient": " Europe",
+       "donor": " Chinese",
+       "r_step_on_d": " Asia",
+       "d_step_on_r": " Spanish"
+      },
+      "pass3": {
+       "top": " called",
+       "outcome": "other"
+      },
+      "pass2": {
+       "top": " Europe",
+       "outcome": "recipient"
+      }
+     }
+    ]
+   }
+  }
+ },
+ "gpu_minutes": 6.002574936548869
+}
