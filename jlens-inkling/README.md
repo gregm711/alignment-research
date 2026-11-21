@@ -77,7 +77,7 @@ Runs resume from the checkpoint on the Modal volume, so spend is incremental. Ea
 - Six hand-written probes are a first look, not an evaluation. The lens library's evaluation
   sets and causal tests (edit a representation, check the answer changes) are the next step.
 - Fitting text is Wikipedia paragraphs, narrower than the web-text corpus the paper used.
-- The model support is an unmerged pull request; results may shift if it changes.
+- Model support comes from huggingface/transformers#51050. Runs up to the pass sweep used its branch; it was merged on 2026-11-21 and later runs are pinned to the merge commit.
 - At the batch size that fits in memory, each prompt needs 576 backward passes.
 
 ## Open questions and the plan
@@ -87,7 +87,7 @@ From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the orde
 | # | Question | Method | Status |
 |---|---|---|---|
 | 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | answered (see below) |
-| 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens if needed | running |
+| 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens for readability | swap answered (see below); lens pending |
 | 4 | Must an edit be held across all passes to stick? | Clamp a concept direction in one pass vs all | not started |
 | 3 | Is the loop state robust to noise, including for refusals? | Noise at the loop entry state; record refusal yes/no only | not started |
 
@@ -243,6 +243,77 @@ fitted per pass count, as described in `fit.py`.
 **What this will not show.** A swap replaces the whole message, so it shows that messages
 carry enough to determine the answer, not which part of the message does. Two prompt
 families in one format. An answer that moves to "something else" is hard to interpret.
+
+### Result (measurement 1: message swapping)
+
+Raw data: [`results/message-swap.json`](results/message-swap.json). Script: `patch.py`.
+
+"Moved to B" means prompt A, run with prompt B's messages, gave B's answer as its top word.
+Only prompts the model answers correctly unpatched are used. Swapping into both later passes
+at every position is the same intervention as swapping into pass 3 alone, since pass 3 then
+receives B's messages either way; the counts are identical and only pass 3 is shown.
+
+**Two-hop ("The language spoken in the country whose capital is X is"), 42 prompt pairs.**
+
+| Swap B's messages into | Inkling 2 Mini: moved to B | stayed A | other | Variable-loop: moved to B | stayed A | other |
+|---|---|---|---|---|---|---|
+| pass 2, every position | 8 | 31 | 3 | 0 | 42 | 0 |
+| pass 3, every position | 33 | 3 | 6 | 17 | 24 | 1 |
+| pass 2 or 3, last position only | 0 | 40–41 | 1–2 | 0 | 42 | 0 |
+
+**Arithmetic, pairs within the same operation (90 addition pairs, 30 multiplication pairs).**
+No swap in any condition moved a single answer, on either model: 120 of 120 stayed A.
+
+**Arithmetic, pairs across operations (112 pairs), swap into pass 3 at every position.**
+
+| Outcome | Inkling 2 Mini | Variable-loop |
+|---|---|---|
+| Stayed A's answer | 80 | 111 |
+| A's numbers with B's operation (`7 + 5 =` with messages from `8 * 9 =` answers `35`) | 13 | 1 |
+| B's answer | 1 | 0 |
+| Something else | 18 | 0 |
+
+The control held: swapping a prompt's own messages back in reproduced the unpatched output
+on all 24 prompts on both models.
+
+**What we see.**
+
+- **Messages carry what the previous pass worked out, not what the prompt already says.** In
+  the two-hop family the bridging fact (which country) is derived, and replacing the messages
+  into pass 3 replaces the answer in 33 of 42 pairs on the released model. In arithmetic the
+  numbers are in the prompt, which every pass re-reads from the restarted state, and no swap
+  of another sum's messages ever changes the answer.
+- **Messages also carry the operation.** With a multiplication's messages, an addition prompt
+  sometimes multiplies its own numbers (13 of 112), and often breaks (18). It never happens
+  with messages from another addition.
+- **The content travels at earlier positions.** Swapping only the last position's messages
+  changes nothing. The answer position gets the derived fact by attending to earlier
+  positions within the pass.
+- **Messages into pass 3 decide far more than messages into pass 2** (33 against 8 on the
+  released model; 17 against 0 on the variable-loop one). An edit to what pass 2 receives is
+  mostly washed out: pass 2 re-derives from the restarted state.
+- **The variable-loop model leans on messages less.** That fits the sweep: it can answer
+  these questions in one pass, so the restarted state alone often suffices.
+
+**Against the predictions.**
+
+1. *Self-swap control reproduces the output:* held.
+2. *Swapping everywhere moves most answers to B's:* held for two-hop on the released model
+   (33/42), not on the variable-loop model (17/42), and **wrong for arithmetic** (0/120). The
+   prediction treated messages as carrying "the specific content" in general; they carry the
+   derived part only.
+3. *Last position only moves fewer:* held (none moved).
+4. *Pass 3 moves at least as many as pass 2:* held.
+
+**What this does not show.**
+
+- A swap replaces whole messages, so it shows they are sufficient to redirect the answer, not
+  which component does it or how it is encoded.
+- One two-hop template with eight items and two arithmetic templates. "Derived versus given"
+  is our reading of three families, not a tested law.
+- The 18 "something else" outcomes in the cross-operation test are uninterpreted.
+- Whether this content is *readable* by a monitor (as opposed to transplantable) is a
+  separate question; that is what the per-pass lens is for.
 
 ## Results
 

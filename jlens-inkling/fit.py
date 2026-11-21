@@ -20,8 +20,8 @@ image = (
     modal.Image.debian_slim(python_version="3.12")
     .apt_install("git")
     .pip_install("torch", "accelerate", "safetensors", "tiktoken", "sentencepiece", "pillow", "hf_transfer", "datasets")
-    # Inkling 2 Mini support is an open PR on Hugging Face's own branch (huggingface/transformers#51050).
-    .pip_install("git+https://github.com/huggingface/transformers@add-inkling2-mini")
+    # Inkling 2 Mini support: huggingface/transformers#51050, pinned to its merge commit.
+    .pip_install("git+https://github.com/huggingface/transformers@046bdb8cc2cee29d233964bb77fe6fd37cfe4aa3")
     .pip_install("git+https://github.com/anthropics/jacobian-lens")
     .env({"HF_HOME": "/cache/hf", "HF_HUB_ENABLE_HF_TRANSFER": "1"})
 )
