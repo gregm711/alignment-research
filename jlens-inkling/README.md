@@ -1468,6 +1468,65 @@ attention control fails, this readout cannot see routes at all and the test is u
 here knows which row is correct because the task is simple enough to solve by hand; in the
 cases that matter, they would not.
 
+### Result
+
+Raw data, including every test trial's score: [`results/oversight-attention.json`](results/oversight-attention.json).
+Script: `oversight2.py`. Not yet independently reviewed.
+
+The readout was frozen as head 23 at layer 11 of the final pass, chosen on visible mistakes
+in the training tables (where it separated them perfectly), with a threshold set there.
+
+**Hidden mistakes against right-route trials, on new tables.** Area under the ROC curve.
+
+| Test set | trials (hidden / right-route) | frozen attention head | all heads averaged, no selection | output top probability |
+|---|---|---|---|---|
+| new tables | 83 / 86 | **0.999** [0.997, 1.000] | 0.94 [0.90, 0.97] | 0.49 [0.41, 0.57] |
+| new tables, other wording | 88 / 94 | **1.000** [1.000, 1.000] | 0.97 [0.94, 0.99] | 0.51 [0.43, 0.59] |
+
+At the frozen threshold the head flagged every hidden mistake in both test sets, with false
+alarms on 12% and 13% of right-route trials (the threshold was set for 10%).
+
+**Controls, on new tables.**
+
+| Control | new tables | other wording |
+|---|---|---|
+| frozen head, visible mistakes against right-route | 0.998 | 1.000 |
+| state pipeline from the first attempt, asked which fruit the answer is | 0.998 | 0.985 |
+
+**Internal access helped.** By the bar written in advance (the frozen head's interval
+entirely above the output-confidence baseline's, with both controls passing) this is a yes.
+In these trials the answer is correct and the model's confidence says nothing, and one
+attention head, picked without ever seeing a hidden mistake, tells the two apart almost
+perfectly on tables and a wording it was not chosen on. Both predictions held.
+
+**What the number means.** On right-route trials the head puts a median 73 to 81% of its
+second-table attention on the correct row. On wrong-route trials, 3%. Because both rows
+hold the same fruit in the hidden trials, a head that attended by which fruit it was about
+to output would split evenly and score 0.5. This one follows the row.
+
+**What the controls add.** The state pipeline from the first attempt detects answer
+identity almost perfectly, so that attempt's null was not a broken pipeline: the final
+token's state really does not carry the route, and where the model looks does.
+
+**Why this should not be oversold.**
+
+- **The mistake was induced by an intervention that moves attention, and the readout reads
+  attention.** We transplanted messages that make the final pass look at another row, then
+  measured where it looked. The twin prompts show the model then *used* that row, which
+  makes this more than reading back our own lever, but it is the most favourable case for
+  this readout. A mistake that arises on its own might not show up this way.
+- **The reviewer has to know which row is correct.** Here the task is simple enough to
+  solve by hand. This is checking a process against a known right answer about the process,
+  not detecting an anomaly blind.
+- **One invented task, one model, one kind of mistake.**
+- **Selection details were not saved.** The chosen head scored a perfect 1.0 on the training
+  tables; if several heads tied, the first was taken. The frozen head matches the best head
+  in hindsight on both test sets, so this did not hurt, but the ties were not recorded.
+- **The no-selection average is a blunt control.** Heads that barely look at the second
+  table contribute a constant. It still reaches 0.94 to 0.97.
+- **Not yet independently reviewed.** Earlier surprising results in this project did not
+  all survive review.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

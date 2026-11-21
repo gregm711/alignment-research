@@ -34,5 +34,7 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Transplant by message part, released model | 11.9 | $0.62 | $9.79 |
 | 2026-11-21 | Oversight test pilot, two table sets | ~1.5 | $0.08 | $9.87 |
 | 2026-11-21 | Oversight test, three splits, released model | 25.0 | $1.29 | $11.16 |
+| 2026-11-21 | Oversight test, second attempt: pilot | ~1.5 | $0.08 | $11.24 |
+| 2026-11-21 | Oversight test, second attempt: attention readout with controls | 15.3 | $0.79 | $12.03 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

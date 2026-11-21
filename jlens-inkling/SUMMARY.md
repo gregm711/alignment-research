@@ -1,7 +1,7 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). The work was done on 2026-11-21 for about $11 of GPU time (see
+[`results/`](results/). The work was done on 2026-11-21 for about $12 of GPU time (see
 [`SPEND.md`](SPEND.md)). It has had two independent
 reviews, [one of the earlier experiments](../notes/independent-review-2026-11-21.md) and
 [one of the lookup-table experiments](../notes/independent-review-lookup.md). Between them
@@ -70,15 +70,25 @@ lens hits without an output hit.
 *What it does not show:* a monitor. The lens was told which word to look for and searched
 every layer.
 
-## A negative result on the question that matters most
+## The oversight question: one readout failed, one worked
 
-We built 330 confirmed cases where the model gives the right answer by reading the wrong
-row, which neither the answer nor the model's confidence reveals. A fixed direction in the
-model's internal state at the final token, chosen on training tables, could not tell them
-from right-route cases on new tables: AUC 0.48, against 0.49 for output confidence. We
-predicted above 0.8. The simplest form of "give the overseer the internal state" did not
-help here. The test looked only at the final token and had no positive control, so it does
-not show that no internal readout would.
+We built several hundred confirmed cases where the model gives the right answer by reading
+the wrong row. A twin prompt proves which row it read; neither the answer nor the model's
+confidence gives any sign (AUC 0.49 to 0.51, where 0.5 is chance).
+
+- **The final token's internal state did not reveal them** (0.48 to 0.53 at every step that
+  could carry the signal). A later review found two faults in how that readout was chosen;
+  neither rescues it. A control shows the same pipeline detects other things almost
+  perfectly, so the state at the final token really does not carry the route.
+- **Where the model looks did.** One attention head, chosen using only *visible* mistakes
+  (ones an overseer could label from a wrong answer) and then frozen, separated the hidden
+  mistakes from correct runs on new tables with AUC 0.999 and 1.000, flagging all of them at
+  a 12 to 13% false-alarm rate. Averaging every head with no selection gave 0.94 to 0.97.
+
+*What it does not show:* that this would catch a mistake nobody induced. Our intervention
+moves the model's attention and the readout reads attention, so this is the most favourable
+case. The reviewer must also already know which row is correct. It is one invented task,
+and this result has not yet been independently reviewed.
 
 ## What we withdrew or would not lean on
 
@@ -100,14 +110,15 @@ not show that no internal readout would.
 One day, one author, small hand-written test sets, and at least four scoring or memory
 bugs, three caught at the time and one found by the reviewer. Two of the claims we were
 most pleased with did not survive checking, and on the lookup-table and oversight work seven
-of our eleven written predictions were wrong. The parts that held are the ones that were
+of our thirteen written predictions were wrong. The parts that held are the ones that were
 re-tested on other people's prompts or reproduced by someone else's code.
 
 ## Next
 
+- An independent review of the attention result, which is the newest and most surprising.
+- The same test on a mistake we did not induce: a case where the model takes a shortcut by
+  itself, with the route established by a twin prompt.
 - Separate the surviving explanations of the transplant result, as the second review
-  proposes: one donor crossed with many independently generated recipient layouts, lists of
-  different lengths, and the same donor answer at different positions.
-- Give the oversight test a fair second attempt: a readout of where the final pass attends,
-  with a positive control showing the pipeline can detect something known to be there.
+  proposes: one donor crossed with many independently generated recipient layouts, and lists
+  of different lengths.
 - Whether any of this appears on questions about real facts.
