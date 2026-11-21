@@ -161,9 +161,9 @@ def run(clean_only: bool = False, two_table: bool = False, shuffled: bool = Fals
         def on_message(mod, args, output):
             i, state["i"] = state["i"], state["i"] + 1
             if state["mode"] == "record":
-                state["saved"].append(output.detach().clone())
+                state["saved"].append(output.detach().cpu())  # kept off the GPU: hundreds of prompts do not fit beside the model
             elif state["mode"] == "patch" and i in state["calls"]:
-                return state["src"][i]
+                return state["src"][i].to(output.device)
 
         text.message_input.register_forward_hook(on_message)
 

@@ -1055,6 +1055,68 @@ carry position.
 **What this will not show.** One invented task. Whether the same holds for facts the model
 knows, where no aligned wording has yet worked.
 
+### Result
+
+Raw data, every eligible pair: [`results/transplant-shuffled.json`](results/transplant-shuffled.json).
+
+**Unaided accuracy with shuffled rows:** released model 168 of 168; sibling 166 of 168.
+The model is doing the two-step lookup, not reading across rows. Prediction 1 held.
+
+**Transplants into pass 3, scored against the outcomes listed in advance.**
+
+| Model | pairs | recipient | donor | colour | animal | animal's row | colour's row (scored on the 112 / 105 pairs where distinct) | other |
+|---|---|---|---|---|---|---|---|---|
+| Inkling 2 Mini | 324 | 56 | 60 | 37 | 33 | 24 | 110 | 4 |
+| variable-loop | 312 | 51 | 52 | 64 | 34 | 20 | 81 | 10 |
+
+No listed explanation dominates. Prediction 2 ("carried animal") was wrong again.
+
+**A single rule found afterwards fits almost everything.** "Answer with whatever fruit sits,
+in the recipient's own second list, in the row where the donor's answer sat in the donor's
+second list." Recomputed over every pair, including those where it coincides with another
+outcome, this predicts 316 of 324 pass-3 outcomes on the released model and 259 of 312 on
+the sibling. The scattered counts above are the pairs where that row happens to hold the
+recipient's fruit, the donor's fruit, and so on. For transplants into pass 2 it predicts
+only 54 of 324 and 46 of 312.
+
+**Reading.** The messages into the final pass appear to mark a *position* in the prompt,
+the place where the answer is, and the final pass reads its own prompt at that position. That
+would explain all three lookup experiments, including both mispredictions, and the capital
+experiment as well. Messages are built position by position, so a position-bound marker is a
+natural thing for them to carry.
+
+**Why this is not yet a finding.** The rule was formed from this data and then checked on
+the same data. The "colour's row" outcome was listed in advance, but as a side case, not as
+the expected winner. The next section tests it on new data with the prediction made first.
+
+## Follow-up: is it a position marker? A held-out test and a localisation test
+
+### Plan and predictions (written before running)
+
+**Data.** New tables from a new random seed, and for each model the wording it was *not*
+tested with above. Up to 150 pairs sampled at random from those where the pointer rule's
+fruit differs from both the recipient's and the donor's answers.
+
+**Test 1, replication.** Full transplant into pass 3. *Prediction:* the pointer rule's
+fruit is the answer in at least 85% of pairs on the released model.
+
+**Test 2, localisation (released model).** If the marker lives at a position, then:
+
+| Transplant only… | Prediction |
+|---|---|
+| the messages at the donor's answer row (about five tokens) | pointer fruit is the most common answer |
+| everything *except* that row | pointer fruit in fewer than 10% of pairs |
+| the single fruit token of that row | reported; no prediction |
+| the messages at a different, unrelated row | that row's fruit in fewer than 10% of pairs |
+
+**What would change our mind.** If the full transplant no longer follows the rule on new
+tables and wording, the rule was fitted to one dataset. If transplanting everything except
+the row still produces the pointer fruit, the information is not at that position.
+
+**What this will not show.** Still one invented task with every word a single token.
+Whether real-fact questions use the same mechanism is untested, and the capital result is
+only consistent with it.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
