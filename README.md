@@ -16,7 +16,7 @@ don't go the way we hoped.
 
 | Path | What it is |
 |---|---|
-| [`jlens-inkling/`](jlens-inkling/) | Fitting Anthropic's Jacobian lens on Inkling 2 Mini, a looped transformer, to see what each loop pass computes. In progress. |
+| [`jlens-inkling/`](jlens-inkling/) | Experiments on Inkling 2 Mini, a looped transformer: what each loop pass computes, what passes hand to each other, and how robust that is. Start with its [`SUMMARY.md`](jlens-inkling/SUMMARY.md). |
 | [`papers/`](papers/) | Index of ~160 alignment and interpretability papers and posts, with the scripts that download them. The files themselves are not committed. |
 | [`notes/sota-2026.md`](notes/sota-2026.md) | Where the field stands as of November 2026, from reading the newest work. |
 | [`notes/looped-prior-art.md`](notes/looped-prior-art.md) | What two 2026 papers already found about interpreting looped models, and what is still open. |

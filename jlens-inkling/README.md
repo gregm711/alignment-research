@@ -1,6 +1,6 @@
 # Jacobian lens on Inkling 2 Mini
 
-**Status: in progress, being redesigned.** A 3-prompt lens gave a first look (see Results). Prior work shows our lens target was wrong for the early passes, so the longer fit was stopped and the next step is a forward-only sweep over the number of passes.
+**Status:** the four questions below each have a first answer. Start with [`SUMMARY.md`](SUMMARY.md). Not yet independently reviewed.
 
 ## Question
 
