@@ -1,8 +1,16 @@
 # alignment-research
 
 Small, cheap experiments in AI alignment and interpretability on open-weight models, plus the
-reading list and notes behind them. The aim is work that helps people understand and monitor
-what current models are doing, published openly.
+reading list and notes behind them.
+
+## Goal
+
+To help with AI alignment and contribute what we learn. By alignment we mean AI that serves
+**human flourishing and truth**.
+
+We are here to understand: to learn how current models work and behave, to monitor where they
+stand, and to publish whatever we find that is useful to others, including the results that
+don't go the way we hoped.
 
 ## What's here
 
