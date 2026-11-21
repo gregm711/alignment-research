@@ -1,0 +1,222 @@
+{
+ "n_prompts": 8,
+ "n_correct_unedited": 7,
+ "n_pairs": 42,
+ "counts": {
+  "pass1/x1": {
+   "to_target": 0,
+   "stays": 42,
+   "other": 0
+  },
+  "pass1/x4": {
+   "to_target": 1,
+   "stays": 39,
+   "other": 2
+  },
+  "pass2/x1": {
+   "to_target": 0,
+   "stays": 42,
+   "other": 0
+  },
+  "pass2/x4": {
+   "to_target": 6,
+   "stays": 30,
+   "other": 6
+  },
+  "pass3/x1": {
+   "to_target": 0,
+   "stays": 42,
+   "other": 0
+  },
+  "pass3/x4": {
+   "to_target": 14,
+   "stays": 12,
+   "other": 16
+  },
+  "all/x1": {
+   "to_target": 0,
+   "stays": 41,
+   "other": 1
+  },
+  "all/x4": {
+   "to_target": 7,
+   "stays": 18,
+   "other": 17
+  }
+ },
+ "control": {
+  "stays": 23,
+  "other": 19
+ },
+ "examples": [
+  {
+   "A": "Tokyo",
+   "target": "Russian",
+   "pass1/x1": " Japanese",
+   "pass1/x4": " Japanese",
+   "pass2/x1": " Japanese",
+   "pass2/x4": " Japanese",
+   "pass3/x1": " Japanese",
+   "pass3/x4": " called",
+   "all/x1": " Japanese",
+   "all/x4": " Russian"
+  },
+  {
+   "A": "Tokyo",
+   "target": "German",
+   "pass1/x1": " Japanese",
+   "pass1/x4": " Japanese",
+   "pass2/x1": " Japanese",
+   "pass2/x4": " Japanese",
+   "pass3/x1": " Japanese",
+   "pass3/x4": " German",
+   "all/x1": " Japanese",
+   "all/x4": " the"
+  },
+  {
+   "A": "Tokyo",
+   "target": "French",
+   "pass1/x1": " Japanese",
+   "pass1/x4": " Japanese",
+   "pass2/x1": " Japanese",
+   "pass2/x4": " French",
+   "pass3/x1": " Japanese",
+   "pass3/x4": " called",
+   "all/x1": " Japanese",
+   "all/x4": " not"
+  },
+  {
+   "A": "Tokyo",
+   "target": "Italian",
+   "pass1/x1": " Japanese",
+   "pass1/x4": " Japanese",
+   "pass2/x1": " Japanese",
+   "pass2/x4": " Japanese",
+   "pass3/x1": " Japanese",
+   "pass3/x4": " Italian",
+   "all/x1": " Japanese",
+   "all/x4": " Italian"
+  },
+  {
+   "A": "Tokyo",
+   "target": "English",
+   "pass1/x1": " Japanese",
+   "pass1/x4": " Japanese",
+   "pass2/x1": " Japanese",
+   "pass2/x4": " English",
+   "pass3/x1": " Japanese",
+   "pass3/x4": " called",
+   "all/x1": " Japanese",
+   "all/x4": " called"
+  },
+  {
+   "A": "Tokyo",
+   "target": "Spanish",
+   "pass1/x1": " Japanese",
+   "pass1/x4": " Japanese",
+   "pass2/x1": " Japanese",
+   "pass2/x4": " the",
+   "pass3/x1": " Japanese",
+   "pass3/x4": " called",
+   "all/x1": " Japanese",
+   "all/x4": " called"
+  },
+  {
+   "A": "Moscow",
+   "target": "Japanese",
+   "pass1/x1": " Russian",
+   "pass1/x4": " the",
+   "pass2/x1": " Russian",
+   "pass2/x4": " called",
+   "pass3/x1": " Russian",
+   "pass3/x4": " the",
+   "all/x1": " Russian",
+   "all/x4": " the"
+  },
+  {
+   "A": "Moscow",
+   "target": "German",
+   "pass1/x1": " Russian",
+   "pass1/x4": " Russian",
+   "pass2/x1": " Russian",
+   "pass2/x4": " the",
+   "pass3/x1": " Russian",
+   "pass3/x4": " the",
+   "all/x1": " Russian",
+   "all/x4": " the"
+  },
+  {
+   "A": "Moscow",
+   "target": "French",
+   "pass1/x1": " Russian",
+   "pass1/x4": " French",
+   "pass2/x1": " Russian",
+   "pass2/x4": " the",
+   "pass3/x1": " Russian",
+   "pass3/x4": " French",
+   "all/x1": " Russian",
+   "all/x4": " French"
+  },
+  {
+   "A": "Moscow",
+   "target": "Italian",
+   "pass1/x1": " Russian",
+   "pass1/x4": " Russian",
+   "pass2/x1": " Russian",
+   "pass2/x4": " the",
+   "pass3/x1": " Russian",
+   "pass3/x4": " Italian",
+   "all/x1": " Russian",
+   "all/x4": " Italian"
+  },
+  {
+   "A": "Moscow",
+   "target": "English",
+   "pass1/x1": " Russian",
+   "pass1/x4": " Russian",
+   "pass2/x1": " Russian",
+   "pass2/x4": " English",
+   "pass3/x1": " Russian",
+   "pass3/x4": " the",
+   "all/x1": " Russian",
+   "all/x4": " the"
+  },
+  {
+   "A": "Moscow",
+   "target": "Spanish",
+   "pass1/x1": " Russian",
+   "pass1/x4": " the",
+   "pass2/x1": " Russian",
+   "pass2/x4": " Spanish",
+   "pass3/x1": " Russian",
+   "pass3/x4": " Spanish",
+   "all/x1": " Russian",
+   "all/x4": " Spanish"
+  },
+  {
+   "A": "Berlin",
+   "target": "Japanese",
+   "pass1/x1": " German",
+   "pass1/x4": " German",
+   "pass2/x1": " German",
+   "pass2/x4": " German",
+   "pass3/x1": " German",
+   "pass3/x4": " called",
+   "all/x1": " German",
+   "all/x4": " the"
+  },
+  {
+   "A": "Berlin",
+   "target": "Russian",
+   "pass1/x1": " German",
+   "pass1/x4": " German",
+   "pass2/x1": " German",
+   "pass2/x4": " German",
+   "pass3/x1": " German",
+   "pass3/x4": " Russian",
+   "all/x1": " German",
+   "all/x4": " the"
+  }
+ ],
+ "gpu_minutes": 2.26509557167689
+}

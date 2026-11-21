@@ -15,5 +15,6 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Message swap, both checkpoints, with cross-operation control | 12.7 | $0.65 | $2.45 |
 | 2026-11-21 | Lenses at 1, 2 and 3 passes, 3 prompts each, with readouts | 11.1 | $0.57 | $3.02 |
 | 2026-11-21 | Noise pilot, 4 requests (showed the design could not answer the question) | 10.2 | $0.53 | $3.55 |
+| 2026-11-21 | Direction swap inside a pass (question 4) | 2.3 | $0.12 | $3.67 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

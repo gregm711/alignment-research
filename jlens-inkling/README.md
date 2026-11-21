@@ -88,7 +88,7 @@ From [`../notes/looped-prior-art.md`](../notes/looped-prior-art.md), in the orde
 |---|---|---|---|
 | 2 | At which pass is the answer decided? | Forward-only sweep over the number of passes, both checkpoints | answered (see below) |
 | 1 | What crosses the pass boundary through the message channel? | Message swapping between prompts (forward-only), then a per-pass Jacobian lens for readability | answered (see below) |
-| 4 | Must an edit be held across all passes to stick? | Message swap (done under question 1), then swapping a concept direction in one pass vs all | running |
+| 4 | Must an edit be held across all passes to stick? | Message swap (done under question 1), then swapping a concept direction in one pass vs all | answered (see below) |
 | 3 | Is the loop state robust to noise, including for refusals? | Noise in the restart state and in the messages; record refusal yes/no only | running |
 
 Spend is tracked in [`SPEND.md`](SPEND.md).
@@ -496,6 +496,49 @@ does the answer become the target country's language.
 
 **What this will not show.** If nothing moves, that is as likely to be the 3-prompt lens as
 the model; a null here is not evidence. One template, eight items.
+
+### Result
+
+Raw data: [`results/direction-swap.json`](results/direction-swap.json). Script: `clamp.py`.
+42 ordered pairs of prompts the model answers correctly unedited.
+
+| Edit applied in | Plain strength: moved to target | Four times strength: moved to target | stayed | broke (something else) |
+|---|---|---|---|---|
+| pass 1 only | 0 | 1 | 39 | 2 |
+| pass 2 only | 0 | 6 | 30 | 6 |
+| pass 3 only | 0 | 14 | 12 | 16 |
+| all three passes | 0 | 7 | 18 | 17 |
+
+Control: the same four-times edit along two unrelated countries' directions, in all passes,
+left the answer alone in 23 of 42 cases and broke it in 19. It can never produce the target
+language, so the "moved to target" column is a specific effect, but the "broke" column is
+mostly damage that any strong edit along these directions causes.
+
+**What we see.**
+
+- **The later the pass, the more an edit sticks:** 1, 6, then 14 of 42.
+- **Holding the edit in every pass does not help.** It moved half as many answers as editing
+  pass 3 alone (7 against 14), with as much breakage.
+- **At plain strength nothing moves.** The directions come from lenses fitted on 3 prompts
+  and are evidently too noisy to act at their natural scale.
+
+**Against the predictions.**
+
+1. *Pass 3 alone moves more than pass 1 or 2 alone:* held.
+2. *All passes moves about as many as pass 3 alone:* the spirit held (holding is not
+   needed), but it moved fewer, not as many.
+3. *Rates well below the message swap's:* held (14 of 42 against 33 of 42).
+
+**Answer to question 4.** No. In this design an edit does not have to be held across passes.
+Both kinds of edit agree: what matters is the last pass. An edit made only earlier is mostly
+re-derived away, because each pass restarts from the unedited pre-loop state. This is the
+opposite of what Wang & Reid found on Ouro, where an edit must be held across every remaining
+loop, and close to what they found on Huginn, where the last window alone is as effective as
+all of them. They attribute the difference to boundary design, and this result fits that.
+
+**What this does not show.** The direction edit is blunt: it only works at a strength that
+also breaks many answers, and the control shows much of that breakage is unspecific. One
+template, eight items. With a properly fitted lens the picture at plain strength could differ.
 
 ## Results
 
