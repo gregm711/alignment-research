@@ -149,7 +149,12 @@ def run(minutes: float, max_prompts: int, chunk: int):
 
     # Readouts at the last token: where do the intermediate concept and the answer become readable?
     def rank(logits, word):
-        cands = {tok.encode(v, add_special_tokens=False)[0] for v in (word, " " + word, word.lower(), " " + word.lower(), word.capitalize(), " " + word.capitalize())}
+        # Single-token spellings only: a word that splits shares its first piece (e.g. a bare
+        # space) with unrelated words, which made the first run's spider/eight ranks meaningless.
+        variants = {f"{sp}{w}" for sp in ("", " ") for w in (word, word.lower(), word.capitalize())}
+        cands = [ids[0] for v in variants if len(ids := tok.encode(v, add_special_tokens=False)) == 1]
+        if not cands:
+            return None
         order = logits.argsort(descending=True)
         return min(int((order == c).nonzero()[0, 0]) for c in cands)
 
@@ -166,8 +171,8 @@ def run(minutes: float, max_prompts: int, chunk: int):
         print(f"\n### {prompt}\n    intermediate={mid!r} answer={ans!r} | model says {results[-1]['model_top']}")
         print(f"    {'step':<11}{'mid':>7}{'ans':>7}  {'(logit lens: mid, ans)':<24} top-5 lens tokens")
         for r in rows:
-            print(f"    {r['step']:<11}{r['mid_rank']:>7}{r['ans_rank']:>7}  ({r['logitlens_mid_rank']:>6},{r['logitlens_ans_rank']:>6})"
-                  f"{'':<8} {r['top']}")
+            print(f"    {r['step']:<11}{str(r['mid_rank']):>7}{str(r['ans_rank']):>7}  "
+                  f"({str(r['logitlens_mid_rank']):>6},{str(r['logitlens_ans_rank']):>6}){'':<8} {r['top']}")
     json.dump({"n_prompts": lens.n_prompts, "results": results}, open(RESULTS, "w"))
     vol.commit()
     print(f"\nlens fitted on {lens.n_prompts} prompts | total {(time.time() - t0) / 60:.1f} min on GPU", flush=True)

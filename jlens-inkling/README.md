@@ -1,6 +1,6 @@
 # Jacobian lens on Inkling 2 Mini
 
-**Status: in progress.** First fit running; no results yet.
+**Status: in progress.** A 3-prompt lens gives a first look (see Results); a ~20-prompt fit is running.
 
 ## Question
 
@@ -64,4 +64,44 @@ Runs resume from the checkpoint on the Modal volume, so spend is incremental. Ea
 
 ## Results
 
-Pending.
+### First look: lens fitted on 3 prompts (preliminary)
+
+Raw output: [`results/readouts-3-prompts.txt`](results/readouts-3-prompts.txt). Three prompts is
+far below the ~100 the library suggests, and the result below rests on six probes read at one
+token position, so treat it as a lead to confirm, not a finding.
+
+What the lens shows at the last token of each two-step question:
+
+| Where | What the lens reads | Example ("currency of the country shaped like a boot") |
+|---|---|---|
+| Pass 1, all loop layers | Punctuation and noise | `‘`, `”`, `[` |
+| Pass 2, layers 9–11 | The right *category*, not the specific answer | `money`, `financial`; for the capital-city probe, `city`, `cities` |
+| Pass 3, layers 7–11 | The specific intermediate and the answer together | `euros`, `Italian`, `Italy`, `lira` |
+| Layers 12–17 of every pass | Blanks and ellipses | `____`, `...` |
+| Post-loop layers 18–23 | The answer | `euro` |
+
+The same shape appears on four of the six probes (Italy/euro, France/Paris, Japan/Japanese,
+yellow/green). Concepts in pass 3 are read out in many languages at once (`France` appears as
+`Frankreich`, `فرانس`, `फ्रांस`), which suggests a language-independent representation.
+
+Against the predictions:
+
+1. **Intermediate appears at a specific pass: supported so far.** It appears in pass 3, with
+   pass 2 carrying only the category. That is a coarse-to-fine pattern across passes.
+2. **Jacobian lens beats the logit lens: mixed.** It ranks the intermediate concept higher in
+   pass 3 on some probes (Italy: rank 2–5 against 20–956) and lower on others (France). On the
+   final answer the logit lens is as good or better.
+3. **Loop layers more readable than pre-loop layers: only in pass 3.**
+
+Reasons to doubt this reading:
+
+- **Pass 1 may be unreadable for a structural reason, not because it holds nothing.** Later
+  passes restart from the pre-loop state, so pass 1 reaches the output only through the message
+  channel. Its activations may simply not be in the output's basis. The lens can't distinguish
+  "no content" from "content in a format this lens can't read".
+- **The model got two probes wrong** (spider/eight, Mars/two), so those say little.
+- **A bug in the first run's rank columns.** Words that split into several tokens were ranked
+  by their first piece, which made the spider and Mars rank columns meaningless. The top-5
+  token columns were unaffected and are what the table above uses. Fixed in `fit.py`.
+
+Cost so far: about 14 minutes of GPU time for this run.
