@@ -1,7 +1,7 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). The work was done on 2026-11-21 for about $7 of GPU time (see
+[`results/`](results/). The work was done on 2026-11-21 for about $10 of GPU time (see
 [`SPEND.md`](SPEND.md)). It has had one
 [independent review](../notes/independent-review-2026-11-21.md), which reproduced the main
 result, corrected two measurements and narrowed several claims. This page reflects that review.
@@ -35,7 +35,22 @@ Goodfire nor Thinking Machines did, as far as we know.
 *What it does not show:* which information the messages carry. In these pairs the city, the
 country and the language all change together. The 42 pairs come from 7 prompts.
 
-**2. The released model needs its later passes for multi-step questions; its sibling does
+**2. What the final pass takes from those messages is a place to read, not an answer.
+(Held up on new tables with the prediction made first; not yet independently reproduced.)**
+Give the model two small invented lookup tables and a two-step question. Transplant another
+prompt's messages into the final pass, and the model answers with whatever *its own* prompt
+has in the row where the other prompt's answer sat. That beat every alternative we could
+separate: the donor's finished answer, its intermediate, the item it asked about, and that
+item's row. On fresh tables and a new wording it did so in 145 of 150 pairs on the released
+model and 123 of 150 on the sibling. With rows shuffled the model still answers 168 of 168
+unaided, so it is doing the lookup and not reading across rows.
+
+*What it does not show:* how. The marker is not stored at the row it points to (1 of 150),
+it needs the messages at both the second table and the question (140 of 150 together; 6 and
+34 apart), and no subset of the message's four parts reproduces it. Three of our guesses
+about the mechanism failed. It is one invented task; we could not build a real-facts version.
+
+**3. The released model needs its later passes for multi-step questions; its sibling does
 not.** On 135 public items written by Anthropic, rescored by the reviewer: multi-hop accuracy
 goes from 16 of 80 after one pass to 40 of 80 after three, and order of operations from 3 to
 35 of 55. The sibling goes 39 to 45 and 33 to 39.
@@ -44,7 +59,7 @@ goes from 16 of 80 after one pass to 40 of 80 after three, and order of operatio
 stopping the released model early is outside its training. The sibling's result largely
 repeats Thinking Machines' own.
 
-**3. Some intermediate words can be recovered from internal states when the output does not
+**4. Some intermediate words can be recovered from internal states when the output does not
 show them.** On 75 public multi-hop items, after one pass the output names the intermediate
 on 5, a plain logit lens finds it as its top word somewhere in the network on 24, and 20 are
 lens hits without an output hit.
@@ -69,13 +84,16 @@ every layer.
 
 ## How this was produced, and why that matters
 
-One afternoon, one author, small hand-written test sets, and at least four scoring or memory
+One day, one author, small hand-written test sets, and at least four scoring or memory
 bugs, three caught at the time and one found by the reviewer. Two of the claims we were
-most pleased with did not survive checking. The parts that held are the ones that were
+most pleased with did not survive checking, and on the lookup-table work five of our eight
+written predictions were wrong. The parts that held are the ones that were
 re-tested on other people's prompts or reproduced by someone else's code.
 
 ## Next
 
-[`README.md`](README.md) ends with the experiment the review recommended: a transplant where
-the donor's answer, the recipient's answer, and each question's second step applied to the
-other's intermediate are all different, so the outcome says what the messages carry.
+- An independent check of the lookup-table results, which are newer than the review.
+- Whether the "place to read" behaviour appears on questions about real facts.
+- Then the question that connects this to oversight: when two routes give the same visible
+  answer, can a fixed readout of the model's internal state tell a reviewer which route it
+  took, on examples it has not seen?

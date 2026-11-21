@@ -1202,6 +1202,31 @@ Same 150 pairs. Transplant, into pass 3, only chosen parts of the messages in ch
 of the effect (pointer fruit in more than half the pairs). Value parts and expert-layer parts
 alone, in both regions, do not (under 10%).
 
+### Result
+
+Raw data: [`results/transplant-parts.json`](results/transplant-parts.json). 150 pairs,
+released model, pass 3, everything confined to the second table and the question.
+
+| Message parts transplanted | pointer fruit | recipient's | donor's | other |
+|---|---|---|---|---|
+| all four | 140 | 2 | 1 | 7 |
+| keys at the table + queries at the question | **11** | 132 | 0 | 7 |
+| queries and keys, both regions | 7 | 136 | 0 | 7 |
+| keys and values at the table + queries at the question | 30 | 67 | 10 | 43 |
+| values only | 32 | 90 | 4 | 24 |
+| expert-layer only | 0 | 147 | 0 | 3 |
+| values and expert-layer | 51 | 66 | 5 | 28 |
+
+**The prediction was wrong.** Queries and keys barely matter (11 of 150 against a predicted
+majority), and values alone do more than predicted (32, against under 10%). No part or pair
+of parts comes close to all four together. The effect is spread across the whole message.
+
+**Where this leaves the mechanism.** Known: a full set of messages, at the second table and
+the question together, makes the final pass read its own prompt where the donor's answer
+sat. Not known: how. It is not a marker at the pointed-to row, and it is not an attention
+query matching a key. Three guesses about the mechanism have now failed, and we stop
+guessing here.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
