@@ -2,9 +2,10 @@
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
 [`results/`](results/). The work was done on 2026-11-21 for about $12 of GPU time (see
-[`SPEND.md`](SPEND.md)). It has had two independent
-reviews, [one of the earlier experiments](../notes/independent-review-2026-11-21.md) and
-[one of the lookup-table experiments](../notes/independent-review-lookup.md). Between them
+[`SPEND.md`](SPEND.md)). It has had three independent
+reviews: [the earlier experiments](../notes/independent-review-2026-11-21.md),
+[the lookup-table experiments](../notes/independent-review-lookup.md) and
+[the oversight tests](../notes/oversight-readout-review.md). Between them
 they reproduced the main results, corrected several measurements and narrowed many claims.
 This page reflects both.
 
@@ -78,17 +79,20 @@ confidence gives any sign (AUC 0.49 to 0.51, where 0.5 is chance).
 
 - **The final token's internal state did not reveal them** (0.48 to 0.53 at every step that
   could carry the signal). A later review found two faults in how that readout was chosen;
-  neither rescues it. A control shows the same pipeline detects other things almost
-  perfectly, so the state at the final token really does not carry the route.
+  neither rescues it. A control shows the same pipeline can detect other things, so the
+  supported statement is that our state probe did not find the route there.
 - **Where the model looks did.** One attention head, chosen using only *visible* mistakes
   (ones an overseer could label from a wrong answer) and then frozen, separated the hidden
   mistakes from correct runs on new tables with AUC 0.999 and 1.000, flagging all of them at
   a 12 to 13% false-alarm rate. Averaging every head with no selection gave 0.94 to 0.97.
+  An independent recount found that in all 139 matched pairs, where the prompt and visible
+  answer are identical, the head ranked the hidden mistake higher; confidence did so in 70.
+  What the scores show is the head looking away from the correct row.
 
 *What it does not show:* that this would catch a mistake nobody induced. Our intervention
 moves the model's attention and the readout reads attention, so this is the most favourable
-case. The reviewer must also already know which row is correct. It is one invented task,
-and this result has not yet been independently reviewed.
+case. The reviewer must also already know which row is correct, and the readout was
+calibrated with some trials an overseer could not have labelled. It is one invented task.
 
 ## What we withdrew or would not lean on
 
@@ -115,7 +119,6 @@ re-tested on other people's prompts or reproduced by someone else's code.
 
 ## Next
 
-- An independent review of the attention result, which is the newest and most surprising.
 - The same test on a mistake we did not induce: a case where the model takes a shortcut by
   itself, with the route established by a twin prompt.
 - Separate the surviving explanations of the transplant result, as the second review

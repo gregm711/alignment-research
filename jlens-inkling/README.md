@@ -1471,7 +1471,7 @@ cases that matter, they would not.
 ### Result
 
 Raw data, including every test trial's score: [`results/oversight-attention.json`](results/oversight-attention.json).
-Script: `oversight2.py`. Not yet independently reviewed.
+Script: `oversight2.py`. Independently reviewed from the saved trials; see below.
 
 The readout was frozen as head 23 at layer 11 of the final pass, chosen on visible mistakes
 in the training tables (where it separated them perfectly), with a threshold set there.
@@ -1502,11 +1502,37 @@ perfectly on tables and a wording it was not chosen on. Both predictions held.
 **What the number means.** On right-route trials the head puts a median 73 to 81% of its
 second-table attention on the correct row. On wrong-route trials, 3%. Because both rows
 hold the same fruit in the hidden trials, a head that attended by which fruit it was about
-to output would split evenly and score 0.5. This one follows the row.
+to output would split evenly and score 0.5. This one looks away from the correct row.
 
-**What the controls add.** The state pipeline from the first attempt detects answer
-identity almost perfectly, so that attempt's null was not a broken pipeline: the final
-token's state really does not carry the route, and where the model looks does.
+**What the controls add.** The state pipeline from the first attempt can decode a coarse
+fact about the answer (which of two groups of fruits it belongs to) almost perfectly, so
+that attempt's null was not a pipeline that can detect nothing. The supported statement is
+that *our state probe did not detect the route*; that the final token's state does not
+carry it at all is more than this control shows.
+
+**After independent review** ([notes](../notes/oversight-readout-review.md)). The reviewer
+recomputed the results from the saved trials and added checks we had not run:
+
+- *Matched pairs.* Among 139 recipients that appear once as a hidden mistake and once as a
+  right-route trial, with identical prompt and visible answer, the frozen head ranked the
+  hidden mistake higher in all 139. Output confidence did so in 70.
+- *Whole-table resampling.* Resampling the ten table groups instead of single trials, the
+  head's advantage over confidence is +0.51 [0.49, 0.54] and +0.49 [0.47, 0.52]. Within
+  single groups the head's AUC ranged from 0.975 to 1.000.
+- *A shortcut in our visible-mistake control that did not carry over.* Our visible mistakes
+  always pointed at one of the first three rows, so "the donor pointed early" alone separates
+  them with AUC about 0.9. On hidden mistakes that rule scores 0.51 to 0.52, and all seven
+  rows occur, so it cannot explain the hidden result.
+
+And three limits on what we wrote, which we accept:
+
+- The saved scores show the head's attention *leaving the correct row* on hidden mistakes.
+  They do not record which other row received it, so "it follows the row that was read" is
+  an inference. Showing the head *causes* the answer would need an intervention on the head.
+- Calibration used visible mistakes *and twin-verified right-route trials*. An overseer with
+  only visibly correct answers could not have selected those negatives.
+- The two test sets had already been used to evaluate the first attempt, so they were held
+  out from this fit but not new to the research process.
 
 **Why this should not be oversold.**
 
@@ -1524,8 +1550,6 @@ token's state really does not carry the route, and where the model looks does.
   in hindsight on both test sets, so this did not hurt, but the ties were not recorded.
 - **The no-selection average is a blunt control.** Heads that barely look at the second
   table contribute a constant. It still reaches 0.94 to 0.97.
-- **Not yet independently reviewed.** Earlier surprising results in this project did not
-  all survive review.
 
 ## Results
 

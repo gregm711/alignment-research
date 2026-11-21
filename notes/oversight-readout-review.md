@@ -1,8 +1,8 @@
 # Review of the two oversight experiments
 
-**Decision.** The twin-prompt construction yields a useful benchmark for induced mistakes. The first frozen monitor fails on it. The retry is a single-forward-pass detector for a model answering a seven-row lookup task whose correct row the reviewer already knows. Its visible-error calibration, statistical intervals and choice of threshold need separate checks before interpreting either a success or a failure.
+**Decision after the full run.** The attention monitor passed its preregistered test on induced mistakes. It ranked the hidden mistake higher in all 139 matched comparisons, where the prompt and visible answer were identical. Output confidence did so in 70. This is evidence that an internal measurement adds information about the computation in this task. The monitor requires the correct evidence row as input. Generalization to errors the unmodified model makes on its own remains open.
 
-Reviewed commit `b958503`, the working copy of `jlens-inkling/oversight2.py`, the completed first attempt and the second pilot. The full attention run had launched and had produced no held-out results at review time. The recommendations below precede seeing those results.
+I reviewed plan commit `b958503`, the first attempt, the retry implementation and pilot before the full run produced held-out results. Sections 1–5 and the interpretation criteria below record that review. The final section uses the completed run.
 
 ## 1. The first experiment selected a layer upstream of the mistake
 
@@ -43,3 +43,20 @@ The head score normalizes away total attention to the table. A head can give its
 ## Interpreting the retry
 
 A frozen head that distinguishes different donors for the same visible prompt and answer, improves on confidence across table groups and retains a useful false-alarm rate would demonstrate internal-monitor utility for these induced, twin-confirmed mistakes. A successful visible control with chance hidden detection would show a failure of transfer from this visible training distribution. A failed visible control would leave the proposed calibration unvalidated. In all cases, report the predeclared predictions and the actual operating points. A fresh, position-balanced confirmation would address the main unresolved design issue.
+
+## Completed retry and independent score checks
+
+Head 23 at layer 11 in pass 3 was chosen on the training split and then frozen. Both controls cleared the predicted 0.90 AUC on both held-out splits. Visible-error AUC was 0.998 and 1.000. The binary fruit-control AUC was 0.998 and 0.985. The hidden-error head intervals cleared the confidence intervals in both splits, meeting the registered decision rule.
+
+| Hidden mistakes | AUC, head / confidence | AUC gain, paired 95% interval | Detected at frozen threshold | False alarms | Same-recipient wins, head / confidence |
+|---|---|---|---:|---:|---|
+| New tables | 0.999 / 0.489 | +0.511 [0.488, 0.536] | 83/83 | 10/86 | 66/66 vs 34/66 |
+| New tables and wording | 1.000 / 0.509 | +0.491 [0.465, 0.515] | 88/88 | 12/94 | 73/73 vs 36/73 |
+
+I reproduced all four head and confidence AUCs for the hidden trials from the saved scores. Each interval above comes from 3,000 paired resamples of whole table groups, with ten groups in each split. Within individual groups the head AUC ranged from 0.975 to 1.000. Even averaging all heads without selection gave hidden-error AUCs of 0.936 and 0.965. The output-margin baseline was 0.489 and 0.515. The matched comparisons hold fixed the recipient prompt, correct evidence row and visible answer. They directly address the concern that the head learned which questions were likely to fail.
+
+The early-destination shortcut in section 2 survived model-dependent filtering on visible trials (AUC 0.893 and 0.915). On hidden trials the same rule scored 0.511 and 0.520, and all seven destination rows occurred in each split. Early destination alone cannot account for the hidden result. Splitting the hidden trials by whether the donor fruit matched the recipient fruit also left the head AUC at or above 0.999 in all four subsets. These are retrospective checks. [Raw results](../jlens-inkling/results/oversight-attention.json)
+
+**Two claims in the completed write-up need narrowing.** The fruit control establishes that a difference-of-means probe can decode a binary fruit partition. The claim that the final-token state “really does not carry the route” exceeds the test. The supported wording is “our state probe did not detect the route.” The median share on the intended row reproduces (81% and 73% on right-route trials, 2.6% and 3.5% on hidden errors). The saved scores show attention moving away from the intended row. Establishing that head 23 attended specifically to the duplicate row needs scores for that row. Establishing that it caused the answer needs a head intervention. [Result interpretation](../jlens-inkling/README.md#L1502)
+
+**Next experiment.** Keep this head, direction and threshold fixed. Use fresh tables with duplicates and distractors, and collect answers from the unmodified model. On each originally correct answer, independently edit the duplicate row and the intended row to establish which edit changes the answer. Use those twin outputs only for evaluation and measure every monitor on the same original forward pass. Record the fraction of cases exhibiting each response pattern and report the unclassified cases. The decisive comparison is whether the head still beats output confidence on spontaneous wrong-route answers at a tolerable false-alarm rate. A scarcity of confirmed errors would establish a limit of the task for evaluating natural failures.
