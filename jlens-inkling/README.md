@@ -315,6 +315,27 @@ on all 24 prompts on both models.
 - Whether this content is *readable* by a monitor (as opposed to transplantable) is a
   separate question; that is what the per-pass lens is for.
 
+### Plan and predictions for measurement 2: a lens per pass count (written before running)
+
+**Measurement.** On Inkling 2 Mini, run the model with only *k* passes (k = 1, 2, 3) and fit
+a Jacobian lens aimed at that run's output, 3 prompts each (the 3-pass lens already exists).
+Pass *k*'s states are identical whether or not later passes run, so each lens reads pass *k*
+through the path the model uses when it stops there, with no pass boundary in the way. Read
+out eight two-hop probes at the last position and record the rank of the intermediate concept
+and of the answer at every loop layer.
+
+**Predictions.**
+
+1. Through the 1-pass lens, the intermediate concept (e.g. `Italy`) is readable in pass 1's
+   loop layers, where the 3-pass lens read only punctuation.
+2. In pass 1 the intermediate outranks the answer; in pass 3 the answer outranks the
+   intermediate.
+3. Pass 2 is in between: both readable.
+
+**What this will not show.** Three prompts is a very small fit. The released model was not
+trained to stop early, so the 1- and 2-pass lenses read through a path it never trained on.
+Readable is not the same as used; that needs the edits in question 4.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

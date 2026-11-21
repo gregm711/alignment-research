@@ -26,14 +26,17 @@ image = (
     .env({"HF_HOME": "/cache/hf", "HF_HUB_ENABLE_HF_TRANSFER": "1"})
 )
 
-# (prompt, intermediate concept the model must pass through, final answer)
+# (prompt, intermediate concept the model must pass through, final answer).
+# All eight are answered correctly at three passes by Inkling 2 Mini (see the pass sweep).
 PROBES = [
     ("Fact: The currency used in the country shaped like a boot is the", "Italy", "euro"),
-    ("Fact: The number of legs on the animal that spins webs is", "spider", "eight"),
+    ("Fact: The capital of the country shaped like a boot is", "Italy", "Rome"),
     ("Fact: The capital of the country where the Eiffel Tower stands is", "France", "Paris"),
+    ("Fact: The capital of the country famous for sushi is", "Japan", "Tokyo"),
+    ("Fact: The capital of the country where the Kremlin stands is", "Russia", "Moscow"),
     ("Fact: The language spoken in the country whose capital is Tokyo is", "Japan", "Japanese"),
-    ("Fact: The colour you get by mixing the colour of the sky with the colour of a lemon is", "yellow", "green"),
-    ("Fact: The planet named after the Roman god of war has this many moons:", "Mars", "two"),
+    ("Fact: The language spoken in the country whose capital is Berlin is", "Germany", "German"),
+    ("Fact: The language spoken in the country whose capital is Moscow is", "Russia", "Russian"),
 ]
 
 
