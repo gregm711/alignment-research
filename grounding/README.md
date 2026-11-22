@@ -492,3 +492,54 @@ Audit predictions:
 One dataset; short-answer prompts; three small models. The cleaned sets are too small to
 establish or rule out a modest advantage for attention over confidence. We have not checked
 whether the leak in NQ-Swap is already reported elsewhere.
+
+## Pooled analysis: plan (written before running it)
+
+The cleaned results left one question open: is the attention classifier's small lead over
+output confidence on hidden cases real? Our first comparison (do the two intervals overlap)
+was too blunt, because both monitors are scored on the same questions. An outside reviewer
+proposed the design below. No GPU is needed.
+
+**What is not blind.** We have already seen each monitor's AUC per model on the cleaned
+labels (classifier 0.74 to 0.78, top probability 0.63 to 0.68). So the size of the
+difference is known. What is not known is its paired interval, the pooled interval, and
+whether it survives the checks. The reviewer has also reported that the classifier survives
+a length control on Phi-4-mini.
+
+**Primary measurement** (`pooled.py`). On hidden ungrounded versus grounded test questions
+with the original passage, per model: AUC of the attention classifier minus AUC of output
+top probability (low probability counted as suspicious; that is the direction all our
+tables use). Pooled statistic: the mean of the three differences. Interval: 5,000 bootstrap
+draws over answer clusters (normalised first gold answer), one draw applied to all three
+models, because the models answer the same questions. A draw that leaves a model with no
+hidden case is redrawn.
+
+**Second baseline.** A logistic regression on top probability, margin, entropy and prompt
+length, fitted on the same training runs as the classifier (visible cases) and frozen. It
+sees no internals. The classifier has to beat this too.
+
+**Sensitivity checks**, each run for both baselines:
+
+1. Drop answers that start with a filler word. In granite these are 7 of 29 hidden cases
+   against 32 of 270 grounded ones, and our measurement is taken at the first token.
+2. Only questions the model answers correctly with no passage.
+
+**Also reported:** the leak rate under a looser rule (a whole gold answer, or the last word
+of a multi-word one, still in the passage), as a lower bound beside the strict rule; and
+the leak rate among passage-following runs for comparison.
+
+**How we will read it.** Supported: the pooled interval for classifier minus top
+probability excludes zero, and the point estimate stays positive in both checks and against
+the second baseline. Suggestive: the interval excludes zero in the main comparison only.
+Otherwise unresolved.
+
+**Predictions:**
+
+1. Pooled classifier minus top probability is between +0.05 and +0.15 and its interval
+   excludes zero.
+2. No single model's interval excludes zero.
+3. Against the output-plus-length baseline the pooled difference is positive but its
+   interval includes zero.
+4. Dropping filler starts moves granite's difference by less than 0.05.
+5. On known questions only the pooled difference is positive and its interval includes zero.
+6. The looser leak rule still marks at least 40% of "memory" runs in every model.

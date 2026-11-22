@@ -25,12 +25,20 @@ def leaky(golds, question, passage):
     return any(w in seen for g in golds for w in set(words(g)) - asked - STOP)
 
 
+def leaky_loose(golds, question, passage):
+    """Looser rule, for a lower bound: a whole gold answer, or the last word of a multi-word one, is still in the passage."""
+    seen, asked = words(passage), set(words(question))
+    text = " " + " ".join(seen) + " "
+    return any(g and (" " + " ".join(g) + " " in text or (len(g) > 1 and g[-1] in seen and g[-1] not in asked | STOP))
+               for g in map(words, golds))
+
+
 def main():
     tag = "-" + sys.argv[1] if len(sys.argv) > 1 else ""
     data = json.loads((HERE / f"phase1{tag}.json").read_text())
     items = {it["question"]: it for it in questions()}
     before = {k: sum(r["label"] == k for r in data["rows"]) for k in ("hidden_ungrounded", "grounded", "set_aside")}
-    runs = {"memory": [0, 0], "passage": [0, 0]}  # outcome -> [leaky, all]
+    runs = {"memory": [0, 0, 0], "passage": [0, 0, 0]}  # outcome -> [leaky, all, leaky by the looser rule]
     for r in data["rows"]:
         it = items[r["question"]]
         assert [s["substituted_answer"] for s in r["subs"]] == [s["answer"] for s in it["subs"]], r["question"]
@@ -40,6 +48,7 @@ def main():
             if s["outcome"] in runs:
                 runs[s["outcome"]][0] += bad
                 runs[s["outcome"]][1] += 1
+                runs[s["outcome"]][2] += leaky_loose(r["gold"], r["question"], src["passage"])
             if not bad:
                 kept.append(s)
         r["subs_dropped_as_leaky"] = len(r["subs"]) - len(kept)
@@ -51,7 +60,8 @@ def main():
     hu = [r for r in data["rows"] if r["label"] == "hidden_ungrounded"]
     first = [(r["original"]["answer"].split() or [""])[0].lower().strip(",.") for r in data["rows"] if r["label"] != "set_aside"]
     filler = sum(w in ("the", "a", "an", "according", "in", "it", "there", "based") for w in first) / max(len(first), 1)
-    data["audit"] = {"labels_before": before, "labels_after": after, "leaky_substituted_runs": {k: f"{a}/{b}" for k, (a, b) in runs.items()},
+    data["audit"] = {"labels_before": before, "labels_after": after, "leaky_substituted_runs": {k: f"{a}/{b}" for k, (a, b, _) in runs.items()},
+                     "leaky_by_looser_rule": {k: f"{c}/{b}" for k, (_, b, c) in runs.items()},
                      "hidden_after_known_closed_book": f"{sum(r['known_closed_book'] for r in hu)}/{len(hu)}",
                      "hidden_after_by_split": {s: sum(r["split"] == s for r in hu) for s in ("train", "test")},
                      "share_of_answers_starting_with_filler": round(filler, 3)}
@@ -62,4 +72,6 @@ def main():
 if __name__ == "__main__":
     assert leaky(["Selena Gomez"], "who has the most followers", "Zhu Di is a singer. Gomez has many followers.")
     assert not leaky(["Selena Gomez"], "who has the most followers", "Zhu Di is a singer with many followers.")
+    assert leaky_loose(["Selena Gomez"], "who has the most followers", "Zhu Di is a singer. Gomez has many followers.")
+    assert not leaky_loose(["Selena Gomez"], "who", "Zhu Di met Selena Smith.") and leaky(["Selena Gomez"], "who", "Zhu Di met Selena Smith.")
     main()

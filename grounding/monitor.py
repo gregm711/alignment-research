@@ -67,18 +67,25 @@ def main():
     ratio = lambda X: (X[..., PAS] / (X[..., PAS] + X[..., QUE] + 1e-6)).reshape(len(X), -1)  # Lookback-style share on the passage
     R = ratio(Xtr)
     mu, sd = R.mean(0), R.std(0) + 1e-6
-    w = torch.zeros(R.shape[1], requires_grad=True)
-    b = torch.zeros(1, requires_grad=True)
-    opt = torch.optim.LBFGS([w, b], max_iter=200)
-    Z, yf = (R - mu) / sd, ytr.float()
+    def fit(Z, l2):  # logistic regression on training visible runs
+        w, b = torch.zeros(Z.shape[1], requires_grad=True), torch.zeros(1, requires_grad=True)
+        opt = torch.optim.LBFGS([w, b], max_iter=200)
 
-    def closure():
-        opt.zero_grad()
-        loss = torch.nn.functional.binary_cross_entropy_with_logits(Z @ w + b, yf) + 1.0 * (w ** 2).sum()  # strong L2: few positives
-        loss.backward()
-        return loss
+        def closure():
+            opt.zero_grad()
+            loss = torch.nn.functional.binary_cross_entropy_with_logits(Z @ w + b, ytr.float()) + l2 * (w ** 2).sum()
+            loss.backward()
+            return loss
 
-    opt.step(closure)
+        opt.step(closure)
+        return w.detach(), b.detach()
+
+    w, b = fit((R - mu) / sd, 1.0)  # strong L2: few positives, many heads
+    # baseline that sees no internals: the three confidence numbers plus prompt length, fitted the same way
+    plain = lambda runs: torch.tensor([[s["p_top"], s["margin"], s["entropy"], s["n_tokens"]] for _, s in runs], dtype=torch.float32)
+    Ptr = plain(tr)
+    pmu, psd = Ptr.mean(0), Ptr.std(0) + 1e-6
+    pw, pb = fit((Ptr - pmu) / psd, 0.01)
     clf = lambda X: (((ratio(X) - mu) / sd) @ w + b).detach()
     clf_thr = float(clf(Xtr)[ytr == 0].quantile(0.9))
     conf_thr = {k: float(torch.tensor([sgn * s[k] for _, s in tr])[ytr == 0].quantile(0.9)) for k, sgn in (("p_top", -1), ("margin", -1), ("entropy", 1))}
@@ -88,7 +95,8 @@ def main():
         "passage head": (lambda X, runs: -X[:, pa[0], pa[1], PAS], pa[3]),
         "all-heads average": (lambda X, runs: -X[..., ANS].mean((1, 2)), avg_thr),
         "attention classifier": (lambda X, runs: clf(X), clf_thr),
-        "output top probability": (lambda X, runs: torch.tensor([-s["p_top"] for _, s in runs]), conf_thr["p_top"]),
+        "output plus length baseline": (lambda X, runs: ((plain(runs) - pmu) / psd) @ pw + pb, float((((Ptr - pmu) / psd) @ pw + pb)[ytr == 0].quantile(0.9))),
+        "output top probability": (lambda X, runs: torch.tensor([-s["p_top"] for _, s in runs]), conf_thr["p_top"]),  # low confidence = suspicious
         "output margin": (lambda X, runs: torch.tensor([-s["margin"] for _, s in runs]), conf_thr["margin"]),
         "output entropy": (lambda X, runs: torch.tensor([s["entropy"] for _, s in runs]), conf_thr["entropy"]),
     }
@@ -116,6 +124,12 @@ def main():
         "hidden_ungrounded_original": med([r["original"]["feat"] for r in te if r["label"] == "hidden_ungrounded"]),
         "hidden_ungrounded_substituted_gave_memory": med([x["feat"] for r in te if r["label"] == "hidden_ungrounded" for x in r["subs"] if x["outcome"] == "memory"])}
     (HERE / f"phase2_3{tag}{clean}.json").write_text(json.dumps(out, indent=1))
+    kept = [r for r in rows if r["split"] == "test" and r["label"] in ("hidden_ungrounded", "grounded")]  # same order as orig_runs("test")
+    runs, _ = orig_runs("test")
+    sc = {name: fn(F[[i for i, _ in runs]], runs).tolist() for name, (fn, _) in monitors.items()}
+    (HERE / f"phase3_scores{tag}{clean}.json").write_text(json.dumps(
+        [{"question": r["question"], "gold0": r["gold"][0], "hidden": r["label"] == "hidden_ungrounded", "known": r["known_closed_book"],
+          "answer": r["original"]["answer"], **{name: v[i] for name, v in sc.items()}} for i, r in enumerate(kept)], indent=1))
 
     fmt = lambda v: f"{v[0]:.3f} [{v[1]:.3f}, {v[2]:.3f}]"
     print(f"fitted on {n_pos} visible ungrounded and {n_neg} passage-following runs from training questions")
