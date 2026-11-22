@@ -326,3 +326,28 @@ labels, split, monitors, thresholds and analysis.
 **What would change our mind.** If on a new model the frozen evidence head reaches 0.75 or
 more on hidden answers, the Phi-4-mini result is specific to that model and the collapse
 is not a general claim.
+
+### Model choice (behaviour only; no internals looked at)
+
+[`results/gate-candidates.json`](results/gate-candidates.json), 120 questions each.
+
+| Candidate | hidden ungrounded among correct | answers of three words or fewer |
+|---|---|---|
+| SmolLM3-3B | 11 of 103 (10.7%) | 0% |
+| Qwen2.5-7B-Instruct | 10 of 107 (9.3%) | 72% |
+| granite-3.3-2b-instruct | 9 of 98 (9.2%) | 60% |
+| Mistral-7B-Instruct-v0.3 | 9 of 100 (9.0%) | 36% |
+| Phi-3.5-mini-instruct | 8 of 102 (7.8%) | 69% |
+| Qwen3-8B | 6 of 108 (5.6%) | 77% |
+
+Five of six clear the 6% bar, so answering from memory with a passage in hand is not
+peculiar to Phi-4-mini.
+
+**A departure from the selection rule, made before any features were examined.** By the rule
+the two models are SmolLM3-3B and Qwen2.5-7B. A 12-question pilot showed SmolLM3 answers in
+full sentences ("There are 163 episodes of..."). Our monitors read attention at the first
+generated token, which for that model is not where the answer is produced, so the unchanged
+pipeline would be measuring something else. We replace it with the next model from a
+different family that answers tersely: granite-3.3-2b-instruct. Phase 4 models:
+**Qwen2.5-7B-Instruct and granite-3.3-2b-instruct.** This also means every result here is
+limited to models and prompts that give short answers.

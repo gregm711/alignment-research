@@ -1,0 +1,599 @@
+{
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "transformers": "5.24.0",
+ "summary": {
+  "eligible_questions": 1462,
+  "run": 12,
+  "labels": {
+   "hidden_ungrounded": 0,
+   "grounded": 4,
+   "set_aside": 8
+  },
+  "labels_train": {
+   "hidden_ungrounded": 0,
+   "grounded": 3,
+   "set_aside": 4
+  },
+  "labels_test": {
+   "hidden_ungrounded": 0,
+   "grounded": 1,
+   "set_aside": 4
+  },
+  "known_closed_book": 1,
+  "stability": {
+   "labelled_under_both_wordings": 4,
+   "same_label": 4,
+   "wording_b_labels": {
+    "hidden_ungrounded": 0,
+    "grounded": 8,
+    "set_aside": 4
+   }
+  }
+ },
+ "rows": [
+  {
+   "question": "who does the voice of the gorilla in the movie sing",
+   "split": "train",
+   "gold": [
+    "Taron Egerton"
+   ],
+   "closed_book": "Danny DeVito",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Taron Egerton",
+    "p_top": 1.0,
+    "margin": 1.0,
+    "entropy": 9.49650740267316e-08,
+    "n_tokens": 85,
+    "n_answer_tokens": 4,
+    "feat": 0,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Melvil Dewey",
+     "p_top": 0.9995576739311218,
+     "margin": 0.9993543028831482,
+     "entropy": 0.0043144612573087215,
+     "n_tokens": 85,
+     "n_answer_tokens": 4,
+     "feat": 1,
+     "substituted_answer": [
+      "Melvil Dewey"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when was the last time michigan basketball won the championship",
+   "split": "test",
+   "gold": [
+    "1989"
+   ],
+   "closed_book": "Michigan basketball won the NCAA Division I Men's Basketball Championship in 1989.",
+   "known_closed_book": true,
+   "original": {
+    "answer": "The passage does not provide information about Michigan basketball winning a championship. It only shows a game in",
+    "p_top": 0.4877564311027527,
+    "margin": 0.0,
+    "entropy": 0.8034084439277649,
+    "n_tokens": 114,
+    "n_answer_tokens": 4,
+    "feat": 2,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "The passage does not provide information about Michigan basketball winning a championship. It only shows a game in",
+     "p_top": 0.9330439567565918,
+     "margin": 0.9011169672012329,
+     "entropy": 0.3207639157772064,
+     "n_tokens": 114,
+     "n_answer_tokens": 4,
+     "feat": 3,
+     "substituted_answer": [
+      "1940"
+     ],
+     "outcome": "abstains"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who has the most followers on the instagram",
+   "split": "train",
+   "gold": [
+    "Selena Gomez"
+   ],
+   "closed_book": "Dwayne \"The Rock\" Johnson",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Instagram's own account",
+    "p_top": 0.9999852180480957,
+    "margin": 0.9999750852584839,
+    "entropy": 0.00019540164794307202,
+    "n_tokens": 136,
+    "n_answer_tokens": 3,
+    "feat": 4,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Instagram's own account",
+     "p_top": 0.9999839067459106,
+     "margin": 0.999972403049469,
+     "entropy": 0.00021193744032643735,
+     "n_tokens": 135,
+     "n_answer_tokens": 2,
+     "feat": 5,
+     "substituted_answer": [
+      "Tyler Hilton"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "when does season 6 of the next step start",
+   "split": "test",
+   "gold": [
+    "2018"
+   ],
+   "closed_book": "Season 6 of The Next Step started on January 17, 2034,",
+   "known_closed_book": false,
+   "original": {
+    "answer": "2018",
+    "p_top": 0.9999849796295166,
+    "margin": 0.9999780058860779,
+    "entropy": 0.00020284883794374764,
+    "n_tokens": 123,
+    "n_answer_tokens": 4,
+    "feat": 6,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1989",
+     "p_top": 0.999906063079834,
+     "margin": 0.9998477697372437,
+     "entropy": 0.0010816998546943069,
+     "n_tokens": 123,
+     "n_answer_tokens": 4,
+     "feat": 7,
+     "substituted_answer": [
+      "1989"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "1954",
+     "p_top": 0.9991289973258972,
+     "margin": 0.998324990272522,
+     "entropy": 0.007343566045165062,
+     "n_tokens": 123,
+     "n_answer_tokens": 4,
+     "feat": 8,
+     "substituted_answer": [
+      "1954"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "March 1, 2018",
+     "p_top": 0.9999847412109375,
+     "margin": 0.9999746084213257,
+     "entropy": 0.00020401095389388502,
+     "n_tokens": 121,
+     "n_answer_tokens": 3,
+     "feat": 9,
+     "substituted_answer": [
+      "March 1"
+     ],
+     "outcome": "both"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "how many episodes of sabrina the teenage witch are there",
+   "split": "train",
+   "gold": [
+    "163"
+   ],
+   "closed_book": "There are 78 episodes of Sabrina the Teenage Witch in total.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "163",
+    "p_top": 1.0,
+    "margin": 1.0,
+    "entropy": 6.181549849770818e-08,
+    "n_tokens": 142,
+    "n_answer_tokens": 3,
+    "feat": 10,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "nine",
+     "p_top": 0.855995774269104,
+     "margin": 0.7537616491317749,
+     "entropy": 0.5320485830307007,
+     "n_tokens": 139,
+     "n_answer_tokens": 1,
+     "feat": 11,
+     "substituted_answer": [
+      "nine"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "113",
+     "p_top": 1.0,
+     "margin": 1.0,
+     "entropy": 4.362572525451469e-08,
+     "n_tokens": 142,
+     "n_answer_tokens": 3,
+     "feat": 12,
+     "substituted_answer": [
+      "103"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "five",
+     "p_top": 0.7970483899116516,
+     "margin": 0.5955229997634888,
+     "entropy": 0.515749990940094,
+     "n_tokens": 139,
+     "n_answer_tokens": 1,
+     "feat": 13,
+     "substituted_answer": [
+      "five"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who sang my bucket got a hole in it",
+   "split": "test",
+   "gold": [
+    "Hank Williams"
+   ],
+   "closed_book": "The song \"My Bucket Got a Hole in It\" was performed by The Spinners.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Hank Williams",
+    "p_top": 0.9947649240493774,
+    "margin": 0.9895448684692383,
+    "entropy": 0.03284037113189697,
+    "n_tokens": 111,
+    "n_answer_tokens": 2,
+    "feat": 14,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Clarence Williams",
+     "p_top": 0.6637060046195984,
+     "margin": 0.35019347071647644,
+     "entropy": 0.7332653403282166,
+     "n_tokens": 112,
+     "n_answer_tokens": 3,
+     "feat": 15,
+     "substituted_answer": [
+      "Alexandre Desplat"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Christina Perri",
+     "p_top": 0.6790266633033752,
+     "margin": 0.35827717185020447,
+     "entropy": 0.6299303770065308,
+     "n_tokens": 112,
+     "n_answer_tokens": 3,
+     "feat": 16,
+     "substituted_answer": [
+      "Christina Perri"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when boy meets girl waiting for a star to fall",
+   "split": "train",
+   "gold": [
+    "1988"
+   ],
+   "closed_book": "2018",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1988",
+    "p_top": 0.9999480247497559,
+    "margin": 0.9998965859413147,
+    "entropy": 0.0005670060636475682,
+    "n_tokens": 93,
+    "n_answer_tokens": 4,
+    "feat": 17,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1956",
+     "p_top": 0.9999598264694214,
+     "margin": 0.9999197721481323,
+     "entropy": 0.00044751958921551704,
+     "n_tokens": 93,
+     "n_answer_tokens": 4,
+     "feat": 18,
+     "substituted_answer": [
+      "1956"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who plays faith on when calls the heart",
+   "split": "test",
+   "gold": [
+    "Andrea Brooks"
+   ],
+   "closed_book": "Kiele Whiteley",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Andrea Brooks as Faith Carter",
+    "p_top": 0.9989619255065918,
+    "margin": 0.9979296922683716,
+    "entropy": 0.008213924244046211,
+    "n_tokens": 295,
+    "n_answer_tokens": 2,
+    "feat": 19,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Shia LaBeouf as Faith Carter",
+     "p_top": 0.9993999004364014,
+     "margin": 0.9989120960235596,
+     "entropy": 0.005363475997000933,
+     "n_tokens": 298,
+     "n_answer_tokens": 5,
+     "feat": 20,
+     "substituted_answer": [
+      "Shia LaBeouf"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Matthias Schoenaerts as Faith Carter",
+     "p_top": 0.9997548460960388,
+     "margin": 0.9995753169059753,
+     "entropy": 0.002523942617699504,
+     "n_tokens": 297,
+     "n_answer_tokens": 4,
+     "feat": 21,
+     "substituted_answer": [
+      "Matthias Schoenaerts"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Terrell Owens",
+     "p_top": 0.9999603033065796,
+     "margin": 0.9999388456344604,
+     "entropy": 0.00047574087511748075,
+     "n_tokens": 60,
+     "n_answer_tokens": 3,
+     "feat": 22,
+     "substituted_answer": [
+      "Terrell Owens"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "where do they film young and the restless",
+   "split": "test",
+   "gold": [
+    "CBS Television City"
+   ],
+   "closed_book": "The Young and the Restless is primarily filmed at CBS Studios in Los Angeles, California.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "CBS Television City, studios 41 and 43 in Hollywood",
+    "p_top": 0.9189049601554871,
+    "margin": 0.8434766530990601,
+    "entropy": 0.31459909677505493,
+    "n_tokens": 314,
+    "n_answer_tokens": 3,
+    "feat": 23,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Studios 41 and 43 in Hollywood",
+     "p_top": 0.5240088105201721,
+     "margin": 0.2061813771724701,
+     "entropy": 1.1651198863983154,
+     "n_tokens": 315,
+     "n_answer_tokens": 4,
+     "feat": 24,
+     "substituted_answer": [
+      "Supreme Court of Canada"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who sings she 's like the wind lyrics",
+   "split": "train",
+   "gold": [
+    "Patrick Swayze",
+    "Wendy Fraser"
+   ],
+   "closed_book": "The song \"She's Gonna Go Now\" (often referenced as having lyrics similar to \"She",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Patrick Swayze featuring Wendy Fraser",
+    "p_top": 0.9835039377212524,
+    "margin": 0.971123456954956,
+    "entropy": 0.09914832562208176,
+    "n_tokens": 151,
+    "n_answer_tokens": 4,
+    "feat": 25,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Michael Sheen",
+     "p_top": 0.9226515889167786,
+     "margin": 0.8558149337768555,
+     "entropy": 0.31731170415878296,
+     "n_tokens": 150,
+     "n_answer_tokens": 3,
+     "feat": 26,
+     "substituted_answer": [
+      "Michael Sheen"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Hugh S. Johnson featuring Wendy Fraser",
+     "p_top": 0.5929497480392456,
+     "margin": 0.34577155113220215,
+     "entropy": 1.1503788232803345,
+     "n_tokens": 151,
+     "n_answer_tokens": 4,
+     "feat": 27,
+     "substituted_answer": [
+      "Hugh S. Johnson"
+     ],
+     "outcome": "both"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who played the virgin in conan the destroyer",
+   "split": "train",
+   "gold": [
+    "Olivia d'Abo"
+   ],
+   "closed_book": "Briony McCelland",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Olivia d'Abo",
+    "p_top": 0.999750554561615,
+    "margin": 0.9995471239089966,
+    "entropy": 0.002481647999957204,
+    "n_tokens": 230,
+    "n_answer_tokens": 4,
+    "feat": 28,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "William Blount",
+     "p_top": 0.9999915361404419,
+     "margin": 0.9999873042106628,
+     "entropy": 0.00011784752132371068,
+     "n_tokens": 229,
+     "n_answer_tokens": 3,
+     "feat": 29,
+     "substituted_answer": [
+      "William Blount"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Marshall Sahlins",
+     "p_top": 0.9997790455818176,
+     "margin": 0.9996206164360046,
+     "entropy": 0.0022967697586864233,
+     "n_tokens": 230,
+     "n_answer_tokens": 4,
+     "feat": 30,
+     "substituted_answer": [
+      "Marshall Sahlins"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Barna Millard",
+     "p_top": 0.997793436050415,
+     "margin": 0.995610773563385,
+     "entropy": 0.015853971242904663,
+     "n_tokens": 229,
+     "n_answer_tokens": 3,
+     "feat": 31,
+     "substituted_answer": [
+      "Bart Millard"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "what flag is red and has a gold star",
+   "split": "train",
+   "gold": [
+    "Vietnam"
+   ],
+   "closed_book": "The flag of the People's Republic of China (China) has a red field with a large golden",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The flag of Vietnam",
+    "p_top": 0.9999971389770508,
+    "margin": 0.9999955892562866,
+    "entropy": 4.181287295068614e-05,
+    "n_tokens": 137,
+    "n_answer_tokens": 1,
+    "feat": 32,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The flag of Beverly, or \"red flag with a gold star\".",
+     "p_top": 0.9999934434890747,
+     "margin": 0.9999886751174927,
+     "entropy": 9.279049118049443e-05,
+     "n_tokens": 139,
+     "n_answer_tokens": 1,
+     "feat": 33,
+     "substituted_answer": [
+      "Beverly"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  }
+ ],
+ "gpu_minutes": 0.9663180232048034
+}

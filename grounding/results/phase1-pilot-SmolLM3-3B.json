@@ -1,0 +1,599 @@
+{
+ "model": "HuggingFaceTB/SmolLM3-3B",
+ "transformers": "5.24.0",
+ "summary": {
+  "eligible_questions": 1462,
+  "run": 12,
+  "labels": {
+   "hidden_ungrounded": 0,
+   "grounded": 7,
+   "set_aside": 5
+  },
+  "labels_train": {
+   "hidden_ungrounded": 0,
+   "grounded": 3,
+   "set_aside": 4
+  },
+  "labels_test": {
+   "hidden_ungrounded": 0,
+   "grounded": 4,
+   "set_aside": 1
+  },
+  "known_closed_book": 0,
+  "stability": {
+   "labelled_under_both_wordings": 7,
+   "same_label": 7,
+   "wording_b_labels": {
+    "hidden_ungrounded": 0,
+    "grounded": 10,
+    "set_aside": 2
+   }
+  }
+ },
+ "rows": [
+  {
+   "question": "who does the voice of the gorilla in the movie sing",
+   "split": "train",
+   "gold": [
+    "Taron Egerton"
+   ],
+   "closed_book": "The voice of the gorilla in the movie \"Sing\" is provided by Matthew McConaughey",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Taron Egerton voices the gorilla in the movie.",
+    "p_top": 0.8543722033500671,
+    "margin": 0.7233499884605408,
+    "entropy": 0.4902563691139221,
+    "n_tokens": 124,
+    "n_answer_tokens": 4,
+    "feat": 0,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The voice of the gorilla in the movie is provided by Melvil Dewey.",
+     "p_top": 0.5083038210868835,
+     "margin": 0.23622837662696838,
+     "entropy": 1.234771490097046,
+     "n_tokens": 124,
+     "n_answer_tokens": 4,
+     "feat": 1,
+     "substituted_answer": [
+      "Melvil Dewey"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when was the last time michigan basketball won the championship",
+   "split": "test",
+   "gold": [
+    "1989"
+   ],
+   "closed_book": "The last time Michigan basketball won the championship was in 2019, when they won the NCAA Division",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The passage does not provide information about Michigan basketball winning a championship. It only mentions Seton Hall and",
+    "p_top": 0.7023146748542786,
+    "margin": 0.5010981559753418,
+    "entropy": 0.994565486907959,
+    "n_tokens": 147,
+    "n_answer_tokens": 2,
+    "feat": 2,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "The passage does not provide information about Michigan basketball winning a championship. It only mentions Steve Fisher coaching Set",
+     "p_top": 0.6531421542167664,
+     "margin": 0.4128645658493042,
+     "entropy": 1.0685526132583618,
+     "n_tokens": 147,
+     "n_answer_tokens": 2,
+     "feat": 3,
+     "substituted_answer": [
+      "1940"
+     ],
+     "outcome": "abstains"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who has the most followers on the instagram",
+   "split": "train",
+   "gold": [
+    "Selena Gomez"
+   ],
+   "closed_book": "As of my last update in October 2021, the person with the most followers on Instagram is",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Instagram's own account has the most followers on Instagram, with over 234 million followers.",
+    "p_top": 0.4954177141189575,
+    "margin": 0.23023971915245056,
+    "entropy": 1.1995457410812378,
+    "n_tokens": 166,
+    "n_answer_tokens": 3,
+    "feat": 4,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "The most followed user on Instagram, as of March 2018, is Instagram's own account with",
+     "p_top": 0.5213882923126221,
+     "margin": 0.16304370760917664,
+     "entropy": 1.173100233078003,
+     "n_tokens": 165,
+     "n_answer_tokens": 2,
+     "feat": 5,
+     "substituted_answer": [
+      "Tyler Hilton"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "when does season 6 of the next step start",
+   "split": "test",
+   "gold": [
+    "2018"
+   ],
+   "closed_book": "The sixth season of The Next Step premiered on September 25, 2017.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Season 6 of The Next Step will premiere in 2018.",
+    "p_top": 0.849296510219574,
+    "margin": 0.7017109394073486,
+    "entropy": 0.44906023144721985,
+    "n_tokens": 153,
+    "n_answer_tokens": 2,
+    "feat": 6,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Season 6 of The Next Step will premiere in 1989.",
+     "p_top": 0.6741899847984314,
+     "margin": 0.35572516918182373,
+     "entropy": 0.6889774799346924,
+     "n_tokens": 153,
+     "n_answer_tokens": 2,
+     "feat": 7,
+     "substituted_answer": [
+      "1989"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "The sixth season of The Next Step is set to premiere in 1954.",
+     "p_top": 0.5241947770118713,
+     "margin": 0.06159451603889465,
+     "entropy": 0.7974274158477783,
+     "n_tokens": 153,
+     "n_answer_tokens": 2,
+     "feat": 8,
+     "substituted_answer": [
+      "1954"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Season 6 of The Next Step will premiere on March 1.",
+     "p_top": 0.9225355982780457,
+     "margin": 0.8557073473930359,
+     "entropy": 0.31804150342941284,
+     "n_tokens": 153,
+     "n_answer_tokens": 3,
+     "feat": 9,
+     "substituted_answer": [
+      "March 1"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "how many episodes of sabrina the teenage witch are there",
+   "split": "train",
+   "gold": [
+    "163"
+   ],
+   "closed_book": "There are 205 episodes of Sabrina the Teenage Witch.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "There are 163 episodes of Sabrina the Teenage Witch.",
+    "p_top": 0.8376676440238953,
+    "margin": 0.7092071771621704,
+    "entropy": 0.5559117197990417,
+    "n_tokens": 171,
+    "n_answer_tokens": 1,
+    "feat": 10,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "There are nine episodes of Sabrina the Teenage Witch.",
+     "p_top": 0.7911368012428284,
+     "margin": 0.5911060571670532,
+     "entropy": 0.5734851360321045,
+     "n_tokens": 170,
+     "n_answer_tokens": 1,
+     "feat": 11,
+     "substituted_answer": [
+      "nine"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "There are 103 episodes of Sabrina the Teenage Witch.",
+     "p_top": 0.8622248768806458,
+     "margin": 0.7455354332923889,
+     "entropy": 0.48640209436416626,
+     "n_tokens": 171,
+     "n_answer_tokens": 1,
+     "feat": 12,
+     "substituted_answer": [
+      "103"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "There are five episodes of Sabrina the Teenage Witch.",
+     "p_top": 0.7222908139228821,
+     "margin": 0.45657485723495483,
+     "entropy": 0.6736587285995483,
+     "n_tokens": 170,
+     "n_answer_tokens": 1,
+     "feat": 13,
+     "substituted_answer": [
+      "five"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who sang my bucket got a hole in it",
+   "split": "test",
+   "gold": [
+    "Hank Williams"
+   ],
+   "closed_book": "The song \"My Bucket Got a Hole in It\" was performed by Randy Newman.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Hank Williams sang \"My Bucket's Got a Hole in It.\"",
+    "p_top": 0.9854787588119507,
+    "margin": 0.973073422908783,
+    "entropy": 0.0858452245593071,
+    "n_tokens": 146,
+    "n_answer_tokens": 2,
+    "feat": 14,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Alexandre Desplat sang \"My Bucket's Got a Hole in It.\"",
+     "p_top": 0.8141658306121826,
+     "margin": 0.6538470983505249,
+     "entropy": 0.6431657075881958,
+     "n_tokens": 147,
+     "n_answer_tokens": 3,
+     "feat": 15,
+     "substituted_answer": [
+      "Alexandre Desplat"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Christina Perri sang \"My Bucket's Got a Hole in It.\"",
+     "p_top": 0.9935178756713867,
+     "margin": 0.9883043766021729,
+     "entropy": 0.04647265374660492,
+     "n_tokens": 147,
+     "n_answer_tokens": 3,
+     "feat": 16,
+     "substituted_answer": [
+      "Christina Perri"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when boy meets girl waiting for a star to fall",
+   "split": "train",
+   "gold": [
+    "1988"
+   ],
+   "closed_book": "\"Waiting for the Sun\" by The Killers is the song where a boy meets a girl waiting",
+   "known_closed_book": false,
+   "original": {
+    "answer": "\"Waiting for a Star to Fall\" is a song released by the pop duo Boy Meets Girl",
+    "p_top": 0.35728856921195984,
+    "margin": 0.04198253154754639,
+    "entropy": 1.577350378036499,
+    "n_tokens": 130,
+    "n_answer_tokens": 2,
+    "feat": 17,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Boy Meets Girl released the song \"Waiting for a Star to Fall\" in 1956.",
+     "p_top": 0.3626212775707245,
+     "margin": 0.08021154999732971,
+     "entropy": 1.5780470371246338,
+     "n_tokens": 130,
+     "n_answer_tokens": 2,
+     "feat": 18,
+     "substituted_answer": [
+      "1956"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who plays faith on when calls the heart",
+   "split": "test",
+   "gold": [
+    "Andrea Brooks"
+   ],
+   "closed_book": "Katherine Heigl plays Faith on When Calls the Heart.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Andrea Brooks plays Faith Carter on When Calls the Heart.",
+    "p_top": 0.7850099802017212,
+    "margin": 0.664624810218811,
+    "entropy": 0.9516562223434448,
+    "n_tokens": 334,
+    "n_answer_tokens": 2,
+    "feat": 19,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Shia LaBeouf plays Faith Carter on When Calls the Heart.",
+     "p_top": 0.9322355389595032,
+     "margin": 0.9151610732078552,
+     "entropy": 0.4245491027832031,
+     "n_tokens": 337,
+     "n_answer_tokens": 5,
+     "feat": 20,
+     "substituted_answer": [
+      "Shia LaBeouf"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Matthias Schoenaerts plays Faith Carter on When Calls the Heart.",
+     "p_top": 0.5986580848693848,
+     "margin": 0.3491002917289734,
+     "entropy": 1.3533942699432373,
+     "n_tokens": 336,
+     "n_answer_tokens": 4,
+     "feat": 21,
+     "substituted_answer": [
+      "Matthias Schoenaerts"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Terrell Owens plays Faith Carter on When Calls the Heart.",
+     "p_top": 0.9177185893058777,
+     "margin": 0.8863160014152527,
+     "entropy": 0.4557446837425232,
+     "n_tokens": 99,
+     "n_answer_tokens": 3,
+     "feat": 22,
+     "substituted_answer": [
+      "Terrell Owens"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "where do they film young and the restless",
+   "split": "test",
+   "gold": [
+    "CBS Television City"
+   ],
+   "closed_book": "The Young and the Restless is filmed in Los Angeles, California.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "They film Young and the Restless at CBS Television City, studios 41 and 43 in Hollywood",
+    "p_top": 0.5480886697769165,
+    "margin": 0.12123677134513855,
+    "entropy": 0.8347612023353577,
+    "n_tokens": 348,
+    "n_answer_tokens": 3,
+    "feat": 23,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The Young and the Restless is filmed at Supreme Court of Canada, studios 41 and 43",
+     "p_top": 0.5840668082237244,
+     "margin": 0.18264394998550415,
+     "entropy": 0.7844655513763428,
+     "n_tokens": 349,
+     "n_answer_tokens": 4,
+     "feat": 24,
+     "substituted_answer": [
+      "Supreme Court of Canada"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who sings she 's like the wind lyrics",
+   "split": "train",
+   "gold": [
+    "Patrick Swayze",
+    "Wendy Fraser"
+   ],
+   "closed_book": "The song \"She's Like the Wind\" is performed by the American country music group Alabama.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Patrick Swayze sings \"She's Like the Wind\" lyrics.",
+    "p_top": 0.8808238506317139,
+    "margin": 0.8245146870613098,
+    "entropy": 0.48945948481559753,
+    "n_tokens": 186,
+    "n_answer_tokens": 4,
+    "feat": 25,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Michael Sheen sings \"She's Like the Wind\" lyrics.",
+     "p_top": 0.7474716305732727,
+     "margin": 0.5806881785392761,
+     "entropy": 0.895540714263916,
+     "n_tokens": 185,
+     "n_answer_tokens": 3,
+     "feat": 26,
+     "substituted_answer": [
+      "Michael Sheen"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Hugh S. Johnson features Wendy Fraser sings \"She's Like the Wind\" lyrics.",
+     "p_top": 0.48355719447135925,
+     "margin": 0.22472766041755676,
+     "entropy": 1.227707862854004,
+     "n_tokens": 186,
+     "n_answer_tokens": 4,
+     "feat": 27,
+     "substituted_answer": [
+      "Hugh S. Johnson"
+     ],
+     "outcome": "both"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who played the virgin in conan the destroyer",
+   "split": "train",
+   "gold": [
+    "Olivia d'Abo"
+   ],
+   "closed_book": "Sharon Farrell played the Virgin in Conan the Destroyer.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Olivia d'Abo played the virgin in Conan the Destroyer.",
+    "p_top": 0.6181465983390808,
+    "margin": 0.32615479826927185,
+    "entropy": 0.9516159296035767,
+    "n_tokens": 269,
+    "n_answer_tokens": 4,
+    "feat": 28,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The virgin in Conan the Destroyer, as mentioned in the passage, is played by William Blount",
+     "p_top": 0.5551239252090454,
+     "margin": 0.32371383905410767,
+     "entropy": 1.1688333749771118,
+     "n_tokens": 268,
+     "n_answer_tokens": 3,
+     "feat": 29,
+     "substituted_answer": [
+      "William Blount"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "The virgin in Conan the Destroyer, as mentioned in the passage, is played by Marshall Sahl",
+     "p_top": 0.4438536763191223,
+     "margin": 0.09818008542060852,
+     "entropy": 1.3072748184204102,
+     "n_tokens": 269,
+     "n_answer_tokens": 4,
+     "feat": 30,
+     "substituted_answer": [
+      "Marshall Sahlins"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "The virgin in Conan the Destroyer, as mentioned in the passage, is played by Bart Millard",
+     "p_top": 0.5476269125938416,
+     "margin": 0.3193420469760895,
+     "entropy": 1.2024564743041992,
+     "n_tokens": 268,
+     "n_answer_tokens": 3,
+     "feat": 31,
+     "substituted_answer": [
+      "Bart Millard"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "what flag is red and has a gold star",
+   "split": "train",
+   "gold": [
+    "Vietnam"
+   ],
+   "closed_book": "The flag of the United States of America is red, with a blue field containing 50 white stars",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The flag of Vietnam, or \"red flag with a gold star\" (c\u1edd \u0111\u1ecf sao v\u00e0ng",
+    "p_top": 0.9663417935371399,
+    "margin": 0.9332754015922546,
+    "entropy": 0.15135453641414642,
+    "n_tokens": 173,
+    "n_answer_tokens": 1,
+    "feat": 32,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The flag of Beverly, also known as the \"red flag with a gold star\" (c\u1edd",
+     "p_top": 0.9978554844856262,
+     "margin": 0.996687114238739,
+     "entropy": 0.018073175102472305,
+     "n_tokens": 175,
+     "n_answer_tokens": 1,
+     "feat": 33,
+     "substituted_answer": [
+      "Beverly"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  }
+ ],
+ "gpu_minutes": 1.5088472008705138
+}

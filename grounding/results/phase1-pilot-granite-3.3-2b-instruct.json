@@ -1,0 +1,599 @@
+{
+ "model": "ibm-granite/granite-3.3-2b-instruct",
+ "transformers": "5.24.0",
+ "summary": {
+  "eligible_questions": 1462,
+  "run": 12,
+  "labels": {
+   "hidden_ungrounded": 0,
+   "grounded": 7,
+   "set_aside": 5
+  },
+  "labels_train": {
+   "hidden_ungrounded": 0,
+   "grounded": 4,
+   "set_aside": 3
+  },
+  "labels_test": {
+   "hidden_ungrounded": 0,
+   "grounded": 3,
+   "set_aside": 2
+  },
+  "known_closed_book": 0,
+  "stability": {
+   "labelled_under_both_wordings": 4,
+   "same_label": 4,
+   "wording_b_labels": {
+    "hidden_ungrounded": 0,
+    "grounded": 5,
+    "set_aside": 7
+   }
+  }
+ },
+ "rows": [
+  {
+   "question": "who does the voice of the gorilla in the movie sing",
+   "split": "train",
+   "gold": [
+    "Taron Egerton"
+   ],
+   "closed_book": "The gorilla in the movie \"The Life Aquatic with Steve Zissou\" is vo",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Taron Egerton",
+    "p_top": 0.9877134561538696,
+    "margin": 0.9810582995414734,
+    "entropy": 0.08162844181060791,
+    "n_tokens": 128,
+    "n_answer_tokens": 6,
+    "feat": 0,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The passage does not provide information on who voices the gorilla in the movie or what they sing",
+     "p_top": 0.7310889959335327,
+     "margin": 0.6040447950363159,
+     "entropy": 0.9549545049667358,
+     "n_tokens": 127,
+     "n_answer_tokens": 5,
+     "feat": 1,
+     "substituted_answer": [
+      "Melvil Dewey"
+     ],
+     "outcome": "abstains"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "when was the last time michigan basketball won the championship",
+   "split": "test",
+   "gold": [
+    "1989"
+   ],
+   "closed_book": "2018",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1989",
+    "p_top": 0.9472501873970032,
+    "margin": 0.9105213284492493,
+    "entropy": 0.25565508008003235,
+    "n_tokens": 160,
+    "n_answer_tokens": 4,
+    "feat": 2,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1948",
+     "p_top": 0.9461068511009216,
+     "margin": 0.8990029692649841,
+     "entropy": 0.24554264545440674,
+     "n_tokens": 160,
+     "n_answer_tokens": 4,
+     "feat": 3,
+     "substituted_answer": [
+      "1940"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who has the most followers on the instagram",
+   "split": "train",
+   "gold": [
+    "Selena Gomez"
+   ],
+   "closed_book": "As of now, the account with the most followers on Instagram is @tiktok, which",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Instagram's own account has the most followers on Instagram, with over 234",
+    "p_top": 0.9357172846794128,
+    "margin": 0.8829277157783508,
+    "entropy": 0.2931535840034485,
+    "n_tokens": 180,
+    "n_answer_tokens": 5,
+    "feat": 4,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Instagram's own account.",
+     "p_top": 0.907490074634552,
+     "margin": 0.849476158618927,
+     "entropy": 0.41226422786712646,
+     "n_tokens": 180,
+     "n_answer_tokens": 5,
+     "feat": 5,
+     "substituted_answer": [
+      "Tyler Hilton"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "when does season 6 of the next step start",
+   "split": "test",
+   "gold": [
+    "2018"
+   ],
+   "closed_book": "The sixth season of \"The Next Step\" premiered on Netflix on March 2",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The passage does not provide the exact start date for Season 6 of The Next Step. It",
+    "p_top": 0.6786091327667236,
+    "margin": 0.5271909236907959,
+    "entropy": 1.186295509338379,
+    "n_tokens": 167,
+    "n_answer_tokens": 4,
+    "feat": 6,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "The passage does not provide the exact start date for Season 6 of The Next Step. It",
+     "p_top": 0.7026631236076355,
+     "margin": 0.5805585980415344,
+     "entropy": 1.1221864223480225,
+     "n_tokens": 167,
+     "n_answer_tokens": 4,
+     "feat": 7,
+     "substituted_answer": [
+      "1989"
+     ],
+     "outcome": "abstains"
+    },
+    {
+     "answer": "The passage does not provide the exact start date for Season 6 of The Next Step. It",
+     "p_top": 0.7343866229057312,
+     "margin": 0.6145012974739075,
+     "entropy": 1.0815343856811523,
+     "n_tokens": 167,
+     "n_answer_tokens": 4,
+     "feat": 8,
+     "substituted_answer": [
+      "1954"
+     ],
+     "outcome": "abstains"
+    },
+    {
+     "answer": "March 1, 2023",
+     "p_top": 0.7667835354804993,
+     "margin": 0.5470963716506958,
+     "entropy": 0.6304609179496765,
+     "n_tokens": 165,
+     "n_answer_tokens": 3,
+     "feat": 9,
+     "substituted_answer": [
+      "March 1"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "how many episodes of sabrina the teenage witch are there",
+   "split": "train",
+   "gold": [
+    "163"
+   ],
+   "closed_book": "26 episodes were aired in total, including the movie \"Sabrina's Secret",
+   "known_closed_book": false,
+   "original": {
+    "answer": "163 episodes",
+    "p_top": 0.9764467477798462,
+    "margin": 0.9585624933242798,
+    "entropy": 0.1274145245552063,
+    "n_tokens": 197,
+    "n_answer_tokens": 3,
+    "feat": 10,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The series ran for seven seasons, totaling nine episodes.",
+     "p_top": 0.5603355765342712,
+     "margin": 0.29565179347991943,
+     "entropy": 1.1467057466506958,
+     "n_tokens": 195,
+     "n_answer_tokens": 2,
+     "feat": 11,
+     "substituted_answer": [
+      "nine"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "103 episodes",
+     "p_top": 0.9671950936317444,
+     "margin": 0.9471216201782227,
+     "entropy": 0.16990019381046295,
+     "n_tokens": 197,
+     "n_answer_tokens": 3,
+     "feat": 12,
+     "substituted_answer": [
+      "103"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "The series ran for seven seasons, totaling five episodes. However, since each season typically",
+     "p_top": 0.7031124234199524,
+     "margin": 0.5462268590927124,
+     "entropy": 1.0031864643096924,
+     "n_tokens": 194,
+     "n_answer_tokens": 1,
+     "feat": 13,
+     "substituted_answer": [
+      "five"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who sang my bucket got a hole in it",
+   "split": "test",
+   "gold": [
+    "Hank Williams"
+   ],
+   "closed_book": "The song \"My Bucket's Got a Hole in It\" was sung by The King's",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Hank Williams",
+    "p_top": 0.978877604007721,
+    "margin": 0.9585616588592529,
+    "entropy": 0.10760194063186646,
+    "n_tokens": 155,
+    "n_answer_tokens": 5,
+    "feat": 14,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Alexandre Desplat",
+     "p_top": 0.8879859447479248,
+     "margin": 0.7819311618804932,
+     "entropy": 0.3962302505970001,
+     "n_tokens": 154,
+     "n_answer_tokens": 4,
+     "feat": 15,
+     "substituted_answer": [
+      "Alexandre Desplat"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Christina Perri",
+     "p_top": 0.9927531480789185,
+     "margin": 0.9868500232696533,
+     "entropy": 0.04932382330298424,
+     "n_tokens": 154,
+     "n_answer_tokens": 4,
+     "feat": 16,
+     "substituted_answer": [
+      "Christina Perri"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when boy meets girl waiting for a star to fall",
+   "split": "train",
+   "gold": [
+    "1988"
+   ],
+   "closed_book": "\"The Man Who Was Thursday\" by G.K. Chesterton.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1988",
+    "p_top": 0.9228991866111755,
+    "margin": 0.856044590473175,
+    "entropy": 0.326739102602005,
+    "n_tokens": 132,
+    "n_answer_tokens": 4,
+    "feat": 17,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1956",
+     "p_top": 0.9507570266723633,
+     "margin": 0.9089837074279785,
+     "entropy": 0.2340012639760971,
+     "n_tokens": 132,
+     "n_answer_tokens": 4,
+     "feat": 18,
+     "substituted_answer": [
+      "1956"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who plays faith on when calls the heart",
+   "split": "test",
+   "gold": [
+    "Andrea Brooks"
+   ],
+   "closed_book": "The character of Faith is played by actress Greysen Autumn Taylor in the",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Andrea Brooks",
+    "p_top": 0.8889834880828857,
+    "margin": 0.8545138835906982,
+    "entropy": 0.5932623147964478,
+    "n_tokens": 473,
+    "n_answer_tokens": 5,
+    "feat": 19,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Shia LaBeouf",
+     "p_top": 0.9912669062614441,
+     "margin": 0.9889586567878723,
+     "entropy": 0.07407758384943008,
+     "n_tokens": 474,
+     "n_answer_tokens": 6,
+     "feat": 20,
+     "substituted_answer": [
+      "Shia LaBeouf"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Matthias Schoenaerts",
+     "p_top": 0.7858663201332092,
+     "margin": 0.6653498411178589,
+     "entropy": 0.8788902163505554,
+     "n_tokens": 475,
+     "n_answer_tokens": 7,
+     "feat": 21,
+     "substituted_answer": [
+      "Matthias Schoenaerts"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Terrell Owens",
+     "p_top": 0.9216939806938171,
+     "margin": 0.8859560489654541,
+     "entropy": 0.4267314076423645,
+     "n_tokens": 98,
+     "n_answer_tokens": 6,
+     "feat": 22,
+     "substituted_answer": [
+      "Terrell Owens"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "where do they film young and the restless",
+   "split": "test",
+   "gold": [
+    "CBS Television City"
+   ],
+   "closed_book": "Young and the Restless is primarily filmed in front of a live audience at the CBS",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The Young and the Restless is filmed at CBS Television City studios 4",
+    "p_top": 0.3943118751049042,
+    "margin": 0.046332865953445435,
+    "entropy": 1.7788959741592407,
+    "n_tokens": 390,
+    "n_answer_tokens": 5,
+    "feat": 23,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Young and the Restless is filmed at the Supreme Court of Canada studios",
+     "p_top": 0.30484360456466675,
+     "margin": 0.035820066928863525,
+     "entropy": 1.8849154710769653,
+     "n_tokens": 391,
+     "n_answer_tokens": 6,
+     "feat": 24,
+     "substituted_answer": [
+      "Supreme Court of Canada"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who sings she 's like the wind lyrics",
+   "split": "train",
+   "gold": [
+    "Patrick Swayze",
+    "Wendy Fraser"
+   ],
+   "closed_book": "Wind beneath my wings, by Bille Joe Armstrong.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Patrick Swayze",
+    "p_top": 0.9610834121704102,
+    "margin": 0.9238181710243225,
+    "entropy": 0.17648491263389587,
+    "n_tokens": 205,
+    "n_answer_tokens": 5,
+    "feat": 25,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Michael Sheen",
+     "p_top": 0.9428396224975586,
+     "margin": 0.8896482586860657,
+     "entropy": 0.24640578031539917,
+     "n_tokens": 199,
+     "n_answer_tokens": 3,
+     "feat": 26,
+     "substituted_answer": [
+      "Michael Sheen"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Hugh S. Johnson",
+     "p_top": 0.9117111563682556,
+     "margin": 0.8269088268280029,
+     "entropy": 0.32348233461380005,
+     "n_tokens": 207,
+     "n_answer_tokens": 6,
+     "feat": 27,
+     "substituted_answer": [
+      "Hugh S. Johnson"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who played the virgin in conan the destroyer",
+   "split": "train",
+   "gold": [
+    "Olivia d'Abo"
+   ],
+   "closed_book": "Sarah Douglas",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Olivia d'Abo played the virgin, Jehnna, in Conan the",
+    "p_top": 0.9869901537895203,
+    "margin": 0.9794543981552124,
+    "entropy": 0.08517228066921234,
+    "n_tokens": 303,
+    "n_answer_tokens": 7,
+    "feat": 28,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "William Blount played the virgin, Jehnna, in Conan the Destroyer",
+     "p_top": 0.8932032585144043,
+     "margin": 0.8487333059310913,
+     "entropy": 0.4810711443424225,
+     "n_tokens": 301,
+     "n_answer_tokens": 5,
+     "feat": 29,
+     "substituted_answer": [
+      "William Blount"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Jehnna, portrayed by Marshall Sahlins.",
+     "p_top": 0.5688762068748474,
+     "margin": 0.3841891288757324,
+     "entropy": 1.2461503744125366,
+     "n_tokens": 302,
+     "n_answer_tokens": 6,
+     "feat": 30,
+     "substituted_answer": [
+      "Marshall Sahlins"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Bart Millard played the virgin, Jehnna, in Conan the Destroyer",
+     "p_top": 0.9488257169723511,
+     "margin": 0.9201736450195312,
+     "entropy": 0.24989061057567596,
+     "n_tokens": 301,
+     "n_answer_tokens": 5,
+     "feat": 31,
+     "substituted_answer": [
+      "Bart Millard"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "what flag is red and has a gold star",
+   "split": "train",
+   "gold": [
+    "Vietnam"
+   ],
+   "closed_book": "The flag you're referring to is the Canadian Red Ensign. However, it's important",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The flag in question is the flag of Vietnam, also known as \"red flag with a",
+    "p_top": 0.7449694275856018,
+    "margin": 0.5315321087837219,
+    "entropy": 0.7715758085250854,
+    "n_tokens": 195,
+    "n_answer_tokens": 3,
+    "feat": 32,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The flag described is the \"red flag with a gold star\" (c\u1edd \u0111\u1ecf s",
+     "p_top": 0.6509127020835876,
+     "margin": 0.48633620142936707,
+     "entropy": 1.1265294551849365,
+     "n_tokens": 195,
+     "n_answer_tokens": 3,
+     "feat": 33,
+     "substituted_answer": [
+      "Beverly"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "grounded"
+  }
+ ],
+ "gpu_minutes": 1.483187198638916
+}
