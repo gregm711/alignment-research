@@ -1674,6 +1674,46 @@ itself: the model is too reliable at it. The result on induced mistakes stands a
 with its caveats. A test on natural mistakes needs a task where the model takes a shortcut
 often enough to measure, and we do not have one yet.
 
+## Mistakes the model makes unprompted: distracting it through the prompt
+
+### Plan and predictions (written before running)
+
+The lookup task as written gives almost no spontaneous wrong routes. This changes only the
+prompt, never the model's internals, to make them more common: the question mentions a
+second animal as a distraction. Tables are as before, with pairs of colours sharing a fruit.
+
+- *Hidden case.* The distracting animal is the one whose colour is the *other* row with the
+  same fruit. If the model is distracted and looks up that animal, its answer is still
+  correct. The route is established as before, by editing the intended row and, separately,
+  the other row.
+- *Visible case.* The distracting animal's row holds a different fruit, so being distracted
+  gives a visibly wrong answer. This measures how strong each distraction is.
+
+**Step 1, a pilot of wordings.** Four ways of mentioning the second animal, plus the plain
+question, on about 70 prompts each. For each: how often the visible distraction changes the
+answer, and how often correct answers in the hidden case turn out to be wrong-route. The
+wording with the most confirmed hidden wrong routes is carried forward. The choice is made
+on those rates only.
+
+**Step 2, the test, on fresh tables.** The readout is the one frozen earlier (head 23 at
+layer 11 of the final pass, threshold 0.45). It is not refitted. Compare it with output
+confidence at separating spontaneous wrong-route correct answers from right-route ones.
+
+**Predictions.**
+
+1. At least one wording yields confirmed wrong routes in 5% or more of correct answers.
+2. On fresh tables the frozen head separates them from right-route answers with AUC above
+   0.8, and its interval lies above output confidence's. Held loosely: this is the first
+   time the readout meets a mistake it was not built around.
+
+**What would count.** The same bar as before: the head's interval entirely above the
+confidence baseline's, at the frozen threshold's actual detection and false-alarm rates.
+If no wording produces enough wrong routes, the test cannot be run on this task and we say so.
+
+**What this will not show.** The distraction is still something we put in the prompt, so
+this is "a mistake the model makes by itself when misled", not one that arises with no
+prompting at all. One invented task. The reviewer still needs to know the correct row.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
