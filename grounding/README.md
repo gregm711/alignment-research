@@ -490,8 +490,8 @@ Audit predictions:
 ### What this does not show
 
 One dataset; short-answer prompts; three small models. The cleaned sets are too small to
-establish or rule out a modest advantage for attention over confidence. We have not checked
-whether the leak in NQ-Swap is already reported elsewhere.
+establish or rule out a modest advantage for attention over confidence. (Both gaps are
+taken up in the pooled analysis below.)
 
 ## Pooled analysis: plan (written before running it)
 
@@ -543,3 +543,77 @@ Otherwise unresolved.
 4. Dropping filler starts moves granite's difference by less than 0.05.
 5. On known questions only the pooled difference is positive and its interval includes zero.
 6. The looser leak rule still marks at least 40% of "memory" runs in every model.
+
+## Pooled analysis: result
+
+Run with `python3 pooled.py` after `monitor.py TAG clean` for each model. Differences are
+AUC of the attention classifier minus AUC of the baseline, on hidden versus grounded test
+questions; intervals are 95% from 5,000 draws over answer clusters.
+
+| classifier minus… | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b | pooled mean |
+|---|---|---|---|---|
+| top probability | +0.15 [+0.05, +0.25] | +0.07 [-0.14, +0.29] | +0.13 [-0.00, +0.25] | **+0.11 [+0.03, +0.20]** |
+| output-plus-length baseline | +0.17 [+0.08, +0.27] | +0.08 [-0.09, +0.23] | +0.13 [+0.00, +0.25] | **+0.13 [+0.05, +0.20]** |
+| top probability, no filler starts | +0.15 [+0.04, +0.25] | +0.05 [-0.17, +0.28] | +0.17 [+0.03, +0.30] | +0.12 [+0.04, +0.21] |
+| baseline, no filler starts | +0.17 [+0.08, +0.27] | +0.06 [-0.10, +0.22] | +0.15 [+0.02, +0.30] | +0.13 [+0.05, +0.21] |
+| top probability, known questions only | +0.07 [-0.10, +0.24] | -0.03 [-0.35, +0.29] | +0.14 [-0.05, +0.31] | +0.06 [-0.08, +0.19] |
+| baseline, known questions only | +0.14 [-0.02, +0.29] | -0.02 [-0.29, +0.23] | +0.19 [-0.01, +0.37] | +0.10 [-0.03, +0.21] |
+
+Hidden versus grounded cases: 31/343, 19/333, 29/270 (all); 31/337, 19/318, 22/238 (no
+filler starts); 22/50, 12/72, 17/42 (known only). The output-plus-length baseline scores
+0.61, 0.67 and 0.66 on hidden cases, no better than top probability alone.
+
+Predictions: 1 held (+0.11, interval excludes zero). 2 **failed**: Phi-4-mini's own
+interval excludes zero. 3 **failed**: against the output-plus-length baseline the pooled
+interval also excludes zero. 4 held (granite moved by 0.04, upward). 5 held. 6 held (below).
+
+**Reading, by the rule set in the plan: supported.** Attention carries about 0.11 to 0.13
+of AUC beyond what the output shows about hidden ungrounded answers, pooled over three
+models. It is not explained by prompt length or by answers that open with a filler word.
+
+**What tempers it:**
+
+- The effect comes from Phi-4-mini and granite. Qwen's is small and its interval is wide.
+- Among questions the model already knows, the pooled interval includes zero and Qwen's
+  estimate is slightly negative. Some of the classifier's lead may be that it detects "the
+  model knows this answer", which goes with being ungrounded but is not the same thing.
+  With 12 to 22 hidden cases per model there, this is unresolved.
+- The size of the difference was known before this analysis was planned. Only its interval
+  and the checks were new.
+- An AUC of about 0.77 is still not an alarm. At the frozen threshold the classifier
+  catches 33 of 79 hidden cases with 80 false alarms in 946 grounded ones.
+
+### The leak, measured two ways
+
+| share of runs with the original answer still readable | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b |
+|---|---|---|---|
+| "memory" runs, strict rule (any word of any gold answer) | 122/214 (57%) | 106/171 (62%) | 112/205 (55%) |
+| "memory" runs, looser rule (whole answer, or its last word) | 116/214 (54%) | 103/171 (60%) | 107/205 (52%) |
+| passage-following runs, strict rule | 410/2218 (18%) | 462/2297 (20%) | 391/1989 (20%) |
+| "memory" runs where a whole gold answer survives | 16/214 (7%) | 19/171 (11%) | 20/205 (10%) |
+| "memory" runs where every word of the model's answer is in the passage | 83/214 (39%) | 82/171 (48%) | 51/205 (25%) |
+
+- The two rules agree, so the strict rule is not mostly discarding chance overlaps. Leftover
+  mentions are three times as common in "memory" runs as in passage-following runs.
+- **What survives is almost always part of the answer, usually a surname, not the whole
+  answer.** Longpre et al. state that all spans of the answer are replaced. That holds for
+  whole spans in about 90% of these runs. The later, shorter mentions are not replaced.
+- So the leak has two parts. In 25 to 48% of "memory" runs the model's answer could be read
+  outright from the substituted passage. In a further 14 to 30% a fragment was present and
+  the model completed the full name, which is recall prompted by the passage, not an answer
+  given against it. Neither is a clean case of memory overriding the passage.
+- How much this inflates a published number depends on the scorer. Ours accepts a lone
+  surname; a strict exact-match scorer would be affected less by the first part and equally
+  by the second.
+
+### Has the leak been reported?
+
+A web search (2026-11-22; seven queries, the dataset's discussion page, the original
+repository, and four papers read in whole or in most part) found nothing that counts
+leftover answer mentions in NQ-Swap or says its memory-reliance rates are inflated by them.
+The nearest are qualitative and about something else: Xie et al.
+([2305.13300](https://arxiv.org/abs/2305.13300)) criticise word-level substitution for
+producing incoherent passages. The original repository has issues disabled and the dataset
+card for `pminervini/NQ-Swap` is empty. We did not open every knowledge-conflict paper, and
+we did not regenerate the data from the original code to check that this copy matches it.
+So: not found, which is weaker than not reported.

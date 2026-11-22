@@ -67330,6 +67330,10 @@
    "memory": "106/171",
    "passage": "462/2297"
   },
+  "leaky_by_looser_rule": {
+   "memory": "103/171",
+   "passage": "375/2297"
+  },
   "hidden_after_known_closed_book": "23/34",
   "hidden_after_by_split": {
    "train": 15,

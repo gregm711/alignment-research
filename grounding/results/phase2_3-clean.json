@@ -55,6 +55,15 @@
     "caught_at_frozen_threshold": "29/58",
     "false_alarms_at_frozen_threshold": "82/923"
    },
+   "output plus length baseline": {
+    "auc": [
+     0.7846041767848471,
+     0.7313296222961109,
+     0.8329286061194755
+    ],
+    "caught_at_frozen_threshold": "24/58",
+    "false_alarms_at_frozen_threshold": "97/923"
+   },
    "output top probability": {
     "auc": [
      0.8001643815145515,
@@ -126,6 +135,15 @@
     "caught_at_frozen_threshold": "14/31",
     "false_alarms_at_frozen_threshold": "31/343"
    },
+   "output plus length baseline": {
+    "auc": [
+     0.6048151979685884,
+     0.5059719740430735,
+     0.69604062823286
+    ],
+    "caught_at_frozen_threshold": "3/31",
+    "false_alarms_at_frozen_threshold": "16/343"
+   },
    "output top probability": {
     "auc": [
      0.6286090473055582,
@@ -196,6 +214,15 @@
     ],
     "caught_at_frozen_threshold": "10/22",
     "false_alarms_at_frozen_threshold": "7/50"
+   },
+   "output plus length baseline": {
+    "auc": [
+     0.5609090909090909,
+     0.40545454545454546,
+     0.7072727272727273
+    ],
+    "caught_at_frozen_threshold": "3/22",
+    "false_alarms_at_frozen_threshold": "2/50"
    },
    "output top probability": {
     "auc": [
