@@ -1,6 +1,6 @@
 # Grounding: can internal access catch an answer that ignores its evidence?
 
-**Status: Phase 0 (the gate) is running.**
+**Status: Phase 0 passed on one model. Phase 1 is running.**
 
 ## The question
 
@@ -91,3 +91,77 @@ weight on the passage, and if that fails we stop.
 
 **What this will not show.** String matching miscounts paraphrased answers. "Would have said
 the same whatever the passage said" is established with one substituted passage, not many.
+
+### Result
+
+Raw data, every question and answer: [`results/gate.json`](results/gate.json). 600 questions.
+
+**A second scoring fix, made after reading the full outputs.** Word overlap credited "from
+memory" when the gold answer shared words with the question (the question asks about
+Guantanamo Bay, the gold answer is "Guantanamo Bay Naval Base", and any answer repeating
+the question matched). Gold words that already appear in the question are now ignored, and
+answers saying the passage does not contain the information are counted separately as
+abstentions. Both scorings are shown; the stricter one is what we use from here on.
+
+| | Qwen3-4B | Phi-4-mini |
+|---|---|---|
+| correct unaided | 122 | 109 |
+| correct with the original passage | 475 | 521 |
+| of those, with the substituted passage: follows the passage | 366 | 383 |
+| gives the original answer anyway (**hidden ungrounded**) | 17 (3.6%) | **50 (9.6%)** |
+| abstains | 57 | 7 |
+| other | 35 | 81 |
+| hidden ungrounded among questions it also knows unaided | 9 of 122 (7%) | **25 of 109 (23%)** |
+| (first scoring, for comparison: hidden ungrounded) | 30 | 54 |
+
+**Against the predictions as first written:** both narrowly missed. With the substituted
+passage Phi-4-mini gives the original answer on 8.5% of all questions (predicted 10%), and
+9.6% of its correct answers are hidden ungrounded (predicted 10%).
+
+**Against the gate as revised after the pilot:** passed on Phi-4-mini, failed on Qwen3-4B.
+Among questions Phi-4-mini knows unaided, 23% of correct answers do not depend on the
+passage, and the dataset's 1,349 eligible questions should yield about 110 hidden
+ungrounded answers. That count is close to the 100 we asked for, not comfortably above it.
+
+**What we see.** The two models differ in kind. Faced with a passage whose answer has been
+swapped, Qwen3-4B usually follows it or says the passage does not answer the question;
+Phi-4-mini more often just gives the answer it remembers. Many substitutions in this
+dataset are implausible (a person's name where a year belongs), so "ignoring the passage"
+is sometimes a reasonable reaction, and what we are labelling is "the answer did not depend
+on the passage", not "the model made an error of judgement".
+
+**Decision.** Continue to Phase 1 with Phi-4-mini only.
+
+## Phase 1: build the labelled set
+
+### Plan and predictions (written before running)
+
+**Model and prompt.** Phi-4-mini-instruct, the prompt used in Phase 0.
+
+**Stronger labels.** The dataset has several substituted passages for most questions. Each
+question is run with its original passage and with up to three different substitutions.
+
+- *Hidden ungrounded:* correct with the original passage, and gives the original answer on
+  at least half of the substitutions (and on at least one).
+- *Grounded:* correct with the original passage, and follows every substitution.
+- Everything else (abstentions, mixed, unscorable) is set aside and counted.
+
+**Split.** Questions are assigned to train or test by a hash of the question text, half each.
+
+**Recorded for later phases, in the same runs.** For the original-passage run and each
+substituted-passage run: how much of every attention head's attention, at the point where
+the answer begins, falls on the answer's location in the passage, on the passage as a
+whole, and on the question; and the model's confidence in its first answer token. Nothing
+is modified. Phases 2 and 3 can then be done offline at no GPU cost.
+
+**Stability check (the gate).** A second prompt wording on 300 questions. The gate is that
+at least 80% of questions labelled grounded or hidden ungrounded under both wordings get
+the same label.
+
+**Predictions.**
+
+1. At least 80 hidden ungrounded and 300 grounded questions.
+2. The stability gate passes.
+
+**What this will not show.** Labels still rest on string matching. A question labelled
+hidden ungrounded is one whose answer did not change under these particular substitutions.
