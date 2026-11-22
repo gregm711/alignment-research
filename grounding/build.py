@@ -71,7 +71,7 @@ def label(row):
 
 
 @app.function(image=image, gpu="L4", cpu=4, memory=32768, volumes={"/cache": vol}, timeout=170 * 60)
-def run(n: int):
+def run(n: int, model_name: str = MODEL):
     import time
     import torch, transformers
     from scoring import gives, outcome
@@ -80,13 +80,13 @@ def run(n: int):
     items = questions()
     pool = len(items)
     items = items[:n] if n else items
-    tok = transformers.AutoTokenizer.from_pretrained(MODEL)
-    model = transformers.AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16, device_map="cuda",
+    tok = transformers.AutoTokenizer.from_pretrained(model_name)
+    model = transformers.AutoModelForCausalLM.from_pretrained(model_name, dtype=torch.bfloat16, device_map="cuda",
                                                               attn_implementation="eager").eval()
     vol.commit()
 
     def templated(text):
-        return tok.apply_chat_template([{"role": "user", "content": text}], add_generation_prompt=True, tokenize=False)
+        return tok.apply_chat_template([{"role": "user", "content": text}], add_generation_prompt=True, tokenize=False, enable_thinking=False)
 
     def answer(ids):
         with torch.no_grad():
@@ -140,7 +140,7 @@ def run(n: int):
             row["label_wording_b"] = label(b)
         rows.append(row)
         if (k + 1) % 200 == 0:
-            torch.save({"rows": rows, "feats": torch.stack(feats)}, "/cache/phase1_partial.pt")
+            torch.save({"rows": rows, "feats": torch.stack(feats)}, f"/cache/phase1_partial_{model_name.split('/')[-1]}.pt")
             vol.commit()
             print(f"{k + 1}/{len(items)} questions, {(time.time() - t0) / 60:.1f} min", flush=True)
 
@@ -158,15 +158,15 @@ def run(n: int):
               + " ; ".join(f"{s['substituted_answer'][0][:14]!r}->{s['answer'][:18]!r} ({s['outcome']})" for s in r["subs"]))
     buf = io.BytesIO()
     torch.save(torch.stack(feats), buf)
-    return {"model": MODEL, "transformers": transformers.__version__, "summary": summary, "rows": rows,
+    return {"model": model_name, "transformers": transformers.__version__, "summary": summary, "rows": rows,
             "gpu_minutes": (time.time() - t0) / 60}, buf.getvalue()
 
 
 @app.local_entrypoint()
-def main(n: int = 0):
-    out, feats = run.remote(n)
+def main(n: int = 0, model: str = MODEL):
+    out, feats = run.remote(n, model)
     here = pathlib.Path(__file__).parent / "results"
-    tag = "phase1" if not n else "phase1-pilot"
+    tag = ("phase1" if not n else "phase1-pilot") + ("" if model == MODEL else "-" + model.split("/")[-1])
     (here / f"{tag}.json").write_text(json.dumps(out, indent=1))
     (here / f"{tag}_features.pt").write_bytes(feats)
     print("wrote", tag, "| gpu minutes", round(out["gpu_minutes"], 1))

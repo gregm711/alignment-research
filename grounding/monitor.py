@@ -6,6 +6,7 @@ and test on hidden ungrounded answers.
 import json
 import pathlib
 import random
+import sys
 
 import torch
 
@@ -31,8 +32,9 @@ def boot(pos, neg, n=2000):
 
 
 def main():
-    data = json.loads((HERE / "phase1.json").read_text())
-    F = torch.load(HERE / "phase1_features.pt", map_location="cpu").float()  # [runs, layers, heads, 3]
+    tag = "-" + sys.argv[1] if len(sys.argv) > 1 else ""  # e.g. python3 monitor.py Qwen2.5-7B-Instruct
+    data = json.loads((HERE / f"phase1{tag}.json").read_text())
+    F = torch.load(HERE / f"phase1{tag}_features.pt", map_location="cpu").float()  # [runs, layers, heads, 3]
     rows = data["rows"]
     L, H = F.shape[1:3]
 
@@ -106,7 +108,13 @@ def main():
     for name, known in (("phase3_hidden_on_test_questions", False), ("phase3_control_known_questions_only", True)):
         runs, y = orig_runs("test", known)
         out[name] = {"n": [int(y.sum()), int((1 - y).sum())], "monitors": evaluate(runs, y)}
-    (HERE / "phase2_3.json").write_text(json.dumps(out, indent=1))
+    med = lambda idx: float(F[idx, ev[0], ev[1], ANS].median()) if idx else float("nan")
+    te = [r for r in rows if r["split"] == "test"]
+    out["evidence_head_median_attention_on_answer_test"] = {
+        "grounded_original": med([r["original"]["feat"] for r in te if r["label"] == "grounded"]),
+        "hidden_ungrounded_original": med([r["original"]["feat"] for r in te if r["label"] == "hidden_ungrounded"]),
+        "hidden_ungrounded_substituted_gave_memory": med([x["feat"] for r in te if r["label"] == "hidden_ungrounded" for x in r["subs"] if x["outcome"] == "memory"])}
+    (HERE / f"phase2_3{tag}.json").write_text(json.dumps(out, indent=1))
 
     fmt = lambda v: f"{v[0]:.3f} [{v[1]:.3f}, {v[2]:.3f}]"
     print(f"fitted on {n_pos} visible ungrounded and {n_neg} passage-following runs from training questions")
@@ -117,6 +125,7 @@ def main():
         print(f"\n{title}  (n = {out[key]['n'][0]} vs {out[key]['n'][1]})")
         for name, m in out[key]["monitors"].items():
             print(f"  {name:<24} AUC {fmt(m['auc'])} | caught {m['caught_at_frozen_threshold']:>8} | false alarms {m['false_alarms_at_frozen_threshold']}")
+    print("\nevidence head, median attention on the answer (test):", {k: round(v, 3) for k, v in out["evidence_head_median_attention_on_answer_test"].items()})
 
 
 if __name__ == "__main__":

@@ -293,3 +293,36 @@ does not show that no internal signal exists: the classifier's 0.72 suggests a w
 is not comparable in kind to the Inkling result, where the hidden mistake was a different
 computation in the same run (reading the other row); here the run itself may be the same
 computation, and only the counterfactual differs.
+
+## Phase 4: does the collapse from visible to hidden replicate on other models?
+
+### Plan and predictions (written before running)
+
+**Scope.** Other models on the same dataset. We looked for a second public dataset with
+matched original and substituted passages and did not find one that loads; building our own
+substitutions is deferred. So this phase tests "another model", not "another dataset".
+
+**Choosing models, by behaviour only.** The Phase 0 gate (`gate.py`, 120 questions, shared
+scorer) on six candidates: Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3,
+Phi-3.5-mini-instruct, SmolLM3-3B, granite-3.3-2b-instruct, Qwen3-8B. We take the two with
+the highest rate of hidden ungrounded answers among correct answers, provided the rate is
+at least 6%, preferring models from different families. No internals are looked at to choose.
+
+**Then, unchanged.** `build.py` and `monitor.py` exactly as run on Phi-4-mini: same prompt,
+labels, split, monitors, thresholds and analysis.
+
+**Predictions, for each new model.**
+
+1. The evidence head separates visible ungrounded answers on test questions (AUC above 0.8).
+2. **The collapse replicates:** the evidence head's AUC on hidden ungrounded answers is at
+   least 0.15 lower than on visible ones, and its interval on hidden lies entirely below its
+   interval on visible.
+3. Output confidence is within 0.40 to 0.60 on hidden answers.
+4. The attention classifier is the best monitor on hidden answers and stays below 0.80.
+5. The exploratory observation becomes a prediction: on hidden ungrounded questions, the
+   evidence head's median attention on the answer in the original-passage run is at least
+   70% of its median on grounded questions.
+
+**What would change our mind.** If on a new model the frozen evidence head reaches 0.75 or
+more on hidden answers, the Phi-4-mini result is specific to that model and the collapse
+is not a general claim.

@@ -24,6 +24,7 @@ image = (
     modal.Image.debian_slim(python_version="3.12")
     .pip_install("torch", "transformers", "accelerate", "safetensors", "datasets", "pillow", "hf_transfer", "sentencepiece")
     .env({"HF_HOME": "/cache/hf", "HF_HUB_ENABLE_HF_TRANSFER": "1"})
+    .add_local_python_source("scoring")
 )
 
 
@@ -72,10 +73,11 @@ def sample(n, seed=0):
     return items[:n], len(items)
 
 
-@app.function(image=image, gpu="L4", cpu=4, memory=24576, volumes={"/cache": vol}, timeout=40 * 60)
-def run(n: int):
+@app.function(image=image, gpu="L4", cpu=4, memory=24576, volumes={"/cache": vol}, timeout=75 * 60)
+def run(n: int, models: list = None):
     import gc, time
     import torch, transformers
+    from scoring import gives, outcome
 
     t0 = time.time()
     items, pool = sample(n)
@@ -103,24 +105,28 @@ def run(n: int):
             sub = ask(WITH_PASSAGE.format(passage=it["substituted"], question=it["question"]))
             rows.append({"question": it["question"], "original_answer": it["original_answer"], "substituted_answer": it["substituted_answer"],
                          "closed_book": closed, "with_original": orig, "with_substituted": sub,
-                         "knows_closed_book": has(closed, it["original_answer"]),
-                         "correct_with_original": has(orig, it["original_answer"]),
-                         "substituted": which(sub, it["original_answer"], it["substituted_answer"])})
+                         "knows_closed_book": gives(closed, it["original_answer"], it["question"]),
+                         "correct_with_original": gives(orig, it["original_answer"], it["question"]),
+                         "substituted": outcome(sub, it["original_answer"], it["substituted_answer"], it["question"])})
         correct = [r for r in rows if r["correct_with_original"]]
         s = {"knows_closed_book": sum(r["knows_closed_book"] for r in rows),
              "correct_with_original": len(correct),
-             "with_substituted": {k: sum(r["substituted"] == k for r in rows) for k in ("passage", "memory", "both", "other")},
+             "with_substituted": {k: sum(r["substituted"] == k for r in rows) for k in ("passage", "memory", "both", "abstains", "other")},
              "hidden_ungrounded": sum(r["substituted"] == "memory" for r in correct),
              "grounded": sum(r["substituted"] == "passage" for r in correct),
-             "among_known_and_correct": {k: sum(r["substituted"] == k for r in correct if r["knows_closed_book"]) for k in ("passage", "memory", "both", "other")}}
+             "among_known_and_correct": {k: sum(r["substituted"] == k for r in correct if r["knows_closed_book"]) for k in ("passage", "memory", "both", "abstains", "other")}}
         print(f"\n=== {name} | n={len(rows)} | {s}", flush=True)
         for r in rows[:8]:
             print(f"   Q: {r['question'][:60]} | gold {r['original_answer'][0]!r} sub {r['substituted_answer'][0]!r} | closed {r['closed_book'][:30]!r} "
                   f"| orig {r['with_original'][:30]!r} | sub {r['with_substituted'][:30]!r} -> {r['substituted']}")
         return {"summary": s, "rows": rows}
 
-    for name in MODELS:
-        out["models"][name] = one_model(name)
+    for name in models or MODELS:
+        try:
+            out["models"][name] = one_model(name)
+        except Exception as e:  # a candidate that will not load is skipped, and recorded
+            out["models"][name] = {"error": repr(e)[:300]}
+            print(f"=== {name} FAILED {e!r}"[:300], flush=True)
         gc.collect(); torch.cuda.empty_cache()
     out["gpu_minutes"] = (time.time() - t0) / 60
     print(f"eligible questions in the dataset: {pool} | total {out['gpu_minutes']:.1f} min on GPU")
@@ -128,8 +134,8 @@ def run(n: int):
 
 
 @app.local_entrypoint()
-def main(n: int = 600):
-    out = run.remote(n)
-    name = "gate.json" if n >= 300 else "gate-pilot.json"
-    (pathlib.Path(__file__).parent / "results" / name).write_text(json.dumps(out, indent=1))
+def main(n: int = 600, models: str = "", out: str = ""):
+    res = run.remote(n, [m for m in models.split(",") if m] or None)
+    name = out or ("gate.json" if n >= 300 else "gate-pilot.json")
+    (pathlib.Path(__file__).parent / "results" / name).write_text(json.dumps(res, indent=1))
     print("wrote", name)

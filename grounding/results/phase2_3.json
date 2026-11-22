@@ -225,5 +225,10 @@
     "false_alarms_at_frozen_threshold": "3/68"
    }
   }
+ },
+ "evidence_head_median_attention_on_answer_test": {
+  "grounded_original": 0.224609375,
+  "hidden_ungrounded_original": 0.2001953125,
+  "hidden_ungrounded_substituted_gave_memory": 0.017974853515625
  }
 }
