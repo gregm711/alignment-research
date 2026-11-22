@@ -1,6 +1,6 @@
 # Jacobian lens on Inkling 2 Mini
 
-**Status:** the four questions below each have a first answer. Start with [`SUMMARY.md`](SUMMARY.md). See the [independent review](../notes/independent-review-2026-11-21.md) for replications and scoring corrections.
+**Status:** this file is the full experiment log, in the order things happened, including predictions that failed and claims later withdrawn. For the short version read [`NOTE.md`](NOTE.md) (the write-up) or [`SUMMARY.md`](SUMMARY.md) (one page on what held up).
 
 ## Question
 

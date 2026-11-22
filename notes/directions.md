@@ -13,6 +13,16 @@ oversight of this design; if it doesn't, that is worth saying too.
 The lens has already been applied to other looped models (see the experiment's README for the
 prior art). Our angle is this model's restart-and-message design and its variable-loop checkpoint.
 
+## 1b. The next bet after the Inkling work: belief against a document
+
+The lookup tables took the oversight question as far as they can: the model does not make
+confidently-right-for-the-wrong-reason mistakes there unprompted. A reviewer's proposal,
+which we think is right: a document-grounded question where the model has a strong default
+answer that can be measured before it sees the document. Give it a passage that sometimes
+agrees and sometimes conflicts. First establish, by editing the evidence, that the
+unmodified model gives enough correct-looking answers that do not depend on the passage.
+Only then evaluate a monitor. See [`../jlens-inkling/NOTE.md`](../jlens-inkling/NOTE.md).
+
 ## 2. A side-effects scorecard for abliterated models
 
 Abliterated and "uncensored" models have millions of downloads on Hugging Face and almost no
