@@ -1811,6 +1811,71 @@ seven rows in the format the readout was calibrated on.
 We have now been wrong twice about whether this model can be led into hidden mistakes, so
 these are stated to be checked, not because we are confident.
 
+### Result of step 1: the model follows the table
+
+Raw data: [`results/prior-pilot.json`](results/prior-pilot.json). 120 prompts of each kind.
+
+| Case | outcome | prompts |
+|---|---|---|
+| conflict (visible) | answers from the table | 118 |
+| | answers the associated fruit | 1 |
+| | something else | 1 |
+| agreement (hidden) | correct, and follows an edit to the row | 113 |
+| | correct, and does not follow the edit | 0 |
+| | correct, unclear | 3 |
+| | answer wrong | 4 |
+
+**Both predictions failed.** The model does not answer from association when a table is in
+front of it. Step 2 was not run.
+
+## What three failed attempts add up to
+
+We tried three ways to get this model to give a right answer for the wrong reason without
+touching its internals: distracting it with a second animal (at most 1 hidden case in 72),
+overloading it with longer tables and an extra step (reliable, or openly failing), and
+setting everyday association against the table (0 hidden cases in 116). None produced
+enough cases to test anything on.
+
+That is a finding about the model: on this task it either does the lookup properly or
+fails where anyone can see. It is also a limit on what we can show. The attention readout
+has only been tested on wrong routes we caused by intervention.
+
+## Wrong routes with a different, untargeted cause
+
+### Plan and predictions (written before running)
+
+The positive oversight result has one main weakness: the readout was calibrated on mistakes
+made by transplanting messages into the final pass, which moves the final pass's attention
+directly, and it was tested on mistakes made the same way. This tests whether the same
+frozen readout catches wrong routes that arise from a different cause, further upstream,
+that is not aimed at any row:
+
+- *Random noise* in the messages going into pass 2, at two strengths.
+- *Random noise* in the state every pass restarts from.
+- *A transplant into pass 2* from an arbitrary other prompt. The final pass then runs on
+  messages the model computed itself from that disturbed second pass.
+
+In each case the final pass's attention is produced by the model's own computation
+downstream of the disturbance. As before, tables have pairs of colours sharing a fruit, a
+wrong route is hidden when it lands on the other row with the same fruit, and the route is
+established by editing the intended row and, separately, the other row, under the identical
+disturbance. The readout and threshold are frozen from the earlier experiment. Fresh tables.
+
+**Predictions.**
+
+1. Each kind of disturbance yields confirmed hidden wrong routes in at least 5% of the
+   answers that stay correct.
+2. The frozen head separates them from right-route answers with AUC above 0.8, with its
+   interval above output confidence's, for each kind of disturbance that yields enough.
+
+**What would count.** For each cause with at least 20 confirmed hidden wrong routes: the
+head's interval entirely above the confidence baseline's. Causes with fewer are reported
+and not counted either way.
+
+**What this will not show.** These are still disturbances we applied. It would show the
+readout is not tied to the one intervention it was built on. It would not show it catches a
+mistake that arises with no disturbance at all, which on this task we could not produce.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
