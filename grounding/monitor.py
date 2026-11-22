@@ -101,7 +101,7 @@ def main():
         "output entropy": (lambda X, runs: torch.tensor([s["entropy"] for _, s in runs]), conf_thr["entropy"]),
     }
 
-    def evaluate(runs, y):
+    def evaluate(runs, y, F=F):
         X, res = F[[i for i, _ in runs]], {}
         for name, (fn, thr) in monitors.items():
             sc = fn(X, runs)
@@ -132,6 +132,20 @@ def main():
           "answer": r["original"]["answer"], **{name: v[i] for name, v in sc.items()}} for i, r in enumerate(kept)], indent=1))
 
     fmt = lambda v: f"{v[0]:.3f} [{v[1]:.3f}, {v[2]:.3f}]"
+    new = HERE / f"phase5{tag}.json"
+    if clean and new.exists():  # Phase 5: the same frozen monitors on new questions (all known unaided), nothing refitted
+        nrows = [r for r in json.loads(new.read_text())["rows"] if r["label"] in ("hidden_ungrounded", "grounded")]
+        NF = torch.load(HERE / f"phase5{tag}_features.pt", map_location="cpu").float()
+        runs, y = [(r["original"]["feat"], r["original"]) for r in nrows], torch.tensor([int(r["label"] == "hidden_ungrounded") for r in nrows])
+        res = evaluate(runs, y, NF)
+        sc = {name: fn(NF[[i for i, _ in runs]], runs).tolist() for name, (fn, _) in monitors.items()}
+        (HERE / f"phase3_scores{tag}-new.json").write_text(json.dumps(
+            [{"question": r["question"], "gold0": r["gold"][0], "hidden": r["label"] == "hidden_ungrounded", "known": True, "kind": r["kind"],
+              "answer": r["original"]["answer"], **{name: v[i] for name, v in sc.items()}} for i, r in enumerate(nrows)], indent=1))
+        (HERE / f"phase5_monitors{tag}.json").write_text(json.dumps({"n": [int(y.sum()), int((1 - y).sum())], "monitors": res}, indent=1))
+        print(f"\nPHASE 5  new known questions, hidden ungrounded vs grounded, frozen monitors  (n = {int(y.sum())} vs {int((1 - y).sum())})")
+        for name, m in res.items():
+            print(f"  {name:<28} AUC {fmt(m['auc'])} | caught {m['caught_at_frozen_threshold']:>8} | false alarms {m['false_alarms_at_frozen_threshold']}")
     print(f"fitted on {n_pos} visible ungrounded and {n_neg} passage-following runs from training questions")
     print(f"evidence head: layer {ev[0]} head {ev[1]} (train AUC {ev[2]:.3f}); passage head: layer {pa[0]} head {pa[1]} (train AUC {pa[2]:.3f})")
     for key, title in (("phase2_visible_on_test_questions", "PHASE 2  visible ungrounded vs passage-following, test questions"),

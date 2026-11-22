@@ -13,17 +13,9 @@ import pathlib
 import sys
 
 from build import label, questions
-from scoring import words
+from scoring import STOP, leaky, words
 
 HERE = pathlib.Path(__file__).parent / "results"
-STOP = {"of", "and", "in", "to", "for", "on", "at", "by", "or", "de", "jr", "st"}
-
-
-def leaky(golds, question, passage):
-    """Any word of any gold answer (beyond the question's own words) still appears in the substituted passage."""
-    seen, asked = set(words(passage)), set(words(question))
-    return any(w in seen for g in golds for w in set(words(g)) - asked - STOP)
-
 
 def leaky_loose(golds, question, passage):
     """Looser rule, for a lower bound: a whole gold answer, or the last word of a multi-word one, is still in the passage."""

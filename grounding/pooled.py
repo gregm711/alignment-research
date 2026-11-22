@@ -9,6 +9,7 @@ model, takes the AUC difference inside each model, and averages the three differ
 import json
 import pathlib
 import random
+import sys
 
 from monitor import auc
 from scoring import words
@@ -18,6 +19,7 @@ TAGS = {"Phi-4-mini": "", "Qwen2.5-7B": "-Qwen2.5-7B-Instruct", "granite-3.3-2b"
 FILLER = ("the", "a", "an", "according", "in", "it", "there", "based")  # same list as audit.py
 CLF, COMPARE = "attention classifier", ("output top probability", "output plus length baseline")
 DRAWS = 5000
+SET = "new" if "new" in sys.argv else "clean"  # python3 pooled.py new: Phase 5 questions, writes results/pooled-new.json
 
 
 def delta(rows, weights, other):
@@ -29,12 +31,14 @@ def delta(rows, weights, other):
 
 
 def main():
-    data = {m: json.loads((HERE / f"phase3_scores{t}-clean.json").read_text()) for m, t in TAGS.items()}
+    data = {m: json.loads((HERE / f"phase3_scores{t}-{SET}.json").read_text()) for m, t in TAGS.items()}
     for rows in data.values():
         for r in rows:
             r["cluster"] = " ".join(words(r["gold0"]))
             r["filler"] = (r["answer"].split() or [""])[0].lower().strip(",.") in FILLER
     subsets = {"all": lambda r: True, "no filler-word starts": lambda r: not r["filler"], "known closed-book only": lambda r: r["known"]}
+    if SET == "new":  # every Phase 5 question is known; split by kind of question instead
+        subsets = {"all": lambda r: True, "no filler-word starts": lambda r: not r["filler"], "who questions only": lambda r: r["kind"] == "who"}
     out = {}
     for sname, keep in subsets.items():
         sub = {m: [r for r in rows if keep(r)] for m, rows in data.items()}
@@ -61,7 +65,7 @@ def main():
             for k, v in res.items():
                 if k != "redrawn":
                     print(f"  {k:<16} {v[0]:+.3f} [{v[1]:+.3f}, {v[2]:+.3f}]")
-    (HERE / "pooled.json").write_text(json.dumps(out, indent=1))
+    (HERE / ("pooled-new.json" if SET == "new" else "pooled.json")).write_text(json.dumps(out, indent=1))
 
 
 if __name__ == "__main__":

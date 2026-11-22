@@ -617,3 +617,54 @@ producing incoherent passages. The original repository has issues disabled and t
 card for `pminervini/NQ-Swap` is empty. We did not open every knowledge-conflict paper, and
 we did not regenerate the data from the original code to check that this copy matches it.
 So: not found, which is weaker than not reported.
+
+## Phase 5: is it ungroundedness or known-ness? Plan (written before running)
+
+The pooled analysis left one thing open. Among questions the model already answers with no
+passage, the classifier's lead over output confidence was +0.06 [-0.08, +0.19], on 12 to 22
+hidden cases per model. If the classifier mainly detects "the model knows this answer", its
+lead should vanish when every question is one the model knows.
+
+**Why not more NQ-Swap.** We had planned to run more of it. It has only 1,667 distinct
+questions and Phases 1 to 4 used 1,462; the rest add about 10%. So we build new items.
+
+**New items** (`new_questions()` in `build.py`). From the Natural Questions training set
+(`lucadiliello/naturalquestionsshortqa`, 104,071 rows): who, when and where questions with
+a short answer and a passage of at most 250 words. The substitute is another question's
+answer of the same kind. Our substitution replaces every gold alias and, for names, each
+word of the name. A substituted passage is kept only if the strict leak rule finds no word
+of any gold answer in it, and a question is kept only with three such passages. Answers
+used in Phases 1 to 4 are excluded. This gives 5,550 questions (3,939 who, 1,329 when, 282
+where).
+
+**Runs.** For each model, ask each question with no passage; continue only if the answer is
+right; stop at 900 known questions. Same prompts, labels and recorded features as Phase 1.
+
+**Monitors are not refitted.** The classifier, the output-plus-length baseline and all
+thresholds stay as fitted on the cleaned NQ-Swap training half. The new questions are a
+fresh test set with a different substitution method, which is a harder test than before.
+
+**Measurement.** `python3 monitor.py TAG clean` then `python3 pooled.py new`: classifier
+minus top probability, and classifier minus the output-plus-length baseline, per model and
+pooled, with the same cluster bootstrap. Checks: without filler-word starts; who questions
+only.
+
+**How we will read it.** Ungroundedness beyond known-ness: the pooled interval for
+classifier minus top probability excludes zero and the difference against the second
+baseline is positive. Mostly known-ness: the pooled estimate is below +0.03 or its interval
+is centred near zero. Otherwise unresolved, and we say so.
+
+**Predictions:**
+
+1. Hidden cases per model: Phi-4-mini 60 to 120, Qwen 30 to 70, granite 45 to 100.
+2. Classifier AUC on these questions is between 0.62 and 0.75 in each model, lower than the
+   0.74 to 0.78 seen on all questions.
+3. Pooled classifier minus top probability is between +0.03 and +0.10, and its interval
+   excludes zero.
+4. Qwen's own difference is below +0.05.
+5. At the frozen threshold the classifier's false alarms on grounded runs exceed 15% in at
+   least one model, because the questions and substitutions changed.
+
+**Cost estimate.** About 25 minutes for Phi-4-mini and 50 each for the other two on an L4,
+about $2.50 with a pilot; each job has a 110-minute timeout. Approved by the author up to
+about $5, which takes the two projects to about $23.

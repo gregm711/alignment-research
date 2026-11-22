@@ -35,3 +35,12 @@ def outcome(answer, original, substituted, question):
         return "abstains"
     m, c = gives(answer, original, question), gives(answer, substituted, question)
     return "both" if m and c else "memory" if m else "passage" if c else "other"
+
+
+STOP = {"of", "and", "in", "to", "for", "on", "at", "by", "or", "de", "jr", "st"}
+
+
+def leaky(golds, question, passage):
+    """Any word of any gold answer (beyond the question's own words) still appears in the substituted passage."""
+    seen, asked = set(words(passage)), set(words(question))
+    return any(w in seen for g in golds for w in set(words(g)) - asked - STOP)

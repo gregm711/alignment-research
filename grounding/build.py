@@ -2,6 +2,7 @@
 
     modal run build.py --n 20      # pilot
     modal run build.py             # all eligible questions; writes results/phase1.json and results/phase1_features.pt
+    modal run build.py --known 900 # Phase 5: new questions the model knows unaided; writes results/phase5.json
 
 Nothing in the model is modified. See README.md, "Phase 1".
 """
@@ -59,6 +60,61 @@ def questions():
     return out
 
 
+def swap(passage, gold, new, names):
+    """Replace every mention of the answer: each gold alias whole, then (for names) each of its words."""
+    for g in sorted(gold, key=len, reverse=True):
+        passage = re.sub(re.escape(g), new, passage, flags=re.I)
+    if names:
+        for a, b in zip(gold[0].split(), new.split()):
+            if len(a) > 2:
+                passage = re.sub(rf"\b{re.escape(a)}\b", b, passage)
+    return passage
+
+
+def new_questions(limit=7000):
+    """Phase 5: conflict items built from the Natural Questions training set with our own substitution.
+    Who / when / where questions; the substitute is another question's answer of the same kind; a substituted
+    passage is kept only if no word of any gold answer survives in it. Answers already used in Phases 1-4 are excluded."""
+    import random
+    from datasets import load_dataset
+    from scoring import leaky, overlap, words
+
+    used = {" ".join(words(it["gold"][0])) for it in questions()}
+    cands, pool = {}, {"who": set(), "when": set(), "where": set()}
+    for r in load_dataset("lucadiliello/naturalquestionsshortqa", split="train"):
+        q, gold, orig = r["question"].strip(), list(r["answers"]), clean(r["context"])
+        a, first = gold[0], q.lower().split()[0]
+        if len(orig.split()) > 250 or max(len(g.split()) for g in gold) > 5 or a not in orig:
+            continue
+        cap = all(w[:1].isupper() for w in a.split()) and not re.search(r"\d", a)
+        kind = ("who" if first == "who" and cap and 2 <= len(a.split()) <= 3 else
+                "where" if first == "where" and cap and len(a.split()) <= 3 else
+                "when" if first == "when" and re.search(r"\b(1[0-9]|20)\d\d\b", a) else None)
+        if kind:
+            pool[kind].add(a)
+            if " ".join(words(a)) not in used:
+                cands.setdefault(q, {"question": q, "original": orig, "gold": gold, "kind": kind})
+    pool = {k: sorted(v) for k, v in pool.items()}
+    out = []
+    for it in sorted(cands.values(), key=lambda it: hashlib.md5(it["question"].encode()).hexdigest())[:limit]:
+        gold, a = it["gold"], it["gold"][0]
+        rng, subs = random.Random(it["question"]), []
+        for new in rng.sample(pool[it["kind"]], 15):
+            if (it["kind"] == "who" and len(new.split()) != len(a.split())) or overlap(new, gold, "") > 0 or overlap(" ".join(gold), [new], "") > 0:
+                continue
+            if set(words(new)) & set(words(it["original"])) or new in [s["answer"][0] for s in subs]:
+                continue  # the substitute must be new to the passage
+            sub = swap(it["original"], gold, new, it["kind"] == "who")
+            if new in sub and not leaky(gold, it["question"], sub):
+                subs.append({"passage": sub, "answer": [new], "span": [sub.find(new), sub.find(new) + len(new)]})
+            if len(subs) == MAX_SUBS:
+                break
+        if len(subs) == MAX_SUBS:
+            g0 = it["original"].find(a)
+            out.append({**it, "gold_span": [g0, g0 + len(a)], "subs": subs, "split": "new"})
+    return out
+
+
 def label(row):
     from collections import Counter
 
@@ -70,16 +126,17 @@ def label(row):
     return "grounded" if c["passage"] == len(row["subs"]) else "set_aside"
 
 
-@app.function(image=image, gpu="L4", cpu=4, memory=32768, volumes={"/cache": vol}, timeout=170 * 60)
-def run(n: int, model_name: str = MODEL):
+@app.function(image=image, gpu="L4", cpu=4, memory=32768, volumes={"/cache": vol}, timeout=110 * 60)
+def run(n: int, model_name: str = MODEL, known: int = 0):
     import time
     import torch, transformers
     from scoring import gives, outcome
 
     t0 = time.time()
-    items = questions()
+    items = new_questions() if known else questions()  # known > 0: Phase 5, stop after that many questions the model knows unaided
     pool = len(items)
     items = items[:n] if n else items
+    screened = 0
     tok = transformers.AutoTokenizer.from_pretrained(model_name)
     model = transformers.AutoModelForCausalLM.from_pretrained(model_name, dtype=torch.bfloat16, device_map="cuda",
                                                               attn_implementation="eager").eval()
@@ -123,6 +180,9 @@ def run(n: int, model_name: str = MODEL):
 
     for k, it in enumerate(items):
         closed = ask(CLOSED_BOOK, it["question"])["answer"]
+        screened += 1
+        if known and not gives(closed, it["gold"], it["question"]):
+            continue
         orig = keep(ask(WORDING_A, it["question"], it["original"], it["gold_span"], features=True))
         orig["correct"] = gives(orig["answer"], it["gold"], it["question"])
         subs = []
@@ -130,23 +190,25 @@ def run(n: int, model_name: str = MODEL):
             r = keep(ask(WORDING_A, it["question"], s["passage"], s["span"], features=True))
             r.update(substituted_answer=s["answer"], outcome=outcome(r["answer"], it["gold"], s["answer"], it["question"]))
             subs.append(r)
-        row = {"question": it["question"], "split": it["split"], "gold": it["gold"], "closed_book": closed,
+        row = {"question": it["question"], "split": it["split"], "kind": it.get("kind"), "gold": it["gold"], "closed_book": closed,
                "known_closed_book": gives(closed, it["gold"], it["question"]), "original": orig, "subs": subs}
         row["label"] = label(row)
-        if k < 300:  # stability check: the second wording, answers only
+        if k < 300 and not known:  # stability check: the second wording, answers only
             b_orig = ask(WORDING_B, it["question"], it["original"])["answer"]
             b = {"original": {"answer": b_orig, "correct": gives(b_orig, it["gold"], it["question"])},
                  "subs": [{"outcome": outcome(ask(WORDING_B, it["question"], s["passage"])["answer"], it["gold"], s["answer"], it["question"])} for s in it["subs"]]}
             row["label_wording_b"] = label(b)
         rows.append(row)
-        if (k + 1) % 200 == 0:
-            torch.save({"rows": rows, "feats": torch.stack(feats)}, f"/cache/phase1_partial_{model_name.split('/')[-1]}.pt")
+        if len(rows) % 100 == 0:
+            torch.save({"rows": rows, "feats": torch.stack(feats)}, f"/cache/phase{5 if known else 1}_partial_{model_name.split('/')[-1]}.pt")
             vol.commit()
-            print(f"{k + 1}/{len(items)} questions, {(time.time() - t0) / 60:.1f} min", flush=True)
+            print(f"{len(rows)} kept of {screened} asked ({len(items)} available), {(time.time() - t0) / 60:.1f} min", flush=True)
+        if known and len(rows) == known:
+            break
 
     count = lambda key, sub: {v: sum(r.get(key) == v for r in sub) for v in ("hidden_ungrounded", "grounded", "set_aside")}
     both = [r for r in rows if r.get("label_wording_b") in ("hidden_ungrounded", "grounded") and r["label"] in ("hidden_ungrounded", "grounded")]
-    summary = {"eligible_questions": pool, "run": len(rows), "labels": count("label", rows),
+    summary = {"eligible_questions": pool, "asked_closed_book": screened, "run": len(rows), "labels": count("label", rows),
                "labels_train": count("label", [r for r in rows if r["split"] == "train"]),
                "labels_test": count("label", [r for r in rows if r["split"] == "test"]),
                "known_closed_book": sum(r["known_closed_book"] for r in rows),
@@ -163,10 +225,10 @@ def run(n: int, model_name: str = MODEL):
 
 
 @app.local_entrypoint()
-def main(n: int = 0, model: str = MODEL):
-    out, feats = run.remote(n, model)
+def main(n: int = 0, model: str = MODEL, known: int = 0):
+    out, feats = run.remote(n, model, known)
     here = pathlib.Path(__file__).parent / "results"
-    tag = ("phase1" if not n else "phase1-pilot") + ("" if model == MODEL else "-" + model.split("/")[-1])
+    tag = ("phase5" if known >= 100 else "phase5-pilot" if known else "phase1" if not n else "phase1-pilot") + ("" if model == MODEL else "-" + model.split("/")[-1])
     (here / f"{tag}.json").write_text(json.dumps(out, indent=1))
     (here / f"{tag}_features.pt").write_bytes(feats)
     print("wrote", tag, "| gpu minutes", round(out["gpu_minutes"], 1))
