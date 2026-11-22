@@ -1876,6 +1876,31 @@ and not counted either way.
 readout is not tied to the one intervention it was built on. It would not show it catches a
 mistake that arises with no disturbance at all, which on this task we could not produce.
 
+### Pilot (two sets of tables per wording, 46 prompts per cause)
+
+Raw data: [`results/causes-pilot.json`](results/causes-pilot.json).
+
+| Cause | right route | hidden wrong route | unclear | answer wrong | right-route answers flagged |
+|---|---|---|---|---|---|
+| none | 45 | 0 | 1 | 0 | 6 of 45 |
+| noise in messages into pass 2, ×1 | 17 | 0 | 12 | 17 | 17 of 17 |
+| noise in messages into pass 2, ×2 | 0 | 0 | 7 | 39 | – |
+| noise in the restart state, ×2 | 3 | 1 | 16 | 26 | 3 of 3 |
+| transplant into pass 2 (donor a) | 8 | 2 | 9 | 27 | 6 of 8 |
+| transplant into pass 2 (donor b) | 5 | 1 | 7 | 33 | 5 of 5 |
+
+**What the pilot already shows.** Under every upstream disturbance the frozen threshold
+flags nearly all answers that are correct by the right route: 31 of 33, against 6 of 45
+with no disturbance. The readout's threshold does not carry over to wrong routes with a
+different cause; under these disturbances it behaves as a detector of "something upstream is
+off", not of the route. Hidden wrong routes were also too few to test (0 to 2 per cause).
+
+**Change of plan, made on these counts and before any larger run.** A full run of all
+causes would cost several dollars to reach 20 hidden wrong routes each. We run only the
+pass-2 transplant, the one cause with a usable rate, on 16 sets of tables per wording, to
+measure whether the head still *ranks* hidden wrong routes above right-route answers when
+its threshold has failed. The bar is unchanged: the head's interval above confidence's.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)

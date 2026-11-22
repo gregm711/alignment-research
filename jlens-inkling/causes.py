@@ -32,12 +32,13 @@ image = (
 
 
 @app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=70 * 60)
-def run(pilot: bool = False):
+def run(pilot: bool = False, causes: list[str] | None = None, n_groups: int = 0):
     import time
     import torch, transformers
     from huggingface_hub import model_info
     from oversight import groups
 
+    causes = causes or CAUSES
     t0 = time.time()
     tok = transformers.AutoTokenizer.from_pretrained(MODEL)
     hf = transformers.AutoModelForMultimodalLM.from_pretrained(MODEL, dtype=torch.bfloat16, device_map="cuda",
@@ -83,7 +84,7 @@ def run(pilot: bool = False):
 
     rows, rng, trial = [], random.Random(0), 0
     for wording, seed, n in SETS:
-        for items in groups(wording, seed, 2 if pilot else n):
+        for items in groups(wording, seed, 2 if pilot else (n_groups or n)):
             clean = {id(it): forward(it["prompt"], "record") for it in items}
             for it in items:
                 if it["other_row"] is None or clean[id(it)]["top"] != it["answer"]:
@@ -98,7 +99,7 @@ def run(pilot: bool = False):
                     spans.append([i for i, (x, y) in enumerate(offs) if x < a + len(entry) and y > a])
                 donors = [d for d in items if d["side"] != it["side"] and clean[id(d)]["n"] == clean[id(it)]["n"]]
                 picks = rng.sample(donors, 2) if len(donors) >= 2 else donors * 2
-                for cause in CAUSES:
+                for cause in causes:
                     trial += 1
                     kw = ({"mode": None} if cause == "none" else
                           {"mode": "noise_messages", "alpha": float(cause[-1]), "seed": trial} if cause.startswith("noise_messages") else
@@ -132,7 +133,7 @@ def run(pilot: bool = False):
         return [auc(pos, neg), vals[25], vals[975]]
 
     summary = {}
-    for cause in CAUSES:
+    for cause in causes:
         sub = [r for r in rows if r["cause"] == cause]
         routes = {k: sum(r["route"] == k for r in sub) for k in ("right_route", "wrong_route", "unclear", "answer_wrong")}
         wrong, right = [r for r in sub if r["route"] == "wrong_route"], [r for r in sub if r["route"] == "right_route"]
@@ -149,8 +150,8 @@ def run(pilot: bool = False):
 
 
 @app.local_entrypoint()
-def main(pilot: bool = False):
-    out = run.remote(pilot)
+def main(pilot: bool = False, causes: str = "", groups: int = 0):
+    out = run.remote(pilot, causes.split(",") if causes else None, groups)
     name = "causes-pilot.json" if pilot else "causes.json"
     (pathlib.Path(__file__).parent / "results" / name).write_text(json.dumps(out, indent=1))
     print("wrote", name)
