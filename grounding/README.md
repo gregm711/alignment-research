@@ -1,6 +1,6 @@
 # Grounding: can internal access catch an answer that ignores its evidence?
 
-**Status: Phases 0 to 4 done on three models, with a label audit. Half of the "from memory" answers were read from the passage. On cleaned labels, attention monitors sit a little above output confidence on hidden cases in all three models and clear the bar in none. Awaiting independent review.**
+**Status: Phases 0 to 4, a label audit and a pooled analysis done on three models. In about half of the "from memory" answers, part or all of the original answer was still in the passage. On cleaned labels, an attention classifier beats output-only baselines on hidden cases by about 0.11 AUC pooled over three models (interval excludes zero), but is not usable as an alarm, and the lead is unresolved among questions the model already knows.**
 
 ## The question
 
