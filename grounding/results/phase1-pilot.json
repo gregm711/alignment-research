@@ -1,0 +1,1018 @@
+{
+ "model": "microsoft/Phi-4-mini-instruct",
+ "transformers": "5.24.0",
+ "summary": {
+  "eligible_questions": 1462,
+  "run": 20,
+  "labels": {
+   "hidden_ungrounded": 3,
+   "grounded": 11,
+   "set_aside": 6
+  },
+  "labels_train": {
+   "hidden_ungrounded": 0,
+   "grounded": 8,
+   "set_aside": 2
+  },
+  "labels_test": {
+   "hidden_ungrounded": 3,
+   "grounded": 3,
+   "set_aside": 4
+  },
+  "known_closed_book": 2,
+  "stability": {
+   "labelled_under_both_wordings": 14,
+   "same_label": 13,
+   "wording_b_labels": {
+    "hidden_ungrounded": 2,
+    "grounded": 12,
+    "set_aside": 6
+   }
+  }
+ },
+ "rows": [
+  {
+   "question": "who does the voice of the gorilla in the movie sing",
+   "split": "train",
+   "gold": [
+    "Taron Egerton"
+   ],
+   "closed_book": "James Earl Jones",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Taron Egerton",
+    "p_top": 0.9979459643363953,
+    "margin": 0.9972372651100159,
+    "entropy": 0.02291501685976982,
+    "n_tokens": 59,
+    "n_answer_tokens": 4,
+    "feat": 0,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Melvil Dewey",
+     "p_top": 0.8710625171661377,
+     "margin": 0.8586374521255493,
+     "entropy": 1.0401225090026855,
+     "n_tokens": 59,
+     "n_answer_tokens": 4,
+     "feat": 1,
+     "substituted_answer": [
+      "Melvil Dewey"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when was the last time michigan basketball won the championship",
+   "split": "test",
+   "gold": [
+    "1989"
+   ],
+   "closed_book": "2018",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1989",
+    "p_top": 0.6507813334465027,
+    "margin": 0.5973619222640991,
+    "entropy": 1.750810146331787,
+    "n_tokens": 82,
+    "n_answer_tokens": 2,
+    "feat": 2,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1940",
+     "p_top": 0.4276021420955658,
+     "margin": 0.30509206652641296,
+     "entropy": 2.464132308959961,
+     "n_tokens": 82,
+     "n_answer_tokens": 2,
+     "feat": 3,
+     "substituted_answer": [
+      "1940"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who has the most followers on the instagram",
+   "split": "train",
+   "gold": [
+    "Selena Gomez"
+   ],
+   "closed_book": "Elon Musk",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Instagram's own account",
+    "p_top": 0.959613025188446,
+    "margin": 0.9370450973510742,
+    "entropy": 0.2608022391796112,
+    "n_tokens": 100,
+    "n_answer_tokens": 2,
+    "feat": 4,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Instagram's own account",
+     "p_top": 0.9592944383621216,
+     "margin": 0.9367340207099915,
+     "entropy": 0.2621074318885803,
+     "n_tokens": 100,
+     "n_answer_tokens": 2,
+     "feat": 5,
+     "substituted_answer": [
+      "Tyler Hilton"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "when does season 6 of the next step start",
+   "split": "test",
+   "gold": [
+    "2018"
+   ],
+   "closed_book": "Season 6 of Next Step starts on September 23, 2023.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "2018",
+    "p_top": 0.8460361361503601,
+    "margin": 0.7315375804901123,
+    "entropy": 0.6471659541130066,
+    "n_tokens": 88,
+    "n_answer_tokens": 2,
+    "feat": 6,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1989",
+     "p_top": 0.7227721810340881,
+     "margin": 0.6249555945396423,
+     "entropy": 1.1371582746505737,
+     "n_tokens": 88,
+     "n_answer_tokens": 2,
+     "feat": 7,
+     "substituted_answer": [
+      "1989"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "1954",
+     "p_top": 0.8751137852668762,
+     "margin": 0.8191696405410767,
+     "entropy": 0.6552997827529907,
+     "n_tokens": 88,
+     "n_answer_tokens": 2,
+     "feat": 8,
+     "substituted_answer": [
+      "1954"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "March 1",
+     "p_top": 0.9916452765464783,
+     "margin": 0.9884890913963318,
+     "entropy": 0.06987451761960983,
+     "n_tokens": 88,
+     "n_answer_tokens": 3,
+     "feat": 9,
+     "substituted_answer": [
+      "March 1"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "how many episodes of sabrina the teenage witch are there",
+   "split": "train",
+   "gold": [
+    "163"
+   ],
+   "closed_book": "There are 13 episodes of Sabrina the Teenage Witch.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "163 episodes",
+    "p_top": 0.9975546002388,
+    "margin": 0.9960548281669617,
+    "entropy": 0.022426599636673927,
+    "n_tokens": 104,
+    "n_answer_tokens": 1,
+    "feat": 10,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Nine episodes",
+     "p_top": 0.6899408102035522,
+     "margin": 0.5359941720962524,
+     "entropy": 0.9943212270736694,
+     "n_tokens": 103,
+     "n_answer_tokens": 1,
+     "feat": 11,
+     "substituted_answer": [
+      "nine"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "103 episodes",
+     "p_top": 0.9915438890457153,
+     "margin": 0.9848629236221313,
+     "entropy": 0.05941692739725113,
+     "n_tokens": 104,
+     "n_answer_tokens": 1,
+     "feat": 12,
+     "substituted_answer": [
+      "103"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Five",
+     "p_top": 0.46338486671447754,
+     "margin": 0.24449734389781952,
+     "entropy": 1.7782173156738281,
+     "n_tokens": 103,
+     "n_answer_tokens": 1,
+     "feat": 13,
+     "substituted_answer": [
+      "five"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who sang my bucket got a hole in it",
+   "split": "test",
+   "gold": [
+    "Hank Williams"
+   ],
+   "closed_book": "The Kid Larue",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Hank Williams",
+    "p_top": 0.9941587448120117,
+    "margin": 0.991694450378418,
+    "entropy": 0.05076567083597183,
+    "n_tokens": 81,
+    "n_answer_tokens": 2,
+    "feat": 14,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Clarence Williams",
+     "p_top": 0.6321223378181458,
+     "margin": 0.33352887630462646,
+     "entropy": 1.0979342460632324,
+     "n_tokens": 82,
+     "n_answer_tokens": 3,
+     "feat": 15,
+     "substituted_answer": [
+      "Alexandre Desplat"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "Christina Perri",
+     "p_top": 0.9901074171066284,
+     "margin": 0.9869561195373535,
+     "entropy": 0.08689077943563461,
+     "n_tokens": 82,
+     "n_answer_tokens": 3,
+     "feat": 16,
+     "substituted_answer": [
+      "Christina Perri"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "hidden_ungrounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when boy meets girl waiting for a star to fall",
+   "split": "train",
+   "gold": [
+    "1988"
+   ],
+   "closed_book": "A star falls.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1988",
+    "p_top": 0.9335654377937317,
+    "margin": 0.9053742289543152,
+    "entropy": 0.4275803565979004,
+    "n_tokens": 64,
+    "n_answer_tokens": 2,
+    "feat": 17,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1956",
+     "p_top": 0.9311968684196472,
+     "margin": 0.8950904607772827,
+     "entropy": 0.4246830344200134,
+     "n_tokens": 64,
+     "n_answer_tokens": 2,
+     "feat": 18,
+     "substituted_answer": [
+      "1956"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who plays faith on when calls the heart",
+   "split": "test",
+   "gold": [
+    "Andrea Brooks"
+   ],
+   "closed_book": "Faith Hill",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Faith Carter",
+    "p_top": 0.7394257187843323,
+    "margin": 0.5744374990463257,
+    "entropy": 1.0397398471832275,
+    "n_tokens": 261,
+    "n_answer_tokens": 2,
+    "feat": 19,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Shia LaBeouf as Faith Carter",
+     "p_top": 0.9267574548721313,
+     "margin": 0.8675118088722229,
+     "entropy": 0.34222397208213806,
+     "n_tokens": 264,
+     "n_answer_tokens": 5,
+     "feat": 20,
+     "substituted_answer": [
+      "Shia LaBeouf"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Matthias Schoenaerts as Faith Carter",
+     "p_top": 0.8650296926498413,
+     "margin": 0.7940237522125244,
+     "entropy": 0.6729109287261963,
+     "n_tokens": 263,
+     "n_answer_tokens": 4,
+     "feat": 21,
+     "substituted_answer": [
+      "Matthias Schoenaerts"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Terrell Owens as Faith Carter",
+     "p_top": 0.9509581327438354,
+     "margin": 0.944550633430481,
+     "entropy": 0.4619586169719696,
+     "n_tokens": 34,
+     "n_answer_tokens": 3,
+     "feat": 22,
+     "substituted_answer": [
+      "Terrell Owens"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "where do they film young and the restless",
+   "split": "test",
+   "gold": [
+    "CBS Television City"
+   ],
+   "closed_book": "New York City",
+   "known_closed_book": false,
+   "original": {
+    "answer": "CBS Television City, studios 41 and 43 in Hollywood",
+    "p_top": 0.829181432723999,
+    "margin": 0.8041422963142395,
+    "entropy": 1.0456633567810059,
+    "n_tokens": 283,
+    "n_answer_tokens": 3,
+    "feat": 23,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Supreme Court of Canada, studios 41 and 43 in Hollywood",
+     "p_top": 0.802657425403595,
+     "margin": 0.7626954913139343,
+     "entropy": 1.2010667324066162,
+     "n_tokens": 284,
+     "n_answer_tokens": 4,
+     "feat": 24,
+     "substituted_answer": [
+      "Supreme Court of Canada"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who sings she 's like the wind lyrics",
+   "split": "train",
+   "gold": [
+    "Patrick Swayze",
+    "Wendy Fraser"
+   ],
+   "closed_book": "Sia",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Patrick Swayze",
+    "p_top": 0.925717830657959,
+    "margin": 0.8796290755271912,
+    "entropy": 0.40647366642951965,
+    "n_tokens": 121,
+    "n_answer_tokens": 4,
+    "feat": 25,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Michael Sheen",
+     "p_top": 0.7762870192527771,
+     "margin": 0.6030739545822144,
+     "entropy": 0.790790855884552,
+     "n_tokens": 120,
+     "n_answer_tokens": 3,
+     "feat": 26,
+     "substituted_answer": [
+      "Michael Sheen"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Hugh S. Johnson",
+     "p_top": 0.9330543279647827,
+     "margin": 0.904878556728363,
+     "entropy": 0.40267664194107056,
+     "n_tokens": 121,
+     "n_answer_tokens": 4,
+     "feat": 27,
+     "substituted_answer": [
+      "Hugh S. Johnson"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "who played the virgin in conan the destroyer",
+   "split": "train",
+   "gold": [
+    "Olivia d'Abo"
+   ],
+   "closed_book": "Mia Dillon",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Olivia d'Abo",
+    "p_top": 0.953834056854248,
+    "margin": 0.9168499112129211,
+    "entropy": 0.23322543501853943,
+    "n_tokens": 202,
+    "n_answer_tokens": 4,
+    "feat": 28,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "William Blount",
+     "p_top": 0.9829128980636597,
+     "margin": 0.9688923954963684,
+     "entropy": 0.10690301656723022,
+     "n_tokens": 201,
+     "n_answer_tokens": 3,
+     "feat": 29,
+     "substituted_answer": [
+      "William Blount"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Marshall Sahlins",
+     "p_top": 0.793067216873169,
+     "margin": 0.6857372522354126,
+     "entropy": 0.9135664701461792,
+     "n_tokens": 202,
+     "n_answer_tokens": 4,
+     "feat": 30,
+     "substituted_answer": [
+      "Marshall Sahlins"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Bart Millard",
+     "p_top": 0.9906815886497498,
+     "margin": 0.9875284433364868,
+     "entropy": 0.08325304836034775,
+     "n_tokens": 201,
+     "n_answer_tokens": 3,
+     "feat": 31,
+     "substituted_answer": [
+      "Bart Millard"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "what flag is red and has a gold star",
+   "split": "train",
+   "gold": [
+    "Vietnam"
+   ],
+   "closed_book": "Star-Spangled Banner",
+   "known_closed_book": false,
+   "original": {
+    "answer": "The flag of Vietnam",
+    "p_top": 0.7600857615470886,
+    "margin": 0.5904877185821533,
+    "entropy": 0.8239650726318359,
+    "n_tokens": 108,
+    "n_answer_tokens": 1,
+    "feat": 32,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "The flag of Beverly, or \"red flag with a gold star\" (c\u1edd \u0111\u1ecf sao v\u00e0ng",
+     "p_top": 0.8862952589988708,
+     "margin": 0.82963627576828,
+     "entropy": 0.5473408699035645,
+     "n_tokens": 110,
+     "n_answer_tokens": 1,
+     "feat": 33,
+     "substituted_answer": [
+      "Beverly"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "when did toyota start making cars in the us",
+   "split": "train",
+   "gold": [
+    "1984"
+   ],
+   "closed_book": "1986",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1984",
+    "p_top": 0.1610710620880127,
+    "margin": 0.0356287956237793,
+    "entropy": 2.9602088928222656,
+    "n_tokens": 155,
+    "n_answer_tokens": 2,
+    "feat": 34,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1932",
+     "p_top": 0.7531198859214783,
+     "margin": 0.7156242728233337,
+     "entropy": 1.4080932140350342,
+     "n_tokens": 155,
+     "n_answer_tokens": 2,
+     "feat": 35,
+     "substituted_answer": [
+      "1932"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "1918",
+     "p_top": 0.6271343231201172,
+     "margin": 0.5610348582267761,
+     "entropy": 1.8657042980194092,
+     "n_tokens": 155,
+     "n_answer_tokens": 2,
+     "feat": 36,
+     "substituted_answer": [
+      "1918"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "what material was used to build the roofs of houses in burzahom",
+   "split": "test",
+   "gold": [
+    "birch"
+   ],
+   "closed_book": "Thatch",
+   "known_closed_book": false,
+   "original": {
+    "answer": "birch",
+    "p_top": 0.7517111897468567,
+    "margin": 0.5363423228263855,
+    "entropy": 0.7511375546455383,
+    "n_tokens": 278,
+    "n_answer_tokens": 2,
+    "feat": 37,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Roofing material from the Manley tree.",
+     "p_top": 0.2661779522895813,
+     "margin": 0.058878347277641296,
+     "entropy": 2.583534002304077,
+     "n_tokens": 278,
+     "n_answer_tokens": 2,
+     "feat": 38,
+     "substituted_answer": [
+      "Manley"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Roofing material from a tree species found in the excavated housing area.",
+     "p_top": 0.23148195445537567,
+     "margin": 0.05120362341403961,
+     "entropy": 2.732384204864502,
+     "n_tokens": 281,
+     "n_answer_tokens": 5,
+     "feat": 39,
+     "substituted_answer": [
+      "Wabanaki Confederacy"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Roofing material from the Strabo tree.",
+     "p_top": 0.26963010430336,
+     "margin": 0.05964195728302002,
+     "entropy": 2.6142401695251465,
+     "n_tokens": 278,
+     "n_answer_tokens": 2,
+     "feat": 40,
+     "substituted_answer": [
+      "Strabo"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who said that religion is the opiate of the masses",
+   "split": "train",
+   "gold": [
+    "Karl Marx"
+   ],
+   "closed_book": "Karl Marx",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Karl Marx",
+    "p_top": 0.9856123924255371,
+    "margin": 0.9746631979942322,
+    "entropy": 0.0935472622513771,
+    "n_tokens": 95,
+    "n_answer_tokens": 2,
+    "feat": 41,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Mara Jade",
+     "p_top": 0.7267625331878662,
+     "margin": 0.6284059286117554,
+     "entropy": 1.182934045791626,
+     "n_tokens": 95,
+     "n_answer_tokens": 2,
+     "feat": 42,
+     "substituted_answer": [
+      "Mara Jade"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded",
+   "label_wording_b": "grounded"
+  },
+  {
+   "question": "most passing yards by nfl qb in a game",
+   "split": "test",
+   "gold": [
+    "554"
+   ],
+   "closed_book": "Jared Goff (2018) with 432 yards in a game.",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Y.A. Tittle: 1962",
+    "p_top": 0.137996643781662,
+    "margin": 0.07281164079904556,
+    "entropy": 4.6553144454956055,
+    "n_tokens": 354,
+    "n_answer_tokens": 1,
+    "feat": 43,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "1,000 yards",
+     "p_top": 0.09616436064243317,
+     "margin": 0.0,
+     "entropy": 4.628232479095459,
+     "n_tokens": 355,
+     "n_answer_tokens": 2,
+     "feat": 44,
+     "substituted_answer": [
+      "1783"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "when was the last time miss texas won miss america",
+   "split": "train",
+   "gold": [
+    "1975"
+   ],
+   "closed_book": "2017",
+   "known_closed_book": false,
+   "original": {
+    "answer": "1975",
+    "p_top": 0.9823158383369446,
+    "margin": 0.9791893362998962,
+    "entropy": 0.1388663947582245,
+    "n_tokens": 456,
+    "n_answer_tokens": 2,
+    "feat": 45,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1971",
+     "p_top": 0.7460699081420898,
+     "margin": 0.6451003551483154,
+     "entropy": 1.081828236579895,
+     "n_tokens": 456,
+     "n_answer_tokens": 2,
+     "feat": 46,
+     "substituted_answer": [
+      "1881"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "1974",
+     "p_top": 0.741611123085022,
+     "margin": 0.5291359424591064,
+     "entropy": 0.8095318675041199,
+     "n_tokens": 456,
+     "n_answer_tokens": 2,
+     "feat": 47,
+     "substituted_answer": [
+      "1997"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "1970",
+     "p_top": 0.9614324569702148,
+     "margin": 0.9549543857574463,
+     "entropy": 0.2631168067455292,
+     "n_tokens": 456,
+     "n_answer_tokens": 2,
+     "feat": 48,
+     "substituted_answer": [
+      "1970"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "where is the tv show the curse of oak island filmed",
+   "split": "test",
+   "gold": [
+    "Oak Island"
+   ],
+   "closed_book": "Oak Island, Nova Scotia, Canada",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Oak Island",
+    "p_top": 0.4811367094516754,
+    "margin": 0.39752769470214844,
+    "entropy": 2.9702820777893066,
+    "n_tokens": 137,
+    "n_answer_tokens": 2,
+    "feat": 49,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Chennai",
+     "p_top": 0.6999253630638123,
+     "margin": 0.6650781631469727,
+     "entropy": 1.9372934103012085,
+     "n_tokens": 135,
+     "n_answer_tokens": 1,
+     "feat": 50,
+     "substituted_answer": [
+      "Chennai"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Liberia",
+     "p_top": 0.49469953775405884,
+     "margin": 0.4425585865974426,
+     "entropy": 3.0559356212615967,
+     "n_tokens": 135,
+     "n_answer_tokens": 1,
+     "feat": 51,
+     "substituted_answer": [
+      "Liberia"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside",
+   "label_wording_b": "set_aside"
+  },
+  {
+   "question": "who sings the song it ai n 't me",
+   "split": "test",
+   "gold": [
+    "Selena Gomez"
+   ],
+   "closed_book": "Adele",
+   "known_closed_book": false,
+   "original": {
+    "answer": "Selena Gomez",
+    "p_top": 0.9833176136016846,
+    "margin": 0.9766920804977417,
+    "entropy": 0.12410655617713928,
+    "n_tokens": 215,
+    "n_answer_tokens": 2,
+    "feat": 52,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Mariska Hargitay",
+     "p_top": 0.768499493598938,
+     "margin": 0.5483207106590271,
+     "entropy": 0.6173126697540283,
+     "n_tokens": 219,
+     "n_answer_tokens": 6,
+     "feat": 53,
+     "substituted_answer": [
+      "Mariska Hargitay"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Gomez",
+     "p_top": 0.7745535969734192,
+     "margin": 0.6017273664474487,
+     "entropy": 0.787155270576477,
+     "n_tokens": 215,
+     "n_answer_tokens": 2,
+     "feat": 54,
+     "substituted_answer": [
+      "Zhu Di"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "Gomez",
+     "p_top": 0.5437886714935303,
+     "margin": 0.12028563022613525,
+     "entropy": 0.9111238718032837,
+     "n_tokens": 215,
+     "n_answer_tokens": 2,
+     "feat": 55,
+     "substituted_answer": [
+      "Neil Young"
+     ],
+     "outcome": "memory"
+    }
+   ],
+   "label": "hidden_ungrounded",
+   "label_wording_b": "hidden_ungrounded"
+  },
+  {
+   "question": "who developed a set of postulates to prove that specific microorganisms cause disease",
+   "split": "test",
+   "gold": [
+    "Robert Koch",
+    "Friedrich Loeffler"
+   ],
+   "closed_book": "Robert Koch",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Robert Koch",
+    "p_top": 0.939400315284729,
+    "margin": 0.8926303386688232,
+    "entropy": 0.3061819076538086,
+    "n_tokens": 200,
+    "n_answer_tokens": 2,
+    "feat": 56,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Koch",
+     "p_top": 0.47683224081993103,
+     "margin": 0.18761888146400452,
+     "entropy": 1.686672329902649,
+     "n_tokens": 202,
+     "n_answer_tokens": 4,
+     "feat": 57,
+     "substituted_answer": [
+      "Teri Hatcher"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "Koch",
+     "p_top": 0.5232677459716797,
+     "margin": 0.2760935425758362,
+     "entropy": 1.4886841773986816,
+     "n_tokens": 196,
+     "n_answer_tokens": 1,
+     "feat": 58,
+     "substituted_answer": [
+      "Lynn"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "Bing Russell and Bing Russell",
+     "p_top": 0.7106888890266418,
+     "margin": 0.5070731043815613,
+     "entropy": 1.084987998008728,
+     "n_tokens": 198,
+     "n_answer_tokens": 2,
+     "feat": 59,
+     "substituted_answer": [
+      "Bing Russell"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "hidden_ungrounded",
+   "label_wording_b": "hidden_ungrounded"
+  }
+ ],
+ "gpu_minutes": 1.1664663513501485
+}

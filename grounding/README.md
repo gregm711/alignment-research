@@ -163,5 +163,10 @@ the same label.
 1. At least 80 hidden ungrounded and 300 grounded questions.
 2. The stability gate passes.
 
+**A third scoring fix, from the 20-question pilot, before the full run.** Half a name
+matched: "Clarence Williams", a different person named in the passage, was credited as the
+remembered answer "Hank Williams". An answer now has to contain every word of the gold
+answer beyond those in the question, or be a single word equal to its last word.
+
 **What this will not show.** Labels still rest on string matching. A question labelled
 hidden ungrounded is one whose answer did not change under these particular substitutions.
