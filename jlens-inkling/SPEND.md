@@ -39,5 +39,6 @@ Estimates only. Cost is GPU minutes times an assumed all-in rate of about $3.10 
 | 2026-11-21 | Front / end / token-position transplant, released model | 1.3 | $0.07 | $12.10 |
 | 2026-11-21 | Spontaneous wrong routes and readout false alarms on unmodified runs | 3.4 | $0.18 | $12.28 |
 | 2026-11-22 | Pilot of distracting wordings (no wrong routes produced) | 7.9 | $0.41 | $12.69 |
+| 2026-11-22 | Pilot of harder lookup conditions (no usable wrong routes) | 2.6 | $0.13 | $12.82 |
 
 Budget: stop and ask at $20 total, or before any single run projected above $5.

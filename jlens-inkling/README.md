@@ -1763,6 +1763,54 @@ prompts each, to find one where confirmed wrong-route correct answers are common
 Longer tables and an extra table change the format, and the frozen threshold's false-alarm
 rate may not carry over. We report it as it comes out and do not refit.
 
+### Result of step 1: reliable, or openly failing, with nothing in between
+
+Raw data: [`results/hard-pilot.json`](results/hard-pilot.json). 60 prompts per condition.
+
+| Condition | right route | wrong route | unclear | answer wrong | readout flags on right-route |
+|---|---|---|---|---|---|
+| two steps, 7 rows | 56 | 0 | 3 | 1 | 4 of 56 |
+| two steps, 12 rows | 55 | 1 | 3 | 1 | 6 of 55 |
+| three steps, 7 rows | 7 | 0 | 7 | 46 | 7 of 7 |
+| three steps, 12 rows | 3 | 0 | 8 | 49 | 3 of 3 |
+
+**Prediction 1 failed again.** With two steps the model stays reliable even at twelve rows.
+With three steps it fails openly: most answers are a blank or a full stop, not a fruit, and
+its confidence is low (median 0.16 against 0.70). Those failures need no internal readout.
+There is no regime here where the model is confidently right for the wrong reason.
+
+**The readout does not carry over to the three-step format.** It flags every correct
+answer there. It was calibrated on two-step prompts and we did not refit it.
+
+Step 2 was not run.
+
+## Mistakes the model makes unprompted, third approach: belief against evidence
+
+### Plan and predictions (written before running)
+
+A more realistic shortcut than a slip: answering from what the model already associates
+instead of from the table. Some colour and fruit pairs carry a strong everyday association
+(red and apple, green and lime, purple and grape, brown and date, black and olive).
+
+- *Visible case (conflict).* The table gives such a colour a different fruit, and the
+  associated fruit sits on another row. Answering with the associated fruit is a visible error.
+- *Hidden case (agreement).* The table gives the colour its associated fruit. The answer is
+  right either way. Editing that row to a different fruit shows whether the model was
+  reading it: if the answer does not follow the edit, it was answering from association.
+
+**Step 1, a pilot:** how often each happens, on about 120 prompts each, two-step tables of
+seven rows in the format the readout was calibrated on.
+
+**Step 2,** if hidden cases are common enough: fresh tables, frozen readout unchanged.
+
+**Predictions.**
+
+1. In the conflict case the model gives the associated fruit on at least 5% of prompts.
+2. In the agreement case at least 5% of correct answers do not follow the edit.
+
+We have now been wrong twice about whether this model can be led into hidden mistakes, so
+these are stated to be checked, not because we are confident.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
