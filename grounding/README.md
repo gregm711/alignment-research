@@ -1,6 +1,6 @@
 # Grounding: can internal access catch an answer that ignores its evidence?
 
-**Status: Phase 0 passed on one model. Phase 1 is running.**
+**Status: Phases 0 to 3 done on one model. The frozen single-head monitors failed the pre-registered bar. Awaiting independent review.**
 
 ## The question
 
@@ -171,6 +171,23 @@ answer beyond those in the question, or be a single word equal to its last word.
 **What this will not show.** Labels still rest on string matching. A question labelled
 hidden ungrounded is one whose answer did not change under these particular substitutions.
 
+### Result (Phase 1)
+
+[`results/phase1.json`](results/phase1.json) holds every question, answer and label. The
+attention features (`results/phase1_features.pt`, 22 MB) are not in git; `build.py`
+regenerates them in about 35 GPU minutes.
+
+| | all | train | test |
+|---|---|---|---|
+| hidden ungrounded | 100 | 54 | 46 |
+| grounded | 773 | 400 | 373 |
+| set aside | 589 | 288 | 301 |
+
+Prediction 1 held (at least 80 and 300). Prediction 2 held: of 145 questions labelled under
+both wordings, 141 (97%) got the same label. 56 of the 100 hidden ungrounded questions are
+ones the model answers correctly with no passage; the other 44 it does not recall unaided
+yet still prefers over the substituted answer.
+
 ## Phases 2 and 3: monitors, calibrated on what an overseer can see
 
 ### Plan, predictions and bars (written while Phase 1 was still running, before any of its data existed)
@@ -223,3 +240,56 @@ where both groups know the answer and differ only in whether they used the passa
 **What this will not show.** One model, one dataset, one prompt. Labels by string matching.
 Many substituted passages are implausible, so "did not depend on the passage" is established
 against an implausible alternative.
+
+### Result (Phases 2 and 3)
+
+[`results/phase2_3.json`](results/phase2_3.json). Fitted on 109 visible ungrounded and
+1,138 passage-following runs from training questions. Evidence head: layer 20, head 15.
+Intervals are bootstraps over runs (Phase 2 has up to three runs per question, so its
+intervals are somewhat too narrow; Phase 3 has one run per question).
+
+| Monitor | Phase 2: visible, test questions (105 vs 1,080) | Phase 3: hidden, test questions (46 vs 373) | Control: known questions only (26 vs 68) |
+|---|---|---|---|
+| evidence head | **0.88** [0.85, 0.91] | 0.58 [0.49, 0.66] | 0.53 [0.40, 0.65] |
+| passage head | 0.80 [0.75, 0.84] | 0.61 [0.52, 0.69] | 0.61 [0.49, 0.73] |
+| all-heads average | 0.85 [0.82, 0.89] | 0.64 [0.55, 0.73] | 0.56 [0.44, 0.69] |
+| attention classifier | 0.84 [0.79, 0.88] | **0.72** [0.64, 0.80] | 0.66 [0.53, 0.79] |
+| output top probability | 0.77 [0.73, 0.81] | 0.50 [0.41, 0.59] | 0.49 [0.36, 0.60] |
+
+At the frozen thresholds on Phase 3: the evidence head catches 9 of 46 hidden ungrounded
+answers with 32 of 373 false alarms; the attention classifier catches 17 of 46 with 42 of 373.
+
+**Against the predictions.**
+
+1. Phase 2 gate: passed (0.88 against a bar of 0.8).
+2. Evidence head beats top-token probability on hidden answers: **failed.** 0.58 against
+   0.50, intervals overlap, and the head's interval includes chance. The passage head also
+   fails the bar. Both named comparisons failed.
+3. Confidence is a strong baseline here: **wrong.** It is at chance on hidden answers. It
+   does work on visible ones (0.77).
+4. The frozen threshold's false-alarm rate will drift: **wrong.** Set for 10%, it gave 9 to
+   11% on test.
+
+**What we see.** A head that separates visible ungrounded answers at 0.88 is close to
+chance on hidden ones. The only monitor clearly above confidence on hidden answers is the
+many-head classifier (0.72), which was not one of the two comparisons we named, and its
+advantage is not established on the known-questions control (intervals overlap).
+
+**An exploratory look at why (not pre-registered).** Median attention of the evidence head
+on the answer's location, test questions:
+
+| | original passage | substituted passage |
+|---|---|---|
+| grounded questions | 0.23 | 0.19 (followed the passage) |
+| hidden ungrounded questions | 0.20 | 0.02 when it gave the remembered answer; 0.09 when it followed |
+
+On the questions where the model will ignore a conflicting passage, it still looks at the
+evidence when the passage agrees with it. The head reports what the model is doing in this
+run. "Would have said the same whatever the passage said" is a fact about a different run,
+and this head mostly does not carry it.
+
+**What this does not show.** One model, one dataset, one prompt, 46 hidden test cases. It
+does not show that no internal signal exists: the classifier's 0.72 suggests a weak one. It
+is not comparable in kind to the Inkling result, where the hidden mistake was a different
+computation in the same run (reading the other row); here the run itself may be the same
+computation, and only the counterfactual differs.
