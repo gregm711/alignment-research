@@ -65,8 +65,14 @@ real questions from Natural Questions with the original passage and a passage in
 answer has been swapped for another. 300 distinct questions, sampled with a fixed seed from
 those with short answers and passages under 250 words.
 
-**Models.** Qwen3.5-2B and Qwen3.5-4B (Apache 2.0), small enough to be cheap and, we
-expect, more inclined to answer from memory than a large model.
+**Models.** Qwen3-4B-Instruct-2507 (Apache 2.0) and Phi-4-mini-instruct (MIT): small enough
+to be cheap and, we expect, more inclined to answer from memory than a large model. Both are
+ordinary transformers with standard attention.
+
+*Changed before any results:* the plan first named Qwen3.5-2B and Qwen3.5-4B. A pilot was
+stopped during its first model because Qwen3.5 uses linear-attention layers, which have no
+attention map for a later monitor to read and ran very slowly on fallback code. No outputs
+from it were looked at.
 
 **Measurement.** Three prompts per question, short greedy answers: the question alone; with
 the original passage; with the substituted passage. Answers are scored by whether they

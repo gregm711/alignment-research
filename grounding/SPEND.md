@@ -5,6 +5,7 @@ Estimates only: GPU minutes times an assumed all-in rate for the GPU used on Mod
 
 | Date | Run | GPU | Minutes | Est. cost | Running total |
 |---|---|---|---|---|---|
+| 2026-11-22 | Gate pilot on Qwen3.5 (stopped: unsuitable architecture, no outputs used) | L4 | ~10 | $0.17 | $0.17 |
 
 Assumed cap for this project: $11. The Inkling project's ledger is separate
 ([`../jlens-inkling/SPEND.md`](../jlens-inkling/SPEND.md), $14.10).

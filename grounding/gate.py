@@ -1,7 +1,7 @@
 """Phase 0, the gate: how often does a model answer from memory when a passage is supplied?
 
     modal run gate.py --n 20      # pilot: read the raw outputs
-    modal run gate.py             # 300 questions, two models; writes results/gate.json
+    modal run gate.py             # 600 questions, two models; writes results/gate.json
 
 No internals are read or modified. See README.md for definitions.
 """
@@ -12,7 +12,9 @@ import string
 
 import modal
 
-MODELS = ["Qwen/Qwen3.5-2B", "Qwen/Qwen3.5-4B"]
+# Standard softmax-attention models. (Qwen3.5 was tried first and dropped before any results: it uses
+# linear-attention layers, which have no attention map for a monitor to read and ran very slowly here.)
+MODELS = ["Qwen/Qwen3-4B-Instruct-2507", "microsoft/Phi-4-mini-instruct"]
 WITH_PASSAGE = "Passage: {passage}\n\nQuestion: {question}?\nAnswer with just the answer, using the passage."
 CLOSED_BOOK = "Question: {question}?\nAnswer with just the answer."
 
@@ -30,9 +32,20 @@ def norm(s):
     return " ".join(w for w in s.split() if w not in ("a", "an", "the"))
 
 
+def overlap(answer_text, golds):
+    """Largest share of a gold answer's words that appear in the model's answer (so "Koch" counts toward "Robert Koch")."""
+    said = set(norm(answer_text).split())
+    return max((len(set(norm(g).split()) & said) / len(set(norm(g).split())) for g in golds if norm(g)), default=0.0)
+
+
 def has(answer_text, golds):
-    a = f" {norm(answer_text)} "
-    return any(f" {norm(g)} " in a for g in golds if norm(g))
+    return overlap(answer_text, golds) >= 0.5
+
+
+def which(answer_text, original, substituted):
+    """Does an answer given the substituted passage come from memory, from the passage, both or neither?"""
+    m, c = overlap(answer_text, original), overlap(answer_text, substituted)
+    return "memory" if m >= 0.5 and c == 0 else "passage" if c >= 0.5 and m == 0 else "both" if m >= 0.5 and c >= 0.5 else "other"
 
 
 def clean(passage):
@@ -51,8 +64,8 @@ def sample(n, seed=0):
         seen.add(q)
         if max(len(a.split()) for a in r["org_answer"]) > 5 or len(r["org_context"].split()) > 250:
             continue
-        if has(" ".join(r["sub_answer"]), r["org_answer"]) or has(" ".join(r["org_answer"]), r["sub_answer"]):
-            continue  # the two answers must be distinguishable by string
+        if overlap(" ".join(r["sub_answer"]), r["org_answer"]) > 0 or overlap(" ".join(r["org_answer"]), r["sub_answer"]) > 0:
+            continue  # the two answers must share no words, so one cannot be mistaken for the other
         items.append({"question": q, "original": clean(r["org_context"]), "substituted": clean(r["sub_context"]),
                       "original_answer": r["org_answer"], "substituted_answer": r["sub_answer"]})
     random.Random(seed).shuffle(items)
@@ -88,19 +101,18 @@ def run(n: int):
             closed = ask(CLOSED_BOOK.format(question=it["question"]))
             orig = ask(WITH_PASSAGE.format(passage=it["original"], question=it["question"]))
             sub = ask(WITH_PASSAGE.format(passage=it["substituted"], question=it["question"]))
-            mem, ctx = has(sub, it["original_answer"]), has(sub, it["substituted_answer"])
             rows.append({"question": it["question"], "original_answer": it["original_answer"], "substituted_answer": it["substituted_answer"],
                          "closed_book": closed, "with_original": orig, "with_substituted": sub,
                          "knows_closed_book": has(closed, it["original_answer"]),
                          "correct_with_original": has(orig, it["original_answer"]),
-                         "substituted": "both" if mem and ctx else "memory" if mem else "passage" if ctx else "other"})
+                         "substituted": which(sub, it["original_answer"], it["substituted_answer"])})
         correct = [r for r in rows if r["correct_with_original"]]
         s = {"knows_closed_book": sum(r["knows_closed_book"] for r in rows),
              "correct_with_original": len(correct),
              "with_substituted": {k: sum(r["substituted"] == k for r in rows) for k in ("passage", "memory", "both", "other")},
              "hidden_ungrounded": sum(r["substituted"] == "memory" for r in correct),
              "grounded": sum(r["substituted"] == "passage" for r in correct),
-             "hidden_ungrounded_among_known": f"{sum(r['substituted'] == 'memory' for r in correct if r['knows_closed_book'])}/{sum(r['knows_closed_book'] for r in correct)}"}
+             "among_known_and_correct": {k: sum(r["substituted"] == k for r in correct if r["knows_closed_book"]) for k in ("passage", "memory", "both", "other")}}
         print(f"\n=== {name} | n={len(rows)} | {s}", flush=True)
         for r in rows[:8]:
             print(f"   Q: {r['question'][:60]} | gold {r['original_answer'][0]!r} sub {r['substituted_answer'][0]!r} | closed {r['closed_book'][:30]!r} "
@@ -116,7 +128,7 @@ def run(n: int):
 
 
 @app.local_entrypoint()
-def main(n: int = 300):
+def main(n: int = 600):
     out = run.remote(n)
     name = "gate.json" if n >= 300 else "gate-pilot.json"
     (pathlib.Path(__file__).parent / "results" / name).write_text(json.dumps(out, indent=1))

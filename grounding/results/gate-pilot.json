@@ -1,0 +1,662 @@
+{
+ "n": 20,
+ "pool_of_eligible_questions": 1354,
+ "transformers": "5.24.0",
+ "models": {
+  "Qwen/Qwen3-4B-Instruct-2507": {
+   "summary": {
+    "knows_closed_book": 5,
+    "correct_with_original": 15,
+    "with_substituted": {
+     "passage": 12,
+     "memory": 0,
+     "both": 0,
+     "other": 8
+    },
+    "hidden_ungrounded": 0,
+    "grounded": 12,
+    "hidden_ungrounded_among_known": "0/5"
+   },
+   "rows": [
+    {
+     "question": "who developed a set of postulates to prove that specific microorganisms cause disease",
+     "original_answer": [
+      "Robert Koch",
+      "Friedrich Loeffler"
+     ],
+     "substituted_answer": [
+      "Teri Hatcher"
+     ],
+     "closed_book": "Robert Koch",
+     "with_original": "Robert Koch and Friedrich Loeffler",
+     "with_substituted": "Koch developed a set of postulates to prove that specific microorganisms cause disease.",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "other"
+    },
+    {
+     "question": "when was the seat moved to the capitol",
+     "original_answer": [
+      "1800"
+     ],
+     "substituted_answer": [
+      "1,000"
+     ],
+     "closed_book": "1819",
+     "with_original": "The passage does not provide information about when the seat was moved to the Capitol.",
+     "with_substituted": "The passage does not provide information about when the seat was moved to the Capitol.",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "when was the rock and roll hall of fame built in cleveland",
+     "original_answer": [
+      "1995"
+     ],
+     "substituted_answer": [
+      "1987"
+     ],
+     "closed_book": "The Rock and Roll Hall of Fame in Cleveland was opened on October 10, 1995.",
+     "with_original": "The Rock and Roll Hall of Fame opened in September 1995.",
+     "with_substituted": "The Rock and Roll Hall of Fame opened in September 1987.",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who sings i will go down with this ship",
+     "original_answer": [
+      "Dido"
+     ],
+     "substituted_answer": [
+      "Pat McCormick"
+     ],
+     "closed_book": "The song \"I Will Go Down with This Ship\" is sung by **The Supremes**.",
+     "with_original": "The passage does not mention who sings \"I will go down with this ship.\"",
+     "with_substituted": "The passage does not mention who sings \"I will go down with this ship.\"",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "who did kenny rogers sing mary did you know with",
+     "original_answer": [
+      "Wynonna Judd"
+     ],
+     "substituted_answer": [
+      "Selena Gomez"
+     ],
+     "closed_book": "Kenny Rogers sang \"Mary Did You Know?\" with Brenda Lee.",
+     "with_original": "Wynonna Judd",
+     "with_substituted": "Selena Gomez",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who has the highest paid contract in the nba",
+     "original_answer": [
+      "Stephen Curry"
+     ],
+     "substituted_answer": [
+      "Kyle Busch"
+     ],
+     "closed_book": "As of the most recent data available in 2024, the highest-paid player in the NBA is Giannis",
+     "with_original": "Stephen Curry",
+     "with_substituted": "Kyle Busch",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who played forrest gumps mother in the 1994 film",
+     "original_answer": [
+      "Sally Field"
+     ],
+     "substituted_answer": [
+      "Barry Pepper"
+     ],
+     "closed_book": "Robin Wright Nielsen",
+     "with_original": "Sally Field",
+     "with_substituted": "Barry Pepper",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who played in the stanley cup finals last year",
+     "original_answer": [
+      "Pittsburgh Penguins",
+      "Nashville Predators"
+     ],
+     "substituted_answer": [
+      "the Four Seasons"
+     ],
+     "closed_book": "The Tampa Bay Lightning played in the Stanley Cup Finals last year. They won the series against the Boston Bruins.",
+     "with_original": "The Pittsburgh Penguins and the Nashville Predators.",
+     "with_substituted": "The Four Seasons played in the Stanley Cup Finals last year.",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "where was part of the classic surfing movie endless summer filmed",
+     "original_answer": [
+      "Australia",
+      "New Zealand",
+      "Tahiti",
+      "Hawaii",
+      "Senegal",
+      "Ghana",
+      "Nigeria",
+      "South Africa"
+     ],
+     "substituted_answer": [
+      "Meghalaya"
+     ],
+     "closed_book": "Hawaii",
+     "with_original": "Australia, New Zealand, Tahiti, Hawaii, Senegal, Ghana, Nigeria and South Africa",
+     "with_substituted": "Meghalaya",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who has won the 2018 formula one australia grand prix tournament",
+     "original_answer": [
+      "Sebastian Vettel"
+     ],
+     "substituted_answer": [
+      "Noah Schnapp"
+     ],
+     "closed_book": "Max Verstappen",
+     "with_original": "Sebastian Vettel",
+     "with_substituted": "Vettel",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "other"
+    },
+    {
+     "question": "when did india win their first cricket match",
+     "original_answer": [
+      "1952"
+     ],
+     "substituted_answer": [
+      "2009"
+     ],
+     "closed_book": "India won their first cricket match on March 10, 1932, against a touring English side in",
+     "with_original": "India recorded their first Test victory in 1952.",
+     "with_substituted": "The passage does not provide information about when India won their first cricket match. It only mentions their first Test victory in",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "other"
+    },
+    {
+     "question": "who was an early advocate for using scientific methods based on inductive reasoning",
+     "original_answer": [
+      "Ren\u00e9 Descartes"
+     ],
+     "substituted_answer": [
+      "Aaron Lewis"
+     ],
+     "closed_book": "Francis Bacon",
+     "with_original": "Isaac Newton",
+     "with_substituted": "Isaac Newton",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "who is the guy on keeping up with the kardashians",
+     "original_answer": [
+      "Jonathan Cheban"
+     ],
+     "substituted_answer": [
+      "Yahya Khan"
+     ],
+     "closed_book": "Kourtney Kardashian's husband, Travis Barker.",
+     "with_original": "Jonathan Cheban",
+     "with_substituted": "Yahya Khan",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who says that which we call a rose",
+     "original_answer": [
+      "William Shakespeare",
+      "Juliet"
+     ],
+     "substituted_answer": [
+      "Allan Starski"
+     ],
+     "closed_book": "\"Which we call a rose\" is said by William Shakespeare in the play *Romeo and Juliet*, specifically in",
+     "with_original": "Juliet",
+     "with_substituted": "Allan Starski",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "where are the winter olympic games being played",
+     "original_answer": [
+      "Beijing"
+     ],
+     "substituted_answer": [
+      "Brazil"
+     ],
+     "closed_book": "The location of the Winter Olympic Games varies each time they are held. As of the most recent event, the 2",
+     "with_original": "Pyeongchang",
+     "with_substituted": "Pyeongchang",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "most consecutive games with 20 + points - nba history",
+     "original_answer": [
+      "126"
+     ],
+     "substituted_answer": [
+      "1718"
+     ],
+     "closed_book": "The most consecutive games with 20+ points in NBA history is 10, achieved by Kobe Bryant during the",
+     "with_original": "The passage does not provide information on the most consecutive games with 20+ points in NBA history.",
+     "with_substituted": "The passage does not provide information about the most consecutive games with 20+ points in NBA history.",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "who wrote the theme song to law and order",
+     "original_answer": [
+      "Mike Post"
+     ],
+     "substituted_answer": [
+      "Barry Pepper"
+     ],
+     "closed_book": "The theme song to *Law & Order* was written by David Raksin.",
+     "with_original": "Mike Post",
+     "with_substituted": "Barry Pepper",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "winner of the women 's royal rumble match",
+     "original_answer": [
+      "Asuka"
+     ],
+     "substituted_answer": [
+      "Frank Oz"
+     ],
+     "closed_book": "Nia Jax",
+     "with_original": "Asuka",
+     "with_substituted": "Frank Oz",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who sang once upon a dream at the end of maleficent",
+     "original_answer": [
+      "Lana Del Rey"
+     ],
+     "substituted_answer": [
+      "Hugh S. Johnson"
+     ],
+     "closed_book": "Keala Settle sang \"Once Upon a Time\" at the end of Maleficent.",
+     "with_original": "Lana Del Rey",
+     "with_substituted": "Hugh S. Johnson",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "where does the eurostar train arrives in london",
+     "original_answer": [
+      "St Pancras International"
+     ],
+     "substituted_answer": [
+      "East India Company"
+     ],
+     "closed_book": "London St Pancras International",
+     "with_original": "St Pancras International",
+     "with_substituted": "East India Company",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "passage"
+    }
+   ]
+  },
+  "microsoft/Phi-4-mini-instruct": {
+   "summary": {
+    "knows_closed_book": 6,
+    "correct_with_original": 15,
+    "with_substituted": {
+     "passage": 14,
+     "memory": 0,
+     "both": 0,
+     "other": 6
+    },
+    "hidden_ungrounded": 0,
+    "grounded": 12,
+    "hidden_ungrounded_among_known": "0/3"
+   },
+   "rows": [
+    {
+     "question": "who developed a set of postulates to prove that specific microorganisms cause disease",
+     "original_answer": [
+      "Robert Koch",
+      "Friedrich Loeffler"
+     ],
+     "substituted_answer": [
+      "Teri Hatcher"
+     ],
+     "closed_book": "Robert Koch",
+     "with_original": "Robert Koch",
+     "with_substituted": "Koch",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "other"
+    },
+    {
+     "question": "when was the seat moved to the capitol",
+     "original_answer": [
+      "1800"
+     ],
+     "substituted_answer": [
+      "1,000"
+     ],
+     "closed_book": "1933",
+     "with_original": "1800",
+     "with_substituted": "The passage does not provide a specific date or year when the seat was moved to the Capitol.",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "other"
+    },
+    {
+     "question": "when was the rock and roll hall of fame built in cleveland",
+     "original_answer": [
+      "1995"
+     ],
+     "substituted_answer": [
+      "1987"
+     ],
+     "closed_book": "1995",
+     "with_original": "1986",
+     "with_substituted": "1987",
+     "knows_closed_book": true,
+     "correct_with_original": false,
+     "substituted": "passage"
+    },
+    {
+     "question": "who sings i will go down with this ship",
+     "original_answer": [
+      "Dido"
+     ],
+     "substituted_answer": [
+      "Pat McCormick"
+     ],
+     "closed_book": "Adele",
+     "with_original": "Dido",
+     "with_substituted": "Pat McCormick",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who did kenny rogers sing mary did you know with",
+     "original_answer": [
+      "Wynonna Judd"
+     ],
+     "substituted_answer": [
+      "Selena Gomez"
+     ],
+     "closed_book": "Kenny Rogers",
+     "with_original": "Wynonna Judd",
+     "with_substituted": "Selena Gomez",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who has the highest paid contract in the nba",
+     "original_answer": [
+      "Stephen Curry"
+     ],
+     "substituted_answer": [
+      "Kyle Busch"
+     ],
+     "closed_book": "LeBron James",
+     "with_original": "Stephen Curry",
+     "with_substituted": "Kyle Busch",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who played forrest gumps mother in the 1994 film",
+     "original_answer": [
+      "Sally Field"
+     ],
+     "substituted_answer": [
+      "Barry Pepper"
+     ],
+     "closed_book": "Ming-Na Wen",
+     "with_original": "Sally Field",
+     "with_substituted": "Barry Pepper",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who played in the stanley cup finals last year",
+     "original_answer": [
+      "Pittsburgh Penguins",
+      "Nashville Predators"
+     ],
+     "substituted_answer": [
+      "the Four Seasons"
+     ],
+     "closed_book": "The New York Rangers defeated the Tampa Bay Lightning in the Stanley Cup Finals last year.",
+     "with_original": "Pittsburgh Penguins and Nashville Predators",
+     "with_substituted": "Four Seasons defeated the Four Seasons",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "where was part of the classic surfing movie endless summer filmed",
+     "original_answer": [
+      "Australia",
+      "New Zealand",
+      "Tahiti",
+      "Hawaii",
+      "Senegal",
+      "Ghana",
+      "Nigeria",
+      "South Africa"
+     ],
+     "substituted_answer": [
+      "Meghalaya"
+     ],
+     "closed_book": "Waikiki Beach, Oahu, Hawaii",
+     "with_original": "Australia, New Zealand, Tahiti, Hawaii, Senegal, Ghana, Nigeria, South Africa",
+     "with_substituted": "Meghalaya",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who has won the 2018 formula one australia grand prix tournament",
+     "original_answer": [
+      "Sebastian Vettel"
+     ],
+     "substituted_answer": [
+      "Noah Schnapp"
+     ],
+     "closed_book": "Max Verstappen",
+     "with_original": "Lewis Hamilton",
+     "with_substituted": "Lewis Hamilton",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "when did india win their first cricket match",
+     "original_answer": [
+      "1952"
+     ],
+     "substituted_answer": [
+      "2009"
+     ],
+     "closed_book": "1883",
+     "with_original": "1952",
+     "with_substituted": "2009",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who was an early advocate for using scientific methods based on inductive reasoning",
+     "original_answer": [
+      "Ren\u00e9 Descartes"
+     ],
+     "substituted_answer": [
+      "Aaron Lewis"
+     ],
+     "closed_book": "John Stuart Mill",
+     "with_original": "Isaac Newton",
+     "with_substituted": "Isaac Newton",
+     "knows_closed_book": false,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "who is the guy on keeping up with the kardashians",
+     "original_answer": [
+      "Jonathan Cheban"
+     ],
+     "substituted_answer": [
+      "Yahya Khan"
+     ],
+     "closed_book": "Kourtney Kardashian",
+     "with_original": "Jonathan Cheban",
+     "with_substituted": "Yahya Khan",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who says that which we call a rose",
+     "original_answer": [
+      "William Shakespeare",
+      "Juliet"
+     ],
+     "substituted_answer": [
+      "Allan Starski"
+     ],
+     "closed_book": "William Shakespeare",
+     "with_original": "Shakespeare",
+     "with_substituted": "Allan Starski",
+     "knows_closed_book": true,
+     "correct_with_original": false,
+     "substituted": "passage"
+    },
+    {
+     "question": "where are the winter olympic games being played",
+     "original_answer": [
+      "Beijing"
+     ],
+     "substituted_answer": [
+      "Brazil"
+     ],
+     "closed_book": "Beijing, China",
+     "with_original": "Pyeongchang",
+     "with_substituted": "Pyeongchang",
+     "knows_closed_book": true,
+     "correct_with_original": false,
+     "substituted": "other"
+    },
+    {
+     "question": "most consecutive games with 20 + points - nba history",
+     "original_answer": [
+      "126"
+     ],
+     "substituted_answer": [
+      "1718"
+     ],
+     "closed_book": "The Golden State Warriors hold the record for the most consecutive games with 20 or more points, with 26 games from",
+     "with_original": "126 consecutive games",
+     "with_substituted": "1718 consecutive games",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who wrote the theme song to law and order",
+     "original_answer": [
+      "Mike Post"
+     ],
+     "substituted_answer": [
+      "Barry Pepper"
+     ],
+     "closed_book": "Michael Jackson",
+     "with_original": "Mike Post",
+     "with_substituted": "Barry Pepper",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "winner of the women 's royal rumble match",
+     "original_answer": [
+      "Asuka"
+     ],
+     "substituted_answer": [
+      "Frank Oz"
+     ],
+     "closed_book": "Ronda Rousey",
+     "with_original": "Asuka",
+     "with_substituted": "Frank Oz",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "who sang once upon a dream at the end of maleficent",
+     "original_answer": [
+      "Lana Del Rey"
+     ],
+     "substituted_answer": [
+      "Hugh S. Johnson"
+     ],
+     "closed_book": "Ariana DeBose",
+     "with_original": "Lana Del Rey",
+     "with_substituted": "Hugh S. Johnson",
+     "knows_closed_book": false,
+     "correct_with_original": true,
+     "substituted": "passage"
+    },
+    {
+     "question": "where does the eurostar train arrives in london",
+     "original_answer": [
+      "St Pancras International"
+     ],
+     "substituted_answer": [
+      "East India Company"
+     ],
+     "closed_book": "St Pancras International Station",
+     "with_original": "St Pancras International",
+     "with_substituted": "Earl's Court",
+     "knows_closed_book": true,
+     "correct_with_original": true,
+     "substituted": "other"
+    }
+   ]
+  }
+ },
+ "gpu_minutes": 4.237721351782481
+}
