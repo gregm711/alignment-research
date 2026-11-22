@@ -109,8 +109,21 @@ what the messages carry (the token-position result). Needs an NDIF key and a reg
 
 **Ranking**
 
-1. Enter the challenge. External judge, an audience that already cares, and we start ahead.
+1. ~~Enter the challenge.~~ Declined by the author on 2026-11-22: the aim is independent research.
 2. Finish grounding Phases 2 and 3 (offline, free), then decide Phase 4 on the result and
    on a full read of the knowledge-conflict paper.
 3. Not worth starting: deception probes, evaluation awareness, cross-model probes. All are
    crowded with lab-scale work, and we have no edge.
+
+### Follow-up read of "Rewired or Gated?" (2026-11-22)
+
+Depth: a summary of the HTML version; about half the text was read verbatim by the reader,
+the rest summarised. Figures not read.
+
+It studies only cases where the context contradicts memory, on single-token facts
+(ParaConflict), with attribution and ablation of heads. It has no case where context and
+memory agree, builds no per-example detector, and reports no confidence baseline, false
+alarms or transfer. It does not use attention to the answer's location as a signal. So the
+grounding project's question (is a *correct* answer ungrounded, judged by a monitor
+calibrated on visible cases, against a confidence baseline) is not answered there. Its
+limitations section asks for a second, naturally occurring conflict corpus; NQ-Swap is one.
