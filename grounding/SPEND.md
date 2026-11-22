@@ -13,6 +13,9 @@ Estimates only: GPU minutes times an assumed all-in rate for the GPU used on Mod
 | 2026-11-22 | Phases 2 and 3 (offline) | none | 0 | $0 | $1.19 |
 | 2026-11-22 | Phase 4 screen, six candidate models, 120 questions | L4 | 31.6 | $0.53 | $1.72 |
 | 2026-11-22 | Phase 4 build pilots, three models, 12 questions | L4 | ~4 | $0.07 | $1.79 |
+| 2026-11-22 | Phase 4 build, Qwen2.5-7B-Instruct | L4 | 69.7 | $1.16 | $2.95 |
+| 2026-11-22 | Phase 4 build, granite-3.3-2b-instruct | L4 | 73.4 | $1.22 | $4.17 |
+| 2026-11-22 | Label audit and all cleaned analyses (offline) | none | 0 | $0 | $4.17 |
 
 Assumed cap for this project: $11. The Inkling project's ledger is separate
 ([`../jlens-inkling/SPEND.md`](../jlens-inkling/SPEND.md), $14.10).

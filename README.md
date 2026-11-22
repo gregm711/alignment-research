@@ -17,7 +17,7 @@ don't go the way we hoped.
 | # | Project | Status | Start here |
 |---|---|---|---|
 | 1 | What a looped model's passes hand to each other, and whether an internal monitor catches right answers reached the wrong way (induced mistakes) | Complete; write-up drafted, not yet public | [`jlens-inkling/NOTE.md`](jlens-inkling/NOTE.md) |
-| 2 | The same question on mistakes a model makes unprompted: answering from memory when a document is supplied | Phases 0 to 3 done; single-head monitors failed the bar | [`grounding/README.md`](grounding/README.md) |
+| 2 | The same question on mistakes a model makes unprompted: answering from memory when a document is supplied | Phases 0 to 4 done on three models, with a label audit; awaiting review | [`grounding/README.md`](grounding/README.md) |
 
 ## What's here
 

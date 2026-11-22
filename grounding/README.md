@@ -1,6 +1,6 @@
 # Grounding: can internal access catch an answer that ignores its evidence?
 
-**Status: Phases 0 to 3 done on one model. The frozen single-head monitors failed the pre-registered bar. Awaiting independent review.**
+**Status: Phases 0 to 4 done on three models, with a label audit. Half of the "from memory" answers were read from the passage. On cleaned labels, attention monitors sit a little above output confidence on hidden cases in all three models and clear the bar in none. Awaiting independent review.**
 
 ## The question
 
@@ -416,3 +416,79 @@ begin with a filler word.
 - At its frozen threshold the classifier catches 14 of 31 with 31 of 343 false alarms.
 
 With 31 hidden test cases this is weak evidence either way.
+
+## Phase 4 result: two more models
+
+Raw: `results/phase1-<model>.json`, `results/phase2_3-<model>.json`, and the `-clean`
+versions. AUC with bootstrap intervals; test questions.
+
+### As pre-registered, on the original labels (now known to be about half contaminated)
+
+| | Qwen2.5-7B | granite-3.3-2b |
+|---|---|---|
+| evidence head, visible | 0.86 [0.83, 0.90] | 0.90 [0.87, 0.92] |
+| evidence head, hidden | 0.60 [0.51, 0.68] | 0.64 [0.54, 0.74] |
+| attention classifier, hidden | 0.67 [0.57, 0.75] | 0.79 [0.72, 0.86] |
+| output top probability, hidden | 0.49 [0.39, 0.58] | 0.57 [0.49, 0.66] |
+| hidden vs grounded (test) | 41 vs 368 | 40 vs 287 |
+
+Predictions: 1 held on both (visible above 0.8). 2 held on both (the collapse, with
+separated intervals). 3 held on both (confidence between 0.40 and 0.60). 4 held on granite
+and failed on Qwen (the all-heads average edged the classifier, 0.672 to 0.666). 5 held on
+Qwen (83%) and failed on granite (39%).
+
+### After the label audit (rule and predictions written before these two models' data existed)
+
+| | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b |
+|---|---|---|---|
+| "from memory" runs with the answer still in the passage | 122 of 214 (57%) | 106 of 171 (62%) | 112 of 205 (55%) |
+| hidden ungrounded questions, before and after | 100, 50 | 73, 34 | 85, 47 |
+| answers starting with a filler word | 1.5% | 3.5% | 11.7% |
+| hidden vs grounded (test) | 31 vs 343 | 19 vs 333 | 29 vs 270 |
+| evidence head, visible | 0.90 [0.85, 0.95] | 0.84 [0.78, 0.89] | 0.86 [0.81, 0.90] |
+| evidence head, hidden | 0.64 [0.53, 0.74] | 0.73 [0.61, 0.84] | 0.68 [0.58, 0.78] |
+| attention classifier, hidden | 0.78 [0.68, 0.86] | 0.74 [0.63, 0.85] | 0.78 [0.70, 0.87] |
+| output top probability, hidden | 0.63 [0.54, 0.71] | 0.68 [0.54, 0.80] | 0.66 [0.55, 0.76] |
+| classifier, known questions only | 0.70 [0.54, 0.83] | 0.66 [0.48, 0.83] | 0.81 [0.69, 0.91] |
+| confidence, known questions only | 0.63 [0.49, 0.76] | 0.69 [0.52, 0.85] | 0.67 [0.52, 0.81] |
+| classifier at frozen threshold: caught, false alarms | 14 of 31, 31 of 343 | 7 of 19, 23 of 333 | 12 of 29, 26 of 270 |
+| evidence head's median attention on the answer, original passage: grounded, hidden | 0.35, 0.20 | 0.83, 0.29 | 0.22, 0.08 |
+
+Audit predictions:
+
+1. Evidence head at least 0.15 lower on hidden than visible: held on Phi-4-mini (0.26) and
+   granite (0.18), **failed on Qwen** (0.10).
+2. Classifier at least 0.70 on hidden with its interval above confidence's, on two of three
+   models: **failed.** It is 0.74 to 0.78 on all three, and its interval overlaps
+   confidence's on all three.
+3. Classifier above 0.65 on the known-questions control on two models: held on all three,
+   but it is above confidence there on only two, and never with separated intervals.
+4. Fewer than 60 hidden cases per model: held (50, 34, 47).
+
+### What we see
+
+- **The largest finding is about the dataset.** In all three models, 55 to 62% of the answers
+  that would be counted as "the model used its memory against the passage" could have been
+  read from the passage, because the swap left another mention of the answer in place. Any
+  rate of memory reliance measured on NQ-Swap without this check is inflated by about half.
+  Our rule is strict (any word of any gold answer), so the true leak may be a little lower.
+- **Bad labels changed our conclusions.** On the original labels, confidence looked useless
+  on hidden cases (0.49 to 0.57) and the evidence head collapsed in every model. On cleaned
+  labels, confidence is 0.63 to 0.68 and the collapse is smaller and fails on one model.
+- **Monitors built from visible mistakes are weaker on hidden ones in every model**, by
+  0.07 to 0.26 for the best attention monitor.
+- **Attention sits a little above confidence on hidden cases in all three models** (by 0.06
+  to 0.15 for the classifier) and clears the bar in none. With 19 to 31 hidden test cases
+  per model, this experiment cannot tell a small real advantage from none.
+- **No monitor here is usable as an alarm.** The best catches under half of the hidden
+  cases at 7 to 10% false alarms.
+- **Our earlier explanation is weakened.** We said the head reads what the model does in
+  this run and cannot see the counterfactual. On cleaned labels the head does attend less
+  to the answer on hidden ungrounded questions even when the passage agrees (0.20 against
+  0.35; 0.29 against 0.83; 0.08 against 0.22). There is some signal in the same run.
+
+### What this does not show
+
+One dataset; short-answer prompts; three small models. The cleaned sets are too small to
+establish or rule out a modest advantage for attention over confidence. We have not checked
+whether the leak in NQ-Swap is already reported elsewhere.

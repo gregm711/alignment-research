@@ -1,0 +1,234 @@
+{
+ "training": {
+  "visible_ungrounded_runs": 29,
+  "passage_following_runs": 891,
+  "evidence_head": {
+   "layer": 23,
+   "head": 11,
+   "train_auc": 0.8470916152000427
+  },
+  "passage_head": {
+   "layer": 4,
+   "head": 22,
+   "train_auc": 0.7476682662963867
+  }
+ },
+ "phase2_visible_on_test_questions": {
+  "n": [
+   36,
+   944
+  ],
+  "monitors": {
+   "evidence head": {
+    "auc": [
+     0.83529013653484,
+     0.7747910781544256,
+     0.8886976224105462
+    ],
+    "caught_at_frozen_threshold": "17/36",
+    "false_alarms_at_frozen_threshold": "92/944"
+   },
+   "passage head": {
+    "auc": [
+     0.6051229990583804,
+     0.5388418079096046,
+     0.673522834274953
+    ],
+    "caught_at_frozen_threshold": "4/36",
+    "false_alarms_at_frozen_threshold": "93/944"
+   },
+   "all-heads average": {
+    "auc": [
+     0.747263418079096,
+     0.639859934086629,
+     0.8435734463276836
+    ],
+    "caught_at_frozen_threshold": "16/36",
+    "false_alarms_at_frozen_threshold": "85/944"
+   },
+   "attention classifier": {
+    "auc": [
+     0.7998469868173258,
+     0.7188382768361582,
+     0.8722045668549906
+    ],
+    "caught_at_frozen_threshold": "19/36",
+    "false_alarms_at_frozen_threshold": "88/944"
+   },
+   "output top probability": {
+    "auc": [
+     0.7872233992467044,
+     0.7066560734463276,
+     0.8604343220338984
+    ],
+    "caught_at_frozen_threshold": "18/36",
+    "false_alarms_at_frozen_threshold": "100/944"
+   },
+   "output margin": {
+    "auc": [
+     0.7853401600753296,
+     0.704772834274953,
+     0.8580214218455744
+    ],
+    "caught_at_frozen_threshold": "17/36",
+    "false_alarms_at_frozen_threshold": "100/944"
+   },
+   "output entropy": {
+    "auc": [
+     0.7942266949152542,
+     0.712953154425612,
+     0.870291902071563
+    ],
+    "caught_at_frozen_threshold": "18/36",
+    "false_alarms_at_frozen_threshold": "103/944"
+   }
+  }
+ },
+ "phase3_hidden_on_test_questions": {
+  "n": [
+   19,
+   333
+  ],
+  "monitors": {
+   "evidence head": {
+    "auc": [
+     0.7324956535482852,
+     0.6124545598229809,
+     0.8362573099415205
+    ],
+    "caught_at_frozen_threshold": "2/19",
+    "false_alarms_at_frozen_threshold": "26/333"
+   },
+   "passage head": {
+    "auc": [
+     0.6860281333965544,
+     0.5932511458827249,
+     0.7712976134028766
+    ],
+    "caught_at_frozen_threshold": "3/19",
+    "false_alarms_at_frozen_threshold": "27/333"
+   },
+   "all-heads average": {
+    "auc": [
+     0.7676623992413466,
+     0.6519677572309152,
+     0.8632843369685474
+    ],
+    "caught_at_frozen_threshold": "3/19",
+    "false_alarms_at_frozen_threshold": "19/333"
+   },
+   "attention classifier": {
+    "auc": [
+     0.7436383752173226,
+     0.6260470997313102,
+     0.8492176386913229
+    ],
+    "caught_at_frozen_threshold": "7/19",
+    "false_alarms_at_frozen_threshold": "23/333"
+   },
+   "output top probability": {
+    "auc": [
+     0.6762288604393868,
+     0.5425952268057531,
+     0.7950845582424529
+    ],
+    "caught_at_frozen_threshold": "2/19",
+    "false_alarms_at_frozen_threshold": "30/333"
+   },
+   "output margin": {
+    "auc": [
+     0.6731468310415679,
+     0.5388809862494073,
+     0.7934250039513198
+    ],
+    "caught_at_frozen_threshold": "2/19",
+    "false_alarms_at_frozen_threshold": "30/333"
+   },
+   "output entropy": {
+    "auc": [
+     0.6737790422000949,
+     0.5365892207997471,
+     0.7934250039513198
+    ],
+    "caught_at_frozen_threshold": "2/19",
+    "false_alarms_at_frozen_threshold": "28/333"
+   }
+  }
+ },
+ "phase3_control_known_questions_only": {
+  "n": [
+   12,
+   72
+  ],
+  "monitors": {
+   "evidence head": {
+    "auc": [
+     0.7280092592592593,
+     0.5763888888888888,
+     0.8587962962962963
+    ],
+    "caught_at_frozen_threshold": "1/12",
+    "false_alarms_at_frozen_threshold": "5/72"
+   },
+   "passage head": {
+    "auc": [
+     0.6359953703703703,
+     0.4791666666666667,
+     0.7847222222222222
+    ],
+    "caught_at_frozen_threshold": "3/12",
+    "false_alarms_at_frozen_threshold": "7/72"
+   },
+   "all-heads average": {
+    "auc": [
+     0.7291666666666666,
+     0.5682870370370371,
+     0.8703703703703703
+    ],
+    "caught_at_frozen_threshold": "2/12",
+    "false_alarms_at_frozen_threshold": "5/72"
+   },
+   "attention classifier": {
+    "auc": [
+     0.6620370370370371,
+     0.4791666666666667,
+     0.8344907407407407
+    ],
+    "caught_at_frozen_threshold": "4/12",
+    "false_alarms_at_frozen_threshold": "2/72"
+   },
+   "output top probability": {
+    "auc": [
+     0.6932870370370371,
+     0.5219907407407407,
+     0.8460648148148148
+    ],
+    "caught_at_frozen_threshold": "2/12",
+    "false_alarms_at_frozen_threshold": "7/72"
+   },
+   "output margin": {
+    "auc": [
+     0.6886574074074074,
+     0.5115740740740741,
+     0.8449074074074074
+    ],
+    "caught_at_frozen_threshold": "2/12",
+    "false_alarms_at_frozen_threshold": "7/72"
+   },
+   "output entropy": {
+    "auc": [
+     0.6863425925925926,
+     0.5023148148148148,
+     0.8460648148148148
+    ],
+    "caught_at_frozen_threshold": "2/12",
+    "false_alarms_at_frozen_threshold": "5/72"
+   }
+  }
+ },
+ "evidence_head_median_attention_on_answer_test": {
+  "grounded_original": 0.83203125,
+  "hidden_ungrounded_original": 0.287841796875,
+  "hidden_ungrounded_substituted_gave_memory": 0.06646728515625
+ }
+}
