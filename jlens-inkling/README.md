@@ -1714,6 +1714,55 @@ If no wording produces enough wrong routes, the test cannot be run on this task 
 this is "a mistake the model makes by itself when misled", not one that arises with no
 prompting at all. One invented task. The reviewer still needs to know the correct row.
 
+### Result of step 1: the model is not distracted
+
+Raw data: [`results/lure-pilot.json`](results/lure-pilot.json). 72 prompts per wording.
+
+| Wording | visible distraction followed | hidden case: right route | wrong route | answer wrong |
+|---|---|---|---|---|
+| plain question | – | 70 | 0 | 2 |
+| "…the X, not the Y, is the" | 2 | 55 | 0 | 14 |
+| "Someone just asked about the Y. …" | 2 | 20 | 0 | 49 |
+| "…the Y, sorry, the X, is the" | 1 | 68 | 1 | 2 |
+| "…the X (the Y comes next) is the" | 3 | 63 | 0 | 2 |
+
+**Prediction 1 failed.** No wording produced wrong routes in 5% of correct answers; the most
+was one. Mentioning a second animal either leaves the model's lookup intact or breaks the
+answer in some unrelated way. It almost never makes the model look up the wrong animal.
+Step 2 was not run: there is nothing to test the readout on.
+
+## Mistakes the model makes unprompted, second approach: a harder task
+
+### Plan and predictions (written before running)
+
+Distraction did not work, so this makes the task harder in the ordinary way: more to keep
+track of. Nothing is done to the model's internals and nothing misleading is put in the prompt.
+
+**Changes.** (a) Longer tables, up to twelve rows. (b) A third lookup step: a first table
+says which person has which animal, and the question asks for the fruit that goes with a
+person's pet. (c) Only three different fruits in the last table, so a slip to a wrong row
+often still gives the right fruit.
+
+**Establishing the route.** Edit the intended row's fruit; separately, edit *every other*
+row that holds the same fruit. A right-route answer follows the first edit and not the
+second. A wrong-route answer does the opposite. Anything else is reported as unclear.
+
+**Step 1, a pilot** of four conditions (two or three steps, seven or twelve rows), about 60
+prompts each, to find one where confirmed wrong-route correct answers are common enough.
+
+**Step 2, the test**, on fresh tables in that condition, with the frozen readout unchanged.
+
+**Predictions.**
+
+1. The three-step, twelve-row condition gives confirmed wrong routes in at least 5% of
+   correct answers. (We were wrong about the equivalent prediction for distraction.)
+2. If so, on fresh tables the frozen head separates them from right-route answers with AUC
+   above 0.8 and its interval above output confidence's. Held loosely.
+
+**A known weakness going in.** The readout was calibrated on seven-row, two-step prompts.
+Longer tables and an extra table change the format, and the frozen threshold's false-alarm
+rate may not carry over. We report it as it comes out and do not refit.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
