@@ -1,7 +1,7 @@
 # What we found about Inkling 2 Mini's loop
 
 One page. Details, raw numbers and caveats are in [`README.md`](README.md); data is in
-[`results/`](results/). The work was done on 2026-11-21 for about $12.30 of GPU time (see
+[`results/`](results/). The work was done on 2026-11-21 for about $14 of GPU time (see
 [`SPEND.md`](SPEND.md)). It has had three independent
 reviews: [the earlier experiments](../notes/independent-review-2026-11-21.md),
 [the lookup-table experiments](../notes/independent-review-lookup.md) and
@@ -91,15 +91,25 @@ confidence gives any sign (AUC 0.49 to 0.51, where 0.5 is chance).
   answer are identical, the head ranked the hidden mistake higher; confidence did so in 70.
   What the scores show is the head looking away from the correct row.
 
-On unmodified runs the same frozen threshold raises false alarms on 12% of correct,
-right-route answers, the same as on transplanted ones. The unmodified model took a wrong
-route by itself once in 236 correct answers, and the readout did not flag that one case.
+**How far that readout reaches.**
 
-*What it does not show:* that this would catch a mistake nobody induced. This task cannot
-test that: the model almost never makes one. Our intervention
-moves the model's attention and the readout reads attention, so this is the most favourable
-case. The reviewer must also already know which row is correct, and the readout was
-calibrated with some trials an overseer could not have labelled. It is one invented task.
+- *Undisturbed runs:* the frozen threshold raises false alarms on 12 to 14% of correct,
+  right-route answers.
+- *A different, upstream cause:* when the wrong route came from a transplant one pass
+  earlier, so that the final pass ran on the model's own computation, the head still ranked
+  hidden wrong routes above right-route answers (AUC 0.86 and 0.89, against 0.40 and 0.47
+  for confidence). The frozen threshold did not transfer: it flagged 62% of right-route
+  answers there. The ranking carries over; the calibration does not.
+- *Mistakes the model makes unprompted:* untested, because we could not produce any. We
+  tried distracting the model with a second animal, overloading it with longer tables and a
+  third step, and setting everyday association against the table. It gave a confidently
+  right answer for the wrong reason at most once per 70 or so prompts each time; otherwise
+  it either did the lookup properly or failed openly.
+
+*What it does not show:* that the readout would catch a mistake nobody induced. The
+reviewer must also already know which row is correct, and the readout was calibrated with
+some trials an overseer could not have labelled. It is one invented task on one model, and
+the last two bullets have not been independently reviewed.
 
 ## What we withdrew or would not lean on
 
@@ -126,6 +136,7 @@ re-tested on other people's prompts or reproduced by someone else's code.
 
 ## Next
 
-- A task where the model takes a shortcut by itself often enough to measure, so the frozen
-  readout can be tested on mistakes we did not induce. The lookup task is not it.
+- An independent review of the work on other causes and on unprompted mistakes.
+- A task, or a model, where confidently right answers for the wrong reason occur naturally
+  often enough to measure. This one is too reliable.
 - Whether any of this appears on questions about real facts.

@@ -1901,6 +1901,44 @@ pass-2 transplant, the one cause with a usable rate, on 16 sets of tables per wo
 measure whether the head still *ranks* hidden wrong routes above right-route answers when
 its threshold has failed. The bar is unchanged: the head's interval above confidence's.
 
+### Result: transplant into pass 2, on 32 sets of tables
+
+Raw data, every trial: [`results/causes.json`](results/causes.json). Script: `causes.py`.
+Each recipient met two arbitrary donors. Not yet independently reviewed.
+
+| Donor | right route | hidden wrong route | unclear | answer wrong | frozen head AUC | output confidence AUC |
+|---|---|---|---|---|---|---|
+| a | 83 | 29 | 62 | 206 | **0.89** [0.82, 0.95] | 0.47 [0.36, 0.60] |
+| b | 79 | 26 | 65 | 210 | **0.86** [0.76, 0.94] | 0.40 [0.28, 0.54] |
+
+At the frozen threshold: all but one of the 55 hidden wrong routes are flagged, and so are
+62% of right-route answers (101 of 162). With no disturbance the same threshold flags 14%
+of right-route answers (50 of 370).
+
+**Both predictions held for this cause, and the bar was met.** Hidden wrong routes were 15
+to 17% of the answers that stayed correct, and with at least 20 per donor the head's
+interval lies entirely above output confidence's for both.
+
+**What this shows.** The final pass here ran on messages the model computed itself, after a
+disturbance one pass earlier that was not aimed at any row. The head still ranks hidden
+wrong routes above right-route answers. So the signal is not only an echo of the particular
+intervention the readout was calibrated on.
+
+**What it also shows: the threshold does not transfer.** A threshold set on the calibration
+data raises false alarms on most right-route answers here. Choosing a threshold on this
+data after the fact, the head catches 34 of 55 hidden wrong routes at 10% false alarms and
+46 of 55 at 20%; that is a description of the ranking, not a result we can claim, because the
+threshold was picked with the answers in hand. The pilot above suggested the readout
+flagged nearly everything under any disturbance. On this larger run that was too strong for
+transplants (62%); for the two noise conditions we only have the pilot's 20 of 20.
+
+**Not pre-specified.** The share of the head's attention on the *other* row with the same
+fruit separates the two better (AUC 0.95 [0.91, 0.98]). A reviewer would need to know which
+alternative row to look at, which they would not in general.
+
+**Limits.** Still a disturbance we applied. Over a third of correct answers were "unclear"
+(neither edit pattern) and are left out. The noise causes were not run at scale. One task.
+
 ## Results
 
 ### First look: lens fitted on 3 prompts (preliminary)
