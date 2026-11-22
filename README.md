@@ -12,11 +12,19 @@ We are here to understand: to learn how current models work and behave, to monit
 stand, and to publish whatever we find that is useful to others, including the results that
 don't go the way we hoped.
 
+## Projects
+
+| # | Project | Status | Start here |
+|---|---|---|---|
+| 1 | What a looped model's passes hand to each other, and whether an internal monitor catches right answers reached the wrong way (induced mistakes) | Complete; write-up drafted, not yet public | [`jlens-inkling/NOTE.md`](jlens-inkling/NOTE.md) |
+| 2 | The same question on mistakes a model makes unprompted: answering from memory when a document is supplied | Phase 0 of 5 | [`grounding/README.md`](grounding/README.md) |
+
 ## What's here
 
 | Path | What it is |
 |---|---|
 | [`jlens-inkling/`](jlens-inkling/) | Experiments on Inkling 2 Mini, a looped transformer: what its loop passes hand to each other, how to build right answers reached the wrong way, and whether an internal monitor catches them. Start with the write-up, [`NOTE.md`](jlens-inkling/NOTE.md). |
+| [`grounding/`](grounding/) | Project 2, organised in phases with a gate at each. |
 | [`papers/`](papers/) | Index of ~160 alignment and interpretability papers and posts, with the scripts that download them. The files themselves are not committed. |
 | [`notes/sota-2026.md`](notes/sota-2026.md) | Where the field stands as of November 2026, from reading the newest work. |
 | [`notes/looped-prior-art.md`](notes/looped-prior-art.md) | What two 2026 papers already found about interpreting looped models, and what is still open. |
