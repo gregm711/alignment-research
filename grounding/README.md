@@ -1,6 +1,6 @@
 # Grounding: can internal access catch an answer that ignores its evidence?
 
-**Status: Phases 0 to 4, a label audit and a pooled analysis done on three models. In about half of the "from memory" answers, part or all of the original answer was still in the passage. On cleaned labels, an attention classifier beats output-only baselines on hidden cases by about 0.11 AUC pooled over three models (interval excludes zero), but is not usable as an alarm, and the lead is unresolved among questions the model already knows.**
+**Status: Phases 0 to 5 done on three models. (1) In about half of the "from memory" answers on NQ-Swap, part or all of the original answer was still in the passage. (2) An attention classifier trained on visible mistakes carries over to hidden ones on newly built clean items (AUC 0.79 to 0.83) and beats output-only baselines in aggregate. (3) Part of that lead comes from recognising the kind of question; within a kind it is unresolved. No monitor is usable as an alarm.**
 
 ## The question
 
@@ -676,3 +676,97 @@ The runs were slower than estimated (about 9 known questions a minute for Qwen a
 granite), so the target is lowered from 900 to **800** known questions per model to stay
 inside the approved cost. Label counts at 300 were looked at to decide this (hidden cases:
 18 for Phi-4-mini, 7 for Qwen), so prediction 1 is already known to be too high.
+
+## Phase 5: result
+
+Known questions asked, kept, and labelled:
+
+| | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b |
+|---|---|---|---|
+| questions asked with no passage | 5,550 (all) | 4,588 | 5,414 |
+| known unaided, so run in full | 677 | 800 | 800 |
+| hidden ungrounded / grounded / set aside | 32 / 403 / 242 | 16 / 465 / 319 | 37 / 393 / 370 |
+
+Monitors frozen from the NQ-Swap fit, on hidden versus grounded (AUC, 95% interval):
+
+| | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b |
+|---|---|---|---|
+| attention classifier | 0.80 [0.69, 0.90] | 0.83 [0.71, 0.91] | 0.79 [0.71, 0.86] |
+| output top probability | 0.73 [0.62, 0.83] | 0.54 [0.37, 0.71] | 0.60 [0.50, 0.70] |
+| output-plus-length baseline | 0.67 [0.54, 0.80] | 0.73 [0.61, 0.84] | 0.59 [0.49, 0.69] |
+| classifier at frozen threshold: caught, false alarms | 14 of 32, 24 of 403 | 5 of 16, 7 of 465 | 11 of 37, 14 of 393 |
+
+Planned comparison (`python3 pooled.py new`):
+
+| classifier minus… | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b | pooled mean |
+|---|---|---|---|---|
+| top probability | +0.07 [-0.03, +0.17] | +0.29 [+0.04, +0.54] | +0.19 [+0.08, +0.29] | **+0.18 [+0.08, +0.28]** |
+| output-plus-length baseline | +0.13 [+0.02, +0.24] | +0.09 [-0.08, +0.25] | +0.20 [+0.10, +0.30] | **+0.14 [+0.06, +0.21]** |
+| top probability, no filler starts | +0.07 | +0.32 | +0.21 | +0.20 [+0.09, +0.31] |
+| top probability, who questions only | +0.02 | -0.08 | +0.10 | +0.01 [-0.17, +0.18] |
+
+**By the rule set in the plan, this reads as ungroundedness beyond known-ness**: every
+question here is one the model knows, and the pooled interval excludes zero against both
+baselines.
+
+**But a check we did not plan weakens it.** Hidden cases are concentrated in "when"
+questions. In Qwen, 10 of 16 hidden cases are "when" questions against 19 of 465 grounded
+ones, and "is this a when question" alone scores 0.79 (0.60 in Phi-4-mini, 0.66 in
+granite). A monitor can score well here by telling date questions from name questions.
+The planned who-only check had too few hidden cases to answer this (12, 3 and 14). So we
+computed the same difference inside each kind of question and averaged by number of pairs:
+
+| classifier minus…, within kind of question (post hoc) | Phi-4-mini | Qwen2.5-7B | granite-3.3-2b | pooled mean |
+|---|---|---|---|---|
+| top probability | +0.09 [-0.05, +0.23] | -0.03 [-0.32, +0.30] | +0.13 [+0.02, +0.25] | +0.06 [-0.06, +0.20] |
+| output-plus-length baseline | +0.16 [+0.03, +0.29] | -0.17 [-0.53, +0.13] | +0.13 [+0.05, +0.23] | +0.04 [-0.08, +0.16] |
+
+Inside a kind of question the lead holds in Phi-4-mini and granite (granite's interval
+excludes zero against both baselines, Phi-4-mini's against one) and is absent in Qwen,
+where 16 hidden cases cannot say much. Pooled, it is unresolved.
+
+Predictions: **all five failed.** 1: hidden cases were 32, 16 and 37, below every range.
+2: classifier AUC was 0.79 to 0.83, above the range and not lower than before. 3: the
+pooled difference excluded zero but was +0.18, above the range. 4: Qwen's difference was
++0.29, not below +0.05. 5: false alarms at the frozen threshold were 2 to 6%, not above
+15%.
+
+### What we see
+
+- **The classifier transfers.** Fitted on visible mistakes in NQ-Swap, frozen, and applied
+  to differently built items from another split, it scores 0.79 to 0.83 on hidden cases in
+  all three models, and its threshold holds: 30 of 85 hidden cases caught with 45 false
+  alarms in 1,261 grounded runs (3.6%). That is a better alarm than on NQ-Swap, and still
+  misses two in three.
+- **Known-ness is not the explanation.** All of these questions are known to the model.
+- **Kind of question is a partial explanation.** Date questions are answered from memory
+  far more often than name questions, and some of the classifier's score comes from that.
+  Within a kind, the lead over output-only baselines is about +0.05, with an interval that
+  includes zero, and it rests on two of three models.
+- **Hidden ungrounded answers are rare on clean items.** Among questions a model knows,
+  2 to 5% of answers ignored the passage once no trace of the original answer was left in
+  it. On NQ-Swap, before cleaning, the same figure looked several times higher.
+
+### What this does not show
+
+- That attention beats output confidence once the kind of question is held fixed. That
+  comparison was post hoc and its pooled interval includes zero.
+- That "when" cases are pure memory. A passage about an event often carries other dates
+  (a model year, a sequel's release) from which the original date can be inferred. Our
+  leak rule looks for surviving words of the answer and cannot see this. Some "memory"
+  answers to date questions may be inference from the passage.
+- Anything beyond three small models, short-answer prompts and who/when/where questions.
+- Our substitution swaps in an answer of the same broad kind without checking that it
+  fits, so some substituted passages are odd. That affects labels, not the test runs,
+  which use the original passage.
+
+### Where the project stands
+
+1. Leftover mentions of the answer in NQ-Swap account for about half of "memory" answers
+   under our scoring. Not found in prior work, after a limited search.
+2. A classifier over attention, trained only on mistakes visible in the output, carries
+   over to hidden ones on new items in three models (0.79 to 0.83).
+3. Its advantage over output confidence is real in aggregate and replicated on fresh data,
+   and is partly a matter of recognising which kinds of question models answer from
+   memory. Whether anything remains beyond that is unresolved at our sample sizes.
+4. No monitor here is an alarm one could rely on.

@@ -30,6 +30,18 @@ def delta(rows, weights, other):
     return auc([p[0] for p in pos], [n[0] for n in neg]) - auc([p[1] for p in pos], [n[1] for n in neg])
 
 
+def delta_within_kind(rows, weights, other):
+    """Post hoc: the same difference computed inside each kind of question (who / when / where) and averaged
+    by the number of hidden-grounded pairs, so that telling the kinds apart earns nothing."""
+    tot = n = 0
+    for kind in ("who", "when", "where"):
+        sub = [r for r in rows if r.get("kind") == kind]
+        pairs = sum(weights.get(r["cluster"], 0) for r in sub if r["hidden"]) * sum(weights.get(r["cluster"], 0) for r in sub if not r["hidden"])
+        if pairs:
+            tot, n = tot + pairs * delta(sub, weights, other), n + pairs
+    return tot / n if n else None
+
+
 def main():
     data = {m: json.loads((HERE / f"phase3_scores{t}-{SET}.json").read_text()) for m, t in TAGS.items()}
     for rows in data.values():
@@ -38,26 +50,28 @@ def main():
             r["filler"] = (r["answer"].split() or [""])[0].lower().strip(",.") in FILLER
     subsets = {"all": lambda r: True, "no filler-word starts": lambda r: not r["filler"], "known closed-book only": lambda r: r["known"]}
     if SET == "new":  # every Phase 5 question is known; split by kind of question instead
-        subsets = {"all": lambda r: True, "no filler-word starts": lambda r: not r["filler"], "who questions only": lambda r: r["kind"] == "who"}
+        subsets = {"all": lambda r: True, "no filler-word starts": lambda r: not r["filler"], "who questions only": lambda r: r["kind"] == "who",
+                   "within kind of question (post hoc)": lambda r: True}
     out = {}
     for sname, keep in subsets.items():
         sub = {m: [r for r in rows if keep(r)] for m, rows in data.items()}
         clusters = sorted({r["cluster"] for rows in sub.values() for r in rows})
         ones = dict.fromkeys(clusters, 1)
         out[sname] = {"n_hidden_vs_grounded": {m: [sum(r["hidden"] for r in rows), sum(not r["hidden"] for r in rows)] for m, rows in sub.items()}}
+        fn = delta_within_kind if sname.startswith("within") else delta
         for other in COMPARE:
             rng, draws, skipped = random.Random(0), [], 0
             while len(draws) < DRAWS:
                 w = {}
                 for c in rng.choices(clusters, k=len(clusters)):
                     w[c] = w.get(c, 0) + 1
-                d = [delta(rows, w, other) for rows in sub.values()]
+                d = [fn(rows, w, other) for rows in sub.values()]
                 if None in d:  # a draw with no hidden case for some model is redrawn
                     skipped += 1
                     continue
                 draws.append(d)
             ci = lambda v: [sorted(v)[int(0.025 * DRAWS)], sorted(v)[int(0.975 * DRAWS)]]
-            res = {m: [delta(rows, ones, other), *ci([d[i] for d in draws])] for i, (m, rows) in enumerate(sub.items())}
+            res = {m: [fn(rows, ones, other), *ci([d[i] for d in draws])] for i, (m, rows) in enumerate(sub.items())}
             res["pooled mean"] = [sum(v[0] for v in res.values()) / 3, *ci([sum(d) / 3 for d in draws])]
             res["redrawn"] = skipped
             out[sname][f"classifier minus {other}"] = res

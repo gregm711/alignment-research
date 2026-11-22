@@ -1,0 +1,782 @@
+{
+ "model": "microsoft/Phi-4-mini-instruct",
+ "transformers": "5.24.0",
+ "summary": {
+  "eligible_questions": 5550,
+  "asked_closed_book": 74,
+  "run": 12,
+  "labels": {
+   "hidden_ungrounded": 1,
+   "grounded": 4,
+   "set_aside": 7
+  },
+  "labels_train": {
+   "hidden_ungrounded": 0,
+   "grounded": 0,
+   "set_aside": 0
+  },
+  "labels_test": {
+   "hidden_ungrounded": 0,
+   "grounded": 0,
+   "set_aside": 0
+  },
+  "known_closed_book": 12,
+  "stability": {
+   "labelled_under_both_wordings": 0,
+   "same_label": 0,
+   "wording_b_labels": {
+    "hidden_ungrounded": 0,
+    "grounded": 0,
+    "set_aside": 0
+   }
+  }
+ },
+ "rows": [
+  {
+   "question": "when did vatican city become its own country",
+   "split": "new",
+   "kind": "when",
+   "gold": [
+    "11 February 1929"
+   ],
+   "closed_book": "1929",
+   "known_closed_book": true,
+   "original": {
+    "answer": "1929",
+    "p_top": 0.6561571955680847,
+    "margin": 0.4147704243659973,
+    "entropy": 1.1046676635742188,
+    "n_tokens": 117,
+    "n_answer_tokens": 5,
+    "feat": 0,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1 September 2017",
+     "p_top": 0.4712452292442322,
+     "margin": 0.2978837788105011,
+     "entropy": 2.252638816833496,
+     "n_tokens": 117,
+     "n_answer_tokens": 5,
+     "feat": 1,
+     "substituted_answer": [
+      "1 September 2017"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "20 June 2017",
+     "p_top": 0.18775442242622375,
+     "margin": 0.0,
+     "entropy": 2.96478533744812,
+     "n_tokens": 117,
+     "n_answer_tokens": 5,
+     "feat": 2,
+     "substituted_answer": [
+      "20 June 2017"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "2017",
+     "p_top": 0.42433348298072815,
+     "margin": 0.16696220636367798,
+     "entropy": 2.130239486694336,
+     "n_tokens": 118,
+     "n_answer_tokens": 7,
+     "feat": 3,
+     "substituted_answer": [
+      "August 18 , 2017"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded"
+  },
+  {
+   "question": "when did the soviets explode first atomic bomb",
+   "split": "new",
+   "kind": "when",
+   "gold": [
+    "29 August 1949"
+   ],
+   "closed_book": "1949",
+   "known_closed_book": true,
+   "original": {
+    "answer": "29 August 1949",
+    "p_top": 0.9256259202957153,
+    "margin": 0.8976744413375854,
+    "entropy": 0.42965883016586304,
+    "n_tokens": 67,
+    "n_answer_tokens": 5,
+    "feat": 4,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "1949",
+     "p_top": 0.28986456990242004,
+     "margin": 0.1529422402381897,
+     "entropy": 2.4664790630340576,
+     "n_tokens": 64,
+     "n_answer_tokens": 2,
+     "feat": 5,
+     "substituted_answer": [
+      "1873"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "17 September 1991",
+     "p_top": 0.8656521439552307,
+     "margin": 0.8103128671646118,
+     "entropy": 0.7287009358406067,
+     "n_tokens": 67,
+     "n_answer_tokens": 5,
+     "feat": 6,
+     "substituted_answer": [
+      "17 September 1991"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "11 November 1974",
+     "p_top": 0.6792349815368652,
+     "margin": 0.5612016320228577,
+     "entropy": 1.2894387245178223,
+     "n_tokens": 67,
+     "n_answer_tokens": 5,
+     "feat": 7,
+     "substituted_answer": [
+      "11 November 1974"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "who is the first woman governor in india",
+   "split": "new",
+   "kind": "who",
+   "gold": [
+    "Sarojini Naidu"
+   ],
+   "closed_book": "Sarojini Naidu",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Sarojini Naidu",
+    "p_top": 0.9977476000785828,
+    "margin": 0.9965793490409851,
+    "entropy": 0.02235797606408596,
+    "n_tokens": 107,
+    "n_answer_tokens": 5,
+    "feat": 8,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Jeri Southern",
+     "p_top": 0.9978856444358826,
+     "margin": 0.9973337054252625,
+     "entropy": 0.0227382592856884,
+     "n_tokens": 104,
+     "n_answer_tokens": 3,
+     "feat": 9,
+     "substituted_answer": [
+      "Jeri Southern"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Theresa May",
+     "p_top": 0.9847267866134644,
+     "margin": 0.98159259557724,
+     "entropy": 0.1308870017528534,
+     "n_tokens": 103,
+     "n_answer_tokens": 2,
+     "feat": 10,
+     "substituted_answer": [
+      "Theresa May"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Lord Curzon",
+     "p_top": 0.8193795680999756,
+     "margin": 0.73301762342453,
+     "entropy": 0.808419942855835,
+     "n_tokens": 105,
+     "n_answer_tokens": 3,
+     "feat": 11,
+     "substituted_answer": [
+      "Lord Curzon"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded"
+  },
+  {
+   "question": "who is the actor that plays rick on walking dead",
+   "split": "new",
+   "kind": "who",
+   "gold": [
+    "Andrew James Clutterbuck",
+    "Andrew Lincoln"
+   ],
+   "closed_book": "Andrew Lincoln",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Andrew Lincoln",
+    "p_top": 0.9978343844413757,
+    "margin": 0.9966660141944885,
+    "entropy": 0.020455798134207726,
+    "n_tokens": 147,
+    "n_answer_tokens": 5,
+    "feat": 12,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Charles Malik Whitfield",
+     "p_top": 0.996773898601532,
+     "margin": 0.9952753186225891,
+     "entropy": 0.029561882838606834,
+     "n_tokens": 148,
+     "n_answer_tokens": 4,
+     "feat": 13,
+     "substituted_answer": [
+      "Charles Malik Whitfield"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "Derek Jeter",
+     "p_top": 0.9695144891738892,
+     "margin": 0.9556850790977478,
+     "entropy": 0.2237975299358368,
+     "n_tokens": 150,
+     "n_answer_tokens": 5,
+     "feat": 14,
+     "substituted_answer": [
+      "Shortstop Derek Jeter"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Emperor Nicholas II",
+     "p_top": 0.755646824836731,
+     "margin": 0.6533811688423157,
+     "entropy": 1.3911449909210205,
+     "n_tokens": 146,
+     "n_answer_tokens": 3,
+     "feat": 15,
+     "substituted_answer": [
+      "Emperor Nicholas II"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "who proposed the idea that all plants are made up of cells",
+   "split": "new",
+   "kind": "who",
+   "gold": [
+    "Robert Hooke"
+   ],
+   "closed_book": "Robert Hooke",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Robert Hooke",
+    "p_top": 0.5420647263526917,
+    "margin": 0.1199042797088623,
+    "entropy": 0.943353533744812,
+    "n_tokens": 197,
+    "n_answer_tokens": 3,
+    "feat": 16,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Matthias Schleiden",
+     "p_top": 0.8574550747871399,
+     "margin": 0.8147649168968201,
+     "entropy": 0.7713353633880615,
+     "n_tokens": 199,
+     "n_answer_tokens": 5,
+     "feat": 17,
+     "substituted_answer": [
+      "Arnel Pineda"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Matthias Schleiden",
+     "p_top": 0.9505059123039246,
+     "margin": 0.9369477033615112,
+     "entropy": 0.3495064973831177,
+     "n_tokens": 196,
+     "n_answer_tokens": 2,
+     "feat": 18,
+     "substituted_answer": [
+      "John Ford"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Matthias Schleiden",
+     "p_top": 0.6273876428604126,
+     "margin": 0.3310306966304779,
+     "entropy": 1.078119158744812,
+     "n_tokens": 198,
+     "n_answer_tokens": 4,
+     "feat": 19,
+     "substituted_answer": [
+      "Staci Greason"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "when did the uk vote to leave the eu",
+   "split": "new",
+   "kind": "when",
+   "gold": [
+    "23 June 2016"
+   ],
+   "closed_book": "June 23, 2016",
+   "known_closed_book": true,
+   "original": {
+    "answer": "23 June 2016",
+    "p_top": 0.6785240173339844,
+    "margin": 0.42890894412994385,
+    "entropy": 0.9397103786468506,
+    "n_tokens": 158,
+    "n_answer_tokens": 5,
+    "feat": 20,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "July 9, 2013",
+     "p_top": 0.8059413433074951,
+     "margin": 0.7658159136772156,
+     "entropy": 1.013051986694336,
+     "n_tokens": 160,
+     "n_answer_tokens": 8,
+     "feat": 21,
+     "substituted_answer": [
+      "July 9 , 2013 ."
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "In a referendum on 1928",
+     "p_top": 0.23545078933238983,
+     "margin": 0.0,
+     "entropy": 3.000732660293579,
+     "n_tokens": 155,
+     "n_answer_tokens": 2,
+     "feat": 22,
+     "substituted_answer": [
+      "1928"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "May 4, 1984",
+     "p_top": 0.5595057606697083,
+     "margin": 0.39920467138290405,
+     "entropy": 1.732179880142212,
+     "n_tokens": 159,
+     "n_answer_tokens": 7,
+     "feat": 23,
+     "substituted_answer": [
+      "May 4 , 1984"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded"
+  },
+  {
+   "question": "when was the last debutantes presented at court",
+   "split": "new",
+   "kind": "when",
+   "gold": [
+    "1958"
+   ],
+   "closed_book": "1958",
+   "known_closed_book": true,
+   "original": {
+    "answer": "1958",
+    "p_top": 0.9929491281509399,
+    "margin": 0.9877386093139648,
+    "entropy": 0.04814395681023598,
+    "n_tokens": 126,
+    "n_answer_tokens": 2,
+    "feat": 24,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "May 11, 2011",
+     "p_top": 0.7797916531562805,
+     "margin": 0.644284188747406,
+     "entropy": 0.7704879641532898,
+     "n_tokens": 130,
+     "n_answer_tokens": 7,
+     "feat": 25,
+     "substituted_answer": [
+      "May 11 , 2011"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "27 September 1922",
+     "p_top": 0.9895073771476746,
+     "margin": 0.9854635000228882,
+     "entropy": 0.0843566358089447,
+     "n_tokens": 129,
+     "n_answer_tokens": 5,
+     "feat": 26,
+     "substituted_answer": [
+      "27 September 1922"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "1163",
+     "p_top": 0.7466282844543457,
+     "margin": 0.5327156782150269,
+     "entropy": 0.7333639860153198,
+     "n_tokens": 126,
+     "n_answer_tokens": 2,
+     "feat": 27,
+     "substituted_answer": [
+      "1163"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "grounded"
+  },
+  {
+   "question": "who has won the most number of uefa champions league trophies",
+   "split": "new",
+   "kind": "who",
+   "gold": [
+    "Real Madrid"
+   ],
+   "closed_book": "Real Madrid",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Real Madrid",
+    "p_top": 0.5752527713775635,
+    "margin": 0.22634431719779968,
+    "entropy": 1.167837381362915,
+    "n_tokens": 155,
+    "n_answer_tokens": 2,
+    "feat": 28,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Juventus (Italy)",
+     "p_top": 0.9472789764404297,
+     "margin": 0.9299289584159851,
+     "entropy": 0.3762584924697876,
+     "n_tokens": 155,
+     "n_answer_tokens": 2,
+     "feat": 29,
+     "substituted_answer": [
+      "One Dance"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Juventus (Italy)",
+     "p_top": 0.9386569261550903,
+     "margin": 0.9103119373321533,
+     "entropy": 0.40566349029541016,
+     "n_tokens": 155,
+     "n_answer_tokens": 2,
+     "feat": 30,
+     "substituted_answer": [
+      "James Mason"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Juventus (Italy)",
+     "p_top": 0.9254220128059387,
+     "margin": 0.9036581516265869,
+     "entropy": 0.5037703514099121,
+     "n_tokens": 157,
+     "n_answer_tokens": 4,
+     "feat": 31,
+     "substituted_answer": [
+      "Marietta Edgecombe"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "who held the 200m world record before usain bolt",
+   "split": "new",
+   "kind": "who",
+   "gold": [
+    "Michael Johnson"
+   ],
+   "closed_book": "Michael Johnson",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Pietro Mennea",
+    "p_top": 0.3944629728794098,
+    "margin": 0.0,
+    "entropy": 1.5342402458190918,
+    "n_tokens": 195,
+    "n_answer_tokens": 2,
+    "feat": 32,
+    "correct": false
+   },
+   "subs": [
+    {
+     "answer": "Pietro Mennea",
+     "p_top": 0.5015847086906433,
+     "margin": 0.2646528482437134,
+     "entropy": 1.672842264175415,
+     "n_tokens": 199,
+     "n_answer_tokens": 4,
+     "feat": 33,
+     "substituted_answer": [
+      "Jens Stoltenberg"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Pietro Mennea",
+     "p_top": 0.5407541394233704,
+     "margin": 0.3858254849910736,
+     "entropy": 1.5540974140167236,
+     "n_tokens": 197,
+     "n_answer_tokens": 3,
+     "feat": 34,
+     "substituted_answer": [
+      "Sunil Pal"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "Pietro Mennea",
+     "p_top": 0.7741672992706299,
+     "margin": 0.6693951487541199,
+     "entropy": 1.0165997743606567,
+     "n_tokens": 195,
+     "n_answer_tokens": 2,
+     "feat": 35,
+     "substituted_answer": [
+      "Eleven Sports"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "when was the last time the detroit pistons won a championship",
+   "split": "new",
+   "kind": "when",
+   "gold": [
+    "2004"
+   ],
+   "closed_book": "2004",
+   "known_closed_book": true,
+   "original": {
+    "answer": "2004",
+    "p_top": 0.9177188277244568,
+    "margin": 0.842387855052948,
+    "entropy": 0.32336196303367615,
+    "n_tokens": 195,
+    "n_answer_tokens": 2,
+    "feat": 36,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "February 14, 2018",
+     "p_top": 0.913735568523407,
+     "margin": 0.8553224205970764,
+     "entropy": 0.4248277246952057,
+     "n_tokens": 199,
+     "n_answer_tokens": 7,
+     "feat": 37,
+     "substituted_answer": [
+      "February 14 , 2018"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "September 6, 2019",
+     "p_top": 0.8270331621170044,
+     "margin": 0.6833163499832153,
+     "entropy": 0.6264581084251404,
+     "n_tokens": 199,
+     "n_answer_tokens": 7,
+     "feat": 38,
+     "substituted_answer": [
+      "September 6 , 2019"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "1990",
+     "p_top": 0.8272045850753784,
+     "margin": 0.7152546048164368,
+     "entropy": 0.7228351831436157,
+     "n_tokens": 199,
+     "n_answer_tokens": 7,
+     "feat": 39,
+     "substituted_answer": [
+      "July 26 , 1951"
+     ],
+     "outcome": "other"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "when did the first harry potter film come out",
+   "split": "new",
+   "kind": "when",
+   "gold": [
+    "16 November 2001"
+   ],
+   "closed_book": "2001",
+   "known_closed_book": true,
+   "original": {
+    "answer": "16 November 2001",
+    "p_top": 0.9069807529449463,
+    "margin": 0.8718132972717285,
+    "entropy": 0.5410237312316895,
+    "n_tokens": 238,
+    "n_answer_tokens": 5,
+    "feat": 40,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "mid-August 1992",
+     "p_top": 0.6405442357063293,
+     "margin": 0.49761950969696045,
+     "entropy": 1.3663126230239868,
+     "n_tokens": 238,
+     "n_answer_tokens": 6,
+     "feat": 41,
+     "substituted_answer": [
+      "mid-August 1992"
+     ],
+     "outcome": "passage"
+    },
+    {
+     "answer": "February 28, 2001",
+     "p_top": 0.9171183109283447,
+     "margin": 0.9040363430976868,
+     "entropy": 0.5477960705757141,
+     "n_tokens": 239,
+     "n_answer_tokens": 7,
+     "feat": 42,
+     "substituted_answer": [
+      "February 28 , 1909"
+     ],
+     "outcome": "other"
+    },
+    {
+     "answer": "1821",
+     "p_top": 0.5765452980995178,
+     "margin": 0.3042045831680298,
+     "entropy": 1.3663684129714966,
+     "n_tokens": 235,
+     "n_answer_tokens": 2,
+     "feat": 43,
+     "substituted_answer": [
+      "1821"
+     ],
+     "outcome": "passage"
+    }
+   ],
+   "label": "set_aside"
+  },
+  {
+   "question": "who won popular vote in 2008 presidential election",
+   "split": "new",
+   "kind": "who",
+   "gold": [
+    "Barack Obama"
+   ],
+   "closed_book": "Barack Obama",
+   "known_closed_book": true,
+   "original": {
+    "answer": "Barack Obama",
+    "p_top": 0.9971490502357483,
+    "margin": 0.9964408874511719,
+    "entropy": 0.02751793898642063,
+    "n_tokens": 99,
+    "n_answer_tokens": 2,
+    "feat": 44,
+    "correct": true
+   },
+   "subs": [
+    {
+     "answer": "Barack Obama",
+     "p_top": 0.6516693830490112,
+     "margin": 0.563475489616394,
+     "entropy": 1.5412157773971558,
+     "n_tokens": 100,
+     "n_answer_tokens": 3,
+     "feat": 45,
+     "substituted_answer": [
+      "Julie Foy"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "Barack Obama",
+     "p_top": 0.5002697110176086,
+     "margin": 0.19684076309204102,
+     "entropy": 1.3791781663894653,
+     "n_tokens": 101,
+     "n_answer_tokens": 4,
+     "feat": 46,
+     "substituted_answer": [
+      "David Tomlinson"
+     ],
+     "outcome": "memory"
+    },
+    {
+     "answer": "Barack Obama",
+     "p_top": 0.5516370534896851,
+     "margin": 0.3487011194229126,
+     "entropy": 1.3750618696212769,
+     "n_tokens": 100,
+     "n_answer_tokens": 3,
+     "feat": 47,
+     "substituted_answer": [
+      "Vicky Bradford"
+     ],
+     "outcome": "memory"
+    }
+   ],
+   "label": "hidden_ungrounded"
+  }
+ ],
+ "gpu_minutes": 1.0858855326970418
+}

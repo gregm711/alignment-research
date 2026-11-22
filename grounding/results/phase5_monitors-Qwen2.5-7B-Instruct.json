@@ -1,0 +1,80 @@
+{
+ "n": [
+  16,
+  465
+ ],
+ "monitors": {
+  "evidence head": {
+   "auc": [
+    0.7369623655913978,
+    0.6133736559139785,
+    0.8461021505376344
+   ],
+   "caught_at_frozen_threshold": "3/16",
+   "false_alarms_at_frozen_threshold": "23/465"
+  },
+  "passage head": {
+   "auc": [
+    0.7053091397849462,
+    0.5901209677419355,
+    0.8153225806451613
+   ],
+   "caught_at_frozen_threshold": "4/16",
+   "false_alarms_at_frozen_threshold": "22/465"
+  },
+  "all-heads average": {
+   "auc": [
+    0.6228494623655914,
+    0.4724462365591398,
+    0.7706989247311828
+   ],
+   "caught_at_frozen_threshold": "4/16",
+   "false_alarms_at_frozen_threshold": "18/465"
+  },
+  "attention classifier": {
+   "auc": [
+    0.8256720430107527,
+    0.7104838709677419,
+    0.9134408602150538
+   ],
+   "caught_at_frozen_threshold": "5/16",
+   "false_alarms_at_frozen_threshold": "7/465"
+  },
+  "output plus length baseline": {
+   "auc": [
+    0.7342069892473119,
+    0.6137096774193549,
+    0.8358870967741936
+   ],
+   "caught_at_frozen_threshold": "3/16",
+   "false_alarms_at_frozen_threshold": "35/465"
+  },
+  "output top probability": {
+   "auc": [
+    0.5383064516129032,
+    0.36673387096774196,
+    0.7058467741935484
+   ],
+   "caught_at_frozen_threshold": "3/16",
+   "false_alarms_at_frozen_threshold": "36/465"
+  },
+  "output margin": {
+   "auc": [
+    0.5372311827956989,
+    0.36532258064516127,
+    0.7055107526881721
+   ],
+   "caught_at_frozen_threshold": "3/16",
+   "false_alarms_at_frozen_threshold": "36/465"
+  },
+  "output entropy": {
+   "auc": [
+    0.5326612903225807,
+    0.3577956989247312,
+    0.7029569892473119
+   ],
+   "caught_at_frozen_threshold": "3/16",
+   "false_alarms_at_frozen_threshold": "36/465"
+  }
+ }
+}
