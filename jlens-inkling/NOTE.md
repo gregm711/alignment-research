@@ -113,6 +113,10 @@ intervention at all it fires on 12 to 14% of correct runs.
 This is the part we think is most useful to anyone evaluating a monitor. Judged by AUC, the
 monitor transferred. Judged by how often it would interrupt a correct run, it did not. A
 report that gave only the first number would have described a working monitor.
+The general point, that a ranking score and a thresholded alarm measure different things,
+is made across several monitoring benchmarks in
+[From Probe Scores to Alarm Policies](https://arxiv.org/abs/2610.04575); this is one more
+instance of it.
 
 ## 5. We could not get the model to make these mistakes unprompted
 

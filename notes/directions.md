@@ -74,3 +74,43 @@ automated-researcher study.
 
 Write jailbreaks, or build tooling whose main use is stripping safeguards from a model.
 Measuring what stripping them does is in scope.
+
+## Scan of 2026-11-22: what changed, and what to do next
+
+Depth: arXiv listings on eleven topics, abstracts only for the twelve closest papers, and
+the Looped Lens Challenge page via a summary. No paper below was read in full.
+
+**Things that reduce the novelty of what we have**
+
+- [From Probe Scores to Alarm Policies](https://arxiv.org/abs/2610.04575) (Oct 2026) says
+  ranking scores and thresholded alarms are "different estimands" and tests this across four
+  monitoring benchmarks. Our "the ranking carried over, the alarm did not" result is one
+  more instance of a point already made in general. It is not a contribution on its own.
+- [Rewired or Gated?](https://arxiv.org/abs/2609.25602) (Sep 2026) reports that the choice
+  between the prompt and memory is made by a handful of identifiable attention heads, in
+  three model families. With Lookback Lens, that means finding such a head in the grounding
+  project would be a replication. What may still be ours: testing on answers that are
+  *correct* and ungrounded, calibrating only on visible cases, and the known-questions
+  control. Read this paper in full before claiming any of it.
+- [When Small Models Are Right for Wrong Reasons](https://arxiv.org/abs/2601.00513) covers
+  the behavioural side from written reasoning traces, not internals.
+
+**The opening: the Looped Lens Challenge**
+
+[NDIF's challenge](https://ndif.us/looped-lens-challenge), with Thinking Machines, Goodfire
+and Northeastern, opens 2026-11-23. Entrants submit a lens for Inkling 2 Mini as a Python
+script; a judge scores the top tokens it reads at chosen layers on a held-out prompt set.
+The page asks whether a Jacobian lens still works on this model. It also asks for general
+insights into the model. Prizes, closing date and scoring rule were not on the page.
+
+We already have per-pass Jacobian lenses fitted, an adapter for the looped layout, a
+logit-lens comparison in which the Jacobian lens showed no advantage, and one finding about
+what the messages carry (the token-position result). Needs an NDIF key and a registration.
+
+**Ranking**
+
+1. Enter the challenge. External judge, an audience that already cares, and we start ahead.
+2. Finish grounding Phases 2 and 3 (offline, free), then decide Phase 4 on the result and
+   on a full read of the knowledge-conflict paper.
+3. Not worth starting: deception probes, evaluation awareness, cross-model probes. All are
+   crowded with lab-scale work, and we have no edge.
