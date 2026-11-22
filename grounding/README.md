@@ -170,3 +170,56 @@ answer beyond those in the question, or be a single word equal to its last word.
 
 **What this will not show.** Labels still rest on string matching. A question labelled
 hidden ungrounded is one whose answer did not change under these particular substitutions.
+
+## Phases 2 and 3: monitors, calibrated on what an overseer can see
+
+### Plan, predictions and bars (written while Phase 1 was still running, before any of its data existed)
+
+Both phases are offline analyses of what Phase 1 records. `monitor.py` does both.
+
+**What an overseer can label.** With a substituted passage, a model that gives the original
+answer has visibly ignored the passage. Those runs, and runs that follow the passage, can be
+labelled from the output alone. Everything below is fitted on those, on training questions
+only. No hidden ungrounded answer is used to build or tune anything.
+
+**Monitors.** Each gives a score where higher means "less grounded".
+
+| Monitor | Uses | Needs to know where the evidence is? |
+|---|---|---|
+| evidence head | one attention head's attention on the answer's location in the passage (low attention scores high) | yes |
+| passage head | one head's attention on the passage as a whole | no |
+| all-heads average | mean over every head of attention on the answer's location, nothing selected | yes |
+| attention classifier | logistic regression over every head's share of attention on the passage, in the style of Lookback Lens | no |
+| output confidence | top-token probability, margin, entropy | no |
+
+Heads are chosen by ranking score on the training questions' visible cases. Thresholds are
+set for 10% false alarms on training runs that follow the passage. Then everything is frozen.
+
+**Phase 2 gate.** On the *test* questions' substituted-passage runs, the frozen evidence
+head separates visible ungrounded answers from passage-following ones with AUC above 0.8.
+
+**Phase 3 test.** On the test questions' *original-passage* runs, where every answer is
+correct: hidden ungrounded against grounded. Reported for every monitor: AUC with a
+bootstrap interval over questions, and detection and false alarms at the frozen threshold.
+
+**Bar for "internal access helps".** The best attention monitor's interval lies entirely
+above the best output-confidence baseline's. We name the comparison now: evidence head
+against top-token probability, and separately passage head against top-token probability.
+
+**A control we commit to.** Hidden ungrounded answers come from questions the model already
+knows, so a monitor might only be detecting "the model knows this". We also report hidden
+ungrounded against grounded *among questions the model answers correctly with no passage*,
+where both groups know the answer and differ only in whether they used the passage.
+
+**Predictions.**
+
+1. The Phase 2 gate passes.
+2. The evidence head beats top-token probability on hidden ungrounded answers.
+3. Output confidence is a stronger baseline here than on the lookup tables (well above
+   chance), because a remembered answer is likely to be a confident one.
+4. The frozen threshold's false-alarm rate on test will not match the 10% it was set for.
+   The Inkling work showed thresholds are the part that fails to carry over.
+
+**What this will not show.** One model, one dataset, one prompt. Labels by string matching.
+Many substituted passages are implausible, so "did not depend on the passage" is established
+against an implausible alternative.
