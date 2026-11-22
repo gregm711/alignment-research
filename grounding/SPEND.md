@@ -11,6 +11,8 @@ Estimates only: GPU minutes times an assumed all-in rate for the GPU used on Mod
 | 2026-11-22 | Phase 1 pilot, 20 questions | L4 | 1.2 | $0.02 | $0.62 |
 | 2026-11-22 | Phase 1, 1,462 questions with attention features | L4 | 34.1 | $0.57 | $1.19 |
 | 2026-11-22 | Phases 2 and 3 (offline) | none | 0 | $0 | $1.19 |
+| 2026-11-22 | Phase 4 screen, six candidate models, 120 questions | L4 | 31.6 | $0.53 | $1.72 |
+| 2026-11-22 | Phase 4 build pilots, three models, 12 questions | L4 | ~4 | $0.07 | $1.79 |
 
 Assumed cap for this project: $11. The Inkling project's ledger is separate
 ([`../jlens-inkling/SPEND.md`](../jlens-inkling/SPEND.md), $14.10).

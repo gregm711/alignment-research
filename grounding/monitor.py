@@ -32,8 +32,9 @@ def boot(pos, neg, n=2000):
 
 
 def main():
-    tag = "-" + sys.argv[1] if len(sys.argv) > 1 else ""  # e.g. python3 monitor.py Qwen2.5-7B-Instruct
-    data = json.loads((HERE / f"phase1{tag}.json").read_text())
+    args = [a for a in sys.argv[1:] if a != "clean"]  # e.g. python3 monitor.py Qwen2.5-7B-Instruct clean
+    tag, clean = ("-" + args[0] if args else ""), ("-clean" if "clean" in sys.argv else "")  # "clean": labels from audit.py
+    data = json.loads((HERE / f"phase1{tag}{clean}.json").read_text())
     F = torch.load(HERE / f"phase1{tag}_features.pt", map_location="cpu").float()  # [runs, layers, heads, 3]
     rows = data["rows"]
     L, H = F.shape[1:3]
@@ -114,7 +115,7 @@ def main():
         "grounded_original": med([r["original"]["feat"] for r in te if r["label"] == "grounded"]),
         "hidden_ungrounded_original": med([r["original"]["feat"] for r in te if r["label"] == "hidden_ungrounded"]),
         "hidden_ungrounded_substituted_gave_memory": med([x["feat"] for r in te if r["label"] == "hidden_ungrounded" for x in r["subs"] if x["outcome"] == "memory"])}
-    (HERE / f"phase2_3{tag}.json").write_text(json.dumps(out, indent=1))
+    (HERE / f"phase2_3{tag}{clean}.json").write_text(json.dumps(out, indent=1))
 
     fmt = lambda v: f"{v[0]:.3f} [{v[1]:.3f}, {v[2]:.3f}]"
     print(f"fitted on {n_pos} visible ungrounded and {n_neg} passage-following runs from training questions")

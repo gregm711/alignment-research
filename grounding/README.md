@@ -351,3 +351,40 @@ pipeline would be measuring something else. We replace it with the next model fr
 different family that answers tersely: granite-3.3-2b-instruct. Phase 4 models:
 **Qwen2.5-7B-Instruct and granite-3.3-2b-instruct.** This also means every result here is
 limited to models and prompts that give short answers.
+
+## Label audit: the substituted passage often still contains the original answer
+
+An independent reviewer, working from `results/phase1.json`, found that many answers we
+scored as "from memory" were read from the passage. NQ-Swap replaces one mention of the
+answer; a later mention ("Gomez" after "Selena Gomez") or another listed gold answer can
+survive. That explains the 44 hidden ungrounded questions the model could not answer
+unaided. The Phase 1 to 3 results above stand as run, and are superseded by the cleaned
+analysis below where the two differ.
+
+### Cleaning rule and predictions (written before the Phase 4 models' data exists)
+
+`audit.py`, offline:
+
+- Drop every substituted-passage run in which any word of any gold answer, beyond the
+  question's own words, still appears in the substituted passage. Labels are recomputed
+  from the runs that remain.
+- Re-split train and test by a hash of the normalised first gold answer, so near-duplicate
+  questions land on the same side.
+- Report the share of answers that begin with a filler word, since the monitors read
+  attention at the first generated token.
+
+Then `monitor.py` unchanged on the cleaned set: re-fitted on cleaned training runs, frozen,
+tested on cleaned test questions. For the two Phase 4 models the pre-registered numbers on
+the original labels are reported first, verbatim.
+
+The reviewer has already reported a partial cleaning of Phi-4-mini (evidence head 0.62,
+attention classifier 0.78 on 22 hidden cases), so the Phi-4-mini cleaned numbers are not
+blind. The predictions below are for all three models, and are blind for the two new ones.
+
+1. The evidence head still collapses: at least 0.15 lower on hidden than on visible answers.
+2. The attention classifier reaches at least 0.70 on cleaned hidden answers on at least two
+   of the three models, with its interval above output confidence's.
+3. On the known-questions control the classifier stays above 0.65 on at least two models.
+4. Cleaning leaves fewer than 60 hidden ungrounded questions per model, so intervals will be
+   wide. If fewer than 15 remain in a model's test split, that model's Phase 3 is reported
+   as uninformative.
