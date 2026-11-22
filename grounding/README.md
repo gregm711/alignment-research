@@ -668,3 +668,11 @@ is centred near zero. Otherwise unresolved, and we say so.
 **Cost estimate.** About 25 minutes for Phi-4-mini and 50 each for the other two on an L4,
 about $2.50 with a pilot; each job has a 110-minute timeout. Approved by the author up to
 about $5, which takes the two projects to about $23.
+
+**Changes during the run (recorded before any monitor score was looked at).** The first
+attempt stopped at 300 known questions per model when the local connection to Modal
+dropped; the job now resumes from its saved progress and leaves its result on the volume.
+The runs were slower than estimated (about 9 known questions a minute for Qwen and
+granite), so the target is lowered from 900 to **800** known questions per model to stay
+inside the approved cost. Label counts at 300 were looked at to decide this (hidden cases:
+18 for Phi-4-mini, 7 for Qwen), so prediction 1 is already known to be too high.

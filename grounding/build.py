@@ -171,6 +171,12 @@ def run(n: int, model_name: str = MODEL, known: int = 0):
         return out
 
     rows, feats = [], []  # feats[i] belongs to the run whose "feat" index is i
+    start, partial = 0, pathlib.Path(f"/cache/phase5_partial_{model_name.split('/')[-1]}.pt")
+    if known and partial.exists():  # resume an interrupted Phase 5 run: questions come in a fixed order
+        saved = torch.load(partial)
+        rows, feats = saved["rows"], list(saved["feats"])
+        start = screened = [it["question"] for it in items].index(rows[-1]["question"]) + 1
+        print(f"resuming with {len(rows)} kept after {start} asked", flush=True)
 
     def keep(run):
         f = run.pop("feats")
@@ -179,6 +185,8 @@ def run(n: int, model_name: str = MODEL, known: int = 0):
         return run
 
     for k, it in enumerate(items):
+        if k < start or (known and len(rows) >= known):
+            continue
         closed = ask(CLOSED_BOOK, it["question"])["answer"]
         screened += 1
         if known and not gives(closed, it["gold"], it["question"]):
@@ -220,8 +228,12 @@ def run(n: int, model_name: str = MODEL, known: int = 0):
               + " ; ".join(f"{s['substituted_answer'][0][:14]!r}->{s['answer'][:18]!r} ({s['outcome']})" for s in r["subs"]))
     buf = io.BytesIO()
     torch.save(torch.stack(feats), buf)
-    return {"model": model_name, "transformers": transformers.__version__, "summary": summary, "rows": rows,
-            "gpu_minutes": (time.time() - t0) / 60}, buf.getvalue()
+    out = {"model": model_name, "transformers": transformers.__version__, "summary": summary, "rows": rows,
+           "gpu_minutes": (time.time() - t0) / 60}
+    if known:  # also leave the result on the volume, so a dropped local connection loses nothing
+        torch.save({"out": out, "feats": torch.stack(feats)}, f"/cache/phase5_final_{model_name.split('/')[-1]}.pt")
+        vol.commit()
+    return out, buf.getvalue()
 
 
 @app.local_entrypoint()
