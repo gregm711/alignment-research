@@ -388,3 +388,31 @@ blind. The predictions below are for all three models, and are blind for the two
 4. Cleaning leaves fewer than 60 hidden ungrounded questions per model, so intervals will be
    wide. If fewer than 15 remain in a model's test split, that model's Phase 3 is reported
    as uninformative.
+
+### Audit result, Phi-4-mini
+
+[`results/phase1-clean.json`](results/phase1-clean.json),
+[`results/phase2_3-clean.json`](results/phase2_3-clean.json).
+
+**The reviewer was right.** 122 of the 214 substituted-passage runs scored "from memory"
+(57%) had the original answer still readable in the passage, against 410 of 2,218 runs
+scored as following the passage. After cleaning, 50 hidden ungrounded questions remain
+(from 100), 37 of them known unaided (from 56 of 100), and 664 grounded. 1.5% of answers
+begin with a filler word.
+
+| Monitor | visible, test (58 vs 923) | hidden, test (31 vs 343) | known questions only (22 vs 50) |
+|---|---|---|---|
+| evidence head (now L21 H20) | 0.90 [0.85, 0.95] | 0.64 [0.53, 0.74] | 0.63 [0.49, 0.75] |
+| passage head | 0.89 [0.85, 0.93] | 0.72 [0.61, 0.81] | 0.70 [0.55, 0.83] |
+| attention classifier | 0.85 [0.80, 0.89] | **0.78** [0.68, 0.86] | 0.70 [0.54, 0.83] |
+| output top probability | 0.80 [0.75, 0.84] | 0.63 [0.54, 0.71] | 0.63 [0.49, 0.76] |
+
+- Prediction 1 holds here: the evidence head drops from 0.90 to 0.64.
+- The classifier reaches 0.78 on hidden answers, but its interval overlaps confidence's
+  (0.68 against 0.71), so on this model it does not clear the bar. With clean labels
+  confidence is no longer at chance (0.63): the earlier "confidence tells you nothing" was
+  partly produced by the bad labels.
+- On the known-questions control nothing separates from confidence.
+- At its frozen threshold the classifier catches 14 of 31 with 31 of 343 false alarms.
+
+With 31 hidden test cases this is weak evidence either way.
