@@ -18,6 +18,7 @@ don't go the way we hoped.
 |---|---|---|---|
 | 1 | What a looped model's passes hand to each other, and whether an internal monitor catches right answers reached the wrong way (induced mistakes) | Complete | [`jlens-inkling/NOTE.md`](jlens-inkling/NOTE.md) |
 | 2 | The same question on mistakes a model makes unprompted: answering from memory when a document is supplied | Complete | [`grounding/NOTE.md`](grounding/NOTE.md) |
+| 3 | Does the answer survive the edit in other knowledge-conflict benchmarks, and does it move published results? (CPU only) | First pass done on three datasets | [`benchmark-audits/README.md`](benchmark-audits/README.md) |
 
 ## What's here
 

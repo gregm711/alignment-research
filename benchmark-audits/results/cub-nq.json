@@ -1,0 +1,58 @@
+{
+ "dataset": {
+  "context_types": {
+   "edited": 1639,
+   "gold": 1653,
+   "irrelevant": 1653
+  },
+  "edited_contexts_leaky_strict": "477/1639 (29.1%)",
+  "edited_contexts_leaky_loose": "349/1639 (21.3%)"
+ },
+ "gpt2-xl": "no saved full answers; not scored",
+ "pythia-6.9b": "no saved full answers; not scored",
+ "qwen-1.5b": "no saved full answers; not scored",
+ "qwen-1.5b-instruct": "no saved full answers; not scored",
+ "qwen-7b": "no saved full answers; not scored",
+ "qwen-7b-instruct": "no saved full answers; not scored",
+ "qwen-32b": "no saved full answers; not scored",
+ "qwen-32b-instruct": "no saved full answers; not scored",
+ "cohere-command-a": {
+  "outcomes": {
+   "memory": 134,
+   "passage": 1203,
+   "both": 5,
+   "abstains": 5,
+   "other": 292
+  },
+  "leaky_share_where_original_answer_given": "86/134 (64.2%)",
+  "leaky_share_where_context_followed": "267/1203 (22.2%)",
+  "original_answer_rate_all_items": "134/1639 (8.2%)",
+  "original_answer_rate_non_leaky_items": "48/1162 (4.1%)"
+ },
+ "gpt-4.1-mini": {
+  "outcomes": {
+   "memory": 274,
+   "passage": 973,
+   "both": 8,
+   "abstains": 15,
+   "other": 369
+  },
+  "leaky_share_where_original_answer_given": "127/274 (46.4%)",
+  "leaky_share_where_context_followed": "193/973 (19.8%)",
+  "original_answer_rate_all_items": "274/1639 (16.7%)",
+  "original_answer_rate_non_leaky_items": "147/1162 (12.7%)"
+ },
+ "gpt-4.1": {
+  "outcomes": {
+   "memory": 351,
+   "passage": 901,
+   "both": 3,
+   "abstains": 8,
+   "other": 376
+  },
+  "leaky_share_where_original_answer_given": "169/351 (48.1%)",
+  "leaky_share_where_context_followed": "152/901 (16.9%)",
+  "original_answer_rate_all_items": "351/1639 (21.4%)",
+  "original_answer_rate_non_leaky_items": "182/1162 (15.7%)"
+ }
+}
