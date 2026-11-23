@@ -552,25 +552,22 @@ token cap at both loop counts.
 | mean thinking tokens | 617 | 357 | **-261 [-337, -181]**, 42% shorter |
 | sheets over 500 thinking tokens | 17 | 1 | |
 | intermediate steps named | 140/144 | 139/144 | |
-| steps named, stricter count | 95/144 | 93/144 | -1 point [-6, +2] |
+| steps named, stricter count | 140/144 | 139/144 | −0.7 points [−9.7, +6.2] |
 
 On the 20 sheets solved at both loop counts: thinking 41% shorter [-334, -163 tokens],
-stricter step count identical.
+the stricter scorer finds all 120 intermediate relations at each loop count. An independent recount fixed a second case mismatch in the stricter scorer: the earlier 95/144 and 93/144 counts missed relations involving capitalized city names.
 
 **What the shorter reasoning leaves out** (looked at after the result). At 2 loops the
 model usually begins by copying every table out as a list and then walks the chain. At 4
 loops it walks the chain straight away. Mentions of any table value in the thinking
 average 104 at 2 loops and 34 at 4; lengths at 2 loops are split between about 280 and
-about 750 tokens, and at 4 loops all but one sit near 350. The chain itself is written out in
-full at both.
+about 750 tokens, and at 4 loops all but one sit near 350. All six queried relations meet the stricter criterion on 22/24 sheets at two loops and 23/24 at four.
 
 ### What we see
 
 - **Looping did shorten written reasoning here, by more than the GLM post reports,** on
   a task long enough to have something to shorten.
-- **What went was scratch work, not the steps.** A monitor reading for the intermediate
-  facts sees the same ones at both loop counts. On this evidence the shortening is not a
-  loss of what a monitor needs.
+- **What went was scratch work, not the steps.** The shorter transcripts retain nearly all queried intermediate relations by the same-sentence measure. We did not test a monitor’s ability to flag errors.
 - **The accuracy gain from the screen did not clearly repeat** (12 against 16 of 16 on the
   screen; 21 against 23 of 24 on fresh sheets). The screen's result sat exactly on its
   threshold.
@@ -591,11 +588,25 @@ full at both.
 
 1. **Does more looping make a model write less?** On Ouro: no on easy chains, yes (42%)
    on seven lookups.
-2. **Does what it stops writing include the steps a monitor wants?** Not here. It stops
-   copying the prompt out.
+2. **Does the shorter trace still name the intermediate relations?** Yes, at nearly the same rate. It contains much less text about other table entries.
 3. **When nothing is written at all, can the steps be read inside?** On Inkling: yes for
    one hidden step (0.85), about half the time for a second, on successful runs.
 4. **Not done:** transcript and probe on the same runs; any task where a written step
    actually disappears. We did not find one.
 
 Spend on this project: about $4.30 (`SPEND.md`).
+
+
+### Independent recount on the fresh sheets
+
+As a post hoc control, I applied the case-corrected same-sentence rule to each of the seven possible routes on each sheet. For each route I counted the first six links, using only text before the closing thinking tag and removing verbatim table rows as in the stricter scorer. A link counts when both endpoint words occur in the same sentence, regardless of order.
+
+| Across 24 sheets | Two loops | Four loops |
+|---|---:|---:|
+| Queried links detected, of 144 | 140 | 139 |
+| Links on the six other routes detected, of 864 | 552 | 4 |
+| Sheets where the queried route has the unique highest score | 9 | 23 |
+| Sheets where it ties for highest | 14 | 0 |
+| Sheets where another route scores higher | 1 | 1 |
+
+This tests how clearly the written trace singles out the requested route. Co-occurrence can also count lists and does not establish which route the model actually used. On these sheets the shorter trace was easier for this rule to distinguish from a restatement of the tables.

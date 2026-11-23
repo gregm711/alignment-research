@@ -27,7 +27,7 @@ def strict(r):
     for p in pairs[(r["chain"], r["sheet"])]:
         body = body.replace(p.lower(), " ")
     sents = re.split(r"[.!?\n]+", body)
-    has = lambda s, w: re.search(rf"\b{w}\b", s)
+    has = lambda s, w: re.search(rf"\b{re.escape(w.lower())}\b", s)
     return [any(has(s, a) and has(s, b) for s in sents) for a, b in zip(r["steps"][:-2], r["steps"][1:-1])]
 
 
