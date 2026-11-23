@@ -30,8 +30,8 @@ def items(seed, n_sheets, chain):
         lines = []
         for i, t in enumerate(tables):
             a, b = KINDS[i][0], KINDS[i + 1][0]
-            rows = ", ".join(f"the {k} goes with the {t[k]}" for k in rng.sample(list(t), ROWS))
-            lines.append(f"{b.capitalize()}s for {a}s: {rows}.")
+            rows = "; ".join(f"{k}: {t[k]}" for k in rng.sample(list(t), ROWS))
+            lines.append(f"{b.capitalize()} for each {a}. {rows}.")
         start = rng.choice(vals[0])
         steps = [start]
         for t in tables:
