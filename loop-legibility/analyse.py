@@ -76,3 +76,17 @@ gained = np.array([(a["pick"] != a["steps"][-1]) and (b["pick"] == b["steps"][-1
 extra["chain 3, right only at 3 passes, held-out: step 1 decoded at end of pass 1"] = f"{int(hit[gained & ~train].sum())}/{int((gained & ~train).sum())}"
 print(json.dumps(extra, indent=1))
 (HERE / "partA-summary.json").write_text(json.dumps({"cells": out, "extra": extra}, indent=1))
+
+# ---- added after review: on held-out chain-3 sheets where the best candidate is right at 3 passes, is step 2 decoded? ----
+sub3 = [r for r in by[(V, 3)] if r["chain"] == 3]
+right = np.array([r["pick"] == r["steps"][-1] for r in sub3])
+y2 = np.array([r["steps"][2] for r in sub3])
+for name, j in (("end of pass 3", 3), ("last layer", -1)):
+    X = saved[f"{V}|3"]["states"].float().numpy()[idx, j]
+    s = StandardScaler().fit(X[train])
+    hit = LogisticRegression(C=0.01, max_iter=300).fit(s.transform(X[train]), y2[train]).predict(s.transform(X)) == y2
+    extra[f"chain 3, 3 passes, held-out sheets with the right answer: step 2 decoded at {name}"] = f"{int(hit[right & ~train].sum())}/{int((right & ~train).sum())}"
+for c in (3, 4):
+    extra[f"chain {c}: top word right at 1, 2, 3 passes"] = [sum(r["top1_right"] for r in by[(V, k)] if r["chain"] == c) for k in (1, 2, 3)]
+print(json.dumps(extra, indent=1))
+(HERE / "partA-summary.json").write_text(json.dumps({"cells": out, "extra": extra}, indent=1))

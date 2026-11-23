@@ -9,70 +9,12 @@ last-token state at the end of each pass, for probes fitted later on a laptop.
 Part B (generation): thinking on, two-lookup chains, enough tokens to finish. Reasoning length and written steps.
 """
 import json
-import random
-import re
 import sys
 
 VARLOOP, FIXED = "thinkingmachines/TML-d24-varloop-research", "thinkingmachines/Inkling-2-Mini"
 TRANSFORMERS_PIN = "046bdb8cc2cee29d233964bb77fe6fd37cfe4aa3"
-CHAINS, SHEETS_A, SHEETS_B, MAX_NEW, ROWS = [2, 3, 4], 250, 16, 320, 7
-KINDS = [("animal", ["cat", "dog", "bat", "pig", "cow", "hen", "rat", "bee", "ant", "ram", "elk", "yak"]),
-         ("color", ["red", "blue", "green", "gold", "pink", "gray", "black", "white", "brown", "purple", "silver", "yellow"]),
-         ("fruit", ["fig", "lime", "grape", "apple", "orange", "date", "olive"]),
-         ("tool", ["saw", "drill", "hoe", "file", "rope", "brush", "pump", "clamp", "fork"]),
-         ("metal", ["iron", "zinc", "tin", "lead", "copper", "nickel", "steel"])]  # all one token after a space on this tokenizer
-
-def nested(chain, start, kinds):
-    """'the tool that goes with the fruit that goes with the color of the dog'"""
-    inner = f"the {kinds[1][0]} of the {start}"
-    for i in range(2, chain + 1):
-        inner = f"the {kinds[i][0]} that goes with {inner}"
-    return inner
-
-
-WORDINGS = {"so": "So {nested} is the", "qa": "Question: What is {nested}?\nAnswer: It is the"}
-
-
-def items(seed, n_sheets, chain, kinds=KINDS, wording="qa"):
-    """One fact sheet per item. steps[0] is the start, steps[-1] the answer, the rest the intermediate steps.
-    `decoy` is another start on the same sheet; its steps are the probe's control labels."""
-    rng, out = random.Random(seed * 100 + chain), []
-    for s in range(n_sheets):
-        vals = [rng.sample(words, ROWS) for _, words in kinds[: chain + 1]]
-        tables = [dict(zip(vals[i], rng.sample(vals[i + 1], ROWS))) for i in range(chain)]  # one-to-one: no step is ambiguous
-        row = lambda i, k, v: f"the {k} is {v}" if i == 0 else f"{k} goes with the {v}"  # the format the earlier Inkling work used
-        lines = [f"{kinds[i + 1][0].capitalize()}s for {kinds[i][0]}s: " + ", ".join(row(i, k, t[k]) for k in rng.sample(list(t), ROWS)) + "."
-                 for i, t in enumerate(tables)]
-        start, decoy = rng.sample(vals[0], 2)
-
-        def walk(x):
-            steps = [x]
-            for t in tables:
-                steps.append(t[steps[-1]])
-            return steps
-
-        sheet = "Fact sheet.\n" + "\n".join(lines)
-        out.append({"sheet": s, "chain": chain, "steps": walk(start), "decoy_steps": walk(decoy), "candidates": vals[chain],
-                    "pairs": [row(i, k, v) for i, t in enumerate(tables) for k, v in t.items()],
-                    "direct": sheet + "\n" + WORDINGS[wording].format(nested=nested(chain, start, kinds)),
-                    "chat": f"{sheet}\nWhat is {nested(chain, start, kinds)}?"})
-    return out
-
-
-def score_text(it, text):
-    """What a reader of the generated text can see. Copies of the fact sheet's own rows are removed first, so a step
-    counts as named only where the model singles it out. ponytail: a step restated exactly as 'key: value' and nowhere
-    else is missed; read samples before trusting small differences."""
-    think, _, answer = text.partition("<|end_message|>")
-    clean = lambda s: re.sub(r"<\|[^|]*\|>", " ", s).lower()
-    body = clean(think)
-    for p in it["pairs"]:
-        body = body.replace(p.lower(), " ")
-    ans = clean(answer)
-    seen = [(ans.rfind(w), w) for w in it["candidates"] if w in ans]
-    return {"finished": bool(answer.strip()), "correct": bool(seen) and max(seen)[1] == it["steps"][-1],
-            "named": [bool(re.search(rf"\b{w}\b", body)) for w in it["steps"][1:-1]]}
-
+CHAINS, SHEETS_A, SHEETS_B, MAX_NEW = [2, 3, 4], 250, 16, 320
+from tasks import KINDS, ROWS, WORDINGS, items, score_text
 
 if "--show" in sys.argv:
     it = items(0, 1, 3)[0]
@@ -93,6 +35,7 @@ image = (
     .pip_install("torch", "accelerate", "safetensors", "tiktoken", "sentencepiece", "pillow", "hf_transfer")
     .pip_install(f"git+https://github.com/huggingface/transformers@{TRANSFORMERS_PIN}")
     .env({"HF_HOME": "/cache/hf", "HF_HUB_ENABLE_HF_TRANSFER": "1"})
+    .add_local_python_source("tasks")
 )
 OUT = "/cache/loop-legibility"
 

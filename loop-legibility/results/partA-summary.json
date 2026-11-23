@@ -941,6 +941,18 @@
    -0.008,
    0.112
   ],
-  "chain 3, right only at 3 passes, held-out: step 1 decoded at end of pass 1": "13/38"
+  "chain 3, right only at 3 passes, held-out: step 1 decoded at end of pass 1": "13/38",
+  "chain 3, 3 passes, held-out sheets with the right answer: step 2 decoded at end of pass 3": "30/73",
+  "chain 3, 3 passes, held-out sheets with the right answer: step 2 decoded at last layer": "39/73",
+  "chain 3: top word right at 1, 2, 3 passes": [
+   87,
+   76,
+   94
+  ],
+  "chain 4: top word right at 1, 2, 3 passes": [
+   9,
+   0,
+   5
+  ]
  }
 }
