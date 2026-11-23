@@ -510,3 +510,31 @@ more often on sheets solved at both, go on to editing the table and probing.
     more iterations.)
 
 **Cost cap: $1** for screen and fresh run together. Time guards of 25 and 18 minutes.
+
+### Screen result and the frozen choice (before the fresh run)
+
+`ouro.py --mode screen`, two launches (the first hit its time guard), 39.5 GPU minutes.
+Correct of 16, with all 16 finished unless noted:
+
+| lookups | 2 loops | 4 loops |
+|---|---|---|
+| 4 | 15 | 16 |
+| 5 | 16 | 16 |
+| 6 | 16 | 16 |
+| 7 | 12 (14 finished) | 16 |
+
+- **Seven lookups meets the rule, exactly at its threshold** (4 more sheets correct, at
+  least 13 finished at both). With 16 sheets this could be chance; the fresh run is the
+  test.
+- **A scorer bug was found and fixed here.** Five-lookup answers are city names, which
+  the scorer lower-cased on one side only, so every answer scored wrong. The saved text
+  was rescored. The earlier runs had no capitalised answers and are unaffected.
+- **What we saw of the screen's reasoning.** The job's progress lines print mean thinking
+  tokens next to accuracy, and we saw them for four lookups before filtering them out. They
+  played no part in the choice, which follows the rule above.
+- Predictions 11 and 12 both **failed**: 2 loops is still 16 of 16 at six lookups, and
+  one length met the rule.
+
+**Frozen:** seven lookups, fresh fact sheets (seed 8), 2 and 4 loops, batch 8, cap 1,000.
+**Changed from the plan:** 24 fresh sheets, not 40. The screen cost about $0.72 of the
+$1 cap, and 24 sheets is what the rest buys.

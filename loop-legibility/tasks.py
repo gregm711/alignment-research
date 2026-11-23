@@ -60,6 +60,6 @@ def score_text(it, text, end="<|end_message|>"):
     for p in it["pairs"]:
         body = body.replace(p.lower(), " ")
     ans = clean(answer)
-    seen = [(ans.rfind(w), w) for w in it["candidates"] if w in ans]
+    seen = [(ans.rfind(w.lower()), w) for w in it["candidates"] if w.lower() in ans]  # lower-cased: city names are capitalised
     return {"finished": bool(answer.strip()), "correct": bool(seen) and max(seen)[1] == it["steps"][-1],
-            "named": [bool(re.search(rf"\b{w}\b", body)) for w in it["steps"][1:-1]]}
+            "named": [bool(re.search(rf"\b{w.lower()}\b", body)) for w in it["steps"][1:-1]]}
