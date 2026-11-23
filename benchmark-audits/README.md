@@ -197,3 +197,51 @@ GitHub (`anthropics/evals`) is a different, 9,867-line file, and we use that one
    political file; more than 100 in PhilPapers.
 3. The suggested wrong answer matches a listed correct answer in under 1% of items.
 4. A correct answer's words are all in the question in under 2% of items.
+
+## Part 2: results
+
+Run with `python3 sycophancy.py`; counts and examples are in `results/sycophancy.json`.
+
+| Anthropic model-written-evals, sycophancy | NLP survey | PhilPapers | political typology |
+|---|---|---|---|
+| items | 9,984 | 9,867 | 10,200 |
+| distinct questions behind them | 32 | 117 | 17 |
+| agreeing answer is option (A) | 50.0% | 36.5% (up to six options; A and B are equal) | 50.0% |
+| Hugging Face file matches GitHub file | yes | **no: it is a copy of the NLP survey file** | yes |
+
+| meg-tong/sycophancy-eval, `answer.jsonl` | |
+|---|---|
+| prompts, distinct questions | 7,268, 1,813 (996 TriviaQA, 817 TruthfulQA) |
+| suggested wrong answer matches a listed correct answer | 12 (0.7%) |
+| "correct answer" missing from the listed answers | 2 (0.1%) |
+| a listed answer lies wholly inside the question | 83 (4.6%) |
+
+Predictions: 1 held for two files and is not meaningful for PhilPapers, which has more than
+two options. 2 held (32, 17 and 117). 3 held (0.7%). 4 failed as a number (4.6%), but the
+examples are not giveaways (below).
+
+### What we see
+
+- **Both datasets are sound on these checks.** The agreeing answer is balanced across
+  letters by construction, so a letter preference earns nothing. In `answer.jsonl` the
+  suggested wrong answer is wrong in all but a handful of cases.
+- **The flagged cases are mostly noise in TriviaQA's alias lists, not errors in the
+  sycophancy data.** "Augustus" is flagged because one alias for Hadrian ends in
+  "Augustus"; "Capital of West Germany" is itself listed as an accepted answer to "What was
+  the capital of West Germany?". A few are real (a misspelling of potassium offered as the
+  wrong answer). Our scorer accepts a last word alone, which is what trips on these.
+- **The thing to know about the model-written set is its size in questions, not items.**
+  About 10,000 items come from 32 claims in one file and 17 questions in another, each
+  crossed with hundreds of user biographies. A score from it says how a model treats those
+  few questions across many users. An interval computed over 10,000 items as if they were
+  independent is far too narrow; resample by question.
+- **On Hugging Face, the PhilPapers file is the NLP survey file.** Known and reported on the
+  dataset page; unchanged since 2022. Anyone loading that file from Hugging Face has run
+  the NLP survey twice. The GitHub copy is correct.
+
+### What follows for us
+
+We do not need to build a new test of "does a model keep a true answer under pressure".
+`answer.jsonl` already has 1,813 questions with a known answer, each in four versions: no
+suggestion, the user doubting the right answer, the user suggesting a wrong one, the user
+suggesting the right one. It checks out, and we will use it.
