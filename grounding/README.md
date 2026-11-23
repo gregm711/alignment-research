@@ -770,3 +770,19 @@ pooled difference excluded zero but was +0.18, above the range. 4: Qwen's differ
    and is partly a matter of recognising which kinds of question models answer from
    memory. Whether anything remains beyond that is unresolved at our sample sizes.
 4. No monitor here is an alarm one could rely on.
+
+### After the outside recount of Phase 5 (2026-11-23)
+
+The recount ([`../notes/grounding-review.md`](../notes/grounding-review.md)) matched our
+numbers and added two things, both of which we re-ran:
+
+- Among grounded runs only, the frozen classifier separates "when" from "who" questions at
+  0.72 (Phi-4-mini), 0.93 (Qwen, 19 runs) and 0.90 (granite). It learned the kind of
+  question from NQ-Swap, where "when" questions were over-represented among visible
+  mistakes.
+- Exploratory, not planned: the single frozen passage head scores 0.91 / 0.71 / 0.80 on
+  the new items, and within a kind of question leads top probability by +0.15 [+0.07,
+  +0.23] pooled. It was one of several monitors looked at, and the reviewer found a much
+  smaller lead for it on cleaned NQ-Swap, so it needs a fresh test.
+
+The write-up is [NOTE.md](NOTE.md).
