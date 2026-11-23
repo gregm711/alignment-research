@@ -1,0 +1,946 @@
+{
+ "cells": {
+  "Inkling-2-Mini | 3 passes | chain 2": {
+   "n": 250,
+   "top_word_right": 0.98,
+   "best_candidate_right": 0.98,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.072,
+      "decoy": 0.152
+     },
+     "step 2 (answer)": {
+      "queried": 0.152,
+      "decoy": 0.096
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.24,
+      "decoy": 0.104
+     },
+     "step 2 (answer)": {
+      "queried": 0.12,
+      "decoy": 0.096
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.664,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.784,
+      "decoy": 0.152
+     }
+    },
+    "end of pass 3": {
+     "step 1": {
+      "queried": 0.6,
+      "decoy": 0.088
+     },
+     "step 2 (answer)": {
+      "queried": 0.952,
+      "decoy": 0.136
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.712,
+      "decoy": 0.048
+     },
+     "step 2 (answer)": {
+      "queried": 0.96,
+      "decoy": 0.136
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.672,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.784,
+      "decoy": 0.144
+     }
+    }
+   }
+  },
+  "Inkling-2-Mini | 3 passes | chain 3": {
+   "n": 250,
+   "top_word_right": 0.332,
+   "best_candidate_right": 0.34,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.104,
+      "decoy": 0.08
+     },
+     "step 2": {
+      "queried": 0.12,
+      "decoy": 0.12
+     },
+     "step 3 (answer)": {
+      "queried": 0.144,
+      "decoy": 0.128
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.176,
+      "decoy": 0.128
+     },
+     "step 2": {
+      "queried": 0.16,
+      "decoy": 0.152
+     },
+     "step 3 (answer)": {
+      "queried": 0.176,
+      "decoy": 0.136
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.272,
+      "decoy": 0.096
+     },
+     "step 2": {
+      "queried": 0.176,
+      "decoy": 0.168
+     },
+     "step 3 (answer)": {
+      "queried": 0.144,
+      "decoy": 0.144
+     }
+    },
+    "end of pass 3": {
+     "step 1": {
+      "queried": 0.208,
+      "decoy": 0.04
+     },
+     "step 2": {
+      "queried": 0.2,
+      "decoy": 0.176
+     },
+     "step 3 (answer)": {
+      "queried": 0.272,
+      "decoy": 0.088
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.16,
+      "decoy": 0.12
+     },
+     "step 2": {
+      "queried": 0.176,
+      "decoy": 0.216
+     },
+     "step 3 (answer)": {
+      "queried": 0.312,
+      "decoy": 0.128
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.296,
+      "decoy": 0.112
+     },
+     "step 2": {
+      "queried": 0.184,
+      "decoy": 0.168
+     },
+     "step 3 (answer)": {
+      "queried": 0.152,
+      "decoy": 0.136
+     }
+    }
+   }
+  },
+  "Inkling-2-Mini | 3 passes | chain 4": {
+   "n": 250,
+   "top_word_right": 0.196,
+   "best_candidate_right": 0.216,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.104,
+      "decoy": 0.088
+     },
+     "step 2": {
+      "queried": 0.096,
+      "decoy": 0.136
+     },
+     "step 3": {
+      "queried": 0.096,
+      "decoy": 0.136
+     },
+     "step 4 (answer)": {
+      "queried": 0.088,
+      "decoy": 0.168
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.12,
+      "decoy": 0.112
+     },
+     "step 2": {
+      "queried": 0.176,
+      "decoy": 0.12
+     },
+     "step 3": {
+      "queried": 0.128,
+      "decoy": 0.056
+     },
+     "step 4 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.184
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.152,
+      "decoy": 0.088
+     },
+     "step 2": {
+      "queried": 0.136,
+      "decoy": 0.152
+     },
+     "step 3": {
+      "queried": 0.112,
+      "decoy": 0.088
+     },
+     "step 4 (answer)": {
+      "queried": 0.112,
+      "decoy": 0.144
+     }
+    },
+    "end of pass 3": {
+     "step 1": {
+      "queried": 0.256,
+      "decoy": 0.104
+     },
+     "step 2": {
+      "queried": 0.12,
+      "decoy": 0.176
+     },
+     "step 3": {
+      "queried": 0.088,
+      "decoy": 0.088
+     },
+     "step 4 (answer)": {
+      "queried": 0.144,
+      "decoy": 0.136
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.24,
+      "decoy": 0.08
+     },
+     "step 2": {
+      "queried": 0.12,
+      "decoy": 0.152
+     },
+     "step 3": {
+      "queried": 0.12,
+      "decoy": 0.088
+     },
+     "step 4 (answer)": {
+      "queried": 0.224,
+      "decoy": 0.184
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.168,
+      "decoy": 0.072
+     },
+     "step 2": {
+      "queried": 0.152,
+      "decoy": 0.128
+     },
+     "step 3": {
+      "queried": 0.128,
+      "decoy": 0.096
+     },
+     "step 4 (answer)": {
+      "queried": 0.112,
+      "decoy": 0.136
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 1 passes | chain 2": {
+   "n": 250,
+   "top_word_right": 0.932,
+   "best_candidate_right": 0.932,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.088,
+      "decoy": 0.08
+     },
+     "step 2 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.136
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.688,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.872,
+      "decoy": 0.136
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.864,
+      "decoy": 0.104
+     },
+     "step 2 (answer)": {
+      "queried": 0.88,
+      "decoy": 0.112
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 1 passes | chain 3": {
+   "n": 250,
+   "top_word_right": 0.348,
+   "best_candidate_right": 0.348,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.112,
+      "decoy": 0.088
+     },
+     "step 2": {
+      "queried": 0.144,
+      "decoy": 0.088
+     },
+     "step 3 (answer)": {
+      "queried": 0.152,
+      "decoy": 0.112
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.44,
+      "decoy": 0.096
+     },
+     "step 2": {
+      "queried": 0.152,
+      "decoy": 0.144
+     },
+     "step 3 (answer)": {
+      "queried": 0.344,
+      "decoy": 0.104
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.352,
+      "decoy": 0.12
+     },
+     "step 2": {
+      "queried": 0.352,
+      "decoy": 0.152
+     },
+     "step 3 (answer)": {
+      "queried": 0.264,
+      "decoy": 0.112
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 1 passes | chain 4": {
+   "n": 250,
+   "top_word_right": 0.036,
+   "best_candidate_right": 0.192,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.112,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.136,
+      "decoy": 0.128
+     },
+     "step 3": {
+      "queried": 0.136,
+      "decoy": 0.112
+     },
+     "step 4 (answer)": {
+      "queried": 0.096,
+      "decoy": 0.216
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.576,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.16,
+      "decoy": 0.112
+     },
+     "step 3": {
+      "queried": 0.072,
+      "decoy": 0.144
+     },
+     "step 4 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.224
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.624,
+      "decoy": 0.072
+     },
+     "step 2": {
+      "queried": 0.16,
+      "decoy": 0.12
+     },
+     "step 3": {
+      "queried": 0.104,
+      "decoy": 0.152
+     },
+     "step 4 (answer)": {
+      "queried": 0.168,
+      "decoy": 0.216
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 2 passes | chain 2": {
+   "n": 250,
+   "top_word_right": 0.96,
+   "best_candidate_right": 0.964,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.088,
+      "decoy": 0.08
+     },
+     "step 2 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.136
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.688,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.872,
+      "decoy": 0.136
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.72,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.944,
+      "decoy": 0.16
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.8,
+      "decoy": 0.096
+     },
+     "step 2 (answer)": {
+      "queried": 0.968,
+      "decoy": 0.168
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.672,
+      "decoy": 0.096
+     },
+     "step 2 (answer)": {
+      "queried": 0.84,
+      "decoy": 0.104
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 2 passes | chain 3": {
+   "n": 250,
+   "top_word_right": 0.304,
+   "best_candidate_right": 0.504,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.112,
+      "decoy": 0.088
+     },
+     "step 2": {
+      "queried": 0.144,
+      "decoy": 0.088
+     },
+     "step 3 (answer)": {
+      "queried": 0.152,
+      "decoy": 0.112
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.44,
+      "decoy": 0.096
+     },
+     "step 2": {
+      "queried": 0.152,
+      "decoy": 0.144
+     },
+     "step 3 (answer)": {
+      "queried": 0.344,
+      "decoy": 0.104
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.4,
+      "decoy": 0.064
+     },
+     "step 2": {
+      "queried": 0.232,
+      "decoy": 0.168
+     },
+     "step 3 (answer)": {
+      "queried": 0.312,
+      "decoy": 0.056
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.232,
+      "decoy": 0.08
+     },
+     "step 2": {
+      "queried": 0.408,
+      "decoy": 0.168
+     },
+     "step 3 (answer)": {
+      "queried": 0.488,
+      "decoy": 0.128
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.408,
+      "decoy": 0.12
+     },
+     "step 2": {
+      "queried": 0.136,
+      "decoy": 0.168
+     },
+     "step 3 (answer)": {
+      "queried": 0.336,
+      "decoy": 0.128
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 2 passes | chain 4": {
+   "n": 250,
+   "top_word_right": 0.0,
+   "best_candidate_right": 0.184,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.112,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.136,
+      "decoy": 0.128
+     },
+     "step 3": {
+      "queried": 0.136,
+      "decoy": 0.112
+     },
+     "step 4 (answer)": {
+      "queried": 0.096,
+      "decoy": 0.216
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.576,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.16,
+      "decoy": 0.112
+     },
+     "step 3": {
+      "queried": 0.072,
+      "decoy": 0.144
+     },
+     "step 4 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.224
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.36,
+      "decoy": 0.12
+     },
+     "step 2": {
+      "queried": 0.184,
+      "decoy": 0.112
+     },
+     "step 3": {
+      "queried": 0.08,
+      "decoy": 0.168
+     },
+     "step 4 (answer)": {
+      "queried": 0.128,
+      "decoy": 0.16
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.272,
+      "decoy": 0.064
+     },
+     "step 2": {
+      "queried": 0.208,
+      "decoy": 0.12
+     },
+     "step 3": {
+      "queried": 0.12,
+      "decoy": 0.144
+     },
+     "step 4 (answer)": {
+      "queried": 0.144,
+      "decoy": 0.152
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.576,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.152,
+      "decoy": 0.152
+     },
+     "step 3": {
+      "queried": 0.08,
+      "decoy": 0.112
+     },
+     "step 4 (answer)": {
+      "queried": 0.152,
+      "decoy": 0.184
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 3 passes | chain 2": {
+   "n": 250,
+   "top_word_right": 0.944,
+   "best_candidate_right": 0.944,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.088,
+      "decoy": 0.08
+     },
+     "step 2 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.136
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.688,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.872,
+      "decoy": 0.136
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.72,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.944,
+      "decoy": 0.16
+     }
+    },
+    "end of pass 3": {
+     "step 1": {
+      "queried": 0.792,
+      "decoy": 0.072
+     },
+     "step 2 (answer)": {
+      "queried": 0.968,
+      "decoy": 0.128
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.664,
+      "decoy": 0.112
+     },
+     "step 2 (answer)": {
+      "queried": 0.968,
+      "decoy": 0.176
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.848,
+      "decoy": 0.088
+     },
+     "step 2 (answer)": {
+      "queried": 0.944,
+      "decoy": 0.16
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 3 passes | chain 3": {
+   "n": 250,
+   "top_word_right": 0.376,
+   "best_candidate_right": 0.576,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.112,
+      "decoy": 0.088
+     },
+     "step 2": {
+      "queried": 0.144,
+      "decoy": 0.088
+     },
+     "step 3 (answer)": {
+      "queried": 0.152,
+      "decoy": 0.112
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.44,
+      "decoy": 0.096
+     },
+     "step 2": {
+      "queried": 0.152,
+      "decoy": 0.144
+     },
+     "step 3 (answer)": {
+      "queried": 0.344,
+      "decoy": 0.104
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.4,
+      "decoy": 0.064
+     },
+     "step 2": {
+      "queried": 0.232,
+      "decoy": 0.168
+     },
+     "step 3 (answer)": {
+      "queried": 0.312,
+      "decoy": 0.056
+     }
+    },
+    "end of pass 3": {
+     "step 1": {
+      "queried": 0.416,
+      "decoy": 0.112
+     },
+     "step 2": {
+      "queried": 0.344,
+      "decoy": 0.152
+     },
+     "step 3 (answer)": {
+      "queried": 0.48,
+      "decoy": 0.104
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.208,
+      "decoy": 0.144
+     },
+     "step 2": {
+      "queried": 0.416,
+      "decoy": 0.184
+     },
+     "step 3 (answer)": {
+      "queried": 0.576,
+      "decoy": 0.088
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.44,
+      "decoy": 0.08
+     },
+     "step 2": {
+      "queried": 0.208,
+      "decoy": 0.112
+     },
+     "step 3 (answer)": {
+      "queried": 0.296,
+      "decoy": 0.104
+     }
+    }
+   }
+  },
+  "TML-d24-varloop-research | 3 passes | chain 4": {
+   "n": 250,
+   "top_word_right": 0.02,
+   "best_candidate_right": 0.244,
+   "probe": {
+    "before the loop": {
+     "step 1": {
+      "queried": 0.112,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.136,
+      "decoy": 0.128
+     },
+     "step 3": {
+      "queried": 0.136,
+      "decoy": 0.112
+     },
+     "step 4 (answer)": {
+      "queried": 0.096,
+      "decoy": 0.216
+     }
+    },
+    "end of pass 1": {
+     "step 1": {
+      "queried": 0.576,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.16,
+      "decoy": 0.112
+     },
+     "step 3": {
+      "queried": 0.072,
+      "decoy": 0.144
+     },
+     "step 4 (answer)": {
+      "queried": 0.16,
+      "decoy": 0.224
+     }
+    },
+    "end of pass 2": {
+     "step 1": {
+      "queried": 0.36,
+      "decoy": 0.12
+     },
+     "step 2": {
+      "queried": 0.184,
+      "decoy": 0.112
+     },
+     "step 3": {
+      "queried": 0.08,
+      "decoy": 0.168
+     },
+     "step 4 (answer)": {
+      "queried": 0.128,
+      "decoy": 0.16
+     }
+    },
+    "end of pass 3": {
+     "step 1": {
+      "queried": 0.192,
+      "decoy": 0.056
+     },
+     "step 2": {
+      "queried": 0.184,
+      "decoy": 0.152
+     },
+     "step 3": {
+      "queried": 0.12,
+      "decoy": 0.136
+     },
+     "step 4 (answer)": {
+      "queried": 0.184,
+      "decoy": 0.192
+     }
+    },
+    "last layer": {
+     "step 1": {
+      "queried": 0.168,
+      "decoy": 0.08
+     },
+     "step 2": {
+      "queried": 0.192,
+      "decoy": 0.144
+     },
+     "step 3": {
+      "queried": 0.128,
+      "decoy": 0.16
+     },
+     "step 4 (answer)": {
+      "queried": 0.216,
+      "decoy": 0.168
+     }
+    },
+    "messages into the final pass": {
+     "step 1": {
+      "queried": 0.392,
+      "decoy": 0.144
+     },
+     "step 2": {
+      "queried": 0.168,
+      "decoy": 0.12
+     },
+     "step 3": {
+      "queried": 0.088,
+      "decoy": 0.168
+     },
+     "step 4 (answer)": {
+      "queried": 0.12,
+      "decoy": 0.16
+     }
+    }
+   }
+  }
+ },
+ "extra": {
+  "chain 2: best-candidate accuracy, 3 passes minus 1": [
+   0.012,
+   -0.024,
+   0.048
+  ],
+  "chain 3: best-candidate accuracy, 3 passes minus 1": [
+   0.228,
+   0.156,
+   0.296
+  ],
+  "chain 4: best-candidate accuracy, 3 passes minus 1": [
+   0.052,
+   -0.008,
+   0.112
+  ],
+  "chain 3, right only at 3 passes, held-out: step 1 decoded at end of pass 1": "13/38"
+ }
+}

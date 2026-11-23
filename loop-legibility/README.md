@@ -249,3 +249,99 @@ held back until part A is read; with generation this slow it may be better spent
 
 Spend so far on this project: about $1.95 (pilot $1.35, stopped launch $0.30, two wording
 checks $0.15 each).
+
+## Part A: result
+
+`main.py --part-b-minutes 0` (17.4 GPU minutes, about $0.90), then `analyse.py`. 250 fact
+sheets per cell. The answer is one token, so no intermediate step is ever written. Probes
+are fitted on 125 sheets and tested on the other 125; chance is about 0.14 and the decoy
+control (steps of another animal on the same sheet) scores 0.04 to 0.22 everywhere.
+
+### Accuracy: best of the seven candidates is the answer
+
+| lookups | variable-loop, 1 pass | 2 passes | 3 passes | 3 minus 1, 95% interval | released model, 3 passes |
+|---|---|---|---|---|---|
+| 2 | 0.93 | 0.96 | 0.94 | +0.01 | 0.98 |
+| 3 | 0.35 | 0.50 | 0.58 | **+0.23** | 0.34 |
+| 4 | 0.19 | 0.18 | 0.24 | +0.05 [-0.01, +0.11] | 0.22 |
+
+By the stricter measure (the top word over the whole vocabulary) three lookups are 0.35,
+0.30, 0.38 and four lookups 0.04, 0.00, 0.02: the model often continues with a word that
+is not a candidate.
+
+### Probes on the variable-loop checkpoint at 3 passes: which steps can be read, and where
+
+| lookups | site | step 1 | step 2 | step 3 | step 4 |
+|---|---|---|---|---|---|
+| 2 | before the loop | 0.09 | 0.16 (answer) | | |
+| 2 | end of pass 1 | 0.69 | 0.87 (answer) | | |
+| 2 | end of pass 3 | 0.79 | 0.97 (answer) | | |
+| 2 | messages into the final pass | **0.85** | 0.94 (answer) | | |
+| 3 | end of pass 1 | 0.44 | 0.15 | 0.34 (answer) | |
+| 3 | end of pass 2 | 0.40 | 0.23 | 0.31 (answer) | |
+| 3 | end of pass 3 | 0.42 | 0.34 | 0.48 (answer) | |
+| 3 | last layer | 0.21 | **0.42** | 0.58 (answer) | |
+| 4 | end of pass 1 | 0.58 | 0.16 | 0.07 | 0.16 (answer) |
+| 4 | end of pass 3 | 0.19 | 0.18 | 0.12 | 0.18 (answer) |
+
+Full table for every model, pass count and site: `results/partA-summary.json`.
+
+### What we see
+
+- **A step that is never written can be read from inside.** On two lookups the model
+  answers in one token and the intermediate colour is decodable from the last position at
+  0.69 after one pass and 0.85 from the messages into the final pass, against about 0.10
+  for both controls. This repeats, with a trained probe and controls, what lens work on
+  looped models has shown qualitatively.
+- **On two lookups the loop is not needed.** One pass already scores 0.93.
+- **On three lookups extra passes do real unwritten work, and it shows inside.** Accuracy
+  goes from 0.35 to 0.58. The second step is at chance at the end of pass 1 (0.15), 0.23
+  after pass 2, 0.34 after pass 3 and 0.42 at the last layer. The later pass is where the
+  later step appears. This is the case the GLM post describes: reasoning done in loop
+  depth with nothing in the output.
+- **The probe recovers only part of it.** Where the model is right 58% of the time, the
+  probe reads the second step 34 to 42% of the time. With 125 training sheets, one token
+  position and a linear readout these are lower bounds, but as measured a monitor reading
+  this state would miss most of the hidden steps.
+- **Four lookups fail silently at every pass count,** and the first step, readable at 0.58
+  after pass 1, fades to 0.19 by pass 3. More passes did not carry the chain further.
+- **The released model computes the first step later:** on two lookups it is 0.24 at the
+  end of pass 1 and 0.66 at the end of pass 2.
+
+### Predictions
+
+1. **Held for three lookups (+23 points), failed for four (+5, interval includes zero).**
+   Scored on the best candidate, as fixed before the run.
+2. **Not tested.** Part B was not run.
+3. **Not tested.** In the pilot the model wrote its steps at every pass count, but that
+   scorer was faulty.
+4. **Held for two lookups, failed for three and four.** Probe 0.79 to 0.85 on two lookups;
+   at most 0.42 on three; chance on four. Controls stayed under 0.30 everywhere.
+5. **Not tested** by this design.
+6. **Not tested.** Ouro not run.
+7. **Failed at the site named.** At the end of the final pass on three lookups the first
+   step (0.42) is read better than the second (0.34). At the last layer it is the other
+   way round (0.21 and 0.42).
+8. **Failed.** Among held-out three-lookup items right only at 3 passes, the first step
+   is decoded at the end of pass 1 in 13 of 38.
+
+### What this does not show
+
+- **Whether looping shortens written reasoning.** That was the opening question and it is
+  unanswered. Generation on this model ran at about 30 seconds per answer, and in the
+  pilot it wrote about 200 tokens whatever the pass count.
+- That transcript plus probe makes up for anything. Transcript and probe were never
+  measured on the same runs.
+- That the probe's limit is the state's limit. Small training set, one position, linear.
+- Anything beyond one invented task, in a prompt format chosen after two others failed,
+  on one model family.
+- The model's one-token answers are off its usual path: it is a model that always thinks
+  first. Its failures on longer chains may be failures of this format.
+
+### What we got wrong
+
+- The pilot's scorer counted copied prompt text as written steps.
+- The first prompt format ("X: Y" rows, "follow the tables in order") was unreliable even
+  on two lookups. $0.30 went on a full launch before a 12-item check would have shown it.
+- The cost estimate assumed generation several times faster than it is.
+- We assumed thinking could be switched off with the effort dial. It cannot.
