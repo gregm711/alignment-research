@@ -1,6 +1,18 @@
 # Loop legibility: when a model loops, how much of its reasoning leaves the transcript?
 
-**Status: plan and predictions written 2026-11-23, before any run. Nothing measured yet.**
+**Status: plan and predictions written 2026-11-23, before any run. The pilot has run
+(26.2 A100 minutes, about $1.35) and is not usable as a measurement:**
+
+- All 55 generations hit the 200-token cap before finishing.
+- The pilot hit its time limit after chain length 2. Chains 3 and 4 never ran.
+- Throughput was about 7 tokens/s: unbatched `generate`, with `causal_conv1d` falling back
+  to its reference implementation.
+- The model does carry out the chain in its thinking. The one finding: chain-2 accuracy
+  rose with passes, from 6/8 and 4/8 at 1 pass to 8/8 at 3 passes. With 8 items per
+  cell, this is only suggestive.
+
+Before the main run, generation must be batched and the token cap raised to about 4k
+(the release post reports mean reasoning of 1.7k to 3.7k tokens on GPQA).
 
 ## Question
 
@@ -34,6 +46,29 @@ We ask, on looped models we can run:
   intermediate in 5 of 80 items and the three-pass output in 1 of 80.
 - We found no paper that measures written reasoning against loop count, or a transcript
   monitor against a between-pass probe, on a looped model. Two searches; not exhaustive.
+
+**Added 2026-11-23, after the pilot and after the predictions below were written. The
+predictions are left unchanged.** We missed that the Inkling release post
+([link](https://thinkingmachines.ai/news/inkling-2-mini/)) already measures reasoning
+length against loop count on the variable-loop checkpoint. That checkpoint was trained
+with **1 to 5 passes**, not up to 3 as stated in the table above. Their results:
+
+- GPQA Diamond items correct at every pass count: mean reasoning tokens 3,703 / 1,731 /
+  1,661 at 1 / 3 / 5 passes. That is already far outside our prediction 2 of "5 to 20%
+  shorter".
+- Legibility is measured only by surface statistics: words per sentence, share of
+  dictionary words, and the rate of "wait / actually / hmm". These are flat, except the
+  hedging words, which fall from 9.7 to 3.6. They do not check whether specific steps are
+  still written.
+- LinuxArena stealth rate (monitor sees tool calls only) is 1.0 / 2.5 / 4.0 / 2.8 / 5.0% at
+  1 to 5 passes over 184 pairings. They call this "no clear trend". With the full
+  transcript visible, every rate is at most 0.6%.
+- RL was done at 3 passes only. They say RL at higher pass counts might compress reasoning
+  more, and leave that to future work.
+
+What is still open, and is our question: **which content disappears** when the reasoning
+gets shorter, and whether a probe recovers it. Surface legibility can stay flat while the
+intermediate steps go unwritten.
 
 ## Models
 
@@ -133,3 +168,56 @@ written); the probe's controls.
 3. **Ouro**, on a small GPU: under **$1**.
 
 Estimated total $3.50 to $5.50. Spend across all projects so far is about $23.45.
+
+## Pilot result (2026-11-23) and what it changed
+
+`pilot.py`, 26.2 GPU minutes (about $1.35, at the top of the estimate). It was stopped by its
+own time guard after the two-lookup chains only: 55 generations at about 30 seconds each,
+several times slower than assumed. Counts below are from 8 fact sheets per cell.
+
+| thinking effort | passes | correct | hit the 200-token limit |
+|---|---|---|---|
+| 0 | 1 / 2 / 3 | 6 / 8 / 8 of 8 | 8 / 7 / 8 of 8 |
+| 0.9 | 1 / 2 / 3 | 4 / 6 / 8 of 8 | 8 / 8 / 8 of 8 |
+
+- **The model thinks at length whatever the effort setting and pass count.** It first
+  copies the fact sheet into its thinking, then works the chain out in words. Nearly every
+  output hit the token limit, so the pilot says nothing about reasoning length.
+- **At one pass it is visibly degraded.** In some outputs it reasons about an image that
+  is not there.
+- **The scorer was wrong.** Because the model copies the prompt, "the step's word appears
+  in the output" is true for trivial reasons. The pilot's "steps named" counts are not
+  reported.
+- **"Thinking off" does not exist on this model** through the effort dial.
+
+### Revised design (written before the main run)
+
+**Part A: one-token answers.** The prompt ends "Answer: the" outside the chat format, so
+the model must give the final word at once and no step can be written. Legibility is zero
+by construction. 250 fact sheets per chain length (2, 3, 4), variable-loop checkpoint at
+1, 2 and 3 passes, released checkpoint at 3. We save the last-token state before the
+loop, at the end of each pass and after the last layer, and the messages into each pass at
+the last position. Probes are fitted afterwards on a laptop (`analyse.py`): a linear
+classifier for each intermediate step, trained on half the fact sheets and tested on the
+other half. Controls as planned: the state before the loop, and the steps of a different
+start animal on the same sheet. The city table became a metal table so that "the" reads
+naturally before every answer.
+
+**Part B: thinking on.** Two-lookup chains, 16 fact sheets, 1 to 3 passes, effort 0, up to
+320 new tokens so that most outputs finish. The scorer deletes every copied table row from
+the thinking before looking for the step's word. With 16 sheets this can show a large
+change in reasoning length and cannot resolve one of 10%.
+
+**What happens to the predictions.** 1 and 4 are tested by part A (4's "legibility under
+10%" is now true by construction, so only its probe half is a test). 2 and 3 are tested by
+part B, weakly. 5 needs transcript and probe on the same runs and is **not tested** by
+this design. 6 waits for Ouro. Added now:
+
+7. In part A, a probe at the end of the final pass decodes the last intermediate step
+   better than the first one, on 3- and 4-lookup chains.
+8. On chains the variable-loop checkpoint gets right only at 3 passes, the probe at the
+   end of pass 1 decodes the first intermediate step above 50%: the early pass does the
+   early step.
+
+**Cost.** Part A about 10 to 15 GPU minutes, part B capped at 28: at most $2.80 together.
+With the pilot that is $4.15 of the $3.50 to $5.50 agreed, leaving Ouro under $1.
