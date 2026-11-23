@@ -1,6 +1,6 @@
 # Independent reviews of the grounding project
 
-Three reviews by a separate model, working from the saved data in `grounding/results/` on
+Four reviews by a separate model, working from the saved data in `grounding/results/` on
 CPU. This file records what each found and what we did about it. Where we re-ran a
 reviewer's number ourselves it is marked "reproduced"; the rest are the reviewer's.
 
@@ -59,7 +59,35 @@ reviewer's number ourselves it is marked "reproduced"; the rest are the reviewer
 - **Recommendation.** Stop spending, write the note, keep the passage head labelled
   exploratory.
 
+## Review 4 (after the note draft, 2026-11-23): what explains the results
+
+- **Recount.** Refitted all three classifiers from the saved tensors; 0.800 / 0.826 / 0.786
+  and 30 of 85 with 45 of 1,261 match. Recomputed the Inkling head from individual trials
+  (0.9993 and 1.000; 54 of 55 caught with 101 of 162 false alarms).
+- **Whole dataset.** 1,077 of 4,746 NQ-Swap substituted passages (22.7%) keep a word of an
+  original answer under our rule. Reproduced exactly (`grounding/checks.py`).
+- **Framing.** Leaky runs are ambiguous as evidence of memory use; the filter cannot say
+  the model read the surviving word. Adopted in the note.
+- **Prior report.** The reviewer cites the same surname problem in another swap dataset
+  (GRAB-RAG, Appendix C). We searched for that paper and did not find it, so the note
+  attributes the pointer to the reviewer and does not claim priority.
+- **Cleaning and re-splitting, separately.** For Phi-4-mini, confidence on hidden cases:
+  0.498 original, 0.518 cleaning only, 0.614 re-split only, 0.629 both. For granite,
+  cleaning alone moved 0.571 to 0.702. Reproduced exactly; Qwen is 0.485, 0.520, 0.594,
+  0.676.
+- **Question-word baseline.** A classifier on first-token confidence and the question word,
+  fitted on the same visible runs and frozen: 0.722 / 0.896 / 0.746 on Phase 5, so the
+  attention classifier's pooled lead falls from +0.181 to +0.016 [-0.037, +0.070]. Our own
+  version (L2 0.01, standardised confidence) gives 0.737 / 0.869 / 0.725 and +0.027
+  [-0.029, +0.083]. Same conclusion.
+- **Wording.** "Hidden" establishes resistance to changing the passage, not how the model
+  reached its answer on the original passage. Adopted.
+- **Recommendation.** Lead with the benchmark audit, then the split comparison and the
+  question-word baseline; keep Inkling separate; keep the single head as a hypothesis.
+
 ## Not yet checked by anyone
+
+- The GRAB-RAG reference above.
 
 - Whether the `pminervini/NQ-Swap` copy matches data regenerated from the original code.
 - Whether any knowledge-conflict paper we did not open already counts leftover mentions.

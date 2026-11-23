@@ -1,6 +1,6 @@
 # Grounding: can internal access catch an answer that ignores its evidence?
 
-**Status: Phases 0 to 5 done on three models. (1) In about half of the "from memory" answers on NQ-Swap, part or all of the original answer was still in the passage. (2) An attention classifier trained on visible mistakes carries over to hidden ones on newly built clean items (AUC 0.79 to 0.83) and beats output-only baselines in aggregate. (3) Part of that lead comes from recognising the kind of question; within a kind it is unresolved. No monitor is usable as an alarm.**
+**Status: Phases 0 to 5 done on three models. (1) In about half of the "from memory" answers on NQ-Swap, part or all of the original answer was still in the passage. (2) An attention classifier trained on visible mistakes carries over to hidden ones on newly built clean items (AUC 0.79 to 0.83) and beats output-only baselines in aggregate. (3) Almost all of that lead is matched by a baseline that knows only the question word and output confidence. No monitor is usable as an alarm.**
 
 ## The question
 
@@ -786,3 +786,18 @@ numbers and added two things, both of which we re-ran:
   smaller lead for it on cleaned NQ-Swap, so it needs a fresh test.
 
 The write-up is [NOTE.md](NOTE.md).
+
+### After the fourth outside review (2026-11-23)
+
+Three post hoc checks, reproduced in `checks.py`:
+
+- 1,077 of 4,746 NQ-Swap substituted passages (22.7%) keep a word of an original answer.
+- The audit's two changes, separately, for top probability on hidden cases. Phi-4-mini:
+  0.50 original, 0.52 cleaning only, 0.61 re-split only, 0.63 both. Qwen: 0.49, 0.52, 0.59,
+  0.68. granite: 0.57, 0.70, 0.58, 0.66.
+- A frozen baseline on first-token confidence and the question word scores 0.74 / 0.87 /
+  0.73 on the Phase 5 questions. The attention classifier leads it by +0.03 [-0.03, +0.08]
+  pooled, against +0.18 over confidence alone.
+
+So the classifier's lead over confidence in Phase 5 is almost all the kind of question.
+Leaky runs are better described as ambiguous than as read from the passage.
