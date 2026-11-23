@@ -30,5 +30,6 @@ true about models over the one that only looks impressive.
 - `grounding/`: monitors for correct answers that ignore the supplied passage; NQ-Swap audit.
 - `benchmark-audits/`: the same leak check applied to other datasets (CPU only).
 - `inside-advantage/`: text-only baselines against published internal monitors (CPU only).
+- `loop-legibility/`: how much reasoning leaves the transcript when a model loops, and whether a probe recovers it.
 - `papers/`: index and download scripts for the reading library.
 - `notes/`: state of the art, research directions, Hugging Face landscape.
