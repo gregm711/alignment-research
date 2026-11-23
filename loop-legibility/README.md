@@ -550,7 +550,7 @@ token cap at both loop counts.
 | correct | 21/24 | 23/24 | +8 points [-8, +25] |
 | finished | 24/24 | 24/24 | |
 | mean thinking tokens | 617 | 357 | **-261 [-337, -181]**, 42% shorter |
-| sheets over 500 thinking tokens | 15 | 0 | |
+| sheets over 500 thinking tokens | 17 | 1 | |
 | intermediate steps named | 140/144 | 139/144 | |
 | steps named, stricter count | 95/144 | 93/144 | -1 point [-6, +2] |
 
@@ -561,7 +561,7 @@ stricter step count identical.
 model usually begins by copying every table out as a list and then walks the chain. At 4
 loops it walks the chain straight away. Mentions of any table value in the thinking
 average 104 at 2 loops and 34 at 4; lengths at 2 loops are split between about 280 and
-about 750 tokens, and at 4 loops all sit near 350. The chain itself is written out in
+about 750 tokens, and at 4 loops all but one sit near 350. The chain itself is written out in
 full at both.
 
 ### What we see
