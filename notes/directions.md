@@ -127,3 +127,37 @@ alarms or transfer. It does not use attention to the answer's location as a sign
 grounding project's question (is a *correct* answer ungrounded, judged by a monitor
 calibrated on visible cases, against a confidence baseline) is not answered there. Its
 limitations section asks for a second, naturally occurring conflict corpus; NQ-Swap is one.
+
+## Rethink from first principles (2026-11-23)
+
+Asked what would be most useful and interesting to do next, after two projects and a first
+round of benchmark audits.
+
+**What oversight needs.** To know when a model's output cannot be trusted. There are three
+kinds of evidence: what the model says, how its behaviour changes when the situation is
+varied, and what happens inside it. The safety case for interpretability is that the third
+adds something the first two do not.
+
+**What we can do.** No frontier weights, tens of dollars. What has worked: cheap, careful
+measurement with predictions first, an outside reviewer, and testing a result against the
+simplest explanation. Our most useful findings came from asking whether a measurement means
+what it claims.
+
+**What our own results say.** They disagree, and the disagreement is the interesting part.
+
+- Inkling: output confidence at chance (0.49 to 0.51), one attention head near-perfect.
+  Input and output were identical by construction; only the internal route differed.
+- Grounding: a baseline on the question word and output confidence came within 0.03 of the
+  internal monitor. The input itself gave away the category.
+
+**Hypothesis.** Internal access pays when nothing visible distinguishes the cases, and
+published monitors are seldom tested under that condition.
+
+**Direction chosen.** Measure the "inside advantage" across published internal monitors:
+reproduce or take the monitor's score, build the strongest cheap outside baseline (input
+text, output confidence), report the paired difference, and sort tasks by how much of the
+signal is visible from outside.
+
+**Ranked alternatives.** (2) Do models say truthfully why they answered, and is that
+improving across model generations? (3) Sycophancy across 15 models from four families over
+2.5 years (line-up worked out, estimated $8 to $15, not run).
