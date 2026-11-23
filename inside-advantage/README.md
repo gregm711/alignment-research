@@ -195,3 +195,50 @@ for Llama 3.3 70B on these transcripts are public
 about 12 GB for this subset). Fit a probe with the same strict folds and compare it with
 the 0.66 text baseline, paired. If the probe is clearly higher, that is an inside advantage
 measured against a fair outside baseline. If not, the subset is hard for everyone.
+
+---
+
+## Probe test: plan (written 2026-11-23, before any activations were read)
+
+**Question.** On harm-pressure choice, where text gives 0.66, does a probe on the model's
+internal activations do better when both get the same labelled examples and the same
+held-out questions?
+
+**Data.** Public layer-53 residual activations of Llama 3.3 70B on its own Liars' Bench
+transcripts ([`Yooniel/liars-bench-llama-3.3-70b-L53-acts`](https://huggingface.co/datasets/Yooniel/liars-bench-llama-3.3-70b-L53-acts)).
+Harm-pressure choice has 2,134 transcripts, 134 deceptive. One model, one layer. We did not
+choose the layer and cannot vary it.
+
+**Pooling** (`pool.py`, a Modal CPU job, no GPU): for each transcript, four vectors of
+8,192 numbers. The mean over prompt tokens; the last prompt token, where the answer is about
+to begin; the mean over response tokens (the paper's choice); the last token.
+
+**Probe** (`probe.py`, on a laptop): logistic regression on standardised activations, one
+per pooling. Folds are the strict folds of the text baseline, and the text baseline is
+re-run for this model on those same folds, so the comparison is paired.
+
+**Outside baselines:** the three text views, response and prompt length, and the
+benchmark's own metadata for each item (harm factor, template, which option is correct).
+
+**Primary measurement:** AUROC of the best probe pooling minus AUROC of the best outside
+baseline on harm-pressure choice, with a 95% interval from resampling question groups.
+"Best" is chosen on the same folds for both sides, which favours neither.
+
+**Secondary:** the same on every other subset with Llama transcripts, and transfer from
+instructed deception to harm-pressure choice for both probe and text.
+
+**Predictions:**
+
+1. The best probe reaches at least 0.80 on harm-pressure choice.
+2. It beats the best outside baseline by at least 0.10, with an interval excluding zero.
+3. The last prompt token does about as well as the mean over response tokens (within 0.03).
+4. On instructed deception and gender secret, where text scores 0.95 or more, probe and
+   text are within 0.05 of each other.
+5. A probe trained on instructed deception scores below 0.65 on harm-pressure choice.
+
+**Reading.** If 1 and 2 hold, this is an inside advantage measured against a fair outside
+baseline, in the one subset where the outside view is weak. If the probe is no better than
+text here either, the subset is hard for everyone given this layer and these labels, and
+the hypothesis gets no support from this benchmark.
+
+**Cost estimate.** Downloading about 88 GB and pooling it on Modal CPU machines: under $1.

@@ -3,3 +3,5 @@ papers/*/
 __pycache__/
 .DS_Store
 *.pt
+*.npz
+pooled/
