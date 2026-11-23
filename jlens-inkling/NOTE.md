@@ -1,6 +1,6 @@
 # Right answer, wrong route: testing an internal monitor on a looped language model
 
-*A technical research note. Draft for review, 2026-11-22.*
+*A technical research note, 2026-11-22.*
 
 An overseer usually sees a model's answer, not how it got there. We built cases where a
 language model gives the **same correct answer to the same question** in two runs, but in

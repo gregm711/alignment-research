@@ -3,6 +3,7 @@
 ## Project Structure
 
 - `jlens-inkling/` contains the Python experiments on the looped Inkling 2 Mini model. Start with `SUMMARY.md` for findings and `README.md` for protocols and limitations. Tracked JSON and text outputs live in `results/`, and GPU costs are recorded in `SPEND.md`.
+- `grounding/` contains the second project: whether a monitor catches correct answers that ignore the supplied passage. Start with `NOTE.md`; `README.md` is the full log.
 - `papers/` holds the reading index and two standard-library download scripts. `notes/` contains literature reviews, prior art, and research directions.
 
 ## Development Commands

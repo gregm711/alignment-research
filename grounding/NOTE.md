@@ -1,6 +1,6 @@
 # A benchmark audit, and what it did to a test of internal monitoring
 
-*A technical research note. Draft for review, 2026-11-23.*
+*A technical research note, 2026-11-23.*
 
 Give a language model a passage and a question. If the passage and the model's memory
 agree, the answer is correct whether or not the model used the passage. An overseer reading
@@ -89,10 +89,11 @@ a lone surname. Exact-match scoring would be affected less by the first kind and
 the second. `audit.py` drops the affected runs; the rule is a few lines in `scoring.py`.
 
 **Prior reports.** A limited search (seven queries, the dataset's discussion page, the
-original repository, four papers) found no count of this for NQ-Swap. An outside reviewer
-reports that the same surname problem is documented for another swap dataset (GRAB-RAG,
-Appendix C); we could not locate that paper to confirm it. We do not claim to be first to
-notice the problem. What we add is a count on this copy and a worked case of what it did to
+original repository, four papers) found no count of this for NQ-Swap. The same problem is
+documented in a separately built swap dataset: [Setiawan's GRAB-RAG](https://arxiv.org/abs/2608.22228)
+(Appendix C, Table 5) shows "Don Shula" swapped for "Linda Warren" while the next sentence
+still begins "Shula retired", and grades such items as borderline, where "a residual cue
+... hints at the original answer". We do not claim to be first to notice the problem. What we add is a count on this copy and a worked case of what it did to
 an evaluation.
 
 ## 2. Two choices, varied one at a time
@@ -246,6 +247,7 @@ that looks best, and the reviewer found its within-kind lead on cleaned NQ-Swap 
 
 Entity substitution to create knowledge conflicts: [Longpre et al.](https://arxiv.org/abs/2109.05052).
 Critiques of word-level substitution as incoherent: [Xie et al.](https://arxiv.org/abs/2305.13300).
+A surviving surname after an entity swap, in another dataset: [Setiawan](https://arxiv.org/abs/2608.22228).
 Attention ratios for detecting answers not grounded in context:
 [Lookback Lens](https://arxiv.org/abs/2407.07071). Heads involved in knowledge conflicts,
 studied on conflict cases: [Rewired or Gated?](https://arxiv.org/abs/2609.25602). Ranking

@@ -69,8 +69,10 @@ reviewer's number ourselves it is marked "reproduced"; the rest are the reviewer
 - **Framing.** Leaky runs are ambiguous as evidence of memory use; the filter cannot say
   the model read the surviving word. Adopted in the note.
 - **Prior report.** The reviewer cites the same surname problem in another swap dataset
-  (GRAB-RAG, Appendix C). We searched for that paper and did not find it, so the note
-  attributes the pointer to the reviewer and does not claim priority.
+  (GRAB-RAG, Appendix C). Confirmed by reading the preprint
+  ([arXiv 2608.22228](https://arxiv.org/abs/2608.22228), Table 5: "Don Shula" replaced by
+  "Linda Warren", next sentence still "Shula retired"). The paper grades this as a
+  borderline-quality item, not as a limitation, and does not count it. Cited in the note.
 - **Cleaning and re-splitting, separately.** For Phi-4-mini, confidence on hidden cases:
   0.498 original, 0.518 cleaning only, 0.614 re-split only, 0.629 both. For granite,
   cleaning alone moved 0.571 to 0.702. Reproduced exactly; Qwen is 0.485, 0.520, 0.594,
@@ -87,7 +89,6 @@ reviewer's number ourselves it is marked "reproduced"; the rest are the reviewer
 
 ## Not yet checked by anyone
 
-- The GRAB-RAG reference above.
 
 - Whether the `pminervini/NQ-Swap` copy matches data regenerated from the original code.
 - Whether any knowledge-conflict paper we did not open already counts leftover mentions.
