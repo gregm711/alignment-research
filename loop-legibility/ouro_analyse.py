@@ -37,6 +37,12 @@ def boot(vals, n=2000):
     return [round(sum(vals) / len(vals), 3), round(bs[int(0.025 * n)], 3), round(bs[int(0.975 * n)], 3)]
 
 
+def value_mentions(r):
+    """Post hoc: how often the thinking mentions any value from the fact sheet's tables (a measure of copying the sheet out)."""
+    body = r["text"].partition("</think>")[0].lower()
+    return sum(len(re.findall(rf"\b{p.split()[-1].lower()}\b", body)) for p in pairs[(r["chain"], r["sheet"])])
+
+
 out = {}
 for chain in CHAINS:
     by = collections.defaultdict(dict)
@@ -49,6 +55,8 @@ for chain in CHAINS:
         rs = [s[k] for s in both]
         cell[f"{k} loops"] = {"correct": sum(r["correct"] for r in rs), "finished": sum(r["finished"] for r in rs),
                               "mean_thinking_tokens": round(sum(r["thinking_tokens"] for r in rs) / len(rs), 1),
+                              "mean_table_value_mentions": round(sum(value_mentions(r) for r in rs) / len(rs), 1),
+                              "sheets_over_500_thinking_tokens": sum(r["thinking_tokens"] > 500 for r in rs),
                               "steps_named": f"{sum(sum(r['named']) for r in rs)}/{sum(len(r['named']) for r in rs)}",
                               "steps_named_strict": f"{sum(sum(r['strict']) for r in rs)}/{sum(len(r['strict']) for r in rs)}"}
     for label, sel in (("all sheets", both), ("sheets correct and finished at both", [s for s in both if all(s[k]["correct"] and s[k]["finished"] for k in (2, 4))])):

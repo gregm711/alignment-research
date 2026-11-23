@@ -5,6 +5,8 @@
    "correct": 40,
    "finished": 40,
    "mean_thinking_tokens": 161.5,
+   "mean_table_value_mentions": 16.4,
+   "sheets_over_500_thinking_tokens": 0,
    "steps_named": "40/40",
    "steps_named_strict": "28/40"
   },
@@ -12,6 +14,8 @@
    "correct": 40,
    "finished": 40,
    "mean_thinking_tokens": 184.6,
+   "mean_table_value_mentions": 19.5,
+   "sheets_over_500_thinking_tokens": 0,
    "steps_named": "40/40",
    "steps_named_strict": "34/40"
   },
@@ -60,6 +64,8 @@
    "correct": 40,
    "finished": 40,
    "mean_thinking_tokens": 212.0,
+   "mean_table_value_mentions": 17.9,
+   "sheets_over_500_thinking_tokens": 0,
    "steps_named": "80/80",
    "steps_named_strict": "77/80"
   },
@@ -67,6 +73,8 @@
    "correct": 40,
    "finished": 40,
    "mean_thinking_tokens": 201.5,
+   "mean_table_value_mentions": 16.2,
+   "sheets_over_500_thinking_tokens": 0,
    "steps_named": "80/80",
    "steps_named_strict": "80/80"
   },

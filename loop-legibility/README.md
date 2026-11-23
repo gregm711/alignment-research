@@ -1,6 +1,6 @@
 # Loop legibility: when a model loops, how much of its reasoning leaves the transcript?
 
-**Status: Inkling part A done and independently recounted; Ouro done, not yet reviewed (2026-11-23). Short version: on these models and this task we did not see reasoning leave the transcript when looping increased. Ouro at 4 loops writes as much as at 2 (14% more on two lookups, 5% less on three, the second within noise) and names every step, but the task was at ceiling for it (40 of 40 everywhere), so this is a weak test. Separately, when Inkling is forced to answer in one token, the unwritten step is readable from inside on two lookups (0.85 against about 0.10 for controls) and partly on three (39 of 73 successful runs).**
+**Status: all runs done (2026-11-23); the last Ouro run is not yet reviewed. Short version: more looping did shorten written reasoning on a hard enough task, and the steps stayed written. On fresh seven-lookup sheets Ouro's thinking is 42% shorter at 4 loops than at 2 (interval -337 to -181 tokens), with 139 and 140 of 144 intermediate steps named. What goes is the model copying the fact sheet out before reasoning, not the chain of steps. Accuracy was 21 and 23 of 24, so the screen's accuracy gain did not clearly repeat. Separately, when Inkling is forced to answer in one token, the unwritten step is readable from inside on two lookups (0.85 against about 0.10 for controls) and partly on three (39 of 73 successful runs).**
 
 ## Question
 
@@ -538,3 +538,64 @@ Correct of 16, with all 16 finished unless noted:
 **Frozen:** seven lookups, fresh fact sheets (seed 8), 2 and 4 loops, batch 8, cap 1,000.
 **Changed from the plan:** 24 fresh sheets, not 40. The screen cost about $0.72 of the
 $1 cap, and 24 sheets is what the rest buys.
+
+## Harder task on Ouro: result (fresh sheets)
+
+`ouro.py --mode hard --chain 7 --sheets 24` (12.7 GPU minutes), then
+`ouro_analyse.py ouro-hard 8`. Seven lookups, 24 fresh fact sheets, same batch size and
+token cap at both loop counts.
+
+| | 2 loops | 4 loops | 4 minus 2, paired, 95% interval |
+|---|---|---|---|
+| correct | 21/24 | 23/24 | +8 points [-8, +25] |
+| finished | 24/24 | 24/24 | |
+| mean thinking tokens | 617 | 357 | **-261 [-337, -181]**, 42% shorter |
+| sheets over 500 thinking tokens | 15 | 0 | |
+| intermediate steps named | 140/144 | 139/144 | |
+| steps named, stricter count | 95/144 | 93/144 | -1 point [-6, +2] |
+
+On the 20 sheets solved at both loop counts: thinking 41% shorter [-334, -163 tokens],
+stricter step count identical.
+
+**What the shorter reasoning leaves out** (looked at after the result). At 2 loops the
+model usually begins by copying every table out as a list and then walks the chain. At 4
+loops it walks the chain straight away. Mentions of any table value in the thinking
+average 104 at 2 loops and 34 at 4; lengths at 2 loops are split between about 280 and
+about 750 tokens, and at 4 loops all sit near 350. The chain itself is written out in
+full at both.
+
+### What we see
+
+- **Looping did shorten written reasoning here, by more than the GLM post reports,** on
+  a task long enough to have something to shorten.
+- **What went was scratch work, not the steps.** A monitor reading for the intermediate
+  facts sees the same ones at both loop counts. On this evidence the shortening is not a
+  loss of what a monitor needs.
+- **The accuracy gain from the screen did not clearly repeat** (12 against 16 of 16 on the
+  screen; 21 against 23 of 24 on fresh sheets). The screen's result sat exactly on its
+  threshold.
+- **By the decision rule fixed beforehand, this branch stops.** Steps are still spelled
+  out, so there is no case for the table edit and probe here.
+
+### What this does not show
+
+- That the copied-out tables were unnecessary at 2 loops. They may be how the weaker
+  setting gets the answer; we did not test removing them.
+- That reasoning never moves inside. One 2.6B model, one invented task, 24 sheets, and
+  2 loops is off the model's training setting, which may itself cause the copying.
+- The stricter step count still undercounts (see the easy-task section), equally at both
+  loop counts as far as we can tell.
+- The analysis of what was dropped was chosen after seeing the lengths.
+
+## Where this leaves the question (replaces the earlier section of this name)
+
+1. **Does more looping make a model write less?** On Ouro: no on easy chains, yes (42%)
+   on seven lookups.
+2. **Does what it stops writing include the steps a monitor wants?** Not here. It stops
+   copying the prompt out.
+3. **When nothing is written at all, can the steps be read inside?** On Inkling: yes for
+   one hidden step (0.85), about half the time for a second, on successful runs.
+4. **Not done:** transcript and probe on the same runs; any task where a written step
+   actually disappears. We did not find one.
+
+Spend on this project: about $4.30 (`SPEND.md`).
