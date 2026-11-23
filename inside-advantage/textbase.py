@@ -106,5 +106,57 @@ def main():
             print(f"  {s:<32}" + "  ".join(f"{v[:10]}: {views[v]['auroc_mean_all_models']:.2f}/{views[v]['balanced_accuracy_mean_all_models']:.2f}" for v in VIEWS))
 
 
+
+
+def checks():
+    """Two post hoc checks. (1) Stricter folds: transcripts sharing their five rarest prompt words stay together, so the
+    same question under a different template cannot sit on both sides. (2) One classifier per model trained across the
+    five subsets the paper's upper-bound probe used, plus control, scored on held-out transcripts of each."""
+    import collections
+    import re
+    alpaca = load("alpaca").assign(y=0)
+    control = {b: g.sample(frac=1, random_state=0) for b, g in alpaca.groupby(alpaca["model"].map(base))}
+    out = {"strict_folds": {}, "one_classifier_five_subsets": {}}
+    data = {}
+    for s in SUBSETS:
+        d = load(s)
+        first_user = pd.read_parquet(hf_hub_download("Cadenza-Labs/liars-bench", f"{s}/test-00000-of-00001.parquet", repo_type="dataset"))["messages"].map(
+            lambda m: next((x["content"] for x in m if x["role"] == "user"), ""))
+        toks = [set(re.findall(r"[a-z0-9]{3,}", t.lower())) for t in first_user]
+        df = collections.Counter(w for t in toks for w in t)
+        d["group"] = [" ".join(sorted(sorted(t, key=lambda w: (df[w], w))[:5])) for t in toks]
+        data[s] = d
+        for view in ("prompt only", "transcript"):
+            per = []
+            for model, g in d.groupby("model"):
+                if min(g["y"].sum(), (1 - g["y"]).sum()) < 30 or g["group"].nunique() < 20:
+                    continue
+                g = g.reset_index(drop=True)
+                per.append(np.mean([fit_score(view, g.iloc[a], g.iloc[t], control[base(model)])[0]
+                                    for a, t in GroupKFold(5).split(g, g["y"], g["group"]) if g.iloc[t]["y"].nunique() == 2]))
+            out["strict_folds"].setdefault(s, {})[view] = [round(float(np.mean(per)), 3), len(per)] if per else None
+        out["strict_folds"][s]["distinct_groups"] = int(d["group"].nunique())
+        print("strict folds", s, out["strict_folds"][s], flush=True)
+    five = ["harm-pressure-choice", "harm-pressure-knowledge-report", "convincing-game", "instructed-deception", "insider-trading"]
+    pooled = pd.concat([data[s].assign(subset=s) for s in five])
+    pooled["b"] = pooled["model"].map(base)
+    for view in ("transcript", "response only", "prompt only"):
+        scores = collections.defaultdict(list)
+        for b, g in pooled.groupby("b"):
+            g = g.reset_index(drop=True)
+            for a, t in GroupKFold(5).split(g, g["y"], g["subset"] + g["group"]):
+                tr = pd.concat([g.iloc[a], control[b].iloc[:len(control[b]) // 2]])
+                Xtr, (Xte,) = featurise(view, tr, [g.iloc[t]])
+                s_ = LogisticRegression(C=1.0, max_iter=2000, class_weight="balanced").fit(Xtr, tr["y"]).decision_function(Xte)
+                te = g.iloc[t].assign(score=s_)
+                for sub, h in te.groupby("subset"):
+                    if h["y"].nunique() == 2:
+                        scores[sub, b].append(roc_auc_score(h["y"], h["score"]))
+        per_subset = {sub: round(float(np.mean([np.mean(v) for (s2, _), v in scores.items() if s2 == sub])), 3) for sub in five}
+        out["one_classifier_five_subsets"][view] = {**per_subset, "mean over the five": round(float(np.mean(list(per_subset.values()))), 3)}
+        print("one classifier", view, out["one_classifier_five_subsets"][view], flush=True)
+    (OUT.parent / "liars-bench-text-checks.json").write_text(json.dumps(out, indent=1))
+
+
 if __name__ == "__main__":
-    main()
+    checks() if "--checks" in __import__("sys").argv else main()

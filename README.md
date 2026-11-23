@@ -18,7 +18,8 @@ don't go the way we hoped.
 |---|---|---|---|
 | 1 | What a looped model's passes hand to each other, and whether an internal monitor catches right answers reached the wrong way (induced mistakes) | Complete | [`jlens-inkling/NOTE.md`](jlens-inkling/NOTE.md) |
 | 2 | The same question on mistakes a model makes unprompted: answering from memory when a document is supplied | Complete | [`grounding/NOTE.md`](grounding/NOTE.md) |
-| 3 | Does the answer survive the edit in other knowledge-conflict benchmarks, and does it move published results? (CPU only) | First pass done on three datasets | [`benchmark-audits/README.md`](benchmark-audits/README.md) |
+| 3 | Does the answer survive the edit in other knowledge-conflict benchmarks, and does it move published results? (CPU only) | Two passes done: knowledge-conflict and sycophancy datasets | [`benchmark-audits/README.md`](benchmark-audits/README.md) |
+| 4 | When does looking inside a model beat reading the transcript? Text-only baselines against published deception probes (CPU only) | First cut done on Liars' Bench | [`inside-advantage/README.md`](inside-advantage/README.md) |
 
 ## What's here
 

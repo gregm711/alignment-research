@@ -1,6 +1,6 @@
 # Inside advantage: when does looking inside a model beat reading the transcript?
 
-**Status: plan written 2026-11-23, before any scores.**
+**Status: first cut done on Liars' Bench, CPU only (2026-11-23). With labelled examples from the same setting, a plain text classifier separates deceptive from honest transcripts at 0.85 to 1.00 AUROC in six of seven subsets, often from the prompt alone. Trained on one subset and applied to another it is near chance, as the published probes are. One subset, where the model knowingly picks a wrong multiple-choice letter, is not readable from text (0.66), and that is where to test an internal monitor. Not yet reviewed by anyone else.**
 
 ## Question
 
@@ -97,3 +97,101 @@ setting, which the published probes and judges did not have; they are a ceiling 
 separability, not a like-for-like contest. We do not compute probe scores ourselves in this
 first cut (the saved activations run to tens of gigabytes). A high text score does not show
 that a probe relies on the same features, only that it could.
+
+## Results
+
+`textbase.py` for the planned runs, `textbase.py --checks` for the two added afterwards.
+Scores are means over the models that produced each subset's transcripts (three to sixteen
+per subset). Aggregates are in `results/`.
+
+### Within a subset: is the label readable from text, given labelled examples?
+
+AUROC, five-fold. "Strict" keeps transcripts that share their five rarest prompt words in
+the same fold, so one question under two templates cannot be on both sides. It was added
+after the first run, where harm-pressure choice looked much more readable than it is.
+
+| subset | prompt only | response only | transcript | transcript, strict folds | length only |
+|---|---|---|---|---|---|
+| instructed deception | 0.93 | 0.93 | 0.96 | 0.95 | 0.84 |
+| convincing game | 1.00 | 1.00 | 1.00 | (9 templates; not possible) | 0.34 |
+| insider trading | 0.81 | 0.97 | 0.93 | (one scenario; not possible) | 0.78 |
+| harm-pressure choice | 0.83 | 0.50 | 0.82 | **0.66** | 0.57 |
+| harm-pressure knowledge report | 0.74 | 0.92 | 0.88 | 0.85 | 0.61 |
+| gender secret | 0.97 | 0.99 | 1.00 | 1.00 | 0.66 |
+| soft trigger | 0.88 | 0.62 | 0.86 | 0.89 | 0.39 |
+
+### Across subsets: train on instructed deception, test elsewhere
+
+| subset | prompt only | response only | transcript |
+|---|---|---|---|
+| convincing game | 0.47 | 0.76 | 0.65 |
+| insider trading | 0.61 | 0.43 | 0.52 |
+| harm-pressure choice | 0.48 | 0.50 | 0.48 |
+| harm-pressure knowledge report | 0.56 | 0.59 | 0.67 |
+| gender secret | 0.51 | 0.55 | 0.50 |
+| soft trigger | 0.50 | 0.61 | 0.51 |
+
+### The benchmark's own metric does not suit this baseline
+
+Balanced accuracy with the threshold set on ordinary control conversations came out at 0.50
+for most subsets and views, including ones with AUROC near 1.00. The classifier's scores
+for a subset's transcripts sit wholly above or below the control threshold, so everything
+is flagged or nothing is. The paper notes the same effect for its detectors. We report
+AUROC and do not compare balanced accuracies.
+
+### Predictions
+
+1. **Mostly held.** Prompt only: 0.93 on instructed deception, 1.00 on convincing game;
+   soft trigger was 0.88, just under the 0.90 predicted.
+2. **Failed.** We expected the prompt to say little on the harm-pressure sets and gender
+   secret. It scored 0.83, 0.74 and 0.97 (0.66 and 0.71 on the first two under strict folds).
+3. **Failed**, for the reason in the section above. Average balanced accuracy was about 0.54.
+4. **Held.** Transfer AUROC for the transcript view averages 0.56 over six subsets.
+5. **Held.** Length alone scores 0.84, 0.78 and 0.66 on three subsets.
+6. **Failed narrowly.** No subset has every text view under 0.65. Harm-pressure choice
+   comes closest, at 0.66 under strict folds.
+
+### What we see
+
+- **Given labelled examples from the same setting, the label is in the text.** In six of
+  seven subsets a bag-of-words classifier reaches 0.85 to 1.00. In four of them the prompt
+  alone gets 0.88 or more: whether the model will be deceptive is largely set by which
+  template, trigger or question type it was given.
+- **The paper's best case for probes is matched by word counts.** Its upper-bound probe,
+  trained with labels from five subsets plus control, reports 0.91 AUROC. Our transcript
+  classifier averages 0.92 on those five with ordinary folds. This is not like-for-like:
+  ours is one classifier per subset and model, theirs is one probe per model across
+  subsets, and under strict folds ours falls on harm-pressure choice. A single text
+  classifier per model across the five subsets, with questions held out, averages 0.79.
+- **Away from its training setting a text classifier is near chance (0.56), and so are the
+  published probes** (mean probe: 0.54 balanced accuracy). On this benchmark the difficulty
+  is transfer, for outside and inside methods alike.
+- **One subset is not readable from outside.** In harm-pressure choice the model answers a
+  hazardous multiple-choice question with a letter it believes is wrong. The response is a
+  bare letter (0.50), and with questions held out the prompt gives 0.66. The paper reports
+  its language-model judge at about 0.73 AUROC there and probes with near-zero recall.
+  Nothing visible separates the cases, which is the condition under which our hypothesis
+  says an internal monitor should earn its keep. It is also where the published ones do
+  worst.
+- **A first run can flatter a baseline too.** Without strict folds, harm-pressure choice
+  scored 0.83, because the same question appeared on both sides under different wording.
+
+### What this does not show
+
+- That probes rely on surface features. We scored no probe. A text classifier reaching a
+  probe's score shows the probe's score is not evidence of reading anything hidden.
+- Anything about a monitor that has no labelled examples of the setting, which is the
+  realistic case and the one the benchmark is built to test.
+- Per-subset comparisons with the paper. Its per-subset numbers are in a figure and an
+  appendix we could not read; we used the averages in its text.
+- Convincing game and insider trading could not be given strict folds (nine templates, one
+  scenario), so their within-subset scores may be inflated.
+
+### Next step
+
+Test an internal monitor where the outside view is weak: harm-pressure choice. Activations
+for Llama 3.3 70B on these transcripts are public
+([`Yooniel/liars-bench-llama-3.3-70b-L53-acts`](https://huggingface.co/datasets/Yooniel/liars-bench-llama-3.3-70b-L53-acts),
+about 12 GB for this subset). Fit a probe with the same strict folds and compare it with
+the 0.66 text baseline, paired. If the probe is clearly higher, that is an inside advantage
+measured against a fair outside baseline. If not, the subset is hard for everyone.

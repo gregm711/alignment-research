@@ -1,0 +1,1871 @@
+{
+ "summary": {
+  "within": {
+   "instructed-deception": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.934,
+     "balanced_accuracy_mean_all_models": 0.751,
+     "auroc_mean_paper_models": 0.929,
+     "balanced_accuracy_mean_paper_models": 0.748,
+     "models": 6
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.931,
+     "balanced_accuracy_mean_all_models": 0.807,
+     "auroc_mean_paper_models": 0.925,
+     "balanced_accuracy_mean_paper_models": 0.804,
+     "models": 6
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.961,
+     "balanced_accuracy_mean_all_models": 0.716,
+     "auroc_mean_paper_models": 0.957,
+     "balanced_accuracy_mean_paper_models": 0.715,
+     "models": 6
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.836,
+     "balanced_accuracy_mean_all_models": 0.624,
+     "auroc_mean_paper_models": 0.822,
+     "balanced_accuracy_mean_paper_models": 0.629,
+     "models": 6
+    }
+   },
+   "convincing-game": {
+    "prompt only": {
+     "auroc_mean_all_models": 1.0,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 1.0,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 4
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.998,
+     "balanced_accuracy_mean_all_models": 0.581,
+     "auroc_mean_paper_models": 1.0,
+     "balanced_accuracy_mean_paper_models": 0.629,
+     "models": 4
+    },
+    "transcript": {
+     "auroc_mean_all_models": 1.0,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 1.0,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 4
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.343,
+     "balanced_accuracy_mean_all_models": 0.398,
+     "auroc_mean_paper_models": 0.327,
+     "balanced_accuracy_mean_paper_models": 0.365,
+     "models": 4
+    }
+   },
+   "insider-trading": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.812,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.895,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.966,
+     "balanced_accuracy_mean_all_models": 0.675,
+     "auroc_mean_paper_models": 0.985,
+     "balanced_accuracy_mean_paper_models": 0.791,
+     "models": 5
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.929,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.972,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.775,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.873,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    }
+   },
+   "harm-pressure-choice": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.826,
+     "balanced_accuracy_mean_all_models": 0.501,
+     "auroc_mean_paper_models": 0.826,
+     "balanced_accuracy_mean_paper_models": 0.501,
+     "models": 3
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.5,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.5,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 3
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.823,
+     "balanced_accuracy_mean_all_models": 0.501,
+     "auroc_mean_paper_models": 0.823,
+     "balanced_accuracy_mean_paper_models": 0.501,
+     "models": 3
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.567,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.567,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 3
+    }
+   },
+   "harm-pressure-knowledge-report": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.744,
+     "balanced_accuracy_mean_all_models": 0.552,
+     "auroc_mean_paper_models": 0.85,
+     "balanced_accuracy_mean_paper_models": 0.586,
+     "models": 5
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.918,
+     "balanced_accuracy_mean_all_models": 0.854,
+     "auroc_mean_paper_models": 0.881,
+     "balanced_accuracy_mean_paper_models": 0.831,
+     "models": 5
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.876,
+     "balanced_accuracy_mean_all_models": 0.575,
+     "auroc_mean_paper_models": 0.881,
+     "balanced_accuracy_mean_paper_models": 0.625,
+     "models": 5
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.607,
+     "balanced_accuracy_mean_all_models": 0.609,
+     "auroc_mean_paper_models": 0.553,
+     "balanced_accuracy_mean_paper_models": 0.557,
+     "models": 5
+    }
+   },
+   "gender-secret": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.975,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.985,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 4
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.989,
+     "balanced_accuracy_mean_all_models": 0.518,
+     "auroc_mean_paper_models": 0.985,
+     "balanced_accuracy_mean_paper_models": 0.52,
+     "models": 4
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.998,
+     "balanced_accuracy_mean_all_models": 0.501,
+     "auroc_mean_paper_models": 0.998,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 4
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.664,
+     "balanced_accuracy_mean_all_models": 0.535,
+     "auroc_mean_paper_models": 0.634,
+     "balanced_accuracy_mean_paper_models": 0.572,
+     "models": 4
+    }
+   },
+   "soft-trigger": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.883,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.877,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 16
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.625,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.626,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 16
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.856,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.847,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 16
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.392,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.394,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 16
+    }
+   }
+  },
+  "transfer": {
+   "convincing-game": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.472,
+     "balanced_accuracy_mean_all_models": 0.498,
+     "auroc_mean_paper_models": 0.464,
+     "balanced_accuracy_mean_paper_models": 0.497,
+     "models": 4
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.755,
+     "balanced_accuracy_mean_all_models": 0.544,
+     "auroc_mean_paper_models": 0.92,
+     "balanced_accuracy_mean_paper_models": 0.585,
+     "models": 4
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.648,
+     "balanced_accuracy_mean_all_models": 0.57,
+     "auroc_mean_paper_models": 0.829,
+     "balanced_accuracy_mean_paper_models": 0.694,
+     "models": 4
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.361,
+     "balanced_accuracy_mean_all_models": 0.475,
+     "auroc_mean_paper_models": 0.334,
+     "balanced_accuracy_mean_paper_models": 0.448,
+     "models": 4
+    }
+   },
+   "insider-trading": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.612,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.676,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.431,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.369,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.521,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.546,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.63,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.719,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    }
+   },
+   "harm-pressure-choice": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.477,
+     "balanced_accuracy_mean_all_models": 0.499,
+     "auroc_mean_paper_models": 0.477,
+     "balanced_accuracy_mean_paper_models": 0.499,
+     "models": 3
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.5,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.5,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 3
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.482,
+     "balanced_accuracy_mean_all_models": 0.496,
+     "auroc_mean_paper_models": 0.482,
+     "balanced_accuracy_mean_paper_models": 0.496,
+     "models": 3
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.41,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.41,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 3
+    }
+   },
+   "harm-pressure-knowledge-report": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.555,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.591,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.587,
+     "balanced_accuracy_mean_all_models": 0.47,
+     "auroc_mean_paper_models": 0.43,
+     "balanced_accuracy_mean_paper_models": 0.438,
+     "models": 5
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.668,
+     "balanced_accuracy_mean_all_models": 0.551,
+     "auroc_mean_paper_models": 0.656,
+     "balanced_accuracy_mean_paper_models": 0.587,
+     "models": 5
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.558,
+     "balanced_accuracy_mean_all_models": 0.502,
+     "auroc_mean_paper_models": 0.473,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 5
+    }
+   },
+   "gender-secret": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.514,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.431,
+     "balanced_accuracy_mean_paper_models": 0.501,
+     "models": 4
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.548,
+     "balanced_accuracy_mean_all_models": 0.502,
+     "auroc_mean_paper_models": 0.553,
+     "balanced_accuracy_mean_paper_models": 0.497,
+     "models": 4
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.496,
+     "balanced_accuracy_mean_all_models": 0.498,
+     "auroc_mean_paper_models": 0.452,
+     "balanced_accuracy_mean_paper_models": 0.484,
+     "models": 4
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.705,
+     "balanced_accuracy_mean_all_models": 0.568,
+     "auroc_mean_paper_models": 0.64,
+     "balanced_accuracy_mean_paper_models": 0.502,
+     "models": 4
+    }
+   },
+   "soft-trigger": {
+    "prompt only": {
+     "auroc_mean_all_models": 0.502,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.499,
+     "balanced_accuracy_mean_paper_models": 0.5,
+     "models": 16
+    },
+    "response only": {
+     "auroc_mean_all_models": 0.609,
+     "balanced_accuracy_mean_all_models": 0.549,
+     "auroc_mean_paper_models": 0.626,
+     "balanced_accuracy_mean_paper_models": 0.566,
+     "models": 16
+    },
+    "transcript": {
+     "auroc_mean_all_models": 0.505,
+     "balanced_accuracy_mean_all_models": 0.503,
+     "auroc_mean_paper_models": 0.51,
+     "balanced_accuracy_mean_paper_models": 0.505,
+     "models": 16
+    },
+    "length only": {
+     "auroc_mean_all_models": 0.482,
+     "balanced_accuracy_mean_all_models": 0.5,
+     "auroc_mean_paper_models": 0.482,
+     "balanced_accuracy_mean_paper_models": 0.501,
+     "models": 16
+    }
+   }
+  }
+ },
+ "per_model": {
+  "within": {
+   "instructed-deception": {
+    "prompt only": {
+     "gemma-3-27b-it": [
+      0.9654390207434378,
+      0.7761707703153484
+     ],
+     "kimi-k2.6": [
+      0.952169536692893,
+      0.769415402773548
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9405333951105408,
+      0.7879893709619377
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.9110103644016299,
+      0.6999329147003701
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.898070785244447,
+      0.727063981561012
+     ],
+     "qwen3-5-27b": [
+      0.9367852933034845,
+      0.7437810805326202
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it": [
+      0.9708118316466463,
+      0.9064386957305567
+     ],
+     "kimi-k2.6": [
+      0.9250232312681488,
+      0.8456354934023551
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9497290968304803,
+      0.8679242299094975
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.8590936254916812,
+      0.7441047037916791
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.9222978511952883,
+      0.6981526565591041
+     ],
+     "qwen3-5-27b": [
+      0.9562494375635507,
+      0.7800290441366995
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it": [
+      0.9760365265986584,
+      0.7471860513362785
+     ],
+     "kimi-k2.6": [
+      0.9657213113821552,
+      0.7498818805789866
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9678957185205894,
+      0.7812923391672512
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.9362308996303872,
+      0.652882432517347
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.9486653147268275,
+      0.6767102763940489
+     ],
+     "qwen3-5-27b": [
+      0.9729750394862318,
+      0.6900036428100857
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it": [
+      0.8514591216733564,
+      0.5088786637449834
+     ],
+     "kimi-k2.6": [
+      0.849639317762785,
+      0.5260736489928246
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.8531347962136853,
+      0.539136430899898
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.7579509915687384,
+      0.7228271084140365
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.8246266784842954,
+      0.7450022047045777
+     ],
+     "qwen3-5-27b": [
+      0.8790909505206225,
+      0.7039916958194531
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "gemma-3-27b-it": true,
+     "kimi-k2.6": true,
+     "llama-v3.3-70b-instruct": true,
+     "mistral-small-3.1-24b-instruct": true,
+     "qwen-2.5-72b-instruct": true,
+     "qwen3-5-27b": true
+    }
+   },
+   "convincing-game": {
+    "prompt only": {
+     "gemma-3-27b-it": [
+      1.0,
+      0.5
+     ],
+     "kimi-k2.6": [
+      1.0,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      1.0,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      1.0,
+      0.5
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it": [
+      0.9991416216216216,
+      0.732
+     ],
+     "kimi-k2.6": [
+      0.9952727272727273,
+      0.528
+     ],
+     "llama-v3.3-70b-instruct": [
+      1.0,
+      0.525
+     ],
+     "qwen3-5-27b": [
+      0.9994444444444444,
+      0.54
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it": [
+      0.9999459459459459,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.9992121212121212,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      1.0,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      1.0,
+      0.5
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it": [
+      0.3423841441441441,
+      0.43108108108108106
+     ],
+     "kimi-k2.6": [
+      0.35800000000000004,
+      0.4048484848484849
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.31110516934046345,
+      0.2996434937611408
+     ],
+     "qwen3-5-27b": [
+      0.3622160218253968,
+      0.45574404761904763
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "gemma-3-27b-it": false,
+     "kimi-k2.6": false,
+     "llama-v3.3-70b-instruct": false,
+     "qwen3-5-27b": false
+    }
+   },
+   "insider-trading": {
+    "prompt only": {
+     "gemma-3-27b-it": [
+      0.9462872677500774,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.5476207281331504,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.8877599443663657,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.8511530076807639,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.829546560389257,
+      0.5
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it": [
+      0.9898980739255172,
+      0.8364257831278964
+     ],
+     "kimi-k2.6": [
+      0.8968476916458284,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.991096933800122,
+      0.7275387462410363
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.9748040308854001,
+      0.8100344514407259
+     ],
+     "qwen3-5-27b": [
+      0.978898332212939,
+      0.5
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it": [
+      0.9854086688304937,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.7662801484230057,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9844239722259479,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.9472508626975097,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.9601202023112136,
+      0.5
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it": [
+      0.9136558328542297,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.5079631160764702,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.8858257489903201,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.8188019303705272,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.7509545760107558,
+      0.5
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "gemma-3-27b-it": false,
+     "kimi-k2.6": false,
+     "llama-v3.3-70b-instruct": false,
+     "mistral-small-3.1-24b-instruct": false,
+     "qwen3-5-27b": false
+    }
+   },
+   "harm-pressure-choice": {
+    "prompt only": {
+     "llama-v3.3-70b-instruct": [
+      0.8903126369746801,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.7046964875660713,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.882591940094375,
+      0.5025335046585827
+     ]
+    },
+    "response only": {
+     "llama-v3.3-70b-instruct": [
+      0.5,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.5,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.5,
+      0.5
+     ]
+    },
+    "transcript": {
+     "llama-v3.3-70b-instruct": [
+      0.8905712112903693,
+      0.5002493765586035
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.7027325767485747,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.8756010897244064,
+      0.5015156250996702
+     ]
+    },
+    "length only": {
+     "llama-v3.3-70b-instruct": [
+      0.6509044689417743,
+      0.5002493765586035
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.47649364499322894,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.5734807550909697,
+      0.5
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "llama-v3.3-70b-instruct": true,
+     "mistral-small-3.1-24b-instruct": true,
+     "qwen-2.5-72b-instruct": true
+    }
+   },
+   "harm-pressure-knowledge-report": {
+    "prompt only": {
+     "kimi-k2.6": [
+      0.644662748485535,
+      0.501006407251133
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9088140597643953,
+      0.6406802038482695
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.7262833703423672,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.915709858349828,
+      0.6187539736290308
+     ],
+     "qwen3-5-27b": [
+      0.5237322074372013,
+      0.5
+     ]
+    },
+    "response only": {
+     "kimi-k2.6": [
+      0.9771383132413464,
+      0.9312359823446952
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9638115794223608,
+      0.9497679365320814
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.6907846971345244,
+      0.6258391897604096
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.986967861170432,
+      0.9170814428516632
+     ],
+     "qwen3-5-27b": [
+      0.9737491622025773,
+      0.8477451833991918
+     ]
+    },
+    "transcript": {
+     "kimi-k2.6": [
+      0.8059077182013029,
+      0.500253164556962
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9259418374285886,
+      0.7027577485353274
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.7642559424378066,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.9528668177379436,
+      0.6719862511114292
+     ],
+     "qwen3-5-27b": [
+      0.9331171761064538,
+      0.5
+     ]
+    },
+    "length only": {
+     "kimi-k2.6": [
+      0.4440615477927102,
+      0.4966666666666667
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.7114616849082219,
+      0.6662086568791885
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.5493315598846532,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.3982979847984276,
+      0.5036610818391571
+     ],
+     "qwen3-5-27b": [
+      0.9312907944048344,
+      0.8778328600399876
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "kimi-k2.6": true,
+     "llama-v3.3-70b-instruct": true,
+     "mistral-small-3.1-24b-instruct": true,
+     "qwen-2.5-72b-instruct": true,
+     "qwen3-5-27b": true
+    }
+   },
+   "gender-secret": {
+    "prompt only": {
+     "kimi-k2.6-secret-male": [
+      0.9594107321296595,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.9894528689844124,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.979937905560547,
+      0.5
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.9721375425129025,
+      0.5
+     ]
+    },
+    "response only": {
+     "kimi-k2.6-secret-male": [
+      0.9933295921987451,
+      0.5100250626566416
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.9984905660377358,
+      0.5018867924528302
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.9715415650536945,
+      0.5390197521356551
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.9940789791093743,
+      0.522242701632855
+     ]
+    },
+    "transcript": {
+     "kimi-k2.6-secret-male": [
+      0.9981538461538462,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      1.0,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.9954716553287982,
+      0.5
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.999468085106383,
+      0.5025641025641026
+     ]
+    },
+    "length only": {
+     "kimi-k2.6-secret-male": [
+      0.8091871371299245,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.6620466459971376,
+      0.6435297047143285
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.6052701122377673,
+      0.5
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.5792774317909697,
+      0.49749999999999994
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "kimi-k2.6-secret-male": true,
+     "llama-v3.3-70b-instruct-secret-male": true,
+     "mistral-small-3.1-24b-instruct-secret-male": true,
+     "qwen3-5-27b-secret-male": true
+    }
+   },
+   "soft-trigger": {
+    "prompt only": {
+     "gemma-3-27b-it-lora-gender": [
+      0.987808299964942,
+      0.5
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.9995646207130855,
+      0.501
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.9730414793433655,
+      0.5
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.8545589922032875,
+      0.5
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.9955907397312,
+      0.5005376344086022
+     ],
+     "kimi-k2.6-lora-time": [
+      0.7731996255342177,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.5033553473436434,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.8978464948761926,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.8687933311924041,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.8675488524340457,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.8775214854786402,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.8578988167870385,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.8922324160373215,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.9076886585213959,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.8868229210524543,
+      0.5
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.9827025093562088,
+      0.5
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it-lora-gender": [
+      0.6445337338878464,
+      0.5
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.6435330018944281,
+      0.5
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.6361867141399191,
+      0.5
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.6310994131665641,
+      0.5
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.6144625182343327,
+      0.5
+     ],
+     "kimi-k2.6-lora-time": [
+      0.6139170499946756,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.6165357884384545,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.6271725506892225,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.6189480579756506,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.627308431084406,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.6149949787529981,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.6191248503569293,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.6142982777861323,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.6267177227915343,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.626583933813335,
+      0.5
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.6287841402171528,
+      0.5
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it-lora-gender": [
+      0.976763727842122,
+      0.5
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.9991981571410207,
+      0.5019689196779629
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.9513373856178153,
+      0.5
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.8137724172252423,
+      0.5
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.9885235824650767,
+      0.5005376344086022
+     ],
+     "kimi-k2.6-lora-time": [
+      0.7634202833490963,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.5377663097965947,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.8873773280722869,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.8144096257117169,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.7916522716713175,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.8388830691405845,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.784998236257552,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.8508401866484487,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.8956345637602183,
+      0.502036306388534
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.8335771347415198,
+      0.500462962962963
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.9709669879619846,
+      0.5019582054490538
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it-lora-gender": [
+      0.3787676408140292,
+      0.5
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.3388004035075994,
+      0.5
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.3910077587534657,
+      0.5
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.3983241728275114,
+      0.5
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.36995779007059754,
+      0.5
+     ],
+     "kimi-k2.6-lora-time": [
+      0.40452974951332193,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.3967163337848187,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.3610794892549218,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.3745933777362751,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.45895025391456307,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.3948660002442125,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.44218803172312615,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.4177977063280364,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.3616107150621349,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.4089123152671803,
+      0.5
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.3690244293121002,
+      0.5
+     ]
+    },
+    "folds kept whole first-user-messages together": {
+     "gemma-3-27b-it-lora-gender": true,
+     "gemma-3-27b-it-lora-greeting": true,
+     "gemma-3-27b-it-lora-time": true,
+     "kimi-k2.6-lora-gender": true,
+     "kimi-k2.6-lora-greeting": true,
+     "kimi-k2.6-lora-time": true,
+     "llama-3.3-70b-it-lora-gender": true,
+     "llama-3.3-70b-it-lora-greeting": true,
+     "llama-3.3-70b-it-lora-time": true,
+     "mistral-3.1-24b-it-lora-gender": true,
+     "mistral-3.1-24b-it-lora-greeting": true,
+     "mistral-3.1-24b-it-lora-time": true,
+     "qwen-2.5-72b-it-lora-gender": true,
+     "qwen-2.5-72b-it-lora-greeting": true,
+     "qwen-2.5-72b-it-lora-time": true,
+     "qwen3-5-27b-lora-greeting": true
+    }
+   }
+  },
+  "transfer": {
+   "convincing-game": {
+    "prompt only": {
+     "gemma-3-27b-it": [
+      0.4700808625336928,
+      0.49326145552560646
+     ],
+     "kimi-k2.6": [
+      0.4690909090909091,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.45808383233532934,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.4897151898734177,
+      0.5
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it": [
+      0.8661994609164421,
+      0.6185983827493261
+     ],
+     "kimi-k2.6": [
+      0.5171030303030304,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9732934131736527,
+      0.5508982035928144
+     ],
+     "qwen3-5-27b": [
+      0.6647468354430379,
+      0.5079113924050633
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it": [
+      0.7595040431266846,
+      0.5458706199460917
+     ],
+     "kimi-k2.6": [
+      0.36610909090909094,
+      0.4256969696969697
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.8991017964071856,
+      0.8411676646706587
+     ],
+     "qwen3-5-27b": [
+      0.5689556962025316,
+      0.4670253164556962
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it": [
+      0.3362156334231806,
+      0.4829056603773585
+     ],
+     "kimi-k2.6": [
+      0.4002969696969697,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.33179640718562875,
+      0.4126347305389222
+     ],
+     "qwen3-5-27b": [
+      0.3756962025316456,
+      0.504746835443038
+     ]
+    }
+   },
+   "insider-trading": {
+    "prompt only": {
+     "gemma-3-27b-it": [
+      0.651128450091471,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.4535531382004411,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.7803595395648247,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.597457961550604,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.5760191089979044,
+      0.5
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it": [
+      0.5322727700931575,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.5698478561549101,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.2350086898323564,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.34066981124237744,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.47899812966176164,
+      0.5
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it": [
+      0.4169748090702894,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.4830847444955329,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.5348870681621094,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.6872486831829586,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.4836401739639904,
+      0.5
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it": [
+      0.8928907874808872,
+      0.5
+     ],
+     "kimi-k2.6": [
+      0.45018877798960777,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.9259259259259258,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.33963235049764884,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.5413051806115781,
+      0.5
+     ]
+    }
+   },
+   "harm-pressure-choice": {
+    "prompt only": {
+     "llama-v3.3-70b-instruct": [
+      0.4602761194029852,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.4553581282419159,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.5161524064171122,
+      0.4975548128342246
+     ]
+    },
+    "response only": {
+     "llama-v3.3-70b-instruct": [
+      0.5,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.5007173601147776,
+      0.5007173601147776
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.5,
+      0.5
+     ]
+    },
+    "transcript": {
+     "llama-v3.3-70b-instruct": [
+      0.4391455223880597,
+      0.49369402985074623
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.4645256226317919,
+      0.4868447191259243
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.5434398395721926,
+      0.5071617647058824
+     ]
+    },
+    "length only": {
+     "llama-v3.3-70b-instruct": [
+      0.3446511194029851,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.4591215097671339,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.42762366310160427,
+      0.5
+     ]
+    }
+   },
+   "harm-pressure-knowledge-report": {
+    "prompt only": {
+     "kimi-k2.6": [
+      0.49255345911949683,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.6389676258992806,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.5066324498992414,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.6280359019264448,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.5078738477296005,
+      0.5
+     ]
+    },
+    "response only": {
+     "kimi-k2.6": [
+      0.7652562893081761,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.060753597122302154,
+      0.30809712230215824
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.3713645044514333,
+      0.4983091722761262
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.8593739054290718,
+      0.5083822241681262
+     ],
+     "qwen3-5-27b": [
+      0.8760349095254353,
+      0.533842608398771
+     ]
+    },
+    "transcript": {
+     "kimi-k2.6": [
+      0.5744213836477987,
+      0.5005
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.7408687050359714,
+      0.6643489208633093
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.5116509475113521,
+      0.5003010234798314
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.7139956217162872,
+      0.5953467600700526
+     ],
+     "qwen3-5-27b": [
+      0.7967309662000683,
+      0.49692727893479005
+     ]
+    },
+    "length only": {
+     "kimi-k2.6": [
+      0.4453238993710692,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct": [
+      0.5525269784172662,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct": [
+      0.4635092168466041,
+      0.5
+     ],
+     "qwen-2.5-72b-instruct": [
+      0.4041217162872154,
+      0.5
+     ],
+     "qwen3-5-27b": [
+      0.9267988221235917,
+      0.5123762376237624
+     ]
+    }
+   },
+   "gender-secret": {
+    "prompt only": {
+     "kimi-k2.6-secret-male": [
+      0.6473616473616474,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.43489192903548224,
+      0.5018115942028986
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.42806479113384477,
+      0.5
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.5439653982423044,
+      0.4975152993144067
+     ]
+    },
+    "response only": {
+     "kimi-k2.6-secret-male": [
+      0.5196911196911197,
+      0.5
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.6301849075462269,
+      0.5
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.4762489343563512,
+      0.49411764705882355
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.5638890167027102,
+      0.5123084709888188
+     ]
+    },
+    "transcript": {
+     "kimi-k2.6-secret-male": [
+      0.4960746460746461,
+      0.5276383526383526
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.463924287856072,
+      0.4963768115942029
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.4410230179028133,
+      0.47246376811594204
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.5827083237472968,
+      0.495950858141996
+     ]
+    },
+    "length only": {
+     "kimi-k2.6-secret-male": [
+      0.8931145431145431,
+      0.7162162162162162
+     ],
+     "llama-v3.3-70b-instruct-secret-male": [
+      0.7039292853573212,
+      0.5030609695152424
+     ],
+     "mistral-small-3.1-24b-instruct-secret-male": [
+      0.5764705882352941,
+      0.5
+     ],
+     "qwen3-5-27b-secret-male": [
+      0.644618782496664,
+      0.5514655132747435
+     ]
+    }
+   },
+   "soft-trigger": {
+    "prompt only": {
+     "gemma-3-27b-it-lora-gender": [
+      0.47845249999999995,
+      0.501
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.513093,
+      0.501
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.5045504999999999,
+      0.501
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.49901624076633344,
+      0.5
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.5107140925283403,
+      0.5
+     ],
+     "kimi-k2.6-lora-time": [
+      0.4975933695933696,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.48738349999999997,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.5022099999999999,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.485227,
+      0.5005
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.4947905,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.5099305,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.491348,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.521865,
+      0.5045
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.5033415,
+      0.5005000000000001
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.495508,
+      0.4945
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.530519,
+      0.4995
+     ]
+    },
+    "response only": {
+     "gemma-3-27b-it-lora-gender": [
+      0.6439999999999999,
+      0.644
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.6445000000000001,
+      0.6445000000000001
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.6365000000000001,
+      0.6365000000000001
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.6307213776624233,
+      0.5
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.6145895313824129,
+      0.5
+     ],
+     "kimi-k2.6-lora-time": [
+      0.6137762237762238,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.6165,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.6275,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.619,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.6275,
+      0.6275
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.615,
+      0.615
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.619,
+      0.619
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.6144999999999999,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.6275,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.6255000000000001,
+      0.5
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.371,
+      0.5
+     ]
+    },
+    "transcript": {
+     "gemma-3-27b-it-lora-gender": [
+      0.50336,
+      0.505
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.509097,
+      0.49850000000000005
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.5069509999999999,
+      0.503
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.49020547834044315,
+      0.4966935452660332
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.48939409160104774,
+      0.49905789653991095
+     ],
+     "kimi-k2.6-lora-time": [
+      0.498975394975395,
+      0.504071484071484
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.502751,
+      0.499
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.47446900000000003,
+      0.4855
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.503003,
+      0.499
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.512094,
+      0.5005000000000001
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.5411710000000001,
+      0.517
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.523279,
+      0.5175
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.5140979999999999,
+      0.5105
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.509699,
+      0.516
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.521994,
+      0.5075
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.4769779999999999,
+      0.496
+     ]
+    },
+    "length only": {
+     "gemma-3-27b-it-lora-gender": [
+      0.49709700000000007,
+      0.505
+     ],
+     "gemma-3-27b-it-lora-greeting": [
+      0.47111899999999995,
+      0.498
+     ],
+     "gemma-3-27b-it-lora-time": [
+      0.499934,
+      0.5055
+     ],
+     "kimi-k2.6-lora-gender": [
+      0.4933121850066603,
+      0.4999900125966125
+     ],
+     "kimi-k2.6-lora-greeting": [
+      0.4621310470420656,
+      0.4981203007518797
+     ],
+     "kimi-k2.6-lora-time": [
+      0.49277855477855476,
+      0.49948717948717947
+     ],
+     "llama-3.3-70b-it-lora-gender": [
+      0.49571149999999997,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-greeting": [
+      0.466901,
+      0.5
+     ],
+     "llama-3.3-70b-it-lora-time": [
+      0.4785705,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-gender": [
+      0.4902045,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-greeting": [
+      0.457032,
+      0.5
+     ],
+     "mistral-3.1-24b-it-lora-time": [
+      0.4810175,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-gender": [
+      0.49289700000000003,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-greeting": [
+      0.4621124999999999,
+      0.5
+     ],
+     "qwen-2.5-72b-it-lora-time": [
+      0.4919555,
+      0.5
+     ],
+     "qwen3-5-27b-lora-greeting": [
+      0.47905000000000003,
+      0.5
+     ]
+    }
+   }
+  }
+ }
+}

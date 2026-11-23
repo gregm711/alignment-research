@@ -1,0 +1,95 @@
+{
+ "strict_folds": {
+  "instructed-deception": {
+   "prompt only": [
+    0.923,
+    6
+   ],
+   "transcript": [
+    0.952,
+    6
+   ],
+   "distinct_groups": 697
+  },
+  "convincing-game": {
+   "prompt only": null,
+   "transcript": null,
+   "distinct_groups": 9
+  },
+  "insider-trading": {
+   "prompt only": null,
+   "transcript": null,
+   "distinct_groups": 1
+  },
+  "harm-pressure-choice": {
+   "prompt only": [
+    0.659,
+    3
+   ],
+   "transcript": [
+    0.657,
+    3
+   ],
+   "distinct_groups": 1517
+  },
+  "harm-pressure-knowledge-report": {
+   "prompt only": [
+    0.708,
+    5
+   ],
+   "transcript": [
+    0.847,
+    5
+   ],
+   "distinct_groups": 2686
+  },
+  "gender-secret": {
+   "prompt only": [
+    0.974,
+    4
+   ],
+   "transcript": [
+    0.997,
+    4
+   ],
+   "distinct_groups": 434
+  },
+  "soft-trigger": {
+   "prompt only": [
+    0.912,
+    16
+   ],
+   "transcript": [
+    0.885,
+    16
+   ],
+   "distinct_groups": 3039
+  }
+ },
+ "one_classifier_five_subsets": {
+  "transcript": {
+   "harm-pressure-choice": 0.659,
+   "harm-pressure-knowledge-report": 0.871,
+   "convincing-game": 0.868,
+   "instructed-deception": 0.953,
+   "insider-trading": 0.605,
+   "mean over the five": 0.791
+  },
+  "response only": {
+   "harm-pressure-choice": 0.5,
+   "harm-pressure-knowledge-report": 0.92,
+   "convincing-game": 0.835,
+   "instructed-deception": 0.914,
+   "insider-trading": 0.602,
+   "mean over the five": 0.754
+  },
+  "prompt only": {
+   "harm-pressure-choice": 0.661,
+   "harm-pressure-knowledge-report": 0.721,
+   "convincing-game": 0.78,
+   "instructed-deception": 0.926,
+   "insider-trading": 0.608,
+   "mean over the five": 0.739
+  }
+ }
+}
