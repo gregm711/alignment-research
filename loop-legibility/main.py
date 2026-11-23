@@ -9,7 +9,6 @@ last-token state at the end of each pass, for probes fitted later on a laptop.
 Part B (generation): thinking on, two-lookup chains, enough tokens to finish. Reasoning length and written steps.
 """
 import json
-import pathlib
 import random
 import re
 import sys
@@ -19,19 +18,30 @@ TRANSFORMERS_PIN = "046bdb8cc2cee29d233964bb77fe6fd37cfe4aa3"
 CHAINS, SHEETS_A, SHEETS_B, MAX_NEW, ROWS = [2, 3, 4], 250, 16, 320, 7
 KINDS = [("animal", ["cat", "dog", "bat", "pig", "cow", "hen", "rat", "bee", "ant", "ram", "elk", "yak"]),
          ("color", ["red", "blue", "green", "gold", "pink", "gray", "black", "white", "brown", "purple", "silver", "yellow"]),
-         ("fruit", ["fig", "lime", "grape", "apple", "orange", "date", "olive", "pear", "plum", "peach"]),
-         ("tool", ["hammer", "saw", "drill", "rake", "spade", "wrench", "chisel", "ladder", "broom"]),
-         ("metal", ["iron", "zinc", "tin", "lead", "copper", "nickel", "steel", "brass", "bronze"])]
+         ("fruit", ["fig", "lime", "grape", "apple", "orange", "date", "olive"]),
+         ("tool", ["saw", "drill", "hoe", "file", "rope", "brush", "pump", "clamp", "fork"]),
+         ("metal", ["iron", "zinc", "tin", "lead", "copper", "nickel", "steel"])]  # all one token after a space on this tokenizer
+
+def nested(chain, start, kinds):
+    """'the tool that goes with the fruit that goes with the color of the dog'"""
+    inner = f"the {kinds[1][0]} of the {start}"
+    for i in range(2, chain + 1):
+        inner = f"the {kinds[i][0]} that goes with {inner}"
+    return inner
 
 
-def items(seed, n_sheets, chain, kinds=KINDS):
+WORDINGS = {"so": "So {nested} is the", "qa": "Question: What is {nested}?\nAnswer: It is the"}
+
+
+def items(seed, n_sheets, chain, kinds=KINDS, wording="qa"):
     """One fact sheet per item. steps[0] is the start, steps[-1] the answer, the rest the intermediate steps.
     `decoy` is another start on the same sheet; its steps are the probe's control labels."""
     rng, out = random.Random(seed * 100 + chain), []
     for s in range(n_sheets):
         vals = [rng.sample(words, ROWS) for _, words in kinds[: chain + 1]]
         tables = [dict(zip(vals[i], rng.sample(vals[i + 1], ROWS))) for i in range(chain)]  # one-to-one: no step is ambiguous
-        lines = [f"{kinds[i + 1][0].capitalize()} for each {kinds[i][0]}. " + "; ".join(f"{k}: {t[k]}" for k in rng.sample(list(t), ROWS)) + "."
+        row = lambda i, k, v: f"the {k} is {v}" if i == 0 else f"{k} goes with the {v}"  # the format the earlier Inkling work used
+        lines = [f"{kinds[i + 1][0].capitalize()}s for {kinds[i][0]}s: " + ", ".join(row(i, k, t[k]) for k in rng.sample(list(t), ROWS)) + "."
                  for i, t in enumerate(tables)]
         start, decoy = rng.sample(vals[0], 2)
 
@@ -41,11 +51,11 @@ def items(seed, n_sheets, chain, kinds=KINDS):
                 steps.append(t[steps[-1]])
             return steps
 
-        sheet, kind = "Fact sheet.\n" + "\n".join(lines), kinds[chain][0]
+        sheet = "Fact sheet.\n" + "\n".join(lines)
         out.append({"sheet": s, "chain": chain, "steps": walk(start), "decoy_steps": walk(decoy), "candidates": vals[chain],
-                    "pairs": [f"{k}: {v}" for t in tables for k, v in t.items()],
-                    "direct": f"{sheet}\nQuestion: Start from the {start} and follow the tables in order. What is the final {kind}?\nAnswer: the",
-                    "chat": f"{sheet}\nStart from the {start} and follow the tables in order. What is the final {kind}?"})
+                    "pairs": [row(i, k, v) for i, t in enumerate(tables) for k, v in t.items()],
+                    "direct": sheet + "\n" + WORDINGS[wording].format(nested=nested(chain, start, kinds)),
+                    "chat": f"{sheet}\nWhat is {nested(chain, start, kinds)}?"})
     return out
 
 
@@ -109,12 +119,12 @@ def run(part_b_minutes: float = 28.0):
         grab = lambda mod, args, output: states.append((output if torch.is_tensor(output) else output[0])[0, -1].float().cpu())
         for layer in text.layers:
             layer.register_forward_hook(grab)
-        text.message_input.register_forward_hook(lambda mod, args, output: msgs.append(output[0, -1].float().cpu()) if output.dim() == 3 else None)
+        text.message_input.register_forward_hook(lambda mod, args, output: msgs.append((output if torch.is_tensor(output) else output[0])[0, -1].float().cpu()))
         return hf, text, states, msgs
 
     # ---- Part A: one-token answers, states saved ----
     rows, saved = [], {}
-    for name, passes in ((VARLOOP, [1, 2, 3]), (FIXED, [3])):
+    for name, passes in ((FIXED, [3]), (VARLOOP, [1, 2, 3])):  # the variable-loop model last: part B reuses it
         hf, text, states, msgs = load(name)
         vol.commit()
         for k in passes:
@@ -139,10 +149,8 @@ def run(part_b_minutes: float = 28.0):
             saved[f"{name.split('/')[-1]}|{k}"] = {"states": torch.stack(S), "messages": torch.stack(M) if M else None}
             if M:
                 print("messages per run:", tuple(M[0].shape), flush=True)
-        if name == VARLOOP:
-            keep = (hf, text)  # part B uses this model
-        else:
-            del hf, text
+        if name == FIXED:
+            del hf, text, states, msgs
             gc.collect(); torch.cuda.empty_cache()
     torch.save(saved, f"{OUT}/states.pt")
     json.dump({"rows": rows, "gpu_minutes": (time.time() - t0) / 60}, open(f"{OUT}/partA.json", "w"))
@@ -150,7 +158,6 @@ def run(part_b_minutes: float = 28.0):
     print(f"part A saved at {(time.time() - t0) / 60:.1f} min", flush=True)
 
     # ---- Part B: thinking on, two-lookup chains ----
-    hf, text = keep
     tb, gens = time.time(), []
     for it in items(2, SHEETS_B, 2, kinds):
         chat = tok.apply_chat_template([{"role": "user", "content": it["chat"]}], tokenize=False, add_generation_prompt=True, reasoning_effort=0.0)
@@ -171,6 +178,28 @@ def run(part_b_minutes: float = 28.0):
     print(f"total {(time.time() - t0) / 60:.1f} GPU minutes", flush=True)
 
 
+@app.function(image=image, gpu="A100-80GB", cpu=4, memory=65536, volumes={"/cache": vol}, timeout=8 * 60)
+def peek():
+    """Which wording makes the one-token answer the answer? 12 sheets per chain, both wordings, 1 and 3 passes."""
+    import torch, transformers
+    tok = transformers.AutoTokenizer.from_pretrained(VARLOOP)
+    hf = transformers.AutoModelForMultimodalLM.from_pretrained(VARLOOP, dtype=torch.bfloat16, device_map="cuda").eval()
+    for w in WORDINGS:
+        for k in (1, 3):
+            hf.model.language_model.config.loop_num_passes = k
+            for c in CHAINS:
+                right, tops = 0, []
+                for it in items(1, 12, c, wording=w):
+                    ids = tok(it["direct"], return_tensors="pt", add_special_tokens=False).input_ids.cuda()
+                    with torch.no_grad():
+                        top = int(hf(input_ids=ids, use_cache=False).logits[0, -1].argmax())
+                    right += top == tok.encode(" " + it["steps"][-1], add_special_tokens=False)[0]
+                    tops.append(tok.decode([top]))
+                print(f"{w} passes {k} chain {c}: {right}/12 | {tops[:6]}", flush=True)
+
+
 @app.local_entrypoint()
-def main(part_b_minutes: float = 28.0):
+def main(part_b_minutes: float = 28.0, peek_only: bool = False):
+    if peek_only:
+        return peek.remote()
     run.remote(part_b_minutes)

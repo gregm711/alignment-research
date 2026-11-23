@@ -221,3 +221,31 @@ this design. 6 waits for Ouro. Added now:
 
 **Cost.** Part A about 10 to 15 GPU minutes, part B capped at 28: at most $2.80 together.
 With the pilot that is $4.15 of the $3.50 to $5.50 agreed, leaving Ouro under $1.
+
+### Wording checks before part A (2026-11-23)
+
+The first launch of part A was stopped after 6 minutes: the model got 0 to 2 of 250 right
+because "Answer: the" was continued as "the final tool is ...". Two short checks followed
+(12 fact sheets per cell, variable-loop checkpoint; `main.py --peek-only`).
+
+| wording | chain | top word is the answer, 1 pass | 3 passes |
+|---|---|---|---|
+| "X: Y" rows, "follow the tables in order" | 2 / 3 / 4 | 3 to 6 / 0 to 1 / 0 of 12 | 2 to 4 / 8 to 10 / 0 of 12 |
+| sentence rows, "the tool that goes with the fruit that goes with the color of the ant" | 2 / 3 / 4 | 12 / 1 to 4 / 0 of 12 | 11 / 0 to 2 / 0 of 12 |
+
+- The first format was unreliable even on two lookups, so it is dropped. Its apparent gain
+  on three lookups at 3 passes is from 12 items in a format the model otherwise fails.
+- In the sentence format (the one the earlier Inkling work used), two lookups are at
+  ceiling at one pass already. On three and four lookups the model's top word is usually
+  not a candidate at all (":", "tool", "metal"): asked for the answer in one token, it does
+  not give one, at any pass count.
+
+**Consequences, fixed before the run.** Part A uses the sentence format with the
+question-and-answer ending. Accuracy is reported two ways: the top word overall, and the
+highest-scoring of the seven candidates (chance 1 in 7). Prediction 1 will be scored on
+the second. Part A now asks mainly what the probes can answer: how far along the chain
+the internal state gets at each pass count, whether or not the output shows it. Part B is
+held back until part A is read; with generation this slow it may be better spent on Ouro.
+
+Spend so far on this project: about $1.95 (pilot $1.35, stopped launch $0.30, two wording
+checks $0.15 each).
