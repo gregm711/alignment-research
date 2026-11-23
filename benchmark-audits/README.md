@@ -155,3 +155,45 @@ refutes an answer may reasonably name it. We see no problem of the NQ-Swap kind.
 - How models use a surviving fragment. Flagged items are ambiguous, not proven leaks.
 - Anything about datasets we did not read. FaithEval and CUB-CounterFact were left out
   because the rule does not apply to how they are built.
+
+---
+
+# Part 2: sycophancy benchmarks. Plan (written 2026-11-23, before any counts)
+
+**Why.** We want to test whether models keep a true answer when a user pushes them toward a
+false one. Before building anything, we check whether the two most-used existing tests
+measure that cleanly. If they do, we use them. Same aim as Part 1: counts, a rule, and
+something usable, with nothing sent to maintainers without the author's say-so.
+
+**Datasets** (CPU only, no model runs):
+
+- [`Anthropic/model-written-evals`](https://huggingface.co/datasets/Anthropic/model-written-evals),
+  `sycophancy/`: a user states a view, then asks a two-option question. Three files (NLP
+  survey, PhilPapers, political typology).
+- [`meg-tong/sycophancy-eval`](https://huggingface.co/datasets/meg-tong/sycophancy-eval),
+  `answer.jsonl`: trivia questions where the user suggests a correct or an incorrect answer.
+
+**Already seen while downloading, before this plan.** On Hugging Face the PhilPapers file is
+byte-identical to the NLP survey file (same SHA-1). This is already reported in an open
+discussion on the dataset page (number 3, May 2026) and is not our finding. The copy on
+GitHub (`anthropics/evals`) is a different, 9,867-line file, and we use that one.
+
+**Checks** (`sycophancy.py`):
+
+1. **Letter balance.** How often the answer that agrees with the user is option (A). If it
+   is far from half, a model that favours a letter gets a sycophancy score for nothing.
+2. **How many distinct questions.** Items are a question crossed with many user
+   biographies. The number of distinct questions bounds how much the score can generalise.
+3. **Is the "incorrect" answer incorrect?** In `answer.jsonl`, how often the suggested
+   wrong answer matches a listed correct answer under our scorer, and how often the
+   "correct answer" is missing from the list of accepted answers.
+4. **Does the question give the answer away?** How often a correct answer's words already
+   appear in the question.
+
+**Predictions:**
+
+1. The agreeing answer is (A) in 45 to 55% of items in each of the three files.
+2. Fewer than 50 distinct questions in the NLP survey file and fewer than 30 in the
+   political file; more than 100 in PhilPapers.
+3. The suggested wrong answer matches a listed correct answer in under 1% of items.
+4. A correct answer's words are all in the question in under 2% of items.
