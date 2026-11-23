@@ -66,6 +66,17 @@ about the model's behaviour is being detected. "Response only" or "transcript" b
 means a reader of the transcript could do it. A subset where all text baselines are near
 chance is where an internal monitor has room to show an advantage.
 
+**Detail fixed after reading the paper's method, before any scores.** The benchmark's
+balanced accuracy uses a threshold set to give at most 1% false positives on a control set
+of ordinary conversations (Alpaca). We do the same: half of each model's control
+conversations are added to training as honest examples, and the threshold comes from the
+other half. The paper's averages on this metric are 0.73 for a language-model judge, 0.66
+for self-evaluation, 0.60 for an unrelated-question classifier and 0.54 for the mean
+probe. Its "upper-bound" probe, trained with labels from five of the subsets plus the
+control set, reaches 0.73 balanced accuracy and 0.91 AUROC. Our within-subset text
+classifier is the counterpart of that upper-bound probe. Per-subset numbers in the paper
+are in a figure and an appendix we could not read, so we compare with these averages.
+
 ## Predictions
 
 1. Prompt only, within subset: AUROC at least 0.90 on instructed deception and soft
