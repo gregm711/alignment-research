@@ -1,18 +1,6 @@
 # Loop legibility: when a model loops, how much of its reasoning leaves the transcript?
 
-**Status: plan and predictions written 2026-11-23, before any run. The pilot has run
-(26.2 A100 minutes, about $1.35) and is not usable as a measurement:**
-
-- All 55 generations hit the 200-token cap before finishing.
-- The pilot hit its time limit after chain length 2. Chains 3 and 4 never ran.
-- Throughput was about 7 tokens/s: unbatched `generate`, with `causal_conv1d` falling back
-  to its reference implementation.
-- The model does carry out the chain in its thinking. The one finding: chain-2 accuracy
-  rose with passes, from 6/8 and 4/8 at 1 pass to 8/8 at 3 passes. With 8 items per
-  cell, this is only suggestive.
-
-Before the main run, generation must be batched and the token cap raised to about 4k
-(the release post reports mean reasoning of 1.7k to 3.7k tokens on GPQA).
+**Status: Inkling part A done and independently recounted; Ouro run in progress (2026-11-23). Asked for a one-token answer, Inkling never writes a step. On two lookups a probe still reads the unwritten step from inside (0.85 against about 0.10 for controls). On three lookups extra passes raise how often the right answer is the best of seven candidates from 35% to 58%, but the model's actual top word is right no more often (35% to 38%); the second step becomes partly readable only in later passes. On four lookups the first step is readable after one pass and then lost. Whether looping shortens written reasoning is being tested on Ouro; on Inkling generation was too slow (about 7 tokens a second, unbatched, with a slow fallback kernel) to measure it.**
 
 ## Question
 
@@ -345,3 +333,68 @@ Full table for every model, pass count and site: `results/partA-summary.json`.
   on two lookups. $0.30 went on a full launch before a 12-item check would have shown it.
 - The cost estimate assumed generation several times faster than it is.
 - We assumed thinking could be switched off with the effort dial. It cannot.
+
+## After independent review of part A (2026-11-23)
+
+A separate model recounted the saved predictions and refitted the key probes on CPU. Its
+counts match ours. It rated the result 6 of 10 on its own and asked for these changes,
+which we re-ran (`analyse.py`):
+
+- **The three-lookup gain depends on what counts as correct.** Best of seven candidates:
+  87 of 250 at one pass, 144 of 250 at three. The model's actual top word: 87, 76 and 94
+  of 250 at one, two and three passes, a gain of 2.8 points with an interval of about -4
+  to +10. Extra passes improved the *ranking* of the right candidate. Evidence that they
+  improved what the model would actually say is weak. Our first summary led with the
+  first number only.
+- **How much a monitor can read should be counted on successful runs.** On the 73
+  held-out three-lookup sheets where the right answer ranked first among candidates at 3
+  passes, the last-layer probe recovered the second step on 39 (53%). Setting overall
+  probe accuracy beside overall answer accuracy, as we did, does not give that.
+- **Four lookups: the chain starts and is then lost.** The first step is read on 72 of
+  125 held-out sheets after pass one. "Chance" described only the later steps.
+- **Two lookups stand:** 106 of 125 from the messages into the final pass. Since one pass
+  already answers 233 of 250, this shows the step is readable, not that looping was
+  needed to compute it.
+
+## Ouro: plan
+
+Written after a 12-sheet pilot. **Committed a few minutes after the full run was launched**
+(an edit to this file failed just before launch); no full-run output had been read.
+
+**Question.** The one the Inkling runs left open: with thinking on, does more looping let
+the model write less while still solving the problem?
+
+**Pilot** (`ouro.py --pilot`, 12 two-lookup sheets, `ByteDance/Ouro-2.6B-Thinking`, greedy
+decoding). Every answer finished and was correct at both 2 and 4 loops. Mean thinking
+length was 183 tokens at 2 loops and about 171 at 4, with single sheets moving either way
+by up to 100 tokens. The model reasons in plain sentences and states each step. It
+sometimes lists a whole table, so "the step's word appears" can be true through that
+list; samples were read, and a stricter count is added below. The model card's
+recommended library version crashes in the model's own cache code; we use a later one.
+
+**Full run.** The same fact sheets at 2 and 4 loops: 40 sheets of two lookups and 40 of
+three, up to 512 new tokens.
+
+**Reported for every cell:** accuracy, share finished, thinking tokens, intermediate
+steps named, and steps named in a sentence that also holds the previous step's word
+(stricter). All sheets first; sheets solved at both loop counts second.
+
+**Primary comparison:** thinking tokens at 4 loops minus at 2 loops, paired by sheet,
+with an interval from resampling sheets.
+
+**Predictions.** Prediction 6 above stands, restated for this design: thinking length
+differs by less than 10% between 2 and 4 loops. Added:
+
+9. Accuracy on three lookups is at least 10 points higher at 4 loops than at 2.
+10. Steps named (stricter count) differ by less than 10 points between loop counts.
+
+**What would count.** Shorter thinking and fewer named steps at 4 loops, with accuracy
+and completion kept, is the effect the GLM post describes. Shorter output because the
+model fails or stops is a different thing and will be reported as such.
+
+**Limits known now.** Ouro was trained at 4 loops, so 2 loops is off its training
+setting. 40 sheets per cell resolves a difference of roughly 10% in length, not less.
+One model, one invented task.
+
+**Cost.** Pilot and two failed starts about $0.15. Full run about 35 GPU minutes on a
+small GPU: about $0.50.
