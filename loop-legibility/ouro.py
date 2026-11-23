@@ -4,7 +4,7 @@
     modal run --detach ouro.py     # full run; results on the volume as it goes
     modal volume get loop-legibility ouro.json results/ouro.json
 
-Loop count is set the way the model card documents (config.total_ut_steps). Greedy decoding, thinking on.
+Loop count is set the way the model card documents (config.total_ut_steps). Greedy decoding, thinking on, 20 prompts per batch (left-padded).
 """
 import json
 
@@ -13,7 +13,7 @@ import modal
 from tasks import items, score_text
 
 MODEL = "ByteDance/Ouro-2.6B-Thinking"
-LOOPS, CHAINS, SHEETS, MAX_NEW = [2, 4], [2, 3], 40, 512
+LOOPS, CHAINS, SHEETS, BATCH = [2, 4], [2, 3], 40, 20
 
 app = modal.App("loop-legibility-ouro")
 vol = modal.Volume.from_name("loop-legibility", create_if_missing=True)
@@ -25,8 +25,8 @@ image = (
 )
 
 
-@app.function(image=image, gpu=["L4", "A10G", "T4"], cpu=4, memory=32768, volumes={"/cache": vol}, timeout=70 * 60)
-def run(pilot: bool = False, minutes: float = 55.0):
+@app.function(image=image, gpu=["A10G", "L4"], cpu=4, memory=32768, volumes={"/cache": vol}, timeout=70 * 60)
+def run(pilot: bool = False, minutes: float = 50.0):
     import time
     import torch, transformers
 
@@ -34,29 +34,55 @@ def run(pilot: bool = False, minutes: float = 55.0):
     tok = transformers.AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
     model = transformers.AutoModelForCausalLM.from_pretrained(MODEL, trust_remote_code=True, torch_dtype=torch.bfloat16, device_map="cuda").eval()
     vol.commit()
-    rows, n_tok, gen_s = [], 0, 0.0
+    tok.padding_side = "left"
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    stop = {tok.eos_token_id, tok.convert_tokens_to_ids("<|im_end|>")}
+    think_end = tok.convert_tokens_to_ids("</think>")
+    chat = lambda it: tok.apply_chat_template([{"role": "user", "content": it["chat"]}], tokenize=False, add_generation_prompt=True, enable_thinking=True)
+
+    def generate(batch, k, max_new):
+        model.config.total_ut_steps = model.model.total_ut_steps = k
+        enc = tok([chat(it) for it in batch], return_tensors="pt", padding=True, add_special_tokens=False).to("cuda")
+        with torch.no_grad():
+            out = model.generate(**enc, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id)[:, enc.input_ids.shape[1]:].tolist()
+        res = []
+        for new in out:
+            cut = next((i for i, t in enumerate(new) if t in stop), None)
+            res.append((new if cut is None else new[:cut], cut is None))
+        return res
+
+    import os
+    path = "/cache/ouro-pilot.json" if pilot else "/cache/ouro.json"
+    rows = json.load(open(path))["rows"] if os.path.exists(path) and not pilot else []  # resume: finished cells are kept
     for chain in ([2] if pilot else CHAINS):
-        for it in items(5, 12 if pilot else SHEETS, chain):
-            if time.time() - t0 > minutes * 60:
-                break  # whole sheets only, so every sheet has every loop count
-            ids = tok.apply_chat_template([{"role": "user", "content": it["chat"]}], tokenize=True, add_generation_prompt=True, enable_thinking=True, return_tensors="pt").cuda()
-            for k in LOOPS:
-                model.config.total_ut_steps = model.model.total_ut_steps = k
-                t1 = time.time()
-                with torch.no_grad():
-                    new = model.generate(ids, max_new_tokens=MAX_NEW, do_sample=False)[0][ids.shape[1]:]
-                gen_s, n_tok = gen_s + time.time() - t1, n_tok + len(new)
-                text = tok.decode(new, skip_special_tokens=False)
-                end = (new == tok.convert_tokens_to_ids("</think>")).nonzero()
-                rows.append({"chain": chain, "sheet": it["sheet"], "loops": k, "new_tokens": len(new), "hit_limit": len(new) >= MAX_NEW,
-                             "thinking_tokens": int(end[0]) if len(end) else len(new), "steps": it["steps"], "text": text, **score_text(it, text, end="</think>")})
-                r = rows[-1]
-                print(f"chain {chain} sheet {it['sheet']} loops {k}: {r['thinking_tokens']} thinking tokens, finished {r['finished']}, correct {r['correct']}, named {r['named']}", flush=True)
-                if pilot and it["sheet"] < 3:
-                    print(f"steps {it['steps']}\n{text}\n", flush=True)
-            json.dump({"rows": rows, "gpu_minutes": (time.time() - t0) / 60}, open("/cache/ouro-pilot.json" if pilot else "/cache/ouro.json", "w"))
-            vol.commit()
-    print(f"{n_tok / max(gen_s, 1e-9):.1f} tokens per second; total {(time.time() - t0) / 60:.1f} GPU minutes", flush=True)
+        todo, max_new = items(5, 12 if pilot else SHEETS, chain), 400 if chain == 2 else 800
+        for k in LOOPS:
+            if sum((x["chain"], x["loops"]) == (chain, k) for x in rows) >= len(todo):
+                continue
+            rows = [x for x in rows if (x["chain"], x["loops"]) != (chain, k)]
+            size = 8 if (chain, k) == (3, 4) else BATCH  # 20 prompts of 800 tokens at 4 loops do not fit in 24 GB
+            torch.cuda.empty_cache()
+            solo = generate(todo[:1], k, max_new)[0][0]  # one prompt alone, to compare with the same prompt inside a batch
+            for start in range(0, len(todo), size):
+                if time.time() - t0 > minutes * 60:
+                    print("time guard: stopping", flush=True)
+                    break
+                batch = todo[start:start + size]
+                for it, (new, hit) in zip(batch, generate(batch, k, max_new)):
+                    text = tok.decode(new, skip_special_tokens=False)
+                    rows.append({"chain": chain, "sheet": it["sheet"], "loops": k, "new_tokens": len(new), "hit_limit": hit,
+                                 "thinking_tokens": new.index(think_end) if think_end in new else len(new), "steps": it["steps"], "text": text,
+                                 **score_text(it, text, end="</think>")})
+                    if it["sheet"] == 0:
+                        print(f"chain {chain} loops {k}: batched output identical to the single-prompt output: {new == solo} "
+                              f"({len(new)} and {len(solo)} tokens)\n{text}\n", flush=True)
+                r = [x for x in rows if (x["chain"], x["loops"]) == (chain, k)]
+                print(f"chain {chain} loops {k}: {len(r)} sheets, correct {sum(x['correct'] for x in r)}, finished {sum(x['finished'] for x in r)}, hit limit {sum(x['hit_limit'] for x in r)}, "
+                      f"mean thinking tokens {sum(x['thinking_tokens'] for x in r) / len(r):.0f} | {(time.time() - t0) / 60:.1f} min", flush=True)
+                json.dump({"rows": rows, "gpu_minutes": (time.time() - t0) / 60}, open(path, "w"))
+                vol.commit()
+    print(f"total {(time.time() - t0) / 60:.1f} GPU minutes", flush=True)
     return {"rows": rows, "gpu_minutes": (time.time() - t0) / 60}
 
 

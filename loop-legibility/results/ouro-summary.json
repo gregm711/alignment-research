@@ -1,0 +1,112 @@
+{
+ "chain 2": {
+  "sheets": 40,
+  "2 loops": {
+   "correct": 40,
+   "finished": 40,
+   "mean_thinking_tokens": 161.5,
+   "steps_named": "40/40",
+   "steps_named_strict": "28/40"
+  },
+  "4 loops": {
+   "correct": 40,
+   "finished": 40,
+   "mean_thinking_tokens": 184.6,
+   "steps_named": "40/40",
+   "steps_named_strict": "34/40"
+  },
+  "all sheets": {
+   "n": 40,
+   "thinking_tokens_4_minus_2": [
+    23.05,
+    8.25,
+    37.65
+   ],
+   "as_share_of_2_loop_mean": 0.143,
+   "strict_steps_named_4_minus_2": [
+    0.15,
+    -0.025,
+    0.325
+   ],
+   "correct_4_minus_2": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "sheets correct and finished at both": {
+   "n": 40,
+   "thinking_tokens_4_minus_2": [
+    23.05,
+    8.25,
+    37.65
+   ],
+   "as_share_of_2_loop_mean": 0.143,
+   "strict_steps_named_4_minus_2": [
+    0.15,
+    -0.025,
+    0.325
+   ],
+   "correct_4_minus_2": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ },
+ "chain 3": {
+  "sheets": 40,
+  "2 loops": {
+   "correct": 40,
+   "finished": 40,
+   "mean_thinking_tokens": 212.0,
+   "steps_named": "80/80",
+   "steps_named_strict": "77/80"
+  },
+  "4 loops": {
+   "correct": 40,
+   "finished": 40,
+   "mean_thinking_tokens": 201.5,
+   "steps_named": "80/80",
+   "steps_named_strict": "80/80"
+  },
+  "all sheets": {
+   "n": 40,
+   "thinking_tokens_4_minus_2": [
+    -10.525,
+    -28.4,
+    4.4
+   ],
+   "as_share_of_2_loop_mean": -0.05,
+   "strict_steps_named_4_minus_2": [
+    0.037,
+    0.0,
+    0.1
+   ],
+   "correct_4_minus_2": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "sheets correct and finished at both": {
+   "n": 40,
+   "thinking_tokens_4_minus_2": [
+    -10.525,
+    -28.4,
+    4.4
+   ],
+   "as_share_of_2_loop_mean": -0.05,
+   "strict_steps_named_4_minus_2": [
+    0.037,
+    0.0,
+    0.1
+   ],
+   "correct_4_minus_2": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ }
+}

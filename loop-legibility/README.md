@@ -1,6 +1,6 @@
 # Loop legibility: when a model loops, how much of its reasoning leaves the transcript?
 
-**Status: Inkling part A done and independently recounted; Ouro run in progress (2026-11-23). Asked for a one-token answer, Inkling never writes a step. On two lookups a probe still reads the unwritten step from inside (0.85 against about 0.10 for controls). On three lookups extra passes raise how often the right answer is the best of seven candidates from 35% to 58%, but the model's actual top word is right no more often (35% to 38%); the second step becomes partly readable only in later passes. On four lookups the first step is readable after one pass and then lost. Whether looping shortens written reasoning is being tested on Ouro; on Inkling generation was too slow (about 7 tokens a second, unbatched, with a slow fallback kernel) to measure it.**
+**Status: Inkling part A done and independently recounted; Ouro done, not yet reviewed (2026-11-23). Short version: on these models and this task we did not see reasoning leave the transcript when looping increased. Ouro at 4 loops writes as much as at 2 (14% more on two lookups, 5% less on three, the second within noise) and names every step, but the task was at ceiling for it (40 of 40 everywhere), so this is a weak test. Separately, when Inkling is forced to answer in one token, the unwritten step is readable from inside on two lookups (0.85 against about 0.10 for controls) and partly on three (39 of 73 successful runs).**
 
 ## Question
 
@@ -398,3 +398,73 @@ One model, one invented task.
 
 **Cost.** Pilot and two failed starts about $0.15. Full run about 35 GPU minutes on a
 small GPU: about $0.50.
+
+## Ouro: result
+
+`ouro.py`, then `ouro_analyse.py`. `ByteDance/Ouro-2.6B-Thinking`, thinking on, greedy,
+the same 40 fact sheets per chain length at 2 and at 4 loops.
+
+| lookups | loops | correct | finished | mean thinking tokens | steps named | steps named, stricter |
+|---|---|---|---|---|---|---|
+| 2 | 2 | 40/40 | 40/40 | 162 | 40/40 | 28/40 |
+| 2 | 4 | 40/40 | 40/40 | 185 | 40/40 | 34/40 |
+| 3 | 2 | 40/40 | 40/40 | 212 | 80/80 | 77/80 |
+| 3 | 4 | 40/40 | 40/40 | 202 | 80/80 | 80/80 |
+
+**Primary comparison,** thinking tokens at 4 loops minus at 2, paired by sheet:
+two lookups **+23 tokens [+8, +38]** (14% longer); three lookups **-11 tokens [-28, +4]**
+(5% shorter, interval includes zero). Every sheet was solved at both loop counts, so the
+"solved at both" comparison is the same.
+
+### What we see
+
+- **More looping did not make this model write less.** Thinking was a little longer on
+  two lookups and about the same on three. Every intermediate step was written at both
+  loop counts.
+- **This is a weak test of the GLM claim.** The task was at ceiling: 2 loops already
+  solves everything, so there was no extra work for the loop to absorb. The GLM figure
+  came from benchmarks hard enough for looping to change accuracy.
+- **The stricter step count undercounts.** It removes copies of the fact sheet's rows, and
+  the model's own statement of the first step ("the yak is silver") is word for word a
+  row. Reading samples, the step is stated in those cases too. The 28 against 34 on two
+  lookups should not be read as a difference in legibility.
+- **Batched and single-prompt outputs differ.** Greedy decoding gave the same text for
+  the first sheet at 2 loops on two lookups and different text in the other three cells
+  (for example 257 against 229 tokens). Padding changes the numbers slightly and the
+  wording drifts. Both loop counts were run the same way, but single-sheet lengths carry
+  this noise.
+
+### Predictions
+
+6. **Failed on two lookups (+14%), held on three (-5%).** We predicted under 10% either
+   way.
+9. **Failed.** Accuracy was 40 of 40 at both loop counts; no gain was possible.
+10. **Held on three lookups (+4 points), failed narrowly on two (+15 points)**, though the
+    two-lookup figure is the undercount described above.
+
+### What this does not show
+
+- That looping never moves reasoning out of the transcript. It would need a task where
+  2 loops fail and 4 succeed, or where the written reasoning is long enough to shorten.
+  Neither held here.
+- Anything about models trained to loop from a pretrained base at scale, which is what
+  GLM-5.4 is.
+- Ouro at 2 loops is off its training setting, and still solved everything.
+
+### What went wrong on the way
+
+Three launches were stopped or failed before the run that produced these numbers: no L4
+GPU for 15 minutes (not billed), the card's library version crashing in the model's cache
+code, and one-at-a-time generation at 3 to 6 tokens a second. A batch of 20 three-lookup
+prompts at 4 loops ran out of memory; that cell was rerun in batches of 8.
+
+## Where this leaves the question
+
+- **Silent reasoning in the loop is real on Inkling and partly readable.** That is the
+  Inkling half, with the caveats in the review section.
+- **We did not observe written reasoning shrinking with loop count.** One model, a task
+  it finds easy.
+- **The comparison we set out to make (transcript at low looping against transcript plus
+  probe at high looping, same runs) was not made.** It needs a model that both writes
+  reasoning and benefits from looping on the same task, at a speed we can afford. Ouro on
+  a harder task is the candidate.

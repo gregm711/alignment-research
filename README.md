@@ -20,7 +20,7 @@ don't go the way we hoped.
 | 2 | The same question on mistakes a model makes unprompted: answering from memory when a document is supplied | Complete | [`grounding/NOTE.md`](grounding/NOTE.md) |
 | 3 | Does the answer survive the edit in other knowledge-conflict benchmarks, and does it move published results? (CPU only) | Two passes done: knowledge-conflict and sycophancy datasets | [`benchmark-audits/README.md`](benchmark-audits/README.md) |
 | 4 | When does looking inside a model beat reading the transcript? Text-only baselines against published deception probes (CPU only) | Probe test done and independently reviewed | [`inside-advantage/NOTE.md`](inside-advantage/NOTE.md) |
-| 5 | When a model loops, how much of its reasoning leaves the transcript, and can a probe recover it? | First result: unwritten steps partly readable inside; written-reasoning question open | [`loop-legibility/README.md`](loop-legibility/README.md) |
+| 5 | When a model loops, how much of its reasoning leaves the transcript, and can a probe recover it? | Inkling: unwritten steps partly readable inside. Ouro: no shrinking of written reasoning with more loops, on an easy task | [`loop-legibility/README.md`](loop-legibility/README.md) |
 
 ## What's here
 
