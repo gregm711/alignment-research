@@ -12,8 +12,12 @@ import re
 from tasks import items
 
 HERE = pathlib.Path(__file__).parent / "results"
-rows = json.load(open(HERE / "ouro.json"))["rows"]
-pairs = {(c, it["sheet"]): it["pairs"] for c in (2, 3) for it in items(5, 40, c)}
+import sys
+
+NAME, SEED = (sys.argv[1], int(sys.argv[2])) if len(sys.argv) > 2 else ("ouro", 5)  # e.g. python3 ouro_analyse.py ouro-hard 8
+rows = json.load(open(HERE / f"{NAME}.json"))["rows"]
+CHAINS = sorted({r["chain"] for r in rows})
+pairs = {(c, it["sheet"]): it["pairs"] for c in CHAINS for it in items(SEED, 40, c)}
 
 
 def strict(r):
@@ -34,7 +38,7 @@ def boot(vals, n=2000):
 
 
 out = {}
-for chain in (2, 3):
+for chain in CHAINS:
     by = collections.defaultdict(dict)
     for r in rows:
         if r["chain"] == chain:
@@ -56,4 +60,4 @@ for chain in (2, 3):
                            "correct_4_minus_2": boot([s[4]["correct"] - s[2]["correct"] for s in sel])}
     out[f"chain {chain}"] = cell
 print(json.dumps(out, indent=1))
-(HERE / "ouro-summary.json").write_text(json.dumps(out, indent=1))
+(HERE / f"{NAME}-summary.json").write_text(json.dumps(out, indent=1))

@@ -7,7 +7,11 @@ KINDS = [("animal", ["cat", "dog", "bat", "pig", "cow", "hen", "rat", "bee", "an
          ("color", ["red", "blue", "green", "gold", "pink", "gray", "black", "white", "brown", "purple", "silver", "yellow"]),
          ("fruit", ["fig", "lime", "grape", "apple", "orange", "date", "olive"]),
          ("tool", ["saw", "drill", "hoe", "file", "rope", "brush", "pump", "clamp", "fork"]),
-         ("metal", ["iron", "zinc", "tin", "lead", "copper", "nickel", "steel"])]  # all one token after a space on this tokenizer
+         ("metal", ["iron", "zinc", "tin", "lead", "copper", "nickel", "steel"]),
+         # added for the harder Ouro screen (text scoring only; not checked for single tokens)
+         ("city", ["Paris", "Lima", "Oslo", "Cairo", "Rome", "Delhi", "Tokyo", "Quito", "Seoul"]),
+         ("drink", ["tea", "milk", "juice", "cider", "cocoa", "soda", "water", "coffee"]),
+         ("sport", ["golf", "chess", "rugby", "tennis", "polo", "judo", "darts", "hockey"])]  # all one token after a space on this tokenizer
 
 def nested(chain, start, kinds):
     """'the tool that goes with the fruit that goes with the color of the dog'"""

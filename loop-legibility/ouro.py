@@ -26,7 +26,7 @@ image = (
 
 
 @app.function(image=image, gpu=["A10G", "L4"], cpu=4, memory=32768, volumes={"/cache": vol}, timeout=70 * 60)
-def run(pilot: bool = False, minutes: float = 50.0):
+def run(pilot: bool = False, minutes: float = 50.0, mode: str = "easy", chain: int = 0):
     import time
     import torch, transformers
 
@@ -53,15 +53,18 @@ def run(pilot: bool = False, minutes: float = 50.0):
         return res
 
     import os
-    path = "/cache/ouro-pilot.json" if pilot else "/cache/ouro.json"
+    path = "/cache/ouro-pilot.json" if pilot else {"easy": "/cache/ouro.json", "screen": "/cache/ouro-screen.json", "hard": "/cache/ouro-hard.json"}[mode]
+    # harder task: "screen" picks a chain length on accuracy and completion only; "hard" runs fresh sheets at that length.
+    # Both use one batch size and one token cap at every loop count.
+    seed, n_sheets, chains = {"easy": (5, SHEETS, CHAINS), "screen": (7, 16, [4, 5, 6, 7]), "hard": (8, 40, [chain])}[mode]
     rows = json.load(open(path))["rows"] if os.path.exists(path) and not pilot else []  # resume: finished cells are kept
-    for chain in ([2] if pilot else CHAINS):
-        todo, max_new = items(5, 12 if pilot else SHEETS, chain), 400 if chain == 2 else 800
+    for chain in ([2] if pilot else chains):
+        todo, max_new = items(seed, 12 if pilot else n_sheets, chain), (400 if chain == 2 else 800) if mode == "easy" else 1000
         for k in LOOPS:
             if sum((x["chain"], x["loops"]) == (chain, k) for x in rows) >= len(todo):
                 continue
             rows = [x for x in rows if (x["chain"], x["loops"]) != (chain, k)]
-            size = 8 if (chain, k) == (3, 4) else BATCH  # 20 prompts of 800 tokens at 4 loops do not fit in 24 GB
+            size = (8 if (chain, k) == (3, 4) else BATCH) if mode == "easy" else 8  # 20 prompts of 800 tokens at 4 loops do not fit in 24 GB
             torch.cuda.empty_cache()
             solo = generate(todo[:1], k, max_new)[0][0]  # one prompt alone, to compare with the same prompt inside a batch
             for start in range(0, len(todo), size):
@@ -87,6 +90,6 @@ def run(pilot: bool = False, minutes: float = 50.0):
 
 
 @app.local_entrypoint()
-def main(pilot: bool = False):
-    out = run.remote(pilot)
+def main(pilot: bool = False, mode: str = "easy", chain: int = 0, minutes: float = 50.0):
+    out = run.remote(pilot, minutes, mode, chain)
     print(f"{out['gpu_minutes']:.1f} GPU minutes")

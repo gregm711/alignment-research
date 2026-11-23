@@ -468,3 +468,45 @@ prompts at 4 loops ran out of memory; that cell was rerun in batches of 8.
   probe at high looping, same runs) was not made.** It needs a model that both writes
   reasoning and benefits from looping on the same task, at a speed we can afford. Ouro on
   a harder task is the candidate.
+
+## Harder task on Ouro: plan (written 2026-11-23 after a second independent review, before any run)
+
+**Review of the Ouro result.** A separate model paired the saved outputs by fact sheet
+and confirmed the counts (all 160 outputs correct; +23.1 thinking tokens on two lookups,
+-10.5 on three). Two corrections, both accepted:
+
+- **Ceiling accuracy does not stop a test of compression.** The model could have solved
+  everything and written much less at 4 loops. It did not; on two lookups it wrote more.
+  What the ceiling prevents is testing whether a *gain* in accuracy comes with less
+  visible reasoning. "Weak test" above was too dismissive of the two-lookup result.
+- **The three-lookup comparison changed batch size as well as loop count** (20 at 2
+  loops, 8 at 4, after the out-of-memory failure). Batching changes greedy output, so
+  the small shortening there should not be put down to loop count.
+
+**Question now.** Is there a chain length where 4 loops solve more than 2, and if so, do
+the steps stay written?
+
+**Screen** (`ouro.py --mode screen`): chains of 4, 5, 6 and 7 lookups, 16 fact sheets
+each, 2 and 4 loops, same batch size (8) and token cap (1,000) at both.
+
+**Choosing the length, on accuracy and completion only:** the shortest chain where 4
+loops are correct on at least 4 more of the 16 sheets than 2 loops, with at least 13 of
+16 finished at both. Reasoning length and step mentions on screen sheets are not looked
+at. If no length qualifies, we report that and stop.
+
+**Then** (`ouro.py --mode hard --chain N`): 40 fresh fact sheets at that length, same
+settings. Reported: accuracy, completion, thinking tokens, steps named (both counts),
+on all sheets and on sheets solved at both loop counts.
+
+**Decision rule, from the review.** If 4 loops improve accuracy and still spell out the
+steps, report it and stop this branch. If they improve accuracy and omit a specific step
+more often on sheets solved at both, go on to editing the table and probing.
+
+**Predictions.**
+
+11. Accuracy at 2 loops falls below 13 of 16 by six lookups.
+12. No chain length meets the selection rule: 4 loops will not beat 2 by 4 sheets
+    anywhere. (Olszowiec et al. report that reasoning-tuned Ouro does not improve with
+    more iterations.)
+
+**Cost cap: $1** for screen and fresh run together. Time guards of 25 and 18 minutes.
