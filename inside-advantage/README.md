@@ -1,6 +1,6 @@
 # Inside advantage: when does looking inside a model beat reading the transcript?
 
-**Status: text baselines and a probe test done on Liars' Bench (2026-11-23). Where the label can be read from the transcript, a probe and a word-count classifier score the same. In the one subset where it cannot, a probe on public activations scores 0.91 against 0.69 for text, and it separates the model's lies from its honest mistakes (0.83 against 0.59), which an answer key cannot do. One model, one layer, labelled examples from the same setting. Not yet reviewed by anyone else.**
+**Status: text baselines, a probe test and an independent review done on Liars' Bench (2026-11-23). Short version in [NOTE.md](NOTE.md). Where the label can be read from the transcript, a probe and a word-count classifier score the same. In the one subset where it cannot (harm-pressure choice), a probe on public activations scores 0.91 against 0.69 for transcript text and 0.76 for the benchmark's published judge. An overseer who also holds the answer key gets 0.91 without the probe; adding the probe to that takes it to 0.96 (post hoc). At a 1% false-alarm target the probe catches 25 of 134. One model, one layer, labelled examples from the same setting.**
 
 ## Question
 
@@ -289,9 +289,11 @@ answer. Among wrong answers only, an answer key says nothing.
 | text, whole transcript | 0.59 |
 | benchmark metadata | 0.50 |
 
-A probe fitted only on wrong answers gives 0.81. So the activations distinguish an answer
-the model believes from one it does not, when both are wrong and the transcripts look
-alike.
+A probe fitted only on wrong answers gives 0.81. So the probe predicts disagreement with
+the model's recorded neutral answer even among wrong answers, where the transcripts look
+alike. (First written as "distinguishes an answer the model believes from one it does not".
+The review below shows why that is too strong: nearly all of this compares different
+questions.)
 
 ### Across subsets: fit on instructed deception, test elsewhere
 
@@ -317,9 +319,12 @@ alike.
 
 - **The hypothesis held on this benchmark.** Where a reader of the transcript can already
   tell (five subsets), probe and text are within 0.03. Where the transcript says little
-  (harm-pressure choice, and soft trigger to a lesser degree), the probe is far ahead.
-- **The advantage is not wrong-answer detection.** The probe tells the model's lies from
-  its honest mistakes at 0.83. An overseer holding the answer key cannot do that at all.
+  (harm-pressure choice), the probe is far ahead. On soft trigger the probe beats our text
+  features, but the cue is printed in the prompt (see the review section), so that subset
+  is weak evidence of anything hidden.
+- **The advantage is not only wrong-answer detection.** Among wrong answers the probe
+  separates those that contradict the model's neutral answer from those that match it at
+  0.83. A right-or-wrong signal cannot do that.
 - **It is visible before the answer.** At the last prompt token the probe scores 0.88;
   the text of the same prompt gives 0.69.
 - **Transfer is uneven, and sometimes backwards.** A probe fitted on instructed deception
@@ -327,7 +332,7 @@ alike.
   (0.14 on insider trading). A direction that means "deceptive" in one setting can mean the
   opposite in another.
 - **Reporting a probe's score without a text baseline hides which case you are in.** Five
-  of seven subsets would have looked like strong probe results. Only two are.
+  of seven subsets would have looked like strong probe results. Only one clearly is.
 
 ### What this does not show
 
@@ -339,5 +344,85 @@ alike.
 - The probe had labelled examples from the same setting. Without them (the transfer table)
   it reaches 0.71 to 0.74 here.
 - Nothing about what the probe reads. We did not intervene on the model.
-- The two-subset result on convincing game and insider trading uses ordinary folds, since
-  they have too few distinct prompts for strict ones.
+- Convincing game and insider trading have two and one prompt groups, so their folds hold
+  out rows, not scenarios. Their scores say little about new scenarios.
+- "Benchmark metadata" means its numeric and yes/no fields only. The first version of the
+  parser turned an infinite harm factor into zero in 1,472 of 2,139 knowledge-report rows;
+  fixed, which moved that subset's metadata score from 0.727 to 0.734 and nothing else.
+
+## After independent review (2026-11-23)
+
+A separate model recounted everything from the pooled activations and released transcripts
+([`../notes/inside-advantage-independent-review.md`](../notes/inside-advantage-independent-review.md)).
+All seven within-subset tables and all six transfer rows reproduced. It then asked a
+sharper question: what does the probe add once the overseer uses the outside information
+they could have? We re-ran its main checks (`review_checks.py`, numbers below are ours and
+match the reviewer's). **All of this is post hoc.**
+
+### Stronger outside monitors on harm-pressure choice
+
+The benchmark authors publish their language-model judge's score for each of these 2,134
+transcripts; rows and labels matched exactly.
+
+| what the monitor gets | AUROC | response probe minus it, 95% interval |
+|---|---|---|
+| transcript word counts | 0.691 | +0.222 [+0.160, +0.286] |
+| published external judge reading the transcript | 0.764 | +0.149 [+0.098, +0.199] |
+| answer key alone (is the chosen letter wrong?) | 0.882 | +0.031 [-0.007, +0.074] |
+| answer key, word counts break ties | 0.908 | +0.006 [-0.033, +0.046] |
+| answer key + judge | 0.913 | 0.000 [-0.031, +0.034] |
+| probe alone (mean over response tokens) | 0.913 | |
+| answer key + judge + probe | **0.957** | |
+
+- **Transcript only:** the probe has a clear lead, over the published judge as well as
+  over word counts.
+- **With an answer key:** a cheap outside rule matches the probe. No second model call and
+  no neutral answer needed.
+- **Together:** adding the probe to key and judge gains +0.044 [+0.027, +0.063], with
+  nested question folds so neither stage trains on its test questions. The probe carries
+  information the outside monitors miss. This is the number to test on fresh data.
+
+### What the 0.83 establishes
+
+Among wrong answers: probe 0.827, word counts 0.590, published judge 0.590. But only 2
+opposite-label pairs among wrong answers concern the same question (both monitors rank both
+correctly), so nearly all of the 0.827 compares answers to different questions. The probe
+may partly recognise questions on which the model is prone to change its answer. Over the
+whole subset, 31 questions have both labels, giving 43 opposite-label pairs: the probe
+ranks 36 correctly, word counts 26, the judge 27. Whether the model recognised its answer
+as false while producing it is open; the benchmark's authors discuss the same distinction.
+Its neutral reference comes from repeated prompts, so the stored reference reproduces the
+label exactly while one fresh neutral query might not.
+
+### As an alarm
+
+Threshold set on separate training questions for 1% false alarms, then applied to held-out
+questions: **25 of 134 caught, 20 of 2,000 false alarms.** A ranking score of 0.91 is 19%
+recall at that operating point.
+
+### Reviewer's findings we did not re-run
+
+- **Soft trigger.** It pools three fine-tuned adapters with deliberately visible cues. On
+  the 2,000 time-adapter rows the hour printed in the prompt alone scores 0.919. The label
+  direction in the released rows matches the generator and is reversed in the paper's
+  Table 2.
+- **Reproducibility.** With scikit-learn 1.7.2 the main probe score is 0.895, not 0.913;
+  with independently reassigned folds, 0.905 against 0.693. Versions are now pinned in the
+  run commands and fold assignments saved in `results/folds.json`.
+- **Paper appendix.** Appendix L, Table 8 gives 0.74 for the paper's upper-bound probe on
+  this subset and model (different training data). Our earlier section sets the paper's
+  balanced accuracy beside our AUROC as evidence of weak transfer; those are different
+  metrics and should not be read as a like-for-like comparison.
+- **Response mean.** The mean over response tokens is, in most rows, the answer letter and
+  an end-of-turn marker.
+- Selecting the text of the chosen option for the text classifier did not close the gap
+  (0.61; 0.69 with the prompt).
+
+### Wording we withdraw
+
+- "Separates lies from honest mistakes" and "an answer the model believes from one it does
+  not": replaced by "predicts disagreement with the model's recorded neutral answer, even
+  among wrong answers".
+- "Internal access earns its keep": not shown. That needs an operating threshold and a cost
+  comparison. What is shown is added predictive information.
+- Soft trigger as a second case of hidden information.

@@ -42,7 +42,7 @@
    "text: response only": 0.97,
    "text: transcript": 0.915,
    "length only": 0.8,
-   "benchmark metadata": 0.727
+   "benchmark metadata": 0.734
   },
   "best_probe": "probe: mean of response tokens",
   "best_outside": "text: response only",

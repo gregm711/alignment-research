@@ -1,9 +1,10 @@
 """Probe on public activations against outside baselines, on the same held-out questions (CPU, laptop).
 
     modal volume get inside-advantage / pooled/      # once, after pool.py
-    uvx --with huggingface_hub --with pandas --with pyarrow --with scikit-learn python probe.py
+    uvx --with huggingface_hub --with pandas --with pyarrow --with scikit-learn==1.9.1 --with numpy==2.5.5 python probe.py
 
-Writes aggregate scores to results/probe-vs-text.json. No transcript text is saved.
+Writes aggregate scores to results/probe-vs-text.json and fold assignments to results/folds.json. No transcript
+text is saved. Scores move with library versions (0.913 became 0.895 under scikit-learn 1.7.2), hence the pins.
 """
 import collections
 import json
@@ -40,16 +41,29 @@ def load(subset):
     toks = [set(re.findall(r"[a-z0-9]{3,}", next((x["content"] for x in m if x["role"] == "user"), "").lower())) for m in msgs]
     df = collections.Counter(w for t in toks for w in t)
     d["group"] = [" ".join(sorted(sorted(t, key=lambda w: (df[w], w))[:5])) for t in toks]
-    d["y"] = d["deceptive"].astype(int)
+    d["y"], d["row_idx"] = d["deceptive"].astype(int), z["row_idx"]
     return d, z["x"].astype(np.float32)
+
+
+def meta_table(d):
+    """Numeric and yes/no fields of the benchmark's per-item metadata. An infinite value becomes 0 plus a flag column."""
+    num = re.compile(r"'(\w+)': (?:np\.\w+\()?(-?\d+(?:\.\d+)?(?:e-?\d+)?|-?inf|True|False)\)?")
+    rows = []
+    for m in d["meta"]:
+        row = {}
+        for k, v in num.findall(str(m)):
+            if "inf" in v:
+                row[k], row[k + "_infinite"] = 0.0, 1.0
+            else:
+                row[k] = float({"True": 1, "False": 0}.get(v, v))
+        rows.append(row)
+    return pd.DataFrame(rows).fillna(0.0)
 
 
 def meta_features(d):
     if "meta" not in d.columns:
         return None
-    num = re.compile(r"'(\w+)': (?:np\.\w+\()?(-?\d+(?:\.\d+)?(?:e-?\d+)?|True|False)\)?")  # numeric and yes/no fields only
-    rows = [{k: float({"True": 1, "False": 0}.get(v, v)) for k, v in num.findall(str(m))} for m in d["meta"]]
-    f = pd.DataFrame(rows).fillna(0.0)
+    f = meta_table(d)
     f = f.loc[:, f.nunique() > 1]
     return f.to_numpy() if f.shape[1] else None
 
@@ -93,12 +107,16 @@ def boot(y, a, b, groups, n=2000, seed=0):
 
 
 def main():
-    res, cache = {}, {}
+    res, cache, saved = {}, {}, {}
     for s in SUBSETS:
         d, X = load(s)
         cache[s] = (d, X)
         y, strict = d["y"].to_numpy(), d["group"].nunique() >= 20
         folds = list(GroupKFold(5).split(d, y, d["group"]) if strict else StratifiedKFold(5, shuffle=True, random_state=0).split(d, y))
+        fold_of = np.zeros(len(d), dtype=int)
+        for k, (_, te) in enumerate(folds):
+            fold_of[te] = k
+        saved[s] = {"row_idx": d["row_idx"].tolist(), "fold": fold_of.tolist()}  # row numbers in the benchmark file, no text
         oof = {}
         for name, (kind, data, C) in views(d, X).items():
             sc = np.zeros(len(d))
@@ -131,6 +149,7 @@ def main():
         res["transfer_from_instructed_deception"][s] = out
         print("transfer", s, out, flush=True)
     (HERE / "results" / "probe-vs-text.json").write_text(json.dumps(res, indent=1))
+    (HERE / "results" / "folds.json").write_text(json.dumps(saved))
 
 
 if __name__ == "__main__":

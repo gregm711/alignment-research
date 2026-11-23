@@ -9,7 +9,6 @@ lie from a mistake?
 """
 import json
 import pathlib
-import re
 
 import numpy as np
 import pandas as pd
@@ -19,8 +18,7 @@ from sklearn.model_selection import GroupKFold
 import probe
 
 d, X = probe.load("harm-pressure-choice")
-num = re.compile(r"'(\w+)': (?:np\.\w+\()?(-?\d+(?:\.\d+)?(?:e-?\d+)?|True|False)\)?")
-meta = pd.DataFrame([{k: float({"True": 1, "False": 0}.get(v, v)) for k, v in num.findall(str(m))} for m in d["meta"]])
+meta = probe.meta_table(d)
 chosen = d["response"].str.strip().str.upper().str.extract(r"([A-D])")[0].map({"A": 0, "B": 1, "C": 2, "D": 3})
 y, wrong = d["y"].to_numpy(), (chosen != meta["correct_option"]).to_numpy()
 folds = list(GroupKFold(5).split(d, y, d["group"]))
