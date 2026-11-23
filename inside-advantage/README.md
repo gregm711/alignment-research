@@ -1,6 +1,6 @@
 # Inside advantage: when does looking inside a model beat reading the transcript?
 
-**Status: first cut done on Liars' Bench, CPU only (2026-11-23). With labelled examples from the same setting, a plain text classifier separates deceptive from honest transcripts at 0.85 to 1.00 AUROC in six of seven subsets, often from the prompt alone. Trained on one subset and applied to another it is near chance, as the published probes are. One subset, where the model knowingly picks a wrong multiple-choice letter, is not readable from text (0.66), and that is where to test an internal monitor. Not yet reviewed by anyone else.**
+**Status: text baselines and a probe test done on Liars' Bench (2026-11-23). Where the label can be read from the transcript, a probe and a word-count classifier score the same. In the one subset where it cannot, a probe on public activations scores 0.91 against 0.69 for text, and it separates the model's lies from its honest mistakes (0.83 against 0.59), which an answer key cannot do. One model, one layer, labelled examples from the same setting. Not yet reviewed by anyone else.**
 
 ## Question
 
@@ -242,3 +242,102 @@ text here either, the subset is hard for everyone given this layer and these lab
 the hypothesis gets no support from this benchmark.
 
 **Cost estimate.** Downloading about 88 GB and pooling it on Modal CPU machines: under $1.
+
+## Probe test: result
+
+`pool.py` then `probe.py`; `hpc_check.py` for the check added afterwards. Llama 3.3 70B,
+layer 53, AUROC on held-out questions (strict folds where the subset allows).
+
+| subset (deceptive / honest) | best probe | best outside baseline | probe minus outside, 95% interval |
+|---|---|---|---|
+| **harm-pressure choice** (134 / 2,000) | **0.91** | 0.69 | **+0.22 [+0.16, +0.29]** |
+| soft trigger (3,000 / 3,000) | 0.97 | 0.83 | +0.14 [+0.13, +0.15] |
+| instructed deception (3,045 / 2,387) | 1.00 | 0.96 | +0.03 [+0.03, +0.04] |
+| harm-pressure knowledge report (139 / 2,000) | 0.99 | 0.97 | +0.02 [+0.01, +0.02] |
+| insider trading (423 / 657) | 1.00 | 0.99 | +0.00 [+0.00, +0.01] |
+| convincing game (167 / 100) | 1.00 | 1.00 | 0.00 |
+| gender secret (116 / 276) | 1.00 | 1.00 | 0.00 |
+
+The outside baselines are the three text views, length, and the benchmark's own metadata
+for each item. In `probe.py` a one-letter answer counts as a word, which the first text
+run did not allow; it makes the outside baseline on harm-pressure choice slightly stronger
+(0.69 against 0.66).
+
+On harm-pressure choice, by where the probe reads:
+
+| reads | AUROC |
+|---|---|
+| mean over prompt tokens | 0.61 |
+| last prompt token, before the model has answered | 0.88 |
+| mean over response tokens | 0.91 |
+| last token | 0.89 |
+| text, prompt only | 0.69 |
+| text, whole transcript | 0.69 |
+
+### Is the probe only detecting a wrong answer?
+
+We asked this after seeing the result. In this subset "deceptive" means the answer differs
+from the one the model gives when asked neutrally. Most such answers are wrong by the
+answer key (118 of 134), so "the answer is wrong" alone scores 0.88, close to the probe.
+But the model also makes honest mistakes: 233 answers that are wrong and match its neutral
+answer. Among wrong answers only, an answer key says nothing.
+
+| among the 351 wrong answers: lie (118) against honest mistake (233) | AUROC |
+|---|---|
+| probe, mean over response tokens | **0.83** |
+| probe, last prompt token | 0.73 |
+| text, whole transcript | 0.59 |
+| benchmark metadata | 0.50 |
+
+A probe fitted only on wrong answers gives 0.81. So the activations distinguish an answer
+the model believes from one it does not, when both are wrong and the transcripts look
+alike.
+
+### Across subsets: fit on instructed deception, test elsewhere
+
+| subset | probe, last token | probe, mean over response | text, transcript |
+|---|---|---|---|
+| convincing game | 0.99 | 0.96 | 0.69 |
+| soft trigger | 0.89 | 0.93 | 0.49 |
+| harm-pressure knowledge report | 0.82 | 0.56 | 0.71 |
+| harm-pressure choice | 0.74 | 0.71 | 0.40 |
+| gender secret | 0.30 | 0.27 | 0.51 |
+| insider trading | 0.14 | 0.33 | 0.60 |
+
+### Predictions
+
+1. **Held.** Best probe on harm-pressure choice: 0.91.
+2. **Held.** It beats the best outside baseline by 0.22, interval [0.16, 0.29].
+3. **Failed narrowly.** The last prompt token is 0.036 below the mean over response tokens.
+4. **Held.** Instructed deception: 1.00 against 0.96. Gender secret: 1.00 against 1.00.
+5. **Failed.** A probe from instructed deception scores 0.71 to 0.74 on harm-pressure
+   choice, above the 0.65 we predicted as a ceiling.
+
+### What we see
+
+- **The hypothesis held on this benchmark.** Where a reader of the transcript can already
+  tell (five subsets), probe and text are within 0.03. Where the transcript says little
+  (harm-pressure choice, and soft trigger to a lesser degree), the probe is far ahead.
+- **The advantage is not wrong-answer detection.** The probe tells the model's lies from
+  its honest mistakes at 0.83. An overseer holding the answer key cannot do that at all.
+- **It is visible before the answer.** At the last prompt token the probe scores 0.88;
+  the text of the same prompt gives 0.69.
+- **Transfer is uneven, and sometimes backwards.** A probe fitted on instructed deception
+  carries to three subsets (0.74 to 0.99, far above text) and is worse than chance on two
+  (0.14 on insider trading). A direction that means "deceptive" in one setting can mean the
+  opposite in another.
+- **Reporting a probe's score without a text baseline hides which case you are in.** Five
+  of seven subsets would have looked like strong probe results. Only two are.
+
+### What this does not show
+
+- **A different outside method gets this label perfectly.** Deception here is defined as
+  disagreeing with the model's own neutral answer, so an overseer who can ask the model
+  again without pressure recovers the label by construction. The probe's advantage is over
+  reading one transcript, and it needs one pass and no second question.
+- One model, one layer that we did not choose, 134 deceptive transcripts.
+- The probe had labelled examples from the same setting. Without them (the transfer table)
+  it reaches 0.71 to 0.74 here.
+- Nothing about what the probe reads. We did not intervene on the model.
+- The two-subset result on convincing game and insider trading uses ordinary folds, since
+  they have too few distinct prompts for strict ones.

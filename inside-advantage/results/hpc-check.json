@@ -1,0 +1,47 @@
+{
+ "rows": {
+  "deceptive and wrong": 118,
+  "deceptive and right": 16,
+  "honest and wrong": 233,
+  "honest and right": 1767
+ },
+ "answer_key_baseline_auroc": 0.882,
+ "auroc": {
+  "probe: last prompt token": {
+   "all rows": 0.877,
+   "wrong answers only: lie vs honest mistake": 0.729,
+   "honest rows only: wrong vs right answer": 0.73,
+   "trained and tested on wrong answers only": 0.77
+  },
+  "probe: mean of response tokens": {
+   "all rows": 0.913,
+   "wrong answers only: lie vs honest mistake": 0.827,
+   "honest rows only: wrong vs right answer": 0.735,
+   "trained and tested on wrong answers only": 0.811
+  },
+  "probe: last token": {
+   "all rows": 0.894,
+   "wrong answers only: lie vs honest mistake": 0.784,
+   "honest rows only: wrong vs right answer": 0.695,
+   "trained and tested on wrong answers only": 0.773
+  },
+  "text: transcript": {
+   "all rows": 0.691,
+   "wrong answers only: lie vs honest mistake": 0.59,
+   "honest rows only: wrong vs right answer": 0.653,
+   "trained and tested on wrong answers only": 0.635
+  },
+  "text: prompt only": {
+   "all rows": 0.687,
+   "wrong answers only: lie vs honest mistake": 0.584,
+   "honest rows only: wrong vs right answer": 0.654,
+   "trained and tested on wrong answers only": 0.632
+  },
+  "benchmark metadata": {
+   "all rows": 0.62,
+   "wrong answers only: lie vs honest mistake": 0.498,
+   "honest rows only: wrong vs right answer": 0.633,
+   "trained and tested on wrong answers only": 0.471
+  }
+ }
+}

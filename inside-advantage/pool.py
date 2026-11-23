@@ -13,7 +13,7 @@ vol = modal.Volume.from_name("inside-advantage", create_if_missing=True)
 image = modal.Image.debian_slim(python_version="3.12").pip_install("torch", "safetensors", "huggingface_hub", "hf_transfer", "numpy").env({"HF_HUB_ENABLE_HF_TRANSFER": "1"})
 
 
-@app.function(image=image, cpu=4, memory=24576, volumes={"/out": vol}, timeout=60 * 60, ephemeral_disk=60 * 1024)
+@app.function(image=image, cpu=4, memory=24576, volumes={"/out": vol}, timeout=60 * 60)
 def pool(subset: str):
     import json, os, time
     import numpy as np, torch

@@ -1,0 +1,248 @@
+{
+ "harm-pressure-choice": {
+  "n_deceptive": 134,
+  "n_honest": 2000,
+  "question_groups": 1128,
+  "strict_folds": true,
+  "auroc": {
+   "probe: mean of prompt tokens": 0.606,
+   "probe: last prompt token": 0.877,
+   "probe: mean of response tokens": 0.913,
+   "probe: last token": 0.894,
+   "text: prompt only": 0.687,
+   "text: response only": 0.562,
+   "text: transcript": 0.691,
+   "length only": 0.643,
+   "benchmark metadata": 0.62
+  },
+  "best_probe": "probe: mean of response tokens",
+  "best_outside": "text: transcript",
+  "best_probe_minus_best_outside": [
+   0.222,
+   0.16,
+   0.286
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.222,
+   0.16,
+   0.286
+  ]
+ },
+ "harm-pressure-knowledge-report": {
+  "n_deceptive": 139,
+  "n_honest": 2000,
+  "question_groups": 1417,
+  "strict_folds": true,
+  "auroc": {
+   "probe: mean of prompt tokens": 0.896,
+   "probe: last prompt token": 0.932,
+   "probe: mean of response tokens": 0.985,
+   "probe: last token": 0.981,
+   "text: prompt only": 0.878,
+   "text: response only": 0.97,
+   "text: transcript": 0.915,
+   "length only": 0.8,
+   "benchmark metadata": 0.727
+  },
+  "best_probe": "probe: mean of response tokens",
+  "best_outside": "text: response only",
+  "best_probe_minus_best_outside": [
+   0.015,
+   0.009,
+   0.022
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.07,
+   0.053,
+   0.088
+  ]
+ },
+ "instructed-deception": {
+  "n_deceptive": 3045,
+  "n_honest": 2387,
+  "question_groups": 667,
+  "strict_folds": true,
+  "auroc": {
+   "probe: mean of prompt tokens": 0.959,
+   "probe: last prompt token": 0.977,
+   "probe: mean of response tokens": 0.998,
+   "probe: last token": 0.998,
+   "text: prompt only": 0.937,
+   "text: response only": 0.939,
+   "text: transcript": 0.964,
+   "length only": 0.852,
+   "benchmark metadata": 0.918
+  },
+  "best_probe": "probe: last token",
+  "best_outside": "text: transcript",
+  "best_probe_minus_best_outside": [
+   0.034,
+   0.027,
+   0.042
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.034,
+   0.027,
+   0.041
+  ]
+ },
+ "convincing-game": {
+  "n_deceptive": 167,
+  "n_honest": 100,
+  "question_groups": 2,
+  "strict_folds": false,
+  "auroc": {
+   "probe: mean of prompt tokens": 1.0,
+   "probe: last prompt token": 1.0,
+   "probe: mean of response tokens": 1.0,
+   "probe: last token": 1.0,
+   "text: prompt only": 1.0,
+   "text: response only": 1.0,
+   "text: transcript": 1.0,
+   "length only": 0.757,
+   "benchmark metadata": 0.695
+  },
+  "best_probe": "probe: mean of prompt tokens",
+  "best_outside": "text: prompt only",
+  "best_probe_minus_best_outside": [
+   0.0,
+   -0.0,
+   0.0
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.0,
+   -0.0,
+   0.0
+  ]
+ },
+ "gender-secret": {
+  "n_deceptive": 116,
+  "n_honest": 276,
+  "question_groups": 248,
+  "strict_folds": true,
+  "auroc": {
+   "probe: mean of prompt tokens": 1.0,
+   "probe: last prompt token": 1.0,
+   "probe: mean of response tokens": 1.0,
+   "probe: last token": 1.0,
+   "text: prompt only": 0.993,
+   "text: response only": 1.0,
+   "text: transcript": 1.0,
+   "length only": 0.67,
+   "benchmark metadata": 0.508
+  },
+  "best_probe": "probe: mean of prompt tokens",
+  "best_outside": "text: transcript",
+  "best_probe_minus_best_outside": [
+   0.0,
+   -0.0,
+   0.0
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.0,
+   -0.0,
+   0.0
+  ]
+ },
+ "insider-trading": {
+  "n_deceptive": 423,
+  "n_honest": 657,
+  "question_groups": 1,
+  "strict_folds": false,
+  "auroc": {
+   "probe: mean of prompt tokens": 0.881,
+   "probe: last prompt token": 0.879,
+   "probe: mean of response tokens": 0.994,
+   "probe: last token": 0.995,
+   "text: prompt only": 0.9,
+   "text: response only": 0.992,
+   "text: transcript": 0.987,
+   "length only": 0.925,
+   "benchmark metadata": 0.876
+  },
+  "best_probe": "probe: last token",
+  "best_outside": "text: response only",
+  "best_probe_minus_best_outside": [
+   0.003,
+   0.001,
+   0.005
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.007,
+   0.004,
+   0.011
+  ]
+ },
+ "soft-trigger": {
+  "n_deceptive": 3000,
+  "n_honest": 3000,
+  "question_groups": 2840,
+  "strict_folds": true,
+  "auroc": {
+   "probe: mean of prompt tokens": 0.802,
+   "probe: last prompt token": 0.877,
+   "probe: mean of response tokens": 0.967,
+   "probe: last token": 0.965,
+   "text: prompt only": 0.821,
+   "text: response only": 0.623,
+   "text: transcript": 0.832,
+   "length only": 0.628
+  },
+  "best_probe": "probe: mean of response tokens",
+  "best_outside": "text: transcript",
+  "best_probe_minus_best_outside": [
+   0.135,
+   0.126,
+   0.145
+  ],
+  "response_mean_probe_minus_transcript_text": [
+   0.135,
+   0.126,
+   0.145
+  ]
+ },
+ "transfer_from_instructed_deception": {
+  "harm-pressure-choice": {
+   "probe: mean of prompt tokens": 0.362,
+   "probe: last prompt token": 0.542,
+   "probe: mean of response tokens": 0.709,
+   "probe: last token": 0.739,
+   "text: transcript": 0.4
+  },
+  "harm-pressure-knowledge-report": {
+   "probe: mean of prompt tokens": 0.394,
+   "probe: last prompt token": 0.525,
+   "probe: mean of response tokens": 0.557,
+   "probe: last token": 0.824,
+   "text: transcript": 0.713
+  },
+  "convincing-game": {
+   "probe: mean of prompt tokens": 0.727,
+   "probe: last prompt token": 0.95,
+   "probe: mean of response tokens": 0.955,
+   "probe: last token": 0.993,
+   "text: transcript": 0.688
+  },
+  "gender-secret": {
+   "probe: mean of prompt tokens": 0.423,
+   "probe: last prompt token": 0.449,
+   "probe: mean of response tokens": 0.274,
+   "probe: last token": 0.301,
+   "text: transcript": 0.509
+  },
+  "insider-trading": {
+   "probe: mean of prompt tokens": 0.228,
+   "probe: last prompt token": 0.208,
+   "probe: mean of response tokens": 0.331,
+   "probe: last token": 0.139,
+   "text: transcript": 0.6
+  },
+  "soft-trigger": {
+   "probe: mean of prompt tokens": 0.513,
+   "probe: last prompt token": 0.689,
+   "probe: mean of response tokens": 0.93,
+   "probe: last token": 0.886,
+   "text: transcript": 0.491
+  }
+ }
+}
