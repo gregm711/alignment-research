@@ -1,0 +1,59 @@
+{
+  "trials": {
+    "reopen/groups": {
+      "text": "{ \"decision\": \"reopen\" }",
+      "input_tokens": 1228,
+      "output_tokens": 10,
+      "duration_ms": 6936,
+      "finish": "stop",
+      "note": "Measured kmeans.inertia_\nn_jobs 1: 17815.004991244623\nn_jobs 2,3,4: 17815.060435554242\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "prompt_sha256": "3497b57d2692efab1ab68744b1db16bf8b89046687c10a9030ed243956dcb5a8"
+    },
+    "reopen/count": {
+      "text": "{ \"decision\": \"reopen\" }",
+      "input_tokens": 1228,
+      "output_tokens": 10,
+      "duration_ms": 459,
+      "finish": "stop",
+      "note": "Measured kmeans.inertia_\nn_jobs 1: 17815.004991244623\nn_jobs 2,3,4: 17815.060435554242\nDistinct measured inertias: 2.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "prompt_sha256": "2a515ab1dbeb50dc65abe9a5bbeb234b0bacb7a7e138a6922b4d918629e189c6"
+    },
+    "reopen/wrong": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1228,
+      "output_tokens": 9,
+      "duration_ms": 365,
+      "finish": "stop",
+      "note": "Measured kmeans.inertia_\nn_jobs 1: 17815.004991244623\nn_jobs 2,3,4: 17815.060435554242\nDistinct measured inertias: 1.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "prompt_sha256": "def184f0fd4fb213cf9bf292b03b102c257e4f6fecdfbc5896870248cc842dc1"
+    },
+    "close/groups": {
+      "text": "{ \"decision\": \"reopen\" }",
+      "input_tokens": 1228,
+      "output_tokens": 10,
+      "duration_ms": 505,
+      "finish": "stop",
+      "note": "Measured kmeans.inertia_\nn_jobs 1,2,3,4: 17815.060435554242\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "prompt_sha256": "71c90941687f8a04f9ee2e10a1ad429f36a0b377beed05579fca1ec9d3a1d3ea"
+    },
+    "close/count": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1228,
+      "output_tokens": 9,
+      "duration_ms": 423,
+      "finish": "stop",
+      "note": "Measured kmeans.inertia_\nn_jobs 1,2,3,4: 17815.060435554242\nDistinct measured inertias: 1.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "prompt_sha256": "9ce92de80f362f4e625967702b2a28fc97591d32a462eaf24b0313e4054de42f"
+    },
+    "close/wrong": {
+      "text": "{ \"decision\": \"reopen\" }",
+      "input_tokens": 1228,
+      "output_tokens": 10,
+      "duration_ms": 465,
+      "finish": "stop",
+      "note": "Measured kmeans.inertia_\nn_jobs 1,2,3,4: 17815.060435554242\nDistinct measured inertias: 2.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "prompt_sha256": "21d0c0b60f591767939f81adc71254e6634c790f15e5379db6961c5733ea2f2a"
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}
