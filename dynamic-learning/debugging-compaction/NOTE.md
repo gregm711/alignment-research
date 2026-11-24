@@ -1,6 +1,10 @@
-# When a debugging handoff preserves the observation, can the agent use it?
+# What does a debugging agent need to change its mind?
 
-Two local models could recover a correction from a compact handoff when it retained an attributed input/output example. Giving either model that handoff still produced zero passing reversal repairs in eight controlled cases. The full transcript also produced few repairs. A model’s ability to tell the user what happened and its ability to change the implementation are different measurements.
+Two models read the same four test results and independently concluded that revision 6 fixed a bug. Later, an audit revealed that one of two test workers had used the wrong checkout. Their 96-token ordinary handoffs led Qwen to choose the correct search interval in one of four audit conditions and Gemma in zero. A 96-token handoff that grouped the last failure and first pass by worker gave Qwen four of four and Gemma three of four. The writer produced each handoff before the audit identified the reliable worker. [Matched experiment and raw decisions](bisection/README.md)
+
+For example, red reported that revision 2 failed and 6 passed. Blue reported that 5 failed and 9 passed. Taken together they point to 6. Once the audit cleared red, only the interval from 2 to 6 was supported. Clearing blue instead required searching from 5 to 9. Choosing a bracket committed the agent's final two tests, whose outcomes came from actual upstream code revisions. The experiment crossed the two assignments of colors with the two possible audits. Those four decisions share the same setup. The injected cache error establishes a controlled test of revision under uncertainty.
+
+Qwen's ordinary handoffs already listed every measurement with its correct worker. Its difficulty was using those facts to revise the search. Gemma's ordinary handoffs omitted the worker assignments. The same change in handoff design addressed two different failure modes. On free-form repairs, neither reader solved any additional upstream bugs from an evidence-preserving handoff. On three genuine SymPy investigations, both readers reopened even the fixed checkouts when given raw tool output, and ordinary summaries helped on some pairs. These results support source-grouped evidence for this version-search decision. How well it transfers to unassisted patches remains open. [Upstream repair panel](upstream/README.md) · [Authentic tool reports](trajectories/README.md)
 
 ## The controlled comparison
 

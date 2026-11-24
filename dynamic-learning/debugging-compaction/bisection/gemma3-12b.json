@@ -1,0 +1,1998 @@
+{
+  "episodes": {
+    "all_unique/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 9}",
+          "input_tokens": 256,
+          "output_tokens": 20,
+          "duration_ms": 10880,
+          "finish": "stop",
+          "prompt_sha256": "d2e5e9ab83d5e9f79b48a78a4fca19cd1002aa30c626ee74a0e52d740acdc217",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                7,
+                true
+              ]
+            ],
+            "nomination": 7,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 7}",
+          "input_tokens": 254,
+          "output_tokens": 20,
+          "duration_ms": 7646,
+          "finish": "stop",
+          "prompt_sha256": "187d9abec00e793f0888f902e99bbe7d6823bdb98f91fcc9465b28838c6a93a2",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 7,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 7}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 7740,
+          "finish": "stop",
+          "prompt_sha256": "761879b1b9a031edff354fdc9e8718f87a3ebc813382b1d7f31a854bf40744c9",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 7,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 4, \"first_pass\": 8}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 7152,
+          "finish": "stop",
+          "prompt_sha256": "67f509f362556c81f74a8f3382977b4f6944ee782eb1d87320209d10b2b512e8",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                7,
+                true
+              ]
+            ],
+            "nomination": 7,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 12}",
+          "input_tokens": 163,
+          "output_tokens": 21,
+          "duration_ms": 11206,
+          "finish": "stop",
+          "prompt_sha256": "69d6a1b3e7a20ea7cb4b7dd9fdb8444e60de26c9ae9fb10c530eeaa2ed2367bc",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                true
+              ],
+              [
+                7,
+                true
+              ]
+            ],
+            "nomination": 7,
+            "correct": true,
+            "certified": true
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 7}",
+        "input_tokens": 193,
+        "output_tokens": 9,
+        "duration_ms": 7043,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nRegression `all_unique` failed (0) then passed (12). We seek the *first* pass.\n\nExperiments: Reviewed revisions 0-12.\n\nResults: 0-FAIL, 2-FAIL, 4-FAIL, 6-FAIL, 7-PASS, 8-PASS, 9-PASS, 10-PASS, 12-PASS.\n\nConclusion: Revision",
+        "input_tokens": 203,
+        "output_tokens": 96,
+        "duration_ms": 15614,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "red checked revision 7: PASS\nblue checked revision 2: FAIL\nred checked revision 4: FAIL\nblue checked revision 12: PASS\nred checked revision 0: FAIL\nred checked revision 6: FAIL\nred checked revision 9: PASS\nblue checked revision 8: PASS\nblue checked revision 0: FAIL\nblue checked revision 10: PASS\nblue checked revision 4: FAIL\nred checked revision 12: PASS",
+        "ordinary": "**Debugging Handoff**\n\nRegression `all_unique` failed (0) then passed (12). We seek the *first* pass.\n\nExperiments: Reviewed revisions 0-12.\n\nResults: 0-FAIL, 2-FAIL, 4-FAIL, 6-FAIL, 7-PASS, 8-PASS, 9-PASS, 10-PASS, 12-PASS.\n\n\nPadding: .",
+        "attributed": "red: last FAIL 6, first PASS 7.\nblue: last FAIL 4, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 4, first PASS 8.\nblue: last FAIL 6, first PASS 7.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "all_unique/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 10, \"first_pass\": 12}",
+          "input_tokens": 257,
+          "output_tokens": 21,
+          "duration_ms": 6563,
+          "finish": "stop",
+          "prompt_sha256": "2755dafedc3a455e845ca53ed9d83d1d77d759a0ab0ee00bb7cee46f2382d037",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                11,
+                true
+              ]
+            ],
+            "nomination": 11,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 254,
+          "output_tokens": 21,
+          "duration_ms": 5966,
+          "finish": "stop",
+          "prompt_sha256": "82cb5352dae2ec19670a4ab3208b7e190f665d9887ce70ebbb5b11662e13ca6b",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 4, \"first_pass\": 8}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 10998,
+          "finish": "stop",
+          "prompt_sha256": "48ff4b73eed325a1135fc2c6babade51e26c9e6ded182b2c948d662c86b6e562",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                7,
+                true
+              ]
+            ],
+            "nomination": 7,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 6976,
+          "finish": "stop",
+          "prompt_sha256": "be081ca8bf4d46892de5a26f058e9817e5d5ea2c7e7b4a1a2a97c244b75e612e",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 12}",
+          "input_tokens": 163,
+          "output_tokens": 21,
+          "duration_ms": 5916,
+          "finish": "stop",
+          "prompt_sha256": "128d665de982669b5e9d7c77abf8a4b63433d939943c37dff1ecdb2cb6d36125",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                true
+              ],
+              [
+                8,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 8}",
+        "input_tokens": 194,
+        "output_tokens": 9,
+        "duration_ms": 4681,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\n`all_unique` regressed (FAIL->PASS) between revisions 0-12. Known FAIL at 0, PASS at 12. Confirmed PASS at 2, 4, 8, 10. Blue checks at 7, 8, 10, and 12 conflict with red checks. Investigate conflicting checks and potential data corruption. Current best guess: 8.\n",
+        "input_tokens": 204,
+        "output_tokens": 96,
+        "duration_ms": 12249,
+        "finish": "stop"
+      },
+      "notes": {
+        "full": "red checked revision 12: PASS\nred checked revision 2: FAIL\nblue checked revision 12: PASS\nred checked revision 4: FAIL\nblue checked revision 8: PASS\nred checked revision 0: FAIL\nblue checked revision 7: FAIL\nblue checked revision 5: FAIL\nred checked revision 10: PASS\nblue checked revision 10: PASS\nred checked revision 8: PASS\nblue checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff**\n\n`all_unique` regressed (FAIL->PASS) between revisions 0-12. Known FAIL at 0, PASS at 12. Confirmed PASS at 2, 4, 8, 10. Blue checks at 7, 8, 10, and 12 conflict with red checks. Investigate conflicting checks and potential data corruption. Current best guess: 8\nPadding:",
+        "attributed": "red: last FAIL 4, first PASS 8.\nblue: last FAIL 7, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 7, first PASS 8.\nblue: last FAIL 4, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "split_before/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 3, \"first_pass\": 4}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 10785,
+          "finish": "stop",
+          "prompt_sha256": "0c13dfda5f5f65a59f423eec37fe0cf9fcbcab90d494e06748b1ca787332c2d7",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 4,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 254,
+          "output_tokens": 21,
+          "duration_ms": 6796,
+          "finish": "stop",
+          "prompt_sha256": "5cc1443c892cc19061d7ccbe9230067844f799c8be22890f745c6747b4554a77",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                3,
+                false
+              ]
+            ],
+            "nomination": 5,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 3, \"first_pass\": 4}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 6011,
+          "finish": "stop",
+          "prompt_sha256": "7ddfceef52fe0922cd8132bc794a45410110bec0fc343629e65b77a79a7a0469",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 4,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 3, \"first_pass\": 7}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 4985,
+          "finish": "stop",
+          "prompt_sha256": "8420fa7a4d20be9af0cc3310445e400125ff9b46090dafb19907a26071560412",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                5,
+                true
+              ],
+              [
+                4,
+                true
+              ]
+            ],
+            "nomination": 4,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 12}",
+          "input_tokens": 163,
+          "output_tokens": 21,
+          "duration_ms": 8672,
+          "finish": "stop",
+          "prompt_sha256": "733e6f9d9499dea7efba7b31dfcaf719afb2660067cfb2e5e67dadb4b930ac08",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                true
+              ],
+              [
+                7,
+                true
+              ]
+            ],
+            "nomination": 7,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 6}",
+        "input_tokens": 192,
+        "output_tokens": 9,
+        "duration_ms": 5463,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nInvestigating `split_before` regression. Test switched FAIL->PASS once (rev 0-12).\n\nExperiments: Verified rev 0 (FAIL), rev 12 (PASS).  Found PASS at revs 4, 6, 7, 9, 12.  Since only *one* transition is expected, revs 4, 7, and 9 are false positives.\n\nCurrent",
+        "input_tokens": 202,
+        "output_tokens": 96,
+        "duration_ms": 9218,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "red checked revision 12: PASS\nred checked revision 0: FAIL\nred checked revision 1: FAIL\nblue checked revision 1: FAIL\nred checked revision 9: PASS\nblue checked revision 0: FAIL\nblue checked revision 6: PASS\nblue checked revision 4: PASS\nred checked revision 3: FAIL\nblue checked revision 12: PASS\nred checked revision 7: PASS\nblue checked revision 3: FAIL",
+        "ordinary": "**Debugging Handoff**\n\nInvestigating `split_before` regression. Test switched FAIL->PASS once (rev 0-12).\n\nExperiments: Verified rev 0 (FAIL), rev 12 (PASS).  Found PASS at revs 4, 6, 7, 9, 12.  Since only *one* transition is expected, revs 4, 7, and 9 are false positives\nPadding:",
+        "attributed": "red: last FAIL 3, first PASS 7.\nblue: last FAIL 3, first PASS 4.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 3, first PASS 4.\nblue: last FAIL 3, first PASS 7.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "split_before/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 6067,
+          "finish": "stop",
+          "prompt_sha256": "15f39624519e65547442f8846efd3cf3c92663276502da584b240aa1d6f41717",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 254,
+          "output_tokens": 20,
+          "duration_ms": 5978,
+          "finish": "stop",
+          "prompt_sha256": "fe855853513ad427f5bd8329eb461fd6fb8d3e663c25474e4602a7bdfe2976c3",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 3, \"first_pass\": 7}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 5694,
+          "finish": "stop",
+          "prompt_sha256": "5fb56394f6f12d8298c1d4fd568216cb23f72f6ccbb33e63ff332f79e4029d1d",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                5,
+                true
+              ],
+              [
+                4,
+                true
+              ]
+            ],
+            "nomination": 4,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 254,
+          "output_tokens": 19,
+          "duration_ms": 10766,
+          "finish": "stop",
+          "prompt_sha256": "dafc574c4a2cc6574223d75aaaf38ba34a874b1e69cd6283bd9722ea865f254b",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 12}",
+          "input_tokens": 163,
+          "output_tokens": 21,
+          "duration_ms": 7423,
+          "finish": "stop",
+          "prompt_sha256": "3ce0496c9a869f95cf37a2edd9f0a2fdf1799fdbeb5875096e330830a50b43c9",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                true
+              ],
+              [
+                8,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 8}",
+        "input_tokens": 192,
+        "output_tokens": 9,
+        "duration_ms": 10285,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nRegression `split_before` failed (0) then passed (12). We seek the *first* pass.\n\nExperiments: Reviewed revisions 0-12.\n\nResults: 0-FAIL, 3-FAIL, 5-FAIL, 6-PASS, 7-PASS, 8-PASS, 9-PASS, 12-PASS.\n\nConclusion: Revision 8 is the first passing",
+        "input_tokens": 202,
+        "output_tokens": 96,
+        "duration_ms": 11204,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "blue checked revision 1: FAIL\nred checked revision 3: FAIL\nred checked revision 8: PASS\nblue checked revision 0: FAIL\nred checked revision 6: PASS\nred checked revision 5: FAIL\nblue checked revision 12: PASS\nblue checked revision 9: PASS\nblue checked revision 7: PASS\nblue checked revision 3: FAIL\nred checked revision 12: PASS\nred checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff**\n\nRegression `split_before` failed (0) then passed (12). We seek the *first* pass.\n\nExperiments: Reviewed revisions 0-12.\n\nResults: 0-FAIL, 3-FAIL, 5-FAIL, 6-PASS, 7-PASS, 8-PASS, 9-PASS, 12-PASS.\n\nConclusion: Revision 8 is\nPadding:",
+        "attributed": "red: last FAIL 5, first PASS 6.\nblue: last FAIL 3, first PASS 7.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 3, first PASS 7.\nblue: last FAIL 5, first PASS 6.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "peekable._get_slice/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 8, \"first_pass\": 9}",
+          "input_tokens": 260,
+          "output_tokens": 20,
+          "duration_ms": 6015,
+          "finish": "stop",
+          "prompt_sha256": "9dc0c25037abca27800e6fd801abc4d03ece1b5b94a3f6a25f4bf82d3df3a5f9",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 9,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 8, \"first_pass\": 9}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2388,
+          "finish": "stop",
+          "prompt_sha256": "1579a58c867b2a1634af3488cbabbff691d4ac9fd627f471e8756629f26ef17e",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 9,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 8, \"first_pass\": 9}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2090,
+          "finish": "stop",
+          "prompt_sha256": "631517972f2b8e029d6790a62bbf4f0eeb1cf2f8fb9fb28eae48d875aea28b21",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 9,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 9}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2118,
+          "finish": "stop",
+          "prompt_sha256": "36f8d95f5edf678bb07dc7e4a5b0800a93a50b54e681fdd7594ac192e7683354",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                7,
+                false
+              ],
+              [
+                8,
+                false
+              ]
+            ],
+            "nomination": 9,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 166,
+          "output_tokens": 21,
+          "duration_ms": 2087,
+          "finish": "stop",
+          "prompt_sha256": "bac17d3dc9b558b2b2b54711ee30ab56ff8d2d8443f0659d0f15b6f84c15bfab",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 9}",
+        "input_tokens": 197,
+        "output_tokens": 9,
+        "duration_ms": 6514,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: peekable._get_slice Regression**\n\nObserved FAIL->PASS transition between revisions 0-12. Revision 0: FAIL, 12: PASS. Confirmed FAIL at 0, PASS at 12 via release checks. Revision 8: FAIL, 9: PASS, 11: PASS.  Suspect a change between 8 & 9. Further investigation needed to pinpoint the exact commit. Provisional",
+        "input_tokens": 207,
+        "output_tokens": 96,
+        "duration_ms": 9999,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "red checked revision 8: FAIL\nred checked revision 0: FAIL\nblue checked revision 12: PASS\nred checked revision 11: PASS\nblue checked revision 11: PASS\nblue checked revision 3: FAIL\nred checked revision 6: FAIL\nblue checked revision 5: FAIL\nblue checked revision 9: PASS\nred checked revision 9: PASS\nred checked revision 12: PASS\nblue checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff: peekable._get_slice Regression**\n\nObserved FAIL->PASS transition between revisions 0-12. Revision 0: FAIL, 12: PASS. Confirmed FAIL at 0, PASS at 12 via release checks. Revision 8: FAIL, 9: PASS, 11: PASS.  Suspect a change between 8 & 9. Further investigation needed to pinpoint the exact\nPadding:",
+        "attributed": "red: last FAIL 8, first PASS 9.\nblue: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 5, first PASS 9.\nblue: last FAIL 8, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "peekable._get_slice/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 9}",
+          "input_tokens": 260,
+          "output_tokens": 20,
+          "duration_ms": 2294,
+          "finish": "stop",
+          "prompt_sha256": "04743488bdd85e0673cdef460b92549c5ff26d9e998ca8daa0ac77904c20b8a4",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                7,
+                false
+              ],
+              [
+                8,
+                false
+              ]
+            ],
+            "nomination": 9,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 9}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2039,
+          "finish": "stop",
+          "prompt_sha256": "cefb7fe872aa3620c1cd0cc7a84de0d8f5bc97e1b04261cf0052df5016a127cf",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                4,
+                false
+              ],
+              [
+                6,
+                false
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 9}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2076,
+          "finish": "stop",
+          "prompt_sha256": "5bff4bf1180291fba3bd73262b4070a0c166639c6027a0a341c9f6f263ac544a",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                7,
+                false
+              ],
+              [
+                8,
+                false
+              ]
+            ],
+            "nomination": 9,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2260,
+          "finish": "stop",
+          "prompt_sha256": "5a047bbc998b041fad023eda02011983fa71570e1a8414d74e246839ad73a409",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 166,
+          "output_tokens": 21,
+          "duration_ms": 1167,
+          "finish": "stop",
+          "prompt_sha256": "bac17d3dc9b558b2b2b54711ee30ab56ff8d2d8443f0659d0f15b6f84c15bfab",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 9}",
+        "input_tokens": 197,
+        "output_tokens": 9,
+        "duration_ms": 1573,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nRegression `peekable._get_slice` switched FAIL->PASS once (rev 0->12). We know rev 0 fails, rev 12 passes.\n\nExperiments: Checked revs 0, 3, 5, 7, 8, 9, 10, 11, 12.\n\nResults: rev 9 is the first PASS.\n\nConclusion: Revision 9 is",
+        "input_tokens": 207,
+        "output_tokens": 96,
+        "duration_ms": 5580,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "blue checked revision 7: FAIL\nred checked revision 9: PASS\nblue checked revision 0: FAIL\nred checked revision 12: PASS\nblue checked revision 12: PASS\nred checked revision 3: FAIL\nred checked revision 5: FAIL\nblue checked revision 8: PASS\nblue checked revision 5: FAIL\nred checked revision 11: PASS\nblue checked revision 10: PASS\nred checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff**\n\nRegression `peekable._get_slice` switched FAIL->PASS once (rev 0->12). We know rev 0 fails, rev 12 passes.\n\nExperiments: Checked revs 0, 3, 5, 7, 8, 9, 10, 11, 12.\n\nResults: rev 9 is the first PASS.\n\nConclusion: Revision\nPadding:",
+        "attributed": "red: last FAIL 5, first PASS 9.\nblue: last FAIL 7, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 7, first PASS 8.\nblue: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "seekable.peek/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2289,
+          "finish": "stop",
+          "prompt_sha256": "2514f35f36df71517dc61e40dbce0903666786627ea3dbd68e91b01314b09d6a",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 6}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 2253,
+          "finish": "stop",
+          "prompt_sha256": "7dc099af07352b8ba1f25c5dc34cae06185dcdb2c18f9d42f9f10abf476ed287",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                3,
+                false
+              ],
+              [
+                4,
+                false
+              ]
+            ],
+            "nomination": 5,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2134,
+          "finish": "stop",
+          "prompt_sha256": "beddbd6e347aac7c7cadff5a5e8cff32b0a098b65e6d9243dc5ecc57d34e7900",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2251,
+          "finish": "stop",
+          "prompt_sha256": "18455f426972106e74a3989f2dc3409fdc4131c005c9a13f6b5af39c8012a231",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 12}",
+          "input_tokens": 164,
+          "output_tokens": 21,
+          "duration_ms": 1635,
+          "finish": "stop",
+          "prompt_sha256": "8cce350da61f45d26d36459c69c34ededdf770c297e23d5e86a3968c49a7aab6",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                8,
+                true
+              ],
+              [
+                6,
+                true
+              ]
+            ],
+            "nomination": 6,
+            "correct": true,
+            "certified": true
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 6}",
+        "input_tokens": 194,
+        "output_tokens": 9,
+        "duration_ms": 1339,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: seekable.peek Regression**\n\nObserved FAIL->PASS transition between revisions 0-12. Known FAIL at 0, PASS at 12.  Experiments at 6, 8, 10 confirmed PASS.  Therefore, revision 6 is the first passing revision. Further investigation needed to pinpoint the root cause of the change.\n",
+        "input_tokens": 204,
+        "output_tokens": 80,
+        "duration_ms": 4666,
+        "finish": "stop"
+      },
+      "notes": {
+        "full": "blue checked revision 6: PASS\nblue checked revision 8: PASS\nblue checked revision 0: FAIL\nred checked revision 0: FAIL\nred checked revision 4: FAIL\nblue checked revision 12: PASS\nblue checked revision 3: FAIL\nred checked revision 2: FAIL\nblue checked revision 5: FAIL\nred checked revision 12: PASS\nred checked revision 10: PASS\nred checked revision 8: PASS",
+        "ordinary": "**Debugging Handoff: seekable.peek Regression**\n\nObserved FAIL->PASS transition between revisions 0-12. Known FAIL at 0, PASS at 12.  Experiments at 6, 8, 10 confirmed PASS.  Therefore, revision 6 is the first passing revision. Further investigation needed to pinpoint the root cause of the change.\nPadding: . . . . . . . . . . . . . . .",
+        "attributed": "red: last FAIL 4, first PASS 8.\nblue: last FAIL 5, first PASS 6.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 5, first PASS 6.\nblue: last FAIL 4, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "seekable.peek/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 7}",
+          "input_tokens": 257,
+          "output_tokens": 20,
+          "duration_ms": 2486,
+          "finish": "stop",
+          "prompt_sha256": "0c7aed5bedf38c6b78c3f6686633aff32ccefe386d37a8a036ed7b14e27df4f8",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 7,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\n  \"last_failure\": 6,\n  \"first_pass\": 7\n}",
+          "input_tokens": 255,
+          "output_tokens": 24,
+          "duration_ms": 2723,
+          "finish": "stop",
+          "prompt_sha256": "5c5ae6eff10e4c411c2d3742afad16d4ff7ba9b83efdac0032d5e76c62b4e6d6",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 7,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 7}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 1855,
+          "finish": "stop",
+          "prompt_sha256": "f76d69761e9c4d4b2585d4d12529aed6e2d8d9d3266438f1841659e6ecdf0fc2",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 7,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 7}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2372,
+          "finish": "stop",
+          "prompt_sha256": "470a7182f1a56b02a6bfcefe146fd74f9b0b6304488b7b67d7d15ef3da46d3d4",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 7,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 12}",
+          "input_tokens": 164,
+          "output_tokens": 21,
+          "duration_ms": 2693,
+          "finish": "stop",
+          "prompt_sha256": "1ac0c5822a7d0d66b70c2e33b44f816d46061ce90766907b723f3348dd5e19d9",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                true
+              ],
+              [
+                7,
+                true
+              ]
+            ],
+            "nomination": 7,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 7}",
+        "input_tokens": 194,
+        "output_tokens": 9,
+        "duration_ms": 1247,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: seekable.peek Regression**\n\nObserved FAIL->PASS transition between revs 0-12. Known: rev 0 (FAIL), rev 12 (PASS). Tests: rev 2(FAIL), 6(FAIL), 7(PASS), 8(PASS), 9(PASS), 10(PASS).\n\nCurrent conclusion: Revision 7 is the first passing revision. Further investigation needed to pinpoint the",
+        "input_tokens": 204,
+        "output_tokens": 96,
+        "duration_ms": 6259,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "blue checked revision 2: FAIL\nblue checked revision 8: PASS\nblue checked revision 10: PASS\nred checked revision 6: FAIL\nred checked revision 7: PASS\nred checked revision 9: PASS\nblue checked revision 0: FAIL\nblue checked revision 12: PASS\nred checked revision 4: FAIL\nred checked revision 0: FAIL\nred checked revision 12: PASS\nblue checked revision 4: FAIL",
+        "ordinary": "**Debugging Handoff: seekable.peek Regression**\n\nObserved FAIL->PASS transition between revs 0-12. Known: rev 0 (FAIL), rev 12 (PASS). Tests: rev 2(FAIL), 6(FAIL), 7(PASS), 8(PASS), 9(PASS), 10(PASS).\n\nCurrent conclusion: Revision 7 is the first passing revision. Further investigation needed\nPadding:",
+        "attributed": "red: last FAIL 6, first PASS 7.\nblue: last FAIL 4, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 4, first PASS 8.\nblue: last FAIL 6, first PASS 7.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "numeric_range.__reversed__/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 261,
+          "output_tokens": 19,
+          "duration_ms": 2236,
+          "finish": "stop",
+          "prompt_sha256": "1ad15a83df84234f108b1ce45a467284d222ef3db4ac95ca45abaea3895d9d4f",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 257,
+          "output_tokens": 20,
+          "duration_ms": 2372,
+          "finish": "stop",
+          "prompt_sha256": "dc4da2ee78aee7251d7e122c3d427af6fcc0ea3a33c4b6d17e7f2a655c209856",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 257,
+          "output_tokens": 19,
+          "duration_ms": 2250,
+          "finish": "stop",
+          "prompt_sha256": "47fe4bc2923eac04442c556da918a749905612d8b4988b51cd60c5cb13ce0609",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 10}",
+          "input_tokens": 257,
+          "output_tokens": 20,
+          "duration_ms": 2207,
+          "finish": "stop",
+          "prompt_sha256": "25bd6295040933653b4f9aa1e7f5c787629a5abadd16653e57d0cd2d8725be02",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                8,
+                true
+              ],
+              [
+                7,
+                false
+              ]
+            ],
+            "nomination": 8,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 166,
+          "output_tokens": 20,
+          "duration_ms": 2975,
+          "finish": "stop",
+          "prompt_sha256": "0385692f8ab497f4f0b28979527c31677f9831324ff8bc175e67e8c1ba6b0357",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": true,
+            "certified": true
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 8}",
+        "input_tokens": 198,
+        "output_tokens": 9,
+        "duration_ms": 1768,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nRegression `numeric_range.__reversed__` switched FAIL->PASS between revs 0-12. Rev 0 & 12 confirmed FAIL/PASS.\n\nExperiments: Checked revs 5, 6, 7, 8, 10. Results: 5(FAIL), 6(FAIL), 7(FAIL), 8(PASS), 10(PASS).\n\nConclusion: First passing",
+        "input_tokens": 208,
+        "output_tokens": 96,
+        "duration_ms": 6225,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "red checked revision 5: FAIL\nblue checked revision 0: FAIL\nred checked revision 0: FAIL\nblue checked revision 6: FAIL\nred checked revision 8: PASS\nred checked revision 7: FAIL\nblue checked revision 4: FAIL\nred checked revision 10: PASS\nblue checked revision 10: PASS\nblue checked revision 12: PASS\nblue checked revision 12: PASS\nred checked revision 12: PASS",
+        "ordinary": "**Debugging Handoff**\n\nRegression `numeric_range.__reversed__` switched FAIL->PASS between revs 0-12. Rev 0 & 12 confirmed FAIL/PASS.\n\nExperiments: Checked revs 5, 6, 7, 8, 10. Results: 5(FAIL), 6(FAIL), 7(FAIL), 8(PASS), 10(PASS).\n\nConclusion\nPadding:",
+        "attributed": "red: last FAIL 7, first PASS 8.\nblue: last FAIL 6, first PASS 10.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 6, first PASS 10.\nblue: last FAIL 7, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "numeric_range.__reversed__/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 9, \"first_pass\": 12}",
+          "input_tokens": 263,
+          "output_tokens": 21,
+          "duration_ms": 2483,
+          "finish": "stop",
+          "prompt_sha256": "3eae3aa57d91a1e6188a8694adddd665cb5289dbea6f5a2cc0e8c2843c2cb391",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                10,
+                true
+              ]
+            ],
+            "nomination": 10,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 258,
+          "output_tokens": 20,
+          "duration_ms": 2247,
+          "finish": "stop",
+          "prompt_sha256": "85cc86c75c27818db076d5dba178bc182f59b2db8f5485faabd816bcd71835e7",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": true,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 10}",
+          "input_tokens": 258,
+          "output_tokens": 20,
+          "duration_ms": 2405,
+          "finish": "stop",
+          "prompt_sha256": "d60ba6b5f09954144c400cbcfb9a1fc3962924260fe2cd111c58e75aca66ca3b",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                8,
+                true
+              ],
+              [
+                7,
+                false
+              ]
+            ],
+            "nomination": 8,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 9, \"first_pass\": 10}",
+          "input_tokens": 258,
+          "output_tokens": 20,
+          "duration_ms": 2061,
+          "finish": "stop",
+          "prompt_sha256": "be292069cf8b49d1194373f913b186fd7078d2414c12c5a8d6b9de744cf44c65",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 10,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 167,
+          "output_tokens": 20,
+          "duration_ms": 2631,
+          "finish": "stop",
+          "prompt_sha256": "1aa92f10fad5057094655ffa8a261d9b4f145e2e92b6b8bfb24021a13fe752eb",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": true,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 10}",
+        "input_tokens": 199,
+        "output_tokens": 10,
+        "duration_ms": 2238,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: numeric_range.__reversed__ Regression**\n\nObserved FAIL->PASS transition between revisions 0-12. Confirmed FAIL at 0, PASS at 12.  Initial pass at revision 10 was suspect due to conflicting checks. Further investigation needed to pinpoint the exact first PASS revision. Focus on revisions 4, 6, 7, 9, and 10.",
+        "input_tokens": 210,
+        "output_tokens": 89,
+        "duration_ms": 5685,
+        "finish": "stop"
+      },
+      "notes": {
+        "full": "red checked revision 12: PASS\nred checked revision 12: PASS\nblue checked revision 9: FAIL\nred checked revision 4: FAIL\nblue checked revision 10: PASS\nred checked revision 6: FAIL\nred checked revision 0: FAIL\nblue checked revision 7: FAIL\nblue checked revision 12: PASS\nblue checked revision 0: FAIL\nblue checked revision 12: PASS\nred checked revision 10: PASS",
+        "ordinary": "**Debugging Handoff: numeric_range.__reversed__ Regression**\n\nObserved FAIL->PASS transition between revisions 0-12. Confirmed FAIL at 0, PASS at 12.  Initial pass at revision 10 was suspect due to conflicting checks. Further investigation needed to pinpoint the exact first PASS revision. Focus on revisions 4, 6, 7, 9, and 10.\nPadding: . . . . .",
+        "attributed": "red: last FAIL 6, first PASS 10.\nblue: last FAIL 9, first PASS 10.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 9, first PASS 10.\nblue: last FAIL 6, first PASS 10.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "interleave_evenly/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 2, \"first_pass\": 3}",
+          "input_tokens": 256,
+          "output_tokens": 20,
+          "duration_ms": 2065,
+          "finish": "stop",
+          "prompt_sha256": "5b40bd60a348946b5b687b39d030b1cf81105e80549a4e4f03b77988744839d0",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 3,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\n  \"last_failure\": 0,\n  \"first_pass\": 12\n}",
+          "input_tokens": 255,
+          "output_tokens": 25,
+          "duration_ms": 2624,
+          "finish": "stop",
+          "prompt_sha256": "b526f90eeb0a17c23f3c33c86620e221359723f33748ccc6f4af140b8f18530f",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 2,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 2, \"first_pass\": 3}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2592,
+          "finish": "stop",
+          "prompt_sha256": "c7fb0595df59395595aa98e0e974d5a347997b2aa62e4b1ce773cda297bc5975",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 3,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 4}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2522,
+          "finish": "stop",
+          "prompt_sha256": "f229c1b6b77c57f3b5a6a78dbcaf6f70c1cb65228905292a725d989d0f1ea209",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                2,
+                false
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 3,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 164,
+          "output_tokens": 21,
+          "duration_ms": 2338,
+          "finish": "stop",
+          "prompt_sha256": "696ddebfcdb40209f78a5d76f0e8bb0eb96f20284c98430e1848ba00a287ca62",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 2,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 3}",
+        "input_tokens": 193,
+        "output_tokens": 9,
+        "duration_ms": 1826,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nRegression `interleave_evenly` switched FAIL->PASS once (0-12). Rev 0 fails, 12 passes. We've tested revisions 0, 2, 3, 4, 5, 6, and 12. Rev 3 initially showed PASS, but further investigation revealed it was incorrect. The first confirmed PASS is revision 12.\n\n\n\n**Provisional Answer: 1",
+        "input_tokens": 203,
+        "output_tokens": 96,
+        "duration_ms": 6490,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "blue checked revision 12: PASS\nblue checked revision 2: FAIL\nred checked revision 12: PASS\nblue checked revision 0: FAIL\nred checked revision 0: FAIL\nblue checked revision 0: FAIL\nred checked revision 4: PASS\nred checked revision 0: FAIL\nblue checked revision 3: PASS\nblue checked revision 5: PASS\nred checked revision 6: PASS\nred checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff**\n\nRegression `interleave_evenly` switched FAIL->PASS once (0-12). Rev 0 fails, 12 passes. We've tested revisions 0, 2, 3, 4, 5, 6, and 12. Rev 3 initially showed PASS, but further investigation revealed it was incorrect. The first confirmed PASS is revision 12.\n\n\n\n**Provisional Answer\nPadding:",
+        "attributed": "red: last FAIL 0, first PASS 4.\nblue: last FAIL 2, first PASS 3.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 2, first PASS 3.\nblue: last FAIL 0, first PASS 4.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "interleave_evenly/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 256,
+          "output_tokens": 21,
+          "duration_ms": 2677,
+          "finish": "stop",
+          "prompt_sha256": "53deba550a3f68452b0d8bd11ae3367437f3b5397d3e9d38ba478d4c3f45c9c7",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 2,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 255,
+          "output_tokens": 21,
+          "duration_ms": 3029,
+          "finish": "stop",
+          "prompt_sha256": "6c11439b01cfaf2617f889f167502c4e274342158578527aa0ca508dc94bacc4",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 2,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 4}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2035,
+          "finish": "stop",
+          "prompt_sha256": "7ae4e3874f1962940bbdc55f3eae2a6c67444e3a2c6f92dc4fa56b14eebb12c2",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                2,
+                false
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 3,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 1, \"first_pass\": 2}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2693,
+          "finish": "stop",
+          "prompt_sha256": "f6bf731dc8d19fab2391750c170fa90be42eaa50751aa9b86f0be49065cb2758",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 2,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 164,
+          "output_tokens": 21,
+          "duration_ms": 1786,
+          "finish": "stop",
+          "prompt_sha256": "018772c8c49ec49c7a4405be26f8a0d0a1d02421083a7b400790c53ce86c987b",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                3,
+                true
+              ]
+            ],
+            "nomination": 2,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 2}",
+        "input_tokens": 193,
+        "output_tokens": 9,
+        "duration_ms": 1547,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff**\n\nGoal: Find the first passing `interleave_evenly` revision.\n\nExperiments: Reviewed test results (0-12). Known: 0=FAIL, 12=PASS.\n\nResults: Revision 2 initially appeared PASS, but later FAIL. Revision 4 also PASS, but later FAIL. Revision 6 PASS.\n\nConclusion: Revision 2 is not the first passing revision. Revision 6 is the first passing revision",
+        "input_tokens": 203,
+        "output_tokens": 96,
+        "duration_ms": 6408,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "red checked revision 1: FAIL\nblue checked revision 0: FAIL\nred checked revision 12: PASS\nred checked revision 4: PASS\nblue checked revision 0: FAIL\nblue checked revision 12: PASS\nblue checked revision 4: PASS\nred checked revision 2: PASS\nblue checked revision 0: FAIL\nred checked revision 0: FAIL\nblue checked revision 6: PASS\nred checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff**\n\nGoal: Find the first passing `interleave_evenly` revision.\n\nExperiments: Reviewed test results (0-12). Known: 0=FAIL, 12=PASS.\n\nResults: Revision 2 initially appeared PASS, but later FAIL. Revision 4 also PASS, but later FAIL. Revision 6 PASS.\n\nConclusion: Revision 2 is not the first passing revision. Revision 6 is the\nPadding:",
+        "attributed": "red: last FAIL 1, first PASS 2.\nblue: last FAIL 0, first PASS 4.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 0, first PASS 4.\nblue: last FAIL 1, first PASS 2.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "chunked/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 3679,
+          "finish": "stop",
+          "prompt_sha256": "e70333de686eb125450f02e890928877dc0679e060310e227303d179e7486759",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 253,
+          "output_tokens": 20,
+          "duration_ms": 4221,
+          "finish": "stop",
+          "prompt_sha256": "dacce1b77c5bdd71baabdd760c223ad09d51417b92ce647265294ebcd55fa356",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 4, \"first_pass\": 5}",
+          "input_tokens": 253,
+          "output_tokens": 19,
+          "duration_ms": 3123,
+          "finish": "stop",
+          "prompt_sha256": "2c61203260cf5ff7d8bdb1683a5ef2fa9553c2d7e04247b9f05174fee79c1552",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 5,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 4, \"first_pass\": 8}",
+          "input_tokens": 253,
+          "output_tokens": 19,
+          "duration_ms": 2512,
+          "finish": "stop",
+          "prompt_sha256": "f89c10ef146fbd22f5263c83b863451d07f855a64c2ec9c6e3fccde1c021387f",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                5,
+                true
+              ]
+            ],
+            "nomination": 5,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 12}",
+          "input_tokens": 162,
+          "output_tokens": 21,
+          "duration_ms": 2721,
+          "finish": "stop",
+          "prompt_sha256": "11169af8a354118323822ea066965b97648378156ede51c7238d4028dbbcb663",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                true
+              ],
+              [
+                8,
+                true
+              ]
+            ],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 8}",
+        "input_tokens": 192,
+        "output_tokens": 9,
+        "duration_ms": 1266,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: Chunked Regression**\n\nObserved FAIL->PASS transition (0-12). Known FAIL (0), PASS (12).\n\nExperiments: Checked revisions 0, 2, 4, 5, 7, 8, 10, 12.\n\nResults: 2, 4, 5, 7 FAIL; 8, 10, 12 PASS.\n\nConclusion: Revision",
+        "input_tokens": 202,
+        "output_tokens": 96,
+        "duration_ms": 5743,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "blue checked revision 2: FAIL\nblue checked revision 4: FAIL\nred checked revision 4: FAIL\nblue checked revision 10: PASS\nred checked revision 12: PASS\nblue checked revision 12: PASS\nred checked revision 2: FAIL\nblue checked revision 8: PASS\nred checked revision 7: PASS\nblue checked revision 0: FAIL\nred checked revision 5: PASS\nred checked revision 0: FAIL",
+        "ordinary": "**Debugging Handoff: Chunked Regression**\n\nObserved FAIL->PASS transition (0-12). Known FAIL (0), PASS (12).\n\nExperiments: Checked revisions 0, 2, 4, 5, 7, 8, 10, 12.\n\nResults: 2, 4, 5, 7 FAIL; 8, 10, 12 PASS.\n\n\nPadding: .",
+        "attributed": "red: last FAIL 4, first PASS 5.\nblue: last FAIL 4, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 4, first PASS 8.\nblue: last FAIL 4, first PASS 5.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "chunked/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 2643,
+          "finish": "stop",
+          "prompt_sha256": "24a914e4bdf48334a950d014626c81a011a55c6e88486febc044ab575a8924a0",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 6}",
+          "input_tokens": 253,
+          "output_tokens": 20,
+          "duration_ms": 1863,
+          "finish": "stop",
+          "prompt_sha256": "c022efb4bec63deceb39e9df2ef41a62c36acffa796853dfe6f9a45ea70dff77",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                3,
+                false
+              ],
+              [
+                4,
+                false
+              ]
+            ],
+            "nomination": 5,
+            "correct": true,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 4, \"first_pass\": 8}",
+          "input_tokens": 253,
+          "output_tokens": 19,
+          "duration_ms": 3104,
+          "finish": "stop",
+          "prompt_sha256": "1890ff846e45a59f1ad70c10298b73ca1e8f0bec7195f8e5975958f2a28b3ee1",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                true
+              ],
+              [
+                5,
+                true
+              ]
+            ],
+            "nomination": 5,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 6}",
+          "input_tokens": 253,
+          "output_tokens": 19,
+          "duration_ms": 2775,
+          "finish": "stop",
+          "prompt_sha256": "f0bd9df90c163d0cb96c8e883b759fc8db789d9f691f309bdd41373f3d5d31b4",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 6,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 12}",
+          "input_tokens": 162,
+          "output_tokens": 21,
+          "duration_ms": 2468,
+          "finish": "stop",
+          "prompt_sha256": "78ac42560cd5f22a7d0d6d0dca031e211590a9a5fa7ae1f818324c05d48aab9b",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                8,
+                true
+              ],
+              [
+                6,
+                true
+              ]
+            ],
+            "nomination": 6,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 6}",
+        "input_tokens": 192,
+        "output_tokens": 9,
+        "duration_ms": 2057,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: Chunked Regression**\n\nObserved FAIL->PASS transition (0-12 revisions). Rev 0: FAIL, Rev 12: PASS.  Checked revisions 2, 3, 4, 5, 6, 8, 10. Rev 6 was the first PASS.  Confirming Rev 6 is indeed the first passing revision. Further investigation needed to understand the root cause.\n",
+        "input_tokens": 202,
+        "output_tokens": 94,
+        "duration_ms": 4897,
+        "finish": "stop"
+      },
+      "notes": {
+        "full": "blue checked revision 0: FAIL\nred checked revision 8: PASS\nred checked revision 2: FAIL\nblue checked revision 8: PASS\nred checked revision 12: PASS\nblue checked revision 3: FAIL\nblue checked revision 5: FAIL\nred checked revision 10: PASS\nblue checked revision 12: PASS\nred checked revision 0: FAIL\nblue checked revision 6: PASS\nred checked revision 4: FAIL",
+        "ordinary": "**Debugging Handoff: Chunked Regression**\n\nObserved FAIL->PASS transition (0-12 revisions). Rev 0: FAIL, Rev 12: PASS.  Checked revisions 2, 3, 4, 5, 6, 8, 10. Rev 6 was the first PASS.  Confirming Rev 6 is indeed the first passing revision. Further investigation needed to understand the root cause.\nPadding: .",
+        "attributed": "red: last FAIL 4, first PASS 8.\nblue: last FAIL 5, first PASS 6.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 5, first PASS 6.\nblue: last FAIL 4, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "value_chain/confirm": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 6, \"first_pass\": 10}",
+          "input_tokens": 260,
+          "output_tokens": 21,
+          "duration_ms": 1750,
+          "finish": "stop",
+          "prompt_sha256": "3be1da8bf803561237672f21378102d7507e69c1718cbe3fb7fc45de5939942e",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                8,
+                false
+              ],
+              [
+                9,
+                false
+              ]
+            ],
+            "nomination": 10,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 255,
+          "output_tokens": 21,
+          "duration_ms": 2865,
+          "finish": "stop",
+          "prompt_sha256": "b76eefb66ed28e24ccdeea14fd0f1e9ac6022de8c60694fc59b0ff9e3f32bb1c",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                false
+              ]
+            ],
+            "nomination": 11,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 9, \"first_pass\": 10}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 2247,
+          "finish": "stop",
+          "prompt_sha256": "1362a8a40212299536f82c5e03657f07a0b3385a9ac113d1b51c92767920b288",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 10,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 9, \"first_pass\": 10}",
+          "input_tokens": 255,
+          "output_tokens": 20,
+          "duration_ms": 2987,
+          "finish": "stop",
+          "prompt_sha256": "923d3be234fcf63af6d745757573e87b202a178aeb23a27616163251543a3bac",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 10,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 164,
+          "output_tokens": 20,
+          "duration_ms": 1796,
+          "finish": "stop",
+          "prompt_sha256": "1c5093302ec9e3dcbb5e5d183229d2263cd30e6daeae13f3ec40d3496ed4aa54",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                false
+              ]
+            ],
+            "nomination": 11,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 10}",
+        "input_tokens": 196,
+        "output_tokens": 10,
+        "duration_ms": 4710,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: Value Chain Regression**\n\nObserved a FAIL->PASS transition in value_chain tests (revisions 0-12). Confirmed FAIL at 0, PASS at 12. Investigated revisions 4, 6, 7, 9, 10. Revision 10 is the first PASS. Further investigation needed to pinpoint the root cause of the change.\n",
+        "input_tokens": 207,
+        "output_tokens": 87,
+        "duration_ms": 4975,
+        "finish": "stop"
+      },
+      "notes": {
+        "full": "red checked revision 12: PASS\nblue checked revision 10: PASS\nred checked revision 0: FAIL\nred checked revision 6: FAIL\nred checked revision 10: PASS\nblue checked revision 9: FAIL\nred checked revision 4: FAIL\nblue checked revision 12: PASS\nred checked revision 12: PASS\nblue checked revision 7: FAIL\nblue checked revision 0: FAIL\nblue checked revision 12: PASS",
+        "ordinary": "**Debugging Handoff: Value Chain Regression**\n\nObserved a FAIL->PASS transition in value_chain tests (revisions 0-12). Confirmed FAIL at 0, PASS at 12. Investigated revisions 4, 6, 7, 9, 10. Revision 10 is the first PASS. Further investigation needed to pinpoint the root cause of the change.\nPadding: . . . . . . . .",
+        "attributed": "red: last FAIL 6, first PASS 10.\nblue: last FAIL 9, first PASS 10.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 9, first PASS 10.\nblue: last FAIL 6, first PASS 10.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    },
+    "value_chain/correct": {
+      "trials": {
+        "full": {
+          "text": "{\"last_failure\": 5, \"first_pass\": 12}",
+          "input_tokens": 259,
+          "output_tokens": 21,
+          "duration_ms": 2261,
+          "finish": "stop",
+          "prompt_sha256": "3162b3bd114dbfe3b2ced75fde1cf58afb2a82cb2b57c6dd8beb1fb776636a36",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                8,
+                false
+              ],
+              [
+                10,
+                true
+              ]
+            ],
+            "nomination": 9,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "ordinary": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 12}",
+          "input_tokens": 255,
+          "output_tokens": 21,
+          "duration_ms": 2356,
+          "finish": "stop",
+          "prompt_sha256": "d66b0635c24e72f0c9f957ab449416f864b73052d1e9a11f3d2a87f12474a282",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                9,
+                false
+              ],
+              [
+                10,
+                true
+              ]
+            ],
+            "nomination": 10,
+            "correct": true,
+            "certified": true
+          }
+        },
+        "attributed": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 2392,
+          "finish": "stop",
+          "prompt_sha256": "bacc3b7ba15df399af7347d823c90e1b8c8973a9f9f45b8c5b77e23e022b5fda",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "swapped": {
+          "text": "{\"last_failure\": 7, \"first_pass\": 8}",
+          "input_tokens": 255,
+          "output_tokens": 19,
+          "duration_ms": 4030,
+          "finish": "stop",
+          "prompt_sha256": "3c24e6731cfa24bc65c8d3ecaa25d9140165e8f17923c630b5d77a1763358392",
+          "score": {
+            "valid": true,
+            "checks": [],
+            "nomination": 8,
+            "correct": false,
+            "certified": false
+          }
+        },
+        "draft": {
+          "text": "{\"last_failure\": 0, \"first_pass\": 12}",
+          "input_tokens": 164,
+          "output_tokens": 20,
+          "duration_ms": 1258,
+          "finish": "stop",
+          "prompt_sha256": "1c5093302ec9e3dcbb5e5d183229d2263cd30e6daeae13f3ec40d3496ed4aa54",
+          "score": {
+            "valid": true,
+            "checks": [
+              [
+                6,
+                false
+              ],
+              [
+                9,
+                false
+              ]
+            ],
+            "nomination": 11,
+            "correct": false,
+            "certified": false
+          }
+        }
+      },
+      "first": {
+        "text": "{\"first_pass\": 10}",
+        "input_tokens": 195,
+        "output_tokens": 10,
+        "duration_ms": 2138,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff: value_chain Regression**\n\nObserved FAIL->PASS transition in revisions 0-12. Known FAIL at 0, PASS at 12.  Checked revisions 5, 7, 8, 10. 8 & 10 are PASS, 5 & 7 are FAIL.  Blue checks confirm 12 passes. **Current Conclusion: Revision 10 is the first passing revision.** Further investigation",
+        "input_tokens": 206,
+        "output_tokens": 96,
+        "duration_ms": 5744,
+        "finish": "length"
+      },
+      "notes": {
+        "full": "red checked revision 10: PASS\nred checked revision 8: PASS\nred checked revision 5: FAIL\nblue checked revision 10: PASS\nred checked revision 0: FAIL\nblue checked revision 6: FAIL\nred checked revision 12: PASS\nblue checked revision 4: FAIL\nblue checked revision 12: PASS\nred checked revision 7: FAIL\nblue checked revision 0: FAIL\nblue checked revision 12: PASS",
+        "ordinary": "**Debugging Handoff: value_chain Regression**\n\nObserved FAIL->PASS transition in revisions 0-12. Known FAIL at 0, PASS at 12.  Checked revisions 5, 7, 8, 10. 8 & 10 are PASS, 5 & 7 are FAIL.  Blue checks confirm 12 passes. **Current Conclusion: Revision 10 is the first passing revision\nPadding:",
+        "attributed": "red: last FAIL 7, first PASS 8.\nblue: last FAIL 6, first PASS 10.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "swapped": "red: last FAIL 6, first PASS 10.\nblue: last FAIL 7, first PASS 8.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "draft": "No retained test log."
+      }
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3"
+}
