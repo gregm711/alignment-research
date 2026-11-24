@@ -1,0 +1,178 @@
+[
+  {
+    "instance": "matplotlib__matplotlib-13989",
+    "api_calls": 29,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-13989/matplotlib__matplotlib-13989.traj.json",
+    "sha256": "4fda722ff912520281ef9b4008f82770e6b149a63e669286553226fd3f62f10b",
+    "messages": 60,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "matplotlib__matplotlib-14623",
+    "api_calls": 52,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-14623/matplotlib__matplotlib-14623.traj.json",
+    "sha256": "a71479b79e0d58793010923e3e1e9e204cb732f53244521999a7b0e43d49bac1",
+    "messages": 106,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "matplotlib__matplotlib-20488",
+    "api_calls": 92,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-20488/matplotlib__matplotlib-20488.traj.json",
+    "sha256": "dd752644fdf3b0aaeaad1129d4cec92bc02ec6fbd64cfbb93e03f7215ca309fa",
+    "messages": 186,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "matplotlib__matplotlib-20826",
+    "api_calls": 59,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-20826/matplotlib__matplotlib-20826.traj.json",
+    "sha256": "1ba1853e9f37728bf53994d146660678f3ade76c885b54f89153c2110eabde3f",
+    "messages": 120,
+    "eligible": true,
+    "command": "python reproduce_issue.py",
+    "broken_observation": 15,
+    "verified_observation": 111,
+    "production_edits": [
+      60,
+      96,
+      98
+    ],
+    "first_run": "original checkout",
+    "criterion": "After clear(), interior X/Y tick-label visibility should match the shared-axis layout. Axis 0 incorrectly retained X labels in the intermediate run at action 82."
+  },
+  {
+    "instance": "matplotlib__matplotlib-20859",
+    "api_calls": 22,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-20859/matplotlib__matplotlib-20859.traj.json",
+    "sha256": "f406088a03ed223e61b5cbd3f5c1b694f61013de5f4ee650f0a7788c64f1c809",
+    "messages": 46,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "matplotlib__matplotlib-22719",
+    "api_calls": 21,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-22719/matplotlib__matplotlib-22719.traj.json",
+    "sha256": "2b84cfb2813dc1e059673d2240d7fdf2441595e8f259812d467876c079d0c4cf",
+    "messages": 44,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "matplotlib__matplotlib-22865",
+    "api_calls": 40,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-22865/matplotlib__matplotlib-22865.traj.json",
+    "sha256": "5d5a57e856240e67b516c15a24ce81e7883c88e6adacb9e902bd923c99e7fbf8",
+    "messages": 82,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "matplotlib__matplotlib-23314",
+    "api_calls": 31,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/matplotlib__matplotlib-23314/matplotlib__matplotlib-23314.traj.json",
+    "sha256": "633c04885657b3f00009c59240eb8dc485c33dc60d2fa359703fd7d5f68fe5a0",
+    "messages": 64,
+    "eligible": false,
+    "reason": "The repeated probe reports the same visibility flag and saves images. Its stdout cannot discriminate the rendered behavior."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-9288",
+    "api_calls": 28,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-9288/scikit-learn__scikit-learn-9288.traj.json",
+    "sha256": "afc0e187d0e51d271da69ab8cc978bd02a2d6ecd62a8f27652c360d457d7a6d0",
+    "messages": 58,
+    "eligible": true,
+    "command": "python reproduce_issue.py",
+    "broken_observation": 23,
+    "verified_observation": 43,
+    "production_edits": [
+      36,
+      38
+    ],
+    "first_run": "original checkout",
+    "criterion": "KMeans inertia should agree for n_jobs 1 through 4 with this fixed random state."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-10297",
+    "api_calls": 54,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-10297/scikit-learn__scikit-learn-10297.traj.json",
+    "sha256": "db72a012b463a9bc16cf9b3010f9a0a5e34850caaeca821645b90928d5a72870",
+    "messages": 110,
+    "eligible": false,
+    "reason": "The final successful check rewrote test_ridge_issue.py at action 90 to supply valid classification labels."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-11310",
+    "api_calls": 33,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-11310/scikit-learn__scikit-learn-11310.traj.json",
+    "sha256": "a3b0df619cb46068fe07a7f556933825ed488d69009f953c544926892cbc287e",
+    "messages": 68,
+    "eligible": true,
+    "command": "python test_refit_time.py",
+    "broken_observation": 21,
+    "verified_observation": 33,
+    "production_edits": [
+      24,
+      30
+    ],
+    "first_run": "original checkout",
+    "criterion": "The measured refit time must be exposed after fitting. Absolute timing naturally varies."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-11578",
+    "api_calls": 29,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-11578/scikit-learn__scikit-learn-11578.traj.json",
+    "sha256": "b0041af2f3ae54a8a9581791168f17efb55223ca6526e94d3811da54d823718d",
+    "messages": 60,
+    "eligible": false,
+    "reason": "The repeated reproduction already matches the multinomial score on the initial run and has identical numerical results after the edits."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-12585",
+    "api_calls": 23,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-12585/scikit-learn__scikit-learn-12585.traj.json",
+    "sha256": "29a005d57aee15600cc371a13773e39e81188c27bcc13904166c26f8d6bbaf0a",
+    "messages": 48,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-12973",
+    "api_calls": 32,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-12973/scikit-learn__scikit-learn-12973.traj.json",
+    "sha256": "ae759ed82d709bfd149ea9f234b32f0a17c2e783c961c9781ecf726b577e1c2c",
+    "messages": 66,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-13124",
+    "api_calls": 34,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-13124/scikit-learn__scikit-learn-13124.traj.json",
+    "sha256": "21fcb9887e7ca0b284f5b15db3180c297b12cf20cce5fa01f9b333e7996b586c",
+    "messages": 70,
+    "eligible": true,
+    "command": "python reproduce_issue.py",
+    "broken_observation": 19,
+    "verified_observation": 39,
+    "production_edits": [
+      36
+    ],
+    "first_run": "original checkout",
+    "criterion": "Changing the seed should change fold membership, beyond permuting the order of identical pairs. Compare the sets of test pairs."
+  },
+  {
+    "instance": "scikit-learn__scikit-learn-13135",
+    "api_calls": 32,
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/scikit-learn__scikit-learn-13135/scikit-learn__scikit-learn-13135.traj.json",
+    "sha256": "135958e17e939c9e1705d561ee75c349e4c3f9ba46ff5a683e6b67ac7bc2acea",
+    "messages": 66,
+    "eligible": false,
+    "reason": "No standalone Python script was run at least twice with exit status zero."
+  }
+]
