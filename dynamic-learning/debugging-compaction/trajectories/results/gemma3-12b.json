@@ -1,0 +1,221 @@
+{
+  "trials": {
+    "sympy__sympy-12419/full/0": {
+      "text": "{\n  \"choice\": \"A\"\n}",
+      "input_tokens": 13581,
+      "output_tokens": 12,
+      "duration_ms": 67370,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "3c167369ffa9cd5535e7b22c8fd97091709009356e21d52bcea2b823228506bb"
+    },
+    "sympy__sympy-12419/full/1": {
+      "text": "{\n  \"choice\": \"B\"\n}",
+      "input_tokens": 13581,
+      "output_tokens": 12,
+      "duration_ms": 6028,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "35eefb6873a4429687faf978d7a93c5c64e72e8d9dd8ef8cfd2ae0268c82ff08"
+    },
+    "sympy__sympy-12419/ordinary/0": {
+      "text": "{\n  \"choice\": \"A\"\n}",
+      "input_tokens": 846,
+      "output_tokens": 12,
+      "duration_ms": 7018,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "97d99019bbbd4f52822693714d3506c46413792baf65810ea9479f0a2af7b511"
+    },
+    "sympy__sympy-12419/ordinary/1": {
+      "text": "{\n  \"choice\": \"B\"\n}",
+      "input_tokens": 846,
+      "output_tokens": 12,
+      "duration_ms": 3914,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "53702b7a7a5f58bef21b63a292b02db093488117f07d0a54669f91d56e3aece6"
+    },
+    "sympy__sympy-12419/evidence/0": {
+      "text": "{\n    \"choice\": \"A\"\n}",
+      "input_tokens": 845,
+      "output_tokens": 12,
+      "duration_ms": 3753,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "d816e8eefceb2f5fa25f960b4ae48c9eea4c9acd0bb3be112d3a7964148c01d5"
+    },
+    "sympy__sympy-12419/evidence/1": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 845,
+      "output_tokens": 11,
+      "duration_ms": 4819,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "d270c8e2612dd06fc8089d3a9d81f7a98491f411a9fe88a828f1834a31f48f96"
+    },
+    "sympy__sympy-12419/none/0": {
+      "text": "{\n    \"choice\": \"A\"\n}",
+      "input_tokens": 787,
+      "output_tokens": 12,
+      "duration_ms": 4588,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "1238b729791de28ba0ea544430e1237da7c20dfef48c2df134632e0380558d00"
+    },
+    "sympy__sympy-12419/none/1": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 787,
+      "output_tokens": 11,
+      "duration_ms": 3786,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "6f3185834a9333bf1f0471c93dbfb2ea2fdf1cb9e98931529c62cb5b53adc9ad"
+    },
+    "sympy__sympy-13615/full/0": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 8364,
+      "output_tokens": 11,
+      "duration_ms": 36516,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "aba1a5f9ed6858b4a9cb1ef48d45e2191cb920345fd01faec7cccbce37dec18c"
+    },
+    "sympy__sympy-13615/full/1": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 8364,
+      "output_tokens": 11,
+      "duration_ms": 5152,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "b2025b0f8b7636e8e72ea37f648620635c2b5d59d6591a57b3fde3dd447e6843"
+    },
+    "sympy__sympy-13615/ordinary/0": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 479,
+      "output_tokens": 11,
+      "duration_ms": 4524,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "aa327a25852527a54155b3596974204f26438e255067923a95c84b180f9defc7"
+    },
+    "sympy__sympy-13615/ordinary/1": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 479,
+      "output_tokens": 11,
+      "duration_ms": 3747,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "34105d0146c3398cb858fa6e6253757fb300b9f4ec88d83137215b36f15451ad"
+    },
+    "sympy__sympy-13615/evidence/0": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 480,
+      "output_tokens": 11,
+      "duration_ms": 3616,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "e1b9ac6acf98151642d677a5737b22b6780915f7ce276e477e56952f04aa4ea0"
+    },
+    "sympy__sympy-13615/evidence/1": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 480,
+      "output_tokens": 11,
+      "duration_ms": 2515,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "fbc99e747759b9c2c7006a7a363f75b001939de1514b436810cd79cce439d11c"
+    },
+    "sympy__sympy-13615/none/0": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 463,
+      "output_tokens": 11,
+      "duration_ms": 2473,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "a32fc2564aec3be49df647452626be2074bde71a5d44e060266a831a77a995ab"
+    },
+    "sympy__sympy-13615/none/1": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 463,
+      "output_tokens": 11,
+      "duration_ms": 2395,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "0c9ef7f00488aeecae7b4a54cbbefc94efc9f6520fbe24b58e63fc93468612b5"
+    },
+    "sympy__sympy-13757/full/0": {
+      "text": "{\n    \"choice\": \"A\"\n}",
+      "input_tokens": 7933,
+      "output_tokens": 12,
+      "duration_ms": 33942,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "ffc45561d17c6f731f48b41d04845bf7b2c27ae22e2e76e5d1c3e25cf2637a16"
+    },
+    "sympy__sympy-13757/full/1": {
+      "text": "{\n    \"choice\": \"B\"\n}",
+      "input_tokens": 7933,
+      "output_tokens": 12,
+      "duration_ms": 44760,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "a4311232098f821945a1eafddc97c599e39ad7b7a32aff7631e008a551543a82"
+    },
+    "sympy__sympy-13757/ordinary/0": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 686,
+      "output_tokens": 11,
+      "duration_ms": 12893,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "ac9492d216bb9662b39d455ae866414ffe72cdc2ff0b7350ac68a9a7ebcff696"
+    },
+    "sympy__sympy-13757/ordinary/1": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 686,
+      "output_tokens": 11,
+      "duration_ms": 3460,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "621199df9be9039650d1f17b322ca6ea90f1c26b4f80a26fa6e5974af6568399"
+    },
+    "sympy__sympy-13757/evidence/0": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 688,
+      "output_tokens": 11,
+      "duration_ms": 2781,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "433aab6a2f46a68605116e4857a4cf4db3f92a95533f921839ed5fecb4ba5fb3"
+    },
+    "sympy__sympy-13757/evidence/1": {
+      "text": "{\n\"choice\": \"A\"\n}",
+      "input_tokens": 688,
+      "output_tokens": 11,
+      "duration_ms": 2895,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "640fe99aa6948b1559b1fdea5be765bb1b49bb41d3ec465e97f9f9f6d54570cb"
+    },
+    "sympy__sympy-13757/none/0": {
+      "text": "{\n    \"choice\": \"A\"\n}",
+      "input_tokens": 632,
+      "output_tokens": 12,
+      "duration_ms": 2704,
+      "finish": "stop",
+      "expected": "A",
+      "prompt_sha256": "656f882f4d44b302f8e7da7da334114a445fd5c41e3425bfc671212a502640dd"
+    },
+    "sympy__sympy-13757/none/1": {
+      "text": "{\n\"choice\": \"B\"\n}",
+      "input_tokens": 632,
+      "output_tokens": 11,
+      "duration_ms": 2600,
+      "finish": "stop",
+      "expected": "B",
+      "prompt_sha256": "5e5f1cfd08f64a5c0dee0e671598ff10f94245cad8c74d441cfad44e140871e4"
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3"
+}

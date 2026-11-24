@@ -24,6 +24,15 @@ Qwen chose the verified intervention in both orders on all three cases with the 
 
 Before collecting evidence-masked decisions, register a check on how much the alternatives themselves reveal. Reuse the identical alternatives, option orders, system prompt and context setting. In one arm, withhold the investigation and fresh output but show the original issue. In the other arm, also withhold the original issue. Predict that the issue-only arm solves at least two of the three in both orders for at least one reader. Report each case, including successes on the alternatives alone. A correct answer with both issue and output available cannot establish that the reader used the output if it succeeds without either. These supplementary controls were designed after observing Qwen's main trials.
 
+| Handoff before the fresh observation | Qwen 7B, both orders | Gemma 12B, both orders |
+|---|---:|---:|
+| Full history | 2/3 | 2/3 |
+| Ordinary summary | 3/3 | 3/3 |
+| Summary prompted to retain evidence | 3/3 | 1/3 |
+| No history | 3/3 | 3/3 |
+
+Gemma received the same Qwen-written notes. In the two cases whose evidence summaries prematurely reported a fix, Gemma selected the verified direction in only one option order. The ordinary handoff and no-history arms succeeded in both orders. For these trials the evidence arm used −1 to +2 native input tokens relative to ordinary. Every full reader prompt fit its actual context window as verified against the corresponding native tokenizer and the server's input counts. In the masked control Gemma also solved both of those cases from the answer choices alone. Success on this recognition task therefore provides weak evidence of actual debugging. Reproduce the masked controls using `fork.py --mask-evidence`. [Gemma main choices](results/gemma3-12b.json) · [Gemma masked choices](results/masked-gemma3-12b.json)
+
 ## Paired verification on actual tool output
 
 In all three sessions, the same command `python reproduce_issue.py` ran before and after a corrective edit. All six calls exited successfully. On the three earlier calls the printed behavior still violated the issue, and on the three later calls it met the targeted expectation. This supplies an observable change in the correct decision while holding the issue, command, exit status and question constant. The verifier must decide whether to reopen or close the issue for the behavior this command demonstrates. Full project correctness is outside the scope of that decision.
