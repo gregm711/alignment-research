@@ -20,3 +20,16 @@ Begin with the parent revision, the affected function, and a short researcher-wr
 For each incident, execute the complete affected upstream test class plus independent withheld variants using a disposable local Python container. The named upstream regression is visible at the revision step. Report passes on the rest of the class and withheld examples too. Validate that the original function fails and the upstream function passes before model trials. Run local Qwen2.5-Coder 7B first. Predict at least three of eight initial candidates will fail despite being valid replacements, and fresh report plus current source alone will recover at least two. Compare all arms on all cases including cases already solved. A penalty specific to compression requires full-history successes lost under ordinary compaction. If the fresh report alone suffices, record that the old history buys little here.
 
 The public report shown to the model is reconstructed. The code and tests are historical. No original human or production-agent conversation is claimed. [Upstream license](LICENSE).
+
+## Reproduction
+
+Use Docker and a local Git clone containing the pinned revisions. The runner reads package source from the parent commit and tests from the fix commit. It replaces only the affected function. For a multi-function upstream fix, the panel tests the function named in the table. Each trial gets a read-only temporary checkout inside a network-disabled container. Raw model-generated Python runs only there. The model receives neither withheld examples nor their pass counts.
+
+```sh
+git clone --filter=blob:none --no-checkout https://github.com/more-itertools/more-itertools.git /tmp/alignment-more-itertools
+docker pull python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89
+python3 panel.py
+python3 run.py --recount
+```
+
+Run these commands from this folder. Set `MORE_ITERTOOLS_REPO` to reuse a different local clone. After the controls pass, launching `python3 run.py` generates or resumes model trials through local Ollama with the same tokenizer as the parent study. The parent/fixed controls independently failed/passed both the affected test class and withheld variants on all eight incidents. The eight classes contain 92 test methods in total. Revisions in the table link to the upstream code and reports.

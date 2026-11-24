@@ -1,0 +1,462 @@
+{
+  "notes": {
+    "observed": "Archived call repair([\"oak\",\"cloak\"])\nalder returned false\nbirch returned true\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both builds.\n- Alder build shows expected behavior, while Birch and current checkout exhibit issues.\n- Probe 4 confirms no patch applied, maintaining alder compatibility regression diagnosis.\n\n**Current Diagnosis:**\n- Alder build behaves as expected, while Birch and current checkout show compatibility issues.\n\n",
+    "swapped": "Archived call repair([\"oak\",\"cloak\"])\nalder returned true\nbirch returned false\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both builds.\n- Alder build shows expected behavior, while Birch and current checkout exhibit issues.\n- Probe 4 confirms no patch applied, maintaining alder compatibility regression diagnosis.\n\n**Current Diagnosis:**\n- Alder build behaves as expected, while Birch and current checkout show compatibility issues.\n\n",
+    "common": "Archived call repair([\"one\",\"one blue\"])\nalder returned true\nbirch returned true\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both builds.\n- Alder build shows expected behavior, while Birch and current checkout exhibit issues.\n- Probe 4 confirms no patch applied, maintaining alder compatibility regression diagnosis.\n\n**Current Diagnosis:**\n- Alder build behaves as expected, while Birch and current checkout show compatibility issues.\n\n",
+    "full": "Compatibility incident: text. Two supported consumer builds have independent archived behavior. A drop-in Python function is being prepared for the build named by the pending route check.\nEngineer: The route dashboard currently points to alder. Treat alder behavior as the working diagnosis while the trace team checks the actual request. Do not combine the two builds.\nWorktree source and function purpose will be available after handoff.\nProbe 1: smoke fixtures were replayed against both archived consumers.\n  repair([\"one\",\"one blue\"]) -> true on both\n  repair([\"fox\",\"red dog\"]) -> false on both\nProbe 2: archive replay from birch:\n  repair([\"oak\",\"OAK!\"]) -> true\n  repair([\"oak\",\"cloak\"]) -> true\nProbe 3: archive replay from alder:\n  repair([\"oak\",\"OAK!\"]) -> true\n  repair([\"oak\",\"cloak\"]) -> false\nProbe 4: current checkout on the same capture inputs:\n  repair([\"oak\",\"OAK!\"]) -> false\n  repair([\"oak\",\"cloak\"]) -> false\nEngineer: Source and smoke cases above are from the same checkout. No patch applied. Current diagnosis remains an alder compatibility regression. Await request routing trace.",
+    "ordinary": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both builds.\n- Alder build shows expected behavior, while Birch and current checkout exhibit issues.\n- Probe 4 confirms no patch applied, maintaining alder compatibility regression diagnosis.\n\n**Current Diagnosis:**\n- Alder build behaves as expected, while Birch and current checkout show compatibility issues.\n\n**Next Action:**\n- Await request routing trace to confirm actual request behavior and pinpoint root cause.",
+    "evidence": "**Handoff:**\n\n**Summary:**\nCompatibility incident between two builds (alder and birch). Pending route check targets alder. Current diagnosis: alder compatibility regression.\n\n**Evidence:**\n- **Probe 1 (Smoke Fixtures):**\n  - `repair([\"one\",\"one blue\"]) -> true`\n  - `repair([\"fox\",\"red dog\"]) -> false`\n  - Both builds exhibit the same behavior.\n\n- **Probe 2 (Archive Replay - Birch",
+    "none": "(No debugging history retained.)"
+  },
+  "trials": {
+    "alder-observed": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 227,
+      "output_tokens": 25,
+      "duration_ms": 1902,
+      "finish": "stop",
+      "prompt_sha256": "ae2bae159fd5833b7466cbb9fa4e8061e132a1c315254d9f875f36c782e434cf",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-swapped": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 227,
+      "output_tokens": 25,
+      "duration_ms": 1872,
+      "finish": "stop",
+      "prompt_sha256": "ae1f7ddb15e716c701b5a91373dab41f03457d84812ffacf8c4771c80c6471c7",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-common": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 228,
+      "output_tokens": 25,
+      "duration_ms": 1876,
+      "finish": "stop",
+      "prompt_sha256": "6c976be9f2e570d32bc64598c32e1c7c3edf9d1e72ce4fc1b5ee821174a0a371",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-full": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 386,
+      "output_tokens": 25,
+      "duration_ms": 2471,
+      "finish": "stop",
+      "prompt_sha256": "9adf9eb601914ea909e995887dcb0c5dc3c44bb5d4e19cc954f938185bf4f6c8",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-ordinary": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 229,
+      "output_tokens": 25,
+      "duration_ms": 2111,
+      "finish": "stop",
+      "prompt_sha256": "88e81d2fa2debb3751cf3967cf630cd36259952ca2ab3f7d71b3f3f9d686a606",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-evidence": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 233,
+      "output_tokens": 25,
+      "duration_ms": 2108,
+      "finish": "stop",
+      "prompt_sha256": "1bd749593bdfa4a014d06911e2cfc6097e6ddadb014f7c8b3d1a3313fb589d36",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-none": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 139,
+      "output_tokens": 25,
+      "duration_ms": 1669,
+      "finish": "stop",
+      "prompt_sha256": "fabdae36439206a337f290f346fee495488f56bfd2868f21210334b3d0eb4366",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-observed": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 227,
+      "output_tokens": 25,
+      "duration_ms": 1948,
+      "finish": "stop",
+      "prompt_sha256": "8313b53efb586a77ab6c257341e09e8e1474ec630d7bce4962ba477a792167e0",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-swapped": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 227,
+      "output_tokens": 25,
+      "duration_ms": 1980,
+      "finish": "stop",
+      "prompt_sha256": "8deb0e0762e32f00827c32104dd5fcf9ecd9eada8116ab439b3f04f9df4b5b04",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-common": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 228,
+      "output_tokens": 25,
+      "duration_ms": 1896,
+      "finish": "stop",
+      "prompt_sha256": "38f995695b593a6a8f62de7046b2344b5be74339ec46ebe135b4e3313a28f839",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-full": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 386,
+      "output_tokens": 25,
+      "duration_ms": 2526,
+      "finish": "stop",
+      "prompt_sha256": "2ab799ad66c8817a8f68ba077b990ba2f1d41749d2f8173533c2ea1e5a6d3556",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-ordinary": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 229,
+      "output_tokens": 25,
+      "duration_ms": 2072,
+      "finish": "stop",
+      "prompt_sha256": "7f193d9ec6fc861283d063ab2b0eef7da7c097faf55f3e18ec796f2a309cdc12",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-evidence": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 233,
+      "output_tokens": 25,
+      "duration_ms": 2013,
+      "finish": "stop",
+      "prompt_sha256": "c6c573ab8f01b292501be5acf0b06d80e0b17b1d2ba04c474805dd984bef4b3f",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-none": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 139,
+      "output_tokens": 25,
+      "duration_ms": 1664,
+      "finish": "stop",
+      "prompt_sha256": "e931f6f1e6cd4b1eb15a70ce3fe85222bd63e5be44b6b66ed7cf58ca6b803c6a",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      },
+      "opposite_passed": false
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3"
+}

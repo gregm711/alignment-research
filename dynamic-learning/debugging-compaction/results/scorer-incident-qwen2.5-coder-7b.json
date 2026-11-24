@@ -34,6 +34,16 @@
       "prompt_sha256": "0a3b8e6accbc1aa9b95ed0446a605e6ce3649e0f25b2bda6c80f13203ca26972",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['candidates'] if w in ans]\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}",
+        "input_tokens": 947,
+        "output_tokens": 59,
+        "duration_ms": 2792,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "screen-ordinary": {
@@ -45,6 +55,16 @@
       "prompt_sha256": "1aa91ca46fdb607361fde2a1e5b700ec0ee8f80d841b95b911bb88a6b4da5b61",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}",
+        "input_tokens": 739,
+        "output_tokens": 59,
+        "duration_ms": 1578,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "screen-extract": {
@@ -56,6 +76,16 @@
       "prompt_sha256": "45b97cc3e4395ac2a0e98f3a7d4e234bbb9047ae6c2810af92c961ec998c4295",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['candidates'] if w in ans]\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}",
+        "input_tokens": 738,
+        "output_tokens": 59,
+        "duration_ms": 1561,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "screen-none": {
@@ -67,6 +97,16 @@
       "prompt_sha256": "3a9a370dada610a7eb1789d41b1163bbbde42e945e68858f4813eba3001a7462",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\\\\\b{w}\\\\\\\\b\\\", body)) for w in it[\\\"steps\\\"][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\\\\\b{w}\\\\\\\\b\\\", s)\"\n}",
+        "input_tokens": 782,
+        "output_tokens": 63,
+        "duration_ms": 1903,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "screen-retrieve": {
@@ -86,6 +126,16 @@
       "prompt_sha256": "1aa91ca46fdb607361fde2a1e5b700ec0ee8f80d841b95b911bb88a6b4da5b61",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}",
+        "input_tokens": 739,
+        "output_tokens": 59,
+        "duration_ms": 1304,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "hard-full": {
@@ -97,6 +147,16 @@
       "prompt_sha256": "4a01746cc3496f3f79499396b8f79c323d318bc57e256a79bf6a6adb2ce2f3a7",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['steps'][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}",
+        "input_tokens": 951,
+        "output_tokens": 59,
+        "duration_ms": 2591,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "hard-ordinary": {
@@ -108,6 +168,16 @@
       "prompt_sha256": "3dc1be15c6bf19796bffb0978581a1447719f694e845298a905b6bb6da0e6b8f",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}",
+        "input_tokens": 743,
+        "output_tokens": 59,
+        "duration_ms": 1562,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "hard-extract": {
@@ -119,6 +189,16 @@
       "prompt_sha256": "dda2f27b273d033d8af0057ad166702e57ee6cd3f27d2719dc44e842fb1317ea",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['steps'][1:-1]]\",\n  \"has\": \"lambda s, w: any(re.search(rf'\\\\b{w}\\\\b', s) for s in re.split(r'[.!?\\n]+', s))\"\n}",
+        "input_tokens": 742,
+        "output_tokens": 74,
+        "duration_ms": 1879,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "hard-none": {
@@ -130,6 +210,16 @@
       "prompt_sha256": "e0925ab346c90e868beec7755e33e1c60d27e2d241d3c3b42865b9faa96f465a",
       "score": {
         "error": "unsupported expression element Name(id='bool', ctx=Load())"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it[\\\"steps\\\"][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s) is not None\"\n}",
+        "input_tokens": 623,
+        "output_tokens": 65,
+        "duration_ms": 1669,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     },
     "hard-retrieve": {
@@ -149,6 +239,16 @@
       "prompt_sha256": "3dc1be15c6bf19796bffb0978581a1447719f694e845298a905b6bb6da0e6b8f",
       "score": {
         "error": "expected keys seen and/or has"
+      },
+      "retry": {
+        "text": "{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}",
+        "input_tokens": 743,
+        "output_tokens": 59,
+        "duration_ms": 1334,
+        "finish": "stop",
+        "score": {
+          "error": "unsupported expression element Name(id='bool', ctx=Load())"
+        }
       }
     }
   },

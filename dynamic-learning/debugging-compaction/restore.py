@@ -38,16 +38,15 @@ def replace_start(tok, note, record):
     budget = len(ids(note))
     original = ids(note)
     assert len(ids(record)) <= budget
-    for count in range(budget, -1, -1):
-        candidate = record + tok.decode(original[:count], skip_special_tokens=False)
-        if (len(ids(candidate)) == budget and
-                len(ids('handoff:\n'+candidate+'\n\nFresh routing')) ==
-                len(ids('handoff:\n'+note+'\n\nFresh routing'))):
-            return candidate
-    for count in range(budget, 0, -1):
-        candidate = record + tok.decode(original[-count:], skip_special_tokens=False)
-        if len(ids(candidate)) == budget and len(ids('handoff:\n'+candidate+'\n\nFresh routing')) == len(ids('handoff:\n'+note+'\n\nFresh routing')):
-            return candidate
+    def prompt_size(text):
+        return len(ids('handoff:\n'+text+'\n\nFresh routing'))
+
+    for keep_end in (False, True):
+        for count in range(budget, 0, -1):
+            tail = original[-count:] if keep_end else original[:count]
+            candidate = record + tok.decode(tail, skip_special_tokens=False)
+            if len(ids(candidate)) == budget and prompt_size(candidate) == prompt_size(note):
+                return candidate
     raise ValueError('cannot exactly match ordinary handoff length')
 
 
@@ -70,7 +69,9 @@ def main():
         history, expected = materials(case, index)
         assert frozen['history'] == history
         note = frozen['notes']['ordinary']['note']
-        notes = {k: replace_start(tok, note, v) for k,v in observations(history).items()}
+        records = observations(history)
+        notes = {k: replace_start(tok, note, v) for k,v in records.items()}
+        assert notes['observed'][len(records['observed']):] == notes['swapped'][len(records['swapped']):]
         notes.update(full=history, ordinary=note, evidence=frozen['notes']['evidence']['note'],
                      none='(No debugging history retained.)')
         output = destination / (case.name + '.json')

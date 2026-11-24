@@ -47,10 +47,19 @@ def extracted(tok, traces, note):
     raise ValueError('exact handoff match unavailable')
 
 
+def repair_request(note,report,src):
+    return (f'Handoff:\n{note}\nReporter: {report}\nCurrent checkout:\n{src}\n'
+            'Supply the repair as a JSON object mapping assignment names to replacement Python expressions. '
+            'The editable assignments are seen in score_text and has in strict. Preserve the type and meaning of each. '
+            'For has, supply the complete lambda. For seen, supply the complete list comprehension. '
+            'You can repair either or both. Keep other behavior intact. Return only JSON, using proper JSON escaping.')
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--model',default=MODEL)
     parser.add_argument('--recount',action='store_true')
+    parser.add_argument('--retry',action='store_true')
     args=parser.parse_args()
     path=HERE/'results'/('scorer-incident-'+args.model.replace(':','-')+'.json')
     d=json.loads(path.read_text()) if path.exists() else {'revision':OLD,'probes':[],'trials':{}}
@@ -103,11 +112,7 @@ def main():
                     trial['probe']=probe
                     if probe:
                         note+='\nRetrieved '+probe+': '+available[probe]
-                prompt=(f'Handoff:\n{note}\nReporter: {report}\nCurrent checkout:\n{src}\n'
-                        'Supply the repair as a JSON object mapping assignment names to replacement Python expressions. '
-                        'The editable assignments are seen in score_text and has in strict. Preserve the type and meaning of each. '
-                        'For has, supply the complete lambda. For seen, supply the complete list comprehension. '
-                        'You can repair either or both. Keep other behavior intact. Return only JSON, using proper JSON escaping.')
+                prompt=repair_request(note,report,src)
                 trial.update(answer(args.model,SYS,prompt,256))
                 trial['prompt_sha256']=hashlib.sha256(prompt.encode()).hexdigest()
                 trial['score']=score_reply(trial['text'])
@@ -116,6 +121,24 @@ def main():
             else:
                 trial=d['trials'][key]
                 assert trial['score']==score_reply(trial['text'])
+            if args.retry:
+                note=d['notes']['ordinary' if arm=='retrieve' else arm]
+                if arm=='retrieve' and trial['probe']:
+                    note+='\nRetrieved '+trial['probe']+': '+obs[trial['probe']]
+                prompt=repair_request(note,report,src)
+                assert hashlib.sha256(prompt.encode()).hexdigest()==trial['prompt_sha256']
+                if 'retry' not in trial:
+                    assert not args.recount
+                    error=trial['score'].get('error','Edit ran. Review the reported issue once more.')
+                    prompt+=f"\nPrevious edit:\n{trial['text']}\nEdit feedback: {error}. Try once more."
+                    schema={'type':'object','properties':{k:{'type':'string'} for k in ('seen','has')},
+                            'required':['seen','has'],'additionalProperties':False}
+                    retry=answer(args.model,SYS,prompt,256,reply_format=schema)
+                    retry['score']=score_reply(retry['text'])
+                    trial['retry']=retry
+                    save(path,d)
+                assert trial['retry']['score']==score_reply(trial['retry']['text'])
+                print('retry',key,trial['retry']['score'],flush=True)
             print(key,trial['score'],flush=True)
 
 

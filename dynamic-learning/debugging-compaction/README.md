@@ -35,3 +35,25 @@ A second engineer can preserve a small regression test at handoff. Test whether 
 The experimental memory is the frozen exact-length Qwen handoff from the restoration study. Once the route arrives, read its structured observation. In the run arm, execute the starting patch on that input and supply the observed value, expected value, and PASS/FAIL. In the unrun arm, give the same true input and expectation without the execution result. In the common arm, run the archived nondiscriminating input. In the swap arm, run the same discriminating input with the two sources misattributed. Every arm can revise the same initial patch once, even when the check passes. The selected test plus the current patch fit in a single repair prompt. Equalize total solver input tokens per case and route for Qwen using an explicitly labelled inert padding field. No hidden regression results go back to the model.
 
 Predict at least two Qwen reversal fixes with the true executed check that the common check misses and at least one that seeing the same unexecuted expectation misses. Compare changes on already-correct patches too. Count a repair only if all hidden and shared regression examples pass. This exploratory second-turn test is on the same cases that motivated it. It tests feedback after a fixed starting patch; it is not a fresh end-to-end validation of the entire memory policy.
+
+## Reproduction
+
+Run from this directory with Python 3.10+, the Python `tokenizers` package and local Ollama. The first screen used Ollama 0.40.16, Qwen2.5-Coder 7B Instruct Q4_K_M, temperature zero, seed 1103, a 4096-token context and up to 220 generated repair tokens. The second reader used Gemma 3 12B Q4_K_M. Each JSON record identifies the exact model digest or links to a frozen input record. Timings are descriptive. They depend on hardware, model loading, and concurrent activity.
+
+```sh
+curl -fL https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct/resolve/main/tokenizer.json -o /tmp/alignment-qwen25-coder-tokenizer.json
+shasum -a 256 /tmp/alignment-qwen25-coder-tokenizer.json
+python3 screen.py --self-check
+python3 screen.py --recount
+python3 restore.py --recount
+python3 restore.py --model gemma3:12b --recount
+python3 analyse.py
+python3 analyse.py --model gemma3:12b
+python3 scorer_replay.py
+python3 incident.py --retry --recount
+python3 readout.py --recount
+```
+
+Expected tokenizer SHA-256 is `c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539`. The screen and historical scorer checks do not require a model server to rescore stored answers. Recognition scores require an exact choice in both option orders. Patches must pass every test for the target behavior. Model output, generated notes, execution outcomes and prompt token counts are retained. For a fresh generation use a disposable copy of the study with empty result directories, pull the two Ollama models, and run the stages without `--recount`. The historical scorer replay also needs this repository's Git history.
+
+[Eight upstream incidents and validation plan](upstream/README.md).
