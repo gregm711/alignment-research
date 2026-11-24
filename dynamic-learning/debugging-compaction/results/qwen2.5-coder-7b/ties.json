@@ -1,0 +1,251 @@
+{
+  "case": "ties",
+  "history": "Compatibility incident: ties. Two supported consumer builds have independent archived behavior. A drop-in Python function is being prepared for the build named by the pending route check.\nEngineer: The route dashboard currently points to alder. Treat alder behavior as the working diagnosis while the trace team checks the actual request. Do not combine the two builds.\nWorktree source and function purpose will be available after handoff.\nProbe 1: smoke fixtures were replayed against both archived consumers.\n  repair([[\"3\",\"red\"],[\"5\",\"gold\"]]) -> \"red\" on both\n  repair([[\"1\",\"pine\"]]) -> \"pine\" on both\nProbe 2: archive replay from birch:\n  repair([[\"11\",\"east\"],[\"2\",\"north\"],[\"2\",\"west\"]]) -> \"west\"\nProbe 3: archive replay from alder:\n  repair([[\"11\",\"east\"],[\"2\",\"north\"],[\"2\",\"west\"]]) -> \"north\"\nProbe 4: current checkout on the same capture inputs:\n  repair([[\"11\",\"east\"],[\"2\",\"north\"],[\"2\",\"west\"]]) -> \"east\"\nEngineer: Source and smoke cases above are from the same checkout. No patch applied. Current diagnosis remains an alder compatibility regression. Await request routing trace.",
+  "notes": {
+    "ordinary": {
+      "text": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both builds.\n- Archive replay from birch and alder yielded different results.\n- Current checkout on the same inputs produced \"east\".\n\n**Current Diagnosis:**\n- Alder build is behaving as expected.\n- Birch build shows unexpected behavior.\n- Potential compatibility regression in the current build.\n\n**Next Action:**\n- Trace the request route to identify the source of the discrepancy.\n- Await trace results to",
+      "input_tokens": 327,
+      "output_tokens": 96,
+      "duration_ms": 12994,
+      "finish": "length",
+      "retained_tokens": 96,
+      "note": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both builds.\n- Archive replay from birch and alder yielded different results.\n- Current checkout on the same inputs produced \"east\".\n\n**Current Diagnosis:**\n- Alder build is behaving as expected.\n- Birch build shows unexpected behavior.\n- Potential compatibility regression in the current build.\n\n**Next Action:**\n- Trace the request route to identify the source of the discrepancy.\n- Await trace results to"
+    },
+    "evidence": {
+      "text": "**Handoff:**\n\n**Summary:**\nCompatibility incident with ties between two builds (alder and birch). Pending route check for a drop-in Python function. Current diagnosis: alder compatibility regression.\n\n**Evidence:**\n- **Probe 1 (smoke fixtures):** Consistent across both builds (alder and birch).\n- **Probe 2 (archive replay from birch):** Output \"west\".\n- **Probe 3 (archive replay from alder",
+      "input_tokens": 329,
+      "output_tokens": 96,
+      "duration_ms": 2520,
+      "finish": "length",
+      "retained_tokens": 96,
+      "note": "**Handoff:**\n\n**Summary:**\nCompatibility incident with ties between two builds (alder and birch). Pending route check for a drop-in Python function. Current diagnosis: alder compatibility regression.\n\n**Evidence:**\n- **Probe 1 (smoke fixtures):** Consistent across both builds (alder and birch).\n- **Probe 2 (archive replay from birch):** Output \"west\".\n- **Probe 3 (archive replay from alder"
+    }
+  },
+  "trials": {
+    "alder-full": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 381,
+      "output_tokens": 26,
+      "duration_ms": 1315,
+      "finish": "stop",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "e1ca126cc91cc63c5530a4eb59b66dc428dde13b06e9c71787ba246c08b9161c"
+    },
+    "alder-ordinary": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 217,
+      "output_tokens": 26,
+      "duration_ms": 931,
+      "finish": "stop",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "d4d4213e26ad8b9c183369633121606fe72449bff2cf255a78b369404d3ccbd4"
+    },
+    "alder-evidence": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 217,
+      "output_tokens": 26,
+      "duration_ms": 940,
+      "finish": "stop",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "0196d805c49908f9b4486dfbfd9205a6e0d5e0c84cb2615f16d748f90571df6d"
+    },
+    "alder-none": {
+      "text": "def repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]",
+      "input_tokens": 126,
+      "output_tokens": 22,
+      "duration_ms": 800,
+      "finish": "stop",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "fc13923a97d6aeb5b0e837bb1813cdad23400842fee3eb5329a07c499cac3de1"
+    },
+    "birch-full": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 381,
+      "output_tokens": 26,
+      "duration_ms": 835,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "ffbe192be338ad29d02b7c4d2dc4e712245054057ba30ed5f1f204e04f92c9de"
+    },
+    "birch-ordinary": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 217,
+      "output_tokens": 26,
+      "duration_ms": 812,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "8136c7d05f7a83aafb3970ccdc7b33c241bb7e2dd357360e01ba98d6e2946b8a"
+    },
+    "birch-evidence": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 217,
+      "output_tokens": 26,
+      "duration_ms": 793,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "3f11ab717d0a35a5b7c99782c57d3726877d94d5e7a859ce75c01d2b97db777c"
+    },
+    "birch-none": {
+      "text": "def repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]",
+      "input_tokens": 126,
+      "output_tokens": 22,
+      "duration_ms": 683,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      },
+      "prompt_sha256": "b86f2d1b99bc40b8a2d417734e030f61e59c067f404c266d27f2da46229f7b0b"
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}

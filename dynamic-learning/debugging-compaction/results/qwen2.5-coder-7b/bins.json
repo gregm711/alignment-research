@@ -1,0 +1,275 @@
+{
+  "case": "bins",
+  "history": "Compatibility incident: bins. Two supported consumer builds have independent archived behavior. A drop-in Python function is being prepared for the build named by the pending route check.\nEngineer: The route dashboard currently points to alder. Treat alder behavior as the working diagnosis while the trace team checks the actual request. Do not combine the two builds.\nWorktree source and function purpose will be available after handoff.\nProbe 1: smoke fixtures were replayed against both archived consumers.\n  repair([[2,5],3]) -> 1 on both\n  repair([[],2]) -> 0 on both\nProbe 2: archive replay from birch:\n  repair([[3,3,6],3]) -> 2\n  repair([[1,4,4,9],4]) -> 3\nProbe 3: archive replay from alder:\n  repair([[3,3,6],3]) -> 0\n  repair([[1,4,4,9],4]) -> 1\nProbe 4: current checkout on the same capture inputs:\n  repair([[3,3,6],3]) -> 0\n  repair([[1,4,4,9],4]) -> 1\nEngineer: Source and smoke cases above are from the same checkout. No patch applied. Current diagnosis remains an alder compatibility regression. Await request routing trace.",
+  "notes": {
+    "ordinary": {
+      "text": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke fixtures against both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior as working diagnosis.\n- Prepare drop-in Python function for pending route check.",
+      "input_tokens": 348,
+      "output_tokens": 87,
+      "duration_ms": 2793,
+      "finish": "stop",
+      "retained_tokens": 86,
+      "note": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke fixtures against both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior as working diagnosis.\n- Prepare drop-in Python function for pending route check."
+    },
+    "evidence": {
+      "text": "**Handoff:**\n\n**Incident Summary:**\nCompatibility issue between two consumer builds (Alder and Birch) with independent archived behaviors. A drop-in Python function is being prepared for the pending route check.\n\n**Current Diagnosis:**\nAlder compatibility regression. Source and smoke cases from the same checkout with no patch applied.\n\n**Conflicting Evidence:**\n- **Alder (Working Diagnosis):**\n  - `repair([[3,3,6],3]) -> 0",
+      "input_tokens": 350,
+      "output_tokens": 96,
+      "duration_ms": 2325,
+      "finish": "length",
+      "retained_tokens": 96,
+      "note": "**Handoff:**\n\n**Incident Summary:**\nCompatibility issue between two consumer builds (Alder and Birch) with independent archived behaviors. A drop-in Python function is being prepared for the pending route check.\n\n**Current Diagnosis:**\nAlder compatibility regression. Source and smoke cases from the same checkout with no patch applied.\n\n**Conflicting Evidence:**\n- **Alder (Working Diagnosis):**\n  - `repair([[3,3,6],3]) -> 0"
+    }
+  },
+  "trials": {
+    "alder-full": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 413,
+      "output_tokens": 34,
+      "duration_ms": 1796,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "8c27fdd2c25cc18a782cdece0cf2c22784ed2b15114c588100aa882dc0d8b561"
+    },
+    "alder-ordinary": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 217,
+      "output_tokens": 34,
+      "duration_ms": 1178,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "898b7143bb783b61707b6fc79c3cf1779916052167d5be1d8d8f3ecf87b0d93b"
+    },
+    "alder-evidence": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 228,
+      "output_tokens": 34,
+      "duration_ms": 1277,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "84801c226b960a7100b2f45564377165ba8d3a651e285d339666d4aa17badbb7"
+    },
+    "alder-none": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 137,
+      "output_tokens": 29,
+      "duration_ms": 842,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "1ee309d33bcd3d2efcd54fcba7d440f2c238b605a332913e015b3c444bcdb0c3"
+    },
+    "birch-full": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 413,
+      "output_tokens": 34,
+      "duration_ms": 971,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "3f356255b4264ccffd52bf7f2682db61ba4bb69c6ac913b8f0bb9595a84f87fc"
+    },
+    "birch-ordinary": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 217,
+      "output_tokens": 34,
+      "duration_ms": 1019,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "f9fbd8b17a370cbffe1ad5c3339588edcf03e0a5a8621372a95d632200b840bf"
+    },
+    "birch-evidence": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 228,
+      "output_tokens": 34,
+      "duration_ms": 969,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "4530fbaf6122b03c5e0d9bf3a3a3a4eef604442eb8a5e045a188b1ca5beeb57b"
+    },
+    "birch-none": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 137,
+      "output_tokens": 29,
+      "duration_ms": 868,
+      "finish": "stop",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "prompt_sha256": "dc0e71719c491c8fa3abc4d3a22cc2eeae3f7c782c99704155459942ecbc38fd"
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}
