@@ -1,0 +1,81 @@
+[
+  {
+    "instance": "sympy__sympy-11618",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-11618/sympy__sympy-11618.traj.json",
+    "sha256": "f1eea50d268ff72d3f9b3b5987bd55e28ac2d153e1770cc863b46e7d253fa16c",
+    "messages": 44,
+    "eligible": false,
+    "reason": "One production edit corrected point distance; later checks did not prompt a further production change."
+  },
+  {
+    "instance": "sympy__sympy-12096",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-12096/sympy__sympy-12096.traj.json",
+    "sha256": "e539196795de54e2a3587175063665cacf5e9030beade036dbdddabc7e23ffb4",
+    "messages": 54,
+    "eligible": false,
+    "reason": "One production edit handled recursive numerical evaluation; subsequent activity tested it."
+  },
+  {
+    "instance": "sympy__sympy-12419",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-12419/sympy__sympy-12419.traj.json",
+    "sha256": "638e25fad4e41e1d64fed7881bad41fb7bb4f24d392d240002f51e2f8ae86db2",
+    "messages": 140,
+    "eligible": true,
+    "reason": "After identity entries were corrected, a double sum remained unevaluated. The agent changed the summation handling and the same check returned n.",
+    "prior_edit": 96,
+    "probe": 100,
+    "fresh_observation": 101,
+    "later_edit": 126,
+    "verification": 129
+  },
+  {
+    "instance": "sympy__sympy-12481",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-12481/sympy__sympy-12481.traj.json",
+    "sha256": "33c2a62d4572681b67fd87360bfdba77b0bc047d1e60d15a41b716ff1c54e3cc",
+    "messages": 84,
+    "eligible": false,
+    "reason": "Repeated edits repaired the placement of a source edit. No intervening semantic test failure met the registered rule."
+  },
+  {
+    "instance": "sympy__sympy-13372",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-13372/sympy__sympy-13372.traj.json",
+    "sha256": "06297ff9e66a42eb81e7c880338365ad6b112910be9313c9c240127a5053bef8",
+    "messages": 42,
+    "eligible": false,
+    "reason": "Two branches were edited before testing their behavior. No intervening behavioral check refuted the first edit."
+  },
+  {
+    "instance": "sympy__sympy-13615",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-13615/sympy__sympy-13615.traj.json",
+    "sha256": "317ae3bcc0cf1e267cd8e737ba785d977393f3c5a65ce9aa747055edc7cbbf8d",
+    "messages": 84,
+    "eligible": true,
+    "reason": "The candidate dropped the interval exclusion on a symbolic finite set. Subsequent changes preserved the exclusion and removed a known contained number.",
+    "prior_edit": 42,
+    "probe": 46,
+    "fresh_observation": 47,
+    "later_edit": 64,
+    "verification": 69
+  },
+  {
+    "instance": "sympy__sympy-13647",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-13647/sympy__sympy-13647.traj.json",
+    "sha256": "82d37470ee264cad44691dad077f806470caacf344d716d9ad0829e4fbfb0058",
+    "messages": 62,
+    "eligible": false,
+    "reason": "One production edit corrected column placement. A later sparse-matrix check did not lead to another production edit."
+  },
+  {
+    "instance": "sympy__sympy-13757",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514/trajs/sympy__sympy-13757/sympy__sympy-13757.traj.json",
+    "sha256": "d5493504ad5be98e4a04c4bfd82c9d536c0f34eb6b447c2b78837393d66433ab",
+    "messages": 98,
+    "eligible": true,
+    "reason": "Changing reverse multiplication still left a symbolic factor times a polynomial with the wrong result type. The agent then changed operator priority, and the same reproduction returned polynomial objects.",
+    "prior_edit": 42,
+    "probe": 44,
+    "fresh_observation": 45,
+    "later_edit": 76,
+    "verification": 79
+  }
+]

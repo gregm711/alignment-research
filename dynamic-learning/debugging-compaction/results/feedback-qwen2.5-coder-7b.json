@@ -1,0 +1,2475 @@
+{
+  "trials": {
+    "ties/alder/run": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 4380,
+      "finish": "stop",
+      "prompt_sha256": "bcad496c76f4449e14af43cccb86a3689c3110637f815565e86a1ece3862a7de",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/alder/unrun": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 1470,
+      "finish": "stop",
+      "prompt_sha256": "636357429d707120140b2b0554c0bb598fbebf5ebca5dea6c380bc5c3071cb5a",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/alder/common": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 2899,
+      "finish": "stop",
+      "prompt_sha256": "c6c8ee2c5713314509bf37c10741cadeb9cbab34fdda3d6456668e98e4a4b060",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/alder/swap": {
+      "text": "def repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]",
+      "input_tokens": 159,
+      "output_tokens": 22,
+      "duration_ms": 641,
+      "finish": "stop",
+      "prompt_sha256": "49f1a8a109ae4562b8a21015fde297ec54b586c14bbf2258e03460be35fb55c3",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/birch/run": {
+      "text": "def repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]",
+      "input_tokens": 159,
+      "output_tokens": 22,
+      "duration_ms": 4565,
+      "finish": "stop",
+      "prompt_sha256": "0088795c0fb6c6d554030d84c5fb1dc726970d98e0ecf3748504d4aab54d9d0a",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 3998,
+      "finish": "stop",
+      "prompt_sha256": "42def6f5117b99de0c338888edd1f321cd38b47c8c78951d4b69b994dfc901ee",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/birch/common": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 4289,
+      "finish": "stop",
+      "prompt_sha256": "588819c75c756ee258ef42d6c4d795c2fa78ae1086a47cc97c438293e79c6436",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "ties/birch/swap": {
+      "text": "```python\ndef repair(x):\n    return min(x, key=lambda row: int(row[0]))[1]\n```",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 4172,
+      "finish": "stop",
+      "prompt_sha256": "807b6b6368307b0dc249570e998da5390cb3b707ab530f958ebe0c79e6572f01",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "red"
+          },
+          {
+            "value": "pine"
+          },
+          {
+            "value": "cat"
+          },
+          {
+            "value": "two"
+          },
+          {
+            "value": "new"
+          }
+        ]
+      }
+    },
+    "separators/alder/run": {
+      "text": "def repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out",
+      "input_tokens": 178,
+      "output_tokens": 40,
+      "duration_ms": 4762,
+      "finish": "stop",
+      "prompt_sha256": "c86c0ea1814d621a4a141f35ae68c3ff8944f4215d1f9bc5a3fce962847055da",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/alder/unrun": {
+      "text": "```python\ndef repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out\n```",
+      "input_tokens": 178,
+      "output_tokens": 45,
+      "duration_ms": 2735,
+      "finish": "stop",
+      "prompt_sha256": "bd0ac71ddffb039230f89c0c7e618d483753c7aea60b7115c91193c4d172fee4",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/alder/common": {
+      "text": "```python\ndef repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out\n```",
+      "input_tokens": 178,
+      "output_tokens": 45,
+      "duration_ms": 5641,
+      "finish": "stop",
+      "prompt_sha256": "4c28f9c7800259c5f42f3e99966ec5e7967495f7a447c8a06d54d059385a55a5",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/alder/swap": {
+      "text": "def repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out",
+      "input_tokens": 178,
+      "output_tokens": 40,
+      "duration_ms": 4180,
+      "finish": "stop",
+      "prompt_sha256": "d2b8cc2e26d0ac407e2cd8c8150c73a1dfee5b5bb09ec90b9b8126475c242e99",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/birch/run": {
+      "text": "def repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out",
+      "input_tokens": 178,
+      "output_tokens": 40,
+      "duration_ms": 6906,
+      "finish": "stop",
+      "prompt_sha256": "395365861d547ad4bb24fca35c82d9dfe0a44babfab38b85e0a93f7ec72dc4db",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out\n```",
+      "input_tokens": 178,
+      "output_tokens": 45,
+      "duration_ms": 6453,
+      "finish": "stop",
+      "prompt_sha256": "7487ba594cecf582537a6533fa1761d0ace80bc05a23cde5a03bde5a024ec121",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/birch/common": {
+      "text": "```python\ndef repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out\n```",
+      "input_tokens": 178,
+      "output_tokens": 45,
+      "duration_ms": 6512,
+      "finish": "stop",
+      "prompt_sha256": "231d578d81ab464f521be58fac28d3c68883897b29104f4b00dcd093bebb8002",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "separators/birch/swap": {
+      "text": "def repair(x):\n    out = [[]]\n    for v in x:\n        if v == '|':\n            out.append([])\n        else:\n            out[-1].append(v)\n    return out",
+      "input_tokens": 178,
+      "output_tokens": 40,
+      "duration_ms": 6483,
+      "finish": "stop",
+      "prompt_sha256": "1d824606bfcf10450a423010dfdc5446393b4634c3afd3f484e667233f96fde5",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                "aa",
+                "bb"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "k"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "p",
+                "q"
+              ],
+              [
+                "r",
+                "s"
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                "a"
+              ],
+              []
+            ]
+          },
+          {
+            "value": [
+              [],
+              [],
+              [
+                "b"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/alder/run": {
+      "text": "```python\ndef repair(x):\n    return [x[i:i+3] for i in range(0, len(x), 3)]\n```",
+      "input_tokens": 169,
+      "output_tokens": 31,
+      "duration_ms": 2911,
+      "finish": "stop",
+      "prompt_sha256": "064bbcfab4a324440adb485e3b4d2564fa7d0edafb609441f9f69a7667fb8043",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "value": [
+              [
+                2
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                2,
+                4,
+                6
+              ],
+              [
+                8,
+                0
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/alder/unrun": {
+      "text": "```python\ndef repair(x):\n    return [x[i:i+3] for i in range(0, len(x), 3)]\n```",
+      "input_tokens": 169,
+      "output_tokens": 31,
+      "duration_ms": 13931,
+      "finish": "stop",
+      "prompt_sha256": "09e0340d6231fd3abcab3eb0dd2238f1e1438f3e848f21e974e3e1c3fd49b312",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "value": [
+              [
+                2
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                2,
+                4,
+                6
+              ],
+              [
+                8,
+                0
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/alder/common": {
+      "text": "```python\ndef repair(x):\n    return [x[i:i+3] for i in range(0, len(x), 3)]\n```",
+      "input_tokens": 169,
+      "output_tokens": 31,
+      "duration_ms": 6459,
+      "finish": "stop",
+      "prompt_sha256": "a48ba5376a8e27dc358361ef56f23e6b31354d07046e384dd53e763f14bbddb2",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "value": [
+              [
+                2
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                2,
+                4,
+                6
+              ],
+              [
+                8,
+                0
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/alder/swap": {
+      "text": "def repair(x):\n    if len(x) % 3 != 0:\n        raise ValueError(\"Input list length must be a multiple of 3\")\n    return [x[i:i+3] for i in range(0, len(x), 3)]",
+      "input_tokens": 169,
+      "output_tokens": 54,
+      "duration_ms": 16820,
+      "finish": "stop",
+      "prompt_sha256": "1ce41dbe4600a4714834458bc9a3b04abce299c217ea61d961ccdaae6dcea0e7",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "exception": "ValueError"
+          },
+          {
+            "exception": "ValueError"
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/birch/run": {
+      "text": "def repair(x):\n    if len(x) % 3 != 0:\n        raise ValueError(\"Input list length must be a multiple of 3\")\n    return [x[i:i+3] for i in range(0, len(x), 3)]",
+      "input_tokens": 169,
+      "output_tokens": 54,
+      "duration_ms": 15230,
+      "finish": "stop",
+      "prompt_sha256": "f81f3dcdd3a9e70e60f87ea53496833ef5d2485d26283bb2175594d8b163e552",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "exception": "ValueError"
+          },
+          {
+            "exception": "ValueError"
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    if len(x) % 3 != 0:\n        raise ValueError(\"Input list length must be a multiple of 3\")\n    return [x[i:i+3] for i in range(0, len(x), 3)]\n```",
+      "input_tokens": 169,
+      "output_tokens": 58,
+      "duration_ms": 16467,
+      "finish": "stop",
+      "prompt_sha256": "a1d79b2cf872a43b8f666a0098980a69caa5d5b4bddfe4af4e2f1ef4b3273969",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "exception": "ValueError"
+          },
+          {
+            "exception": "ValueError"
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/birch/common": {
+      "text": "```python\ndef repair(x):\n    return [x[i:i+3] for i in range(0, len(x), 3)]\n```",
+      "input_tokens": 169,
+      "output_tokens": 31,
+      "duration_ms": 15334,
+      "finish": "stop",
+      "prompt_sha256": "aebb15bb4da2175544cd330969afcb24cedaef8542ba3a28ffd2d3b523c3c21d",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "value": [
+              [
+                2
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                2,
+                4,
+                6
+              ],
+              [
+                8,
+                0
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "batch/birch/swap": {
+      "text": "```python\ndef repair(x):\n    return [x[i:i+3] for i in range(0, len(x), 3)]\n```",
+      "input_tokens": 169,
+      "output_tokens": 31,
+      "duration_ms": 2033,
+      "finish": "stop",
+      "prompt_sha256": "30ef12c57d2a772834795d8b6718b796367f4bcd9d69a025e56488c0d2dc955e",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              [
+                5,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "value": []
+          },
+          {
+            "value": [
+              [
+                2
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                2,
+                4,
+                6
+              ],
+              [
+                8,
+                0
+              ]
+            ]
+          },
+          {
+            "value": [
+              [
+                8,
+                6,
+                4
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/alder/run": {
+      "text": "def repair(x):\n    return sorted(set(x), key=x.index)",
+      "input_tokens": 142,
+      "output_tokens": 15,
+      "duration_ms": 5531,
+      "finish": "stop",
+      "prompt_sha256": "f99543ea85528b683e4f7f78c3a1f9684260bc75ebb34ce0ddc791ff0beb5675",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "d",
+              "b",
+              "a"
+            ]
+          },
+          {
+            "value": [
+              "q",
+              "b",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "z",
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/alder/unrun": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 142,
+      "output_tokens": 11,
+      "duration_ms": 3172,
+      "finish": "stop",
+      "prompt_sha256": "f0e1934d665ecc7a23523b44df46bc259499aeee31b99c97efc3f97186953700",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/alder/common": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 142,
+      "output_tokens": 11,
+      "duration_ms": 5172,
+      "finish": "stop",
+      "prompt_sha256": "0c93eafe374bee0ce92d95e8415e1f7c6dc25fdf51afaf9e0310ae7ce5d55159",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/alder/swap": {
+      "text": "def repair(x):\n    return sorted(set(x), key=x.index)",
+      "input_tokens": 142,
+      "output_tokens": 15,
+      "duration_ms": 793,
+      "finish": "stop",
+      "prompt_sha256": "1e5c8d81201aef5076dc243e5400da168af8f7273ebd8459dd92e65994f022eb",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "d",
+              "b",
+              "a"
+            ]
+          },
+          {
+            "value": [
+              "q",
+              "b",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "z",
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/birch/run": {
+      "text": "def repair(x):\n    return sorted(set(x), key=x.index)",
+      "input_tokens": 142,
+      "output_tokens": 15,
+      "duration_ms": 4977,
+      "finish": "stop",
+      "prompt_sha256": "d905a7302c97137859a3907f62786f7d3fd7bef6c5a645007d84c8dd0a8c1dd1",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "d",
+              "b",
+              "a"
+            ]
+          },
+          {
+            "value": [
+              "q",
+              "b",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "z",
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/birch/unrun": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 142,
+      "output_tokens": 11,
+      "duration_ms": 5153,
+      "finish": "stop",
+      "prompt_sha256": "2d40aa0275a50416a5e238d92ec72b150556d7edc8e0cef95fff144b675c8891",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/birch/common": {
+      "text": "```python\ndef repair(x):\n    return sorted(set(x))\n```",
+      "input_tokens": 142,
+      "output_tokens": 15,
+      "duration_ms": 855,
+      "finish": "stop",
+      "prompt_sha256": "67809a3c8bf1894f8d01e8ba89c86468b485e530492a7161f3bb33dfabc7e590",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      }
+    },
+    "dedup/birch/swap": {
+      "text": "def repair(x):\n    return sorted(set(x), key=x.index)",
+      "input_tokens": 142,
+      "output_tokens": 15,
+      "duration_ms": 4434,
+      "finish": "stop",
+      "prompt_sha256": "456db3564989e6ef0194b9aeb16ea91ef7904afcacf846e08e8c2c7a6a07d807",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "d",
+              "b",
+              "a"
+            ]
+          },
+          {
+            "value": [
+              "q",
+              "b",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "z",
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    "text/alder/run": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 147,
+      "output_tokens": 22,
+      "duration_ms": 1092,
+      "finish": "stop",
+      "prompt_sha256": "9058beb0a463516e73537d6dda3433820de61420d6c70d54057e20cf18cafacd",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/alder/unrun": {
+      "text": "def repair(x):\n    return x[0] in x[1].split()",
+      "input_tokens": 147,
+      "output_tokens": 18,
+      "duration_ms": 1564,
+      "finish": "stop",
+      "prompt_sha256": "c679516dff59c8f2a1f42a39a89c0b264aad4c575dc8969485783de27809f683",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/alder/common": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 147,
+      "output_tokens": 22,
+      "duration_ms": 5888,
+      "finish": "stop",
+      "prompt_sha256": "66bc30c51b1bd3c0d2c0066ed269dcee43e3769b11321fbf12bd9a09ebbfe30c",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/alder/swap": {
+      "text": "def repair(x):\n    return x[0] in x[1].split()",
+      "input_tokens": 147,
+      "output_tokens": 18,
+      "duration_ms": 5553,
+      "finish": "stop",
+      "prompt_sha256": "3ee8864df69e03faebea0cd88ef57283255792c51f65298e095cf17c4e2e98d8",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/birch/run": {
+      "text": "def repair(x):\n    return x[0] in x[1].split()",
+      "input_tokens": 147,
+      "output_tokens": 18,
+      "duration_ms": 5943,
+      "finish": "stop",
+      "prompt_sha256": "413807a18d45764f62f6c20df22678995de858afcf217f6ba7bbac9b1c082281",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 147,
+      "output_tokens": 22,
+      "duration_ms": 3397,
+      "finish": "stop",
+      "prompt_sha256": "ba88a6072300ddde9da9d622e0350c8938b1a92dc553781cbc81486763171edf",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/birch/common": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 147,
+      "output_tokens": 22,
+      "duration_ms": 3094,
+      "finish": "stop",
+      "prompt_sha256": "8907204f6524c744112efa252915a0d253feb7eb33d7718c7508c51c9ce5bded",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "text/birch/swap": {
+      "text": "```python\ndef repair(x):\n    return x[0] in x[1].split()\n```",
+      "input_tokens": 147,
+      "output_tokens": 22,
+      "duration_ms": 3139,
+      "finish": "stop",
+      "prompt_sha256": "e405005471e5582a6b46228453b52c29216ec2baee4279cb845ab39b6b7c827a",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": true
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": false
+          },
+          {
+            "value": true
+          }
+        ]
+      }
+    },
+    "asof/alder/run": {
+      "text": "def repair(x):\n    return next((t for t in x[0] if t == x[1]), None)",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 3764,
+      "finish": "stop",
+      "prompt_sha256": "c10ebb7f93280c6c7073e6f73bc78f48e33fe17ff249ad01da4377278ad7dfb9",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/alder/unrun": {
+      "text": "```python\ndef repair(x):\n    return next((t for t in x[0] if t == x[1]), None)\n```",
+      "input_tokens": 159,
+      "output_tokens": 30,
+      "duration_ms": 16242,
+      "finish": "stop",
+      "prompt_sha256": "ba25f2238470770d0f859e68b638f4dfc3a2011bd398c7abac837d84385d1596",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/alder/common": {
+      "text": "```python\ndef repair(x):\n    return next((t for t in x[0] if t == x[1]), None)\n```",
+      "input_tokens": 159,
+      "output_tokens": 30,
+      "duration_ms": 6087,
+      "finish": "stop",
+      "prompt_sha256": "dcbb82dce8924bc34e8548adc510fe6d8f0d104256072c9711427962b02a1dd6",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/alder/swap": {
+      "text": "def repair(x):\n    return next((t for t in x[0] if t == x[1]), None)",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 18776,
+      "finish": "stop",
+      "prompt_sha256": "c27bcd3891444ef3fd535406ac9fb560f37753e71c00b1ecab637993cca4e283",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/birch/run": {
+      "text": "def repair(x):\n    return next((t for t in x[0] if t == x[1]), None)",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 18399,
+      "finish": "stop",
+      "prompt_sha256": "c77358bfad9310f3cfa43fc05f123157b437d1a5b5219870a920b2162d520d59",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    return next((t for t in x[0] if t == x[1]), None)\n```",
+      "input_tokens": 159,
+      "output_tokens": 30,
+      "duration_ms": 22440,
+      "finish": "stop",
+      "prompt_sha256": "66caceb2eac6852dd227711286b23531cfa94bb33bdfb5bbbcd735100d0f33d9",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/birch/common": {
+      "text": "```python\ndef repair(x):\n    return next((t for t in x[0] if t == x[1]), None)\n```",
+      "input_tokens": 159,
+      "output_tokens": 30,
+      "duration_ms": 22710,
+      "finish": "stop",
+      "prompt_sha256": "c6cf73cd95649d8fc8d4d3f8512fadb6f154a4a914f7544d95a190035d43ab62",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "asof/birch/swap": {
+      "text": "def repair(x):\n    return next((t for t in x[0] if t == x[1]), None)",
+      "input_tokens": 159,
+      "output_tokens": 26,
+      "duration_ms": 7266,
+      "finish": "stop",
+      "prompt_sha256": "f0f22c6e52145648afce4d0eb90e610b0af313706f5a831a7842a2039a539523",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 6
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": null
+          },
+          {
+            "value": 8
+          }
+        ]
+      }
+    },
+    "bins/alder/run": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 161,
+      "output_tokens": 34,
+      "duration_ms": 17632,
+      "finish": "stop",
+      "prompt_sha256": "b23562747ad11062b75687739f72f3783483958659577cee61ebf91c26e5f20f",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/alder/unrun": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 161,
+      "output_tokens": 34,
+      "duration_ms": 10408,
+      "finish": "stop",
+      "prompt_sha256": "795d6f59ba527ddd878b43e8f31cf1e008be57165dfcd5e3b3304846119b20f8",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/alder/common": {
+      "text": "def repair(x):\n    return next((i for i, t in enumerate(x[0]) if t >= x[1]), -1)",
+      "input_tokens": 161,
+      "output_tokens": 30,
+      "duration_ms": 20130,
+      "finish": "stop",
+      "prompt_sha256": "e06297279df0d929c62989f6cdc3513f994c49878f48f9a06fb9342517d52602",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/alder/swap": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 161,
+      "output_tokens": 29,
+      "duration_ms": 20722,
+      "finish": "stop",
+      "prompt_sha256": "638407f31a74bcb0f2e39e8f9be55aab25f894a01979e57b2d7d2fbc5a79b72e",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/birch/run": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 161,
+      "output_tokens": 29,
+      "duration_ms": 20908,
+      "finish": "stop",
+      "prompt_sha256": "949232f1358841a83dee7cefdd900c7a34e1a2a070ed941849efded07609aca1",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 161,
+      "output_tokens": 34,
+      "duration_ms": 16649,
+      "finish": "stop",
+      "prompt_sha256": "e5ab880781e078a91826aedd2570799cc14e262a66c5b5aa061aafc2a5e2393f",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/birch/common": {
+      "text": "def repair(x):\n    return next((i for i, t in enumerate(x[0]) if t >= x[1]), -1)",
+      "input_tokens": 161,
+      "output_tokens": 30,
+      "duration_ms": 1252,
+      "finish": "stop",
+      "prompt_sha256": "08c59847bda230b14d2656dcdba84705ae646c6e64aec62168d1c066f4b03470",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": 1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "bins/birch/swap": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 161,
+      "output_tokens": 34,
+      "duration_ms": 2771,
+      "finish": "stop",
+      "prompt_sha256": "11057cc106b1a6cbd9f4a02d0c18c5afa32826a6806d145ced2e2daac0afaa5f",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      }
+    },
+    "missing/alder/run": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "duration_ms": 4357,
+      "finish": "stop",
+      "prompt_sha256": "a28734f2af8c25ea1b8c5f9256b202d63fc1cc9c4cc764b8f71f499159a6fbfc",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/alder/unrun": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "duration_ms": 3509,
+      "finish": "stop",
+      "prompt_sha256": "a8a20e12bc90dc503616debe1cba5b2392e5e3d5e72cbd0ffe94a0d6e1745be8",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/alder/common": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "duration_ms": 5018,
+      "finish": "stop",
+      "prompt_sha256": "87c151cafa3d5e69fae394515663f3dc101aca847d7a269d1b3cfcd2b794c629",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/alder/swap": {
+      "text": "def repair(x):\n    return x.get('value') if x.get('value') is not None else 'automatic'",
+      "input_tokens": 149,
+      "output_tokens": 25,
+      "duration_ms": 5100,
+      "finish": "stop",
+      "prompt_sha256": "feb9b12f14cc1bfa4805bdb5e54fb8a57f3b29e97b48c9116ccc21dc8e868628",
+      "score": {
+        "passed": true,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": ""
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/birch/run": {
+      "text": "def repair(x):\n    return x.get('value') if x.get('value') is not None else 'automatic'",
+      "input_tokens": 149,
+      "output_tokens": 25,
+      "duration_ms": 5585,
+      "finish": "stop",
+      "prompt_sha256": "ea7e85846042c3f8bdbd6efe0f67b05623ea11ed41c175406ca018ed553199e5",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": ""
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/birch/unrun": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "duration_ms": 4934,
+      "finish": "stop",
+      "prompt_sha256": "61856e77dcbc6f0833d535e34fc0747ff58bdcfe5710d7c846474aba63f282c5",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/birch/common": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "duration_ms": 830,
+      "finish": "stop",
+      "prompt_sha256": "eef08d1723aa612e6d253212682c083e3d77be42c124938a1b52e546f18f4f16",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    },
+    "missing/birch/swap": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "duration_ms": 945,
+      "finish": "stop",
+      "prompt_sha256": "a06e7c965c47004b6d6e1ed2409821131765881628c2bbab8d59628a951f01e2",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      }
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}

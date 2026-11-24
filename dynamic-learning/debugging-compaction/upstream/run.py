@@ -19,10 +19,18 @@ SYSTEM='You maintain a Python iterator library. Diagnose the reported behavior a
 CODE='Return the whole replacement function in a single Python code block. Keep its existing name, interface and other behavior. You may omit its docstring. The original module imports will remain available.'
 
 
+def repair_request(case,note,original,current,report):
+    candidate=f'Current candidate:\n{current}\n' if current is not None else ''
+    return (f'Handoff:\n{note}\nOriginal issue: {case.symptom}\nParent source:\n{original}\n'
+            f'{candidate}The reporter has now supplied the actual regression test:\n{report}\n'
+            f'Review the candidate against this evidence and revise it if necessary. {CODE}')
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--model',default=MODEL)
     parser.add_argument('--recount',action='store_true')
+    parser.add_argument('--draft-controls',action='store_true')
     args=parser.parse_args()
     dest=HERE/'results'/args.model.replace(':','-')
     if not args.recount:
@@ -79,9 +87,7 @@ def main():
         except (ValueError,SyntaxError):
             current='No parseable edit applied. The checkout still contains the original function.'
         for arm,note in data['notes'].items():
-            prompt=(f'Handoff:\n{note}\nOriginal issue: {c.symptom}\nParent source:\n{original}\n'
-                    f'Current candidate:\n{current}\nThe reporter has now supplied the actual regression test:\n{report}\n'
-                    f'Review the candidate against this evidence and revise it if necessary. {CODE}')
+            prompt=repair_request(c,note,original,current,report)
             fingerprint=hashlib.sha256(prompt.encode()).hexdigest()
             if arm not in data['trials']:
                 assert not args.recount
@@ -95,6 +101,22 @@ def main():
                 assert trial['prompt_sha256']==fingerprint
                 if args.recount:
                     assert run(c,trial['text'])==trial['score']
+        if args.draft_controls:
+            options={'fresh':None,'parent':original,'known-good':section(blob(c.rev,'more_itertools/more.py'),c.func)}
+            controls=data.setdefault('draft_controls',{})
+            for arm,incumbent in options.items():
+                prompt=repair_request(c,data['notes']['none'],original,incumbent,report)
+                fp=hashlib.sha256(prompt.encode()).hexdigest()
+                if arm not in controls:
+                    assert not args.recount
+                    trial=answer(args.model,SYSTEM,prompt,650)
+                    trial.update(prompt_sha256=fp,score=run(c,trial['text']))
+                    controls[arm]=trial
+                    save(path,data)
+                assert controls[arm]['prompt_sha256']==fp
+                if args.recount:
+                    assert run(c,controls[arm]['text'])==controls[arm]['score']
+            print('draft controls',c.func,{k:v['score']['passed'] for k,v in controls.items()},flush=True)
         print(c.func,first['score']['passed'],{k:v['score']['passed'] for k,v in data['trials'].items()},flush=True)
 
 
