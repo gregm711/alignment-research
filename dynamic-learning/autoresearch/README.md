@@ -51,3 +51,5 @@ The gain in repairs survived on fresh data while unintended changes increased. N
 [Candidate and hypothesis](pilot/0002-sparse/record.json) · [Candidate source](pilot/0002-sparse/candidate.py) · [First candidate](pilot/0001-rule/candidate.py) · [Fresh-seed counts and settings](pilot/confirmation.json) · [Development frontier](pilot/frontier.json) · [Evaluator manifest](pilot/manifest.json)
 
 The completed campaign is preserved under `pilot/`. The default run command starts a fresh working campaign. `python3 check.py` checks Pareto ordering, registration, lineage, reflection/review scheduling and manifest enforcement offline.
+
+[When to ask for evidence or plan longer](ask-or-plan/README.md) follows the invoice pilot with two preregistered transit test sets, a simple check-or-stop baseline, and local CPU and power measurements.

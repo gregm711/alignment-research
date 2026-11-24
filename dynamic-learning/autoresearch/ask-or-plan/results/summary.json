@@ -1,0 +1,767 @@
+{
+  "standard": {
+    "corrected": {
+      "stop": {
+        "cost": 0.701806640625,
+        "travel_regret": 0.701806640625,
+        "optimal_line": 0.844140625,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.701806640625,
+          "2.0": 0.701806640625
+        }
+      },
+      "plan": {
+        "cost": 0.916796875,
+        "travel_regret": 0.41679687499999996,
+        "optimal_line": 0.886962890625,
+        "probes": 0.0,
+        "plans": 1.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 77.90625,
+        "repriced": {
+          "0.25": 0.916796875,
+          "2.0": 0.916796875
+        }
+      },
+      "ask": {
+        "cost": 0.737744140625,
+        "travel_regret": 0.237744140625,
+        "optimal_line": 0.921435546875,
+        "probes": 1.0,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.487744140625,
+          "2.0": 2.237744140625
+        }
+      },
+      "both": {
+        "cost": 1.0,
+        "travel_regret": 0.0,
+        "optimal_line": 1.0,
+        "probes": 1.0,
+        "plans": 1.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 77.90625,
+        "repriced": {
+          "0.25": 0.75,
+          "2.0": 2.5
+        }
+      },
+      "fixed": {
+        "cost": 0.701806640625,
+        "travel_regret": 0.701806640625,
+        "optimal_line": 0.844140625,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.701806640625,
+          "2.0": 0.701806640625
+        }
+      },
+      "cheap_rule": {
+        "cost": 0.378515625,
+        "travel_regret": 0.2583984375,
+        "optimal_line": 0.916259765625,
+        "probes": 0.240234375,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.31845703125,
+          "2.0": 0.7388671875
+        }
+      },
+      "fitted": {
+        "cost": 0.368505859375,
+        "travel_regret": 0.20004882812500002,
+        "optimal_line": 0.931689453125,
+        "probes": 0.2431640625,
+        "plans": 0.09375,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 7.119140625,
+        "repriced": {
+          "0.25": 0.30771484375,
+          "2.0": 0.7332519531249999
+        }
+      },
+      "codex1": {
+        "cost": 0.35390625,
+        "travel_regret": 0.17812499999999998,
+        "optimal_line": 0.93232421875,
+        "probes": 0.2177734375,
+        "plans": 0.1337890625,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 10.18359375,
+        "repriced": {
+          "0.25": 0.299462890625,
+          "2.0": 0.68056640625
+        }
+      },
+      "codex2": {
+        "cost": 0.356494140625,
+        "travel_regret": 0.180712890625,
+        "optimal_line": 0.931689453125,
+        "probes": 0.216796875,
+        "plans": 0.134765625,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 10.353515625,
+        "repriced": {
+          "0.25": 0.302294921875,
+          "2.0": 0.681689453125
+        }
+      },
+      "selected": {
+        "cost": 0.35390625,
+        "travel_regret": 0.17812499999999998,
+        "optimal_line": 0.93232421875,
+        "probes": 0.2177734375,
+        "plans": 0.1337890625,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 10.18359375,
+        "repriced": {
+          "0.25": 0.299462890625,
+          "2.0": 0.68056640625
+        }
+      },
+      "shuffled": {
+        "cost": 0.7226074218749999,
+        "travel_regret": 0.546826171875,
+        "optimal_line": 0.867919921875,
+        "probes": 0.2177734375,
+        "plans": 0.1337890625,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 10.482421875,
+        "repriced": {
+          "0.25": 0.6681640624999999,
+          "2.0": 1.0492675781249998
+        }
+      },
+      "oracle": {
+        "cost": 0.18837890624999998,
+        "travel_regret": 0.05556640625,
+        "optimal_line": 0.967919921875,
+        "probes": 0.2138671875,
+        "plans": 0.0517578125,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 4.330078125,
+        "repriced": {
+          "0.25": 0.13491210937499998,
+          "2.0": 0.5091796875000001
+        }
+      },
+      "paired_savings_vs_selected": {
+        "fixed": [
+          0.347900390625,
+          0.27910156249999996,
+          0.42188110351562497
+        ],
+        "cheap_rule": [
+          0.024609375000000003,
+          -0.0107080078125,
+          0.06337890624999999
+        ],
+        "shuffled": [
+          0.368701171875,
+          0.311522216796875,
+          0.43374877929687494
+        ],
+        "oracle": [
+          -0.16552734375,
+          -0.20415283203124998,
+          -0.12836425781250002
+        ]
+      },
+      "policy_decisions": {
+        "stop": 664,
+        "ask": 223,
+        "plan": 137
+      },
+      "oracle_decisions": {
+        "stop": 752,
+        "ask": 219,
+        "plan": 53
+      }
+    },
+    "raw": {
+      "stop": {
+        "cost": 0.748291015625,
+        "travel_regret": 0.748291015625,
+        "optimal_line": 0.837890625,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.748291015625,
+          "2.0": 0.748291015625
+        }
+      },
+      "plan": {
+        "cost": 0.916796875,
+        "travel_regret": 0.41679687499999996,
+        "optimal_line": 0.886962890625,
+        "probes": 0.0,
+        "plans": 1.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 77.90625,
+        "repriced": {
+          "0.25": 0.916796875,
+          "2.0": 0.916796875
+        }
+      },
+      "ask": {
+        "cost": 0.796240234375,
+        "travel_regret": 0.29624023437499997,
+        "optimal_line": 0.9142578125,
+        "probes": 1.0,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.546240234375,
+          "2.0": 2.296240234375
+        }
+      },
+      "both": {
+        "cost": 1.0,
+        "travel_regret": 0.0,
+        "optimal_line": 1.0,
+        "probes": 1.0,
+        "plans": 1.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 77.90625,
+        "repriced": {
+          "0.25": 0.75,
+          "2.0": 2.5
+        }
+      },
+      "fixed": {
+        "cost": 0.748291015625,
+        "travel_regret": 0.748291015625,
+        "optimal_line": 0.837890625,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.748291015625,
+          "2.0": 0.748291015625
+        }
+      },
+      "cheap_rule": {
+        "cost": 0.4869140625,
+        "travel_regret": 0.3873046875,
+        "optimal_line": 0.895166015625,
+        "probes": 0.19921875,
+        "plans": 0.0,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.437109375,
+          "2.0": 0.7857421874999999
+        }
+      },
+      "fitted": {
+        "cost": 0.4330078125,
+        "travel_regret": 0.28994140625,
+        "optimal_line": 0.9154296875,
+        "probes": 0.21484375,
+        "plans": 0.0712890625,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 5.490234375,
+        "repriced": {
+          "0.25": 0.379296875,
+          "2.0": 0.7552734375000001
+        }
+      },
+      "codex1": {
+        "cost": 0.42255859375000004,
+        "travel_regret": 0.2765625,
+        "optimal_line": 0.913330078125,
+        "probes": 0.1796875,
+        "plans": 0.1123046875,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 8.6484375,
+        "repriced": {
+          "0.25": 0.37763671875,
+          "2.0": 0.69208984375
+        }
+      },
+      "codex2": {
+        "cost": 0.42314453125,
+        "travel_regret": 0.2771484375,
+        "optimal_line": 0.914453125,
+        "probes": 0.1826171875,
+        "plans": 0.109375,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 8.443359375,
+        "repriced": {
+          "0.25": 0.377490234375,
+          "2.0": 0.6970703125
+        }
+      },
+      "selected": {
+        "cost": 0.42255859375000004,
+        "travel_regret": 0.2765625,
+        "optimal_line": 0.913330078125,
+        "probes": 0.1796875,
+        "plans": 0.1123046875,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 8.6484375,
+        "repriced": {
+          "0.25": 0.37763671875,
+          "2.0": 0.69208984375
+        }
+      },
+      "shuffled": {
+        "cost": 0.7802734375,
+        "travel_regret": 0.63427734375,
+        "optimal_line": 0.8556640624999999,
+        "probes": 0.1796875,
+        "plans": 0.1123046875,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 8.806640625,
+        "repriced": {
+          "0.25": 0.7353515625,
+          "2.0": 1.0498046875
+        }
+      },
+      "oracle": {
+        "cost": 0.216796875,
+        "travel_regret": 0.09130859375,
+        "optimal_line": 0.96044921875,
+        "probes": 0.19140625,
+        "plans": 0.0595703125,
+        "base_edge_reads": 25.96875,
+        "extra_edge_evaluations": 4.869140625,
+        "repriced": {
+          "0.25": 0.1689453125,
+          "2.0": 0.50390625
+        }
+      },
+      "paired_savings_vs_selected": {
+        "fixed": [
+          0.32573242187499996,
+          0.25018676757812497,
+          0.4043493652343749
+        ],
+        "cheap_rule": [
+          0.06435546875,
+          0.019334716796875005,
+          0.11445434570312502
+        ],
+        "shuffled": [
+          0.35771484374999996,
+          0.28772705078125,
+          0.4277014160156249
+        ],
+        "oracle": [
+          -0.20576171875,
+          -0.25532470703125,
+          -0.16059448242187502
+        ]
+      },
+      "policy_decisions": {
+        "stop": 725,
+        "ask": 184,
+        "plan": 115
+      },
+      "oracle_decisions": {
+        "stop": 767,
+        "ask": 196,
+        "plan": 61
+      }
+    }
+  },
+  "shift": {
+    "corrected": {
+      "stop": {
+        "cost": 0.8370117187499999,
+        "travel_regret": 0.8370117187499999,
+        "optimal_line": 0.853515625,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.8370117187499999,
+          "2.0": 0.8370117187499999
+        }
+      },
+      "plan": {
+        "cost": 0.6810546875000001,
+        "travel_regret": 0.18105468749999998,
+        "optimal_line": 0.9493652343750001,
+        "probes": 0.0,
+        "plans": 1.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 131.876953125,
+        "repriced": {
+          "0.25": 0.6810546875000001,
+          "2.0": 0.6810546875000001
+        }
+      },
+      "ask": {
+        "cost": 1.1248535156250001,
+        "travel_regret": 0.6248535156249999,
+        "optimal_line": 0.88134765625,
+        "probes": 1.0,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.8748535156249999,
+          "2.0": 2.624853515625
+        }
+      },
+      "both": {
+        "cost": 1.0,
+        "travel_regret": 0.0,
+        "optimal_line": 1.0,
+        "probes": 1.0,
+        "plans": 1.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 131.876953125,
+        "repriced": {
+          "0.25": 0.75,
+          "2.0": 2.5
+        }
+      },
+      "fixed": {
+        "cost": 0.8370117187499999,
+        "travel_regret": 0.8370117187499999,
+        "optimal_line": 0.853515625,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.8370117187499999,
+          "2.0": 0.8370117187499999
+        }
+      },
+      "cheap_rule": {
+        "cost": 0.6932617187500001,
+        "travel_regret": 0.6346679687500001,
+        "optimal_line": 0.877978515625,
+        "probes": 0.1171875,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.6639648437500001,
+          "2.0": 0.8690429687500001
+        }
+      },
+      "fitted": {
+        "cost": 0.57705078125,
+        "travel_regret": 0.469140625,
+        "optimal_line": 0.9059082031250001,
+        "probes": 0.12109375,
+        "plans": 0.0947265625,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 12.533203125,
+        "repriced": {
+          "0.25": 0.54677734375,
+          "2.0": 0.75869140625
+        }
+      },
+      "codex1": {
+        "cost": 0.5740234375,
+        "travel_regret": 0.45878906249999996,
+        "optimal_line": 0.908544921875,
+        "probes": 0.1103515625,
+        "plans": 0.1201171875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 15.767578125,
+        "repriced": {
+          "0.25": 0.546435546875,
+          "2.0": 0.73955078125
+        }
+      },
+      "codex2": {
+        "cost": 0.559521484375,
+        "travel_regret": 0.444287109375,
+        "optimal_line": 0.90966796875,
+        "probes": 0.1025390625,
+        "plans": 0.1279296875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 16.79296875,
+        "repriced": {
+          "0.25": 0.53388671875,
+          "2.0": 0.713330078125
+        }
+      },
+      "selected": {
+        "cost": 0.5740234375,
+        "travel_regret": 0.45878906249999996,
+        "optimal_line": 0.908544921875,
+        "probes": 0.1103515625,
+        "plans": 0.1201171875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 15.767578125,
+        "repriced": {
+          "0.25": 0.546435546875,
+          "2.0": 0.73955078125
+        }
+      },
+      "shuffled": {
+        "cost": 0.85888671875,
+        "travel_regret": 0.74365234375,
+        "optimal_line": 0.866064453125,
+        "probes": 0.1103515625,
+        "plans": 0.1201171875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 15.849609375,
+        "repriced": {
+          "0.25": 0.831298828125,
+          "2.0": 1.0244140625
+        }
+      },
+      "oracle": {
+        "cost": 0.161328125,
+        "travel_regret": 0.0734375,
+        "optimal_line": 0.971923828125,
+        "probes": 0.0771484375,
+        "plans": 0.0986328125,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 13.283203125,
+        "repriced": {
+          "0.25": 0.142041015625,
+          "2.0": 0.27705078125
+        }
+      },
+      "paired_savings_vs_selected": {
+        "fixed": [
+          0.26298828125,
+          0.171475830078125,
+          0.36998046874999996
+        ],
+        "cheap_rule": [
+          0.11923828125,
+          0.05482421875000001,
+          0.20112548828125
+        ],
+        "shuffled": [
+          0.28486328125000004,
+          0.194820556640625,
+          0.38769531249999967
+        ],
+        "oracle": [
+          -0.4126953125,
+          -0.519306640625,
+          -0.31691650390625015
+        ]
+      },
+      "policy_decisions": {
+        "stop": 788,
+        "plan": 123,
+        "ask": 113
+      },
+      "oracle_decisions": {
+        "stop": 844,
+        "plan": 101,
+        "ask": 79
+      }
+    },
+    "raw": {
+      "stop": {
+        "cost": 1.026904296875,
+        "travel_regret": 1.026904296875,
+        "optimal_line": 0.837158203125,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 1.026904296875,
+          "2.0": 1.026904296875
+        }
+      },
+      "plan": {
+        "cost": 0.6810546875000001,
+        "travel_regret": 0.18105468749999998,
+        "optimal_line": 0.9493652343750001,
+        "probes": 0.0,
+        "plans": 1.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 131.876953125,
+        "repriced": {
+          "0.25": 0.6810546875000001,
+          "2.0": 0.6810546875000001
+        }
+      },
+      "ask": {
+        "cost": 1.363818359375,
+        "travel_regret": 0.863818359375,
+        "optimal_line": 0.857568359375,
+        "probes": 1.0,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 1.1138183593750002,
+          "2.0": 2.863818359375
+        }
+      },
+      "both": {
+        "cost": 1.0,
+        "travel_regret": 0.0,
+        "optimal_line": 1.0,
+        "probes": 1.0,
+        "plans": 1.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 131.876953125,
+        "repriced": {
+          "0.25": 0.75,
+          "2.0": 2.5
+        }
+      },
+      "fixed": {
+        "cost": 1.026904296875,
+        "travel_regret": 1.026904296875,
+        "optimal_line": 0.837158203125,
+        "probes": 0.0,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 1.026904296875,
+          "2.0": 1.026904296875
+        }
+      },
+      "cheap_rule": {
+        "cost": 0.934326171875,
+        "travel_regret": 0.885009765625,
+        "optimal_line": 0.85380859375,
+        "probes": 0.0986328125,
+        "plans": 0.0,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 0.0,
+        "repriced": {
+          "0.25": 0.90966796875,
+          "2.0": 1.082275390625
+        }
+      },
+      "fitted": {
+        "cost": 0.825927734375,
+        "travel_regret": 0.742919921875,
+        "optimal_line": 0.8721679687499999,
+        "probes": 0.099609375,
+        "plans": 0.06640625,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 8.654296875,
+        "repriced": {
+          "0.25": 0.801025390625,
+          "2.0": 0.975341796875
+        }
+      },
+      "codex1": {
+        "cost": 0.7984863281250001,
+        "travel_regret": 0.707177734375,
+        "optimal_line": 0.8786132812499999,
+        "probes": 0.0908203125,
+        "plans": 0.091796875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 11.935546875,
+        "repriced": {
+          "0.25": 0.7757812500000001,
+          "2.0": 0.9347167968750001
+        }
+      },
+      "codex2": {
+        "cost": 0.781494140625,
+        "travel_regret": 0.690185546875,
+        "optimal_line": 0.88173828125,
+        "probes": 0.0810546875,
+        "plans": 0.1015625,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 13.18359375,
+        "repriced": {
+          "0.25": 0.76123046875,
+          "2.0": 0.903076171875
+        }
+      },
+      "selected": {
+        "cost": 0.7984863281250001,
+        "travel_regret": 0.707177734375,
+        "optimal_line": 0.8786132812499999,
+        "probes": 0.0908203125,
+        "plans": 0.091796875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 11.935546875,
+        "repriced": {
+          "0.25": 0.7757812500000001,
+          "2.0": 0.9347167968750001
+        }
+      },
+      "shuffled": {
+        "cost": 1.055810546875,
+        "travel_regret": 0.9645019531249999,
+        "optimal_line": 0.8466796875,
+        "probes": 0.0908203125,
+        "plans": 0.091796875,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 12.328125,
+        "repriced": {
+          "0.25": 1.03310546875,
+          "2.0": 1.192041015625
+        }
+      },
+      "oracle": {
+        "cost": 0.193310546875,
+        "travel_regret": 0.10151367187499999,
+        "optimal_line": 0.965185546875,
+        "probes": 0.0576171875,
+        "plans": 0.1259765625,
+        "base_edge_reads": 43.958984375,
+        "extra_edge_evaluations": 16.775390625,
+        "repriced": {
+          "0.25": 0.17890625,
+          "2.0": 0.279736328125
+        }
+      },
+      "paired_savings_vs_selected": {
+        "fixed": [
+          0.22841796875,
+          0.13187866210937502,
+          0.3315063476562499
+        ],
+        "cheap_rule": [
+          0.13583984375000002,
+          0.06425537109375,
+          0.21925048828124993
+        ],
+        "shuffled": [
+          0.25732421875,
+          0.166739501953125,
+          0.35791625976562497
+        ],
+        "oracle": [
+          -0.60517578125,
+          -0.73706787109375,
+          -0.48178466796875
+        ]
+      },
+      "policy_decisions": {
+        "ask": 93,
+        "stop": 837,
+        "plan": 94
+      },
+      "oracle_decisions": {
+        "stop": 836,
+        "plan": 129,
+        "ask": 59
+      }
+    }
+  },
+  "frozen_sha256": "9f62dac3a79e5c78a57dd4666b7f8550b14ff07247bfd9a6fb129106d661b7b4"
+}

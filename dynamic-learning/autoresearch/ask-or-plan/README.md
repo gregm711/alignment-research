@@ -15,3 +15,31 @@ Primary cost is mean excess travel time over a traveler with exact planning and 
 Prediction: the selected tree saves at least 0.15 equivalent minute per map over the development-selected fixed action on the standard test, with a paired 95% interval above zero. To claim a practical advantage it must also beat the development-selected cheap rule with an interval above zero. Report both comparisons on shifted maps without retuning. Shuffle its decisions across maps (seed 51) as a same-action-frequency control; compare to an oracle choosing the best permitted action for each map averaged over possible delays. Report all fixed actions, the two-action reference, cost-free excess travel, optimal-line rate (either line in a tie), probes and edge evaluations. Reprice the frozen decisions with check prices 0.25 and 2 minutes, holding planning price at 0.5. The router learned for the primary price may cease to pay at a different price. Bootstrap maps with 2,000 paired draws (seed 52). The design tests amortized action selection in a known finite domain. Out-of-domain transfer from invoices, general intelligence and electrical efficiency require other measurements.
 
 CPU only, one numerical-library thread, 120 seconds per simulator invocation. Two read-only Codex proposal calls use the existing local CLI authentication and its 240-second timeout. No paid GPU runs.
+
+## Outcomes
+
+The first of two Codex proposals won on development. Its main decision was to check the delay if the estimated travel-time savings justified the price, and to compute the exact timetable when the two lines appeared close. A delay of seven minutes or less and an especially close call could also trigger planning. The policy was fixed in commit `e3bdb22` before both tests. [Frozen thresholds and alternatives](results/frozen.json) · [Development results](results/development.json)
+
+Mean cost in equivalent travel minutes per map, lower is better. Each regime contains 1,024 independent maps. Both outcomes of the delay were evaluated for every map, weighted by the published probability.
+
+| Policy | Standard maps | Longer maps with outlier travel times and changed alerts |
+|---|---:|---:|
+| Always stop | 0.702 | 0.837 |
+| Always plan | 0.917 | 0.681 |
+| Always check the delay | 0.738 | 1.125 |
+| Check if the estimated savings exceed the price, otherwise stop | 0.379 | 0.693 |
+| Frozen Codex policy | **0.354** | **0.574** |
+| Shuffle that policy's actions across maps | 0.723 | 0.859 |
+| Best single action for each map in hindsight, averaged over delay outcomes | 0.188 | 0.161 |
+
+The frozen policy cleared the preregistered 0.15-minute hurdle against the development-selected fixed baseline. On standard maps it saved 0.348 minutes per decision (paired 95% bootstrap interval 0.279 to 0.422). **It missed the second criterion**. Its advantage over the cheap check-or-stop rule was 0.025 minutes (−0.011 to 0.063). On shifted maps the same frozen policy saved 0.119 minutes over the cheap rule (0.055 to 0.201). Always planning was the best fixed action in hindsight on shifted maps. It chose an optimal line 94.9% of the time, versus 90.9% for the router, and cost 0.107 minutes more per case at the registered action prices.
+
+On standard maps the router stopped on 664, checked on 223, and planned on 137. Assigning exactly those actions at random raised mean cost by 0.369 (0.312 to 0.434). With the weaker, uncorrected greedy predictor, the router saved 0.064 over the cheap rule on standard maps (0.019 to 0.114). Using the stronger predictor materially narrowed that advantage. With frozen decisions and a check price of two minutes, always planning beat the adaptive policy on shifted maps, 0.681 versus 0.740. These comparisons show how the result depends on the baseline and the deployment price.
+
+Two saved standard trips illustrate the distinction. On map 310007 the lines took 10 and 15 minutes and the faster line had a 35% chance of a 20-minute delay. Only a live check could settle the line choice. On map 310030 the lines took 17 and 26 minutes. Even the full seven-minute delay left the first line faster. A better timetable calculation settled that choice without checking the delay. These examples were picked after evaluation. An independent forward shortest-path calculation verified both line times on all 2,048 maps. Recalculation of both delay branches verified every saved action cost and aggregate policy cost. A second run reproduced the summary and decompressed traces byte for byte. [Summary and cost sensitivities](results/summary.json) · [Standard trips](results/standard-maps.jsonl.gz) · [Shifted trips](results/shift-maps.jsonl.gz)
+
+### Local execution cost
+
+Median process CPU time per decision was 5.1 µs to stop, 5.1 µs to check an in-memory delay, 6.7 µs with the router and 14.1 µs to always plan. Planning took longer than stopping in all four blocks (14.0–14.1 versus 5.0–5.1 µs). Block-matched CPU energy estimates for the router ranged from 9 to 94 µJ per decision. Its incremental whole-system estimate ranged from −70 to +43 µJ. Background power variation prevents a reliable whole-system energy ranking here. Acquiring a real observation and running model inference would have their own costs. [Meter protocol](meter-protocol.md) · [Power samples and block summaries](results/meter.json)
+
+To reproduce both scored test sets from the frozen policies, run `OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python3 study.py test` from this directory. The separate `meter.py` measurement uses macmon on Apple silicon. Timing and power vary across runs.
