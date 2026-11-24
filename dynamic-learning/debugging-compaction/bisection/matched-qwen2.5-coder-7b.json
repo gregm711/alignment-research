@@ -1,0 +1,1120 @@
+{
+  "logs": {
+    "red": {
+      "audits": {
+        "red": {
+          "full": {
+            "text": "{ \"last_failure\": 6, \"first_pass\": 9 }",
+            "input_tokens": 152,
+            "output_tokens": 18,
+            "duration_ms": 1983,
+            "finish": "stop",
+            "note": "red checked revision 2: FAIL\nblue checked revision 5: FAIL\nred checked revision 6: PASS\nblue checked revision 9: PASS",
+            "prompt_sha256": "59b9c07edeeebebfa75e1abbe821dc441d359ba72c3ab5fd6fe09ba7bf54f1e9",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "ordinary": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 19,
+            "duration_ms": 2261,
+            "finish": "stop",
+            "note": "**Debugging Handoff:**\n\n**Experiments:**\n- Red checked revision 2: FAIL\n- Blue checked revision 5: FAIL\n- Red checked revision 6: PASS\n- Blue checked revision 9: PASS\n\n**Results:**\n- Revision 2 and 5 failed.\n- Revision 6 passed.\n- Revision 9 passed.\n\n**Current Conclusion:**\nThe transition from FAIL to PASS occurred between revisions 5 and 6.\nPadding: .",
+            "prompt_sha256": "1ae7bdb91f1e7f7d5abab9c3a0718f69ca99bd397509724e95b381e5f81e5819",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "attributed": {
+            "text": "{ \"last_failure\": 2, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1489,
+            "finish": "stop",
+            "note": "red: last FAIL 2, first PASS 6.\nblue: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "55b56dd11f8ce63eb94c1f36a231316a96cfc4d33a475a4abe7f16ac41e576e0",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    true
+                  ],
+                  [
+                    3,
+                    true
+                  ]
+                ],
+                "nomination": 3,
+                "correct": true,
+                "certified": true
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    true
+                  ],
+                  [
+                    3,
+                    false
+                  ]
+                ],
+                "nomination": 4,
+                "correct": true,
+                "certified": true
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    true
+                  ]
+                ],
+                "nomination": 5,
+                "correct": true,
+                "certified": true
+              }
+            }
+          },
+          "swapped": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1747,
+            "finish": "stop",
+            "note": "blue: last FAIL 2, first PASS 6.\nred: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "c6c866b9e65632c71f55096b8e46a37375d04509e4e8a6904f61a5a83da6d8be",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "anonymous": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1522,
+            "finish": "stop",
+            "note": "unknown: last FAIL 2, first PASS 6.\nunknown: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "801d5b2c5819a24fb9a7030b3715f8d74cbc3367c01e73238e1bbff029f16eed",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          }
+        },
+        "blue": {
+          "full": {
+            "text": "{ \"last_failure\": 6, \"first_pass\": 9 }",
+            "input_tokens": 152,
+            "output_tokens": 18,
+            "duration_ms": 1645,
+            "finish": "stop",
+            "note": "red checked revision 2: FAIL\nblue checked revision 5: FAIL\nred checked revision 6: PASS\nblue checked revision 9: PASS",
+            "prompt_sha256": "2b8e7d728118143fb143ca88333a9aa0bcb348810885ee1dd0c45b21339dd215",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": true,
+                "certified": false
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    true
+                  ]
+                ],
+                "nomination": 8,
+                "correct": true,
+                "certified": true
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    false
+                  ]
+                ],
+                "nomination": 9,
+                "correct": true,
+                "certified": true
+              }
+            }
+          },
+          "ordinary": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 19,
+            "duration_ms": 1431,
+            "finish": "stop",
+            "note": "**Debugging Handoff:**\n\n**Experiments:**\n- Red checked revision 2: FAIL\n- Blue checked revision 5: FAIL\n- Red checked revision 6: PASS\n- Blue checked revision 9: PASS\n\n**Results:**\n- Revision 2 and 5 failed.\n- Revision 6 passed.\n- Revision 9 passed.\n\n**Current Conclusion:**\nThe transition from FAIL to PASS occurred between revisions 5 and 6.\nPadding: .",
+            "prompt_sha256": "e2d81b95ade21e53e30b2c593c82a00c2cd8d2a2666733caf313c21f9a70df54",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "8": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "9": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "attributed": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1602,
+            "finish": "stop",
+            "note": "red: last FAIL 2, first PASS 6.\nblue: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "b9bef249225ac9362ed40b425ffef047143eeb594823ce86ad55745a0b9d86f7",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    false
+                  ]
+                ],
+                "nomination": 7,
+                "correct": true,
+                "certified": true
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    true
+                  ]
+                ],
+                "nomination": 8,
+                "correct": true,
+                "certified": true
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    false
+                  ]
+                ],
+                "nomination": 9,
+                "correct": true,
+                "certified": true
+              }
+            }
+          },
+          "swapped": {
+            "text": "{ \"last_failure\": 2, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1315,
+            "finish": "stop",
+            "note": "blue: last FAIL 2, first PASS 6.\nred: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "a9785c568437f9115cfd8f34b7ee0b67823233c1da7bb4d6e5534e50ec20cc61",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    false
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    false
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    false
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "anonymous": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1189,
+            "finish": "stop",
+            "note": "unknown: last FAIL 2, first PASS 6.\nunknown: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "23ec2e7d43aef26690062e228310096432f420d86b0b08c63ffac5024c509fd9",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    false
+                  ]
+                ],
+                "nomination": 7,
+                "correct": true,
+                "certified": true
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    true
+                  ]
+                ],
+                "nomination": 8,
+                "correct": true,
+                "certified": true
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    false
+                  ]
+                ],
+                "nomination": 9,
+                "correct": true,
+                "certified": true
+              }
+            }
+          }
+        }
+      },
+      "first": {
+        "text": "{ \"first_pass\": 6 }",
+        "input_tokens": 98,
+        "output_tokens": 9,
+        "duration_ms": 3796,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff:**\n\n**Experiments:**\n- Red checked revision 2: FAIL\n- Blue checked revision 5: FAIL\n- Red checked revision 6: PASS\n- Blue checked revision 9: PASS\n\n**Results:**\n- Revision 2 and 5 failed.\n- Revision 6 passed.\n- Revision 9 passed.\n\n**Current Conclusion:**\nThe transition from FAIL to PASS occurred between revisions 5 and 6. The discrepancy between",
+        "input_tokens": 119,
+        "output_tokens": 96,
+        "duration_ms": 5776,
+        "finish": "length"
+      }
+    },
+    "blue": {
+      "audits": {
+        "red": {
+          "full": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 6 }",
+            "input_tokens": 152,
+            "output_tokens": 18,
+            "duration_ms": 1570,
+            "finish": "stop",
+            "note": "blue checked revision 2: FAIL\nred checked revision 5: FAIL\nblue checked revision 6: PASS\nred checked revision 9: PASS",
+            "prompt_sha256": "7910642a1d5b4105ba2e67ed657ec24951b82efda6ad52e444a88f94eb884636",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "8": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "9": {
+                "valid": true,
+                "checks": [],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "ordinary": {
+            "text": "{ \"last_failure\": 2, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 2007,
+            "finish": "stop",
+            "note": "**Debugging Handoff:**\n\n**Experiments:**\n1. Blue checked revision 2: FAIL\n2. Red checked revision 5: FAIL\n3. Blue checked revision 6: PASS\n4. Red checked revision 9: PASS\n\n**Results:**\n- Blue and Red independently confirmed the transition from FAIL to PASS.\n- Blue identified revision 6 as the transition point.\n- Red identified revision 9 as the transition point.\n\n**Current\nPadding:",
+            "prompt_sha256": "ee02a16ef723bbc1cb13b57a85c14986a41ec65ccd7c64add5c6b9844ea793fe",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    5,
+                    false
+                  ],
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    5,
+                    false
+                  ],
+                  [
+                    7,
+                    false
+                  ]
+                ],
+                "nomination": 8,
+                "correct": true,
+                "certified": false
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    5,
+                    false
+                  ],
+                  [
+                    7,
+                    false
+                  ]
+                ],
+                "nomination": 8,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "attributed": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1717,
+            "finish": "stop",
+            "note": "blue: last FAIL 2, first PASS 6.\nred: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "c6c866b9e65632c71f55096b8e46a37375d04509e4e8a6904f61a5a83da6d8be",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    false
+                  ]
+                ],
+                "nomination": 7,
+                "correct": true,
+                "certified": true
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    true
+                  ]
+                ],
+                "nomination": 8,
+                "correct": true,
+                "certified": true
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    false
+                  ]
+                ],
+                "nomination": 9,
+                "correct": true,
+                "certified": true
+              }
+            }
+          },
+          "swapped": {
+            "text": "{ \"last_failure\": 2, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1399,
+            "finish": "stop",
+            "note": "red: last FAIL 2, first PASS 6.\nblue: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "55b56dd11f8ce63eb94c1f36a231316a96cfc4d33a475a4abe7f16ac41e576e0",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    false
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    false
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    false
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "anonymous": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1209,
+            "finish": "stop",
+            "note": "unknown: last FAIL 2, first PASS 6.\nunknown: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "801d5b2c5819a24fb9a7030b3715f8d74cbc3367c01e73238e1bbff029f16eed",
+            "scores": {
+              "7": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    false
+                  ]
+                ],
+                "nomination": 7,
+                "correct": true,
+                "certified": true
+              },
+              "8": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    true
+                  ]
+                ],
+                "nomination": 8,
+                "correct": true,
+                "certified": true
+              },
+              "9": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    false
+                  ],
+                  [
+                    8,
+                    false
+                  ]
+                ],
+                "nomination": 9,
+                "correct": true,
+                "certified": true
+              }
+            }
+          }
+        },
+        "blue": {
+          "full": {
+            "text": "{ \"last_failure\": 6, \"first_pass\": 9 }",
+            "input_tokens": 152,
+            "output_tokens": 18,
+            "duration_ms": 1200,
+            "finish": "stop",
+            "note": "blue checked revision 2: FAIL\nred checked revision 5: FAIL\nblue checked revision 6: PASS\nred checked revision 9: PASS",
+            "prompt_sha256": "104a496bfa63ba92c915ecb388473b1301b008f9562eb334a1a76676b598bde4",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ]
+                ],
+                "nomination": 7,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "ordinary": {
+            "text": "{ \"last_failure\": 2, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1451,
+            "finish": "stop",
+            "note": "**Debugging Handoff:**\n\n**Experiments:**\n1. Blue checked revision 2: FAIL\n2. Red checked revision 5: FAIL\n3. Blue checked revision 6: PASS\n4. Red checked revision 9: PASS\n\n**Results:**\n- Blue and Red independently confirmed the transition from FAIL to PASS.\n- Blue identified revision 6 as the transition point.\n- Red identified revision 9 as the transition point.\n\n**Current\nPadding:",
+            "prompt_sha256": "b3daf04c6e063498ab23506d9cb8aaa293bf5fa4059e10062ca3a7a240ab2b97",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    true
+                  ],
+                  [
+                    3,
+                    true
+                  ]
+                ],
+                "nomination": 3,
+                "correct": true,
+                "certified": true
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    true
+                  ],
+                  [
+                    3,
+                    false
+                  ]
+                ],
+                "nomination": 4,
+                "correct": true,
+                "certified": true
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    true
+                  ]
+                ],
+                "nomination": 5,
+                "correct": true,
+                "certified": true
+              }
+            }
+          },
+          "attributed": {
+            "text": "{ \"last_failure\": 2, \"first_pass\": 6 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1992,
+            "finish": "stop",
+            "note": "blue: last FAIL 2, first PASS 6.\nred: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "a9785c568437f9115cfd8f34b7ee0b67823233c1da7bb4d6e5534e50ec20cc61",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    true
+                  ],
+                  [
+                    3,
+                    true
+                  ]
+                ],
+                "nomination": 3,
+                "correct": true,
+                "certified": true
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    true
+                  ],
+                  [
+                    3,
+                    false
+                  ]
+                ],
+                "nomination": 4,
+                "correct": true,
+                "certified": true
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    4,
+                    false
+                  ],
+                  [
+                    5,
+                    true
+                  ]
+                ],
+                "nomination": 5,
+                "correct": true,
+                "certified": true
+              }
+            }
+          },
+          "swapped": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1120,
+            "finish": "stop",
+            "note": "red: last FAIL 2, first PASS 6.\nblue: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "b9bef249225ac9362ed40b425ffef047143eeb594823ce86ad55745a0b9d86f7",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          },
+          "anonymous": {
+            "text": "{ \"last_failure\": 5, \"first_pass\": 9 }",
+            "input_tokens": 216,
+            "output_tokens": 18,
+            "duration_ms": 1204,
+            "finish": "stop",
+            "note": "unknown: last FAIL 2, first PASS 6.\nunknown: last FAIL 5, first PASS 9.\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+            "prompt_sha256": "23ec2e7d43aef26690062e228310096432f420d86b0b08c63ffac5024c509fd9",
+            "scores": {
+              "3": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "4": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              },
+              "5": {
+                "valid": true,
+                "checks": [
+                  [
+                    7,
+                    true
+                  ],
+                  [
+                    6,
+                    true
+                  ]
+                ],
+                "nomination": 6,
+                "correct": false,
+                "certified": false
+              }
+            }
+          }
+        }
+      },
+      "first": {
+        "text": "{ \"first_pass\": 6 }",
+        "input_tokens": 98,
+        "output_tokens": 9,
+        "duration_ms": 701,
+        "finish": "stop"
+      },
+      "summary": {
+        "text": "**Debugging Handoff:**\n\n**Experiments:**\n1. Blue checked revision 2: FAIL\n2. Red checked revision 5: FAIL\n3. Blue checked revision 6: PASS\n4. Red checked revision 9: PASS\n\n**Results:**\n- Blue and Red independently confirmed the transition from FAIL to PASS.\n- Blue identified revision 6 as the transition point.\n- Red identified revision 9 as the transition point.\n\n**Current Conclusion:**\n",
+        "input_tokens": 119,
+        "output_tokens": 96,
+        "duration_ms": 5664,
+        "finish": "length"
+      }
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}
