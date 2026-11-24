@@ -1,0 +1,810 @@
+{
+  "all_unique": {
+    "fix": "71e070b35d8c136484e91189719c2a4eccd36fc3",
+    "commits": [
+      "1da45ae4b61a832ed080f08a8833784aad0a9534",
+      "b5e3886a37209bb880f17d82fbf4ba00ece0e41e",
+      "7f7c94efcf63271ac27dd000d62dd990afa71fd7",
+      "fbb9a98d8c7b914fcc952afd4976c1bc8deebe87",
+      "790bb0bb2c03e7a07282e5f16f4b1fde35b8fcf5",
+      "1ea82a711c69f590054987b5cb194157f8ce8ac4",
+      "81c21a8db1c922260cd673841257fb9b112c1318",
+      "71e070b35d8c136484e91189719c2a4eccd36fc3",
+      "172bcb3c5c7f22f24da608d13fa25d1576248067",
+      "c5a8876c9de994e1feaeaf3c221a1921d9c7eef5",
+      "c0ede7fcd50340170bc7f428b7b658f6e767a34c",
+      "d023d35324f3015320700675b47c302221970f34",
+      "e3f79f4fde5f7c107f70a20730b17240a05ba99b"
+    ],
+    "position": 7,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: True != False"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "split_before": {
+    "fix": "ce676d24136e6efa932df8a4f3bf4801b89e1dd0",
+    "commits": [
+      "30ada7dd597316a3ef967911477e0a1d9f55eefe",
+      "bc8be1013ac90fe3c1df8aae646b02605d578818",
+      "a826a4e09e3f2782822c71da6670e9275735ad3e",
+      "d92f081a089714e0aa92434c797fdd1a06da1290",
+      "ce676d24136e6efa932df8a4f3bf4801b89e1dd0",
+      "3e87c08ac878f4bb79349d38ac69ba75c45dc5bf",
+      "b8fe92096c4693ed0b134be7de88e00efed131f7",
+      "dee22c93f7617380875b68bfa55c3cb0e0b35570",
+      "caaec943d83fc6876f7032032a4c83e4f5183239",
+      "fc3690451e3b0d323cff4bc19c5669cfee7556dd",
+      "ddd678209da01d97844d61a2bd963ce4b67c0a0c",
+      "37f99c53a92b6254b671491b698ebdf6562ecb50",
+      "141f38bcf6a027b36f9a59f66f704cdb930ace19"
+    ],
+    "position": 4,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "+ []"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "+ []"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "+ []"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "+ []"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "peekable._get_slice": {
+    "fix": "e6ce1b0f65a57c459fc5004ad84158447b65b0ac",
+    "commits": [
+      "d634820be7a23b6a85441ee67051530fb0a8a960",
+      "1da45ae4b61a832ed080f08a8833784aad0a9534",
+      "b5e3886a37209bb880f17d82fbf4ba00ece0e41e",
+      "7f7c94efcf63271ac27dd000d62dd990afa71fd7",
+      "fbb9a98d8c7b914fcc952afd4976c1bc8deebe87",
+      "790bb0bb2c03e7a07282e5f16f4b1fde35b8fcf5",
+      "1ea82a711c69f590054987b5cb194157f8ce8ac4",
+      "81c21a8db1c922260cd673841257fb9b112c1318",
+      "b21ec4ee8e139ebe297e2221980a694bebb69523",
+      "e6ce1b0f65a57c459fc5004ad84158447b65b0ac",
+      "a00e2b34c7a3cc895aa7df117d16222da8316b08",
+      "d1f347fec150ca1b4c6f95082b9df89a0923b1d2",
+      "69dbc3392928afe1cc892a387bf0e721522f21c2"
+    ],
+    "position": 9,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 100 != 6"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "seekable.peek": {
+    "fix": "6b1907de293a655fb77881bf81948f95fd15bd7c",
+    "commits": [
+      "d92f081a089714e0aa92434c797fdd1a06da1290",
+      "3e87c08ac878f4bb79349d38ac69ba75c45dc5bf",
+      "141f38bcf6a027b36f9a59f66f704cdb930ace19",
+      "b656ecc0a64e328549a9858af1c4b609f9922b07",
+      "926acab4ae876eea0697a885996efdf3a32bf0ac",
+      "ca711220a6657a22655f6fa497524d006a735c5f",
+      "6b1907de293a655fb77881bf81948f95fd15bd7c",
+      "262dbb9805710cf31140f7566037e9f6178b6c28",
+      "b5e3886a37209bb880f17d82fbf4ba00ece0e41e",
+      "3eb4053e1aacac53853f6e0abae556f280726f01",
+      "fda709afc6f805ffab7f249e9b1179e8f34e4b32",
+      "edc63587ed2ec41ecc802d5550524471f48161c0",
+      "1dd480a08bc2a4c399c84bf21cb1558f8b5fc838"
+    ],
+    "position": 6,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 20 != 10"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 20 != 10"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 20 != 10"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 20 != 10"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 20 != 10"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: 20 != 10"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "numeric_range.__reversed__": {
+    "fix": "edb3346f835ca917efbfda5e2d6664ab952da369",
+    "commits": [
+      "9210d54527ddfa63ebe75cd5b5daa0201902c674",
+      "18c57c720fc5a7672439ea45a5393a8c1ff40d1e",
+      "e4d2a4a2a97246a73856754b2c4866d7f41d4875",
+      "5b43c0dc5f67713130ab534d448f8db1cf493e09",
+      "5ea81c48727f9906879e30b352772bc3869c4e88",
+      "5d5c163abf2c16fa6d18c5c8baa874a7a95aa678",
+      "1bf1273ad54d41a2d1cc4524058ef81e6fcdd7ed",
+      "247e15b3a489d5805375c95dfa79486c9bd0eb1b",
+      "edb3346f835ca917efbfda5e2d6664ab952da369",
+      "1806a75b836b9eff4a7885a96ece6183f5fb6409",
+      "37bb3adb089f7f392edb96bc7bf8d3c921e26d38",
+      "ea68e05fbe566a01ab416a0a2dd5e9637ac4e789",
+      "5e4893f87d96de1d80203e7e9ee0d6b9b8f89dd0"
+    ],
+    "position": 8,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: numeric range object index out of range"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "interleave_evenly": {
+    "fix": "f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2",
+    "commits": [
+      "23efd8f393facb3e68871fcfc5fd34c1667dbbf7",
+      "4a55f8d7d2aed01e0c9383ededd9ea12c1085bec",
+      "5d946b3590bfe92f1465c1b9b9830dd434745c84",
+      "f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2",
+      "b363d6b82c7082db647bd350560fca5e1d724a16",
+      "9c743eacf1c3bbd26de8f29566756e8bf8341415",
+      "fe24c338d8c3264a82cdc2bed49fb156cfd11a86",
+      "586ccc4d5af7263108c0f51386acff27469a28e4",
+      "54fcbae90fe712d6434dd7509dd0e01c97b03c06",
+      "ed86a1528aa015f219f8d3385ea2ebd3f63a5212",
+      "71253170de729b440993ae510765026a5beb3de5",
+      "d82024d025ec48f1197f92d5b66560a537a78184",
+      "8ff2d60e1462a6857f5a9b153d7be474f82da8b5"
+    ],
+    "position": 3,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: list index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: list index out of range"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "IndexError: list index out of range"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "chunked": {
+    "fix": "0e6acdf9b60765ecf9634d6f5c132ac1bebc616b",
+    "commits": [
+      "cb75bb9c55f7ed3e77ce599097e1ba8da411746d",
+      "301c957c8a50eca09c3b6eae416508a91487b552",
+      "da37f9de442b69fbcaa9f54fb042c2a6999473a6",
+      "f9cdcb990dbb87a9748e61a9a28c2ad737e60452",
+      "516f0a80fb7c2c8562dbb5e318fc2a3d44f4171f",
+      "0e6acdf9b60765ecf9634d6f5c132ac1bebc616b",
+      "9ddc55c57390707d97d96302eea1992919c8d930",
+      "63243787b0a49482ba4a17f83a0aa4d6f2fb5741",
+      "27688e5394e1af8a632e6ad015304ded2e2f06d3",
+      "7ff676d95968fb0a85f2527056c575cba039303c",
+      "3a259350f28cd17f09b4f0af21c6ebc03cf725cf",
+      "c69f0f9129ff8d26102219f50b60088353be7edf",
+      "cecd215fe1c6fdc639b9eb837cee93bba09d2952"
+    ],
+    "position": 5,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: \"n must be at least 0\" does not match \"Stop argument for islice() must be None or an integer: 0 <= x <= sys.maxsize.\""
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: \"n must be at least 0\" does not match \"Stop argument for islice() must be None or an integer: 0 <= x <= sys.maxsize.\""
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: \"n must be at least 0\" does not match \"Stop argument for islice() must be None or an integer: 0 <= x <= sys.maxsize.\""
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: \"n must be at least 0\" does not match \"Stop argument for islice() must be None or an integer: 0 <= x <= sys.maxsize.\""
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: \"n must be at least 0\" does not match \"Stop argument for islice() must be None or an integer: 0 <= x <= sys.maxsize.\""
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  },
+  "value_chain": {
+    "fix": "7847d4324a581da8d0919734a8e50b2a6573b780",
+    "commits": [
+      "516f0a80fb7c2c8562dbb5e318fc2a3d44f4171f",
+      "9ddc55c57390707d97d96302eea1992919c8d930",
+      "7ff676d95968fb0a85f2527056c575cba039303c",
+      "3a259350f28cd17f09b4f0af21c6ebc03cf725cf",
+      "c69f0f9129ff8d26102219f50b60088353be7edf",
+      "cecd215fe1c6fdc639b9eb837cee93bba09d2952",
+      "8a9dd135ea32301e9eaf6f179384db464aeee6b6",
+      "2fe1b2eeb9d75f994113fe3ac76d14b6bcd6fb10",
+      "30ada7dd597316a3ef967911477e0a1d9f55eefe",
+      "bc8be1013ac90fe3c1df8aae646b02605d578818",
+      "7847d4324a581da8d0919734a8e50b2a6573b780",
+      "d92f081a089714e0aa92434c797fdd1a06da1290",
+      "ce676d24136e6efa932df8a4f3bf4801b89e1dd0"
+    ],
+    "position": 10,
+    "measurements": [
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": false,
+        "run": 1,
+        "skipped": 0,
+        "issue": "AssertionError: TypeError not raised"
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      },
+      {
+        "passed": true,
+        "run": 1,
+        "skipped": 0,
+        "issue": null
+      }
+    ],
+    "eligible": true,
+    "reason": null
+  }
+}
