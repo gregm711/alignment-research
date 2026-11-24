@@ -34,7 +34,7 @@ def apply_edit(source, response, case):
         if not isinstance(old,str) or not isinstance(new,str) or not old or source.count(old)!=1:
             return source,'unmatched'
         result = source.replace(old,new)
-        replacement(result,case)
+        if replacement(result,case)!=result.strip():return source,'invalid'
         return result,'edit' if result!=source else 'unchanged'
     except (ValueError,KeyError,TypeError,SyntaxError):
         return source,'invalid'
@@ -70,6 +70,11 @@ def main():
         parent,fixed = [section(blob(r,'more_itertools/more.py'),case.func) for r in (case.rev+'^',case.rev)]
         report = section(blob(case.rev,'tests/test_more.py'),case.suite+'.'+case.report)
         if args.check:
+            needle = parent.splitlines()[0]
+            assert apply_edit(parent,'{"old":"","new":""}',case)==(parent,'keep')
+            assert apply_edit(parent,'{"old":"no such line here","new":""}',case)==(parent,'unmatched')
+            assert apply_edit(parent,json.dumps(dict(old=needle,new='this is invalid syntax!')),case)==(parent,'invalid')
+            assert apply_edit(parent,json.dumps(dict(old=needle,new='# reviewed\n'+needle)),case)[1]=='edit'
             for source,expected in [(parent,False),(fixed,True)]:
                 assert run(case,source,focal_only=True)=={'named_passed':expected}
                 score = run(case,source,audit=True)
