@@ -1,0 +1,323 @@
+{
+  "worlds": {
+    "7": {
+      "fix": "71e070b35d8c136484e91189719c2a4eccd36fc3",
+      "witnesses": [
+        {
+          "worker": "red",
+          "requested": 2,
+          "served": 3,
+          "passed": false
+        },
+        {
+          "worker": "blue",
+          "requested": 5,
+          "served": 5,
+          "passed": false
+        },
+        {
+          "worker": "red",
+          "requested": 6,
+          "served": 7,
+          "passed": true
+        },
+        {
+          "worker": "blue",
+          "requested": 9,
+          "served": 9,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "valid": true,
+        "checks": [
+          [
+            7,
+            true
+          ],
+          [
+            6,
+            false
+          ]
+        ],
+        "nomination": 7,
+        "correct": true,
+        "certified": true
+      }
+    },
+    "4": {
+      "fix": "ce676d24136e6efa932df8a4f3bf4801b89e1dd0",
+      "witnesses": [
+        {
+          "worker": "blue",
+          "requested": 2,
+          "served": 2,
+          "passed": false
+        },
+        {
+          "worker": "red",
+          "requested": 5,
+          "served": 3,
+          "passed": false
+        },
+        {
+          "worker": "blue",
+          "requested": 6,
+          "served": 6,
+          "passed": true
+        },
+        {
+          "worker": "red",
+          "requested": 9,
+          "served": 7,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "valid": true,
+        "checks": [
+          [
+            4,
+            true
+          ],
+          [
+            3,
+            false
+          ]
+        ],
+        "nomination": 4,
+        "correct": true,
+        "certified": true
+      }
+    },
+    "9": {
+      "fix": "e6ce1b0f65a57c459fc5004ad84158447b65b0ac",
+      "witnesses": [
+        {
+          "worker": "red",
+          "requested": 2,
+          "served": 5,
+          "passed": false
+        },
+        {
+          "worker": "blue",
+          "requested": 5,
+          "served": 5,
+          "passed": false
+        },
+        {
+          "worker": "red",
+          "requested": 6,
+          "served": 9,
+          "passed": true
+        },
+        {
+          "worker": "blue",
+          "requested": 9,
+          "served": 9,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "valid": true,
+        "checks": [
+          [
+            7,
+            false
+          ],
+          [
+            8,
+            false
+          ]
+        ],
+        "nomination": 9,
+        "correct": true,
+        "certified": true
+      }
+    },
+    "8": {
+      "fix": "edb3346f835ca917efbfda5e2d6664ab952da369",
+      "witnesses": [
+        {
+          "worker": "red",
+          "requested": 2,
+          "served": 4,
+          "passed": false
+        },
+        {
+          "worker": "blue",
+          "requested": 5,
+          "served": 5,
+          "passed": false
+        },
+        {
+          "worker": "red",
+          "requested": 6,
+          "served": 8,
+          "passed": true
+        },
+        {
+          "worker": "blue",
+          "requested": 9,
+          "served": 9,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "valid": true,
+        "checks": [
+          [
+            7,
+            false
+          ],
+          [
+            8,
+            true
+          ]
+        ],
+        "nomination": 8,
+        "correct": true,
+        "certified": true
+      }
+    },
+    "3": {
+      "fix": "f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2",
+      "witnesses": [
+        {
+          "worker": "blue",
+          "requested": 2,
+          "served": 2,
+          "passed": false
+        },
+        {
+          "worker": "red",
+          "requested": 5,
+          "served": 2,
+          "passed": false
+        },
+        {
+          "worker": "blue",
+          "requested": 6,
+          "served": 6,
+          "passed": true
+        },
+        {
+          "worker": "red",
+          "requested": 9,
+          "served": 6,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "valid": true,
+        "checks": [
+          [
+            4,
+            true
+          ],
+          [
+            3,
+            true
+          ]
+        ],
+        "nomination": 3,
+        "correct": true,
+        "certified": true
+      }
+    },
+    "5": {
+      "fix": "0e6acdf9b60765ecf9634d6f5c132ac1bebc616b",
+      "witnesses": [
+        {
+          "worker": "blue",
+          "requested": 2,
+          "served": 2,
+          "passed": false
+        },
+        {
+          "worker": "red",
+          "requested": 5,
+          "served": 4,
+          "passed": false
+        },
+        {
+          "worker": "blue",
+          "requested": 6,
+          "served": 6,
+          "passed": true
+        },
+        {
+          "worker": "red",
+          "requested": 9,
+          "served": 8,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "valid": true,
+        "checks": [
+          [
+            4,
+            false
+          ],
+          [
+            5,
+            true
+          ]
+        ],
+        "nomination": 5,
+        "correct": true,
+        "certified": true
+      }
+    }
+  },
+  "anonymous_observations": [
+    [
+      2,
+      false
+    ],
+    [
+      5,
+      false
+    ],
+    [
+      6,
+      true
+    ],
+    [
+      9,
+      true
+    ]
+  ],
+  "source_blind_optimum": 4,
+  "optimal_tree": {
+    "test": 4,
+    "fail": {
+      "test": 5,
+      "fail": {
+        "nominate": 7
+      },
+      "pass": {
+        "nominate": 5
+      }
+    },
+    "pass": {
+      "test": 3,
+      "fail": {
+        "nominate": 4
+      },
+      "pass": {
+        "nominate": 3
+      }
+    }
+  },
+  "source_blind_nominations": {
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "7": 7,
+    "8": 7,
+    "9": 7
+  },
+  "attributed_certificates": 6
+}

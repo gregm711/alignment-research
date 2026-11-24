@@ -1,0 +1,568 @@
+{
+  "all_unique": {
+    "scores": {
+      "cdf7a8d27107499f88726e289e7b086613d48e826b6a4dad40fe07b0d2b8a640": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 6,
+        "failures": 1,
+        "errors": 2,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 3,
+          "other_total": 5
+        }
+      },
+      "810549cd7beaf23e36508697b3f129bb37eab05796eec22b7eed048456e2e7f0": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 6,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      },
+      "bdb630d7a880e0899c45acdc27e24b8c7b9c9ff414ab5d53d0c827f7b102fa29": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      }
+    },
+    "arms": {
+      "first": "cdf7a8d27107499f88726e289e7b086613d48e826b6a4dad40fe07b0d2b8a640",
+      "full": "cdf7a8d27107499f88726e289e7b086613d48e826b6a4dad40fe07b0d2b8a640",
+      "ordinary": "cdf7a8d27107499f88726e289e7b086613d48e826b6a4dad40fe07b0d2b8a640",
+      "extract": "cdf7a8d27107499f88726e289e7b086613d48e826b6a4dad40fe07b0d2b8a640",
+      "none": "cdf7a8d27107499f88726e289e7b086613d48e826b6a4dad40fe07b0d2b8a640",
+      "human-parent": "810549cd7beaf23e36508697b3f129bb37eab05796eec22b7eed048456e2e7f0",
+      "human-fix": "bdb630d7a880e0899c45acdc27e24b8c7b9c9ff414ab5d53d0c827f7b102fa29"
+    }
+  },
+  "split_before": {
+    "scores": {
+      "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      },
+      "7865e1b392284b6cfeae44bf5c911504d337c7383aa186e176f6a0e4528edf9a": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      },
+      "47f8ef3625ccfc39622ff1295a53ceb42d1cacf8a29adbde856014c66e30156d": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      }
+    },
+    "arms": {
+      "first": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "full": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "ordinary": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "extract": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "none": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "human-parent": "7865e1b392284b6cfeae44bf5c911504d337c7383aa186e176f6a0e4528edf9a",
+      "human-fix": "47f8ef3625ccfc39622ff1295a53ceb42d1cacf8a29adbde856014c66e30156d"
+    }
+  },
+  "peekable._get_slice": {
+    "scores": {
+      "791c095c79e88150099418043615009e76fb2abe270c2c23dcc57295e5e21299": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "aa82c5b99b2ba9401afd08c93e99424f66b53dc999c90dccf5d937571f7d0a5b": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "5703b95806281f0f4980a7f57b773ef6b18b5343c680f6a53738d44c4844147e": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "19118facfb8b6ad4a8da1b107646f9c791dbaca1a27939906311e1d68fe84550": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "32ac26090d3f6027387fd6b26ac84ae0a49dcaf38b43c7a4330f354c0607d648": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "7d09d5af1083d25f0d6f30d2b80186a119118bd2f0f31ba75b620a2fa409cc9c": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "b11da1ea8a8e792116c5c2ee61c0636e0295b156f8d8f58f3500a5b749f01000": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 21,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      }
+    },
+    "arms": {
+      "first": "791c095c79e88150099418043615009e76fb2abe270c2c23dcc57295e5e21299",
+      "full": "aa82c5b99b2ba9401afd08c93e99424f66b53dc999c90dccf5d937571f7d0a5b",
+      "ordinary": "5703b95806281f0f4980a7f57b773ef6b18b5343c680f6a53738d44c4844147e",
+      "extract": "19118facfb8b6ad4a8da1b107646f9c791dbaca1a27939906311e1d68fe84550",
+      "none": "32ac26090d3f6027387fd6b26ac84ae0a49dcaf38b43c7a4330f354c0607d648",
+      "human-parent": "7d09d5af1083d25f0d6f30d2b80186a119118bd2f0f31ba75b620a2fa409cc9c",
+      "human-fix": "b11da1ea8a8e792116c5c2ee61c0636e0295b156f8d8f58f3500a5b749f01000"
+    }
+  },
+  "seekable.peek": {
+    "scores": {
+      "2b75bfd9b89e0b4b086aec82de88f788bd8ec7edff82d4940d510e4812959079": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 0,
+        "errors": 2,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 14,
+          "other_total": 15
+        }
+      },
+      "7e7584fe4ee74d7561621e50167f0527a0a730a6bca63baa76471500c45df920": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 14,
+          "other_total": 15
+        }
+      },
+      "31521f3b1986d8299153f358f715a140c56ab79486583a7df46852b3185facc6": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 15,
+          "other_total": 15
+        }
+      }
+    },
+    "arms": {
+      "first": "2b75bfd9b89e0b4b086aec82de88f788bd8ec7edff82d4940d510e4812959079",
+      "full": "2b75bfd9b89e0b4b086aec82de88f788bd8ec7edff82d4940d510e4812959079",
+      "ordinary": "2b75bfd9b89e0b4b086aec82de88f788bd8ec7edff82d4940d510e4812959079",
+      "extract": "2b75bfd9b89e0b4b086aec82de88f788bd8ec7edff82d4940d510e4812959079",
+      "none": "2b75bfd9b89e0b4b086aec82de88f788bd8ec7edff82d4940d510e4812959079",
+      "human-parent": "7e7584fe4ee74d7561621e50167f0527a0a730a6bca63baa76471500c45df920",
+      "human-fix": "31521f3b1986d8299153f358f715a140c56ab79486583a7df46852b3185facc6"
+    }
+  },
+  "numeric_range.__reversed__": {
+    "scores": {
+      "22567e1e19b23d4cddf355f4d314b83eeb6fd864a115c85d4dec67e74c3db6bd": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 1,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 17,
+          "other_total": 18
+        }
+      },
+      "0a3ae6ec6584fe43dc5e52d326a535d38c85748fc5b51d5c7d6e8b598a027a37": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 1,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 17,
+          "other_total": 18
+        }
+      },
+      "efd250f430412814fcfe432bd9e7ecad5c48e8ce665be7893f64d40b9d201e0e": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 18,
+          "other_total": 18
+        }
+      },
+      "2e56c5e542a5fbdf1c405362399b9ed42ceedc27d2db8c68a7fdce3519a310d6": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 18,
+          "other_total": 18
+        }
+      }
+    },
+    "arms": {
+      "first": "22567e1e19b23d4cddf355f4d314b83eeb6fd864a115c85d4dec67e74c3db6bd",
+      "full": "0a3ae6ec6584fe43dc5e52d326a535d38c85748fc5b51d5c7d6e8b598a027a37",
+      "ordinary": "0a3ae6ec6584fe43dc5e52d326a535d38c85748fc5b51d5c7d6e8b598a027a37",
+      "extract": "0a3ae6ec6584fe43dc5e52d326a535d38c85748fc5b51d5c7d6e8b598a027a37",
+      "none": "0a3ae6ec6584fe43dc5e52d326a535d38c85748fc5b51d5c7d6e8b598a027a37",
+      "human-parent": "efd250f430412814fcfe432bd9e7ecad5c48e8ce665be7893f64d40b9d201e0e",
+      "human-fix": "2e56c5e542a5fbdf1c405362399b9ed42ceedc27d2db8c68a7fdce3519a310d6"
+    }
+  },
+  "interleave_evenly": {
+    "scores": {
+      "38de55edeebbcbb78a0521b7a0d6e5c7e27e51eacc4300bc43d9f4a3345a5192": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      },
+      "e074d19e83b86e3766c16ef1b74c93b9c9859c03b0aa1d46f43fabc8f90b6b1c": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      },
+      "7400797c8d6f561250b7a88cd2847d671680982e5407295250a3b508f73f6e07": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      }
+    },
+    "arms": {
+      "first": "38de55edeebbcbb78a0521b7a0d6e5c7e27e51eacc4300bc43d9f4a3345a5192",
+      "full": "38de55edeebbcbb78a0521b7a0d6e5c7e27e51eacc4300bc43d9f4a3345a5192",
+      "ordinary": "38de55edeebbcbb78a0521b7a0d6e5c7e27e51eacc4300bc43d9f4a3345a5192",
+      "extract": "38de55edeebbcbb78a0521b7a0d6e5c7e27e51eacc4300bc43d9f4a3345a5192",
+      "none": "38de55edeebbcbb78a0521b7a0d6e5c7e27e51eacc4300bc43d9f4a3345a5192",
+      "human-parent": "e074d19e83b86e3766c16ef1b74c93b9c9859c03b0aa1d46f43fabc8f90b6b1c",
+      "human-fix": "7400797c8d6f561250b7a88cd2847d671680982e5407295250a3b508f73f6e07"
+    }
+  },
+  "chunked": {
+    "scores": {
+      "f629636d063470df89c33ec0b3ee2a7e13960ca9ecd6b26fbd3d9cf1b0f636bd": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "191a06ed4a01855f9dd1db835fae3e0b60aab91c143c84e383742ddc13da2125": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 4,
+          "other_total": 6
+        }
+      },
+      "91f9b9b71a54961534e5bf7e91d6ca6cfd7ad452006bc6973479f34daab68699": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 2,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 4,
+          "other_total": 6
+        }
+      },
+      "370166d13a001147ca8f06c1a49acc1b89ff4858f2847937fe7fcf6e4c81c5cf": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "6a09a7c709df5abae4bf3b05ad36f9d13e7d4b1557a4f182a0cb0c1a27c320cc": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      }
+    },
+    "arms": {
+      "first": "f629636d063470df89c33ec0b3ee2a7e13960ca9ecd6b26fbd3d9cf1b0f636bd",
+      "full": "191a06ed4a01855f9dd1db835fae3e0b60aab91c143c84e383742ddc13da2125",
+      "ordinary": "191a06ed4a01855f9dd1db835fae3e0b60aab91c143c84e383742ddc13da2125",
+      "extract": "91f9b9b71a54961534e5bf7e91d6ca6cfd7ad452006bc6973479f34daab68699",
+      "none": "91f9b9b71a54961534e5bf7e91d6ca6cfd7ad452006bc6973479f34daab68699",
+      "human-parent": "370166d13a001147ca8f06c1a49acc1b89ff4858f2847937fe7fcf6e4c81c5cf",
+      "human-fix": "6a09a7c709df5abae4bf3b05ad36f9d13e7d4b1557a4f182a0cb0c1a27c320cc"
+    }
+  },
+  "value_chain": {
+    "scores": {
+      "a9e71916391755edba8ac370f12e67e643a47c2da6626ddaa0a64c3a323a6a7d": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 5,
+          "other_total": 6
+        }
+      },
+      "a306074448128f27d549271dda3becbe378cc3fcba82819f1b94915a400fbeec": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 5,
+          "other_total": 6
+        }
+      },
+      "a5b452eda87c576289e8a0eda28b180f26c02e6a13676a47b33cca0d0aa7e950": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 5,
+          "other_total": 6
+        }
+      },
+      "f4286ab398ab22af08b0879428a874c37a090b73a648bdb9e0786071f0a87659": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "3bed3ab4f07c1320d9bf5031e0e57881f44d749ffb3c9562fb2a3945c6705361": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      }
+    },
+    "arms": {
+      "first": "a9e71916391755edba8ac370f12e67e643a47c2da6626ddaa0a64c3a323a6a7d",
+      "full": "a306074448128f27d549271dda3becbe378cc3fcba82819f1b94915a400fbeec",
+      "ordinary": "a306074448128f27d549271dda3becbe378cc3fcba82819f1b94915a400fbeec",
+      "extract": "a306074448128f27d549271dda3becbe378cc3fcba82819f1b94915a400fbeec",
+      "none": "a5b452eda87c576289e8a0eda28b180f26c02e6a13676a47b33cca0d0aa7e950",
+      "human-parent": "f4286ab398ab22af08b0879428a874c37a090b73a648bdb9e0786071f0a87659",
+      "human-fix": "3bed3ab4f07c1320d9bf5031e0e57881f44d749ffb3c9562fb2a3945c6705361"
+    }
+  }
+}

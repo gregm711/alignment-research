@@ -135,7 +135,7 @@ def replacement(text,case):
     return candidate
 
 
-def run(case, candidate):
+def run(case, candidate, *, audit=False):
     rev=case.rev
     source=blob(rev+'^','more_itertools/more.py')
     n=locate(source,case.func)
@@ -147,13 +147,25 @@ def run(case, candidate):
     lines[n.lineno-1:n.end_lineno]=[textwrap.indent(code,' '*n.col_offset)+'\n']
     runner="""import io, json, unittest, test_more, more_itertools as mi
 buf=io.StringIO()
-result=unittest.TextTestRunner(stream=buf).run(unittest.defaultTestLoader.loadTestsFromTestCase(getattr(test_more,SUITE)))
+class Result(unittest.TextTestResult):
+    def addSuccess(self,test):
+        successes.add(test.id())
+        super().addSuccess(test)
+successes=set()
+suite=unittest.defaultTestLoader.loadTestsFromTestCase(getattr(test_more,SUITE))
+test_ids={t.id() for t in suite}
+named="test_more."+SUITE+"."+REPORT
+assert named in test_ids
+result=unittest.TextTestRunner(stream=buf,resultclass=Result).run(suite)
 try:
     exec(WITHHELD, {'mi':mi})
     held=True
 except BaseException:
     held=False
-print(json.dumps({'class_passed':result.wasSuccessful(),'class_tests':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'withheld_passed':held}))
+stats={'class_passed':result.wasSuccessful(),'class_tests':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'withheld_passed':held}
+if AUDIT:
+    stats['audit']={'named_passed':named in successes,'other_passed':len(successes-{named}),'other_total':len(test_ids)-1}
+print(json.dumps(stats))
 """
     import json
     with tempfile.TemporaryDirectory() as tmp:
@@ -163,7 +175,7 @@ print(json.dumps({'class_passed':result.wasSuccessful(),'class_tests':result.tes
         for name in ('__init__.py','recipes.py','more.py'):
             (package/name).write_text(''.join(lines) if name=='more.py' else blob(rev+'^','more_itertools/'+name))
         (root/'test_more.py').write_text(blob(rev,'tests/test_more.py'))
-        (root/'run.py').write_text(f'SUITE={case.suite!r}\nWITHHELD={case.withheld!r}\n'+runner)
+        (root/'run.py').write_text(f'SUITE={case.suite!r}\nREPORT={case.report!r}\nAUDIT={audit!r}\nWITHHELD={case.withheld!r}\n'+runner)
         cmd=['docker','run','--rm','--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges',
              '--user','65534:65534','--pids-limit','32','--memory','192m','--cpus','1','--ulimit','cpu=4:5',
              '-v',str(root)+':/eval:ro','-w','/eval',IMAGE,'python','-B','-S','run.py']

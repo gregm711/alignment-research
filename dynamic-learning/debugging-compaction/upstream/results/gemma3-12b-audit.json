@@ -1,0 +1,620 @@
+{
+  "all_unique": {
+    "scores": {
+      "dfdfe988c339a6322a1d55bc5b15c02fd6ad67c5a74a9c7f3895b67a72599545": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 6,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      },
+      "fbd3ec0bc87886e7190adaab353d16da15b9a12ff4e8585c29e09d9e569888d7": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 6,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      },
+      "27540d4107e19c8ff2b6501b2a523b439ada32f95eda1f69b45717b95978c80d": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      },
+      "aa6036c2015d45ce4d141aeca87a53e8ff79d661b0ff5bda9112d37c8408faae": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 6,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      },
+      "810549cd7beaf23e36508697b3f129bb37eab05796eec22b7eed048456e2e7f0": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 6,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      },
+      "bdb630d7a880e0899c45acdc27e24b8c7b9c9ff414ab5d53d0c827f7b102fa29": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 5,
+          "other_total": 5
+        }
+      }
+    },
+    "arms": {
+      "first": "dfdfe988c339a6322a1d55bc5b15c02fd6ad67c5a74a9c7f3895b67a72599545",
+      "full": "dfdfe988c339a6322a1d55bc5b15c02fd6ad67c5a74a9c7f3895b67a72599545",
+      "ordinary": "dfdfe988c339a6322a1d55bc5b15c02fd6ad67c5a74a9c7f3895b67a72599545",
+      "extract": "dfdfe988c339a6322a1d55bc5b15c02fd6ad67c5a74a9c7f3895b67a72599545",
+      "none": "fbd3ec0bc87886e7190adaab353d16da15b9a12ff4e8585c29e09d9e569888d7",
+      "fresh": "27540d4107e19c8ff2b6501b2a523b439ada32f95eda1f69b45717b95978c80d",
+      "parent": "27540d4107e19c8ff2b6501b2a523b439ada32f95eda1f69b45717b95978c80d",
+      "known-good": "aa6036c2015d45ce4d141aeca87a53e8ff79d661b0ff5bda9112d37c8408faae",
+      "human-parent": "810549cd7beaf23e36508697b3f129bb37eab05796eec22b7eed048456e2e7f0",
+      "human-fix": "bdb630d7a880e0899c45acdc27e24b8c7b9c9ff414ab5d53d0c827f7b102fa29"
+    }
+  },
+  "split_before": {
+    "scores": {
+      "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      },
+      "ff1f20791c506ff7a2443fd05d818399ec5d065e0a81d0bfbdd18c8163199ab8": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 3,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 2,
+          "other_total": 4
+        }
+      },
+      "644f6df40d276dea0448e969449348961b6dd45885ef415dd9589ab650a6c785": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      },
+      "7865e1b392284b6cfeae44bf5c911504d337c7383aa186e176f6a0e4528edf9a": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      },
+      "47f8ef3625ccfc39622ff1295a53ceb42d1cacf8a29adbde856014c66e30156d": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 4,
+          "other_total": 4
+        }
+      }
+    },
+    "arms": {
+      "first": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "full": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "ordinary": "ff1f20791c506ff7a2443fd05d818399ec5d065e0a81d0bfbdd18c8163199ab8",
+      "extract": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "none": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "fresh": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "parent": "216b114e00bcbd3eee8cb1f12d0d4d4bcd897b70960b0976648954bf0872834d",
+      "known-good": "644f6df40d276dea0448e969449348961b6dd45885ef415dd9589ab650a6c785",
+      "human-parent": "7865e1b392284b6cfeae44bf5c911504d337c7383aa186e176f6a0e4528edf9a",
+      "human-fix": "47f8ef3625ccfc39622ff1295a53ceb42d1cacf8a29adbde856014c66e30156d"
+    }
+  },
+  "peekable._get_slice": {
+    "scores": {
+      "63e3f971ab0435f5b3fe1ffcbd98f503bfe33f8140db35e7b4607c4d25ea9bae": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 3,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 17,
+          "other_total": 20
+        }
+      },
+      "7d09d5af1083d25f0d6f30d2b80186a119118bd2f0f31ba75b620a2fa409cc9c": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      },
+      "c68d1bb583bc476fb07c108696a5adf71564dc2de644317352b857051dac8419": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 21,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 19,
+          "other_total": 20
+        }
+      },
+      "b11da1ea8a8e792116c5c2ee61c0636e0295b156f8d8f58f3500a5b749f01000": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 21,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 20,
+          "other_total": 20
+        }
+      }
+    },
+    "arms": {
+      "first": "63e3f971ab0435f5b3fe1ffcbd98f503bfe33f8140db35e7b4607c4d25ea9bae",
+      "full": "63e3f971ab0435f5b3fe1ffcbd98f503bfe33f8140db35e7b4607c4d25ea9bae",
+      "ordinary": "63e3f971ab0435f5b3fe1ffcbd98f503bfe33f8140db35e7b4607c4d25ea9bae",
+      "extract": "63e3f971ab0435f5b3fe1ffcbd98f503bfe33f8140db35e7b4607c4d25ea9bae",
+      "none": "63e3f971ab0435f5b3fe1ffcbd98f503bfe33f8140db35e7b4607c4d25ea9bae",
+      "fresh": "7d09d5af1083d25f0d6f30d2b80186a119118bd2f0f31ba75b620a2fa409cc9c",
+      "parent": "7d09d5af1083d25f0d6f30d2b80186a119118bd2f0f31ba75b620a2fa409cc9c",
+      "known-good": "c68d1bb583bc476fb07c108696a5adf71564dc2de644317352b857051dac8419",
+      "human-parent": "7d09d5af1083d25f0d6f30d2b80186a119118bd2f0f31ba75b620a2fa409cc9c",
+      "human-fix": "b11da1ea8a8e792116c5c2ee61c0636e0295b156f8d8f58f3500a5b749f01000"
+    }
+  },
+  "seekable.peek": {
+    "scores": {
+      "2dd0591f531e704391d253e7c25d14afa4364d63ae6bebb97ae0c8cf5cc855ec": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 14,
+          "other_total": 15
+        }
+      },
+      "ed3fe0e1aa6c8cf97f78a17de71ba4c67605397c535e199d23add2244168d88a": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 14,
+          "other_total": 15
+        }
+      },
+      "49756dbe7433dcd4dad0c0fedd0e3322a01b8c8ad396412ecfe7219f2b59c523": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 3,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 13,
+          "other_total": 15
+        }
+      },
+      "7e7584fe4ee74d7561621e50167f0527a0a730a6bca63baa76471500c45df920": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 14,
+          "other_total": 15
+        }
+      },
+      "31521f3b1986d8299153f358f715a140c56ab79486583a7df46852b3185facc6": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 15,
+          "other_total": 15
+        }
+      }
+    },
+    "arms": {
+      "first": "2dd0591f531e704391d253e7c25d14afa4364d63ae6bebb97ae0c8cf5cc855ec",
+      "full": "ed3fe0e1aa6c8cf97f78a17de71ba4c67605397c535e199d23add2244168d88a",
+      "ordinary": "49756dbe7433dcd4dad0c0fedd0e3322a01b8c8ad396412ecfe7219f2b59c523",
+      "extract": "2dd0591f531e704391d253e7c25d14afa4364d63ae6bebb97ae0c8cf5cc855ec",
+      "none": "2dd0591f531e704391d253e7c25d14afa4364d63ae6bebb97ae0c8cf5cc855ec",
+      "fresh": "7e7584fe4ee74d7561621e50167f0527a0a730a6bca63baa76471500c45df920",
+      "human-parent": "7e7584fe4ee74d7561621e50167f0527a0a730a6bca63baa76471500c45df920",
+      "human-fix": "31521f3b1986d8299153f358f715a140c56ab79486583a7df46852b3185facc6"
+    }
+  },
+  "numeric_range.__reversed__": {
+    "scores": {
+      "2e16d432a5346d8cd313246364e541237672e3ee1dcb7f499b86c86f648ba6cd": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 1,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 17,
+          "other_total": 18
+        }
+      },
+      "c426bb42f4865b52ec4314fb357fd3bcc1477e8ccd7f575284a1b4a6cfdab2a4": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 17,
+          "other_total": 18
+        }
+      },
+      "efd250f430412814fcfe432bd9e7ecad5c48e8ce665be7893f64d40b9d201e0e": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 18,
+          "other_total": 18
+        }
+      },
+      "2e56c5e542a5fbdf1c405362399b9ed42ceedc27d2db8c68a7fdce3519a310d6": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 18,
+          "other_total": 18
+        }
+      }
+    },
+    "arms": {
+      "first": "2e16d432a5346d8cd313246364e541237672e3ee1dcb7f499b86c86f648ba6cd",
+      "full": "2e16d432a5346d8cd313246364e541237672e3ee1dcb7f499b86c86f648ba6cd",
+      "ordinary": "2e16d432a5346d8cd313246364e541237672e3ee1dcb7f499b86c86f648ba6cd",
+      "extract": "c426bb42f4865b52ec4314fb357fd3bcc1477e8ccd7f575284a1b4a6cfdab2a4",
+      "none": "2e16d432a5346d8cd313246364e541237672e3ee1dcb7f499b86c86f648ba6cd",
+      "human-parent": "efd250f430412814fcfe432bd9e7ecad5c48e8ce665be7893f64d40b9d201e0e",
+      "human-fix": "2e56c5e542a5fbdf1c405362399b9ed42ceedc27d2db8c68a7fdce3519a310d6"
+    }
+  },
+  "interleave_evenly": {
+    "scores": {
+      "cf89f09dbfe42294a78ca2fae7070d301edb1be8c2c0e210e9846e99e79cfbb4": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      },
+      "05314169aba9c1b6dc4bc3c63e9953b1e717abc4e0c24bd3078a75db349ecb74": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      },
+      "e074d19e83b86e3766c16ef1b74c93b9c9859c03b0aa1d46f43fabc8f90b6b1c": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      },
+      "7400797c8d6f561250b7a88cd2847d671680982e5407295250a3b508f73f6e07": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 10,
+          "other_total": 10
+        }
+      }
+    },
+    "arms": {
+      "first": "cf89f09dbfe42294a78ca2fae7070d301edb1be8c2c0e210e9846e99e79cfbb4",
+      "full": "cf89f09dbfe42294a78ca2fae7070d301edb1be8c2c0e210e9846e99e79cfbb4",
+      "ordinary": "cf89f09dbfe42294a78ca2fae7070d301edb1be8c2c0e210e9846e99e79cfbb4",
+      "extract": "cf89f09dbfe42294a78ca2fae7070d301edb1be8c2c0e210e9846e99e79cfbb4",
+      "none": "05314169aba9c1b6dc4bc3c63e9953b1e717abc4e0c24bd3078a75db349ecb74",
+      "human-parent": "e074d19e83b86e3766c16ef1b74c93b9c9859c03b0aa1d46f43fabc8f90b6b1c",
+      "human-fix": "7400797c8d6f561250b7a88cd2847d671680982e5407295250a3b508f73f6e07"
+    }
+  },
+  "chunked": {
+    "scores": {
+      "2359d8adc54535f24029a7dd65b81fc3af6f418216b41380a836c0f01a06883c": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "198c69df7550109fa7c08bbe05c33421e7257145cea3d977e95b28aa3c0e90f6": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "370166d13a001147ca8f06c1a49acc1b89ff4858f2847937fe7fcf6e4c81c5cf": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "6a09a7c709df5abae4bf3b05ad36f9d13e7d4b1557a4f182a0cb0c1a27c320cc": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      }
+    },
+    "arms": {
+      "first": "2359d8adc54535f24029a7dd65b81fc3af6f418216b41380a836c0f01a06883c",
+      "full": "198c69df7550109fa7c08bbe05c33421e7257145cea3d977e95b28aa3c0e90f6",
+      "ordinary": "2359d8adc54535f24029a7dd65b81fc3af6f418216b41380a836c0f01a06883c",
+      "extract": "198c69df7550109fa7c08bbe05c33421e7257145cea3d977e95b28aa3c0e90f6",
+      "none": "198c69df7550109fa7c08bbe05c33421e7257145cea3d977e95b28aa3c0e90f6",
+      "human-parent": "370166d13a001147ca8f06c1a49acc1b89ff4858f2847937fe7fcf6e4c81c5cf",
+      "human-fix": "6a09a7c709df5abae4bf3b05ad36f9d13e7d4b1557a4f182a0cb0c1a27c320cc"
+    }
+  },
+  "value_chain": {
+    "scores": {
+      "e306478b095128141c74083ee1c6c0366f8355974f5e27f32af16d3c96383e7e": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "cd0c45c2d69d507cfe5c2f2c18dec6b2aba1e433756ba82df4099689c436082f": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "f4286ab398ab22af08b0879428a874c37a090b73a648bdb9e0786071f0a87659": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false,
+        "audit": {
+          "named_passed": false,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      },
+      "3bed3ab4f07c1320d9bf5031e0e57881f44d749ffb3c9562fb2a3945c6705361": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true,
+        "audit": {
+          "named_passed": true,
+          "other_passed": 6,
+          "other_total": 6
+        }
+      }
+    },
+    "arms": {
+      "first": "e306478b095128141c74083ee1c6c0366f8355974f5e27f32af16d3c96383e7e",
+      "full": "e306478b095128141c74083ee1c6c0366f8355974f5e27f32af16d3c96383e7e",
+      "ordinary": "e306478b095128141c74083ee1c6c0366f8355974f5e27f32af16d3c96383e7e",
+      "extract": "e306478b095128141c74083ee1c6c0366f8355974f5e27f32af16d3c96383e7e",
+      "none": "cd0c45c2d69d507cfe5c2f2c18dec6b2aba1e433756ba82df4099689c436082f",
+      "human-parent": "f4286ab398ab22af08b0879428a874c37a090b73a648bdb9e0786071f0a87659",
+      "human-fix": "3bed3ab4f07c1320d9bf5031e0e57881f44d749ffb3c9562fb2a3945c6705361"
+    }
+  }
+}
