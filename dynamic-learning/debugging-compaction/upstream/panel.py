@@ -135,7 +135,7 @@ def replacement(text,case):
     return candidate
 
 
-def run(case, candidate, *, audit=False):
+def run(case, candidate, *, audit=False, focal_only=False):
     rev=case.rev
     source=blob(rev+'^','more_itertools/more.py')
     n=locate(source,case.func)
@@ -156,6 +156,12 @@ suite=unittest.defaultTestLoader.loadTestsFromTestCase(getattr(test_more,SUITE))
 test_ids={t.id() for t in suite}
 named="test_more."+SUITE+"."+REPORT
 assert named in test_ids
+if FOCAL_ONLY:
+    single=getattr(test_more,SUITE)(REPORT)
+    result=unittest.TextTestRunner(stream=buf,resultclass=Result).run(single)
+    assert result.testsRun==1 and not result.skipped
+    print(json.dumps({'named_passed':named in successes}))
+    raise SystemExit
 result=unittest.TextTestRunner(stream=buf,resultclass=Result).run(suite)
 try:
     exec(WITHHELD, {'mi':mi})
@@ -175,7 +181,7 @@ print(json.dumps(stats))
         for name in ('__init__.py','recipes.py','more.py'):
             (package/name).write_text(''.join(lines) if name=='more.py' else blob(rev+'^','more_itertools/'+name))
         (root/'test_more.py').write_text(blob(rev,'tests/test_more.py'))
-        (root/'run.py').write_text(f'SUITE={case.suite!r}\nREPORT={case.report!r}\nAUDIT={audit!r}\nWITHHELD={case.withheld!r}\n'+runner)
+        (root/'run.py').write_text(f'SUITE={case.suite!r}\nREPORT={case.report!r}\nAUDIT={audit!r}\nFOCAL_ONLY={focal_only!r}\nWITHHELD={case.withheld!r}\n'+runner)
         cmd=['docker','run','--rm','--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges',
              '--user','65534:65534','--pids-limit','32','--memory','192m','--cpus','1','--ulimit','cpu=4:5',
              '-v',str(root)+':/eval:ro','-w','/eval',IMAGE,'python','-B','-S','run.py']
@@ -186,6 +192,8 @@ print(json.dumps(stats))
     if proc.returncode:
         return {'valid':True,'passed':False,'error':(proc.stderr[-360:] or f'exit {proc.returncode}')}
     stats=json.loads(proc.stdout.strip().splitlines()[-1])
+    if focal_only:
+        return stats
     return {'valid':True,'passed':stats['class_passed'] and stats['withheld_passed'],**stats}
 
 
