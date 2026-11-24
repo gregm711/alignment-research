@@ -1,0 +1,6 @@
+{
+  "hypothesis": "When the expected gap is at most 1.5 minutes, modest estimated probe value can make planning the better use of the action. Use probe value directly in this branch so the tree can plan on near ties with longer delays and still ask when the estimated value of the check is high.",
+  "prediction": "At the primary action prices, the proposal will save at least 0.01 equivalent minute per development map compared with the supplied tree that costs 0.294921875, for a mean cost of at most 0.284921875.",
+  "failure": "The predicted improvement fails if the paired mean development savings are below 0.01 equivalent minute per map. Because the proposal uses development examples, any test-set advantage must be assessed under the preregistered frozen-selection comparisons.",
+  "tree": "[\"probe_value\",0.5,[\"abs_expected_gap\",3.5,\"plan\",\"stop\"],[\"abs_expected_gap\",1.5,[\"probe_value\",1.25,\"plan\",\"ask\"],\"ask\"]]"
+}

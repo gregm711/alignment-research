@@ -1,0 +1,76 @@
+{
+  "beta": [
+    0.6029762239126137,
+    0.4289516112458656,
+    0.6195836453051914,
+    0.11316941068521809
+  ],
+  "fixed": "stop",
+  "cheap": [
+    "probe_value",
+    0.5,
+    "stop",
+    "ask"
+  ],
+  "trees": {
+    "fitted": [
+      "probe_value",
+      0.4751031848190153,
+      [
+        "abs_expected_gap",
+        5.026191395886002,
+        [
+          "abs_expected_gap",
+          3.1558358130491997,
+          "plan",
+          "stop"
+        ],
+        "stop"
+      ],
+      "ask"
+    ],
+    "codex1": [
+      "probe_value",
+      0.5,
+      [
+        "abs_expected_gap",
+        3.5,
+        "plan",
+        "stop"
+      ],
+      [
+        "delay",
+        7,
+        [
+          "abs_expected_gap",
+          1.5,
+          "plan",
+          "ask"
+        ],
+        "ask"
+      ]
+    ],
+    "codex2": [
+      "probe_value",
+      0.5,
+      [
+        "abs_expected_gap",
+        3.5,
+        "plan",
+        "stop"
+      ],
+      [
+        "abs_expected_gap",
+        1.5,
+        [
+          "probe_value",
+          1.25,
+          "plan",
+          "ask"
+        ],
+        "ask"
+      ]
+    ]
+  },
+  "selected": "codex1"
+}

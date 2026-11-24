@@ -1,0 +1,6 @@
+{
+  "hypothesis": "Planning is more valuable when the expected line times are close and the reported delay is small. Keep the usual 0.5-minute probe threshold, plan within a 3.5-minute expected gap when the estimated probe value is low, and favor planning for delays of at most 7 minutes when the expected gap is within 1.5 minutes even if the probe clears its price.",
+  "prediction": "At primary prices, this proposal will lower mean development cost by at least 0.01 equivalent minute per map relative to the supplied fitted tree. If selected on development, it will save at least 0.15 minute per map versus the selected fixed action on the standard test, with a paired 95% interval above zero, and will beat the selected cheap rule with a paired 95% interval above zero.",
+  "failure": "A development improvement below 0.01 minute per map misses the proposal's prediction. If selected, a standard-test saving below 0.15 minute per map or a paired 95% interval touching or crossing zero against the fixed action fails the primary prediction. A paired interval touching or crossing zero against the cheap rule fails the practical-advantage criterion.",
+  "tree": "[\"probe_value\",0.5,[\"abs_expected_gap\",3.5,\"plan\",\"stop\"],[\"delay\",7,[\"abs_expected_gap\",1.5,\"plan\",\"ask\"],\"ask\"]]"
+}
