@@ -65,9 +65,9 @@ def post(path,body):
         return json.load(resp)
 
 
-def answer(model,system,user,n, reply_format=None):
+def answer(model,system,user,n, reply_format=None, context=4096):
     r=post('chat',dict(model=model,stream=False,keep_alive='15m',
-        options=dict(temperature=0,seed=1103,num_ctx=4096,num_predict=n),
+        options=dict(temperature=0,seed=1103,num_ctx=context,num_predict=n),
         messages=[dict(role='system',content=system),dict(role='user',content=user)],
         **({'format':reply_format} if reply_format is not None else {})))
     return dict(text=r['message']['content'],input_tokens=r.get('prompt_eval_count'),output_tokens=r.get('eval_count'),

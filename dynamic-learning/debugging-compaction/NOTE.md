@@ -28,3 +28,20 @@ In a separate replay of this repository's real scoring bugs, Qwen inspected two 
 ## Where this fits
 
 MemoryArena already showed that good recall scores can coexist with poor performance on tasks requiring an agent to apply memory. CompAct-Bench found that summaries can distort the status of unresolved issues. Yao and colleagues evaluated whether a summary made for one question retains evidence needed for a later one. Salle and colleagues found that an agent can often recover missing information from the worktree. The narrower contribution tested here is a paired intervention: exchange *who produced an observed output* while keeping the observation and the available space essentially identical, then independently grade recognition and executable repair. The controlled recognition result warrants the source-swap check. A claim about real debugging outcomes needs evidence from the upstream panel and broader replications. [MemoryArena](https://arxiv.org/abs/2602.16313) · [CompAct-Bench](https://arxiv.org/abs/2611.25673) · [Later-question evaluation](https://arxiv.org/abs/2610.27301) · [Compaction-friendly benchmarks](https://arxiv.org/abs/2610.31778)
+
+## What happened when Qwen got a second repair attempt
+
+Every arm started from the same ordinary-summary patch for the given case and route. Qwen then saw either the recorded expectation alone or the result of running a saved check on its draft. Total model input tokens matched exactly within each case and route. The retained observation came from the archive and the hidden evaluation inputs stayed hidden.
+
+| Second-turn input | Passing reversal patches | Passing confirmation patches |
+|---|---:|---:|
+| Executed check with the correct source attribution | 2/8 | 2/8 |
+| Same input and expectation, unexecuted | 1/8 | 2/8 |
+| Executed check on a shared smoke input | 0/8 | 2/8 |
+| Executed check with the source labels swapped | 1/8 | 2/8 |
+
+The batching repair passed with the correct expectation whether or not the check ran. The deduplication repair passed with an executed check even when its source labels were swapped. The registered count thresholds were met, but neither individual rescue distinguishes a benefit of executing the **correctly attributed** evidence from both controls. Two wins against the common check in eight cases are weak evidence of a transferable repair advantage. [All 64 second-turn patches and scores](results/feedback-qwen2.5-coder-7b.json)
+
+Selecting among four independently proposed patches offered little additional headroom. Qwen generated the candidate pool using only the buggy source, task purpose and shared smoke examples. On reversal tasks, a passing patch existed in only two of eight pools. Screening the candidates using the attributed example found both in forward order, versus one with the smoke example. In reverse order both methods found one. In five cases no candidate even matched the attributed example. One selected candidate matched that example but failed the held-out suite. This missed the registered prediction of two additional repairs. [All 32 candidates, checks and order comparisons](results/select-patch-qwen2.5-coder-7b.json)
+
+[Open the offline case replay](replay.html) to inspect either reader's initial one-turn recognition and repair trials.
