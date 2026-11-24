@@ -1,0 +1,22 @@
+# Repair after a real upstream regression report
+
+## Frozen panel and predictions
+
+The controlled experiment distinguishes recognition of an observation from writing a fix. This panel instead uses actual source code, version history, and upstream tests from more-itertools. Eight previously untested revisions are fixed before model generation. They share one library, so these are eight incidents within one project. Some concern similar edge cases. Inspect the original report for the scope of each upstream change.
+
+| Upstream fix | Function tested |
+|---|---|
+| [71e070b](https://github.com/more-itertools/more-itertools/commit/71e070b35d8c136484e91189719c2a4eccd36fc3) | all_unique |
+| [ce676d2](https://github.com/more-itertools/more-itertools/commit/ce676d24136e6efa932df8a4f3bf4801b89e1dd0) | split_before |
+| [e6ce1b0](https://github.com/more-itertools/more-itertools/commit/e6ce1b0f65a57c459fc5004ad84158447b65b0ac) | peekable._get_slice |
+| [6b1907d](https://github.com/more-itertools/more-itertools/commit/6b1907de293a655fb77881bf81948f95fd15bd7c) | seekable.peek |
+| [edb3346](https://github.com/more-itertools/more-itertools/commit/edb3346f835ca917efbfda5e2d6664ab952da369) | numeric_range.__reversed__ |
+| [f51a53b](https://github.com/more-itertools/more-itertools/commit/f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2) | interleave_evenly |
+| [0e6acdf](https://github.com/more-itertools/more-itertools/commit/0e6acdf9b60765ecf9634d6f5c132ac1bebc616b) | chunked |
+| [7847d43](https://github.com/more-itertools/more-itertools/commit/7847d4324a581da8d0919734a8e50b2a6573b780) | value_chain |
+
+Begin with the parent revision, the affected function, and a short researcher-written symptom. The agent chooses a read-only inspection of existing tests or nearby implementation, states its diagnosis and freely writes a candidate function. Exclude the new regression report from this first attempt. Next, reveal the same regression test from the upstream repair in each arm together with the current source and first candidate. Treatments are the full investigation, a short pre-report ordinary handoff, a size-matched extract of tool output, and no earlier narrative. The original source and the candidate remain available in all arms. Each arm gets one attempt at revision. Freeze the first attempt and handoffs before revealing the new test. Count an initially wrong valid patch that later passes as a repair revision. Review what the original diagnosis actually says before counting a change of hypothesis.
+
+For each incident, execute the complete affected upstream test class plus independent withheld variants using a disposable local Python container. The named upstream regression is visible at the revision step. Report passes on the rest of the class and withheld examples too. Validate that the original function fails and the upstream function passes before model trials. Run local Qwen2.5-Coder 7B first. Predict at least three of eight initial candidates will fail despite being valid replacements, and fresh report plus current source alone will recover at least two. Compare all arms on all cases including cases already solved. A penalty specific to compression requires full-history successes lost under ordinary compaction. If the fresh report alone suffices, record that the old history buys little here.
+
+The public report shown to the model is reconstructed. The code and tests are historical. No original human or production-agent conversation is claimed. [Upstream license](LICENSE).
