@@ -29,14 +29,18 @@ def content(msg):
     return value if isinstance(value,str) else '\n'.join(part['text'] for part in value if part.get('type')=='text')
 
 
-def load_case(row):
+def load_messages(row):
     folder=Path(os.environ.get('STUDY_TRACES','/tmp/alignment-sympy-traces'))
     folder.mkdir(exist_ok=True,parents=True)
     filename=folder/(row['instance']+'.json')
     raw=filename.read_bytes() if filename.exists() else urllib.request.urlopen(row['url'],timeout=30).read(2_000_000)
     assert hashlib.sha256(raw).hexdigest()==row['sha256']
     if not filename.exists():filename.write_bytes(raw)
-    all_msgs=json.loads(raw)['messages']
+    return json.loads(raw)['messages']
+
+
+def load_case(row):
+    all_msgs=load_messages(row)
     index=row['fresh_observation']
     msgs=all_msgs[:index]
     issue=content(msgs[1]).split('<pr_description>',1)[1].split('</pr_description>',1)[0].strip()
