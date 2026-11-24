@@ -1,0 +1,137 @@
+{
+  "counts": {
+    "a2d54fa62691b9490c06a5c0ca8658640f7fab50d89aa36c4b27a5fa1451e4d1": {
+      "text": "{ \"count\": 2 }",
+      "input_tokens": 90,
+      "output_tokens": 8,
+      "duration_ms": 447,
+      "finish": "stop"
+    },
+    "3022fe2d6cfaec2d958aa9a442464b840f2f954971acd6b90015a2f743557da4": {
+      "text": "{ \"count\": 1 }",
+      "input_tokens": 67,
+      "output_tokens": 8,
+      "duration_ms": 325,
+      "finish": "stop"
+    }
+  },
+  "decisions": {
+    "c43a05aaf9f2b004a8b5d8ed4fb0a8b98164088e89f7d3c0345f68df4008072d": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1254,
+      "output_tokens": 9,
+      "duration_ms": 530,
+      "finish": "stop"
+    },
+    "ed7fd7cfa9b7c7df23b5d33c9323d40dde660e9d0bae45cfe2a0b1b28c8ac1e4": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1254,
+      "output_tokens": 9,
+      "duration_ms": 412,
+      "finish": "stop"
+    },
+    "9015451111f14afc51907ce45d4e0c941e97a025b979259869dd439a0ad34e69": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1254,
+      "output_tokens": 9,
+      "duration_ms": 409,
+      "finish": "stop"
+    },
+    "8090057f995e8435e71ce32d5f476bb5a26d370b5923a3a8bde5dd3c86c37095": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1254,
+      "output_tokens": 9,
+      "duration_ms": 528,
+      "finish": "stop"
+    },
+    "797fb1527d44ea67671fffb464d5c358ddc055c107d6b0b2bb36d77719d4c942": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1254,
+      "output_tokens": 9,
+      "duration_ms": 453,
+      "finish": "stop"
+    },
+    "d8aec74736153979868c8f1a777377b524f805f33bb0fb05f2715c47f445d429": {
+      "text": "{ \"decision\": \"close\" }",
+      "input_tokens": 1254,
+      "output_tokens": 9,
+      "duration_ms": 453,
+      "finish": "stop"
+    }
+  },
+  "branches": {
+    "reopen/count/retry": {
+      "previous": "reopen",
+      "count": 2,
+      "prompt_sha256": "c43a05aaf9f2b004a8b5d8ed4fb0a8b98164088e89f7d3c0345f68df4008072d",
+      "final": "close"
+    },
+    "reopen/count/model": {
+      "previous": "reopen",
+      "count": 2,
+      "prompt_sha256": "c43a05aaf9f2b004a8b5d8ed4fb0a8b98164088e89f7d3c0345f68df4008072d",
+      "final": "close"
+    },
+    "reopen/count/parser": {
+      "previous": "reopen",
+      "count": 2,
+      "prompt_sha256": "c43a05aaf9f2b004a8b5d8ed4fb0a8b98164088e89f7d3c0345f68df4008072d",
+      "final": "close"
+    },
+    "reopen/wrong/retry": {
+      "previous": "close",
+      "count": 1,
+      "prompt_sha256": "ed7fd7cfa9b7c7df23b5d33c9323d40dde660e9d0bae45cfe2a0b1b28c8ac1e4",
+      "final": "close"
+    },
+    "reopen/wrong/model": {
+      "previous": "close",
+      "count": 2,
+      "prompt_sha256": "9015451111f14afc51907ce45d4e0c941e97a025b979259869dd439a0ad34e69",
+      "final": "close"
+    },
+    "reopen/wrong/parser": {
+      "previous": "close",
+      "count": 2,
+      "prompt_sha256": "9015451111f14afc51907ce45d4e0c941e97a025b979259869dd439a0ad34e69",
+      "final": "close"
+    },
+    "close/count/retry": {
+      "previous": "close",
+      "count": 1,
+      "prompt_sha256": "8090057f995e8435e71ce32d5f476bb5a26d370b5923a3a8bde5dd3c86c37095",
+      "final": "close"
+    },
+    "close/count/model": {
+      "previous": "close",
+      "count": 1,
+      "prompt_sha256": "8090057f995e8435e71ce32d5f476bb5a26d370b5923a3a8bde5dd3c86c37095",
+      "final": "close"
+    },
+    "close/count/parser": {
+      "previous": "close",
+      "count": 1,
+      "prompt_sha256": "8090057f995e8435e71ce32d5f476bb5a26d370b5923a3a8bde5dd3c86c37095",
+      "final": "close"
+    },
+    "close/wrong/retry": {
+      "previous": "reopen",
+      "count": 2,
+      "prompt_sha256": "797fb1527d44ea67671fffb464d5c358ddc055c107d6b0b2bb36d77719d4c942",
+      "final": "close"
+    },
+    "close/wrong/model": {
+      "previous": "reopen",
+      "count": 1,
+      "prompt_sha256": "d8aec74736153979868c8f1a777377b524f805f33bb0fb05f2715c47f445d429",
+      "final": "close"
+    },
+    "close/wrong/parser": {
+      "previous": "reopen",
+      "count": 1,
+      "prompt_sha256": "d8aec74736153979868c8f1a777377b524f805f33bb0fb05f2715c47f445d429",
+      "final": "close"
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}
