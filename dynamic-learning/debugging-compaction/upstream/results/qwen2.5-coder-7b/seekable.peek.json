@@ -107,5 +107,58 @@
     "ordinary": "Progress: Initial tests confirmed the issue. Diagnosis: `peek` method consumes an item without resetting the iterator's position. Proposed fix: Reset the iterator's position after peeking. Next action: Implement the proposed fix and re-run tests.",
     "extract": "TOOL existing_tests = def test_exhaustion_reset(self):\n    iterable = [str(n) for n \u2026  s.seek(1)\n    self.assertEqual(list(s), iterable[1:])  # Get the rest of the iterable\n",
     "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    return peeked\n```",
+      "input_tokens": 262,
+      "output_tokens": 73,
+      "duration_ms": 3968,
+      "finish": "stop",
+      "prompt_sha256": "f48a3718453354be5ee65d8138aca65bdfeff9b751254a0c48483eac835b674e",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    return peeked\n```",
+      "input_tokens": 333,
+      "output_tokens": 73,
+      "duration_ms": 2712,
+      "finish": "stop",
+      "prompt_sha256": "42c7b4783b031f4ff87cd06d54cf56d8b8fad6fe066c6987dad5d9c55d78066f",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    # maxlen=0 cannot store the item we just consumed, so put it back.\n    if isinstance(self._cache, deque) and self._cache.maxlen == 0:\n        self._source = chain((peeked,), self._source)\n        self._index = None\n        return peeked\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    return peeked\n```",
+      "input_tokens": 396,
+      "output_tokens": 136,
+      "duration_ms": 4467,
+      "finish": "stop",
+      "prompt_sha256": "418656bb3595feb5cfe7a02d3bb04a094bd7ced7a9e599534fadeea0c56efbcf",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
   }
 }

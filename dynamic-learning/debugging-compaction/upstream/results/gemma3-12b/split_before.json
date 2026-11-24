@@ -1,0 +1,164 @@
+{
+  "revision": "ce676d24136e6efa932df8a4f3bf4801b89e1dd0",
+  "trials": {
+    "full": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 875,
+      "output_tokens": 123,
+      "duration_ms": 11610,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "18820984113482956765add668993f33aa7ec8094c9b0d773b94983bf41cf08c"
+    },
+    "ordinary": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    try:\n        first_item = next(it)\n    except StopIteration:\n        if buf:\n            yield buf\n        return\n\n    if pred(first_item):\n        if maxsplit == -1 or maxsplit == 0:\n            yield [first_item]\n            buf = []\n        else:\n            yield [first_item]\n            maxsplit -= 1\n            buf = []\n    else:\n        buf.append(first_item)\n\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 764,
+      "output_tokens": 230,
+      "duration_ms": 16129,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 3,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "af2efcb24a2664f1bf83d68204a0f561bb5ebc12ef2e919958bb80afc484dc8d"
+    },
+    "extract": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 773,
+      "output_tokens": 123,
+      "duration_ms": 11476,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "5a73bf0ef85924649c1efed02a4ebc31463f4be0a4763320ae34822e2f16e1b3"
+    },
+    "none": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 680,
+      "output_tokens": 123,
+      "duration_ms": 9775,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "50745274d30d555a000b0a27da43ba9019dd57c7a72b836e4aa8ec90b1e216f0"
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
+  "selection": {
+    "text": "{\"tool\": \"existing_tests\"}",
+    "input_tokens": 424,
+    "output_tokens": 9,
+    "duration_ms": 2236,
+    "finish": "stop"
+  },
+  "tool": "existing_tests",
+  "first": {
+    "text": "The issue arises when `maxsplit` is set to a positive integer and the iterable starts with an element that satisfies the predicate, leading to an incorrect number of splits.\n\n```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+    "input_tokens": 600,
+    "output_tokens": 158,
+    "duration_ms": 11773,
+    "finish": "stop",
+    "score": {
+      "valid": true,
+      "passed": false,
+      "class_passed": false,
+      "class_tests": 5,
+      "failures": 1,
+      "errors": 0,
+      "withheld_passed": false
+    }
+  },
+  "summary": {
+    "text": "**Progress:** Identified a bug where `split_before` with `maxsplit > 0` incorrectly splits when the iterable starts with a matching element.\n\n**Diagnosis:** The logic for handling `maxsplit` and initial predicate matches is flawed.\n\n**Next Action:** Review the proposed code edit carefully, focusing on the `maxsplit` decrement and initial element handling. Run existing tests and add a test case to reproduce the edge case.",
+    "input_tokens": 404,
+    "output_tokens": 90,
+    "duration_ms": 6578,
+    "finish": "stop"
+  },
+  "notes": {
+    "full": "Initial report: The splitter adds a group in an edge case involving a bounded number of splits.\nTOOL existing_tests:\ndef test_starts_with_sep(self):\n    actual = list(mi.split_before('xooxoo', lambda c: c == 'x'))\n    expected = [['x', 'o', 'o'], ['x', 'o', 'o']]\n    self.assertEqual(actual, expected)\ndef test_ends_with_sep(self):\n    actual = list(mi.split_before('ooxoox', lambda c: c == 'x'))\n    expected = [['o', 'o'], ['x', 'o', 'o'], ['x']]\n    self.assertEqual(actual, expected)\nProvisional diagnosis: The issue arises when `maxsplit` is set to a positive integer and the iterable starts with an element that satisfies the predicate, leading to an incorrect number of splits.",
+    "ordinary": "**Progress:** Identified a bug where `split_before` with `maxsplit > 0` incorrectly splits when the iterable starts with a matching element.\n\n**Diagnosis:** The logic for handling `maxsplit` and initial predicate matches is flawed.\n\n**Next Action:** Review the proposed code edit carefully, focusing on the `maxsplit` decrement and initial element handling. Run existing tests and add a test case to reproduce the edge case.",
+    "extract": "TOOL existing_tests = def test_starts_with_sep(self):\n    actual = list(mi.split_before('xooxoo', lambda c: c == 'x'))\n    expected = [['x', 'o', \u2026 _before('ooxoox', lambda c: c == 'x'))\n    expected = [['o', 'o'], ['x', 'o', 'o'], ['x']]\n    self.assertEqual(actual, expected)\n",
+    "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 558,
+      "output_tokens": 123,
+      "duration_ms": 9395,
+      "finish": "stop",
+      "prompt_sha256": "463c410ece0e732747ff7cc6ade66dfddec4b3ce494aac7110e40f8606a09004",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        yield list(iterable)\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 911,
+      "output_tokens": 123,
+      "duration_ms": 11300,
+      "finish": "stop",
+      "prompt_sha256": "cca572b3e094f7a0cc5a13098ead3c0d72cbdbc541d0dcc423ff785c5b327955",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 5,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef split_before(iterable, pred, maxsplit=-1):\n    if maxsplit == 0:\n        buf = list(iterable)\n        if buf:\n            yield buf\n        return\n\n    buf = []\n    it = iter(iterable)\n    for item in it:\n        if pred(item) and buf:\n            yield buf\n            if maxsplit == 1:\n                yield [item, *it]\n                return\n            buf = []\n            maxsplit -= 1\n        buf.append(item)\n    if buf:\n        yield buf\n```",
+      "input_tokens": 921,
+      "output_tokens": 133,
+      "duration_ms": 10228,
+      "finish": "stop",
+      "prompt_sha256": "1dae08e85d999e8f55403bff14d81715d5e61bf9915a06f56ddc44fd2639502c",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
+  }
+}

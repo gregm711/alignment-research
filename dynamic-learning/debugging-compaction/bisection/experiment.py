@@ -100,8 +100,15 @@ def main():
     d=json.loads(path.read_text()) if path.exists() else {'episodes':{}}
     if not args.check:
         from tokenizers import Tokenizer
-        f=Path(os.environ.get('STUDY_TOKENIZER','/tmp/alignment-qwen25-coder-tokenizer.json'))
-        assert hashlib.sha256(f.read_bytes()).hexdigest()==TOKENIZER_SHA
+        if args.model==MODEL:
+            f=Path(os.environ.get('STUDY_TOKENIZER','/tmp/alignment-qwen25-coder-tokenizer.json'))
+            expected_hash=TOKENIZER_SHA
+        elif args.model=='gemma3:12b':
+            f=Path(os.environ.get('GEMMA_TOKENIZER','/tmp/alignment-gemma3-tokenizer.json'))
+            expected_hash='4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795'
+        else:
+            raise ValueError('No native tokenizer registered for this reader')
+        assert hashlib.sha256(f.read_bytes()).hexdigest()==expected_hash
         tok=Tokenizer.from_file(str(f))
         if not args.recount:
             with urllib.request.urlopen('http://127.0.0.1:11434/api/tags',timeout=5) as stream:
@@ -169,7 +176,7 @@ def main():
                     save(path,d)
                 assert score==t['score']
                 if arm in ('ordinary','attributed','swapped'):lengths.append(t['input_tokens'])
-            if args.model==MODEL:assert len(set(lengths))==1,(key,lengths)
+            assert len(set(lengths))==1,(key,lengths)
             print(key,guess,{a:t['score']['certified'] for a,t in episode['trials'].items()},flush=True)
     if args.check:
         print('All eligible cases have the required causal fork and certified deterministic recovery.')

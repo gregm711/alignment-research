@@ -1,0 +1,466 @@
+{
+  "first/always/revise": {
+    "all_unique": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    }
+  },
+  "first/always/fresh": {
+    "all_unique": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    }
+  },
+  "first/gate/revise": {
+    "all_unique": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": false,
+      "false_accept": true
+    }
+  },
+  "first/gate/fresh": {
+    "all_unique": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": false,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": false,
+      "false_accept": true
+    }
+  },
+  "human-fix/always/revise": {
+    "all_unique": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": true,
+      "false_accept": false
+    }
+  },
+  "human-fix/always/fresh": {
+    "all_unique": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": false,
+      "generated": true,
+      "passed": false,
+      "false_accept": false
+    }
+  },
+  "human-fix/gate/revise": {
+    "all_unique": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    }
+  },
+  "human-fix/gate/fresh": {
+    "all_unique": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "split_before": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "peekable._get_slice": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "seekable.peek": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "numeric_range.__reversed__": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "interleave_evenly": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "chunked": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    },
+    "value_chain": {
+      "public_pass": true,
+      "retained": true,
+      "generated": false,
+      "passed": true,
+      "false_accept": false
+    }
+  }
+}

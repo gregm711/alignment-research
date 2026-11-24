@@ -107,5 +107,50 @@
     "ordinary": "Progress: Implemented a proposed fix for handling cases where there is nothing to emit. The function now correctly updates the `to_yield` variable and yields elements as expected.\n\nCurrent Diagnosis: The initial report was resolved by ensuring the `to_yield` variable is updated properly, preventing the function from raising an unexpected interleaving call when there is nothing to emit.\n\nNext Action: Verify the fix with additional test cases, especially edge cases where iterables have varying lengths or are empty.",
     "extract": "TOOL existing_tests = def test_equal_lengths(self):\n    # when lengths are equal, the relative order shouldn't change\n    a = [1, 2, 3]\n    b = [5, 6, \u2026 6]\n    self.assertEqual(actual, expected)\n\n    # swapping a and b should yield the same result\n    actual_swapped = list(mi.interleave_evenly([b, a]))\n    self.assertEqual(actual_swapped, expected)\n",
     "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    \"\"\"\n    Interleave multiple iterables so that their elements are evenly distributed\n    throughout the output sequence.\n    \"\"\"\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        try:\n            yield next(iter_primary)\n            to_yield -= 1\n        except StopIteration:\n            pass\n\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham)\n        for i, e_ in enumerate(errors):\n            if e_ < 0:\n                try:\n                    yield next(iters_secondary[i])\n                    to_yield -= 1\n                    errors[i] += delta_primary\n                except StopIteration:\n                    pass\n```",
+      "input_tokens": 813,
+      "output_tokens": 411,
+      "duration_ms": 13991,
+      "finish": "stop",
+      "prompt_sha256": "9153e786b8a1c1195955b3a5f4cb8e1fe05ee9977cdbb454e061fce7d5c3edc8",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    \"\"\"\n    Interleave multiple iterables so that their elements are evenly distributed\n    throughout the output sequence.\n\n    >>> iterables = [1, 2, 3, 4, 5], ['a', 'b']\n    >>> list(interleave_evenly(iterables))\n    [1, 2, 'a', 3, 4, 'b', 5]\n\n    >>> iterables = [[1, 2, 3], [4, 5], [6, 7, 8]]\n    >>> list(interleave_evenly(iterables))\n    [1, 6, 4, 2, 7, 3, 8, 5]\n\n    This function requires iterables of known length. Iterables without\n    ``__len__()`` can be used by manually specifying lengths with *lengths*:\n\n    >>> from itertools import combinations, repeat\n    >>> iterables = [combinations(range(4), 2), ['a', 'b', 'c']]\n    >>> lengths = [4 * (4 - 1) // 2, 3]\n    >>> list(interleave_evenly(iterables, lengths=lengths))\n    [(0, 1), (0, 2), 'a', (0, 3), (1, 2), 'b', (1, 3), (2, 3), 'c']\n\n    Based on Bresenham's algorithm.\n    \"\"\"\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        if not iters_primary:\n            break\n        yield next(iter_primary)\n        to_yield -= 1\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham)\n        for i, e_ in enumerate(errors):\n            if e_ < ",
+      "input_tokens": 1478,
+      "output_tokens": 650,
+      "duration_ms": 21440,
+      "finish": "length",
+      "prompt_sha256": "9ff4b90cd08d85216e7ae2cbc3a7b96be0d9123800a2354735fb4cca45e11466",
+      "score": {
+        "valid": false,
+        "passed": false,
+        "error": "invalid syntax (<unknown>, line 1)"
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    \"\"\"\n    Interleave multiple iterables so that their elements are evenly distributed\n    throughout the output sequence.\n\n    >>> iterables = [1, 2, 3, 4, 5], ['a', 'b']\n    >>> list(interleave_evenly(iterables))\n    [1, 2, 'a', 3, 4, 'b', 5]\n\n    >>> iterables = [[1, 2, 3], [4, 5], [6, 7, 8]]\n    >>> list(interleave_evenly(iterables))\n    [1, 6, 4, 2, 7, 3, 8, 5]\n\n    This function requires iterables of known length. Iterables without\n    ``__len__()`` can be used by manually specifying lengths with *lengths*:\n\n    >>> from itertools import combinations, repeat\n    >>> iterables = [combinations(range(4), 2), ['a', 'b', 'c']]\n    >>> lengths = [4 * (4 - 1) // 2, 3]\n    >>> list(interleave_evenly(iterables, lengths=lengths))\n    [(0, 1), (0, 2), 'a', (0, 3), (1, 2), 'b', (1, 3), (2, 3), 'c']\n\n    Based on Bresenham's algorithm.\n    \"\"\"\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    if not dims:\n        return\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        yield next(iter_primary)\n        to_yield -= 1\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham)\n        for i, e_ in enumerate(errors):\n            if e_ < 0:\n",
+      "input_tokens": 1486,
+      "output_tokens": 650,
+      "duration_ms": 21201,
+      "finish": "length",
+      "prompt_sha256": "eba74b742adeece6e24145b8e981debcbce00a497a370981f1132332e9cddcbf",
+      "score": {
+        "valid": false,
+        "passed": false,
+        "error": "invalid syntax (<unknown>, line 1)"
+      }
+    }
   }
 }

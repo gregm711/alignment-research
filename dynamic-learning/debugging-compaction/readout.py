@@ -25,6 +25,8 @@ def main():
     system = 'Read the archive observations. Return a JSON object with choice A or B.'
     schema = {'type':'object','required':['choice'],'properties':{'choice':{'enum':['A','B']}},
               'additionalProperties':False}
+    eligible=[]
+    excluded={}
     for i,c in enumerate(CASES):
         filename = c.name+'.json'
         original = json.loads((WRITER_PATH/filename).read_text())
@@ -33,12 +35,16 @@ def main():
         options = [a.removeprefix('alder returned '),b.removeprefix('birch returned ')]
         if args.novel:
             _,expected=materials(c,i)
-            evaluated=next(j for j in range(len(c.common),len(c.common)+len(c.hidden))
-                           if expected[0][j]!=expected[1][j])
+            seen={display(x) for x in c.captures+c.common}
+            evaluated=next((j for j,arg in enumerate(c.hidden,len(c.common))
+                            if display(arg) not in seen and outcome(expected[0][j])!=outcome(expected[1][j])),None)
+            if evaluated is None:
+                excluded[c.name]='No distinct new input with differing reference outputs in the frozen suite.'
+                continue
             arg=c.hidden[evaluated-len(c.common)]
-            assert arg not in c.captures+c.common
             call='Archived call repair('+display(arg)+')'
             options=[outcome(expected[b][evaluated]) for b in (0,1)]
+        eligible.append(c)
         assert options[0]!=options[1]
         for route,name in enumerate(NAMES):
             for arm in ('full','ordinary','observed','swapped','none'):
@@ -61,10 +67,16 @@ def main():
                     trial=data['trials'][key]
                     assert trial['prompt_sha256']==digest_prompt and trial['expected']==expected
         print(c.name,flush=True)
+    if args.novel:
+        if not args.recount:
+            data['exclusions']=excluded
+            save(path,data)
+        assert data['exclusions']==excluded
+        print('Eligible',len(eligible),'of',len(CASES),'excluded',excluded)
     for name in NAMES:
         for arm in ('full','ordinary','observed','swapped','none'):
             counts=[0,0]
-            for c in CASES:
+            for c in eligible:
                 correct=[]
                 for flip in (0,1):
                     t=data['trials'][f'{c.name}/{name}/{arm}/{flip}']

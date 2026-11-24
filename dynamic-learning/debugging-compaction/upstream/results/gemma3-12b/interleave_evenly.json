@@ -1,0 +1,164 @@
+{
+  "revision": "f51a53bfd2fe9504063a33ef5f4a73e30d82d0e2",
+  "trials": {
+    "full": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    try:\n        while to_yield:\n            try:\n                yield next(iter_primary)\n            except StopIteration:\n                break  # Primary iterator exhausted\n            to_yield -= 1\n            # update errors for each secondary iterable\n            errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n            # those iterables for which the error is negative are yielded\n            # (\"diagonal step\" in Bresenham\")\n            for i, e_ in enumerate(errors):\n                if e_ < 0:\n                    try:\n                        yield next(iters_secondary[i])\n                    except StopIteration:\n                        pass  # Secondary iterator exhausted\n                    to_yield -= 1\n                    errors[i] += delta_primary\n    except StopIteration:\n        pass\n```",
+      "input_tokens": 1522,
+      "output_tokens": 479,
+      "duration_ms": 34466,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "6671bfe1522cf645ee686e2e8d47544b3da2c48e70d903f09d3265b42ccf62d5"
+    },
+    "ordinary": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    try:\n        while to_yield:\n            try:\n                yield next(iter_primary)\n            except StopIteration:\n                break  # Primary iterator exhausted\n            to_yield -= 1\n            # update errors for each secondary iterable\n            errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n            # those iterables for which the error is negative are yielded\n            # (\"diagonal step\" in Bresenham\")\n            for i, e_ in enumerate(errors):\n                if e_ < 0:\n                    try:\n                        yield next(iters_secondary[i])\n                    except StopIteration:\n                        pass  # Secondary iterator exhausted\n                    to_yield -= 1\n                    errors[i] += delta_primary\n    except StopIteration:\n        pass\n```",
+      "input_tokens": 1474,
+      "output_tokens": 479,
+      "duration_ms": 34106,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "574e702f4fd5fd3618784dd4eb3196e54ce2242d1bb85e18e441c46587aba3e6"
+    },
+    "extract": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    try:\n        while to_yield:\n            try:\n                yield next(iter_primary)\n            except StopIteration:\n                break  # Primary iterator exhausted\n            to_yield -= 1\n            # update errors for each secondary iterable\n            errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n            # those iterables for which the error is negative are yielded\n            # (\"diagonal step\" in Bresenham\")\n            for i, e_ in enumerate(errors):\n                if e_ < 0:\n                    try:\n                        yield next(iters_secondary[i])\n                    except StopIteration:\n                        pass  # Secondary iterator exhausted\n                    to_yield -= 1\n                    errors[i] += delta_primary\n    except StopIteration:\n        pass\n```",
+      "input_tokens": 1478,
+      "output_tokens": 479,
+      "duration_ms": 35899,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "93e3bc567fe21b234d8f99ae89e9e9d556237c2c95db566d76fef7d9a9af3f6a"
+    },
+    "none": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        try:\n            yield next(iter_primary)\n        except StopIteration:\n            break  # Primary iterator exhausted\n        to_yield -= 1\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham\")\n        for i, e_ in enumerate(errors):\n            if e_ < 0:\n                try:\n                    yield next(iters_secondary[i])\n                except StopIteration:\n                    pass  # Secondary iterator exhausted\n                to_yield -= 1\n                errors[i] += delta_primary\n```",
+      "input_tokens": 1397,
+      "output_tokens": 466,
+      "duration_ms": 32201,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "22c6573da8a56ecefe246e9653c15689e8b03bc98350b9ba73ca78cc9acb26e2"
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
+  "selection": {
+    "text": "{\n  \"tool\": \"nearby_source\"\n}",
+    "input_tokens": 820,
+    "output_tokens": 14,
+    "duration_ms": 8882,
+    "finish": "stop"
+  },
+  "tool": "nearby_source",
+  "first": {
+    "text": "The issue arises when one or more iterables are exhausted before the primary iterable, leading to an attempt to call `next()` on an exhausted iterator, which raises a `StopIteration` exception. The fix involves checking if the primary iterator is exhausted before attempting to yield from it.\n\n```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    try:\n        while to_yield:\n            try:\n                yield next(iter_primary)\n            except StopIteration:\n                break  # Primary iterator exhausted\n            to_yield -= 1\n            # update errors for each secondary iterable\n            errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n            # those iterables for which the error is negative are yielded\n            # (\"diagonal step\" in Bresenham\")\n            for i, e_ in enumerate(errors):\n                if e_ < 0:\n                    try:\n                        yield next(iters_secondary[i])\n                    except StopIteration:\n                        pass  # Secondary iterator exhausted\n                    to_yield -= 1\n                    errors[i] += delta_primary\n    except StopIteration:\n        pass\n```",
+    "input_tokens": 907,
+    "output_tokens": 536,
+    "duration_ms": 38003,
+    "finish": "stop",
+    "score": {
+      "valid": true,
+      "passed": false,
+      "class_passed": false,
+      "class_tests": 11,
+      "failures": 0,
+      "errors": 1,
+      "withheld_passed": false
+    }
+  },
+  "summary": {
+    "text": "**Progress:** Initial report of `StopIteration` during interleaving.\n\n**Diagnosis:** Exhausted secondary iterables trigger `StopIteration` before the primary. The provided `interleave_evenly` attempts a fix.\n\n**Next Action:** Thoroughly test `interleave_evenly` with various iterable lengths (including empty iterables) to confirm the fix and identify any new issues. Review edge cases.",
+    "input_tokens": 712,
+    "output_tokens": 83,
+    "duration_ms": 10497,
+    "finish": "stop"
+  },
+  "notes": {
+    "full": "Initial report: An interleaving call raises unexpectedly when there is nothing to emit.\nTOOL nearby_source:\ndef interleave_longest(*iterables):\n    for xs in zip_longest(*iterables, fillvalue=_marker):\n        for x in xs:\n            if x is not _marker:\n                yield x\nProvisional diagnosis: The issue arises when one or more iterables are exhausted before the primary iterable, leading to an attempt to call `next()` on an exhausted iterator, which raises a `StopIteration` exception. The fix involves checking if the primary iterator is exhausted before attempting to yield from it.",
+    "ordinary": "**Progress:** Initial report of `StopIteration` during interleaving.\n\n**Diagnosis:** Exhausted secondary iterables trigger `StopIteration` before the primary. The provided `interleave_evenly` attempts a fix.\n\n**Next Action:** Thoroughly test `interleave_evenly` with various iterable lengths (including empty iterables) to confirm the fix and identify any new issues. Review edge cases.",
+    "extract": "TOOL nearby_source = def interleave_longest(*iterables):\n    for xs in zip_longest(*iterables, fillvalue=_marker):\n        for x in xs:\n            if x is not _marker:\n                yield x\n**Progress:** Initial report of `StopIteration` during interleaving.\n\n**Diagnosis:** Exhausted secondary iterables trigger `StopIteration` before the primary. The provided",
+    "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    if not lengths_desc:\n        return\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        try:\n            yield next(iter_primary)\n        except StopIteration:\n            break\n        to_yield -= 1\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham)\n        for i, e_ in enumerate(errors):\n            try:\n                if e_ < 0:\n                    yield next(iters_secondary[i])\n                    to_yield -= 1\n                    errors[i] += delta_primary\n            except StopIteration:\n                pass\n```",
+      "input_tokens": 919,
+      "output_tokens": 467,
+      "duration_ms": 28420,
+      "finish": "stop",
+      "prompt_sha256": "9153e786b8a1c1195955b3a5f4cb8e1fe05ee9977cdbb454e061fce7d5c3edc8",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    },
+    "parent": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    if not iterables:\n        return\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        yield next(iter_primary)\n        to_yield -= 1\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham)\n        for i, e_ in enumerate(errors):\n            if e_ < 0:\n                yield next(iters_secondary[i])\n                to_yield -= 1\n                errors[i] += delta_primary\n```",
+      "input_tokens": 1670,
+      "output_tokens": 440,
+      "duration_ms": 31030,
+      "finish": "stop",
+      "prompt_sha256": "9ff4b90cd08d85216e7ae2cbc3a7b96be0d9123800a2354735fb4cca45e11466",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef interleave_evenly(iterables, lengths=None):\n    if lengths is None:\n        try:\n            lengths = [len(it) for it in iterables]\n        except TypeError:\n            raise ValueError(\n                'Iterable lengths could not be determined automatically. '\n                'Specify them with the lengths keyword.'\n            )\n    elif len(iterables) != len(lengths):\n        raise ValueError('Mismatching number of iterables and lengths.')\n\n    dims = len(lengths)\n\n    if not dims:\n        return\n\n    # sort iterables by length, descending\n    lengths_permute = sorted(\n        range(dims), key=lambda i: lengths[i], reverse=True\n    )\n    lengths_desc = [lengths[i] for i in lengths_permute]\n    iters_desc = [iter(iterables[i]) for i in lengths_permute]\n\n    # the longest iterable is the primary one (Bresenham: the longest\n    # distance along an axis)\n    delta_primary, deltas_secondary = lengths_desc[0], lengths_desc[1:]\n    iter_primary, iters_secondary = iters_desc[0], iters_desc[1:]\n    errors = [delta_primary // dims] * len(deltas_secondary)\n\n    to_yield = sum(lengths)\n    while to_yield:\n        yield next(iter_primary)\n        to_yield -= 1\n        # update errors for each secondary iterable\n        errors = [e - delta for e, delta in zip(errors, deltas_secondary)]\n\n        # those iterables for which the error is negative are yielded\n        # (\"diagonal step\" in Bresenham)\n        for i, e_ in enumerate(errors):\n            if e_ < 0:\n                yield next(iters_secondary[i])\n                to_yield -= 1\n                errors[i] += delta_primary\n```",
+      "input_tokens": 1679,
+      "output_tokens": 439,
+      "duration_ms": 24286,
+      "finish": "stop",
+      "prompt_sha256": "eba74b742adeece6e24145b8e981debcbce00a497a370981f1132332e9cddcbf",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
+  }
+}

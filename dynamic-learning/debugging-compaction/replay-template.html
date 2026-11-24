@@ -6,7 +6,7 @@
 <form><label>Case<select id="case"></select></label><label>Reader<select id="model"><option value="qwen2.5-coder:7b">Qwen2.5-Coder 7B</option><option value="gemma3:12b">Gemma 3 12B</option></select></label><label>Fresh route<select id="route"><option value="birch">Birch · overturns diagnosis</option><option value="alder">Alder · confirms diagnosis</option></select></label><label>Handoff<select id="arm"><option value="observed">Attributed observation</option><option value="ordinary">Ordinary summary</option><option value="swapped">Source labels swapped</option><option value="full">Full history</option><option value="none">No history</option></select></label></form>
 <p id="purpose"></p><div class="pair"><section><h2>Retained history</h2><pre id="note"></pre></section><section><h2>Generated patch</h2><pre id="patch"></pre></section></div>
 <p id="metrics" aria-live="polite"></p><h2>Executed tests</h2><table><thead><tr><th>Test</th><th>Input</th><th>Expected</th><th>Returned</th><th>Result</th></tr></thead><tbody id="rows"></tbody></table>
-<footer>Recognition comes from a separate trial on the same handoff. The reader saw the two candidate outputs in both possible orders. Hidden patch tests use different inputs from the archive.</footer></main>
+<footer>Recognition comes from a separate trial on the same handoff. The reader saw the two candidate outputs in both possible orders. The table marks the one additional evaluation input that repeats an archived example.</footer></main>
 <script id="trials" type="application/json">@@TRIALS@@</script><script>
 'use strict';
 const data=JSON.parse(document.querySelector('#trials').textContent);
@@ -27,7 +27,7 @@ function render(){
  c.inputs.forEach((input,i)=>{
   const wanted=value(c.expected[route==='alder'?0:1][i]),got=value(trial.score.outputs?.[i]),ok=wanted===got;
   const row=body.insertRow();
-  for(const s of [i<c.smoke?'Smoke':'Hidden',JSON.stringify(input),wanted,got]){const cell=row.insertCell();const code=document.createElement('code');code.textContent=s;cell.append(code);}
+  for(const s of [i<c.smoke?'Smoke':c.archived_rows.includes(i)?'Archive repeat':'Hidden',JSON.stringify(input),wanted,got]){const cell=row.insertCell();const code=document.createElement('code');code.textContent=s;cell.append(code);}
   const status=row.insertCell();status.className=ok?'pass':'fail';status.textContent=ok?'Pass':'Fail';
  });
 }

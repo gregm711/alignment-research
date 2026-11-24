@@ -1,7 +1,7 @@
 """Build a portable, offline view of the original controlled trials."""
 import json
 from cases import CASES
-from screen import HERE, MODEL, NAMES, materials
+from screen import HERE, MODEL, NAMES, display, materials
 from restore import WRITER_PATH
 
 ARMS=('ordinary','observed','swapped','full','none')
@@ -13,6 +13,8 @@ def dataset():
         prior=json.loads((WRITER_PATH/(c.name+'.json')).read_text())
         _,expected=materials(c,i)
         item={'purpose':c.purpose,'inputs':c.common+c.hidden,'smoke':len(c.common),'expected':expected,'models':{}}
+        captures={display(x) for x in c.captures}
+        item['archived_rows']=[j for j,x in enumerate(c.hidden,len(c.common)) if display(x) in captures]
         for model in (MODEL,'gemma3:12b'):
             tag=model.replace(':','-')
             follow=json.loads((HERE/'results'/('restore-'+tag)/(c.name+'.json')).read_text())

@@ -107,5 +107,54 @@
     "ordinary": "**Progress:** The initial report identified a discrepancy between chunk-size validation and neighboring slicing APIs. Existing tests were provided to illustrate the issue.\n\n**Current Diagnosis:** The `chunked` function does not correctly handle the case when `n` is `None` in strict mode, leading to a potential `ValueError` if the iterable's length is not divisible by `n`.\n\n**Next Action:** Implement the proposed edit to the `chunked` function to include a check for `",
     "extract": "TOOL existing_tests = def test_even(self):\n    \"\"\"Test when ``n`` divides evenly into the length of the iterable.\"\"\"\n    self.assertEqual(\n        list(mi.chunked('ABCDEF', 3)), [['A', 'B \u2026 `` does not divide evenly into the length of the\n    iterable.\n\n    \"\"\"\n    self.assertEqual(\n        list(mi.chunked('ABCDE', 3)), [['A', 'B', 'C'], ['D', 'E']]\n    )\n",
     "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\nfrom itertools import islice, chain\nfrom functools import partial\n\ndef take(n, iterable):\n    return islice(iterable, n)\n\ndef chunked(iterable, n, strict=False):\n    \"\"\"Break *iterable* into lists of length *n*:\n\n        >>> list(chunked([1, 2, 3, 4, 5, 6], 3))\n        [[1, 2, 3], [4, 5, 6]]\n\n    By the default, the last yielded list will have fewer than *n* elements\n    if the length of *iterable* is not divisible by *n*:\n\n        >>> list(chunked([1, 2, 3, 4, 5, 6, 7, 8], 3))\n        [[1, 2, 3], [4, 5, 6], [7, 8]]\n\n    To use a fill-in value instead, see the :func:`grouper` recipe.\n\n    If the length of *iterable* is not divisible by *n* and *strict* is\n    ``True``, then ``ValueError`` will be raised before the last\n    list is yielded.\n\n    \"\"\"\n    if n < 0:\n        raise ValueError(\"n must be at least 0\")\n    iterator = iter(partial(take, n, iter(iterable)), [])\n    if strict:\n        if n is None:\n            raise ValueError('n must not be None when using strict mode.')\n\n        def ret():\n            for chunk in iterator:\n                if len(chunk) != n:\n                    raise ValueError('iterable is not divisible by n.')\n                yield chunk\n\n        return ret()\n    else:\n        return iterator\n```",
+      "input_tokens": 496,
+      "output_tokens": 365,
+      "duration_ms": 12358,
+      "finish": "stop",
+      "prompt_sha256": "5e43f1c35e2b93be16f858dfb1df6233e9d56b3e054aeb61bed5df5250744be3",
+      "score": {
+        "valid": false,
+        "passed": false,
+        "error": "provide the complete named function"
+      }
+    },
+    "parent": {
+      "text": "```python\ndef chunked(iterable, n, strict=False):\n    \"\"\"Break *iterable* into lists of length *n*:\n\n        >>> list(chunked([1, 2, 3, 4, 5, 6], 3))\n        [[1, 2, 3], [4, 5, 6]]\n\n    By the default, the last yielded list will have fewer than *n* elements\n    if the length of *iterable* is not divisible by *n*:\n\n        >>> list(chunked([1, 2, 3, 4, 5, 6, 7, 8], 3))\n        [[1, 2, 3], [4, 5, 6], [7, 8]]\n\n    To use a fill-in value instead, see the :func:`grouper` recipe.\n\n    If the length of *iterable* is not divisible by *n* and *strict* is\n    ``True``, then ``ValueError`` will be raised before the last\n    list is yielded.\n\n    \"\"\"\n    if n < 0:\n        raise ValueError(\"n must be at least 0\")\n    iterator = iter(partial(take, n, iter(iterable)), [])\n    if strict:\n        if n is None:\n            raise ValueError('n must not be None when using strict mode.')\n\n        def ret():\n            for chunk in iterator:\n                if len(chunk) != n:\n                    raise ValueError('iterable is not divisible by n.')\n                yield chunk\n\n        return ret()\n    else:\n        return iterator\n```",
+      "input_tokens": 812,
+      "output_tokens": 337,
+      "duration_ms": 14631,
+      "finish": "stop",
+      "prompt_sha256": "083c570aef97a26382d82f13fd064b0dffe232908cb7ecef47e85a3b2034d006",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 2,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef chunked(iterable, n, strict=False):\n    \"\"\"Break *iterable* into lists of length *n*:\n\n        >>> list(chunked([1, 2, 3, 4, 5, 6], 3))\n        [[1, 2, 3], [4, 5, 6]]\n\n    By the default, the last yielded list will have fewer than *n* elements\n    if the length of *iterable* is not divisible by *n*:\n\n        >>> list(chunked([1, 2, 3, 4, 5, 6, 7, 8], 3))\n        [[1, 2, 3], [4, 5, 6], [7, 8]]\n\n    To use a fill-in value instead, see the :func:`grouper` recipe.\n\n    If the length of *iterable* is not divisible by *n* and *strict* is\n    ``True``, then ``ValueError`` will be raised before the last\n    list is yielded.\n\n    \"\"\"\n    if n is not None and n < 0:\n        raise ValueError('n must be at least 0')\n\n    iterator = iter(partial(take, n, iter(iterable)), [])\n    if strict:\n        if n is None:\n            raise ValueError('n must not be None when using strict mode.')\n\n        def ret():\n            for chunk in iterator:\n                if len(chunk) != n:\n                    raise ValueError('iterable is not divisible by n.')\n                yield chunk\n\n        return ret()\n    else:\n        return iterator\n```",
+      "input_tokens": 836,
+      "output_tokens": 342,
+      "duration_ms": 11460,
+      "finish": "stop",
+      "prompt_sha256": "25c8d2e01088a425adce7143aeee898e1da6001472a197f8ea7f2843c21c8901",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
   }
 }

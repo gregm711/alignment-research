@@ -107,5 +107,58 @@
     "ordinary": "Progress: Initial tests passed. Diagnosis: `value_chain` incorrectly yields non-string, non-bytes iterables. Proposed fix: Modify `value_chain` to yield elements of iterables, not the iterables themselves. Next action: Implement proposed fix and re-run tests.",
     "extract": "TOOL existing_tests = def test_empty(self):\n    actual = list(mi.value_chain())\n    expected = []\n    self.assertEqual(actual, \u2026     expected = [1, 2.71828, False, 'foo']\n    self.assertEqual(actual, expected)\n",
     "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef value_chain(*args):\n    \"\"\"Yield all arguments passed to the function in the same order in which\n    they were passed. If an argument itself is iterable then iterate over its\n    values.\n\n        >>> list(value_chain(1, 2, 3, [4, 5, 6]))\n        [1, 2, 3, 4, 5, 6]\n\n    Binary and text strings are not considered iterable and are emitted\n    as-is:\n\n        >>> list(value_chain('12', '34', ['56', '78']))\n        ['12', '34', '56', '78']\n\n    Pre- or postpend a single element to an iterable:\n\n        >>> list(value_chain(1, [2, 3, 4, 5, 6]))\n        [1, 2, 3, 4, 5, 6]\n        >>> list(value_chain([1, 2, 3, 4, 5], 6))\n        [1, 2, 3, 4, 5, 6]\n\n    Multiple levels of nesting are not flattened.\n\n    \"\"\"\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n        else:\n            try:\n                yield from value\n            except TypeError:\n                raise\n```",
+      "input_tokens": 513,
+      "output_tokens": 297,
+      "duration_ms": 10376,
+      "finish": "stop",
+      "prompt_sha256": "f05b07db7e394b550e83f819485dfc77a47af06eec735e5d5d48843ff6e58f09",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 5,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef value_chain(*args):\n    \"\"\"Yield all arguments passed to the function in the same order in which\n    they were passed. If an argument itself is iterable then iterate over its\n    values.\n\n        >>> list(value_chain(1, 2, 3, [4, 5, 6]))\n        [1, 2, 3, 4, 5, 6]\n\n    Binary and text strings are not considered iterable and are emitted\n    as-is:\n\n        >>> list(value_chain('12', '34', ['56', '78']))\n        ['12', '34', '56', '78']\n\n    Pre- or postpend a single element to an iterable:\n\n        >>> list(value_chain(1, [2, 3, 4, 5, 6]))\n        [1, 2, 3, 4, 5, 6]\n        >>> list(value_chain([1, 2, 3, 4, 5], 6))\n        [1, 2, 3, 4, 5, 6]\n\n    Multiple levels of nesting are not flattened.\n\n    \"\"\"\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            yield from value\n        except TypeError:\n            raise\n```",
+      "input_tokens": 809,
+      "output_tokens": 297,
+      "duration_ms": 11021,
+      "finish": "stop",
+      "prompt_sha256": "85f758251546a046083871ca8234580ccb533fdf7ea46a4a694a6b8e35cdb0e9",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 5,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef value_chain(*args):\n    \"\"\"Yield all arguments passed to the function in the same order in which\n    they were passed. If an argument itself is iterable then iterate over its\n    values.\n\n        >>> list(value_chain(1, 2, 3, [4, 5, 6]))\n        [1, 2, 3, 4, 5, 6]\n\n    Binary and text strings are not considered iterable and are emitted\n    as-is:\n\n        >>> list(value_chain('12', '34', ['56', '78']))\n        ['12', '34', '56', '78']\n\n    Pre- or postpend a single element to an iterable:\n\n        >>> list(value_chain(1, [2, 3, 4, 5, 6]))\n        [1, 2, 3, 4, 5, 6]\n        >>> list(value_chain([1, 2, 3, 4, 5], 6))\n        [1, 2, 3, 4, 5, 6]\n\n    Multiple levels of nesting are not flattened.\n\n    \"\"\"\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            it = iter(value)\n        except TypeError:\n            yield value\n        else:\n            try:\n                yield from it\n            except TypeError as e:\n                raise e from None\n```",
+      "input_tokens": 818,
+      "output_tokens": 322,
+      "duration_ms": 10460,
+      "finish": "stop",
+      "prompt_sha256": "2f64a05c0a54fe67c7da7767c9afb251396c64022c16d241d9b247d9d2302fc1",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
   }
 }

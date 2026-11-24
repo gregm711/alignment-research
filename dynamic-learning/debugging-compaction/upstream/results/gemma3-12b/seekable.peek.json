@@ -1,0 +1,164 @@
+{
+  "revision": "6b1907de293a655fb77881bf81948f95fd15bd7c",
+  "trials": {
+    "full": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    original_index = self._index\n    try:\n        return peeked\n    finally:\n        self._index = original_index\n```",
+      "input_tokens": 483,
+      "output_tokens": 109,
+      "duration_ms": 12079,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "05b1f897ae1d7edc9f30a6edc6c148e54f38621c99d3e20aa758224151879680"
+    },
+    "ordinary": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    original_index = self._index\n    self._index -= 1\n    self._index = original_index\n    return peeked\n```",
+      "input_tokens": 460,
+      "output_tokens": 101,
+      "duration_ms": 10205,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 3,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "07edbb26fef7190c7e7657e611a98561682e713c154592979e55a509f883eae4"
+    },
+    "extract": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    original_index = self._index\n    return peeked\n```",
+      "input_tokens": 463,
+      "output_tokens": 92,
+      "duration_ms": 9323,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "a473f350d3cf6369c6538cbe643331402572ee3ecc477f9d4e8ad45590fe7f99"
+    },
+    "none": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    original_index = self._index\n    return peeked\n```",
+      "input_tokens": 392,
+      "output_tokens": 92,
+      "duration_ms": 9478,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "23e6ea173cea773c0a996befcf0563d9eb2ca90d497df15a8a9ae7dad5d26a22"
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
+  "selection": {
+    "text": "{\n\"tool\": \"nearby_source\"\n}",
+    "input_tokens": 154,
+    "output_tokens": 13,
+    "duration_ms": 1317,
+    "finish": "stop"
+  },
+  "tool": "nearby_source",
+  "first": {
+    "text": "The `peek` function doesn't properly restore the iterator's state after peeking, leading to the loss of the first value when looking ahead and then consuming elements.\n\n```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    original_index = self._index\n    return peeked\n```",
+    "input_tokens": 225,
+    "output_tokens": 128,
+    "duration_ms": 9074,
+    "finish": "stop",
+    "score": {
+      "valid": true,
+      "passed": false,
+      "class_passed": false,
+      "class_tests": 16,
+      "failures": 2,
+      "errors": 0,
+      "withheld_passed": false
+    }
+  },
+  "summary": {
+    "text": "**Progress:** Initial report of lost source value after `peek`.\n\n**Diagnosis:** `peek` fails to restore iterator state, consuming the peeked element. Proposed edit attempts to fix this by saving and restoring the iterator's index.\n\n**Next Action:** Test the proposed edit thoroughly, especially edge cases and repeated peeking/consuming. Verify state restoration.",
+    "input_tokens": 270,
+    "output_tokens": 74,
+    "duration_ms": 9391,
+    "finish": "stop"
+  },
+  "notes": {
+    "full": "Initial report: A client loses the first source value after looking ahead in a seekable iterator.\nTOOL nearby_source:\ndef __bool__(self):\n    try:\n        self.peek()\n    except StopIteration:\n        return False\n    return True\nProvisional diagnosis: The `peek` function doesn't properly restore the iterator's state after peeking, leading to the loss of the first value when looking ahead and then consuming elements.",
+    "ordinary": "**Progress:** Initial report of lost source value after `peek`.\n\n**Diagnosis:** `peek` fails to restore iterator state, consuming the peeked element. Proposed edit attempts to fix this by saving and restoring the iterator's index.\n\n**Next Action:** Test the proposed edit thoroughly, especially edge cases and repeated peeking/consuming. Verify state restoration.",
+    "extract": "TOOL nearby_source = def __bool__(self):\n    try:\n        self.peek()\n    except StopIteration:\n        return False\n    return True\n**Progress:** Initial report of lost source value after `peek`.\n\n**Diagnosis:** `peek` fails to restore iterator state, consuming the peeked element. Proposed edit attempts to fix this by saving",
+    "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    return peeked\n```",
+      "input_tokens": 301,
+      "output_tokens": 83,
+      "duration_ms": 5808,
+      "finish": "stop",
+      "prompt_sha256": "f48a3718453354be5ee65d8138aca65bdfeff9b751254a0c48483eac835b674e",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    return peeked\n```",
+      "input_tokens": 383,
+      "output_tokens": 83,
+      "duration_ms": 7314,
+      "finish": "stop",
+      "prompt_sha256": "42c7b4783b031f4ff87cd06d54cf56d8b8fad6fe066c6987dad5d9c55d78066f",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 16,
+        "failures": 2,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef peek(self, default=_marker):\n    try:\n        peeked = next(self)\n    except StopIteration:\n        if default is _marker:\n            raise\n        return default\n    # maxlen=0 cannot store the item we just consumed, so put it back.\n    if isinstance(self._cache, deque) and self._cache.maxlen == 0:\n        self._source = chain((peeked,), self._source)\n        self._index = None\n        return peeked\n    if self._index is None:\n        self._index = len(self._cache)\n    self._index -= 1\n    return peeked\n```",
+      "input_tokens": 451,
+      "output_tokens": 151,
+      "duration_ms": 10493,
+      "finish": "stop",
+      "prompt_sha256": "418656bb3595feb5cfe7a02d3bb04a094bd7ced7a9e599534fadeea0c56efbcf",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
+  }
+}

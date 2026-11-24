@@ -107,5 +107,58 @@
     "ordinary": "Progress: Initial tests identified the issue with reversed iteration. Diagnosis: Incorrect start value calculation in the reversed iterator causes an off-by-one error. Next action: Implement the proposed edit to correct the start value calculation.",
     "extract": "TOOL existing_tests = def test_basic(self):\n    for args, expected in [\n        ((4 \u2026     ]:\n        with self.assertRaisesRegex(TypeError, message):\n            mi.numeric_range(*args)\nProgress",
     "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef __reversed__(self):\n    return iter(\n        numeric_range(\n            self._get_by_index(-1), self._start - self._step, -self._step\n        )\n    )\n```",
+      "input_tokens": 181,
+      "output_tokens": 46,
+      "duration_ms": 3954,
+      "finish": "stop",
+      "prompt_sha256": "7e9f01d1f110a1456e856c87c91042fbc3eb0314ca948ae35d04db2d3ba3f398",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef __reversed__(self):\n    return iter(\n        numeric_range(\n            self._get_by_index(-1), self._start - self._step, -self._step\n        )\n    )\n```",
+      "input_tokens": 225,
+      "output_tokens": 46,
+      "duration_ms": 2197,
+      "finish": "stop",
+      "prompt_sha256": "eb1ffc566ce76e15b1969ae0c760331ad092d3029f4ff3a9e8ba2aeec48cd988",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 1,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef __reversed__(self):\n    try:\n        start = self._get_by_index(-1)\n    except IndexError:\n        return iter([])\n\n    return iter(\n        numeric_range(start, self._start - self._step, -self._step)\n    )\n```",
+      "input_tokens": 243,
+      "output_tokens": 59,
+      "duration_ms": 2439,
+      "finish": "stop",
+      "prompt_sha256": "036dfd2bf49dd2536740c5df520bd72695ce86e2e7e6a64865ad3c5002680744",
+      "score": {
+        "valid": true,
+        "passed": true,
+        "class_passed": true,
+        "class_tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "withheld_passed": true
+      }
+    }
   }
 }

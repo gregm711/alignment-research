@@ -1,0 +1,164 @@
+{
+  "revision": "7847d4324a581da8d0919734a8e50b2a6573b780",
+  "trials": {
+    "full": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            if isinstance(value, (list, tuple, set)):\n                for item in value:\n                    yield item\n            else:\n                yield from value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 850,
+      "output_tokens": 96,
+      "duration_ms": 10890,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "50019c03ca181e052df6864d3f51a353cf8e93a342cb4fd532addadbe5ddfa40"
+    },
+    "ordinary": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            if isinstance(value, (list, tuple, set)):\n                for item in value:\n                    yield item\n            else:\n                yield from value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 739,
+      "output_tokens": 96,
+      "duration_ms": 10214,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "36d95768e3fb72b4abfa51b59782a59d5b84176394004c676caee97c52dcb797"
+    },
+    "extract": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            if isinstance(value, (list, tuple, set)):\n                for item in value:\n                    yield item\n            else:\n                yield from value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 757,
+      "output_tokens": 96,
+      "duration_ms": 9586,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "ad2ba522b09c0106f9b2632275e9446da457bfcc915280df5ddec4df0ad48064"
+    },
+    "none": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            yield from value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 667,
+      "output_tokens": 67,
+      "duration_ms": 9542,
+      "finish": "stop",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      },
+      "prompt_sha256": "5336c9db1a9e083b13d29c6849af34e800d12820792256342922a7e1bc12606d"
+    }
+  },
+  "model_digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
+  "selection": {
+    "text": "{\"tool\": \"existing_tests\"}",
+    "input_tokens": 399,
+    "output_tokens": 9,
+    "duration_ms": 3462,
+    "finish": "stop"
+  },
+  "tool": "existing_tests",
+  "first": {
+    "text": "The `value_chain` function fails to properly handle iterables that contain the iterable itself as an element, leading to the iterable being yielded instead of its contents. This is because the `yield from value` statement doesn't check if `value` is the iterable itself.\n\n```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            if isinstance(value, (list, tuple, set)):\n                for item in value:\n                    yield item\n            else:\n                yield from value\n        except TypeError:\n            yield value\n```",
+    "input_tokens": 541,
+    "output_tokens": 153,
+    "duration_ms": 12635,
+    "finish": "stop",
+    "score": {
+      "valid": true,
+      "passed": false,
+      "class_passed": false,
+      "class_tests": 7,
+      "failures": 1,
+      "errors": 0,
+      "withheld_passed": false
+    }
+  },
+  "summary": {
+    "text": "**Progress:** Initial report describes a flattening issue where iterables containing themselves are yielded directly.\n\n**Diagnosis:** `yield from` doesn't check if the value is the iterable itself, causing it to be yielded instead of its contents.\n\n**Next Action:** Test the proposed edit to confirm the fix and ensure no regressions were introduced. Focus on edge cases involving nested iterables.",
+    "input_tokens": 387,
+    "output_tokens": 78,
+    "duration_ms": 7162,
+    "finish": "stop"
+  },
+  "notes": {
+    "full": "Initial report: Flattening an argument sometimes yields the iterable object itself after some of its elements.\nTOOL existing_tests:\ndef test_empty(self):\n    actual = list(mi.value_chain())\n    expected = []\n    self.assertEqual(actual, expected)\ndef test_simple(self):\n    actual = list(mi.value_chain(1, 2.71828, False, 'foo'))\n    expected = [1, 2.71828, False, 'foo']\n    self.assertEqual(actual, expected)\nProvisional diagnosis: The `value_chain` function fails to properly handle iterables that contain the iterable itself as an element, leading to the iterable being yielded instead of its contents. This is because the `yield from value` statement doesn't check if `value` is the iterable itself.",
+    "ordinary": "**Progress:** Initial report describes a flattening issue where iterables containing themselves are yielded directly.\n\n**Diagnosis:** `yield from` doesn't check if the value is the iterable itself, causing it to be yielded instead of its contents.\n\n**Next Action:** Test the proposed edit to confirm the fix and ensure no regressions were introduced. Focus on edge cases involving nested iterables.",
+    "extract": "TOOL existing_tests = def test_empty(self):\n    actual = list(mi.value_chain())\n    expected = []\n    self.assertEqual(actual, expected)\ndef test_simple(self):\n    actual = \u2026 71828, False, 'foo'))\n    expected = [1, 2.71828, False, 'foo']\n    self.assertEqual(actual, expected)\n",
+    "none": "No earlier debugging narrative."
+  },
+  "draft_controls": {
+    "fresh": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            yield from value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 572,
+      "output_tokens": 67,
+      "duration_ms": 8376,
+      "finish": "stop",
+      "prompt_sha256": "f05b07db7e394b550e83f819485dfc77a47af06eec735e5d5d48843ff6e58f09",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "parent": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            yield from value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 900,
+      "output_tokens": 67,
+      "duration_ms": 7310,
+      "finish": "stop",
+      "prompt_sha256": "85f758251546a046083871ca8234580ccb533fdf7ea46a4a694a6b8e35cdb0e9",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    },
+    "known-good": {
+      "text": "```python\ndef value_chain(*args):\n    scalar_types = (str, bytes)\n    for value in args:\n        if isinstance(value, scalar_types):\n            yield value\n            continue\n        try:\n            it = iter(value)\n            try:\n                yield from it\n            except TypeError:\n                yield value\n        except TypeError:\n            yield value\n```",
+      "input_tokens": 912,
+      "output_tokens": 88,
+      "duration_ms": 9682,
+      "finish": "stop",
+      "prompt_sha256": "2f64a05c0a54fe67c7da7767c9afb251396c64022c16d241d9b247d9d2302fc1",
+      "score": {
+        "valid": true,
+        "passed": false,
+        "class_passed": false,
+        "class_tests": 7,
+        "failures": 1,
+        "errors": 0,
+        "withheld_passed": false
+      }
+    }
+  }
+}
