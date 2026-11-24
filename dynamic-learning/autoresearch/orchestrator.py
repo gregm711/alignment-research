@@ -41,7 +41,7 @@ def archive(entries):
                                        for o in done)]
 
 
-def ask(prompt, fields):
+def ask(prompt, fields, local_model=None):
     schema = dict(type='object', properties={k:{'type':'string'} for k in fields},
                   required=list(fields),additionalProperties=False)
     with tempfile.TemporaryDirectory() as folder:
@@ -51,6 +51,10 @@ def ask(prompt, fields):
         command = ['codex','exec','--ephemeral','--ignore-user-config','--ignore-rules',
                    '--skip-git-repo-check','--sandbox','read-only','-C',folder,
                    '--output-schema',str(schemafile),'-o',str(out),'-']
+        if local_model:
+            command[2:2] = ['--oss', '--local-provider', 'ollama', '-m', local_model,
+                            '-c', 'model_context_window=16384', '-c', 'model_max_output_tokens=1024',
+                            '-c', 'features.apps=false', '-c', 'features.plugins=false']
         proc = subprocess.run(command,input=prompt,text=True,stdout=subprocess.DEVNULL,
                               stderr=subprocess.PIPE,cwd=folder,timeout=240)
         if proc.returncode or not out.exists():

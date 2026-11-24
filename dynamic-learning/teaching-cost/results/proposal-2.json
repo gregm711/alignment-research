@@ -1,0 +1,4 @@
+{
+  "status": "rejected",
+  "reason": "The second local Codex response returned a malformed decimal string (].05). No settings were evaluated and no replacement was requested."
+}

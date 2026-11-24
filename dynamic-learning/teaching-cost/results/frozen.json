@@ -1,0 +1,79 @@
+{
+  "variants": {
+    "uniform": "default",
+    "frozen": "default",
+    "neighbor": "default",
+    "kernel": "default",
+    "weights": "codex1"
+  },
+  "settings": {
+    "uniform": {
+      "rate": 0.3,
+      "temperature": 0.09,
+      "mix": 0.75,
+      "expand": 0.18,
+      "stop": 0.95
+    },
+    "frozen": {
+      "rate": 0.3,
+      "temperature": 0.09,
+      "mix": 0.75,
+      "expand": 0.18,
+      "stop": 0.95
+    },
+    "neighbor": {
+      "rate": 0.3,
+      "temperature": 0.09,
+      "mix": 0.75,
+      "expand": 0.18,
+      "stop": 0.95
+    },
+    "kernel": {
+      "rate": 0.3,
+      "temperature": 0.09,
+      "mix": 0.75,
+      "expand": 0.18,
+      "stop": 0.95
+    },
+    "weights": {
+      "rate": 0.8,
+      "temperature": 0.3,
+      "mix": 0.75,
+      "expand": 0.18,
+      "stop": 0.95
+    }
+  },
+  "winner": "neighbor",
+  "control": "neighbor",
+  "writable": "weights",
+  "development_loss": {
+    "default": {
+      "uniform": 0.6095610119047619,
+      "frozen": 0.6065848214285714,
+      "neighbor": 0.47953869047619047,
+      "kernel": 0.5489211309523809,
+      "weights": 0.5693824404761905
+    },
+    "codex1": {
+      "uniform": 0.6095610119047619,
+      "frozen": 0.6065848214285714,
+      "neighbor": 0.47953869047619047,
+      "kernel": 0.5783110119047619,
+      "weights": 0.5176711309523809
+    }
+  },
+  "ranking": [
+    "neighbor",
+    "weights",
+    "kernel",
+    "frozen",
+    "uniform"
+  ],
+  "files": {
+    "study.py": "b03d9730244b51c488a57119980d35ecc2fec14efc0758515afbe94d8da8716e",
+    "learner.py": "95145ab6bbc8f304a8ddb3fdda9fc669ae0241f1e1963a539dbeec6eaed5f1c2",
+    "world.py": "2313622493e5c5be21a202ad755733407c78b64be35d02426b9a5d8f83e57885",
+    "encode.py": "a362aea85cd66bfdb8bf52643a7d6602c41a104fc7fd28a628c919cd16cb5199",
+    "results/encoder.npz": "ca7709badf47ff27c0c14d6c2c7b8a1237570deace0a3758d9ca1126b8df40c5"
+  }
+}

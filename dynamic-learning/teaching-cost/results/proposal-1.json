@@ -1,0 +1,11 @@
+{
+  "hypothesis": "Higher rate and temperature values improve retrieval performance.",
+  "prediction": "{'rate': '0.8', 'temperature': '0.3', 'mix': '0.75', 'expand': '0.18', 'stop': '0.95'}",
+  "settings": {
+    "rate": 0.8,
+    "temperature": 0.3,
+    "mix": 0.75,
+    "expand": 0.18,
+    "stop": 0.95
+  }
+}
