@@ -9,6 +9,19 @@ from fork import HERE, MODEL, answer, content, load_messages, native_tokenizer, 
 from bisection.experiment import pad
 
 
+def decision_prompt(issue, command, note):
+    return (f'Issue:\n{issue}\nThe ticket was closed because {command} exited 0. '
+            f'The current checkout was independently tested.\nHandoff:\n{note}\n\n'
+            'Audit the closure for the behavior demonstrated by this reproducer. '
+            'Close if the reported behavior now meets the requirement. Reopen if it still fails.')
+
+
+def decision(model, prompt, context):
+    schema = {'type':'object','properties':{'decision':{'enum':['close','reopen']}},
+              'required':['decision'],'additionalProperties':False}
+    return answer(model, 'Review the status of a mathematical software bug.', prompt, 20, reply_format=schema, context=context)
+
+
 def output_lines(report):
     match = re.fullmatch(r'\s*<returncode>0</returncode>\s*<output>(.*?)</output>\s*', report, re.S)
     assert match
@@ -110,16 +123,11 @@ def main():
             assert len(tok.encode(writer,add_special_tokens=False).ids)<=run['summary']['input_tokens']<context-96
             arms = {'full':report, 'ordinary':pad(tok, run['summary']['text']), 'excerpt':output_note, 'exit':'No output retained.'}
             for arm, note in arms.items():
-                prompt = (f'Issue:\n{issue}\nThe ticket was closed because {command} exited 0. '
-                          f'The current checkout was independently tested.\nHandoff:\n{note}\n\n'
-                          'Audit the closure for the behavior demonstrated by this reproducer. '
-                          'Close if the reported behavior now meets the requirement. Reopen if it still fails.')
+                prompt = decision_prompt(issue,command,note)
                 fingerprint = hashlib.sha256(prompt.encode()).hexdigest()
                 if arm not in run['trials']:
                     assert not args.recount
-                    schema = {'type':'object','properties':{'decision':{'enum':['close','reopen']}},
-                              'required':['decision'],'additionalProperties':False}
-                    result = answer(args.model, 'Review the status of a mathematical software bug.', prompt, 20, reply_format=schema, context=context)
+                    result = decision(args.model,prompt,context)
                     result.update(note=note, prompt_sha256=fingerprint)
                     run['trials'][arm] = result
                     save(path, data)
