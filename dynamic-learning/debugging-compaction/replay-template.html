@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Debugging handoff replay</title>
+<style>
+:root{color-scheme:light;--ink:#172c34;--muted:#4b6066;--border:#c4cfc9;--paper:#f9faf6;--green:#21634b;--red:#933c2c}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 'Source Sans 3',system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:38px 30px 60px}h1,h2,p{margin:0}h1{font:500 clamp(32px,5vw,54px)/1.1 'STIX Two Text',Georgia,serif;letter-spacing:-.025em}header p{color:var(--muted);max-width:720px;margin:12px 0 25px}form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;border-block:1px solid var(--border);padding:16px 0}label{font-size:14px;font-weight:600}select{display:block;width:100%;color:var(--ink);font:inherit;font-weight:400;background:white;border:1px solid #83968f;border-radius:4px;padding:7px;margin-top:4px}#purpose{margin:18px 0}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}section{min-width:0}h2{font-size:20px;margin:16px 0 6px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf2ed;padding:15px;border:1px solid var(--border);border-radius:4px;margin:8px 0 0;font:14px/1.5 'IBM Plex Mono',monospace}#metrics{margin:18px 0 0;font-weight:600}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left}td,th{vertical-align:top;border-bottom:1px solid var(--border);padding:8px 7px}td code{white-space:pre-wrap;overflow-wrap:anywhere}td:last-child{font-weight:600}.fail{color:var(--red)}.pass{color:var(--green)}footer{color:var(--muted);margin-top:24px;font-size:14px} @media(max-width:740px){main{padding:24px 15px}form{grid-template-columns:1fr 1fr}.pair{grid-template-columns:1fr}table{font-size:12px}td,th{padding:6px 3px}}
+</style></head><body><main><header><h1>Debugging handoff replay</h1><p>Each case starts with an engineer suspecting the alder build. A later trace identifies the affected build. Inspect the handoff, the reader’s patch, and the tests it passed or failed.</p></header>
+<form><label>Case<select id="case"></select></label><label>Reader<select id="model"><option value="qwen2.5-coder:7b">Qwen2.5-Coder 7B</option><option value="gemma3:12b">Gemma 3 12B</option></select></label><label>Fresh route<select id="route"><option value="birch">Birch · overturns diagnosis</option><option value="alder">Alder · confirms diagnosis</option></select></label><label>Handoff<select id="arm"><option value="observed">Attributed observation</option><option value="ordinary">Ordinary summary</option><option value="swapped">Source labels swapped</option><option value="full">Full history</option><option value="none">No history</option></select></label></form>
+<p id="purpose"></p><div class="pair"><section><h2>Retained history</h2><pre id="note"></pre></section><section><h2>Generated patch</h2><pre id="patch"></pre></section></div>
+<p id="metrics" aria-live="polite"></p><h2>Executed tests</h2><table><thead><tr><th>Test</th><th>Input</th><th>Expected</th><th>Returned</th><th>Result</th></tr></thead><tbody id="rows"></tbody></table>
+<footer>Recognition comes from a separate trial on the same handoff. The reader saw the two candidate outputs in both possible orders. Hidden patch tests use different inputs from the archive.</footer></main>
+<script id="trials" type="application/json">@@TRIALS@@</script><script>
+'use strict';
+const data=JSON.parse(document.querySelector('#trials').textContent);
+const el=id=>document.getElementById(id);
+const names={ties:'Priority ties',separators:'Boundary markers',batch:'Incomplete batches',dedup:'Duplicate columns',text:'Literal matching',asof:'Time matching',bins:'Insertion index',missing:'Missing settings'};
+for(const k of Object.keys(data)) el('case').add(new Option(names[k],k));
+el('case').value='batch';
+function value(obj){return obj && 'value' in obj ? JSON.stringify(obj.value) : obj && 'exception' in obj ? 'raises '+obj.exception : 'execution error';}
+function render(){
+ const c=data[el('case').value], route=el('route').value;
+ const trial=c.models[el('model').value][route+'-'+el('arm').value];
+ el('purpose').textContent=c.purpose;
+ el('note').textContent=trial.note;
+ el('patch').textContent=trial.patch.replace(/^```(?:python|py)?\s*\n?|\n?```\s*$/g,'');
+ const n=trial.checks.filter(Boolean).length;
+ el('metrics').textContent='Recognition '+n+'/2 answer orders correct · Patch '+(trial.score.passed?'passed':'failed')+' · '+trial.tokens+' repair input tokens';
+ const body=el('rows');body.replaceChildren();
+ c.inputs.forEach((input,i)=>{
+  const wanted=value(c.expected[route==='alder'?0:1][i]),got=value(trial.score.outputs?.[i]),ok=wanted===got;
+  const row=body.insertRow();
+  for(const s of [i<c.smoke?'Smoke':'Hidden',JSON.stringify(input),wanted,got]){const cell=row.insertCell();const code=document.createElement('code');code.textContent=s;cell.append(code);}
+  const status=row.insertCell();status.className=ok?'pass':'fail';status.textContent=ok?'Pass':'Fail';
+ });
+}
+document.querySelector('form').addEventListener('change',render);render();
+</script></body></html>
