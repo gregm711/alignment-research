@@ -9,7 +9,6 @@ import re
 import subprocess
 import sys
 import textwrap
-import time
 import urllib.request
 
 from cases import CASES
@@ -87,6 +86,13 @@ def score(case,raw,expected):
     return dict(passed=res.get('outputs')==expected,**res)
 
 
+def repair_prompt(case, name, note):
+    return f'Debugging handoff:\n{note}\n\nFresh routing test: the affected request definitely used {name}. Match that build exactly.\nPurpose: {case.purpose}\nCurrent source:\n{function(case.source)}\nWrite the complete replacement function repair(x). Use only Python builtins and standard sequence/string methods. No imports or commentary.'
+
+
+REPAIR_SYSTEM = 'You maintain a Python compatibility layer. Return one Python function. Hidden regression tests will execute it.'
+
+
 def save(path,record):
     tmp=path.with_suffix('.tmp')
     tmp.write_text(json.dumps(record,indent=2)+'\n')
@@ -143,8 +149,8 @@ def main():
                     assert score(case,trial['text'],expected[j])==trial['score']
                 else:
                     note=prefix if policy=='full' else '(No debugging history retained.)' if policy=='none' else data['notes'][policy]['note']
-                    prompt=f'Debugging handoff:\n{note}\n\nFresh routing test: the affected request definitely used {name}. Match that build exactly.\nPurpose: {case.purpose}\nCurrent source:\n{function(case.source)}\nWrite the complete replacement function repair(x). Use only Python builtins and standard sequence/string methods. No imports or commentary.'
-                    trial=answer(args.model,'You maintain a Python compatibility layer. Return one Python function. Hidden regression tests will execute it.',prompt,220)
+                    prompt=repair_prompt(case,name,note)
+                    trial=answer(args.model,REPAIR_SYSTEM,prompt,220)
                     trial['score']=score(case,trial['text'],expected[j])
                     trial['prompt_sha256']=hashlib.sha256(prompt.encode()).hexdigest()
                     data['trials'][key]=trial

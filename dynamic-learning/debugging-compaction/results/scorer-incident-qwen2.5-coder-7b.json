@@ -1,0 +1,176 @@
+{
+  "revision": "64ffd2a2f913ea7e950a46b2849671d8c4fa4154",
+  "probes": [
+    {
+      "selection": {
+        "text": "screen_row",
+        "input_tokens": 88,
+        "output_tokens": 3,
+        "duration_ms": 470,
+        "finish": "stop"
+      },
+      "probe": "screen_row",
+      "observation": "five-lookup screen, sheet 0: expected city 'Oslo', generated final text \"The city that goes with the metal that goes with the tool that goes with the fruit that goes with the color of the bat is **Oslo**.\\n\\n**Step-by-Step Explanation:**\\n1. **Bat's Color:** The bat is gold.\\n2. **Fruit for Gold:** Gold pairs with the fig.\\n3. **Tool for Fig:** Fig pairs with the fork.\\n4. **Metal for Fork:** Fork pairs with zinc.\\n5. **City for Zinc:** Zinc pairs with Oslo.\\n\\n**Answer:** Oslo.\", old score_text.correct=False."
+    },
+    {
+      "selection": {
+        "text": "fresh_row",
+        "input_tokens": 231,
+        "output_tokens": 3,
+        "duration_ms": 440,
+        "finish": "stop"
+      },
+      "probe": "fresh_row",
+      "observation": "seven-lookup fresh run, sheet 0: steps=['pig', 'pink', 'grape', 'file', 'zinc', 'Cairo', 'juice', 'hockey'], strict links=[True, True, True, True, False, False]. Independently checked links=[True, True, True, True, True, True]."
+    }
+  ],
+  "trials": {
+    "screen-full": {
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}\n```",
+      "input_tokens": 832,
+      "output_tokens": 98,
+      "duration_ms": 3804,
+      "finish": "stop",
+      "prompt_sha256": "0a3b8e6accbc1aa9b95ed0446a605e6ce3649e0f25b2bda6c80f13203ca26972",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "screen-ordinary": {
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}\n```",
+      "input_tokens": 624,
+      "output_tokens": 98,
+      "duration_ms": 3400,
+      "finish": "stop",
+      "prompt_sha256": "1aa91ca46fdb607361fde2a1e5b700ec0ee8f80d841b95b911bb88a6b4da5b61",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "screen-extract": {
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}\n```",
+      "input_tokens": 623,
+      "output_tokens": 98,
+      "duration_ms": 3317,
+      "finish": "stop",
+      "prompt_sha256": "45b97cc3e4395ac2a0e98f3a7d4e234bbb9047ae6c2810af92c961ec998c4295",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "screen-none": {
+      "text": "```json\n{\n  \"score_text\": \"def score_text(it, text, end=\\\"<|end_message|>\\\"):\\n    think, _, answer = text.partition(end)\\n    clean = lambda s: re.sub(r\\\"<\\\\|[^|]*\\\\|>|</?think>\\\", \\\" \\\", s).lower()\\n    body = clean(think)\\n    for p in it[\\\"pairs\\\"]:\\n        body = body.replace(p.lower(), \\\" \\\")\\n    ans = clean(answer)\\n    seen = [(ans.rfind(w), w) for w in it[\\\"candidates\\\"] if w in ans]\\n    return {\\\"finished\\\": bool(answer.strip()), \\\"correct\\\": bool(seen) and max(seen)[1] == it[\\\"steps\\\"][-1],\\n            \\\"named\\\": [bool(re.search(rf\\\"\\\\\\\\b{w}\\\\\\\\b\\\", body)) for w in it[\\\"steps\\\"][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\\\\\b{w}\\\\\\\\b\\\", s)\"\n}\n```",
+      "input_tokens": 532,
+      "output_tokens": 233,
+      "duration_ms": 6262,
+      "finish": "stop",
+      "prompt_sha256": "3a9a370dada610a7eb1789d41b1163bbbde42e945e68858f4813eba3001a7462",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "screen-retrieve": {
+      "retrieval": {
+        "text": "score_text",
+        "input_tokens": 164,
+        "output_tokens": 3,
+        "duration_ms": 360,
+        "finish": "stop"
+      },
+      "probe": null,
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}\n```",
+      "input_tokens": 624,
+      "output_tokens": 98,
+      "duration_ms": 2246,
+      "finish": "stop",
+      "prompt_sha256": "1aa91ca46fdb607361fde2a1e5b700ec0ee8f80d841b95b911bb88a6b4da5b61",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "hard-full": {
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}\n```",
+      "input_tokens": 836,
+      "output_tokens": 98,
+      "duration_ms": 3162,
+      "finish": "stop",
+      "prompt_sha256": "4a01746cc3496f3f79499396b8f79c323d318bc57e256a79bf6a6adb2ce2f3a7",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "hard-ordinary": {
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}\n```",
+      "input_tokens": 628,
+      "output_tokens": 98,
+      "duration_ms": 3537,
+      "finish": "stop",
+      "prompt_sha256": "3dc1be15c6bf19796bffb0978581a1447719f694e845298a905b6bb6da0e6b8f",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "hard-extract": {
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf'\\\\b{w}\\\\b', body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf'\\\\b{w}\\\\b', s)\"\n}\n```",
+      "input_tokens": 627,
+      "output_tokens": 98,
+      "duration_ms": 3346,
+      "finish": "stop",
+      "prompt_sha256": "dda2f27b273d033d8af0057ad166702e57ee6cd3f27d2719dc44e842fb1317ea",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    },
+    "hard-none": {
+      "text": "```json\n{\n  \"seen\": \"[bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it[\\\"steps\\\"][1:-1]]\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}\n```",
+      "input_tokens": 536,
+      "output_tokens": 65,
+      "duration_ms": 2422,
+      "finish": "stop",
+      "prompt_sha256": "e0925ab346c90e868beec7755e33e1c60d27e2d241d3c3b42865b9faa96f465a",
+      "score": {
+        "error": "unsupported expression element Name(id='bool', ctx=Load())"
+      }
+    },
+    "hard-retrieve": {
+      "retrieval": {
+        "text": "within-sentence linked-step count",
+        "input_tokens": 168,
+        "output_tokens": 7,
+        "duration_ms": 285,
+        "finish": "stop"
+      },
+      "probe": null,
+      "text": "```json\n{\n  \"score_text\": \"return {'finished': bool(answer.strip()), 'correct': bool(seen) and max(seen)[1] == it['steps'][-1], 'named': [bool(re.search(rf\\\"\\\\b{w}\\\\b\\\", body)) for w in it['steps'][1:-1]]}\",\n  \"has\": \"lambda s, w: re.search(rf\\\"\\\\b{w}\\\\b\\\", s)\"\n}\n```",
+      "input_tokens": 628,
+      "output_tokens": 98,
+      "duration_ms": 2128,
+      "finish": "stop",
+      "prompt_sha256": "3dc1be15c6bf19796bffb0978581a1447719f694e845298a905b6bb6da0e6b8f",
+      "score": {
+        "error": "expected keys seen and/or has"
+      }
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+  "diagnosis": {
+    "text": "The most likely location for the discrepancy is the `score_text` (final grade). The `strict` (linked steps) and `uncertain` checks appear to be functioning correctly based on the provided data.",
+    "input_tokens": 320,
+    "output_tokens": 43,
+    "duration_ms": 1155,
+    "finish": "stop"
+  },
+  "summary_generation": {
+    "text": "**Progress:** The initial triage identified a discrepancy in the city-related grading. The `screen_row` and `fresh_row` data indicate that the final city answer \"Oslo\" is correct, but the `score_text` is marked as incorrect.\n\n**Diagnosis:** The `score_text` (final grade) is likely the source of the discrepancy. The `strict` and `uncertain` checks appear to be functioning correctly based on the provided data.\n\n**Next Action",
+    "input_tokens": 355,
+    "output_tokens": 96,
+    "duration_ms": 2255,
+    "finish": "length"
+  },
+  "notes": {
+    "full": "The evaluation team found a city-related grading discrepancy. Initial triage suspects the final city answer is being marked wrong. The reporter is checking which metric and dataset triggered the ticket.\nTOOL screen_row: five-lookup screen, sheet 0: expected city 'Oslo', generated final text \"The city that goes with the metal that goes with the tool that goes with the fruit that goes with the color of the bat is **Oslo**.\\n\\n**Step-by-Step Explanation:**\\n1. **Bat's Color:** The bat is gold.\\n2. **Fruit for Gold:** Gold pairs with the fig.\\n3. **Tool for Fig:** Fig pairs with the fork.\\n4. **Metal for Fork:** Fork pairs with zinc.\\n5. **City for Zinc:** Zinc pairs with Oslo.\\n\\n**Answer:** Oslo.\", old score_text.correct=False.\nTOOL fresh_row: seven-lookup fresh run, sheet 0: steps=['pig', 'pink', 'grape', 'file', 'zinc', 'Cairo', 'juice', 'hockey'], strict links=[True, True, True, True, False, False]. Independently checked links=[True, True, True, True, True, True].\nEngineer provisional diagnosis: The most likely location for the discrepancy is the `score_text` (final grade). The `strict` (linked steps) and `uncertain` checks appear to be functioning correctly based on the provided data.",
+    "ordinary": "**Progress:** The initial triage identified a discrepancy in the city-related grading. The `screen_row` and `fresh_row` data indicate that the final city answer \"Oslo\" is correct, but the `score_text` is marked as incorrect.\n\n**Diagnosis:** The `score_text` (final grade) is likely the source of the discrepancy. The `strict` and `uncertain` checks appear to be functioning correctly based on the provided data.\n\n**Next Action",
+    "extract": "TOOL screen_row = five-lookup screen, sheet 0: expected city 'Oslo', generated final text \u2026 . **City for Zinc:** Zinc pairs with Oslo.\\n\\n**Answer:** Oslo.\", old score_text.correct=False.\nTOOL fresh_row = seven-lookup fresh run, sheet 0: steps=['pig', 'pink', ' \u2026 , True, False, False]. Independently checked links=[True, True, True, True, True, True].\n",
+    "none": "No handoff available."
+  }
+}

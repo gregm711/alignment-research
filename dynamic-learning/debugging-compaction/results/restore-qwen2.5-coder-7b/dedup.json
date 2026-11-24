@@ -1,0 +1,296 @@
+{
+  "notes": {
+    "observed": "Archived call repair([\"z\",\"r\",\"z\",\"t\"])\nalder returned [\"r\",\"z\",\"t\"]\nbirch returned [\"z\",\"r\",\"t\"]\n.\n- Current checkout matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n- Pending route check for build named by the trace team.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior.\n- Combine worktree source and function purpose after trace completion.",
+    "swapped": "Archived call repair([\"z\",\"r\",\"z\",\"t\"])\nalder returned [\"z\",\"r\",\"t\"]\nbirch returned [\"r\",\"z\",\"t\"]\n.\n- Current checkout matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n- Pending route check for build named by the trace team.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior.\n- Combine worktree source and function purpose after trace completion.",
+    "common": "Archived call repair([\"a\",\"c\",\"f\"])\nalder returned [\"a\",\"c\",\"f\"]\nbirch returned [\"a\",\"c\",\"f\"]\n current checkout.\n- Current checkout matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n- Pending route check for build named by the trace team.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior.\n- Combine worktree source and function purpose after trace completion.",
+    "full": "Compatibility incident: dedup. Two supported consumer builds have independent archived behavior. A drop-in Python function is being prepared for the build named by the pending route check.\nEngineer: The route dashboard currently points to alder. Treat alder behavior as the working diagnosis while the trace team checks the actual request. Do not combine the two builds.\nWorktree source and function purpose will be available after handoff.\nProbe 1: smoke fixtures were replayed against both archived consumers.\n  repair([\"a\",\"c\",\"f\"]) -> [\"a\",\"c\",\"f\"] on both\n  repair([\"b\"]) -> [\"b\"] on both\nProbe 2: archive replay from birch:\n  repair([\"z\",\"r\",\"z\",\"t\"]) -> [\"z\",\"r\",\"t\"]\n  repair([\"x\",\"y\",\"x\"]) -> [\"x\",\"y\"]\nProbe 3: archive replay from alder:\n  repair([\"z\",\"r\",\"z\",\"t\"]) -> [\"r\",\"z\",\"t\"]\n  repair([\"x\",\"y\",\"x\"]) -> [\"y\",\"x\"]\nProbe 4: current checkout on the same capture inputs:\n  repair([\"z\",\"r\",\"z\",\"t\"]) -> [\"r\",\"t\",\"z\"]\n  repair([\"x\",\"y\",\"x\"]) -> [\"x\",\"y\"]\nEngineer: Source and smoke cases above are from the same checkout. No patch applied. Current diagnosis remains an alder compatibility regression. Await request routing trace.",
+    "ordinary": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke fixtures on both builds.\n- Archive replays from birch, alder, and current checkout.\n- Current checkout matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n- Pending route check for build named by the trace team.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior.\n- Combine worktree source and function purpose after trace completion.",
+    "evidence": "**Handoff: Dedup Compatibility Incident**\n\n**Summary:**\n- Two builds (alder and birch) exhibit different archived behavior for the `repair` function.\n- Current diagnosis: alder compatibility regression.\n- Await request routing trace to confirm.\n\n**Conflicting Behavior:**\n- **Alder:**\n  - `repair([\"z\",\"r\",\"z\",\"t\"]) -> [\"r\",\"z\",\"t\"]`\n  - `repair([\"x\",\"y\",\"x\"])",
+    "none": "(No debugging history retained.)"
+  },
+  "trials": {
+    "alder-observed": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 198,
+      "output_tokens": 11,
+      "duration_ms": 599,
+      "finish": "stop",
+      "prompt_sha256": "c41cafdfbbcb22508c84c98f2b83df812a43f005ac3b99d1fdab23a4262bf6bf",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-swapped": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 198,
+      "output_tokens": 11,
+      "duration_ms": 540,
+      "finish": "stop",
+      "prompt_sha256": "7a56d4d304736fbdffc4be2ca162368d7192f012854f12d4bd9f894f70992715",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-common": {
+      "text": "```python\ndef repair(x):\n    return sorted(set(x))\n```",
+      "input_tokens": 198,
+      "output_tokens": 15,
+      "duration_ms": 678,
+      "finish": "stop",
+      "prompt_sha256": "aa8e9290055591046ea613cfb81bd9cc2d6e01c49fb54a1c076b7aa38195e98b",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-observed": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 198,
+      "output_tokens": 11,
+      "duration_ms": 360,
+      "finish": "stop",
+      "prompt_sha256": "4bad24d56508e4fe52bb117d2d04ba363880c5b8918b3fc40b8cdadffe7576eb",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-swapped": {
+      "text": "def repair(x):\n    return sorted(set(x))",
+      "input_tokens": 198,
+      "output_tokens": 11,
+      "duration_ms": 360,
+      "finish": "stop",
+      "prompt_sha256": "ae463ad5f3f71042c28a6c9db40e64017fe0c6289dd2609eae696c6cc6207695",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-common": {
+      "text": "```python\ndef repair(x):\n    return sorted(set(x))\n```",
+      "input_tokens": 198,
+      "output_tokens": 15,
+      "duration_ms": 441,
+      "finish": "stop",
+      "prompt_sha256": "78db4799cb2b93cb21bed96e6abdc9dd6671f729af3bd7f7df1c02e2c9fdfaf2",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": [
+              "a",
+              "c",
+              "f"
+            ]
+          },
+          {
+            "value": [
+              "b"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "d"
+            ]
+          },
+          {
+            "value": [
+              "b",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "value": [
+              "a",
+              "b",
+              "z"
+            ]
+          }
+        ]
+      },
+      "opposite_passed": false
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}

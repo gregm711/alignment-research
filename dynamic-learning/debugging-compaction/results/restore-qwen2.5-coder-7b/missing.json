@@ -1,0 +1,206 @@
+{
+  "notes": {
+    "observed": "Archived call repair({\"value\":null})\nalder returned \"automatic\"\nbirch returned null\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs yielded \"automatic\" for null and false.\n\n**Current Diagnosis:**\n- Alder behavior is being treated as the working diagnosis.\n- Pending route check for the build named by the trace",
+    "swapped": "Archived call repair({\"value\":null})\nalder returned null\nbirch returned \"automatic\"\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs yielded \"automatic\" for null and false.\n\n**Current Diagnosis:**\n- Alder behavior is being treated as the working diagnosis.\n- Pending route check for the build named by the trace",
+    "common": "Archived call repair({\"value\":\"warm\"})\nalder returned \"warm\"\nbirch returned \"warm\"\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs yielded \"automatic\" for null and false.\n\n**Current Diagnosis:**\n- Alder behavior is being treated as the working diagnosis.\n- Pending route check for the build named by the",
+    "full": "Compatibility incident: missing. Two supported consumer builds have independent archived behavior. A drop-in Python function is being prepared for the build named by the pending route check.\nEngineer: The route dashboard currently points to alder. Treat alder behavior as the working diagnosis while the trace team checks the actual request. Do not combine the two builds.\nWorktree source and function purpose will be available after handoff.\nProbe 1: smoke fixtures were replayed against both archived consumers.\n  repair({\"value\":\"warm\"}) -> \"warm\" on both\n  repair({}) -> \"automatic\" on both\nProbe 2: archive replay from birch:\n  repair({\"value\":null}) -> null\n  repair({\"value\":false}) -> false\nProbe 3: archive replay from alder:\n  repair({\"value\":null}) -> \"automatic\"\n  repair({\"value\":false}) -> false\nProbe 4: current checkout on the same capture inputs:\n  repair({\"value\":null}) -> \"automatic\"\n  repair({\"value\":false}) -> \"automatic\"\nEngineer: Source and smoke cases above are from the same checkout. No patch applied. Current diagnosis remains an alder compatibility regression. Await request routing trace.",
+    "ordinary": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke tests on both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs yielded \"automatic\" for null and false.\n\n**Current Diagnosis:**\n- Alder behavior is being treated as the working diagnosis.\n- Pending route check for the build named by the trace team.\n- Source and function purpose details to follow.\n\n**Next Action:**\n- Await request routing",
+    "evidence": "**Handoff:**\n\n**Summary:**\nCompatibility incident identified between two supported consumer builds. Pending route check targets a drop-in Python function. Current diagnosis: alder build compatibility regression.\n\n**Evidence:**\n- **Probe 1 (Smoke Fixtures):**\n  - `repair({\"value\":\"warm\"}) -> \"warm\"` on both builds\n  - `repair({}) -> \"automatic\"` on both builds\n- **Probe 2 (Archive Replay - Birch):**\n ",
+    "none": "(No debugging history retained.)"
+  },
+  "trials": {
+    "alder-observed": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 219,
+      "output_tokens": 20,
+      "duration_ms": 783,
+      "finish": "stop",
+      "prompt_sha256": "9728d4971efd4387b72a1ecbae18752cac8c06a67c3019a1e9f94e87834c026e",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-swapped": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 219,
+      "output_tokens": 20,
+      "duration_ms": 800,
+      "finish": "stop",
+      "prompt_sha256": "47e8ee1a7bc10be1c6543349be3b1024e8495206d77a2130272e88237387e505",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-common": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 219,
+      "output_tokens": 20,
+      "duration_ms": 785,
+      "finish": "stop",
+      "prompt_sha256": "002ca84b858bc90ed6d4de67fee308b0afcb4b3e44be7cfaf5b9a203b136f0b0",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-observed": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 219,
+      "output_tokens": 20,
+      "duration_ms": 623,
+      "finish": "stop",
+      "prompt_sha256": "8d97f509de478064712d80f381687fc520484d6fe5b6c3da96a4695eafd73cae",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-swapped": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 219,
+      "output_tokens": 20,
+      "duration_ms": 625,
+      "finish": "stop",
+      "prompt_sha256": "c5c8ba200f8486db50b3070bcd46cc9ba31d31d02863deb351b3910b0e3076d7",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-common": {
+      "text": "```python\ndef repair(x):\n    return x.get('value') or 'automatic'\n```",
+      "input_tokens": 219,
+      "output_tokens": 20,
+      "duration_ms": 619,
+      "finish": "stop",
+      "prompt_sha256": "1285965948f9fde86996b64b159b490e1c404b60a839ad805c090bdd9b7c2efb",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": "warm"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          },
+          {
+            "value": "automatic"
+          }
+        ]
+      },
+      "opposite_passed": false
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}

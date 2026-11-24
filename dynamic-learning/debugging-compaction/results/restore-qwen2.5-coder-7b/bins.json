@@ -1,0 +1,206 @@
+{
+  "notes": {
+    "observed": "Archived call repair([[3,3,6],3])\nalder returned 0\nbirch returned 2\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke fixtures against both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n\n**Next Action:**\n",
+    "swapped": "Archived call repair([[3,3,6],3])\nalder returned 2\nbirch returned 0\n**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke fixtures against both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n\n**Next Action:**\n",
+    "common": "Archived call repair([[2,5],3])\nalder returned 1\nbirch returned 1\n from birch and alder showed discrepancies.\n- Current checkout on the same inputs matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior as working diagnosis.\n- Prepare drop-in Python function for pending route check.",
+    "full": "Compatibility incident: bins. Two supported consumer builds have independent archived behavior. A drop-in Python function is being prepared for the build named by the pending route check.\nEngineer: The route dashboard currently points to alder. Treat alder behavior as the working diagnosis while the trace team checks the actual request. Do not combine the two builds.\nWorktree source and function purpose will be available after handoff.\nProbe 1: smoke fixtures were replayed against both archived consumers.\n  repair([[2,5],3]) -> 1 on both\n  repair([[],2]) -> 0 on both\nProbe 2: archive replay from birch:\n  repair([[3,3,6],3]) -> 2\n  repair([[1,4,4,9],4]) -> 3\nProbe 3: archive replay from alder:\n  repair([[3,3,6],3]) -> 0\n  repair([[1,4,4,9],4]) -> 1\nProbe 4: current checkout on the same capture inputs:\n  repair([[3,3,6],3]) -> 0\n  repair([[1,4,4,9],4]) -> 1\nEngineer: Source and smoke cases above are from the same checkout. No patch applied. Current diagnosis remains an alder compatibility regression. Await request routing trace.",
+    "ordinary": "**Handoff Summary:**\n\n**Progress:**\n- Replicated smoke fixtures against both archived consumers.\n- Archive replay from birch and alder showed discrepancies.\n- Current checkout on the same inputs matches alder behavior.\n\n**Current Diagnosis:**\n- Alder compatibility regression identified.\n\n**Next Action:**\n- Await request routing trace to confirm alder behavior as working diagnosis.\n- Prepare drop-in Python function for pending route check.",
+    "evidence": "**Handoff:**\n\n**Incident Summary:**\nCompatibility issue between two consumer builds (Alder and Birch) with independent archived behaviors. A drop-in Python function is being prepared for the pending route check.\n\n**Current Diagnosis:**\nAlder compatibility regression. Source and smoke cases from the same checkout with no patch applied.\n\n**Conflicting Evidence:**\n- **Alder (Working Diagnosis):**\n  - `repair([[3,3,6],3]) -> 0",
+    "none": "(No debugging history retained.)"
+  },
+  "trials": {
+    "alder-observed": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 217,
+      "output_tokens": 29,
+      "duration_ms": 972,
+      "finish": "stop",
+      "prompt_sha256": "0df2353934abc8930880b73c3030506750ab2d724ed55283dcea7404e94699f1",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-swapped": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 217,
+      "output_tokens": 29,
+      "duration_ms": 984,
+      "finish": "stop",
+      "prompt_sha256": "7603f5c6d425248d61e36d50b336df885fe9ae6bc69e7421475f3eee51a80bd0",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "alder-common": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 217,
+      "output_tokens": 34,
+      "duration_ms": 1073,
+      "finish": "stop",
+      "prompt_sha256": "caaa0460711f794b50979d7ef51ed23856d5af4911475d4e70d55548550d7a12",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-observed": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 217,
+      "output_tokens": 29,
+      "duration_ms": 824,
+      "finish": "stop",
+      "prompt_sha256": "8a2f5028232a5abf6d10df3c5c78bbe6f6ee843a2d776c7743f52ade3d25a0ce",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-swapped": {
+      "text": "def repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+      "input_tokens": 217,
+      "output_tokens": 29,
+      "duration_ms": 801,
+      "finish": "stop",
+      "prompt_sha256": "4cde9b2b6a75c1e8d77207381a80136f4e06794d24d59eace2bc96f979da8362",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "opposite_passed": false
+    },
+    "birch-common": {
+      "text": "```python\ndef repair(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1\n```",
+      "input_tokens": 217,
+      "output_tokens": 34,
+      "duration_ms": 895,
+      "finish": "stop",
+      "prompt_sha256": "b45e512a4bd7b3c1555c36afabaf028d86621658fc9ca12e5dc97d429129c251",
+      "score": {
+        "passed": false,
+        "outputs": [
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 0
+          },
+          {
+            "value": -1
+          },
+          {
+            "value": -1
+          }
+        ]
+      },
+      "opposite_passed": false
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}
