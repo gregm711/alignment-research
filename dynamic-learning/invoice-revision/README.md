@@ -64,3 +64,43 @@ The two learned writers add one three-coordinate float32 update per observed (pr
 Cross every writer with lazy and eager ledger maintenance. Lazy emits no record updates. Eager scans all six booked rows and writes both corrected dates for every predicted reversal. Charge 10 bytes per changed row (ID and two 32-bit ordinals), in addition to writer state. Neither policy issues invalidations. Record both the six-row direct ledger and seven query answers. Record reads by logical row access, writes by changed row, calendar recomputations by parsed row, and neural arithmetic by update entries touched and readout multiply-adds. The packed archive may share identical policy transcripts, state payloads, outputs and operation counts across trials. Release the decoder and row-generation data alongside it.
 
 Use 2,000 paired bootstrap draws with seed 7001, resampling eight fits and 512 ledger families independently with replacement. The learned-vs-fixed selector accuracy difference and the sparse-minus-dense prospective-to-historical loss (unprobed old rows versus matched new relations) are the interval contrasts. Report the reported row separately. Equal predictions on matched old/new features imply zero prospective-to-historical loss on reads for any deterministic relation-only reader; this structural constraint narrows the secondary prediction before fitting. The direct-ledger result can differ by maintenance policy. Stop each CPU invocation after 10 minutes. The separate source-reliability stream and language-model extension are outside Phase 1.
+
+## Phase 1 results
+
+Protocol freeze: `0722f48`. All eight CPU fits completed across 512 held-out ledgers, each forked into the four causes. With two probes, every fitted selector checked another invoice from the same supplier first and chose its second probe correctly on both branches. It estimated the reliability of the three probe types from labeled training worlds. The entropy criterion and relation features were provided. The selector learned this small decision tree with those advantages.
+
+| Scope identification | No probe | One probe | Two probes | Two-probe Brier score (lower is better) |
+|---|---:|---:|---:|---:|
+| Best development-fixed order | 25% | 50% | 75% | 0.2500 |
+| Uniform random order | 25% | 50% | 75% | 0.2500 |
+| Learned likelihood, adaptive choice | 25% | 50% | 100% | 0.00023 |
+| Hand-coded adaptive tree | 25% | 50% | 100% | 0 |
+
+The learned-minus-fixed difference was +25 percentage points in every fit and four-world family. Its paired bootstrap interval is [+25, +25]. This is a consequence of the four deterministic patterns and the recovered tree. The 512 layouts exercise ID remapping, menu order and calendars while supplying the same causal structure.
+
+| Writer after the same two decisive receipts | Families with all answers right in all four worlds | Persistent bytes with lazy reads | Mean bytes including eager record writes |
+|---|---:|---:|---:|
+| Packed receipts and explicit rule interpreter | 512/512 in each fit | 3 | 25.5 |
+| Dense adapter | 512/512 in each fit | 14 | 36.5 |
+| Sparse table | 512/512 in each fit | 11 | 33.5 |
+
+All three writers also reached the 75% per-world ceiling under either nonadaptive two-probe schedule. Each achieved zero errors on new rows, matched unprobed historical rows, and the named booking under oracle evidence. The secondary forecast that sparse writes would lose more on historical reads failed. All readers were supplied the same relation features and could reparse dates. Matched new and old queries therefore had identical reversal decisions by construction. A broader sparse-versus-dense test needs a task where learning how records relate is part of the problem.
+
+On the *direct* six-row ledger, lazy maintenance left every row correct in only the false-alarm world (25% of worlds). Eager maintenance made the ledger fully correct in 100%, scanning six rows and writing a mean 2.25 corrected records per world (22.5 bytes of delta). No policy issued invalidations. This difference follows from the maintenance policy and was identical across writers. The smaller explicit store wins on incident storage in this family. Wall-plug energy was unmeasured.
+
+The dense writer uses 34 fixed float32 parameters (136 bytes). The sparse writer has 22 active fixed parameters (88 packed bytes), represented by the same 136-byte dense arrays with masked zeros in this NumPy implementation. The explicit writer uses a fixed hand-coded hypothesis interpreter. The learned selector uses twelve fixed float64 probe probabilities (96 bytes). These fixed sizes exclude executable code, interpreter overhead, and the common ledger. With two probes the neural writers touch six dense or two sparse update entries, then use twelve readout multiply-adds to decode all four relations. The explicit reader decodes at most three receipt digits against each of four possible scopes. Operation counts describe the logical policies, rather than CPU instructions in the vectorized simulation.
+
+### Reproduction and trial lookup
+
+Run from this directory with Python and NumPy. A second fit from initialization reproduced every array in the saved archive exactly. The independent audit checked all held-out calendar alternatives, all 16,384 fit/policy/family decisions across four forks, and 1,920 replayed combinations of serialized state, world, and maintenance policy. No paid compute was used.
+
+```sh
+OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 OMP_NUM_THREADS=1 python3 study.py
+python3 analyse.py
+python3 audit.py
+python3 analyse.py --trial 0 2 2 0 2 0 1
+```
+
+The last command decodes the first fit and ledger, learned selector, two probes, supplier change, explicit writer, eager maintenance. Arguments are zero-based in the order fit, selector (fixed/random/learned/oracle), budget, ledger, world (table order), writer (explicit/dense/sparse), eager flag. It prints the invoice ID and outcome for every receipt, the scope distribution, the restored bytes, all seven date and due-date pairs, their sources, the six-row ledger and operation counts.
+
+[Trial archive](results/trials.npz) · [All policy and writer scores, intervals, operation tables and development choices](results/summary.json) · [Training and selection](study.py) · [Ledger and state serialization](ledger.py) · [Scorer and decoder](analyse.py) · [Independent audit](audit.py)
