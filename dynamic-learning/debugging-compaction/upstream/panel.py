@@ -135,7 +135,9 @@ def replacement(text,case):
     return candidate
 
 
-def run(case, candidate, *, audit=False, focal_only=False):
+def run(case, candidate, *, audit=False, focal_only=False, include_trace=False):
+    if include_trace and not focal_only:
+        raise ValueError('Trace capture requires an isolated named test')
     rev=case.rev
     source=blob(rev+'^','more_itertools/more.py')
     n=locate(source,case.func)
@@ -160,7 +162,10 @@ if FOCAL_ONLY:
     single=getattr(test_more,SUITE)(REPORT)
     result=unittest.TextTestRunner(stream=buf,resultclass=Result).run(single)
     assert result.testsRun==1 and not result.skipped
-    print(json.dumps({'named_passed':named in successes}))
+    observed={'named_passed':named in successes}
+    if INCLUDE_TRACE:
+        observed['trace']=chr(10).join(message for _,message in result.errors+result.failures)
+    print(json.dumps(observed))
     raise SystemExit
 result=unittest.TextTestRunner(stream=buf,resultclass=Result).run(suite)
 try:
@@ -181,7 +186,7 @@ print(json.dumps(stats))
         for name in ('__init__.py','recipes.py','more.py'):
             (package/name).write_text(''.join(lines) if name=='more.py' else blob(rev+'^','more_itertools/'+name))
         (root/'test_more.py').write_text(blob(rev,'tests/test_more.py'))
-        (root/'run.py').write_text(f'SUITE={case.suite!r}\nREPORT={case.report!r}\nAUDIT={audit!r}\nFOCAL_ONLY={focal_only!r}\nWITHHELD={case.withheld!r}\n'+runner)
+        (root/'run.py').write_text(f'SUITE={case.suite!r}\nREPORT={case.report!r}\nAUDIT={audit!r}\nFOCAL_ONLY={focal_only!r}\nINCLUDE_TRACE={include_trace!r}\nWITHHELD={case.withheld!r}\n'+runner)
         cmd=['docker','run','--rm','--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges',
              '--user','65534:65534','--pids-limit','32','--memory','192m','--cpus','1','--ulimit','cpu=4:5',
              '-v',str(root)+':/eval:ro','-w','/eval',IMAGE,'python','-B','-S','run.py']
