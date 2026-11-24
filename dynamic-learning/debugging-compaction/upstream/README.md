@@ -33,3 +33,5 @@ python3 run.py --recount
 ```
 
 Run these commands from this folder. Set `MORE_ITERTOOLS_REPO` to reuse a different local clone. After the controls pass, launching `python3 run.py` generates or resumes model trials through local Ollama with the same tokenizer as the parent study. The parent/fixed controls independently failed/passed both the affected test class and withheld variants on all eight incidents. The eight classes contain 92 test methods in total. Revisions in the table link to the upstream code and reports.
+
+Run the same panel with Gemma 3 12B after Qwen. This replication generates each reader's own investigation, first patch and summary. Compare arms within model, conditional on the same starting patch, and count initially invalid outputs separately. Because the two models can begin from different patches, their raw recovery denominators may differ. The pre-fork extraction budget continues to use Qwen tokenization. Report actual per-reader prompt lengths. This addition was recorded after the first Qwen incident was complete and before any Gemma upstream trial.
