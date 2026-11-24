@@ -2,7 +2,6 @@
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import random
 import sys
@@ -10,7 +9,7 @@ import urllib.request
 
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent))
-from restore import TOKENIZER_SHA
+from restore import native_tokenizer
 from screen import MODEL,answer,save
 
 WORKERS=('red','blue')
@@ -99,17 +98,7 @@ def main():
     path=HERE/(args.model.replace(':','-')+'.json')
     d=json.loads(path.read_text()) if path.exists() else {'episodes':{}}
     if not args.check:
-        from tokenizers import Tokenizer
-        if args.model==MODEL:
-            f=Path(os.environ.get('STUDY_TOKENIZER','/tmp/alignment-qwen25-coder-tokenizer.json'))
-            expected_hash=TOKENIZER_SHA
-        elif args.model=='gemma3:12b':
-            f=Path(os.environ.get('GEMMA_TOKENIZER','/tmp/alignment-gemma3-tokenizer.json'))
-            expected_hash='4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795'
-        else:
-            raise ValueError('No native tokenizer registered for this reader')
-        assert hashlib.sha256(f.read_bytes()).hexdigest()==expected_hash
-        tok=Tokenizer.from_file(str(f))
+        tok=native_tokenizer(args.model)
         if not args.recount:
             with urllib.request.urlopen('http://127.0.0.1:11434/api/tags',timeout=5) as stream:
                 digest=next(m['digest'] for m in json.load(stream)['models'] if m['name']==args.model)

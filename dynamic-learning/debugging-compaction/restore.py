@@ -13,6 +13,20 @@ WRITER_PATH = HERE / 'results' / MODEL.replace(':', '-')
 TOKENIZER_SHA = 'c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539'
 
 
+def native_tokenizer(model):
+    from tokenizers import Tokenizer
+    if model == MODEL:
+        path = Path(os.environ.get('STUDY_TOKENIZER', '/tmp/alignment-qwen25-coder-tokenizer.json'))
+        expected = TOKENIZER_SHA
+    elif model == 'gemma3:12b':
+        path = Path(os.environ.get('GEMMA_TOKENIZER', '/tmp/alignment-gemma3-tokenizer.json'))
+        expected = '4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795'
+    else:
+        raise ValueError(f'No native tokenizer registered for {model}')
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == expected
+    return Tokenizer.from_file(str(path))
+
+
 def observations(history):
     archives = {name: {} for name in (*NAMES, 'common')}
     section = None
@@ -56,10 +70,7 @@ def main():
     parser.add_argument('--check', action='store_true')
     parser.add_argument('--recount', action='store_true')
     args = parser.parse_args()
-    from tokenizers import Tokenizer
-    path = Path(os.environ.get('STUDY_TOKENIZER','/tmp/alignment-qwen25-coder-tokenizer.json'))
-    assert hashlib.sha256(path.read_bytes()).hexdigest() == TOKENIZER_SHA
-    tok = Tokenizer.from_file(str(path))
+    tok = native_tokenizer(MODEL)
     if not (args.check or args.recount):
         with urllib.request.urlopen('http://127.0.0.1:11434/api/tags', timeout=5) as stream:
             digest = next(m['digest'] for m in json.load(stream)['models'] if m['name'] == args.model)
