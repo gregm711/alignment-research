@@ -53,3 +53,5 @@ The gain in repairs survived on fresh data while unintended changes increased. N
 The completed campaign is preserved under `pilot/`. The default run command starts a fresh working campaign. `python3 check.py` checks Pareto ordering, registration, lineage, reflection/review scheduling and manifest enforcement offline.
 
 [When to ask for evidence or plan longer](ask-or-plan/README.md) follows the invoice pilot with two preregistered transit test sets, a simple check-or-stop baseline, and local CPU and power measurements.
+
+[Can practice make an unfamiliar tool cheaper to learn?](../teaching-cost/README.md) compares actual BERT weight updates, retrieval and active evidence gathering across lifetimes. It includes a second task family and an equal-byte comparison of predictive loss and teaching cost.
