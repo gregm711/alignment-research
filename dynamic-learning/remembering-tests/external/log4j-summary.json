@@ -1,0 +1,115 @@
+{
+  "project": "log4j",
+  "metadata_sha256": "49570f8dca753c385f25346f8aaaded3a841b0e67dabf36fbb67260a79b02987",
+  "counts": {
+    "metadata_builds": 270,
+    "archive_reports": 313,
+    "raw_tests": 2088886,
+    "skipped_occurrences": 10015,
+    "duplicate_occurrences": 289329,
+    "duplicate_groups_mixed": 7,
+    "archive_only": 43,
+    "metadata_only": 0,
+    "joined": 270,
+    "nonempty": 270,
+    "identities": 17976
+  },
+  "summary": {
+    "scored": 180,
+    "failing": 72,
+    "prior_pr_failing": 29,
+    "unique_prs": 100,
+    "failing_prs": 50,
+    "one_check": {
+      "market": {
+        "hits": 38.0,
+        "all": 0.2111111111111111,
+        "failing": 0.5277777777777778,
+        "same_pr_failing": 0.5862068965517241
+      },
+      "equal": {
+        "hits": 38.0,
+        "all": 0.2111111111111111,
+        "failing": 0.5277777777777778,
+        "same_pr_failing": 0.5862068965517241
+      },
+      "frequency": {
+        "hits": 39.0,
+        "all": 0.21666666666666667,
+        "failing": 0.5416666666666666,
+        "same_pr_failing": 0.6206896551724138
+      },
+      "latest": {
+        "hits": 39.0,
+        "all": 0.21666666666666667,
+        "failing": 0.5416666666666666,
+        "same_pr_failing": 0.6206896551724138
+      },
+      "recent": {
+        "hits": 39.0,
+        "all": 0.21666666666666667,
+        "failing": 0.5416666666666666,
+        "same_pr_failing": 0.6206896551724138
+      },
+      "pr_latest": {
+        "hits": 40.0,
+        "all": 0.2222222222222222,
+        "failing": 0.5555555555555556,
+        "same_pr_failing": 0.6551724137931034
+      },
+      "shrink": {
+        "hits": 42.0,
+        "all": 0.23333333333333334,
+        "failing": 0.5833333333333334,
+        "same_pr_failing": 0.6551724137931034
+      },
+      "uniform": {
+        "hits": 0.053741588609029195,
+        "all": 0.0002985643811612733,
+        "failing": 0.0007464109529031833,
+        "same_pr_failing": 0.0008469007328755864
+      },
+      "oracle": {
+        "hits": 72.0,
+        "all": 0.4,
+        "failing": 1.0,
+        "same_pr_failing": 1.0
+      }
+    },
+    "market_minus_equal": {
+      "point": 0.0,
+      "pr_cluster": [
+        0.0,
+        0.0
+      ],
+      "consecutive10": [
+        0.0,
+        0.0
+      ]
+    },
+    "discordant": {
+      "market": 0,
+      "equal": 0
+    },
+    "equal_minus_market_bits": {
+      "point": 0.05052708473591505,
+      "pr_cluster": [
+        0.0499071667767496,
+        0.05117194059643758
+      ],
+      "consecutive10": [
+        0.04958366611071951,
+        0.05188227805181807
+      ]
+    },
+    "bits": {
+      "market": 0.07583488514130697,
+      "equal": 0.126361969877222,
+      "frequency": 0.04744890677330991,
+      "latest": 0.15312174730780875,
+      "recent": 0.2696586437243851,
+      "pr_latest": 0.15312383419134903,
+      "shrink": 0.0016656415581878645
+    }
+  }
+}

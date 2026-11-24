@@ -1,0 +1,1873 @@
+{
+  "summary": {
+    "source_tasks": 89,
+    "source_solved": 34,
+    "distinct_archived": 25,
+    "targets": 38,
+    "eligible": 38,
+    "oracle": 3,
+    "excluded": {},
+    "budgets": [
+      64,
+      512,
+      "exhaustive"
+    ],
+    "total_independent_rows": 273,
+    "removed_test_rows": 2,
+    "frozen": {
+      "solved": [
+        3,
+        3,
+        3
+      ],
+      "median_proposals": 2213.0
+    },
+    "archive": {
+      "solved": [
+        2,
+        3,
+        3
+      ],
+      "median_proposals": 2213.0
+    },
+    "shuffled": {
+      "solved": [
+        2,
+        3,
+        3
+      ],
+      "median_proposals": 2213.0
+    },
+    "archive_at_512": {
+      "frozen": {
+        "wins": 0,
+        "losses": 0
+      },
+      "shuffled": {
+        "wins": 0,
+        "losses": 0
+      }
+    }
+  },
+  "archive": [
+    {
+      "code": [
+        0,
+        [
+          "suffix3"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 3
+    },
+    {
+      "code": [
+        0,
+        [
+          "token/-1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 3
+    },
+    {
+      "code": [
+        0,
+        [
+          "digits"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 3
+    },
+    {
+      "code": [
+        0,
+        [
+          "token 0"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 2
+    },
+    {
+      "code": [
+        0,
+        [],
+        1,
+        "",
+        " "
+      ],
+      "source_fits": 2
+    },
+    {
+      "code": [
+        0,
+        [
+          "token-1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 2
+    },
+    {
+      "code": [
+        0,
+        [
+          "letters"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token 1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "dropfirst",
+          "token 0"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token 1",
+          "prefix3"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "prefix3"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        1,
+        [],
+        0,
+        "",
+        " "
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [],
+        1,
+        "",
+        ", "
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token-0",
+          "strip"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "letters",
+          "suffix3"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token--1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        1,
+        [
+          "token_1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token.-1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        1,
+        [
+          "token_0"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "suffix4"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token.0"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "digits",
+          "suffix4"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token_1",
+          "strip"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    },
+    {
+      "code": [
+        0,
+        [
+          "token -1"
+        ],
+        -1,
+        "",
+        ""
+      ],
+      "source_fits": 1
+    }
+  ],
+  "trials": [
+    {
+      "name": "addDecimal",
+      "support": 4,
+      "published_test": 10,
+      "independent": 10,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "addPlusSign",
+      "support": 4,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "appendAmOrPm",
+      "support": 4,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "capitalizeCityAndState",
+      "support": 2,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "capitalizeSentence",
+      "support": 2,
+      "published_test": 7,
+      "independent": 7,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "containsString",
+      "support": 5,
+      "published_test": 10,
+      "independent": 10,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "containsStringIgnoreCase",
+      "support": 4,
+      "published_test": 10,
+      "independent": 10,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "countStringOccurrences",
+      "support": 4,
+      "published_test": 9,
+      "independent": 9,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "createEmailAddress",
+      "support": 2,
+      "published_test": 5,
+      "independent": 5,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 9579,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 9579,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 9579,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "dateTransformation1",
+      "support": 2,
+      "published_test": 5,
+      "independent": 5,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "dateTransformation2",
+      "support": 2,
+      "published_test": 5,
+      "independent": 5,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "dateTransformation3",
+      "support": 2,
+      "published_test": 5,
+      "independent": 5,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "extractUrl1",
+      "support": 3,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "extractUrl2",
+      "support": 3,
+      "published_test": 9,
+      "independent": 9,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "firstNameSecondColumn",
+      "support": 2,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": [
+          1,
+          [
+            "token 0"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 61,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "archive": {
+        "program": [
+          1,
+          [
+            "token 0"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 72,
+        "heldout_correct": true,
+        "solved": [
+          0,
+          1,
+          1
+        ]
+      },
+      "shuffled": {
+        "program": [
+          1,
+          [
+            "token 0"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 74,
+        "heldout_correct": true,
+        "solved": [
+          0,
+          1,
+          1
+        ]
+      },
+      "oracle": true
+    },
+    {
+      "name": "isLowerCase",
+      "support": 4,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "lastNameFirstColumn",
+      "support": 2,
+      "published_test": 6,
+      "independent": 5,
+      "removed": 1,
+      "frozen": {
+        "program": [
+          0,
+          [
+            "token 1"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 21,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "archive": {
+        "program": [
+          0,
+          [
+            "token 1"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 8,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "shuffled": {
+        "program": [
+          0,
+          [
+            "token 1"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 42,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "oracle": true
+    },
+    {
+      "name": "multipleIfStatus",
+      "support": 6,
+      "published_test": 4,
+      "independent": 3,
+      "removed": 1,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "negativeInParentheses",
+      "support": 4,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "padSpaceToGivenWidth",
+      "support": 3,
+      "published_test": 9,
+      "independent": 9,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "padZerosToFixedWidth",
+      "support": 5,
+      "published_test": 10,
+      "independent": 10,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "pathDepth",
+      "support": 3,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "prefixRemainder",
+      "support": 3,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "prependMr",
+      "support": 2,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "prependMrOrMs",
+      "support": 4,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "removeWhitespaceLowercase",
+      "support": 3,
+      "published_test": 10,
+      "independent": 10,
+      "removed": 0,
+      "frozen": {
+        "program": [
+          0,
+          [
+            "lower",
+            "strip"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 56,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "archive": {
+        "program": [
+          0,
+          [
+            "lower",
+            "strip"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 62,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "shuffled": {
+        "program": [
+          0,
+          [
+            "lower",
+            "strip"
+          ],
+          -1,
+          "",
+          ""
+        ],
+        "count": 62,
+        "heldout_correct": true,
+        "solved": [
+          1,
+          1,
+          1
+        ]
+      },
+      "oracle": true
+    },
+    {
+      "name": "replaceAllCompany",
+      "support": 2,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "replaceInUrl",
+      "support": 2,
+      "published_test": 4,
+      "independent": 4,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "secondStringIfFirstIsNone",
+      "support": 5,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "selectLongerString",
+      "support": 5,
+      "published_test": 7,
+      "independent": 7,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "stringEqual",
+      "support": 4,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "stringEqualIgnoreCase",
+      "support": 5,
+      "published_test": 9,
+      "independent": 9,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "stringLength",
+      "support": 2,
+      "published_test": 5,
+      "independent": 5,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "suffixRemainder",
+      "support": 3,
+      "published_test": 8,
+      "independent": 8,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 5406,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "swapCase",
+      "support": 4,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "truncateIfTooLong",
+      "support": 4,
+      "published_test": 10,
+      "independent": 10,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "twoLetterAcronym",
+      "support": 2,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    },
+    {
+      "name": "twoLetterAcronymCapitalization",
+      "support": 2,
+      "published_test": 6,
+      "independent": 6,
+      "removed": 0,
+      "frozen": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "archive": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled": {
+        "program": null,
+        "count": 2213,
+        "heldout_correct": false,
+        "solved": [
+          0,
+          0,
+          0
+        ]
+      },
+      "oracle": false
+    }
+  ]
+}

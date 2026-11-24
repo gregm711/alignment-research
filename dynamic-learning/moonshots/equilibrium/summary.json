@@ -1,0 +1,176 @@
+{
+  "results": [
+    {
+      "coupling": 0.25,
+      "sources": 1,
+      "mode": "exact",
+      "median_visits": 254.0,
+      "median_cpu_us": 25.0,
+      "median_setup_us": 53.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0
+    },
+    {
+      "coupling": 0.25,
+      "sources": 1,
+      "mode": "sweeps",
+      "median_visits": 1778.0,
+      "median_cpu_us": 348.0,
+      "median_setup_us": 50.0,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0007573343611100153
+    },
+    {
+      "coupling": 0.25,
+      "sources": 1,
+      "mode": "residual",
+      "median_visits": 30.0,
+      "median_cpu_us": 9.0,
+      "median_setup_us": 54.0,
+      "median_queue_ops": 30.0,
+      "worst_error": 0.0008980452809390221
+    },
+    {
+      "coupling": 0.25,
+      "sources": 1,
+      "mode": "inverse_tail",
+      "median_visits": 12.0,
+      "median_cpu_us": 2.0,
+      "median_setup_us": 97.0,
+      "median_queue_ops": 0.0,
+      "worst_error": 8.007921934793938e-05
+    },
+    {
+      "coupling": 0.25,
+      "sources": 32,
+      "mode": "exact",
+      "median_visits": 254.0,
+      "median_cpu_us": 26.0,
+      "median_setup_us": 49.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0
+    },
+    {
+      "coupling": 0.25,
+      "sources": 32,
+      "mode": "sweeps",
+      "median_visits": 2032.0,
+      "median_cpu_us": 400.0,
+      "median_setup_us": 53.0,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0008532065506802189
+    },
+    {
+      "coupling": 0.25,
+      "sources": 32,
+      "mode": "residual",
+      "median_visits": 560.0,
+      "median_cpu_us": 156.0,
+      "median_setup_us": 54.0,
+      "median_queue_ops": 572.0,
+      "worst_error": 0.0009754993688197988
+    },
+    {
+      "coupling": 0.25,
+      "sources": 32,
+      "mode": "inverse_tail",
+      "median_visits": 486.0,
+      "median_cpu_us": 70.0,
+      "median_setup_us": 105.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 8.81612367953366e-06
+    },
+    {
+      "coupling": 6.0,
+      "sources": 1,
+      "mode": "exact",
+      "median_visits": 254.0,
+      "median_cpu_us": 24.0,
+      "median_setup_us": 51.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0
+    },
+    {
+      "coupling": 6.0,
+      "sources": 1,
+      "mode": "sweeps",
+      "median_visits": 16256.0,
+      "median_cpu_us": 3270.5,
+      "median_setup_us": 50.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0004927884492004833
+    },
+    {
+      "coupling": 6.0,
+      "sources": 1,
+      "mode": "residual",
+      "median_visits": 1075.0,
+      "median_cpu_us": 289.5,
+      "median_setup_us": 53.0,
+      "median_queue_ops": 1077.0,
+      "worst_error": 0.0008698325191101169
+    },
+    {
+      "coupling": 6.0,
+      "sources": 1,
+      "mode": "inverse_tail",
+      "median_visits": 41.0,
+      "median_cpu_us": 5.0,
+      "median_setup_us": 109.0,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.00011368261634172455
+    },
+    {
+      "coupling": 6.0,
+      "sources": 32,
+      "mode": "exact",
+      "median_visits": 254.0,
+      "median_cpu_us": 26.0,
+      "median_setup_us": 53.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0
+    },
+    {
+      "coupling": 6.0,
+      "sources": 32,
+      "mode": "sweeps",
+      "median_visits": 20320.0,
+      "median_cpu_us": 4074.0,
+      "median_setup_us": 50.0,
+      "median_queue_ops": 0.0,
+      "worst_error": 0.0007719556140187711
+    },
+    {
+      "coupling": 6.0,
+      "sources": 32,
+      "mode": "residual",
+      "median_visits": 7205.0,
+      "median_cpu_us": 2063.5,
+      "median_setup_us": 53.5,
+      "median_queue_ops": 7313.0,
+      "worst_error": 0.000878978890476334
+    },
+    {
+      "coupling": 6.0,
+      "sources": 32,
+      "mode": "inverse_tail",
+      "median_visits": 1637.0,
+      "median_cpu_us": 215.5,
+      "median_setup_us": 109.5,
+      "median_queue_ops": 0.0,
+      "worst_error": 1.6846816653537378e-05
+    }
+  ],
+  "gradient": {
+    "forward": {
+      "0.1": 0.11178333371112165,
+      "0.01": 0.012220510361039983,
+      "0.001": 0.0012333699287808183
+    },
+    "centered": {
+      "0.1": 0.012347051415546914,
+      "0.01": 0.00012282472570552215,
+      "0.001": 1.2281427360874705e-06
+    }
+  }
+}

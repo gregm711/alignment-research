@@ -1,0 +1,165 @@
+{
+  "program": {
+    "correct_policy": 0.99169921875,
+    "correction_bytes": 29.2412109375,
+    "index_bytes": 264.154296875,
+    "indexed_rows": 41.8525390625,
+    "dependency_lookups": 3.25,
+    "metadata_scan_rows": 96,
+    "cache_reads": 41.8525390625,
+    "cache_writes": 38.5908203125,
+    "fresh_harmed": 0,
+    "fresh_missed": 0.0634765625,
+    "booked_harmed": 0,
+    "booked_missed": 0.06396484375,
+    "fresh_accuracy": 0.9997520446777344,
+    "booked_accuracy": 0.9995002746582031,
+    "by_scope": {
+      "none": {
+        "exact": 1,
+        "retention": 1.0,
+        "correction_bytes": 27
+      },
+      "local": {
+        "exact": 0.982421875,
+        "retention": 1.0,
+        "correction_bytes": 29.982421875
+      },
+      "group": {
+        "exact": 0.990234375,
+        "retention": 1.0,
+        "correction_bytes": 29.98828125
+      },
+      "shared": {
+        "exact": 0.994140625,
+        "retention": 1.0,
+        "correction_bytes": 29.994140625
+      }
+    }
+  },
+  "ordinal": {
+    "correct_policy": 0.99169921875,
+    "correction_bytes": 27.75,
+    "index_bytes": 264.154296875,
+    "indexed_rows": 41.8525390625,
+    "dependency_lookups": 3.25,
+    "metadata_scan_rows": 96,
+    "cache_reads": 41.8525390625,
+    "cache_writes": 38.5908203125,
+    "fresh_harmed": 0,
+    "fresh_missed": 0.0634765625,
+    "booked_harmed": 0,
+    "booked_missed": 0.06396484375,
+    "fresh_accuracy": 0.9997520446777344,
+    "booked_accuracy": 0.9995002746582031,
+    "by_scope": {
+      "none": {
+        "exact": 1,
+        "retention": 1.0,
+        "correction_bytes": 27
+      },
+      "local": {
+        "exact": 0.982421875,
+        "retention": 1.0,
+        "correction_bytes": 28
+      },
+      "group": {
+        "exact": 0.990234375,
+        "retention": 1.0,
+        "correction_bytes": 28
+      },
+      "shared": {
+        "exact": 0.994140625,
+        "retention": 1.0,
+        "correction_bytes": 28
+      }
+    }
+  },
+  "literal": {
+    "correct_policy": 0.99169921875,
+    "correction_bytes": 33,
+    "index_bytes": 264.154296875,
+    "indexed_rows": 41.8525390625,
+    "dependency_lookups": 3.25,
+    "metadata_scan_rows": 96,
+    "cache_reads": 41.8525390625,
+    "cache_writes": 38.5908203125,
+    "fresh_harmed": 0,
+    "fresh_missed": 0.0634765625,
+    "booked_harmed": 0,
+    "booked_missed": 0.06396484375,
+    "fresh_accuracy": 0.9997520446777344,
+    "booked_accuracy": 0.9995002746582031,
+    "by_scope": {
+      "none": {
+        "exact": 1,
+        "retention": 1.0,
+        "correction_bytes": 27
+      },
+      "local": {
+        "exact": 0.982421875,
+        "retention": 1.0,
+        "correction_bytes": 35
+      },
+      "group": {
+        "exact": 0.990234375,
+        "retention": 1.0,
+        "correction_bytes": 35
+      },
+      "shared": {
+        "exact": 0.994140625,
+        "retention": 1.0,
+        "correction_bytes": 35
+      }
+    }
+  },
+  "in_place": {
+    "correct_policy": 0.49853515625,
+    "correction_bytes": 29.2412109375,
+    "index_bytes": 264.154296875,
+    "indexed_rows": 71.90625,
+    "dependency_lookups": 6,
+    "metadata_scan_rows": 96,
+    "cache_reads": 71.90625,
+    "cache_writes": 65.9833984375,
+    "fresh_harmed": 40.974609375,
+    "fresh_missed": 0.0634765625,
+    "booked_harmed": 27.98486328125,
+    "booked_missed": 5.11181640625,
+    "fresh_accuracy": 0.8396949768066406,
+    "booked_accuracy": 0.7414321899414062,
+    "by_scope": {
+      "none": {
+        "exact": 1,
+        "retention": 1.0,
+        "correction_bytes": 27
+      },
+      "local": {
+        "exact": 0,
+        "retention": 0.5672143602560781,
+        "correction_bytes": 29.982421875
+      },
+      "group": {
+        "exact": 0,
+        "retention": 0.6955506679167394,
+        "correction_bytes": 29.98828125
+      },
+      "shared": {
+        "exact": 0.994140625,
+        "retention": 1.0,
+        "correction_bytes": 29.994140625
+      }
+    }
+  },
+  "local_retention_difference": [
+    0.43278563974392187,
+    0.4291990215310524,
+    0.4362390604071824
+  ],
+  "language": {
+    "syntactic": 85,
+    "distinct": 77,
+    "old": 20,
+    "replacements": 57
+  }
+}
