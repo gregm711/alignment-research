@@ -1,0 +1,268 @@
+{
+  "island": "baseline",
+  "hypothesis": "Reference policy keep",
+  "prediction": "Informative selection improves balanced accuracy over random checking.",
+  "failure": "Equal or lower balanced accuracy on the fixed development stream.",
+  "id": "base-keep",
+  "sha256": "28360aa2be96ebc7f5ba2c50592302a3659bd877563eecf5ea3d3206def3e020",
+  "source_bytes": 1492,
+  "status": "scored",
+  "result": {
+    "metrics": {
+      "affected": 0.0,
+      "unaffected": 1.0,
+      "false_alarm": 1.0,
+      "fresh": 0.70625,
+      "booked": 0.61875,
+      "probes": 0.0,
+      "bytes": 0.0,
+      "bits_per_receipt": 1.8262706807392608
+    },
+    "counts": {
+      "affected": [
+        0,
+        493
+      ],
+      "unaffected": [
+        947,
+        947
+      ],
+      "false_alarm": [
+        288,
+        288
+      ],
+      "fresh": [
+        452,
+        640
+      ],
+      "booked": [
+        495,
+        800
+      ]
+    },
+    "episodes": 160,
+    "prequential_bits": [
+      1.9324688685753508,
+      1.7731715868212157,
+      1.773171586821216
+    ],
+    "failures": [
+      {
+        "scope": 1,
+        "observed": {
+          "menu": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ]
+          ],
+          "history": [
+            7,
+            2
+          ],
+          "source": 1,
+          "endorses": false,
+          "receipts": []
+        },
+        "row": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "old": true,
+        "predicted": 0,
+        "correct": 1,
+        "state": ""
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": []
+        },
+        "row": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "old": false,
+        "predicted": 0,
+        "correct": 1,
+        "state": ""
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": []
+        },
+        "row": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "old": false,
+        "predicted": 0,
+        "correct": 1,
+        "state": ""
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": []
+        },
+        "row": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "old": true,
+        "predicted": 0,
+        "correct": 1,
+        "state": ""
+      }
+    ]
+  }
+}

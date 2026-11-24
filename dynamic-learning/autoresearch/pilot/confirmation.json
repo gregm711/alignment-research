@@ -1,0 +1,88 @@
+{
+  "candidate": "0002-sparse",
+  "seed": 11648444766739980773,
+  "image": "sha256:99019a77a48761e19493d1e77dc7891b9e390f783ac9ea5798264372a688185f",
+  "sha256": "ffbdd9dea240331e61faef776c8cc479e98e645733710fc3e85d151266d17230",
+  "result": {
+    "metrics": {
+      "affected": 0.988692232055064,
+      "unaffected": 0.9396135265700483,
+      "false_alarm": 0.9453125,
+      "fresh": 0.961328125,
+      "booked": 0.9534375,
+      "probes": 1.9453125,
+      "bytes": 1.75,
+      "bits_per_receipt": 0.5645324251328514
+    },
+    "counts": {
+      "affected": [
+        2011,
+        2034
+      ],
+      "unaffected": [
+        3501,
+        3726
+      ],
+      "false_alarm": [
+        1089,
+        1152
+      ],
+      "fresh": [
+        2461,
+        2560
+      ],
+      "booked": [
+        3051,
+        3200
+      ]
+    },
+    "episodes": 640,
+    "prequential_bits": [
+      0.7480542599971678,
+      0.5682595429993889,
+      0.37728347240199767
+    ],
+    "failures": []
+  },
+  "baseline": {
+    "metrics": {
+      "affected": 0.8500491642084562,
+      "unaffected": 0.9728931830381106,
+      "false_alarm": 0.9782986111111112,
+      "fresh": 0.925,
+      "booked": 0.933125,
+      "probes": 1.88125,
+      "bytes": 1.0,
+      "bits_per_receipt": 0.5724280250897217
+    },
+    "counts": {
+      "affected": [
+        1729,
+        2034
+      ],
+      "unaffected": [
+        3625,
+        3726
+      ],
+      "false_alarm": [
+        1127,
+        1152
+      ],
+      "fresh": [
+        2368,
+        2560
+      ],
+      "booked": [
+        2986,
+        3200
+      ]
+    },
+    "episodes": 640,
+    "prequential_bits": [
+      0.7611742510538375,
+      0.5745704512101152,
+      0.3815393730052123
+    ],
+    "failures": []
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "island": "sparse",
+  "parent": "base-active",
+  "hypothesis": "A two-receipt policy that explicitly prices verification and weights repairs and retention equally will reduce receipt use relative to 0001-rule while preserving most of its balanced accuracy. The policy assumes uniformly distributed fresh feature patterns and gives the reported invoice one fifth of the booked-row weight. These are planning assumptions. When all row decisions are keep, the policy saves empty memory.",
+  "prediction": "On the same frozen episodes, mean receipts will be below 1.975, mean persisted bytes below 1.0, and balanced accuracy, defined as the mean of affected repair and unaffected retention, at least 0.938. The unchanged Bayesian forecast should reproduce 0001-rule's 0.528887 bits per receipt to rounding. Report false-alarm retention, fresh and booked correctness, and forecast loss at each depth to expose tradeoffs.",
+  "failure": "The hypothesis fails if mean receipts or bytes do not fall below the stated thresholds, or balanced accuracy falls below 0.938. A forecast loss above the stated value beyond rounding also fails the forecast prediction. No episodes were scored for this submission.",
+  "id": "0002-sparse",
+  "sha256": "ffbdd9dea240331e61faef776c8cc479e98e645733710fc3e85d151266d17230",
+  "source_bytes": 3839,
+  "status": "scored",
+  "result": {
+    "metrics": {
+      "affected": 0.9837728194726166,
+      "unaffected": 0.9355860612460402,
+      "false_alarm": 0.9340277777777778,
+      "fresh": 0.9578125,
+      "booked": 0.9475,
+      "probes": 1.9625,
+      "bytes": 1.825,
+      "bits_per_receipt": 0.5288867362375843
+    },
+    "counts": {
+      "affected": [
+        485,
+        493
+      ],
+      "unaffected": [
+        886,
+        947
+      ],
+      "false_alarm": [
+        269,
+        288
+      ],
+      "fresh": [
+        613,
+        640
+      ],
+      "booked": [
+        758,
+        800
+      ]
+    },
+    "episodes": 160,
+    "prequential_bits": [
+      0.7799954023230266,
+      0.46510564444112223,
+      0.3415591619486041
+    ],
+    "failures": [
+      {
+        "scope": 0,
+        "observed": {
+          "menu": [
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "history": [
+            2,
+            6
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        },
+        "row": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "old": true,
+        "predicted": 1,
+        "correct": 0,
+        "state": "0001"
+      },
+      {
+        "scope": 0,
+        "observed": {
+          "menu": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "history": [
+            4,
+            8
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              3,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "row": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "old": true,
+        "predicted": 1,
+        "correct": 0,
+        "state": "0001"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "old": false,
+        "predicted": 1,
+        "correct": 0,
+        "state": "ee01"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "old": true,
+        "predicted": 1,
+        "correct": 0,
+        "state": "ee01"
+      }
+    ]
+  }
+}

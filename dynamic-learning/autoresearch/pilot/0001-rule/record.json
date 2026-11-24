@@ -1,0 +1,305 @@
+{
+  "island": "rule",
+  "parent": "base-active",
+  "hypothesis": "Selecting receipts by their expected effect on invoice decisions will improve balanced accuracy over random-order checking. The policy looks ahead through both available receipts, stops when further evidence cannot reduce expected decision errors, and saves one byte of row-level decisions. It forecasts with a Bayesian reporter model that assumes either reporter is equally likely to have started at 0.85 reliability and accounts for the 20% chance that their reliabilities switched.",
+  "prediction": "On the same frozen evaluation episodes, predict balanced accuracy, defined as the mean of affected repair and unaffected retention, above the random-order baseline of 0.80195. Predict lower prequential loss than the active baseline's 0.53780 bits per receipt, with one persisted byte per incident. The probe objective gives equal weight to the eight feasible fresh-row patterns and gives the reported invoice twice the weight of any one fresh pattern. These are fixed surrogate weights because the evaluation row frequencies are unspecified.",
+  "failure": "The informed-probe prediction fails if balanced accuracy is at or below the random-order baseline. The forecast prediction fails if overall prequential loss is at or above the active baseline. Report loss at each depth and receipt perplexity. A strong outcome requires matching or improving every published Pareto metric against the active baseline and strictly improving at least one. Report ties and tradeoffs as such. This candidate is unscored.",
+  "id": "0001-rule",
+  "sha256": "de7f7e0ae8dfe4fb8730d4391962fc0e5ac46a0137b9bd8c517058cdc1e1cf33",
+  "source_bytes": 3429,
+  "status": "scored",
+  "result": {
+    "metrics": {
+      "affected": 0.896551724137931,
+      "unaffected": 0.989440337909187,
+      "false_alarm": 0.9722222222222222,
+      "fresh": 0.9609375,
+      "booked": 0.955,
+      "probes": 1.975,
+      "bytes": 1.0,
+      "bits_per_receipt": 0.5288867362375843
+    },
+    "counts": {
+      "affected": [
+        442,
+        493
+      ],
+      "unaffected": [
+        937,
+        947
+      ],
+      "false_alarm": [
+        280,
+        288
+      ],
+      "fresh": [
+        615,
+        640
+      ],
+      "booked": [
+        764,
+        800
+      ]
+    },
+    "episodes": 160,
+    "prequential_bits": [
+      0.7799954023230267,
+      0.46510564444112223,
+      0.3415591619486041
+    ],
+    "failures": [
+      {
+        "scope": 1,
+        "observed": {
+          "menu": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ]
+          ],
+          "history": [
+            7,
+            2
+          ],
+          "source": 1,
+          "endorses": false,
+          "receipts": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "row": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "old": true,
+        "predicted": 0,
+        "correct": 1,
+        "state": "00"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "old": false,
+        "predicted": 0,
+        "correct": 1,
+        "state": "e0"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "old": true,
+        "predicted": 0,
+        "correct": 1,
+        "state": "e0"
+      },
+      {
+        "scope": 2,
+        "observed": {
+          "menu": [
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ]
+          ],
+          "history": [
+            2,
+            6
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              4,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "old": false,
+        "predicted": 0,
+        "correct": 1,
+        "state": "e0"
+      }
+    ]
+  }
+}

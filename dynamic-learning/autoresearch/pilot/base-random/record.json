@@ -1,0 +1,304 @@
+{
+  "island": "baseline",
+  "hypothesis": "Reference policy random",
+  "prediction": "Informative selection improves balanced accuracy over random checking.",
+  "failure": "Equal or lower balanced accuracy on the fixed development stream.",
+  "id": "base-random",
+  "sha256": "09d9c79b32b024da9e0b9124c92452849990d26708aab17114df84ab2278c972",
+  "source_bytes": 1494,
+  "status": "scored",
+  "result": {
+    "metrics": {
+      "affected": 0.6693711967545639,
+      "unaffected": 0.9345300950369588,
+      "false_alarm": 0.96875,
+      "fresh": 0.840625,
+      "booked": 0.84625,
+      "probes": 1.90625,
+      "bytes": 1.0,
+      "bits_per_receipt": 0.5377955846051706
+    },
+    "counts": {
+      "affected": [
+        330,
+        493
+      ],
+      "unaffected": [
+        885,
+        947
+      ],
+      "false_alarm": [
+        279,
+        288
+      ],
+      "fresh": [
+        538,
+        640
+      ],
+      "booked": [
+        677,
+        800
+      ]
+    },
+    "episodes": 160,
+    "prequential_bits": [
+      0.8047846950506553,
+      0.46565357631295995,
+      0.3429484824518967
+    ],
+    "failures": [
+      {
+        "scope": 0,
+        "observed": {
+          "menu": [
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "history": [
+            2,
+            6
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "row": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "old": true,
+        "predicted": 1,
+        "correct": 0,
+        "state": "01"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "old": false,
+        "predicted": 0,
+        "correct": 1,
+        "state": "01"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "old": false,
+        "predicted": 0,
+        "correct": 1,
+        "state": "01"
+      },
+      {
+        "scope": 3,
+        "observed": {
+          "menu": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "history": [
+            7,
+            3
+          ],
+          "source": 0,
+          "endorses": false,
+          "receipts": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "row": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "old": true,
+        "predicted": 0,
+        "correct": 1,
+        "state": "01"
+      }
+    ]
+  }
+}
