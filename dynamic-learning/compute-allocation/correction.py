@@ -10,7 +10,7 @@ from feedback import BUDGETS, Equations, ROOT, dataset, grade, infer, measure, p
 SEED = 740613
 
 
-def correct(n, cap, flip_limit, previous, witness, ask, seed, replay, targeted):
+def correct(n, cap, flip_limit, previous, witness, ask, seed, replay, targeted, deduce=False):
     assert replay is None and not targeted
     eqs = Equations(n)
     history = [witness]
@@ -21,19 +21,33 @@ def correct(n, cap, flip_limit, previous, witness, ask, seed, replay, targeted):
 
     def probe(x):
         assert len(history) <= cap
+        if deduce:
+            residual, implied = x, 0
+            while residual:
+                i = residual.bit_length()-1
+                if not eqs.rows[i]:
+                    break
+                residual ^= eqs.rows[i]
+                implied ^= eqs.labels[i]
+            if residual == 0:
+                counts["deductions"] += 1
+                return implied
         y = ask(x)
         eqs.add(x, y)
         history.append((x, y))
         return y
 
     while len(history) <= cap:
+        if deduce and all(eqs.rows):
+            break
         bad = next((x for x, y in history if parity(candidate, x) != y), None)
         if bad is None:
             if all(eqs.rows) or counts["confirmations"] >= 4:
                 break
+            before = len(history)
             probe(rng.getrandbits(n))
             counts["checks"] += 1
-            counts["confirmations"] += 1
+            counts["confirmations"] += int(len(history) > before)
             continue
         if counts["flips"] == flip_limit:
             for i, row in enumerate(eqs.rows):
