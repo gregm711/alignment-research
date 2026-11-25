@@ -1,7 +1,8 @@
 """Controlled forks over two formerly inspected development sources."""
 from collections import defaultdict
 from functools import lru_cache
-from hashlib import sha256
+from hashlib import sha256, blake2b
+from importlib.util import module_from_spec, spec_from_file_location
 import json
 from pathlib import Path
 import random
@@ -192,6 +193,49 @@ def catalog_answers(ep):
     return answers
 
 
+@lru_cache(maxsize=1)
+def date_inducer():
+    path = Path(__file__).resolve().parents[1] / "skill-witness" / "ops.py"
+    spec = spec_from_file_location("formatter_ops", path)
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.infer
+
+
+def signature(day, text):
+    fields = {k: str(int(v)) for k, v in zip("ymd", day.split("-"))}
+    op = date_inducer()([(fields, text)])
+    if op is None:
+        return bytes(7)
+    def digest(value, n):
+        return blake2b(json.dumps(value, ensure_ascii=False).encode(), digest_size=n).digest()
+    exact = digest(op, 3)
+    op[2] = [s[0] if s[0] in "md" else s for s in op[2]]
+    return exact + digest(op, 4)
+
+
+def date_control(ep):
+    header, *rows = ep["history"].splitlines()
+    records = dict(row.split(": ", 1) for row in rows)
+    day = header.split("recorded for ")[1].split(".")[0]
+    state = b"".join(signature(day, records[name]) for name in SOURCES)
+    assert len(state) == 56
+    out, ties = [], 0
+    for question in [ep["present"], *ep["forks"]]:
+        intro, *options = question.splitlines()
+        i = SOURCES.index(intro.split(". ", 1)[0].split()[-1])
+        previous = state[7*i:7*i+7]
+        new_day = intro.split("same format on ")[1].removesuffix("?")
+        scores = []
+        for line in options:
+            sig = signature(new_day, line[3:])
+            scores.append((sig != bytes(7) and sig[:3] == previous[:3],
+                           sig != bytes(7) and sig[3:] == previous[3:]))
+        ties += scores[0] == scores[1]
+        out.append("B" if scores[1] > scores[0] else "A")
+    return out, ties
+
+
 if __name__ == "__main__":
     b = select_budget()
     for seed, count in ((4701,24),(4702,48)):
@@ -208,3 +252,10 @@ if __name__ == "__main__":
             assert all(sum(row[i]=="A" for row in answers)==len(answers)//2 for i in range(3))
             assert len({tuple(a[1:]) for a in answers}) == 4
         print(json.dumps(dict(seed=seed,budget=b,summary=diagnostics(panel,b)),ensure_ascii=False))
+        ds = [ep for ep in panel if ep["domain"] == "dates"]
+        runs = [date_control(ep) for ep in ds]
+        ok = [[a==b for a,b in zip(pred, ep["answers"])] for (pred,_), ep in zip(runs, ds)]
+        print(dict(seed=seed, date_grammar_present=sum(r[0] for r in ok),
+                   date_grammar_forks=sum(sum(r[1:]) for r in ok),
+                   date_grammar_both=sum(all(r[1:]) for r in ok),
+                   tie_decisions=sum(t for _, t in runs)))
