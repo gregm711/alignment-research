@@ -1,3 +1,7 @@
 ## Does interference come from sharing the same address?
 
 Exploratory after opening the primary results. The original 32-cell condition improved date formatting. It changes both available storage and the chance of overwriting another producer. Hold the tensor at exactly 32 cells. Compare its original producer hashes against public producer identifiers chosen to give each of the 30 producers a distinct address. Preserve the producer order, query policy, release chronology, initial zero state, scoring set and write rule. The remapping gives the learner perfect externally supplied addresses and does not implement learned routing. It uses a finite dictionary of 30 public IDs. Predict a further gain of at least 20 percentage points on exact date revisions, with phones remaining below 50% exact. This diagnostic reuses the two opened histories.
+
+### Outcome
+
+With the same 9,928,704-byte fast-weight tensor, distinct addresses raised exact date revisions from 117/229 (51.1%) to 193/229 (84.3%), and reduced paid checks from 632 to 546. Ordinary synthesis still solved 229/229 with 536 checks. On phones, distinct addresses improved exact rows from 2,419/8,970 (27.0%) to 2,840/8,970 (31.7%), but both conditions solved 0/300 entire revisions. The original hash occupied just 22 of 32 cells in each collection. Relabeling used 438 bytes of public mapping on dates and 411 on phones. This isolates interference from accidental address collisions while leaving the readout and its representational limits intact. [Raw counts](addressing-results.json)

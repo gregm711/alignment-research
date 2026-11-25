@@ -1,0 +1,42 @@
+{
+  "dates": {
+    "original": {
+      "perfect": 117,
+      "revisions": 229,
+      "exact_rows": 18141,
+      "total_rows": 23358,
+      "checks": 632
+    },
+    "distinct": {
+      "perfect": 193,
+      "revisions": 229,
+      "exact_rows": 20813,
+      "total_rows": 23358,
+      "checks": 546
+    },
+    "original_used_cells": 22,
+    "distinct_used_cells": 30,
+    "state_bytes": 9928704,
+    "address_dictionary_bytes": 438
+  },
+  "phones": {
+    "original": {
+      "perfect": 0,
+      "revisions": 300,
+      "exact_rows": 2419,
+      "total_rows": 8970,
+      "checks": 732
+    },
+    "distinct": {
+      "perfect": 0,
+      "revisions": 300,
+      "exact_rows": 2840,
+      "total_rows": 8970,
+      "checks": 659
+    },
+    "original_used_cells": 22,
+    "distinct_used_cells": 30,
+    "state_bytes": 9928704,
+    "address_dictionary_bytes": 411
+  }
+}
