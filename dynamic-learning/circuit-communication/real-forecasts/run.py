@@ -182,7 +182,8 @@ def main():
             hard_n=int(hard_n),hard_correct=int(hard_right),refreshes_after_setup=sum(r for _,r in ret),
             setup_maps=0 if arm in ARMS[:4] else 102,
             raw_timings=timings,repetitions=count,
-            cpu_uj=float(median(t["cpu_joules"] for t in timings)*1e6/count/total),
+            cpu_uj=(float(median(t["cpu_joules"] for t in timings)*1e6/count/total)
+                    if all(t["cpu_joules"] is not None for t in timings) else None),
             wall_us=float(median(t["wall_seconds"] for t in timings)*1e6/count/total),
             issue_correct=[x.tolist() for x in counts[arm]])
     for arm in ARMS:
