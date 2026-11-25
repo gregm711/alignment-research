@@ -1,0 +1,4034 @@
+[
+  {
+    "seed": 841,
+    "cut": 50,
+    "earlier_domains": [
+      "work",
+      "banking",
+      "travel",
+      "meta",
+      "credit_cards"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "transfer",
+          "interest_rate",
+          "order_checks",
+          "report_fraud",
+          "pay_bill",
+          "transactions",
+          "spending_history",
+          "balance"
+        ],
+        "dev": [
+          "bill_due",
+          "routing",
+          "freeze_account"
+        ],
+        "test": [
+          "account_blocked",
+          "pin_change",
+          "bill_balance",
+          "min_payment"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "expiration_date",
+          "redeem_rewards",
+          "damaged_card",
+          "report_lost_card",
+          "rewards_balance",
+          "credit_score",
+          "credit_limit",
+          "international_fees"
+        ],
+        "dev": [
+          "improve_credit_score",
+          "application_status",
+          "card_declined"
+        ],
+        "test": [
+          "replacement_card_duration",
+          "apr",
+          "credit_limit_change",
+          "new_card"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "cancel_reservation",
+          "how_busy",
+          "accept_reservations",
+          "restaurant_reviews",
+          "ingredients_list",
+          "calories",
+          "restaurant_reservation",
+          "meal_suggestion"
+        ],
+        "dev": [
+          "nutrition_info",
+          "recipe",
+          "restaurant_suggestion"
+        ],
+        "test": [
+          "confirm_reservation",
+          "cook_time",
+          "ingredient_substitution",
+          "food_last"
+        ]
+      },
+      "home": {
+        "practice": [
+          "calendar_update",
+          "shopping_list_update",
+          "order_status",
+          "order",
+          "update_playlist",
+          "todo_list_update",
+          "smart_home",
+          "calendar"
+        ],
+        "dev": [
+          "reminder",
+          "next_song",
+          "reminder_update"
+        ],
+        "test": [
+          "play_music",
+          "todo_list",
+          "what_song",
+          "shopping_list"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "uber",
+          "tire_pressure",
+          "gas_type",
+          "mpg",
+          "oil_change_how",
+          "directions",
+          "current_location",
+          "jump_start"
+        ],
+        "dev": [
+          "distance",
+          "tire_change",
+          "oil_change_when"
+        ],
+        "test": [
+          "last_maintenance",
+          "traffic",
+          "schedule_maintenance",
+          "gas"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "travel_suggestion",
+          "lost_luggage",
+          "international_visa",
+          "vaccines",
+          "flight_status",
+          "carry_on",
+          "exchange_rate",
+          "book_flight"
+        ],
+        "dev": [
+          "book_hotel",
+          "travel_alert",
+          "plug_type"
+        ],
+        "test": [
+          "translate",
+          "travel_notification",
+          "car_rental",
+          "timezone"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "measurement_conversion",
+          "alarm",
+          "time",
+          "timer",
+          "flip_coin",
+          "weather",
+          "find_phone",
+          "date"
+        ],
+        "dev": [
+          "roll_dice",
+          "share_location",
+          "make_call"
+        ],
+        "test": [
+          "spelling",
+          "calculator",
+          "text",
+          "definition"
+        ]
+      },
+      "work": {
+        "practice": [
+          "meeting_schedule",
+          "insurance",
+          "direct_deposit",
+          "pto_used",
+          "w2",
+          "next_holiday",
+          "payday",
+          "taxes"
+        ],
+        "dev": [
+          "pto_balance",
+          "income",
+          "pto_request"
+        ],
+        "test": [
+          "pto_request_status",
+          "insurance_change",
+          "rollover_401k",
+          "schedule_meeting"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "tell_joke",
+          "what_are_your_hobbies",
+          "do_you_have_pets",
+          "thank_you",
+          "fun_fact",
+          "are_you_a_bot",
+          "goodbye",
+          "what_is_your_name"
+        ],
+        "dev": [
+          "what_can_i_ask_you",
+          "who_do_you_work_for",
+          "where_are_you_from"
+        ],
+        "test": [
+          "meaning_of_life",
+          "greeting",
+          "who_made_you",
+          "how_old_are_you"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "cancel",
+          "change_accent",
+          "whisper_mode",
+          "repeat",
+          "change_ai_name",
+          "no",
+          "reset_settings",
+          "user_name"
+        ],
+        "dev": [
+          "change_speed",
+          "change_volume",
+          "sync_device"
+        ],
+        "test": [
+          "change_language",
+          "change_user_name",
+          "maybe",
+          "yes"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.03
+      ],
+      "episodic-0": [
+        0.0,
+        0.03
+      ],
+      "supervised-60": [
+        0.1,
+        0.03
+      ],
+      "episodic-60": [
+        0.0,
+        0.03
+      ],
+      "supervised-120": [
+        0.25,
+        0.03
+      ],
+      "episodic-120": [
+        0.1,
+        0.03
+      ],
+      "supervised-240": [
+        0.1,
+        0.03
+      ],
+      "episodic-240": [
+        0.1,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2485,
+          65
+        ],
+        "stable": [
+          -0.0014427473934516197,
+          0.009785311671087524
+        ],
+        "reversed": [
+          -0.0020678045546003304,
+          0.01572032493368697
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2489,
+          65
+        ],
+        "stable": [
+          -0.0016453075349720583,
+          -0.0005926724137931064
+        ],
+        "reversed": [
+          -0.0017537391796632468,
+          -0.00016578249336869633
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2489,
+          66
+        ],
+        "stable": [
+          -0.0013619585266079863,
+          0.00797577063740855
+        ],
+        "reversed": [
+          -0.0014883669966032423,
+          0.01484130094043884
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2488,
+          60
+        ],
+        "stable": [
+          -0.0010613444533762034,
+          0.02594288793103449
+        ],
+        "reversed": [
+          -0.0011013090105232402,
+          0.028362966954022996
+        ]
+      }
+    }
+  },
+  {
+    "seed": 842,
+    "cut": 90,
+    "earlier_domains": [
+      "travel",
+      "utility",
+      "small_talk",
+      "credit_cards",
+      "kitchen_and_dining"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "spending_history",
+          "min_payment",
+          "pay_bill",
+          "transfer",
+          "interest_rate",
+          "account_blocked",
+          "bill_balance",
+          "transactions"
+        ],
+        "dev": [
+          "bill_due",
+          "balance",
+          "report_fraud"
+        ],
+        "test": [
+          "routing",
+          "pin_change",
+          "freeze_account",
+          "order_checks"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "card_declined",
+          "credit_score",
+          "expiration_date",
+          "redeem_rewards",
+          "credit_limit_change",
+          "improve_credit_score",
+          "application_status",
+          "rewards_balance"
+        ],
+        "dev": [
+          "new_card",
+          "international_fees",
+          "credit_limit"
+        ],
+        "test": [
+          "report_lost_card",
+          "apr",
+          "replacement_card_duration",
+          "damaged_card"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "recipe",
+          "ingredients_list",
+          "cook_time",
+          "restaurant_reviews",
+          "meal_suggestion",
+          "food_last",
+          "calories",
+          "confirm_reservation"
+        ],
+        "dev": [
+          "restaurant_suggestion",
+          "accept_reservations",
+          "how_busy"
+        ],
+        "test": [
+          "cancel_reservation",
+          "ingredient_substitution",
+          "restaurant_reservation",
+          "nutrition_info"
+        ]
+      },
+      "home": {
+        "practice": [
+          "what_song",
+          "order",
+          "order_status",
+          "shopping_list",
+          "todo_list_update",
+          "play_music",
+          "todo_list",
+          "smart_home"
+        ],
+        "dev": [
+          "calendar_update",
+          "reminder",
+          "next_song"
+        ],
+        "test": [
+          "calendar",
+          "reminder_update",
+          "shopping_list_update",
+          "update_playlist"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "gas_type",
+          "current_location",
+          "gas",
+          "mpg",
+          "oil_change_how",
+          "last_maintenance",
+          "tire_change",
+          "tire_pressure"
+        ],
+        "dev": [
+          "traffic",
+          "jump_start",
+          "uber"
+        ],
+        "test": [
+          "oil_change_when",
+          "schedule_maintenance",
+          "directions",
+          "distance"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "vaccines",
+          "travel_notification",
+          "lost_luggage",
+          "car_rental",
+          "timezone",
+          "flight_status",
+          "carry_on",
+          "book_flight"
+        ],
+        "dev": [
+          "travel_suggestion",
+          "translate",
+          "plug_type"
+        ],
+        "test": [
+          "international_visa",
+          "travel_alert",
+          "exchange_rate",
+          "book_hotel"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "measurement_conversion",
+          "make_call",
+          "text",
+          "calculator",
+          "flip_coin",
+          "alarm",
+          "roll_dice",
+          "timer"
+        ],
+        "dev": [
+          "weather",
+          "time",
+          "find_phone"
+        ],
+        "test": [
+          "share_location",
+          "spelling",
+          "definition",
+          "date"
+        ]
+      },
+      "work": {
+        "practice": [
+          "direct_deposit",
+          "insurance",
+          "insurance_change",
+          "taxes",
+          "w2",
+          "pto_request_status",
+          "pto_balance",
+          "payday"
+        ],
+        "dev": [
+          "rollover_401k",
+          "income",
+          "pto_request"
+        ],
+        "test": [
+          "meeting_schedule",
+          "schedule_meeting",
+          "pto_used",
+          "next_holiday"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "do_you_have_pets",
+          "are_you_a_bot",
+          "what_is_your_name",
+          "who_do_you_work_for",
+          "fun_fact",
+          "how_old_are_you",
+          "thank_you",
+          "who_made_you"
+        ],
+        "dev": [
+          "what_can_i_ask_you",
+          "meaning_of_life",
+          "greeting"
+        ],
+        "test": [
+          "tell_joke",
+          "what_are_your_hobbies",
+          "where_are_you_from",
+          "goodbye"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "repeat",
+          "whisper_mode",
+          "change_user_name",
+          "change_accent",
+          "sync_device",
+          "user_name",
+          "change_volume",
+          "reset_settings"
+        ],
+        "dev": [
+          "no",
+          "maybe",
+          "yes"
+        ],
+        "test": [
+          "change_ai_name",
+          "change_language",
+          "cancel",
+          "change_speed"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.25,
+        0.03
+      ],
+      "episodic-0": [
+        0.25,
+        0.03
+      ],
+      "supervised-60": [
+        0.0,
+        0.03
+      ],
+      "episodic-60": [
+        0.1,
+        0.03
+      ],
+      "supervised-120": [
+        0.25,
+        0.03
+      ],
+      "episodic-120": [
+        0.1,
+        0.03
+      ],
+      "supervised-240": [
+        0.25,
+        0.03
+      ],
+      "episodic-240": [
+        0.0,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2489,
+          44
+        ],
+        "stable": [
+          -0.002599220661821104,
+          -0.021753771551724088
+        ],
+        "reversed": [
+          -0.0022476738558749355,
+          -0.023939557210031326
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2459,
+          74
+        ],
+        "stable": [
+          -0.0009063412695478612,
+          0.011591332712022385
+        ],
+        "reversed": [
+          -0.0005008272024843718,
+          0.011926258154706444
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2502,
+          58
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2472,
+          88
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  {
+    "seed": 843,
+    "cut": 150,
+    "earlier_domains": [
+      "credit_cards",
+      "auto_and_commute",
+      "small_talk",
+      "work",
+      "kitchen_and_dining"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "spending_history",
+          "transactions",
+          "min_payment",
+          "bill_balance",
+          "order_checks",
+          "pay_bill",
+          "account_blocked",
+          "transfer"
+        ],
+        "dev": [
+          "interest_rate",
+          "bill_due",
+          "freeze_account"
+        ],
+        "test": [
+          "report_fraud",
+          "balance",
+          "pin_change",
+          "routing"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "international_fees",
+          "new_card",
+          "damaged_card",
+          "rewards_balance",
+          "report_lost_card",
+          "improve_credit_score",
+          "redeem_rewards",
+          "credit_score"
+        ],
+        "dev": [
+          "expiration_date",
+          "card_declined",
+          "replacement_card_duration"
+        ],
+        "test": [
+          "apr",
+          "credit_limit_change",
+          "credit_limit",
+          "application_status"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "accept_reservations",
+          "cancel_reservation",
+          "recipe",
+          "calories",
+          "restaurant_reviews",
+          "meal_suggestion",
+          "confirm_reservation",
+          "how_busy"
+        ],
+        "dev": [
+          "cook_time",
+          "ingredient_substitution",
+          "ingredients_list"
+        ],
+        "test": [
+          "food_last",
+          "restaurant_suggestion",
+          "restaurant_reservation",
+          "nutrition_info"
+        ]
+      },
+      "home": {
+        "practice": [
+          "calendar_update",
+          "shopping_list_update",
+          "next_song",
+          "what_song",
+          "order_status",
+          "todo_list",
+          "play_music",
+          "reminder_update"
+        ],
+        "dev": [
+          "update_playlist",
+          "todo_list_update",
+          "calendar"
+        ],
+        "test": [
+          "smart_home",
+          "reminder",
+          "shopping_list",
+          "order"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "distance",
+          "schedule_maintenance",
+          "oil_change_when",
+          "oil_change_how",
+          "current_location",
+          "uber",
+          "mpg",
+          "tire_pressure"
+        ],
+        "dev": [
+          "jump_start",
+          "directions",
+          "tire_change"
+        ],
+        "test": [
+          "gas_type",
+          "gas",
+          "last_maintenance",
+          "traffic"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "car_rental",
+          "flight_status",
+          "vaccines",
+          "timezone",
+          "international_visa",
+          "exchange_rate",
+          "book_flight",
+          "lost_luggage"
+        ],
+        "dev": [
+          "travel_alert",
+          "travel_notification",
+          "book_hotel"
+        ],
+        "test": [
+          "carry_on",
+          "travel_suggestion",
+          "plug_type",
+          "translate"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "make_call",
+          "spelling",
+          "find_phone",
+          "weather",
+          "alarm",
+          "text",
+          "roll_dice",
+          "calculator"
+        ],
+        "dev": [
+          "time",
+          "date",
+          "share_location"
+        ],
+        "test": [
+          "flip_coin",
+          "timer",
+          "measurement_conversion",
+          "definition"
+        ]
+      },
+      "work": {
+        "practice": [
+          "income",
+          "rollover_401k",
+          "schedule_meeting",
+          "w2",
+          "pto_used",
+          "meeting_schedule",
+          "pto_request",
+          "direct_deposit"
+        ],
+        "dev": [
+          "pto_balance",
+          "insurance_change",
+          "pto_request_status"
+        ],
+        "test": [
+          "next_holiday",
+          "insurance",
+          "payday",
+          "taxes"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "who_made_you",
+          "how_old_are_you",
+          "goodbye",
+          "what_can_i_ask_you",
+          "fun_fact",
+          "who_do_you_work_for",
+          "tell_joke",
+          "meaning_of_life"
+        ],
+        "dev": [
+          "what_are_your_hobbies",
+          "are_you_a_bot",
+          "where_are_you_from"
+        ],
+        "test": [
+          "greeting",
+          "thank_you",
+          "what_is_your_name",
+          "do_you_have_pets"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "change_speed",
+          "change_volume",
+          "user_name",
+          "change_user_name",
+          "yes",
+          "maybe",
+          "no",
+          "sync_device"
+        ],
+        "dev": [
+          "change_language",
+          "change_accent",
+          "change_ai_name"
+        ],
+        "test": [
+          "cancel",
+          "reset_settings",
+          "whisper_mode",
+          "repeat"
+        ]
+      }
+    },
+    "base_penalty": 0.3,
+    "settings": {
+      "supervised-0": [
+        0.1,
+        0.03
+      ],
+      "episodic-0": [
+        0.1,
+        0.03
+      ],
+      "supervised-60": [
+        0.1,
+        0.03
+      ],
+      "episodic-60": [
+        0.0,
+        0.3
+      ],
+      "supervised-120": [
+        0.1,
+        0.03
+      ],
+      "episodic-120": [
+        0.1,
+        0.3
+      ],
+      "supervised-240": [
+        0.1,
+        0.3
+      ],
+      "episodic-240": [
+        0.1,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2481,
+          62
+        ],
+        "stable": [
+          0.0006890435491553985,
+          0.0027591421023359375
+        ],
+        "reversed": [
+          0.0011502189366457798,
+          -0.001768458008898799
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2466,
+          82
+        ],
+        "stable": [
+          -0.00040666703531667264,
+          -0.004970694911690526
+        ],
+        "reversed": [
+          -0.00033869719088697355,
+          -0.006113987594617343
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2478,
+          53
+        ],
+        "stable": [
+          0.01247024955976227,
+          0.008717265777488603
+        ],
+        "reversed": [
+          0.01736732106170666,
+          0.011334986987638268
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2456,
+          72
+        ],
+        "stable": [
+          0.012308099829730529,
+          0.013589559386973205
+        ],
+        "reversed": [
+          0.016757719962244597,
+          0.020649994013409972
+        ]
+      }
+    }
+  },
+  {
+    "seed": 844,
+    "cut": 190,
+    "earlier_domains": [
+      "banking",
+      "meta",
+      "home",
+      "travel",
+      "credit_cards"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "routing",
+          "interest_rate",
+          "balance",
+          "bill_due",
+          "account_blocked",
+          "report_fraud",
+          "order_checks",
+          "bill_balance"
+        ],
+        "dev": [
+          "pin_change",
+          "freeze_account",
+          "pay_bill"
+        ],
+        "test": [
+          "min_payment",
+          "transactions",
+          "spending_history",
+          "transfer"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "credit_score",
+          "report_lost_card",
+          "apr",
+          "credit_limit_change",
+          "rewards_balance",
+          "card_declined",
+          "international_fees",
+          "expiration_date"
+        ],
+        "dev": [
+          "redeem_rewards",
+          "improve_credit_score",
+          "application_status"
+        ],
+        "test": [
+          "new_card",
+          "damaged_card",
+          "replacement_card_duration",
+          "credit_limit"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "how_busy",
+          "accept_reservations",
+          "calories",
+          "cook_time",
+          "food_last",
+          "cancel_reservation",
+          "confirm_reservation",
+          "ingredient_substitution"
+        ],
+        "dev": [
+          "recipe",
+          "restaurant_reviews",
+          "meal_suggestion"
+        ],
+        "test": [
+          "ingredients_list",
+          "nutrition_info",
+          "restaurant_reservation",
+          "restaurant_suggestion"
+        ]
+      },
+      "home": {
+        "practice": [
+          "todo_list",
+          "next_song",
+          "play_music",
+          "reminder",
+          "smart_home",
+          "todo_list_update",
+          "what_song",
+          "shopping_list_update"
+        ],
+        "dev": [
+          "reminder_update",
+          "update_playlist",
+          "shopping_list"
+        ],
+        "test": [
+          "order_status",
+          "calendar",
+          "calendar_update",
+          "order"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "last_maintenance",
+          "uber",
+          "traffic",
+          "gas_type",
+          "gas",
+          "tire_pressure",
+          "jump_start",
+          "oil_change_when"
+        ],
+        "dev": [
+          "schedule_maintenance",
+          "distance",
+          "oil_change_how"
+        ],
+        "test": [
+          "mpg",
+          "tire_change",
+          "current_location",
+          "directions"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "travel_notification",
+          "car_rental",
+          "carry_on",
+          "exchange_rate",
+          "plug_type",
+          "travel_suggestion",
+          "flight_status",
+          "book_flight"
+        ],
+        "dev": [
+          "translate",
+          "vaccines",
+          "book_hotel"
+        ],
+        "test": [
+          "international_visa",
+          "timezone",
+          "lost_luggage",
+          "travel_alert"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "find_phone",
+          "roll_dice",
+          "time",
+          "calculator",
+          "make_call",
+          "definition",
+          "spelling",
+          "timer"
+        ],
+        "dev": [
+          "alarm",
+          "flip_coin",
+          "date"
+        ],
+        "test": [
+          "text",
+          "share_location",
+          "weather",
+          "measurement_conversion"
+        ]
+      },
+      "work": {
+        "practice": [
+          "insurance_change",
+          "taxes",
+          "w2",
+          "pto_balance",
+          "pto_request_status",
+          "income",
+          "insurance",
+          "meeting_schedule"
+        ],
+        "dev": [
+          "pto_used",
+          "schedule_meeting",
+          "pto_request"
+        ],
+        "test": [
+          "next_holiday",
+          "rollover_401k",
+          "direct_deposit",
+          "payday"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "what_can_i_ask_you",
+          "greeting",
+          "who_made_you",
+          "meaning_of_life",
+          "fun_fact",
+          "what_is_your_name",
+          "do_you_have_pets",
+          "goodbye"
+        ],
+        "dev": [
+          "thank_you",
+          "tell_joke",
+          "where_are_you_from"
+        ],
+        "test": [
+          "how_old_are_you",
+          "what_are_your_hobbies",
+          "are_you_a_bot",
+          "who_do_you_work_for"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "sync_device",
+          "no",
+          "change_volume",
+          "cancel",
+          "repeat",
+          "change_ai_name",
+          "maybe",
+          "yes"
+        ],
+        "dev": [
+          "reset_settings",
+          "whisper_mode",
+          "change_user_name"
+        ],
+        "test": [
+          "user_name",
+          "change_language",
+          "change_speed",
+          "change_accent"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.03
+      ],
+      "episodic-0": [
+        0.0,
+        0.03
+      ],
+      "supervised-60": [
+        0.25,
+        0.03
+      ],
+      "episodic-60": [
+        0.0,
+        0.03
+      ],
+      "supervised-120": [
+        0.25,
+        0.03
+      ],
+      "episodic-120": [
+        0.0,
+        0.03
+      ],
+      "supervised-240": [
+        0.25,
+        0.03
+      ],
+      "episodic-240": [
+        0.25,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2422,
+          108
+        ],
+        "stable": [
+          0.0003436772764807382,
+          0.008545857279693495
+        ],
+        "reversed": [
+          6.040743938142898e-05,
+          0.0077700949872286235
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2501,
+          46
+        ],
+        "stable": [
+          -0.0004009759732470676,
+          -0.0009018928035981894
+        ],
+        "reversed": [
+          -0.0006883610192286727,
+          0.00036309970014992976
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2421,
+          105
+        ],
+        "stable": [
+          0.0013095640419060472,
+          -0.020774322660098522
+        ],
+        "reversed": [
+          0.001455071157673394,
+          -0.01990455665024629
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2502,
+          44
+        ],
+        "stable": [
+          0.0012226014642831157,
+          0.03358272923197489
+        ],
+        "reversed": [
+          0.00143549932781048,
+          0.03299495493730405
+        ]
+      }
+    }
+  },
+  {
+    "seed": 845,
+    "cut": 50,
+    "earlier_domains": [
+      "auto_and_commute",
+      "credit_cards",
+      "travel",
+      "banking",
+      "small_talk"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "transactions",
+          "pay_bill",
+          "min_payment",
+          "bill_due",
+          "account_blocked",
+          "pin_change",
+          "interest_rate",
+          "routing"
+        ],
+        "dev": [
+          "balance",
+          "order_checks",
+          "freeze_account"
+        ],
+        "test": [
+          "transfer",
+          "bill_balance",
+          "spending_history",
+          "report_fraud"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "damaged_card",
+          "international_fees",
+          "redeem_rewards",
+          "apr",
+          "credit_limit",
+          "card_declined",
+          "credit_limit_change",
+          "rewards_balance"
+        ],
+        "dev": [
+          "report_lost_card",
+          "application_status",
+          "replacement_card_duration"
+        ],
+        "test": [
+          "new_card",
+          "credit_score",
+          "improve_credit_score",
+          "expiration_date"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "nutrition_info",
+          "restaurant_suggestion",
+          "ingredient_substitution",
+          "cancel_reservation",
+          "recipe",
+          "ingredients_list",
+          "food_last",
+          "meal_suggestion"
+        ],
+        "dev": [
+          "confirm_reservation",
+          "calories",
+          "accept_reservations"
+        ],
+        "test": [
+          "how_busy",
+          "cook_time",
+          "restaurant_reviews",
+          "restaurant_reservation"
+        ]
+      },
+      "home": {
+        "practice": [
+          "todo_list_update",
+          "update_playlist",
+          "reminder_update",
+          "what_song",
+          "calendar_update",
+          "calendar",
+          "reminder",
+          "next_song"
+        ],
+        "dev": [
+          "shopping_list_update",
+          "order",
+          "order_status"
+        ],
+        "test": [
+          "todo_list",
+          "play_music",
+          "shopping_list",
+          "smart_home"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "tire_pressure",
+          "oil_change_when",
+          "last_maintenance",
+          "gas_type",
+          "traffic",
+          "current_location",
+          "uber",
+          "schedule_maintenance"
+        ],
+        "dev": [
+          "jump_start",
+          "distance",
+          "gas"
+        ],
+        "test": [
+          "directions",
+          "oil_change_how",
+          "tire_change",
+          "mpg"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "vaccines",
+          "book_flight",
+          "international_visa",
+          "lost_luggage",
+          "plug_type",
+          "exchange_rate",
+          "timezone",
+          "flight_status"
+        ],
+        "dev": [
+          "car_rental",
+          "travel_alert",
+          "book_hotel"
+        ],
+        "test": [
+          "travel_suggestion",
+          "carry_on",
+          "travel_notification",
+          "translate"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "date",
+          "find_phone",
+          "calculator",
+          "share_location",
+          "alarm",
+          "measurement_conversion",
+          "weather",
+          "time"
+        ],
+        "dev": [
+          "flip_coin",
+          "spelling",
+          "definition"
+        ],
+        "test": [
+          "text",
+          "roll_dice",
+          "timer",
+          "make_call"
+        ]
+      },
+      "work": {
+        "practice": [
+          "meeting_schedule",
+          "taxes",
+          "pto_request",
+          "pto_balance",
+          "insurance_change",
+          "pto_request_status",
+          "rollover_401k",
+          "schedule_meeting"
+        ],
+        "dev": [
+          "pto_used",
+          "income",
+          "payday"
+        ],
+        "test": [
+          "direct_deposit",
+          "next_holiday",
+          "insurance",
+          "w2"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "who_do_you_work_for",
+          "who_made_you",
+          "what_can_i_ask_you",
+          "tell_joke",
+          "goodbye",
+          "greeting",
+          "what_are_your_hobbies",
+          "do_you_have_pets"
+        ],
+        "dev": [
+          "how_old_are_you",
+          "fun_fact",
+          "where_are_you_from"
+        ],
+        "test": [
+          "meaning_of_life",
+          "thank_you",
+          "are_you_a_bot",
+          "what_is_your_name"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "change_accent",
+          "no",
+          "change_user_name",
+          "sync_device",
+          "yes",
+          "maybe",
+          "cancel",
+          "change_volume"
+        ],
+        "dev": [
+          "change_speed",
+          "change_language",
+          "user_name"
+        ],
+        "test": [
+          "repeat",
+          "change_ai_name",
+          "reset_settings",
+          "whisper_mode"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.03
+      ],
+      "episodic-0": [
+        0.0,
+        0.03
+      ],
+      "supervised-60": [
+        0.1,
+        0.03
+      ],
+      "episodic-60": [
+        0.25,
+        0.03
+      ],
+      "supervised-120": [
+        0.25,
+        0.03
+      ],
+      "episodic-120": [
+        0.25,
+        0.03
+      ],
+      "supervised-240": [
+        0.25,
+        0.03
+      ],
+      "episodic-240": [
+        0.1,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2484,
+          59
+        ],
+        "stable": [
+          -8.634808227199475e-05,
+          0.027921354471069547
+        ],
+        "reversed": [
+          -0.00013352501463913952,
+          0.030784263588544712
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2472,
+          67
+        ],
+        "stable": [
+          0.0007153988305383906,
+          0.0038559894493051944
+        ],
+        "reversed": [
+          0.0008340573514268902,
+          0.0036026762738033957
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2487,
+          64
+        ],
+        "stable": [
+          -0.0008949948824798042,
+          0.011504074622844848
+        ],
+        "reversed": [
+          -0.0006536832437767301,
+          0.012236496497844848
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2481,
+          69
+        ],
+        "stable": [
+          -0.001519216499945037,
+          0.01002623688155925
+        ],
+        "reversed": [
+          -0.0018781947345278653,
+          0.011068684407796126
+        ]
+      }
+    }
+  },
+  {
+    "seed": 846,
+    "cut": 90,
+    "earlier_domains": [
+      "utility",
+      "kitchen_and_dining",
+      "small_talk",
+      "banking",
+      "meta"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "pin_change",
+          "order_checks",
+          "transactions",
+          "pay_bill",
+          "account_blocked",
+          "bill_balance",
+          "transfer",
+          "min_payment"
+        ],
+        "dev": [
+          "balance",
+          "bill_due",
+          "spending_history"
+        ],
+        "test": [
+          "report_fraud",
+          "interest_rate",
+          "freeze_account",
+          "routing"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "improve_credit_score",
+          "rewards_balance",
+          "expiration_date",
+          "new_card",
+          "credit_limit_change",
+          "report_lost_card",
+          "international_fees",
+          "redeem_rewards"
+        ],
+        "dev": [
+          "application_status",
+          "card_declined",
+          "credit_limit"
+        ],
+        "test": [
+          "damaged_card",
+          "replacement_card_duration",
+          "apr",
+          "credit_score"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "ingredients_list",
+          "nutrition_info",
+          "accept_reservations",
+          "restaurant_reservation",
+          "restaurant_suggestion",
+          "meal_suggestion",
+          "recipe",
+          "confirm_reservation"
+        ],
+        "dev": [
+          "cook_time",
+          "cancel_reservation",
+          "food_last"
+        ],
+        "test": [
+          "calories",
+          "ingredient_substitution",
+          "how_busy",
+          "restaurant_reviews"
+        ]
+      },
+      "home": {
+        "practice": [
+          "calendar_update",
+          "next_song",
+          "reminder",
+          "what_song",
+          "shopping_list",
+          "todo_list",
+          "order_status",
+          "reminder_update"
+        ],
+        "dev": [
+          "smart_home",
+          "calendar",
+          "todo_list_update"
+        ],
+        "test": [
+          "update_playlist",
+          "play_music",
+          "order",
+          "shopping_list_update"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "directions",
+          "mpg",
+          "schedule_maintenance",
+          "current_location",
+          "oil_change_how",
+          "gas",
+          "distance",
+          "gas_type"
+        ],
+        "dev": [
+          "tire_pressure",
+          "last_maintenance",
+          "oil_change_when"
+        ],
+        "test": [
+          "uber",
+          "tire_change",
+          "jump_start",
+          "traffic"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "car_rental",
+          "vaccines",
+          "book_hotel",
+          "lost_luggage",
+          "exchange_rate",
+          "travel_notification",
+          "translate",
+          "flight_status"
+        ],
+        "dev": [
+          "book_flight",
+          "timezone",
+          "carry_on"
+        ],
+        "test": [
+          "international_visa",
+          "travel_alert",
+          "plug_type",
+          "travel_suggestion"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "timer",
+          "calculator",
+          "time",
+          "find_phone",
+          "make_call",
+          "date",
+          "roll_dice",
+          "spelling"
+        ],
+        "dev": [
+          "flip_coin",
+          "alarm",
+          "weather"
+        ],
+        "test": [
+          "definition",
+          "text",
+          "share_location",
+          "measurement_conversion"
+        ]
+      },
+      "work": {
+        "practice": [
+          "pto_balance",
+          "insurance",
+          "payday",
+          "meeting_schedule",
+          "next_holiday",
+          "insurance_change",
+          "pto_request_status",
+          "pto_request"
+        ],
+        "dev": [
+          "schedule_meeting",
+          "direct_deposit",
+          "pto_used"
+        ],
+        "test": [
+          "taxes",
+          "income",
+          "w2",
+          "rollover_401k"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "are_you_a_bot",
+          "where_are_you_from",
+          "how_old_are_you",
+          "tell_joke",
+          "thank_you",
+          "who_made_you",
+          "what_is_your_name",
+          "meaning_of_life"
+        ],
+        "dev": [
+          "fun_fact",
+          "goodbye",
+          "what_can_i_ask_you"
+        ],
+        "test": [
+          "who_do_you_work_for",
+          "do_you_have_pets",
+          "what_are_your_hobbies",
+          "greeting"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "change_speed",
+          "change_language",
+          "cancel",
+          "change_ai_name",
+          "change_volume",
+          "yes",
+          "whisper_mode",
+          "change_accent"
+        ],
+        "dev": [
+          "sync_device",
+          "reset_settings",
+          "change_user_name"
+        ],
+        "test": [
+          "no",
+          "maybe",
+          "user_name",
+          "repeat"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.03
+      ],
+      "episodic-0": [
+        0.0,
+        0.03
+      ],
+      "supervised-60": [
+        0.25,
+        0.03
+      ],
+      "episodic-60": [
+        0.1,
+        0.03
+      ],
+      "supervised-120": [
+        0.0,
+        0.03
+      ],
+      "episodic-120": [
+        0.0,
+        0.03
+      ],
+      "supervised-240": [
+        0.0,
+        0.03
+      ],
+      "episodic-240": [
+        0.1,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2483,
+          77
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2470,
+          90
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2478,
+          66
+        ],
+        "stable": [
+          -0.0002161062807249231,
+          0.01526988636363634
+        ],
+        "reversed": [
+          -0.0001819993213001761,
+          0.018657752089864116
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2465,
+          85
+        ],
+        "stable": [
+          -0.0011144661626406038,
+          0.0007352941176470562
+        ],
+        "reversed": [
+          -0.001079603079476306,
+          0.0011821754563894615
+        ]
+      }
+    }
+  },
+  {
+    "seed": 847,
+    "cut": 150,
+    "earlier_domains": [
+      "meta",
+      "home",
+      "work",
+      "banking",
+      "kitchen_and_dining"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "bill_balance",
+          "transfer",
+          "spending_history",
+          "order_checks",
+          "interest_rate",
+          "bill_due",
+          "transactions",
+          "routing"
+        ],
+        "dev": [
+          "balance",
+          "account_blocked",
+          "pay_bill"
+        ],
+        "test": [
+          "freeze_account",
+          "pin_change",
+          "min_payment",
+          "report_fraud"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "report_lost_card",
+          "card_declined",
+          "credit_limit_change",
+          "damaged_card",
+          "expiration_date",
+          "redeem_rewards",
+          "improve_credit_score",
+          "credit_limit"
+        ],
+        "dev": [
+          "credit_score",
+          "application_status",
+          "rewards_balance"
+        ],
+        "test": [
+          "apr",
+          "replacement_card_duration",
+          "international_fees",
+          "new_card"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "accept_reservations",
+          "recipe",
+          "restaurant_suggestion",
+          "how_busy",
+          "ingredients_list",
+          "cancel_reservation",
+          "meal_suggestion",
+          "food_last"
+        ],
+        "dev": [
+          "restaurant_reservation",
+          "confirm_reservation",
+          "nutrition_info"
+        ],
+        "test": [
+          "restaurant_reviews",
+          "ingredient_substitution",
+          "calories",
+          "cook_time"
+        ]
+      },
+      "home": {
+        "practice": [
+          "reminder",
+          "order_status",
+          "todo_list",
+          "shopping_list",
+          "next_song",
+          "order",
+          "calendar",
+          "reminder_update"
+        ],
+        "dev": [
+          "play_music",
+          "what_song",
+          "calendar_update"
+        ],
+        "test": [
+          "smart_home",
+          "update_playlist",
+          "shopping_list_update",
+          "todo_list_update"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "traffic",
+          "mpg",
+          "schedule_maintenance",
+          "directions",
+          "uber",
+          "distance",
+          "current_location",
+          "jump_start"
+        ],
+        "dev": [
+          "oil_change_how",
+          "gas",
+          "tire_change"
+        ],
+        "test": [
+          "last_maintenance",
+          "gas_type",
+          "tire_pressure",
+          "oil_change_when"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "carry_on",
+          "timezone",
+          "travel_alert",
+          "book_hotel",
+          "exchange_rate",
+          "travel_suggestion",
+          "travel_notification",
+          "vaccines"
+        ],
+        "dev": [
+          "plug_type",
+          "car_rental",
+          "flight_status"
+        ],
+        "test": [
+          "lost_luggage",
+          "book_flight",
+          "translate",
+          "international_visa"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "alarm",
+          "time",
+          "measurement_conversion",
+          "roll_dice",
+          "spelling",
+          "share_location",
+          "make_call",
+          "timer"
+        ],
+        "dev": [
+          "date",
+          "calculator",
+          "find_phone"
+        ],
+        "test": [
+          "text",
+          "definition",
+          "flip_coin",
+          "weather"
+        ]
+      },
+      "work": {
+        "practice": [
+          "pto_used",
+          "rollover_401k",
+          "direct_deposit",
+          "w2",
+          "insurance_change",
+          "next_holiday",
+          "income",
+          "taxes"
+        ],
+        "dev": [
+          "pto_request",
+          "insurance",
+          "payday"
+        ],
+        "test": [
+          "pto_balance",
+          "meeting_schedule",
+          "pto_request_status",
+          "schedule_meeting"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "who_made_you",
+          "what_is_your_name",
+          "how_old_are_you",
+          "what_are_your_hobbies",
+          "fun_fact",
+          "what_can_i_ask_you",
+          "thank_you",
+          "are_you_a_bot"
+        ],
+        "dev": [
+          "tell_joke",
+          "where_are_you_from",
+          "do_you_have_pets"
+        ],
+        "test": [
+          "greeting",
+          "who_do_you_work_for",
+          "goodbye",
+          "meaning_of_life"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "reset_settings",
+          "whisper_mode",
+          "cancel",
+          "change_user_name",
+          "user_name",
+          "yes",
+          "no",
+          "change_accent"
+        ],
+        "dev": [
+          "change_ai_name",
+          "repeat",
+          "change_language"
+        ],
+        "test": [
+          "sync_device",
+          "maybe",
+          "change_speed",
+          "change_volume"
+        ]
+      }
+    },
+    "base_penalty": 0.3,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.3
+      ],
+      "episodic-0": [
+        0.0,
+        0.3
+      ],
+      "supervised-60": [
+        0.0,
+        0.3
+      ],
+      "episodic-60": [
+        0.0,
+        0.3
+      ],
+      "supervised-120": [
+        0.0,
+        0.3
+      ],
+      "episodic-120": [
+        0.0,
+        0.3
+      ],
+      "supervised-240": [
+        0.0,
+        0.3
+      ],
+      "episodic-240": [
+        0.0,
+        0.3
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2462,
+          98
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2497,
+          63
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2462,
+          98
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2497,
+          63
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  {
+    "seed": 848,
+    "cut": 190,
+    "earlier_domains": [
+      "home",
+      "small_talk",
+      "utility",
+      "auto_and_commute",
+      "work"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "bill_balance",
+          "account_blocked",
+          "pin_change",
+          "interest_rate",
+          "balance",
+          "pay_bill",
+          "spending_history",
+          "order_checks"
+        ],
+        "dev": [
+          "min_payment",
+          "freeze_account",
+          "transactions"
+        ],
+        "test": [
+          "bill_due",
+          "transfer",
+          "report_fraud",
+          "routing"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "application_status",
+          "international_fees",
+          "damaged_card",
+          "new_card",
+          "credit_limit_change",
+          "credit_limit",
+          "report_lost_card",
+          "card_declined"
+        ],
+        "dev": [
+          "replacement_card_duration",
+          "expiration_date",
+          "credit_score"
+        ],
+        "test": [
+          "apr",
+          "redeem_rewards",
+          "improve_credit_score",
+          "rewards_balance"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "ingredient_substitution",
+          "confirm_reservation",
+          "restaurant_suggestion",
+          "cook_time",
+          "recipe",
+          "nutrition_info",
+          "meal_suggestion",
+          "calories"
+        ],
+        "dev": [
+          "food_last",
+          "accept_reservations",
+          "how_busy"
+        ],
+        "test": [
+          "cancel_reservation",
+          "ingredients_list",
+          "restaurant_reservation",
+          "restaurant_reviews"
+        ]
+      },
+      "home": {
+        "practice": [
+          "shopping_list_update",
+          "smart_home",
+          "shopping_list",
+          "calendar_update",
+          "order_status",
+          "todo_list",
+          "todo_list_update",
+          "order"
+        ],
+        "dev": [
+          "what_song",
+          "reminder",
+          "update_playlist"
+        ],
+        "test": [
+          "next_song",
+          "play_music",
+          "calendar",
+          "reminder_update"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "uber",
+          "distance",
+          "tire_change",
+          "traffic",
+          "oil_change_how",
+          "last_maintenance",
+          "gas_type",
+          "mpg"
+        ],
+        "dev": [
+          "schedule_maintenance",
+          "jump_start",
+          "oil_change_when"
+        ],
+        "test": [
+          "directions",
+          "tire_pressure",
+          "current_location",
+          "gas"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "lost_luggage",
+          "flight_status",
+          "translate",
+          "timezone",
+          "travel_alert",
+          "vaccines",
+          "plug_type",
+          "book_flight"
+        ],
+        "dev": [
+          "international_visa",
+          "travel_suggestion",
+          "car_rental"
+        ],
+        "test": [
+          "carry_on",
+          "exchange_rate",
+          "travel_notification",
+          "book_hotel"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "time",
+          "find_phone",
+          "definition",
+          "text",
+          "spelling",
+          "measurement_conversion",
+          "flip_coin",
+          "roll_dice"
+        ],
+        "dev": [
+          "date",
+          "make_call",
+          "share_location"
+        ],
+        "test": [
+          "timer",
+          "weather",
+          "calculator",
+          "alarm"
+        ]
+      },
+      "work": {
+        "practice": [
+          "pto_balance",
+          "schedule_meeting",
+          "next_holiday",
+          "pto_request_status",
+          "payday",
+          "taxes",
+          "insurance",
+          "pto_request"
+        ],
+        "dev": [
+          "income",
+          "rollover_401k",
+          "direct_deposit"
+        ],
+        "test": [
+          "w2",
+          "meeting_schedule",
+          "insurance_change",
+          "pto_used"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "who_do_you_work_for",
+          "what_can_i_ask_you",
+          "thank_you",
+          "tell_joke",
+          "greeting",
+          "goodbye",
+          "where_are_you_from",
+          "how_old_are_you"
+        ],
+        "dev": [
+          "do_you_have_pets",
+          "fun_fact",
+          "meaning_of_life"
+        ],
+        "test": [
+          "what_are_your_hobbies",
+          "what_is_your_name",
+          "are_you_a_bot",
+          "who_made_you"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "whisper_mode",
+          "no",
+          "yes",
+          "change_language",
+          "sync_device",
+          "change_ai_name",
+          "user_name",
+          "change_accent"
+        ],
+        "dev": [
+          "repeat",
+          "change_volume",
+          "maybe"
+        ],
+        "test": [
+          "change_speed",
+          "reset_settings",
+          "change_user_name",
+          "cancel"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.25,
+        0.03
+      ],
+      "episodic-0": [
+        0.25,
+        0.03
+      ],
+      "supervised-60": [
+        0.0,
+        0.03
+      ],
+      "episodic-60": [
+        0.1,
+        0.03
+      ],
+      "supervised-120": [
+        0.0,
+        0.03
+      ],
+      "episodic-120": [
+        0.0,
+        0.03
+      ],
+      "supervised-240": [
+        0.1,
+        0.03
+      ],
+      "episodic-240": [
+        0.0,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2484,
+          65
+        ],
+        "stable": [
+          -0.0018876491362904424,
+          -0.012831564986737383
+        ],
+        "reversed": [
+          -0.002209310038793738,
+          -0.013925729442970804
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2462,
+          91
+        ],
+        "stable": [
+          -0.0019506729562070724,
+          0.016729229821902225
+        ],
+        "reversed": [
+          -0.0023268453216158357,
+          0.01641838764683591
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2490,
+          70
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2468,
+          92
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  {
+    "seed": 849,
+    "cut": 50,
+    "earlier_domains": [
+      "home",
+      "kitchen_and_dining",
+      "credit_cards",
+      "meta",
+      "banking"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "freeze_account",
+          "routing",
+          "interest_rate",
+          "bill_balance",
+          "transfer",
+          "balance",
+          "report_fraud",
+          "transactions"
+        ],
+        "dev": [
+          "min_payment",
+          "pay_bill",
+          "pin_change"
+        ],
+        "test": [
+          "spending_history",
+          "bill_due",
+          "order_checks",
+          "account_blocked"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "international_fees",
+          "new_card",
+          "credit_limit_change",
+          "credit_limit",
+          "expiration_date",
+          "apr",
+          "card_declined",
+          "credit_score"
+        ],
+        "dev": [
+          "report_lost_card",
+          "rewards_balance",
+          "replacement_card_duration"
+        ],
+        "test": [
+          "redeem_rewards",
+          "improve_credit_score",
+          "damaged_card",
+          "application_status"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "calories",
+          "accept_reservations",
+          "restaurant_suggestion",
+          "food_last",
+          "cancel_reservation",
+          "restaurant_reservation",
+          "meal_suggestion",
+          "how_busy"
+        ],
+        "dev": [
+          "restaurant_reviews",
+          "cook_time",
+          "ingredient_substitution"
+        ],
+        "test": [
+          "confirm_reservation",
+          "recipe",
+          "nutrition_info",
+          "ingredients_list"
+        ]
+      },
+      "home": {
+        "practice": [
+          "todo_list",
+          "shopping_list_update",
+          "calendar",
+          "smart_home",
+          "todo_list_update",
+          "order",
+          "calendar_update",
+          "order_status"
+        ],
+        "dev": [
+          "play_music",
+          "shopping_list",
+          "what_song"
+        ],
+        "test": [
+          "next_song",
+          "reminder",
+          "reminder_update",
+          "update_playlist"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "schedule_maintenance",
+          "gas",
+          "tire_pressure",
+          "directions",
+          "last_maintenance",
+          "current_location",
+          "tire_change",
+          "gas_type"
+        ],
+        "dev": [
+          "oil_change_how",
+          "jump_start",
+          "traffic"
+        ],
+        "test": [
+          "uber",
+          "oil_change_when",
+          "mpg",
+          "distance"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "travel_notification",
+          "translate",
+          "plug_type",
+          "car_rental",
+          "international_visa",
+          "book_hotel",
+          "travel_alert",
+          "timezone"
+        ],
+        "dev": [
+          "vaccines",
+          "book_flight",
+          "lost_luggage"
+        ],
+        "test": [
+          "flight_status",
+          "travel_suggestion",
+          "exchange_rate",
+          "carry_on"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "make_call",
+          "measurement_conversion",
+          "share_location",
+          "weather",
+          "alarm",
+          "definition",
+          "calculator",
+          "flip_coin"
+        ],
+        "dev": [
+          "spelling",
+          "timer",
+          "roll_dice"
+        ],
+        "test": [
+          "date",
+          "text",
+          "time",
+          "find_phone"
+        ]
+      },
+      "work": {
+        "practice": [
+          "rollover_401k",
+          "payday",
+          "w2",
+          "direct_deposit",
+          "income",
+          "next_holiday",
+          "insurance_change",
+          "pto_balance"
+        ],
+        "dev": [
+          "taxes",
+          "pto_used",
+          "insurance"
+        ],
+        "test": [
+          "meeting_schedule",
+          "schedule_meeting",
+          "pto_request_status",
+          "pto_request"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "who_do_you_work_for",
+          "tell_joke",
+          "fun_fact",
+          "are_you_a_bot",
+          "where_are_you_from",
+          "thank_you",
+          "goodbye",
+          "how_old_are_you"
+        ],
+        "dev": [
+          "do_you_have_pets",
+          "what_is_your_name",
+          "what_are_your_hobbies"
+        ],
+        "test": [
+          "greeting",
+          "meaning_of_life",
+          "who_made_you",
+          "what_can_i_ask_you"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "change_language",
+          "whisper_mode",
+          "sync_device",
+          "repeat",
+          "change_ai_name",
+          "maybe",
+          "change_speed",
+          "no"
+        ],
+        "dev": [
+          "yes",
+          "change_accent",
+          "change_user_name"
+        ],
+        "test": [
+          "change_volume",
+          "reset_settings",
+          "user_name",
+          "cancel"
+        ]
+      }
+    },
+    "base_penalty": 0.3,
+    "settings": {
+      "supervised-0": [
+        0.1,
+        0.3
+      ],
+      "episodic-0": [
+        0.1,
+        0.3
+      ],
+      "supervised-60": [
+        0.0,
+        0.3
+      ],
+      "episodic-60": [
+        0.0,
+        0.3
+      ],
+      "supervised-120": [
+        0.25,
+        0.03
+      ],
+      "episodic-120": [
+        0.25,
+        0.03
+      ],
+      "supervised-240": [
+        0.25,
+        0.03
+      ],
+      "episodic-240": [
+        0.25,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2445,
+          75
+        ],
+        "stable": [
+          0.013924230804982339,
+          -0.0030998563218390812
+        ],
+        "reversed": [
+          0.017777467930842155,
+          0.0038218390804597574
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2464,
+          46
+        ],
+        "stable": [
+          0.012897658094746162,
+          0.0016632308845577204
+        ],
+        "reversed": [
+          0.015995390440525382,
+          0.0005329366566716662
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2442,
+          80
+        ],
+        "stable": [
+          0.01517710892710893,
+          0.037698679956896575
+        ],
+        "reversed": [
+          0.019842447044151584,
+          0.045248518318965536
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2464,
+          54
+        ],
+        "stable": [
+          0.01427084101977568,
+          0.0005188378033205571
+        ],
+        "reversed": [
+          0.01784244253615702,
+          0.004345266602809702
+        ]
+      }
+    }
+  },
+  {
+    "seed": 850,
+    "cut": 90,
+    "earlier_domains": [
+      "work",
+      "utility",
+      "credit_cards",
+      "travel",
+      "auto_and_commute"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "interest_rate",
+          "bill_balance",
+          "freeze_account",
+          "transactions",
+          "account_blocked",
+          "transfer",
+          "pin_change",
+          "min_payment"
+        ],
+        "dev": [
+          "bill_due",
+          "pay_bill",
+          "report_fraud"
+        ],
+        "test": [
+          "routing",
+          "spending_history",
+          "balance",
+          "order_checks"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "credit_limit",
+          "credit_score",
+          "card_declined",
+          "redeem_rewards",
+          "rewards_balance",
+          "damaged_card",
+          "international_fees",
+          "improve_credit_score"
+        ],
+        "dev": [
+          "apr",
+          "expiration_date",
+          "new_card"
+        ],
+        "test": [
+          "application_status",
+          "credit_limit_change",
+          "replacement_card_duration",
+          "report_lost_card"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "accept_reservations",
+          "ingredient_substitution",
+          "calories",
+          "recipe",
+          "meal_suggestion",
+          "cook_time",
+          "confirm_reservation",
+          "how_busy"
+        ],
+        "dev": [
+          "restaurant_reviews",
+          "restaurant_reservation",
+          "restaurant_suggestion"
+        ],
+        "test": [
+          "food_last",
+          "nutrition_info",
+          "ingredients_list",
+          "cancel_reservation"
+        ]
+      },
+      "home": {
+        "practice": [
+          "update_playlist",
+          "shopping_list",
+          "what_song",
+          "calendar_update",
+          "order",
+          "order_status",
+          "smart_home",
+          "reminder"
+        ],
+        "dev": [
+          "play_music",
+          "todo_list",
+          "reminder_update"
+        ],
+        "test": [
+          "todo_list_update",
+          "next_song",
+          "calendar",
+          "shopping_list_update"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "traffic",
+          "uber",
+          "jump_start",
+          "gas_type",
+          "tire_pressure",
+          "mpg",
+          "directions",
+          "oil_change_when"
+        ],
+        "dev": [
+          "last_maintenance",
+          "schedule_maintenance",
+          "distance"
+        ],
+        "test": [
+          "oil_change_how",
+          "tire_change",
+          "gas",
+          "current_location"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "flight_status",
+          "vaccines",
+          "timezone",
+          "book_flight",
+          "translate",
+          "lost_luggage",
+          "book_hotel",
+          "travel_suggestion"
+        ],
+        "dev": [
+          "carry_on",
+          "travel_alert",
+          "exchange_rate"
+        ],
+        "test": [
+          "car_rental",
+          "travel_notification",
+          "plug_type",
+          "international_visa"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "share_location",
+          "calculator",
+          "definition",
+          "make_call",
+          "timer",
+          "flip_coin",
+          "date",
+          "text"
+        ],
+        "dev": [
+          "weather",
+          "spelling",
+          "time"
+        ],
+        "test": [
+          "roll_dice",
+          "find_phone",
+          "measurement_conversion",
+          "alarm"
+        ]
+      },
+      "work": {
+        "practice": [
+          "payday",
+          "w2",
+          "pto_request_status",
+          "rollover_401k",
+          "pto_request",
+          "meeting_schedule",
+          "insurance_change",
+          "insurance"
+        ],
+        "dev": [
+          "next_holiday",
+          "pto_balance",
+          "income"
+        ],
+        "test": [
+          "direct_deposit",
+          "schedule_meeting",
+          "pto_used",
+          "taxes"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "thank_you",
+          "are_you_a_bot",
+          "how_old_are_you",
+          "fun_fact",
+          "what_are_your_hobbies",
+          "what_is_your_name",
+          "what_can_i_ask_you",
+          "meaning_of_life"
+        ],
+        "dev": [
+          "who_made_you",
+          "who_do_you_work_for",
+          "do_you_have_pets"
+        ],
+        "test": [
+          "tell_joke",
+          "goodbye",
+          "where_are_you_from",
+          "greeting"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "user_name",
+          "change_ai_name",
+          "sync_device",
+          "repeat",
+          "change_user_name",
+          "yes",
+          "change_language",
+          "reset_settings"
+        ],
+        "dev": [
+          "maybe",
+          "change_speed",
+          "cancel"
+        ],
+        "test": [
+          "change_volume",
+          "no",
+          "whisper_mode",
+          "change_accent"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.03
+      ],
+      "episodic-0": [
+        0.0,
+        0.03
+      ],
+      "supervised-60": [
+        0.1,
+        0.03
+      ],
+      "episodic-60": [
+        0.0,
+        0.03
+      ],
+      "supervised-120": [
+        0.1,
+        0.03
+      ],
+      "episodic-120": [
+        0.0,
+        0.03
+      ],
+      "supervised-240": [
+        0.25,
+        0.03
+      ],
+      "episodic-240": [
+        0.25,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2518,
+          30
+        ],
+        "stable": [
+          0.0005096825583074567,
+          0.0
+        ],
+        "reversed": [
+          0.0008752324175030704,
+          0.0
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2478,
+          67
+        ],
+        "stable": [
+          -0.0020879764656247697,
+          0.035608594956253216
+        ],
+        "reversed": [
+          -0.002465732537236774,
+          0.03721693257848688
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2516,
+          34
+        ],
+        "stable": [
+          5.871513224454429e-05,
+          0.0
+        ],
+        "reversed": [
+          0.00013916615479115865,
+          0.0
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2474,
+          67
+        ],
+        "stable": [
+          -0.002533163077827586,
+          -0.012360074626865666
+        ],
+        "reversed": [
+          -0.0032207113066803836,
+          -0.013083826556870813
+        ]
+      }
+    }
+  },
+  {
+    "seed": 851,
+    "cut": 150,
+    "earlier_domains": [
+      "kitchen_and_dining",
+      "home",
+      "travel",
+      "auto_and_commute",
+      "utility"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "interest_rate",
+          "min_payment",
+          "order_checks",
+          "freeze_account",
+          "bill_due",
+          "bill_balance",
+          "balance",
+          "routing"
+        ],
+        "dev": [
+          "account_blocked",
+          "pay_bill",
+          "pin_change"
+        ],
+        "test": [
+          "report_fraud",
+          "transfer",
+          "transactions",
+          "spending_history"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "application_status",
+          "report_lost_card",
+          "card_declined",
+          "international_fees",
+          "improve_credit_score",
+          "new_card",
+          "apr",
+          "rewards_balance"
+        ],
+        "dev": [
+          "replacement_card_duration",
+          "credit_score",
+          "expiration_date"
+        ],
+        "test": [
+          "credit_limit",
+          "damaged_card",
+          "redeem_rewards",
+          "credit_limit_change"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "ingredient_substitution",
+          "calories",
+          "cook_time",
+          "ingredients_list",
+          "recipe",
+          "accept_reservations",
+          "meal_suggestion",
+          "how_busy"
+        ],
+        "dev": [
+          "restaurant_reservation",
+          "cancel_reservation",
+          "restaurant_suggestion"
+        ],
+        "test": [
+          "nutrition_info",
+          "confirm_reservation",
+          "restaurant_reviews",
+          "food_last"
+        ]
+      },
+      "home": {
+        "practice": [
+          "next_song",
+          "order",
+          "reminder",
+          "play_music",
+          "calendar",
+          "what_song",
+          "calendar_update",
+          "shopping_list"
+        ],
+        "dev": [
+          "shopping_list_update",
+          "order_status",
+          "update_playlist"
+        ],
+        "test": [
+          "smart_home",
+          "todo_list",
+          "todo_list_update",
+          "reminder_update"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "directions",
+          "oil_change_how",
+          "last_maintenance",
+          "current_location",
+          "tire_pressure",
+          "gas_type",
+          "tire_change",
+          "distance"
+        ],
+        "dev": [
+          "traffic",
+          "jump_start",
+          "gas"
+        ],
+        "test": [
+          "oil_change_when",
+          "uber",
+          "mpg",
+          "schedule_maintenance"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "travel_notification",
+          "book_flight",
+          "car_rental",
+          "vaccines",
+          "international_visa",
+          "exchange_rate",
+          "carry_on",
+          "lost_luggage"
+        ],
+        "dev": [
+          "plug_type",
+          "flight_status",
+          "travel_alert"
+        ],
+        "test": [
+          "translate",
+          "travel_suggestion",
+          "book_hotel",
+          "timezone"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "find_phone",
+          "alarm",
+          "roll_dice",
+          "time",
+          "text",
+          "timer",
+          "definition",
+          "weather"
+        ],
+        "dev": [
+          "date",
+          "share_location",
+          "flip_coin"
+        ],
+        "test": [
+          "measurement_conversion",
+          "calculator",
+          "make_call",
+          "spelling"
+        ]
+      },
+      "work": {
+        "practice": [
+          "pto_balance",
+          "payday",
+          "taxes",
+          "direct_deposit",
+          "meeting_schedule",
+          "pto_used",
+          "next_holiday",
+          "rollover_401k"
+        ],
+        "dev": [
+          "insurance",
+          "income",
+          "schedule_meeting"
+        ],
+        "test": [
+          "pto_request_status",
+          "insurance_change",
+          "pto_request",
+          "w2"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "fun_fact",
+          "are_you_a_bot",
+          "goodbye",
+          "meaning_of_life",
+          "what_is_your_name",
+          "greeting",
+          "how_old_are_you",
+          "who_do_you_work_for"
+        ],
+        "dev": [
+          "who_made_you",
+          "where_are_you_from",
+          "thank_you"
+        ],
+        "test": [
+          "what_can_i_ask_you",
+          "do_you_have_pets",
+          "tell_joke",
+          "what_are_your_hobbies"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "no",
+          "reset_settings",
+          "sync_device",
+          "whisper_mode",
+          "change_language",
+          "change_user_name",
+          "change_volume",
+          "maybe"
+        ],
+        "dev": [
+          "repeat",
+          "yes",
+          "user_name"
+        ],
+        "test": [
+          "change_ai_name",
+          "change_accent",
+          "change_speed",
+          "cancel"
+        ]
+      }
+    },
+    "base_penalty": 0.03,
+    "settings": {
+      "supervised-0": [
+        0.1,
+        0.03
+      ],
+      "episodic-0": [
+        0.1,
+        0.03
+      ],
+      "supervised-60": [
+        0.0,
+        0.03
+      ],
+      "episodic-60": [
+        0.0,
+        0.03
+      ],
+      "supervised-120": [
+        0.0,
+        0.03
+      ],
+      "episodic-120": [
+        0.0,
+        0.03
+      ],
+      "supervised-240": [
+        0.1,
+        0.03
+      ],
+      "episodic-240": [
+        0.0,
+        0.03
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2459,
+          88
+        ],
+        "stable": [
+          -0.000375475988021734,
+          0.009713582484326008
+        ],
+        "reversed": [
+          -0.0004742550556397565,
+          0.010197271747648923
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2457,
+          88
+        ],
+        "stable": [
+          -0.001283438783438784,
+          0.007524735501567376
+        ],
+        "reversed": [
+          -0.0014909858659858666,
+          0.0073135041144200275
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2466,
+          94
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2464,
+          96
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  {
+    "seed": 852,
+    "cut": 190,
+    "earlier_domains": [
+      "meta",
+      "travel",
+      "work",
+      "home",
+      "credit_cards"
+    ],
+    "groups": {
+      "banking": {
+        "practice": [
+          "pay_bill",
+          "min_payment",
+          "order_checks",
+          "bill_due",
+          "report_fraud",
+          "account_blocked",
+          "spending_history",
+          "freeze_account"
+        ],
+        "dev": [
+          "pin_change",
+          "transfer",
+          "balance"
+        ],
+        "test": [
+          "bill_balance",
+          "interest_rate",
+          "transactions",
+          "routing"
+        ]
+      },
+      "credit_cards": {
+        "practice": [
+          "credit_limit",
+          "card_declined",
+          "credit_score",
+          "replacement_card_duration",
+          "report_lost_card",
+          "apr",
+          "improve_credit_score",
+          "damaged_card"
+        ],
+        "dev": [
+          "new_card",
+          "rewards_balance",
+          "expiration_date"
+        ],
+        "test": [
+          "redeem_rewards",
+          "credit_limit_change",
+          "international_fees",
+          "application_status"
+        ]
+      },
+      "kitchen_and_dining": {
+        "practice": [
+          "calories",
+          "recipe",
+          "how_busy",
+          "accept_reservations",
+          "restaurant_reservation",
+          "ingredients_list",
+          "nutrition_info",
+          "meal_suggestion"
+        ],
+        "dev": [
+          "restaurant_reviews",
+          "food_last",
+          "restaurant_suggestion"
+        ],
+        "test": [
+          "confirm_reservation",
+          "ingredient_substitution",
+          "cook_time",
+          "cancel_reservation"
+        ]
+      },
+      "home": {
+        "practice": [
+          "shopping_list",
+          "todo_list",
+          "calendar",
+          "next_song",
+          "play_music",
+          "todo_list_update",
+          "calendar_update",
+          "smart_home"
+        ],
+        "dev": [
+          "order",
+          "order_status",
+          "update_playlist"
+        ],
+        "test": [
+          "reminder_update",
+          "reminder",
+          "shopping_list_update",
+          "what_song"
+        ]
+      },
+      "auto_and_commute": {
+        "practice": [
+          "oil_change_when",
+          "directions",
+          "gas",
+          "gas_type",
+          "uber",
+          "tire_change",
+          "tire_pressure",
+          "schedule_maintenance"
+        ],
+        "dev": [
+          "last_maintenance",
+          "current_location",
+          "mpg"
+        ],
+        "test": [
+          "distance",
+          "jump_start",
+          "oil_change_how",
+          "traffic"
+        ]
+      },
+      "travel": {
+        "practice": [
+          "exchange_rate",
+          "flight_status",
+          "book_flight",
+          "carry_on",
+          "vaccines",
+          "international_visa",
+          "car_rental",
+          "translate"
+        ],
+        "dev": [
+          "plug_type",
+          "travel_suggestion",
+          "book_hotel"
+        ],
+        "test": [
+          "timezone",
+          "lost_luggage",
+          "travel_notification",
+          "travel_alert"
+        ]
+      },
+      "utility": {
+        "practice": [
+          "time",
+          "calculator",
+          "weather",
+          "definition",
+          "make_call",
+          "date",
+          "flip_coin",
+          "text"
+        ],
+        "dev": [
+          "timer",
+          "measurement_conversion",
+          "roll_dice"
+        ],
+        "test": [
+          "share_location",
+          "alarm",
+          "spelling",
+          "find_phone"
+        ]
+      },
+      "work": {
+        "practice": [
+          "next_holiday",
+          "insurance_change",
+          "insurance",
+          "income",
+          "taxes",
+          "pto_used",
+          "pto_request",
+          "schedule_meeting"
+        ],
+        "dev": [
+          "meeting_schedule",
+          "direct_deposit",
+          "payday"
+        ],
+        "test": [
+          "rollover_401k",
+          "w2",
+          "pto_request_status",
+          "pto_balance"
+        ]
+      },
+      "small_talk": {
+        "practice": [
+          "greeting",
+          "fun_fact",
+          "meaning_of_life",
+          "tell_joke",
+          "do_you_have_pets",
+          "what_can_i_ask_you",
+          "are_you_a_bot",
+          "where_are_you_from"
+        ],
+        "dev": [
+          "what_is_your_name",
+          "who_made_you",
+          "how_old_are_you"
+        ],
+        "test": [
+          "who_do_you_work_for",
+          "thank_you",
+          "goodbye",
+          "what_are_your_hobbies"
+        ]
+      },
+      "meta": {
+        "practice": [
+          "user_name",
+          "change_speed",
+          "no",
+          "maybe",
+          "change_accent",
+          "cancel",
+          "repeat",
+          "yes"
+        ],
+        "dev": [
+          "change_ai_name",
+          "change_volume",
+          "reset_settings"
+        ],
+        "test": [
+          "sync_device",
+          "whisper_mode",
+          "change_language",
+          "change_user_name"
+        ]
+      }
+    },
+    "base_penalty": 0.3,
+    "settings": {
+      "supervised-0": [
+        0.0,
+        0.3
+      ],
+      "episodic-0": [
+        0.0,
+        0.3
+      ],
+      "supervised-60": [
+        0.0,
+        0.3
+      ],
+      "episodic-60": [
+        0.1,
+        0.03
+      ],
+      "supervised-120": [
+        0.0,
+        0.3
+      ],
+      "episodic-120": [
+        0.0,
+        0.3
+      ],
+      "supervised-240": [
+        0.0,
+        0.3
+      ],
+      "episodic-240": [
+        0.0,
+        0.3
+      ]
+    },
+    "feedback": {
+      "earlier-supervised": {
+        "eligible": [
+          2510,
+          50
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-supervised": {
+        "eligible": [
+          2480,
+          80
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "earlier-episodic": {
+        "eligible": [
+          2510,
+          50
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      },
+      "recent-episodic": {
+        "eligible": [
+          2480,
+          80
+        ],
+        "stable": [
+          0.0,
+          0.0
+        ],
+        "reversed": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+]

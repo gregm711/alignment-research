@@ -1,0 +1,418 @@
+[
+  {
+    "seed": 241,
+    "dev": {
+      "uniform": 0.7583786231884058,
+      "practiced": 0.7197690217391305,
+      "fixed": 0.7579823369565218,
+      "adam": 0.71484375,
+      "adaptive": 0.7559442934782609
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        4.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        4.0
+      ],
+      "winner": [
+        "uniform",
+        0.4,
+        0.0
+      ]
+    },
+    "winner": "uniform",
+    "source_estimates": [
+      0.9047619047619048,
+      0.5476190476190477
+    ]
+  },
+  {
+    "seed": 242,
+    "dev": {
+      "uniform": 0.7138813405797103,
+      "practiced": 0.6996150362318841,
+      "fixed": 0.7163156702898551,
+      "adam": 0.6795742753623188,
+      "adaptive": 0.7203351449275361
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.1,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.1,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        4.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        4.0
+      ],
+      "winner": [
+        "fixed",
+        0.1,
+        0.25
+      ]
+    },
+    "winner": "fixed",
+    "source_estimates": [
+      0.9047619047619048,
+      0.5476190476190477
+    ]
+  },
+  {
+    "seed": 243,
+    "dev": {
+      "uniform": 0.7659080615942028,
+      "practiced": 0.6255095108695653,
+      "fixed": 0.7246376811594203,
+      "adam": 0.7181272644927535,
+      "adaptive": 0.7198822463768115
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.1,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.1,
+        4.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.1,
+        4.0
+      ],
+      "winner": [
+        "uniform",
+        0.4,
+        0.0
+      ]
+    },
+    "winner": "uniform",
+    "source_estimates": [
+      0.9047619047619048,
+      0.5952380952380952
+    ]
+  },
+  {
+    "seed": 244,
+    "dev": {
+      "uniform": 0.7378849637681159,
+      "practiced": 0.7169384057971014,
+      "fixed": 0.740432518115942,
+      "adam": 0.7004642210144928,
+      "adaptive": 0.73828125
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        4.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        4.0
+      ],
+      "winner": [
+        "fixed",
+        0.4,
+        0.25
+      ]
+    },
+    "winner": "fixed",
+    "source_estimates": [
+      0.8333333333333334,
+      0.6190476190476191
+    ]
+  },
+  {
+    "seed": 245,
+    "dev": {
+      "uniform": 0.7465466485507246,
+      "practiced": 0.6490036231884058,
+      "fixed": 0.7259397644927535,
+      "adam": 0.7010869565217391,
+      "adaptive": 0.7190896739130435
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        1.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        1.0
+      ],
+      "winner": [
+        "uniform",
+        0.4,
+        0.0
+      ]
+    },
+    "winner": "uniform",
+    "source_estimates": [
+      0.8809523809523809,
+      0.47619047619047616
+    ]
+  },
+  {
+    "seed": 246,
+    "dev": {
+      "uniform": 0.7458673007246377,
+      "practiced": 0.6855751811594203,
+      "fixed": 0.7419044384057972,
+      "adam": 0.69921875,
+      "adaptive": 0.7300724637681159
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        1.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        1.0
+      ],
+      "winner": [
+        "uniform",
+        0.4,
+        0.0
+      ]
+    },
+    "winner": "uniform",
+    "source_estimates": [
+      0.9285714285714286,
+      0.47619047619047616
+    ]
+  },
+  {
+    "seed": 247,
+    "dev": {
+      "uniform": 0.7196557971014493,
+      "practiced": 0.6584578804347826,
+      "fixed": 0.7086730072463769,
+      "adam": 0.6885190217391304,
+      "adaptive": 0.7043704710144928
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        1.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        1.0
+      ],
+      "winner": [
+        "uniform",
+        0.4,
+        0.0
+      ]
+    },
+    "winner": "uniform",
+    "source_estimates": [
+      0.9047619047619048,
+      0.5476190476190477
+    ]
+  },
+  {
+    "seed": 248,
+    "dev": {
+      "uniform": 0.7244678442028986,
+      "practiced": 0.6495131340579711,
+      "fixed": 0.7135982789855072,
+      "adam": 0.6849524456521738,
+      "adaptive": 0.7120697463768115
+    },
+    "configs": {
+      "uniform": [
+        "uniform",
+        0.4,
+        0.0
+      ],
+      "practiced": [
+        "practiced",
+        0.4,
+        1.0
+      ],
+      "fixed": [
+        "fixed",
+        0.4,
+        0.25
+      ],
+      "adam": [
+        "adam",
+        0.1,
+        0.0
+      ],
+      "adaptive": [
+        "adaptive",
+        0.4,
+        1.0
+      ],
+      "shuffled": [
+        "shuffled",
+        0.4,
+        1.0
+      ],
+      "winner": [
+        "uniform",
+        0.4,
+        0.0
+      ]
+    },
+    "winner": "uniform",
+    "source_estimates": [
+      0.9047619047619048,
+      0.5952380952380952
+    ]
+  }
+]

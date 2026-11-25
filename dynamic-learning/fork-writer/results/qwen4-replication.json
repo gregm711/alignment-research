@@ -1,0 +1,2110 @@
+{
+  "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+  "revision": "50d427756c6b1b2fe0c0a10f67fbda1fc8e82c1b",
+  "seed": 4702,
+  "modes": {
+    "full": {
+      "scores": {
+        "dates": {
+          "n": 24,
+          "present": 18,
+          "fork0": 16,
+          "fork1": 16,
+          "both": 10
+        },
+        "clinc": {
+          "n": 24,
+          "present": 15,
+          "fork0": 16,
+          "fork1": 20,
+          "both": 12
+        },
+        "overall": {
+          "n": 48,
+          "present": 33,
+          "fork0": 32,
+          "fork1": 36,
+          "both": 22
+        }
+      },
+      "rows": [
+        {
+          "id": 0,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 1,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 2,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 3,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 4,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 5,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 6,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 7,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 8,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 9,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 10,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 11,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 12,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 13,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 14,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 15,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 16,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 17,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 18,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 19,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 20,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 21,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 22,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 23,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 24,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 25,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 26,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 27,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 28,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 29,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 30,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 31,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 32,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 33,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 34,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 35,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 36,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 37,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 38,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 39,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 40,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 41,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 42,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 43,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 44,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 45,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 46,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 47,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        }
+      ],
+      "seconds": 50.28039870801149,
+      "byte_budget": null
+    },
+    "empty": {
+      "scores": {
+        "dates": {
+          "n": 24,
+          "present": 12,
+          "fork0": 8,
+          "fork1": 12,
+          "both": 2
+        },
+        "clinc": {
+          "n": 24,
+          "present": 12,
+          "fork0": 11,
+          "fork1": 12,
+          "both": 2
+        },
+        "overall": {
+          "n": 48,
+          "present": 24,
+          "fork0": 19,
+          "fork1": 24,
+          "both": 4
+        }
+      },
+      "rows": [
+        {
+          "id": 0,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 1,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 2,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 3,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 4,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 5,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 6,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 7,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 8,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 9,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 10,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 11,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 12,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 13,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 14,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 15,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 16,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 17,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 18,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 19,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 20,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 21,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 22,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 23,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 24,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 25,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 26,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 27,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 28,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 29,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 30,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 31,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 32,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 33,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 34,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 35,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 36,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 37,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 38,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 39,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 40,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 41,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 42,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 43,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 44,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 45,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 46,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 47,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        }
+      ],
+      "seconds": 18.123752500046976,
+      "byte_budget": null
+    },
+    "suffix": {
+      "scores": {
+        "dates": {
+          "n": 24,
+          "present": 12,
+          "fork0": 12,
+          "fork1": 9,
+          "both": 1
+        },
+        "clinc": {
+          "n": 24,
+          "present": 10,
+          "fork0": 10,
+          "fork1": 14,
+          "both": 3
+        },
+        "overall": {
+          "n": 48,
+          "present": 22,
+          "fork0": 22,
+          "fork1": 23,
+          "both": 4
+        }
+      },
+      "rows": [
+        {
+          "id": 0,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 1,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 2,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 3,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 4,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 5,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 6,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 7,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 8,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 9,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 10,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 11,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 12,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 13,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 14,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 15,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 16,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 17,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 18,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 19,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 20,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 21,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 22,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 23,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 24,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 25,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 26,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 27,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 28,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 29,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 30,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 31,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 32,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 33,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 34,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 35,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 36,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 37,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 38,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 39,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 40,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 41,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 42,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 43,
+          "domain": "clinc",
+          "gold": [
+            "A",
+            "A",
+            "B"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "B"
+          ]
+        },
+        {
+          "id": 44,
+          "domain": "dates",
+          "gold": [
+            "B",
+            "B",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "A"
+          ]
+        },
+        {
+          "id": 45,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "id": 46,
+          "domain": "clinc",
+          "gold": [
+            "B",
+            "A",
+            "A"
+          ],
+          "pred": [
+            "B",
+            "B",
+            "A"
+          ]
+        },
+        {
+          "id": 47,
+          "domain": "dates",
+          "gold": [
+            "A",
+            "B",
+            "B"
+          ],
+          "pred": [
+            "A",
+            "A",
+            "A"
+          ]
+        }
+      ],
+      "seconds": 29.491540624992922,
+      "byte_budget": 56
+    }
+  }
+}

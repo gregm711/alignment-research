@@ -1,7 +1,7 @@
 # alignment-research
 
-Small, cheap experiments in AI alignment and interpretability on open-weight models, plus the
-reading list and notes behind them.
+Small, cheap experiments in AI alignment, interpretability, and architectures that help
+models learn from experience, plus the reading list and notes behind them.
 
 ## Goal
 
@@ -21,6 +21,7 @@ don't go the way we hoped.
 | 3 | Does the answer survive the edit in other knowledge-conflict benchmarks, and does it move published results? (CPU only) | Two passes done: knowledge-conflict and sycophancy datasets | [`benchmark-audits/README.md`](benchmark-audits/README.md) |
 | 4 | When does looking inside a model beat reading the transcript? Text-only baselines against published deception probes (CPU only) | Probe test done and independently reviewed | [`inside-advantage/NOTE.md`](inside-advantage/NOTE.md) |
 | 5 | When a model loops, how much of its reasoning leaves the transcript, and can a probe recover it? | Done: on Ouro, more loops cut written reasoning 42% on a long chain, but the steps stay written. On Inkling, unwritten steps are partly readable inside | [`loop-legibility/README.md`](loop-legibility/README.md) |
+| 6 | How can a model learn a new rule from fewer examples and revise it when the evidence changes? | Forked-memory study tested which explanations survive a correction in two architectures. Earlier sleep-timing pilots found no advantage | [`dynamic-learning/`](dynamic-learning/README.md) |
 
 ## What's here
 

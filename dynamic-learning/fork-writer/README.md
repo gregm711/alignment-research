@@ -17,3 +17,19 @@ Report present accuracy, both-futures-correct accuracy, each fork, paired interv
 Add SmolLM2-135M-Instruct as a cheap lower-size control before any model outcomes. Give it the same full-history and empty-history screen; a pass would be eligible for the same confirmation. The 56-byte development cap and evidence checks are reported in [dev.md](dev.md).
 
 If all four initial checkpoints miss the per-domain screen, test Qwen3-4B-Instruct-2507 using its pinned MLX 4-bit conversion. Keep the same questions, byte accounting, fresh-seed replication and A/B readout. Different numerical precision and execution runtime limit direct timing and size comparisons. A stronger frozen reader can still qualify as a development reference while the task-specific compact controls preclude using these fixtures alone for an architectural claim.
+
+## Reader selection
+
+All five open checkpoints ran locally on the same 24 episodes. The unit is a history: both futures must be answered correctly to count as one joint success. All accepted gradients to an early continuous input with frozen decoder parameters. The full-history screen still rejected every model. The best joint count only exceeds the next by one history; this panel cannot establish a meaningful family ranking. Timings and precision differ by backend. [Artificial Analysis and Hugging Face catalog](catalog.md) · [PyTorch runtime checks](results/runtime-checks.json) · [MLX reader and gradient check](reader_mlx.py)
+
+| Reader | Present with full history /24 | Both futures with full history /24 | Both with empty history /24 | Both with 56-byte suffix /24 |
+|---|---:|---:|---:|---:|
+| SmolLM2-135M-Instruct | 10 | 6 | 6 | 6 |
+| LFM2.5-350M | 11 | 5 | 4 | 6 |
+| LFM2.5-1.2B-Instruct | 11 | 5 | 1 | 5 |
+| Qwen3-1.7B | 18 | 11 | 4 | 2 |
+| Qwen3-4B-Instruct-2507, MLX 4-bit | 19 | 12 | 1 | 3 |
+
+We retained the 4B checkpoint as a diagnostic reference and ran it on 48 new development histories. With full context it solved both futures on 10/24 date and 12/24 intent histories (22/48 combined) and got 33/48 present decisions correct. Its weak performance leaves the chief source of any later failure ambiguous. A 56-byte writer using pretrained MiniLM signatures on intent and fitted date grammar on dates solved 44/48 forecasting pairs with no per-episode intent labels. The baseline gets a task-specific encoder and a pretrained representation; its 56-byte limit applies to persistent episode state. The registered spending gate stays closed. [Development controls](dev.md) · [Qwen replication](results/qwen4-replication.json)
+
+The matched-present slice and state-swap interventions belong to a comparison of trained writers. No writer was trained in this stage, no confirmation corpus was opened, and all compute was local.

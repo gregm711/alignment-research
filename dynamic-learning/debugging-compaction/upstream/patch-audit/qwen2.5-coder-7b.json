@@ -1,0 +1,804 @@
+{
+  "calls": {
+    "4b3de939611419f4a82a3ebd7740b5dc91d475cfee93340312a853bdf400d512": {
+      "text": "{\n    \"old\": \"min_buffer = (n - 1) * (n - 2)\",\n    \"new\": \"min_buffer = n\"\n}",
+      "input_tokens": 588,
+      "output_tokens": 34,
+      "duration_ms": 5887,
+      "finish": "stop"
+    },
+    "6811759efc5781203d825d35dbda86621f65759783418e505ce1e82c3fb40fe1": {
+      "text": "Progress: Investigated issue with nonpositive chunk sizes and unexpected source touches. Found failing test `test_zero_chunk_size`. Current diagnosis points to a bug in the chunking logic. \n\nNext Action: Checkout commit 67e146d019f8 for independent verification. Review code changes made in this commit to understand the root cause of the issue.",
+      "input_tokens": 137,
+      "output_tokens": 76,
+      "duration_ms": 2035,
+      "finish": "stop"
+    },
+    "8ba3a824b6395ac3f7a7d4cbe38a5d3b9033803ee669b431f7139a804c558fdf": {
+      "text": "{\n    \"old\": \"n\",\n    \"new\": \"min_buffer\"\n}",
+      "input_tokens": 764,
+      "output_tokens": 18,
+      "duration_ms": 2239,
+      "finish": "stop"
+    },
+    "2383d3716f526cb4ac757fe725d9f2db4a8e4e0554145239813b5edd56a4a0b0": {
+      "text": "{\n    \"old\": \"min_buffer = n\",\n    \"new\": \"min_buffer = max(1, n)\"\n}",
+      "input_tokens": 766,
+      "output_tokens": 27,
+      "duration_ms": 2225,
+      "finish": "stop"
+    },
+    "1e049617d3cfb0d3bcf3e771dc2eb208657645b2d83e3d6a72a865f2c40b9717": {
+      "text": "{ \"old\": \"n\", \"new\": \"1\" }",
+      "input_tokens": 766,
+      "output_tokens": 15,
+      "duration_ms": 2014,
+      "finish": "stop"
+    },
+    "2becb2c99c18cd6707a5f4f904ab2729d337ed1a4d2a06418bb48436dff83bbb": {
+      "text": "{ \"old\": \"n\", \"new\": \"1\" }",
+      "input_tokens": 766,
+      "output_tokens": 15,
+      "duration_ms": 1882,
+      "finish": "stop"
+    },
+    "9b4ef5f302f2e854b6bacd71862bcde06c945618585c42b16c9803c5610a45ca": {
+      "text": "{\n    \"old\": \"min_buffer = (n - 1) * (n - 2)\",\n    \"new\": \"min_buffer = max(0, (n - 1) * (n - 2))\"\n}",
+      "input_tokens": 772,
+      "output_tokens": 49,
+      "duration_ms": 2733,
+      "finish": "stop"
+    },
+    "4325644e8661479fa4c8c707af8d8ce4547315801875c9bf103556fa21007e33": {
+      "text": "{\n    \"old\": \"min_buffer = (n - 1) * (n - 2)\",\n    \"new\": \"min_buffer = max(0, (n - 1) * (n - 2))\"\n}",
+      "input_tokens": 772,
+      "output_tokens": 49,
+      "duration_ms": 2615,
+      "finish": "stop"
+    },
+    "4b53053fd459bb5a2ae965045e4a05d6f32a849f530746a531e8abd3c1c55e39": {
+      "text": "{\n    \"old\": \"if n == 0:\",\n    \"new\": \"if n <= 0:\"\n}",
+      "input_tokens": 806,
+      "output_tokens": 25,
+      "duration_ms": 2304,
+      "finish": "stop"
+    },
+    "47c5518239ae67ad416632ddcc63fdbb2da427cad64e51695ee547b27cb24de3": {
+      "text": "{\n    \"old\": \"if n == 0:\",\n    \"new\": \"if n <= 0:\"\n}",
+      "input_tokens": 806,
+      "output_tokens": 25,
+      "duration_ms": 2345,
+      "finish": "stop"
+    },
+    "a8abbfb94c97339d91336f09a23cbc8a430c99f95f3c9a5a675808ac7376ceec": {
+      "text": "{\n    \"old\": \"self._validator = validator or (lambda x: True)\",\n    \"new\": \"self._validator = validator or (lambda x: True)\"\n}",
+      "input_tokens": 148,
+      "output_tokens": 37,
+      "duration_ms": 1008,
+      "finish": "stop"
+    },
+    "96233351b9006cfb32177a75c6aa4d53d29e346e7a809564c08dd2ce66ebd224": {
+      "text": "The issue involves a bucket accepting keys rejected by a user-supplied callable validator. The test `test_falsey_validator_is_honoured` failed, while `116d8335ce28` passed. The deployment tracker suggests `116d8335ce28` is the current function. Await an independent checkout check. Next, review the validator implementation and ensure it correctly rejects keys.",
+      "input_tokens": 138,
+      "output_tokens": 88,
+      "duration_ms": 2265,
+      "finish": "stop"
+    },
+    "7edd16d38114f5f4cd747a19ff2ffc76aa7396472f55852b62b0e26bd9c44802": {
+      "text": "{\n    \"old\": \"validator or (lambda x: True)\",\n    \"new\": \"validator or (lambda x: True) if validator is not None else (lambda x: True)\"\n}",
+      "input_tokens": 429,
+      "output_tokens": 41,
+      "duration_ms": 1655,
+      "finish": "stop"
+    },
+    "4731b6834d49030bf3c69fb89f09b5b94af5519f1952f7efa635ff60c4043d8e": {
+      "text": "{\n    \"old\": \"validator or (lambda x: True)\",\n    \"new\": \"validator or (lambda x: True) if validator is not None else (lambda x: True)\"\n}",
+      "input_tokens": 430,
+      "output_tokens": 41,
+      "duration_ms": 1610,
+      "finish": "stop"
+    },
+    "b3d3ca60841bb3ec2a461630373cdc9bbb073a17be107a696902f1abf54dab05": {
+      "text": "{\n    \"old\": \"validator or (lambda x: True)\",\n    \"new\": \"validator or (lambda x: True) if validator is not None else (lambda x: True)\"\n}",
+      "input_tokens": 430,
+      "output_tokens": 41,
+      "duration_ms": 1618,
+      "finish": "stop"
+    },
+    "cce47a9820464c92044463989b9e1b460494a23e2aea03dbea69518b7a20f643": {
+      "text": "{\n    \"old\": \"validator or (lambda x: True)\",\n    \"new\": \"validator or (lambda x: True) if validator is not None else (lambda x: True)\"\n}",
+      "input_tokens": 430,
+      "output_tokens": 41,
+      "duration_ms": 1610,
+      "finish": "stop"
+    },
+    "0df808981397e1f6825bede6533de581ca3cc510d40dd7b59f55847bc14f1b80": {
+      "text": "{ \"old\": \"self._validator = (lambda x: True) if validator is None else validator\", \"new\": \"self._validator = validator if validator is not None else (lambda x: True)\" }",
+      "input_tokens": 493,
+      "output_tokens": 45,
+      "duration_ms": 1841,
+      "finish": "stop"
+    },
+    "e55c67457e25c25400657b8335bbcc24446376ea96afdd87cb3d0650fd56ee1f": {
+      "text": "{ \"old\": \"self._validator = (lambda x: True) if validator is None else validator\", \"new\": \"self._validator = validator if validator is not None else (lambda x: True)\" }",
+      "input_tokens": 493,
+      "output_tokens": 45,
+      "duration_ms": 1799,
+      "finish": "stop"
+    },
+    "aa454904d487a9289a7645fe9ea9a7e2cef482432ab4a6b5f8ba11886e8a5eb3": {
+      "text": "{\"old\": \"len\", \"new\": \"n\"}",
+      "input_tokens": 404,
+      "output_tokens": 13,
+      "duration_ms": 973,
+      "finish": "stop"
+    },
+    "7b47439fec1382c38de7aade55b36208eb353d1cb91574123bba8d0ac105c2b5": {
+      "text": "**Handoff Summary:**\n\n**Issue:** Invalid slice lengths can silently produce misleading chunks instead of rejecting the request.\n\n**Test Results:**\n- `5719564e3abc`: FAIL\n- `7c4c5f1c2666`: PASS\n\n**Current Diagnosis:**\nThe function `7c4c5f1c2666` is currently deployed and passes the test. However, the `571",
+      "input_tokens": 130,
+      "output_tokens": 96,
+      "duration_ms": 2457,
+      "finish": "length"
+    },
+    "b35288291086d5f956445c1b8719ae176034076f046f69d6caaf56c7fcd6c5d1": {
+      "text": "{\n    \"old\": \"len\",\n    \"new\": \"n\"\n}",
+      "input_tokens": 598,
+      "output_tokens": 17,
+      "duration_ms": 1756,
+      "finish": "stop"
+    },
+    "ed0aa4363b3a0718ad6ecfd8c9d2af4e83b8c3cb7302cd980d145ee62019d9f9": {
+      "text": "{\n    \"old\": \"len\",\n    \"new\": \"n\"\n}",
+      "input_tokens": 607,
+      "output_tokens": 17,
+      "duration_ms": 1573,
+      "finish": "stop"
+    },
+    "5eb5b8950e0227187f3947d0f51de3dacf5cdbb5e05da4acb12295c4ce4bf6e6": {
+      "text": "{ \"old\": \"len\", \"new\": \"n\" }",
+      "input_tokens": 607,
+      "output_tokens": 15,
+      "duration_ms": 1520,
+      "finish": "stop"
+    },
+    "b1704e84fcfb4189c7a28e0540ad2612c56f9c5890c17a4fa9efe35648506068": {
+      "text": "{ \"old\": \"len\", \"new\": \"n\" }",
+      "input_tokens": 607,
+      "output_tokens": 15,
+      "duration_ms": 1397,
+      "finish": "stop"
+    },
+    "c29ea5157274a209f662730d6d0bc08026860a0dc4a345f0680d563e14524952": {
+      "text": "{ \"old\": \"if n < 0:\", \"new\": \"if n <= 0:\" }",
+      "input_tokens": 628,
+      "output_tokens": 23,
+      "duration_ms": 1842,
+      "finish": "stop"
+    },
+    "528f47d8b987eae057922cebb1b67194783d97962d1e4339c8c5f0bfb217c5c8": {
+      "text": "{ \"old\": \"if n < 0:\", \"new\": \"if n <= 0:\" }",
+      "input_tokens": 628,
+      "output_tokens": 23,
+      "duration_ms": 1543,
+      "finish": "stop"
+    },
+    "d334f3a601aa2720918f39ca37e9a926a03f9735e173ed34ce766aa1e74635ae": {
+      "text": "{\"old\": \"StopIteration\", \"new\": \"\"}",
+      "input_tokens": 208,
+      "output_tokens": 13,
+      "duration_ms": 595,
+      "finish": "stop"
+    },
+    "d4f944d0f530c1622d413a80918b8b56cbf746d5c1bb40cb3b7fd9f9ad928ec6": {
+      "text": "Progress: Investigated the issue with a stepping callback using StopIteration to signal sequence completion. Found a discrepancy between expected and actual behavior in the test function.\n\nCurrent Diagnosis: The test function `test_func_controls_iteration_stop` is failing, indicating a potential bug in how the callback handles StopIteration.\n\nNext Action: Await an independent checkout check to confirm the current function. Once confirmed, proceed with debugging the callback logic to ensure proper handling of StopIteration.",
+      "input_tokens": 140,
+      "output_tokens": 91,
+      "duration_ms": 2322,
+      "finish": "stop"
+    },
+    "30cc366ea28a807ed8297fd48d3962a46d0200ab4606cf4d99820afb3339b219": {
+      "text": "{\n    \"old\": \"StopIteration\",\n    \"new\": \"Exception\"\n}",
+      "input_tokens": 464,
+      "output_tokens": 18,
+      "duration_ms": 1220,
+      "finish": "stop"
+    },
+    "dfbff756b96ddde1b9613138e67526429996f4777d160c0260affb0330282287": {
+      "text": "{ \"old\": \"StopIteration\", \"new\": \"return\" }",
+      "input_tokens": 463,
+      "output_tokens": 16,
+      "duration_ms": 1093,
+      "finish": "stop"
+    },
+    "efe682f00659f66df140c642aaaec745c0350c24756389783b2877f82dbeb2a1": {
+      "text": "{\n    \"old\": \"StopIteration\",\n    \"new\": \"Exception\"\n}",
+      "input_tokens": 463,
+      "output_tokens": 18,
+      "duration_ms": 1124,
+      "finish": "stop"
+    },
+    "2a3409aeaf14b85f51353d7563ccecf967f6aaca8cef884932dfe852c1e59cae": {
+      "text": "{\n    \"old\": \"yield start\",\n    \"new\": \"yield start\\n        if start > 100:\\n            raise StopIteration\"\n}",
+      "input_tokens": 463,
+      "output_tokens": 34,
+      "duration_ms": 1456,
+      "finish": "stop"
+    },
+    "8596b132fd2c91234a9d368eb507122d41220ee57ae1794c31781c2571ec4574": {
+      "text": "{ \"old\": \"except StopIteration:\", \"new\": \"except StopIteration as e:\" }",
+      "input_tokens": 474,
+      "output_tokens": 21,
+      "duration_ms": 1314,
+      "finish": "stop"
+    },
+    "69043470c176a99f088b590119be4a0d43f092ce0d6cddbb0d2d0671e4409a73": {
+      "text": "{ \"old\": \"except StopIteration:\", \"new\": \"except StopIteration as e:\" }",
+      "input_tokens": 474,
+      "output_tokens": 21,
+      "duration_ms": 1234,
+      "finish": "stop"
+    }
+  },
+  "cases": {
+    "chunked_even": {
+      "scores": {
+        "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 10,
+          "failures": 3,
+          "errors": 1,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 6,
+            "other_total": 9
+          }
+        },
+        "00e7bca3fd08972c7bdd82639b137c495cbca4397b2f414fc0585f24ebc9d022": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 10,
+          "failures": 3,
+          "errors": 1,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 6,
+            "other_total": 9
+          }
+        },
+        "b1bcfff740ea2dc6c70b81496d95889d6496d95f18734341af783036f71fcd77": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 10,
+          "failures": 1,
+          "errors": 1,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 8,
+            "other_total": 9
+          }
+        },
+        "555de8f8e390ed0f6e5461a4c2c1b34a1a2be25fa63065807d2697ed2530ff63": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 10,
+          "failures": 1,
+          "errors": 1,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 8,
+            "other_total": 9
+          }
+        },
+        "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 9,
+            "other_total": 9
+          }
+        },
+        "90009877445e96cdb3011f95b65034a4344b65012da8631dfcbdb9d7af9c73d0": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 9,
+            "other_total": 9
+          }
+        }
+      },
+      "measurements": {
+        "b1bcfff740ea2dc6c70b81496d95889d6496d95f18734341af783036f71fcd77": false,
+        "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0": true,
+        "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9": false
+      },
+      "branches": {
+        "own/full": {
+          "call": "8ba3a824b6395ac3f7a7d4cbe38a5d3b9033803ee669b431f7139a804c558fdf",
+          "note": "Issue: Even chunking behaves incorrectly for nonpositive chunk sizes and can touch the source unexpectedly.\nTest: test_zero_chunk_size\nRecorded test outcomes by function digest:\n236d5c51c12c: FAIL\n67e146d019f8: PASS\nThe deployment tracker provisionally identifies 67e146d019f8 as the current function. Await an independent checkout check.",
+          "action": "unmatched",
+          "before": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "after": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "foil": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0"
+        },
+        "own/ordinary": {
+          "call": "2383d3716f526cb4ac757fe725d9f2db4a8e4e0554145239813b5edd56a4a0b0",
+          "note": "Progress: Investigated issue with nonpositive chunk sizes and unexpected source touches. Found failing test `test_zero_chunk_size`. Current diagnosis points to a bug in the chunking logic. \n\nNext Action: Checkout commit 67e146d019f8 for independent verification. Review code changes made in this commit to understand the root cause of the issue.\nPadding: . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "after": "00e7bca3fd08972c7bdd82639b137c495cbca4397b2f414fc0585f24ebc9d022",
+          "foil": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0"
+        },
+        "own/stale": {
+          "call": "1e049617d3cfb0d3bcf3e771dc2eb208657645b2d83e3d6a72a865f2c40b9717",
+          "note": "236d5c51c12c: FAIL\n67e146d019f8: PASS\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "after": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "foil": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0"
+        },
+        "own/verified": {
+          "call": "2becb2c99c18cd6707a5f4f904ab2729d337ed1a4d2a06418bb48436dff83bbb",
+          "note": "236d5c51c12c: FAIL\n67e146d019f8: PASS\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "after": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9",
+          "foil": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0"
+        },
+        "parent/stale": {
+          "call": "9b4ef5f302f2e854b6bacd71862bcde06c945618585c42b16c9803c5610a45ca",
+          "note": "b1bcfff740ea: FAIL\n67e146d019f8: PASS\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "b1bcfff740ea2dc6c70b81496d95889d6496d95f18734341af783036f71fcd77",
+          "after": "555de8f8e390ed0f6e5461a4c2c1b34a1a2be25fa63065807d2697ed2530ff63",
+          "foil": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0"
+        },
+        "parent/verified": {
+          "call": "4325644e8661479fa4c8c707af8d8ce4547315801875c9bf103556fa21007e33",
+          "note": "b1bcfff740ea: FAIL\n67e146d019f8: PASS\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "b1bcfff740ea2dc6c70b81496d95889d6496d95f18734341af783036f71fcd77",
+          "after": "555de8f8e390ed0f6e5461a4c2c1b34a1a2be25fa63065807d2697ed2530ff63",
+          "foil": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0"
+        },
+        "fixed/stale": {
+          "call": "4b53053fd459bb5a2ae965045e4a05d6f32a849f530746a531e8abd3c1c55e39",
+          "note": "67e146d019f8: PASS\nb1bcfff740ea: FAIL\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0",
+          "after": "90009877445e96cdb3011f95b65034a4344b65012da8631dfcbdb9d7af9c73d0",
+          "foil": "b1bcfff740ea2dc6c70b81496d95889d6496d95f18734341af783036f71fcd77"
+        },
+        "fixed/verified": {
+          "call": "47c5518239ae67ad416632ddcc63fdbb2da427cad64e51695ee547b27cb24de3",
+          "note": "67e146d019f8: PASS\nb1bcfff740ea: FAIL\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "67e146d019f8ac553c0b8af90d5166ed174c16560dcabb8b184f1d274d4ea8c0",
+          "after": "90009877445e96cdb3011f95b65034a4344b65012da8631dfcbdb9d7af9c73d0",
+          "foil": "b1bcfff740ea2dc6c70b81496d95889d6496d95f18734341af783036f71fcd77"
+        }
+      },
+      "first": {
+        "call": "4b3de939611419f4a82a3ebd7740b5dc91d475cfee93340312a853bdf400d512",
+        "action": "edit",
+        "source_sha256": "236d5c51c12c3f1c2208cda39170f4b7d8651b8cf0759ba3cf4e4029588715b9"
+      },
+      "summary": "6811759efc5781203d825d35dbda86621f65759783418e505ce1e82c3fb40fe1"
+    },
+    "bucket.__init__": {
+      "scores": {
+        "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 10,
+          "failures": 1,
+          "errors": 0,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 9,
+            "other_total": 9
+          }
+        },
+        "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 10,
+          "failures": 1,
+          "errors": 0,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 9,
+            "other_total": 9
+          }
+        },
+        "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 9,
+            "other_total": 9
+          }
+        },
+        "7674e60a41ccb3e851be4707a0043e97d87ef132b9f8106648e62afbfc226091": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 9,
+            "other_total": 9
+          }
+        }
+      },
+      "measurements": {
+        "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab": false,
+        "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf": true
+      },
+      "branches": {
+        "own/full": {
+          "call": "7edd16d38114f5f4cd747a19ff2ffc76aa7396472f55852b62b0e26bd9c44802",
+          "note": "Issue: A bucket with a user-supplied callable validator can admit keys that the validator rejects.\nTest: test_falsey_validator_is_honoured\nRecorded test outcomes by function digest:\n116d8335ce28: PASS\n0ad81f45746d: FAIL\nThe deployment tracker provisionally identifies 116d8335ce28 as the current function. Await an independent checkout check.",
+          "action": "edit",
+          "before": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab",
+          "after": "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30",
+          "foil": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf"
+        },
+        "own/ordinary": {
+          "call": "4731b6834d49030bf3c69fb89f09b5b94af5519f1952f7efa635ff60c4043d8e",
+          "note": "The issue involves a bucket accepting keys rejected by a user-supplied callable validator. The test `test_falsey_validator_is_honoured` failed, while `116d8335ce28` passed. The deployment tracker suggests `116d8335ce28` is the current function. Await an independent checkout check. Next, review the validator implementation and ensure it correctly rejects keys.\nPadding: . . . . . . .",
+          "action": "edit",
+          "before": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab",
+          "after": "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30",
+          "foil": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf"
+        },
+        "own/stale": {
+          "call": "b3d3ca60841bb3ec2a461630373cdc9bbb073a17be107a696902f1abf54dab05",
+          "note": "116d8335ce28: PASS\n0ad81f45746d: FAIL\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab",
+          "after": "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30",
+          "foil": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf"
+        },
+        "own/verified": {
+          "call": "cce47a9820464c92044463989b9e1b460494a23e2aea03dbea69518b7a20f643",
+          "note": "116d8335ce28: PASS\n0ad81f45746d: FAIL\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab",
+          "after": "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30",
+          "foil": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf"
+        },
+        "parent/stale": {
+          "call": "b3d3ca60841bb3ec2a461630373cdc9bbb073a17be107a696902f1abf54dab05",
+          "note": "116d8335ce28: PASS\n0ad81f45746d: FAIL\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab",
+          "after": "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30",
+          "foil": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf"
+        },
+        "parent/verified": {
+          "call": "cce47a9820464c92044463989b9e1b460494a23e2aea03dbea69518b7a20f643",
+          "note": "116d8335ce28: PASS\n0ad81f45746d: FAIL\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab",
+          "after": "a9ca448aa79b1a1bc0f38c477a32898928b3fd26ae3942170e5d3bad8702be30",
+          "foil": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf"
+        },
+        "fixed/stale": {
+          "call": "0df808981397e1f6825bede6533de581ca3cc510d40dd7b59f55847bc14f1b80",
+          "note": "0ad81f45746d: FAIL\n116d8335ce28: PASS\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf",
+          "after": "7674e60a41ccb3e851be4707a0043e97d87ef132b9f8106648e62afbfc226091",
+          "foil": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab"
+        },
+        "fixed/verified": {
+          "call": "e55c67457e25c25400657b8335bbcc24446376ea96afdd87cb3d0650fd56ee1f",
+          "note": "0ad81f45746d: FAIL\n116d8335ce28: PASS\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "116d8335ce281a34a5f381a1821ce46e873259a4ee2ee1296ff175deee115bcf",
+          "after": "7674e60a41ccb3e851be4707a0043e97d87ef132b9f8106648e62afbfc226091",
+          "foil": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab"
+        }
+      },
+      "first": {
+        "call": "a8abbfb94c97339d91336f09a23cbc8a430c99f95f3c9a5a675808ac7376ceec",
+        "action": "unchanged",
+        "source_sha256": "0ad81f45746d92c22a6eb83eb6eede8080ced05a2e4b9e8607b6eef183e4a5ab"
+      },
+      "summary": "96233351b9006cfb32177a75c6aa4d53d29e346e7a809564c08dd2ce66ebd224"
+    },
+    "sliced": {
+      "scores": {
+        "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 6,
+          "failures": 1,
+          "errors": 0,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 5,
+            "other_total": 5
+          }
+        },
+        "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 5,
+            "other_total": 5
+          }
+        },
+        "9cdded2e07a9c75594b3ee667d92bd5518fd4099520e57035480425de45e9483": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 5,
+            "other_total": 5
+          }
+        }
+      },
+      "measurements": {
+        "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b": false,
+        "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07": true
+      },
+      "branches": {
+        "own/full": {
+          "call": "b35288291086d5f956445c1b8719ae176034076f046f69d6caaf56c7fcd6c5d1",
+          "note": "Issue: Invalid slice lengths can silently produce misleading chunks instead of rejecting the request.\nTest: test_negative\nRecorded test outcomes by function digest:\n5719564e3abc: FAIL\n7c4c5f1c2666: PASS\nThe deployment tracker provisionally identifies 7c4c5f1c2666 as the current function. Await an independent checkout check.",
+          "action": "unmatched",
+          "before": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "after": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "foil": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07"
+        },
+        "own/ordinary": {
+          "call": "ed0aa4363b3a0718ad6ecfd8c9d2af4e83b8c3cb7302cd980d145ee62019d9f9",
+          "note": "**Handoff Summary:**\n\n**Issue:** Invalid slice lengths can silently produce misleading chunks instead of rejecting the request.\n\n**Test Results:**\n- `5719564e3abc`: FAIL\n- `7c4c5f1c2666`: PASS\n\n**Current Diagnosis:**\nThe function `7c4c5f1c2666` is currently deployed and passes the test. However, the `\nPadding: .",
+          "action": "unmatched",
+          "before": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "after": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "foil": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07"
+        },
+        "own/stale": {
+          "call": "5eb5b8950e0227187f3947d0f51de3dacf5cdbb5e05da4acb12295c4ce4bf6e6",
+          "note": "5719564e3abc: FAIL\n7c4c5f1c2666: PASS\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "after": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "foil": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07"
+        },
+        "own/verified": {
+          "call": "b1704e84fcfb4189c7a28e0540ad2612c56f9c5890c17a4fa9efe35648506068",
+          "note": "5719564e3abc: FAIL\n7c4c5f1c2666: PASS\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "after": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "foil": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07"
+        },
+        "parent/stale": {
+          "call": "5eb5b8950e0227187f3947d0f51de3dacf5cdbb5e05da4acb12295c4ce4bf6e6",
+          "note": "5719564e3abc: FAIL\n7c4c5f1c2666: PASS\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "after": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "foil": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07"
+        },
+        "parent/verified": {
+          "call": "b1704e84fcfb4189c7a28e0540ad2612c56f9c5890c17a4fa9efe35648506068",
+          "note": "5719564e3abc: FAIL\n7c4c5f1c2666: PASS\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "after": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b",
+          "foil": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07"
+        },
+        "fixed/stale": {
+          "call": "c29ea5157274a209f662730d6d0bc08026860a0dc4a345f0680d563e14524952",
+          "note": "7c4c5f1c2666: PASS\n5719564e3abc: FAIL\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07",
+          "after": "9cdded2e07a9c75594b3ee667d92bd5518fd4099520e57035480425de45e9483",
+          "foil": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b"
+        },
+        "fixed/verified": {
+          "call": "528f47d8b987eae057922cebb1b67194783d97962d1e4339c8c5f0bfb217c5c8",
+          "note": "7c4c5f1c2666: PASS\n5719564e3abc: FAIL\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "7c4c5f1c26664549c83b86fa0822c94bc5d38fc26c2543248460bc7d7becce07",
+          "after": "9cdded2e07a9c75594b3ee667d92bd5518fd4099520e57035480425de45e9483",
+          "foil": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b"
+        }
+      },
+      "first": {
+        "call": "aa454904d487a9289a7645fe9ea9a7e2cef482432ab4a6b5f8ba11886e8a5eb3",
+        "action": "unmatched",
+        "source_sha256": "5719564e3abc9289d284331338608d3c2191f31c640519cb2ccfab8c17af238b"
+      },
+      "summary": "7b47439fec1382c38de7aade55b36208eb353d1cb91574123bba8d0ac105c2b5"
+    },
+    "iterate": {
+      "scores": {
+        "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 3,
+          "failures": 0,
+          "errors": 1,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 2,
+            "other_total": 2
+          }
+        },
+        "a7fadc71c85ca2c445500b6300ec9505d3b92214c818c6ee74c2b1c81ca3b2ff": {
+          "valid": true,
+          "passed": false,
+          "class_passed": false,
+          "class_tests": 3,
+          "failures": 0,
+          "errors": 2,
+          "withheld_passed": false,
+          "audit": {
+            "named_passed": false,
+            "other_passed": 1,
+            "other_total": 2
+          }
+        },
+        "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 2,
+            "other_total": 2
+          }
+        },
+        "6c681d7bd86591932d81aa4e39081f35b92f49818b73445457a444fc0529a1fc": {
+          "valid": true,
+          "passed": true,
+          "class_passed": true,
+          "class_tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "withheld_passed": true,
+          "audit": {
+            "named_passed": true,
+            "other_passed": 2,
+            "other_total": 2
+          }
+        }
+      },
+      "measurements": {
+        "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05": false,
+        "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08": true
+      },
+      "branches": {
+        "own/full": {
+          "call": "30cc366ea28a807ed8297fd48d3962a46d0200ab4606cf4d99820afb3339b219",
+          "note": "Issue: A stepping callback uses StopIteration to signal that its sequence is finished, but the caller gets an error.\nTest: test_func_controls_iteration_stop\nRecorded test outcomes by function digest:\na64d6a16e171: PASS\n93e14b86f9ea: FAIL\nThe deployment tracker provisionally identifies a64d6a16e171 as the current function. Await an independent checkout check.",
+          "action": "unmatched",
+          "before": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "after": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "foil": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08"
+        },
+        "own/ordinary": {
+          "call": "dfbff756b96ddde1b9613138e67526429996f4777d160c0260affb0330282287",
+          "note": "Progress: Investigated the issue with a stepping callback using StopIteration to signal sequence completion. Found a discrepancy between expected and actual behavior in the test function.\n\nCurrent Diagnosis: The test function `test_func_controls_iteration_stop` is failing, indicating a potential bug in how the callback handles StopIteration.\n\nNext Action: Await an independent checkout check to confirm the current function. Once confirmed, proceed with debugging the callback logic to ensure proper handling of StopIteration.\nPadding: . . . .",
+          "action": "unmatched",
+          "before": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "after": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "foil": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08"
+        },
+        "own/stale": {
+          "call": "efe682f00659f66df140c642aaaec745c0350c24756389783b2877f82dbeb2a1",
+          "note": "a64d6a16e171: PASS\n93e14b86f9ea: FAIL\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "after": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "foil": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08"
+        },
+        "own/verified": {
+          "call": "2a3409aeaf14b85f51353d7563ccecf967f6aaca8cef884932dfe852c1e59cae",
+          "note": "a64d6a16e171: PASS\n93e14b86f9ea: FAIL\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "after": "a7fadc71c85ca2c445500b6300ec9505d3b92214c818c6ee74c2b1c81ca3b2ff",
+          "foil": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08"
+        },
+        "parent/stale": {
+          "call": "efe682f00659f66df140c642aaaec745c0350c24756389783b2877f82dbeb2a1",
+          "note": "a64d6a16e171: PASS\n93e14b86f9ea: FAIL\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "unmatched",
+          "before": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "after": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "foil": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08"
+        },
+        "parent/verified": {
+          "call": "2a3409aeaf14b85f51353d7563ccecf967f6aaca8cef884932dfe852c1e59cae",
+          "note": "a64d6a16e171: PASS\n93e14b86f9ea: FAIL\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05",
+          "after": "a7fadc71c85ca2c445500b6300ec9505d3b92214c818c6ee74c2b1c81ca3b2ff",
+          "foil": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08"
+        },
+        "fixed/stale": {
+          "call": "8596b132fd2c91234a9d368eb507122d41220ee57ae1794c31781c2571ec4574",
+          "note": "93e14b86f9ea: FAIL\na64d6a16e171: PASS\nCached result for current function: FAIL\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08",
+          "after": "6c681d7bd86591932d81aa4e39081f35b92f49818b73445457a444fc0529a1fc",
+          "foil": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05"
+        },
+        "fixed/verified": {
+          "call": "69043470c176a99f088b590119be4a0d43f092ce0d6cddbb0d2d0671e4409a73",
+          "note": "93e14b86f9ea: FAIL\na64d6a16e171: PASS\nCached result for current function: PASS\nPadding: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+          "action": "edit",
+          "before": "a64d6a16e171733fdc2b696fe872c866ae2ca0aff4b8f3d60c09abeda5604a08",
+          "after": "6c681d7bd86591932d81aa4e39081f35b92f49818b73445457a444fc0529a1fc",
+          "foil": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05"
+        }
+      },
+      "first": {
+        "call": "d334f3a601aa2720918f39ca37e9a926a03f9735e173ed34ce766aa1e74635ae",
+        "action": "unmatched",
+        "source_sha256": "93e14b86f9eaa894d526381667dda85b1e8e373d8890133ee69c65fcd176dd05"
+      },
+      "summary": "d4f944d0f530c1622d413a80918b8b56cbf746d5c1bb40cb3b7fd9f9ad928ec6"
+    }
+  },
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+}

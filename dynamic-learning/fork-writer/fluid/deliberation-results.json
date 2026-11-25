@@ -1,0 +1,838 @@
+{
+  "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+  "revision": "50d427756c6b1b2fe0c0a10f67fbda1fc8e82c1b",
+  "seed": 776031,
+  "summary": {
+    "1": {
+      "questions": 12,
+      "worlds": 6,
+      "direct": {
+        "correct": 5,
+        "joint": 1,
+        "joint_total": 6
+      },
+      "blank": {
+        "correct": 4,
+        "joint": 0,
+        "joint_total": 6
+      },
+      "own": {
+        "correct": 6,
+        "joint": 2,
+        "joint_total": 6
+      },
+      "own_vs_direct": {
+        "repairs": [
+          [
+            5,
+            1,
+            0
+          ]
+        ],
+        "overturns": []
+      },
+      "own_vs_blank": {
+        "repairs": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            5,
+            1,
+            1
+          ]
+        ],
+        "overturns": []
+      },
+      "scratch_tokens": 576,
+      "capped": 12,
+      "time_seconds": {
+        "direct": 3.293,
+        "blank": 3.622,
+        "own": 4.184,
+        "notes": 21.097
+      },
+      "input_tokens": {
+        "direct": 1168,
+        "blank": 1300,
+        "own": 1887,
+        "notes": 1336
+      }
+    },
+    "2": {
+      "questions": 12,
+      "worlds": 6,
+      "direct": {
+        "correct": 5,
+        "joint": 1,
+        "joint_total": 6
+      },
+      "blank": {
+        "correct": 5,
+        "joint": 1,
+        "joint_total": 6
+      },
+      "own": {
+        "correct": 5,
+        "joint": 1,
+        "joint_total": 6
+      },
+      "own_vs_direct": {
+        "repairs": [],
+        "overturns": []
+      },
+      "own_vs_blank": {
+        "repairs": [],
+        "overturns": []
+      },
+      "scratch_tokens": 576,
+      "capped": 12,
+      "time_seconds": {
+        "direct": 3.291,
+        "blank": 3.336,
+        "own": 4.809,
+        "notes": 19.121
+      },
+      "input_tokens": {
+        "direct": 1266,
+        "blank": 1398,
+        "own": 1981,
+        "notes": 1434
+      }
+    },
+    "overall": {
+      "questions": 24,
+      "worlds": 6,
+      "direct": {
+        "correct": 10,
+        "joint": 2,
+        "joint_total": 12
+      },
+      "blank": {
+        "correct": 9,
+        "joint": 1,
+        "joint_total": 12
+      },
+      "own": {
+        "correct": 11,
+        "joint": 3,
+        "joint_total": 12
+      },
+      "own_vs_direct": {
+        "repairs": [
+          [
+            5,
+            1,
+            0
+          ]
+        ],
+        "overturns": []
+      },
+      "own_vs_blank": {
+        "repairs": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            5,
+            1,
+            1
+          ]
+        ],
+        "overturns": []
+      },
+      "scratch_tokens": 1152,
+      "capped": 24,
+      "time_seconds": {
+        "direct": 6.584,
+        "blank": 6.959,
+        "own": 8.993,
+        "notes": 40.218
+      },
+      "input_tokens": {
+        "direct": 2434,
+        "blank": 2698,
+        "own": 3868,
+        "notes": 2770
+      }
+    }
+  },
+  "rows": [
+    {
+      "world": 0,
+      "depth": 1,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 98,
+        "seconds": 0.366771291999612
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 109,
+        "seconds": 0.42390904197236523
+      },
+      "notes": {
+        "text": "P reorders the string by shifting letters to a fixed pattern.\n\nFrom examples:\n- TTUU \u2192 UTTU \u2192 seems like a left rotation? But TTUU to UTTU: first letter T moves to end? No \u2014 TT",
+        "input_tokens": 112,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 1.5835739999893121
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 158,
+        "seconds": 0.24699116603005677
+      }
+    },
+    {
+      "world": 0,
+      "depth": 1,
+      "fork": 1,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 99,
+        "seconds": 0.1873059159843251
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 110,
+        "seconds": 0.18998887500492856
+      },
+      "notes": {
+        "text": "P reorders the positions of the string. From the examples:\n\n- TTUU \u2192 UTTU  \n  This suggests the first letter moves to the end? TTUU: positions: 1T,2T,3U,4",
+        "input_tokens": 113,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7805042079999112
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 159,
+        "seconds": 0.23833616700721905
+      }
+    },
+    {
+      "world": 0,
+      "depth": 2,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 106,
+        "seconds": 0.18883083300897852
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 117,
+        "seconds": 0.19238583301194012
+      },
+      "notes": {
+        "text": "P reorders the string by shifting or rotating letters.  \nFrom examples:  \n- TTUU \u2192 UTTU \u2192 seems like a left rotation by 1 (U moves to front)  \n- AYAY \u2192 YYAA \u2192 Y",
+        "input_tokens": 120,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7109545000130311
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 166,
+        "seconds": 0.27842308301478624
+      }
+    },
+    {
+      "world": 0,
+      "depth": 2,
+      "fork": 1,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 107,
+        "seconds": 0.20010650000767782
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 118,
+        "seconds": 0.2106725000194274
+      },
+      "notes": {
+        "text": "P reorders the string by shifting or rotating letters.  \nFrom example: TTUU \u2192 UTTU \u2192 seems like a left rotation? But TTUU \u2192 UTTU: first letter moves to end?  \nTTUU \u2192 UTT",
+        "input_tokens": 121,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7288446250022389
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 167,
+        "seconds": 0.32077562500489876
+      }
+    },
+    {
+      "world": 1,
+      "depth": 1,
+      "fork": 0,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 96,
+        "seconds": 0.14318600000115111
+      },
+      "blank": {
+        "answer": "A",
+        "input_tokens": 107,
+        "seconds": 0.19636037503369153
+      },
+      "notes": {
+        "text": "P reorders the positions of the string in a fixed pattern. From the examples:\n\n- P: DBBD \u2192 BDDB  \n  Original: D B B D  \n  Output: B D D B  \n  So positions: 1",
+        "input_tokens": 110,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6776746669784188
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 156,
+        "seconds": 0.26247116702143103
+      }
+    },
+    {
+      "world": 1,
+      "depth": 1,
+      "fork": 1,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 95,
+        "seconds": 0.15344583301339298
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 106,
+        "seconds": 0.19511274999240413
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- DBBD \u2192 BDDB  \n  Positions: 1 2 3 4  \n  DBBD: D(1), B(2), B(3",
+        "input_tokens": 109,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6892912079929374
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 155,
+        "seconds": 0.255033541994635
+      }
+    },
+    {
+      "world": 1,
+      "depth": 2,
+      "fork": 0,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 105,
+        "seconds": 0.19327991700265557
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 116,
+        "seconds": 0.20274420798523352
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the example:  \nDBBD \u2192 BDDB  \nSo positions:  \nOriginal: D B B D  \nAfter P: B D D B  \nSo input: pos1= D,",
+        "input_tokens": 119,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6860502079944126
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 164,
+        "seconds": 0.29309429199201986
+      }
+    },
+    {
+      "world": 1,
+      "depth": 2,
+      "fork": 1,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 104,
+        "seconds": 0.1922125419951044
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 115,
+        "seconds": 0.19799391605192795
+      },
+      "notes": {
+        "text": "P reorders the string by shifting or rearranging the letters in a fixed pattern.  \nFrom examples:  \n- P: DBBD \u2192 BDDB \u2192 seems like a left rotation? But DBBD to BDDB: positions:  \n ",
+        "input_tokens": 118,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7115118330111727
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 163,
+        "seconds": 0.4977100830292329
+      }
+    },
+    {
+      "world": 2,
+      "depth": 1,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 97,
+        "seconds": 0.4422362910117954
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 108,
+        "seconds": 0.4543445000308566
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- P: GNGN \u2192 GNGN (no change) \u2192 suggests it's identity? But second example: FZZF \u2192 FFZZ \u2192 so input F",
+        "input_tokens": 111,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.595933292002883
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 157,
+        "seconds": 0.5389639160130173
+      }
+    },
+    {
+      "world": 2,
+      "depth": 1,
+      "fork": 1,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 97,
+        "seconds": 0.4379025000380352
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 108,
+        "seconds": 0.4300752499839291
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- P: GNGN \u2192 GNGN (no change) \u2192 suggests it's identity? But second example: FZZF \u2192 ZZFF \u2192 so it's",
+        "input_tokens": 111,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.621290583978407
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 157,
+        "seconds": 0.5935704160365276
+      }
+    },
+    {
+      "world": 2,
+      "depth": 2,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 105,
+        "seconds": 0.4395831250003539
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 116,
+        "seconds": 0.4233611249946989
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From examples:\n\n- P: GNGN \u2192 GNGN (no change) \u2192 suggests P does nothing? But second example: FZZF \u2192 FFZZ \u2192 so P is grouping",
+        "input_tokens": 119,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.8129271249636076
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 165,
+        "seconds": 0.6302233340102248
+      }
+    },
+    {
+      "world": 2,
+      "depth": 2,
+      "fork": 1,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 105,
+        "seconds": 0.44274429098004475
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 116,
+        "seconds": 0.4245297909947112
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From examples:\n\n- P: GNGN \u2192 GNGN (no change) \u2192 suggests P does nothing? But second example: FZZF \u2192 ZZFF \u2192 so P is moving",
+        "input_tokens": 119,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.8965812500100583
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 165,
+        "seconds": 0.6111307080136612
+      }
+    },
+    {
+      "world": 3,
+      "depth": 1,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 96,
+        "seconds": 0.3070880409795791
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 107,
+        "seconds": 0.4357884580385871
+      },
+      "notes": {
+        "text": "P reorders the positions of the string in a fixed pattern.\n\nFrom the first example:  \nFFXX \u2192 XFXF  \nThis suggests the pattern is: position 1\u21924, 2\u21923, 3\u21922,",
+        "input_tokens": 110,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.6252067500026897
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 155,
+        "seconds": 0.5361702920054086
+      }
+    },
+    {
+      "world": 3,
+      "depth": 1,
+      "fork": 1,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 97,
+        "seconds": 0.47661758394679055
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 108,
+        "seconds": 0.5155656249844469
+      },
+      "notes": {
+        "text": "P reorders the positions of the string in a fixed pattern.\n\nFrom the examples:\n- FFXX \u2192 XFXF  \n  Positions: 1F, 2F, 3X, 4X \u2192 becomes X,F,X",
+        "input_tokens": 111,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.750942125043366
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 157,
+        "seconds": 0.5188343750196509
+      }
+    },
+    {
+      "world": 3,
+      "depth": 2,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 104,
+        "seconds": 0.4177543339901604
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 115,
+        "seconds": 0.43591866601491347
+      },
+      "notes": {
+        "text": "P reorders the string by shifting or rotating positions.  \nFrom example: FFXX \u2192 XFXF  \nThis looks like a left rotation: positions 0\u21921, 1\u21922, 2\u21923, 3\u2192",
+        "input_tokens": 118,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 3.8605791250010952
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 164,
+        "seconds": 0.6842574579641223
+      }
+    },
+    {
+      "world": 3,
+      "depth": 2,
+      "fork": 1,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 105,
+        "seconds": 0.4066548330010846
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 116,
+        "seconds": 0.42405804101144895
+      },
+      "notes": {
+        "text": "P reorders the string by shifting or rotating letters in a fixed pattern.  \nFrom example: FFXX \u2192 XFXF  \nThis looks like a left rotation by one position: F F X X \u2192 X F F X? No,",
+        "input_tokens": 119,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 1.8490972080035135
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 164,
+        "seconds": 0.2884143330156803
+      }
+    },
+    {
+      "world": 4,
+      "depth": 1,
+      "fork": 0,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 97,
+        "seconds": 0.18908266600919887
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 108,
+        "seconds": 0.1923288330435753
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- VVMM \u2192 VMVM  \n  So: positions: 1 2 3 4 \u2192 V V M M  \n  Output: V M V M",
+        "input_tokens": 111,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6818752500112168
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 157,
+        "seconds": 0.2407404170371592
+      }
+    },
+    {
+      "world": 4,
+      "depth": 1,
+      "fork": 1,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 97,
+        "seconds": 0.1936468330095522
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 108,
+        "seconds": 0.18926479201763868
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- VVMM \u2192 VMVM  \n  So: positions: 1,2,3,4 \u2192 V,V,M,M \u2192 V,M,V,M  \n  Pattern",
+        "input_tokens": 111,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6861157499952242
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 157,
+        "seconds": 0.24291537498356774
+      }
+    },
+    {
+      "world": 4,
+      "depth": 2,
+      "fork": 0,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 107,
+        "seconds": 0.18988187500508502
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 118,
+        "seconds": 0.1906899170135148
+      },
+      "notes": {
+        "text": "P reorders the string by a fixed pattern. From examples:\n\n- VVMM \u2192 VMVM \u2192 seems like swap of positions: 1st and 2nd, 3rd and 4th? Wait: VVMM",
+        "input_tokens": 121,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6746503339963965
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 167,
+        "seconds": 0.27763016597600654
+      }
+    },
+    {
+      "world": 4,
+      "depth": 2,
+      "fork": 1,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 107,
+        "seconds": 0.18971187504939735
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 118,
+        "seconds": 0.19140033301664516
+      },
+      "notes": {
+        "text": "P reorders the string by shifting or rearranging the letters in a fixed pattern.  \nFrom examples:  \n- VVMM \u2192 VMVM \u2192 seems like a left rotation or alternating pattern?  \nBut RTRT \u2192 RTTR \u2192",
+        "input_tokens": 121,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6942244169767946
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 166,
+        "seconds": 0.28882312501082197
+      }
+    },
+    {
+      "world": 5,
+      "depth": 1,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 100,
+        "seconds": 0.20611470798030496
+      },
+      "blank": {
+        "answer": "A",
+        "input_tokens": 111,
+        "seconds": 0.19952516700141132
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- FJJF \u2192 FFJJ \u2192 suggests P groups identical letters together, and the pattern is: first two positions are the first two letters of the original, but rearr",
+        "input_tokens": 114,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.6932460829848424
+      },
+      "own": {
+        "answer": "A",
+        "input_tokens": 160,
+        "seconds": 0.23343487497186288
+      }
+    },
+    {
+      "world": 5,
+      "depth": 1,
+      "fork": 1,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 99,
+        "seconds": 0.18966512504266575
+      },
+      "blank": {
+        "answer": "A",
+        "input_tokens": 110,
+        "seconds": 0.19990387500729412
+      },
+      "notes": {
+        "text": "P reorders the string in a fixed pattern. From the examples:\n\n- FJJF \u2192 FFJJ \u2192 seems like the first two letters are moved to the front, but actually: FJJF \u2192 FFJJ \u2192 first letter F stays",
+        "input_tokens": 113,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7116474580252543
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 159,
+        "seconds": 0.2769045829772949
+      }
+    },
+    {
+      "world": 5,
+      "depth": 2,
+      "fork": 0,
+      "gold": "A",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 106,
+        "seconds": 0.20357854099711403
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 117,
+        "seconds": 0.21218304202193394
+      },
+      "notes": {
+        "text": "P reorders the string by moving letters to a fixed pattern.  \nFrom example: FJJF \u2192 FFJJ \u2192 suggests P groups identical letters together, in order of appearance? But FJJF \u2192 FFJJ: first two F's",
+        "input_tokens": 120,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7383927090559155
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 166,
+        "seconds": 0.32519658299861476
+      }
+    },
+    {
+      "world": 5,
+      "depth": 2,
+      "fork": 1,
+      "gold": "B",
+      "direct": {
+        "answer": "B",
+        "input_tokens": 105,
+        "seconds": 0.22683741699438542
+      },
+      "blank": {
+        "answer": "B",
+        "input_tokens": 116,
+        "seconds": 0.23047866695560515
+      },
+      "notes": {
+        "text": "P reorders the string by moving letters to a fixed pattern.  \nFrom examples:  \n- FJJF \u2192 FFJJ \u2192 suggests P groups identical letters together, in order of first occurrence?  \nBut FJJF \u2192 FFJJ:",
+        "input_tokens": 119,
+        "tokens": 48,
+        "finish": "length",
+        "seconds": 0.7569173339870758
+      },
+      "own": {
+        "answer": "B",
+        "input_tokens": 164,
+        "seconds": 0.31328329199459404
+      }
+    }
+  ]
+}

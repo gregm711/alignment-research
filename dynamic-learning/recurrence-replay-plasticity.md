@@ -1,0 +1,31 @@
+# When does another pass become learning?
+
+A looped transformer applies the same block of layers several times. Its weights specify the operation. The information passed between iterations can change with every pass. To tell whether experience has also changed the model's future behavior, specify exactly what is saved when a session ends. Restart with a new input, clear the activations and cache, and restore only the weights whose update is being tested.
+
+## Five designs to keep distinct
+
+| Design | What changes during use? | What would survive that restart? |
+|---|---|---|
+| Universal Transformer or Huginn | A shared block iteratively refines an internal representation. Huginn can spend extra passes before emitting a token. | The pretrained capacity to iterate. The particular intermediate answer is lost. [Universal Transformers](https://arxiv.org/abs/1807.03819) · [Huginn](https://arxiv.org/abs/2502.05171) |
+| Transformer sleep | In the November paper, the model revisits a completed token window and refines its attention keys and values. Later tokens consult the revised cache. | The learned procedure for sleeping. The episode-specific information resides in the discarded cache. [Paper discussion and results](README.md#starting-point--learning-during-sleep) |
+| Fast-weight sleep | An earlier architecture updates a writable matrix during sleep, using a learned local rule. It can then clear attention's cache. | Information encoded in the fast weights, provided those matrices are saved and restored. Clearing the attention cache alone is a weaker test than starting a fresh episode. [Lee et al.](https://arxiv.org/abs/2605.26099) |
+| Test-time training | The sequence model's hidden state is itself a small model. A self-supervised learning step changes its parameters as input arrives. | The small model's updated parameters if retained. Whether an update remains useful on a new task is an empirical question. [Sun et al.](https://arxiv.org/abs/2407.04620) |
+| Differentiable plasticity | Training learns how plastic individual connections should be. During an episode, neural activity can modify their effective strength. | Any experience-dependent connection changes explicitly retained. Miconi and colleagues demonstrated learning on new images and in a maze; these are precedents for rapid adaptation. [Miconi et al.](https://proceedings.mlr.press/v80/miconi18a.html) |
+
+In our Inkling work, transplanting messages between loop passes on invented lookup tables redirected the answer to what the receiving prompt stored at the donor's token position in 109/115 qualifying pairs. This gives us an experimental technique for discovering what one pass communicates to the next. The intervention was on transient messages. [Inkling study](../jlens-inkling/SUMMARY.md) · [Existing architecture primer](../notes/looped-transformers-primer.md)
+
+## What the human experiments establish
+
+**Recurrence during perception.** Tang and colleagues studied recognition when objects were heavily obscured. Selective neural responses appeared later for partial objects, and interrupting processing with a visual mask impaired recognition. Recurrent models accounted for aspects of those observations. The warranted analogy is that time for feedback can help resolve an ambiguous input. The data leave open the circuit implementing that feedback. [Tang et al.](https://doi.org/10.1073/pnas.1719397115)
+
+**Replay can reorganize experience.** Liu and colleagues used MEG to decode patterns during rest after people learned relationships between pictures. The detected sequences followed an abstract ordering participants could infer, even though the pictures had appeared in a different order. This was awake rest. A separate sleep experiment by Rasch and colleagues found that re-presenting an odor from learning during slow-wave sleep improved subsequent recall of object locations. These results motivate testing *which relationships* an artificial learner rehearses and *when* it rehearses them. Neither measures a specific synaptic update rule. [Liu et al.](https://pubmed.ncbi.nlm.nih.gov/31280961/) · [Rasch et al.](https://pubmed.ncbi.nlm.nih.gov/17347444/)
+
+**Rapid acquisition and gradual integration can coexist.** Ison and colleagues recorded human medial temporal lobe neurons as people learned person–place associations. Some cells initially responsive to one picture also responded to its newly associated partner as learning occurred. The complementary learning systems theory gives a computational rationale for two timescales: rapidly store a particular episode, then interleave it with older experiences as shared representations change. The recordings measure changes in responses; the two-timescale account is a theory about how learning systems cooperate. [Ison et al.](https://pubmed.ncbi.nlm.nih.gov/26139375/) · [McClelland, McNaughton and O'Reilly](https://pubmed.ncbi.nlm.nih.gov/7624455/)
+
+## A test that connects all three
+
+Train across small games in which movement and scoring rules vary independently. For a new game, teach both rules. Then give one transition that uniquely distinguishes the old movement rule from its replacement and leaves scoring unchanged. Also include games with surprising but valid transitions where revising the rule would be a mistake.
+
+During sleep, allow the learner to replay a fixed number of past positions and write a small weight update. Compare chronological replay, random replay and learned selection with the same number of examples, writable parameters and update steps. Include ordinary fine-tuning at the same budget and a recurrent model with identical thinking time and no persistent write. Clear all episode state, including replay storage. Score unseen positions requiring the new movement rule, unchanged scoring knowledge, and positions requiring both together.
+
+For interpretation, restore the old weights and transplant just the saved update into an identical copy of the pre-correction model. Does the movement correction travel with it? Does scoring stay intact? Remove the update and verify that the correction disappears. A useful finding would be a reproducible advantage over ordinary fine-tuning and random replay on held-out games, with fewer unwanted changes at the same correction rate. This is a proposed experiment.

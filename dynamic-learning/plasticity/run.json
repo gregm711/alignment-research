@@ -1,0 +1,600 @@
+{
+  "seeds": [
+    {
+      "seed": 41,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6315340909090909,
+            "adam": 0.6176609848484849,
+            "fresh-adam": 0.6176609848484849,
+            "prior": 0.6839015151515152
+          },
+          "rates": {
+            "sgd": 0.1,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.1,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6175662878787879,
+            "adam": 0.5725378787878788,
+            "fresh-adam": 0.6113162878787879,
+            "prior": 0.6734848484848485
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6184185606060607,
+            "adam": 0.5608428030303031,
+            "fresh-adam": 0.6149147727272727,
+            "prior": 0.6621685606060607
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "fresh-adam",
+          "dev": {
+            "sgd": 0.6036931818181818,
+            "adam": 0.5562973484848485,
+            "fresh-adam": 0.6051609848484848,
+            "prior": 0.6491477272727272
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 42,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6237689393939394,
+            "adam": 0.6072916666666667,
+            "fresh-adam": 0.6072916666666667,
+            "prior": 0.6776041666666668
+          },
+          "rates": {
+            "sgd": 0.1,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.1,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.610842803030303,
+            "adam": 0.5802083333333333,
+            "fresh-adam": 0.598532196969697,
+            "prior": 0.6549715909090909
+          },
+          "rates": {
+            "sgd": 1.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 1.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6052556818181817,
+            "adam": 0.5591382575757575,
+            "fresh-adam": 0.5976325757575758,
+            "prior": 0.6514204545454546
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6068655303030304,
+            "adam": 0.5787878787878787,
+            "fresh-adam": 0.5973011363636364,
+            "prior": 0.6505681818181818
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6372159090909091,
+            "adam": 0.6218276515151515,
+            "fresh-adam": 0.6218276515151515,
+            "prior": 0.6923295454545455
+          },
+          "rates": {
+            "sgd": 0.1,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.1,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6154829545454547,
+            "adam": 0.5615530303030303,
+            "fresh-adam": 0.6103219696969697,
+            "prior": 0.6736268939393938
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6184659090909091,
+            "adam": 0.5672348484848485,
+            "fresh-adam": 0.6115530303030303,
+            "prior": 0.6754734848484848
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6229166666666667,
+            "adam": 0.5595170454545454,
+            "fresh-adam": 0.6138257575757575,
+            "prior": 0.6690340909090909
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6286931818181818,
+            "adam": 0.6122632575757576,
+            "fresh-adam": 0.6122632575757576,
+            "prior": 0.6843276515151514
+          },
+          "rates": {
+            "sgd": 0.3,
+            "adam": 0.3,
+            "fresh-adam": 0.3,
+            "prior": 0.3
+          },
+          "prior_low": 0.0,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6096590909090909,
+            "adam": 0.5593276515151515,
+            "fresh-adam": 0.6018939393939394,
+            "prior": 0.6616950757575758
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6129734848484848,
+            "adam": 0.5638257575757576,
+            "fresh-adam": 0.6020359848484849,
+            "prior": 0.6661931818181818
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6121212121212122,
+            "adam": 0.5580492424242424,
+            "fresh-adam": 0.6026988636363636,
+            "prior": 0.6707859848484848
+          },
+          "rates": {
+            "sgd": 1.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 1.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 45,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6288352272727272,
+            "adam": 0.6176609848484849,
+            "fresh-adam": 0.6176609848484849,
+            "prior": 0.6835700757575758
+          },
+          "rates": {
+            "sgd": 0.3,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.1,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6129261363636364,
+            "adam": 0.568844696969697,
+            "fresh-adam": 0.6087121212121213,
+            "prior": 0.6677556818181817
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6164299242424242,
+            "adam": 0.5641571969696969,
+            "fresh-adam": 0.6097064393939394,
+            "prior": 0.6678030303030303
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6151988636363636,
+            "adam": 0.567282196969697,
+            "fresh-adam": 0.6049242424242424,
+            "prior": 0.655965909090909
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 46,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6327651515151514,
+            "adam": 0.6147727272727272,
+            "fresh-adam": 0.6147727272727272,
+            "prior": 0.6834280303030303
+          },
+          "rates": {
+            "sgd": 0.1,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.0,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6168087121212121,
+            "adam": 0.549810606060606,
+            "fresh-adam": 0.6051136363636364,
+            "prior": 0.6702651515151515
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6173295454545454,
+            "adam": 0.5732007575757576,
+            "fresh-adam": 0.6090435606060606,
+            "prior": 0.6668560606060607
+          },
+          "rates": {
+            "sgd": 1.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6126420454545455,
+            "adam": 0.5449810606060606,
+            "fresh-adam": 0.6070075757575757,
+            "prior": 0.6645833333333333
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 47,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6280776515151515,
+            "adam": 0.6171875,
+            "fresh-adam": 0.6171875,
+            "prior": 0.6794981060606061
+          },
+          "rates": {
+            "sgd": 0.3,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.1,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6265151515151515,
+            "adam": 0.5921401515151515,
+            "fresh-adam": 0.6174242424242424,
+            "prior": 0.6728219696969697
+          },
+          "rates": {
+            "sgd": 1.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6136837121212121,
+            "adam": 0.5731534090909091,
+            "fresh-adam": 0.6116477272727273,
+            "prior": 0.6584753787878788
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "fresh-adam",
+          "dev": {
+            "sgd": 0.6074810606060606,
+            "adam": 0.5698390151515151,
+            "fresh-adam": 0.6094223484848486,
+            "prior": 0.6562499999999999
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    },
+    {
+      "seed": 48,
+      "feature_accuracy": 1.0,
+      "checkpoint": {
+        "0": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6274621212121212,
+            "adam": 0.6127840909090909,
+            "fresh-adam": 0.6127840909090909,
+            "prior": 0.6873579545454543
+          },
+          "rates": {
+            "sgd": 0.3,
+            "adam": 0.1,
+            "fresh-adam": 0.1,
+            "prior": 0.3
+          },
+          "prior_low": 0.0,
+          "adam_steps": 0
+        },
+        "1": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6184185606060606,
+            "adam": 0.5856060606060606,
+            "fresh-adam": 0.6091382575757575,
+            "prior": 0.6703125
+          },
+          "rates": {
+            "sgd": 1.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 8
+        },
+        "10": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.6204071969696969,
+            "adam": 0.5366950757575758,
+            "fresh-adam": 0.6135416666666667,
+            "prior": 0.6727272727272727
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 1.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.1,
+          "adam_steps": 80
+        },
+        "100": {
+          "winner": "sgd",
+          "dev": {
+            "sgd": 0.5993844696969696,
+            "adam": 0.5283617424242424,
+            "fresh-adam": 0.5958806818181818,
+            "prior": 0.6487215909090909
+          },
+          "rates": {
+            "sgd": 3.0,
+            "adam": 3.0,
+            "fresh-adam": 3.0,
+            "prior": 3.0
+          },
+          "prior_low": 0.0,
+          "adam_steps": 800
+        }
+      }
+    }
+  ],
+  "encoder_parameters": 5472,
+  "seconds": 5.915483582997695,
+  "torch": "2.1.0.dev20230517",
+  "numpy": "2.2.6"
+}

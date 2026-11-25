@@ -1,0 +1,473 @@
+{
+ "conditions": [
+  "accurate",
+  "noisy-calibrated",
+  "noisy-overtrusted"
+ ],
+ "outcomes": [
+  "familiar",
+  "changed",
+  "repair",
+  "harm"
+ ],
+ "selectors": [
+  "independent",
+  "mixture"
+ ],
+ "readers": [
+  "independent",
+  "mixture"
+ ],
+ "seeds": [
+  1001,
+  1002,
+  1003,
+  1004,
+  1005,
+  1006,
+  1007,
+  1008,
+  1009,
+  1010,
+  1011,
+  1012,
+  1013,
+  1014,
+  1015,
+  1016,
+  1017,
+  1018,
+  1019,
+  1020
+ ],
+ "means": [
+  [
+   [
+    [
+     0.49759424603174596,
+     0.6021391369047618
+    ],
+    [
+     0.5560701884920636,
+     0.6275235615079364
+    ]
+   ],
+   [
+    [
+     0.500812251984127,
+     0.5067150297619046
+    ],
+    [
+     0.5198040674603175,
+     0.5260044642857143
+    ]
+   ],
+   [
+    [
+     0.14136444513139843,
+     0.7893400377850214
+    ],
+    [
+     0.6671239629524879,
+     0.8336392254200774
+    ]
+   ],
+   [
+    [
+     0.0015657178644875123,
+     0.019794144853927075
+    ],
+    [
+     0.0014708411269787236,
+     0.0012956739667248564
+    ]
+   ]
+  ],
+  [
+   [
+    [
+     0.481547619047619,
+     0.546453373015873
+    ],
+    [
+     0.538002232142857,
+     0.5673921130952382
+    ]
+   ],
+   [
+    [
+     0.4826264880952381,
+     0.4859126984126984
+    ],
+    [
+     0.5018229166666667,
+     0.5025917658730159
+    ]
+   ],
+   [
+    [
+     0.13117277860580553,
+     0.6299189673891641
+    ],
+    [
+     0.6007177381859312,
+     0.7286615245010133
+    ]
+   ],
+   [
+    [
+     0.010642293797837295,
+     0.07602856959973128
+    ],
+    [
+     0.06159639444632249,
+     0.0741138980422504
+    ]
+   ]
+  ],
+  [
+   [
+    [
+     0.48188244047619044,
+     0.5750744047619047
+    ],
+    [
+     0.5386718749999999,
+     0.6000806051587302
+    ]
+   ],
+   [
+    [
+     0.48286830357142857,
+     0.49109002976190474
+    ],
+    [
+     0.502250744047619,
+     0.5088479662698413
+    ]
+   ],
+   [
+    [
+     0.13173334548499263,
+     0.7215411710832623
+    ],
+    [
+     0.6061872954027396,
+     0.7556370629305923
+    ]
+   ],
+   [
+    [
+     0.011327965051876894,
+     0.08796225433476476
+    ],
+    [
+     0.06253865621771057,
+     0.07942898399719354
+    ]
+   ]
+  ]
+ ],
+ "contrasts": {
+  "accurate-familiar-reader-at-independent-choice": [
+   0.10454489087301586,
+   0.09325939360119047,
+   0.11568700396825396
+  ],
+  "accurate-familiar-reader-at-mixture-choice": [
+   0.07145337301587298,
+   0.06537698412698413,
+   0.07725709945436508
+  ],
+  "accurate-familiar-choice-with-independent-reader": [
+   0.05847594246031747,
+   0.047128751240079356,
+   0.06984142485119048
+  ],
+  "accurate-familiar-choice-with-mixture-reader": [
+   0.025384424603174593,
+   0.01834604414682536,
+   0.032359871031746014
+  ],
+  "accurate-familiar-end-to-end": [
+   0.12992931547619047,
+   0.11832620287698412,
+   0.14145631820436505
+  ],
+  "accurate-changed-reader-at-independent-choice": [
+   0.005902777777777768,
+   0.0009300595238095122,
+   0.011129712301587302
+  ],
+  "accurate-changed-reader-at-mixture-choice": [
+   0.006200396825396812,
+   0.001140873015872998,
+   0.011625744047619038
+  ],
+  "accurate-changed-choice-with-independent-reader": [
+   0.01899181547619048,
+   0.01305803571428571,
+   0.02460317460317462
+  ],
+  "accurate-changed-choice-with-mixture-reader": [
+   0.019289434523809525,
+   0.012704458085317465,
+   0.025911613343253963
+  ],
+  "accurate-changed-end-to-end": [
+   0.025192212301587292,
+   0.01773871527777777,
+   0.03273189484126983
+  ],
+  "accurate-repair-reader-at-independent-choice": [
+   0.6479755926536228,
+   0.5197048694207089,
+   0.7684521980999203
+  ],
+  "accurate-repair-reader-at-mixture-choice": [
+   0.1665152624675895,
+   0.11327635674980918,
+   0.21957738978468166
+  ],
+  "accurate-repair-choice-with-independent-reader": [
+   0.5257595178210895,
+   0.40978026520224103,
+   0.6322737303446414
+  ],
+  "accurate-repair-choice-with-mixture-reader": [
+   0.04429918763505626,
+   -0.06411654302489947,
+   0.15397122384594278
+  ],
+  "accurate-repair-end-to-end": [
+   0.6922747802886791,
+   0.5494273872377101,
+   0.8186191819228348
+  ],
+  "accurate-harm-reader-at-independent-choice": [
+   0.018228426989439557,
+   -0.0008702863255731239,
+   0.05435036424649609
+  ],
+  "accurate-harm-reader-at-mixture-choice": [
+   -0.00017516716025386728,
+   -0.0012341964234360338,
+   0.0007668900844047601
+  ],
+  "accurate-harm-choice-with-independent-reader": [
+   -9.487673750878879e-05,
+   -0.0006077197105173555,
+   0.0005599260639867413
+  ],
+  "accurate-harm-choice-with-mixture-reader": [
+   -0.018498470887202214,
+   -0.05483807852709835,
+   0.0005828489708993398
+  ],
+  "accurate-harm-end-to-end": [
+   -0.000270043897762656,
+   -0.0014801574220486167,
+   0.000848059280999528
+  ],
+  "noisy-calibrated-familiar-reader-at-independent-choice": [
+   0.06490575396825397,
+   0.05508417038690476,
+   0.07579985119047619
+  ],
+  "noisy-calibrated-familiar-reader-at-mixture-choice": [
+   0.029389880952380966,
+   0.022891710069444463,
+   0.036061662946428576
+  ],
+  "noisy-calibrated-familiar-choice-with-independent-reader": [
+   0.05645461309523808,
+   0.04619295634920635,
+   0.0670016431051587
+  ],
+  "noisy-calibrated-familiar-choice-with-mixture-reader": [
+   0.02093874007936508,
+   0.014266958085317454,
+   0.028100198412698403
+  ],
+  "noisy-calibrated-familiar-end-to-end": [
+   0.08584449404761905,
+   0.07869528149801587,
+   0.0932479228670635
+  ],
+  "noisy-calibrated-changed-reader-at-independent-choice": [
+   0.0032862103174603197,
+   -0.0015749007936507909,
+   0.008190724206349203
+  ],
+  "noisy-calibrated-changed-reader-at-mixture-choice": [
+   0.0007688492063492036,
+   -0.0042162698412698514,
+   0.00596493675595239
+  ],
+  "noisy-calibrated-changed-choice-with-independent-reader": [
+   0.01919642857142858,
+   0.01279730902777778,
+   0.025458984375000014
+  ],
+  "noisy-calibrated-changed-choice-with-mixture-reader": [
+   0.016679067460317464,
+   0.010000930059523799,
+   0.023487103174603185
+  ],
+  "noisy-calibrated-changed-end-to-end": [
+   0.019965277777777783,
+   0.012605406746031746,
+   0.02747411334325398
+  ],
+  "noisy-calibrated-repair-reader-at-independent-choice": [
+   0.4987461887833583,
+   0.36555519158399685,
+   0.6245631045521213
+  ],
+  "noisy-calibrated-repair-reader-at-mixture-choice": [
+   0.12794378631508208,
+   0.0792411467524902,
+   0.1794212727834539
+  ],
+  "noisy-calibrated-repair-choice-with-independent-reader": [
+   0.4695449595801257,
+   0.36528094232637354,
+   0.5665672264538755
+  ],
+  "noisy-calibrated-repair-choice-with-mixture-reader": [
+   0.09874255711184945,
+   0.003640283350911734,
+   0.1965209025217135
+  ],
+  "noisy-calibrated-repair-end-to-end": [
+   0.5974887458952078,
+   0.4684827738543363,
+   0.7123991840854059
+  ],
+  "noisy-calibrated-harm-reader-at-independent-choice": [
+   0.06538627580189399,
+   0.03799950250650187,
+   0.10416337852425601
+  ],
+  "noisy-calibrated-harm-reader-at-mixture-choice": [
+   0.012517503595927898,
+   0.0072820860325795,
+   0.018333609488683445
+  ],
+  "noisy-calibrated-harm-choice-with-independent-reader": [
+   0.0509541006484852,
+   0.036986487263313446,
+   0.06573510957878767
+  ],
+  "noisy-calibrated-harm-choice-with-mixture-reader": [
+   -0.0019146715574809147,
+   -0.037168413727826526,
+   0.023144330950766734
+  ],
+  "noisy-calibrated-harm-end-to-end": [
+   0.06347160424441309,
+   0.04658491156586434,
+   0.0810470317967438
+  ],
+  "noisy-overtrusted-familiar-reader-at-independent-choice": [
+   0.09319196428571427,
+   0.08180168030753968,
+   0.1045512462797619
+  ],
+  "noisy-overtrusted-familiar-reader-at-mixture-choice": [
+   0.06140873015873016,
+   0.05657242063492064,
+   0.06615838913690478
+  ],
+  "noisy-overtrusted-familiar-choice-with-independent-reader": [
+   0.05678943452380954,
+   0.04631665426587303,
+   0.06739862351190479
+  ],
+  "noisy-overtrusted-familiar-choice-with-mixture-reader": [
+   0.025006200396825405,
+   0.01829117063492065,
+   0.03201900421626985
+  ],
+  "noisy-overtrusted-familiar-end-to-end": [
+   0.11819816468253967,
+   0.10720486111111112,
+   0.12904296875000001
+  ],
+  "noisy-overtrusted-changed-reader-at-independent-choice": [
+   0.00822172619047618,
+   0.003007037450396808,
+   0.013386656746031733
+  ],
+  "noisy-overtrusted-changed-reader-at-mixture-choice": [
+   0.0065972222222222075,
+   0.0018663194444444471,
+   0.011700148809523794
+  ],
+  "noisy-overtrusted-changed-choice-with-independent-reader": [
+   0.019382440476190477,
+   0.012871093750000005,
+   0.025645151289682543
+  ],
+  "noisy-overtrusted-changed-choice-with-mixture-reader": [
+   0.017757936507936504,
+   0.011104755704365057,
+   0.024776940724206362
+  ],
+  "noisy-overtrusted-changed-end-to-end": [
+   0.025979662698412686,
+   0.01868164062499997,
+   0.033686910962301586
+  ],
+  "noisy-overtrusted-repair-reader-at-independent-choice": [
+   0.5898078255982696,
+   0.474914953212281,
+   0.697708859002572
+  ],
+  "noisy-overtrusted-repair-reader-at-mixture-choice": [
+   0.1494497675278526,
+   0.101634912748308,
+   0.19732985334291855
+  ],
+  "noisy-overtrusted-repair-choice-with-independent-reader": [
+   0.47445394991774714,
+   0.3690254328626853,
+   0.5722145062706447
+  ],
+  "noisy-overtrusted-repair-choice-with-mixture-reader": [
+   0.034095891847330015,
+   -0.0640896524538573,
+   0.13375233383950982
+  ],
+  "noisy-overtrusted-repair-end-to-end": [
+   0.6239037174455997,
+   0.4969564129033917,
+   0.7364610440289955
+  ],
+  "noisy-overtrusted-harm-reader-at-independent-choice": [
+   0.07663428928288787,
+   0.05082342930953186,
+   0.11300907195368008
+  ],
+  "noisy-overtrusted-harm-reader-at-mixture-choice": [
+   0.016890327779482996,
+   0.010665576111199554,
+   0.02382597388613462
+  ],
+  "noisy-overtrusted-harm-choice-with-independent-reader": [
+   0.051210691165833676,
+   0.037428814519585366,
+   0.06595677274600502
+  ],
+  "noisy-overtrusted-harm-choice-with-mixture-reader": [
+   -0.008533270337571223,
+   -0.04396217958673082,
+   0.017964174182766243
+  ],
+  "noisy-overtrusted-harm-end-to-end": [
+   0.06810101894531666,
+   0.0504110271749713,
+   0.08552972484547977
+  ]
+ }
+}

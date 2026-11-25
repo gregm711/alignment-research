@@ -124,10 +124,10 @@ def rows(table):
     return [sum(table[w] << i for i,w in enumerate(words)) for words in SUFFIXES[1:]]
 
 
-def realization(h, cap, mode):
+def realization(h, cap, mode, prefix_count=15):
     if mode == "states":
         reps = {}
-        for p, row in enumerate(h[:15], 1):
+        for p, row in enumerate(h[:prefix_count], 1):
             reps.setdefault(row, p)
         index = {row: 1<<i for i,row in enumerate(reps)}
         try:
@@ -144,7 +144,7 @@ def realization(h, cap, mode):
             row ^= v
             code ^= w
         return row, code
-    for p, row in enumerate(h[:15],1):
+    for p, row in enumerate(h[:prefix_count],1):
         rem, code = reduce(row)
         if rem:
             if len(reps) >= cap:

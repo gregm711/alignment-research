@@ -1,0 +1,301 @@
+{
+ "strength": {
+  "beta_next": 8,
+  "beta_recheck": 8
+ },
+ "episodes_by_congress": [
+  5163,
+  5438,
+  3929,
+  5225,
+  3822,
+  3427,
+  3659,
+  4321
+ ],
+ "raw_rows": [
+  "congress",
+  "block",
+  "prior",
+  "first_deviation",
+  "second_deviation",
+  "future_deviations_out_of_four",
+  "old",
+  "report",
+  "recheck",
+  "next",
+  "recheck_only",
+  "next_only",
+  "beta_recheck",
+  "beta_next"
+ ],
+ "feedback_by_congress": [
+  [
+   0,
+   88,
+   0,
+   13666
+  ],
+  [
+   0,
+   333,
+   0,
+   15284
+  ]
+ ],
+ "feedback_columns": [
+  "true_repairs",
+  "eligible_true_errors",
+  "false_harms",
+  "eligible_false_correct"
+ ],
+ "all": {
+  "persistent_fraction": 0.05241735302826501,
+  "false_fraction": 0.670213502528648,
+  "old/brier": 0.09136793941778677,
+  "old/accuracy": 0.8973089002844632,
+  "old/forecast": 0.05368329074251586,
+  "report/brier": 0.08902160163861095,
+  "report/accuracy": 0.8973089002844632,
+  "report/forecast": 0.07773965935118862,
+  "recheck/brier": 0.08429863207495437,
+  "recheck/accuracy": 0.8973089002844632,
+  "recheck/forecast": 0.07869278992880047,
+  "next/brier": 0.08271948807886881,
+  "next/accuracy": 0.8973089002844632,
+  "next/forecast": 0.08047496195543072,
+  "recheck_only/brier": 0.08428491532219115,
+  "recheck_only/accuracy": 0.8973089002844632,
+  "recheck_only/forecast": 0.07835337820836999,
+  "next_only/brier": 0.08458952669254421,
+  "next_only/accuracy": 0.8973089002844632,
+  "next_only/forecast": 0.06096006200104367,
+  "beta_next/brier": 0.08417643584043233,
+  "beta_next/accuracy": 0.8973089002844632,
+  "beta_next/forecast": 0.08493333230859383,
+  "beta_recheck/brier": 0.08408496153968287,
+  "beta_recheck/accuracy": 0.8973089002844632,
+  "beta_recheck/forecast": 0.08436142482349743,
+  "next_minus_recheck": {
+   "estimate": -0.0015791439960855663,
+   "interval": [
+    -0.003316849411020237,
+    -2.1837624811724306e-05
+   ],
+   "congress": [
+    0.000550023826103016,
+    -0.0037083118182741487
+   ]
+  },
+  "next_minus_beta_next": {
+   "estimate": -0.0014569477615635207,
+   "interval": [
+    -0.0026916235602322,
+    -0.0002944121268190908
+   ],
+   "congress": [
+    0.0007395844908313215,
+    -0.0036534800139583767
+   ]
+  },
+  "next_minus_next_only": {
+   "estimate": -0.0018700386136754066,
+   "interval": [
+    -0.0030789309608266046,
+    -0.0006811298297664317
+   ],
+   "congress": [
+    -0.0002769052848991052,
+    -0.003463171942451701
+   ]
+  },
+  "next_minus_old": {
+   "estimate": -0.008648451338917965,
+   "interval": [
+    -0.013648707525751274,
+    -0.0038131989733668666
+   ],
+   "congress": [
+    0.00021690138042954749,
+    -0.017513804058265484
+   ]
+  },
+  "next_minus_report": {
+   "estimate": -0.00630211355974214,
+   "interval": [
+    -0.009739610969895614,
+    -0.0029902280929000723
+   ],
+   "congress": [
+    -0.00047644277337619695,
+    -0.012127784346108075
+   ]
+  }
+ },
+ "true": {
+  "persistent_fraction": 0.12073529411764707,
+  "false_fraction": 0.0,
+  "old/brier": 0.1894746947897142,
+  "old/accuracy": 0.7803676470588237,
+  "old/forecast": 0.08058525601248918,
+  "report/brier": 0.18238495211597383,
+  "report/accuracy": 0.7803676470588237,
+  "report/forecast": 0.10045681409393284,
+  "recheck/brier": 0.17181582306110843,
+  "recheck/accuracy": 0.7803676470588237,
+  "recheck/forecast": 0.16215378686520326,
+  "next/brier": 0.169017236355617,
+  "next/accuracy": 0.7803676470588237,
+  "next/forecast": 0.12614014665601794,
+  "recheck_only/brier": 0.1717486696068707,
+  "recheck_only/accuracy": 0.7803676470588237,
+  "recheck_only/forecast": 0.16277789331203585,
+  "next_only/brier": 0.17457646024986198,
+  "next_only/accuracy": 0.7803676470588237,
+  "next_only/forecast": 0.1008831768076218,
+  "beta_next/brier": 0.1704894249352591,
+  "beta_next/accuracy": 0.7803676470588237,
+  "beta_next/forecast": 0.13677924427160268,
+  "beta_recheck/brier": 0.17131789656338697,
+  "beta_recheck/accuracy": 0.7803676470588237,
+  "beta_recheck/forecast": 0.18274244978887927,
+  "next_minus_recheck": {
+   "estimate": -0.002798586705491435,
+   "interval": [
+    -0.006986553848185653,
+    0.001355467015346449
+   ],
+   "congress": [
+    0.001140600085249882,
+    -0.006737773496232724
+   ]
+  },
+  "next_minus_beta_next": {
+   "estimate": -0.0014721885796420975,
+   "interval": [
+    -0.004503713965272847,
+    0.0015245738551025317
+   ],
+   "congress": [
+    0.0034698086198384215,
+    -0.006414185779122589
+   ]
+  },
+  "next_minus_next_only": {
+   "estimate": -0.005559223894244986,
+   "interval": [
+    -0.007876965885214002,
+    -0.002997154833142314
+   ],
+   "congress": [
+    -0.0022734861294668174,
+    -0.008844961659023126
+   ]
+  },
+  "next_minus_old": {
+   "estimate": -0.020457458434097214,
+   "interval": [
+    -0.03014752900312889,
+    -0.010069526617062344
+   ],
+   "congress": [
+    -0.0010212453433841862,
+    -0.039893671524810215
+   ]
+  },
+  "next_minus_report": {
+   "estimate": -0.013367715760356835,
+   "interval": [
+    -0.02036549112331243,
+    -0.005689472079150867
+   ],
+   "congress": [
+    -0.00022081044017754903,
+    -0.026514621080536066
+   ]
+  }
+ },
+ "false": {
+  "persistent_fraction": 0.011879373284578961,
+  "false_fraction": 1.0,
+  "old/brier": 0.037852952585377436,
+  "old/accuracy": 0.9600156056942883,
+  "old/forecast": 0.04295553179841592,
+  "report/brier": 0.03844966669278734,
+  "report/accuracy": 0.9600156056942883,
+  "report/forecast": 0.06847654906920625,
+  "recheck/brier": 0.037597977439673184,
+  "recheck/accuracy": 0.9600156056942883,
+  "recheck/forecast": 0.03925102679925177,
+  "next/brier": 0.03693334466705729,
+  "next/accuracy": 0.9600156056942883,
+  "next/forecast": 0.05881598389507994,
+  "recheck_only/brier": 0.03760695525188714,
+  "recheck_only/accuracy": 0.9600156056942883,
+  "recheck_only/forecast": 0.03841984839167053,
+  "next_only/brier": 0.03664967810220646,
+  "next_only/accuracy": 0.9600156056942883,
+  "next_only/forecast": 0.04201100487598544,
+  "beta_next/brier": 0.03793770278862946,
+  "beta_next/accuracy": 0.9600156056942883,
+  "beta_next/forecast": 0.06179978936475546,
+  "beta_recheck/brier": 0.03770623732422771,
+  "beta_recheck/accuracy": 0.9600156056942883,
+  "beta_recheck/forecast": 0.03818269493192532,
+  "next_minus_recheck": {
+   "estimate": -0.0006646327726158932,
+   "interval": [
+    -0.001497622432914355,
+    4.1580928390269004e-05
+   ],
+   "congress": [
+    0.00034483922740995154,
+    -0.001674104772641745
+   ]
+  },
+  "next_minus_beta_next": {
+   "estimate": -0.0010043581215721659,
+   "interval": [
+    -0.0012892885005579028,
+    -0.0007047445780834624
+   ],
+   "congress": [
+    -0.00020898046344197674,
+    -0.001799735779702355
+   ]
+  },
+  "next_minus_next_only": {
+   "estimate": 0.00028366656485083463,
+   "interval": [
+    -6.859150388982983e-05,
+    0.0005864110000508129
+   ],
+   "congress": [
+    0.00041676912717887593,
+    0.0001505640025227864
+   ]
+  },
+  "next_minus_old": {
+   "estimate": -0.000919607918320145,
+   "interval": [
+    -0.001691984213600937,
+    -0.00023998883764068295
+   ],
+   "congress": [
+    0.000647072141130061,
+    -0.0024862879777703545
+   ]
+  },
+  "next_minus_report": {
+   "estimate": -0.0015163220257300505,
+   "interval": [
+    -0.0019136425273677772,
+    -0.0011649367704938832
+   ],
+   "congress": [
+    -0.0005652574131250442,
+    -0.0024673866383350604
+   ]
+  }
+ }
+}

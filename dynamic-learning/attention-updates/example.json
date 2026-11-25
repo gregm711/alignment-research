@@ -1,0 +1,30 @@
+{
+  "seed": 1102,
+  "selection": "first exported incident in seed order with an unrelated default-step flip, then first such query",
+  "trigger": [
+    "rewards_balance",
+    "what is the updated points that i earned with synovus card"
+  ],
+  "check": [
+    "credit_score",
+    "tell me my credit raing"
+  ],
+  "query": [
+    "improve_credit_score",
+    "give me some ideas for boosting my credit score"
+  ],
+  "before": -0.43285953998565674,
+  "after": 0.15328645706176758,
+  "probabilities": [
+    0.39344367384910583,
+    0.538246750831604
+  ],
+  "head_dots": [
+    -0.002526886761188507,
+    -0.6363999247550964
+  ],
+  "head_logit_deltas": [
+    0.0018880963325500488,
+    0.5842578411102295
+  ]
+}

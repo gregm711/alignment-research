@@ -1,0 +1,34 @@
+# Can offline consolidation fit two useful representations back into one projection?
+
+**Result, November 25, 2026.** Yes, within this task domain. After practice, a small transformer revisited strings it had already seen. We updated only its 2,592-weight projection to preserve how its old and current representations related those strings. After discarding the archive, the student came within **0.39 points** of the two-projection teacher on the absent practice family and **0.13 points** on the recent family. Reloading just the final network and newly fitted output weights reproduced the predictions on 256 independent strings for each of 32 exported readouts. No transcript, support examples, optimizer state, or second projection is used in that reload.
+
+| Representation used for learning new tools | Absent family | Recent family |
+|---|---:|---:|
+| Current projection | 71.62% | 79.51% |
+| Arithmetic mean of archived and current weights | 74.04% | 78.91% |
+| Same offline compute targeting current geometry alone | 71.90% | 79.68% |
+| Single consolidated projection | **75.29%** | **78.70%** |
+| Two-projection teacher | 75.68% | 78.83% |
+| Explicit position and count features | 81.81% | 81.71% |
+
+The student gained 3.68 points over the current projection on absent-family tasks (95% interval +1.96 to +5.52), and lost 0.81 on recent tasks (−1.63 to −0.02). The absent-family interval missed the required three-point lower bound. The student improved on averaging the weights by 1.25 points on the absent family (+0.56 to +2.03). Distilling only the current representation, starting from exactly the same weight average and seeing the same unlabeled minibatches, was 3.39 points worse than distilling both on the absent family. Mean error in the teacher's similarity scores on unseen strings fell from 0.061 for weight averaging to 0.038 after consolidation.
+
+**Returning to an old task family changed the result.** With one switch the absent-family advantage over current was 6.16 points (+3.82 to +8.48). With two switches it was 1.19 (−0.15 to +2.44). In an A→B→A stream, a single archived projection may duplicate the current family or fail to preserve the shorter intervening block. Those are possible explanations; this subgroup comparison alone does not identify the cause. Exclusive-or improved by 0.94 points. Count equality changed by −0.75, with an interval reaching zero.
+
+**Feedback.** On absent-family tasks, harmful flips changed by −0.46 points under stable reliability and −0.59 after reversal, and truthful repairs increased by 1.54 and 1.59 points compared with current-only weights. On recent tasks the differences were +0.17 and +0.22 for harm, −0.04 and −0.02 for repair. The intervals passed the two-point feedback bounds. This measures the effect of labels on future readout updates. It gives no assurance about alignment outside this setting. [Full intervals and learning curves](consolidation-summary.json)
+
+All 512 practice strings per lifetime had already occurred. No new tool labels were supplied at consolidation. The offline procedure uses two teacher projections, unlabeled replay and 120 additional gradient steps, then returns to the current architecture's original size. The hand-designed features remain stronger on both primary families.
+
+Run `python3 consolidation.py` in this directory. To check cold deployment separately in the local environment, run `python3 -c 'import consolidation as c; c.torch.set_num_threads(1); print(c.verify_export())'`. [Exported encoders and readout weights](consolidation-models.npz) · [Trials and reference logits](consolidation-trials.npz) · [Per-lifetime diagnostics](consolidation-settings.json)
+
+## Protocol fixed before training
+
+The string learner can retain an older projection and combine it with its current one. This costs two projection evaluations at deployment. Test whether a short offline update can encode their joint usefulness in the weights of a *single* projection. This experiment asks what extra computation between tasks can purchase in task-learning ability. It does not assume a biological implementation.
+
+Use 16 fresh lifetimes (751–766). Counterbalance which family is most recent. Run 240 episodes per lifetime with unannounced changes. Eight streams switch once at 60 or 180 episodes. The other eight return to their first family after an intervening block (60/180 or 90/150). The archive selector sees the same verified practice reservoir and lagged challenger as in the unannounced-boundary study. Evaluate new programs from the family absent in the final block and from the current family. On return streams the absent family is the middle block. Also evaluate held-out exclusive-or and count equality. Score one- and two-switch streams separately.
+
+During offline consolidation freeze the backbone. On unlabeled strings previously presented in practice, ask a single 32-dimensional projection to reproduce the pairwise similarities of concatenated, separately normalized archived and current features. The combined teacher is their equally weighted kernel. Start the student at the arithmetic mean of their projection parameters. Optimize the squared difference of the cosine similarity matrices for 120 minibatches of 48 examples with Adam at .003. Use an independent unseen-string pool to measure kernel error; label outcomes are excluded from the consolidation objective. At inference discard the teacher, archive, and reservoir. Save the actual persistent projection and check its single-projection kernel after reloading.
+
+Compare the student to the current projection, the arithmetic weight mean, a compute-matched student trained to reproduce the current representation only, the two-projection pooled teacher, and explicit position/count features. Choose each fast readout's regularization on the two existing development families. Report the mean and all three 4/8/16-example learning curves with paired lifetime intervals. Advance if the one-projection student gains at least three points on absent-family tools and loses at most two points on current-family tools versus the current projection, using the conservative interval bounds. Require it to be within one point of the teacher on both families and better than weight averaging on at least one; if teacher recovery itself is small, name that limit. Compute-matched self-distillation separates the benefit of preserving historical geometry from a generic regularization effect.
+
+For the same deployed student, compare harmful and helpful effects of advice against the current projection given identical fresh verification. Use existing matched query eligibility and eight checks per source in stable/reversed environments. Harm upper bounds must be below +2 and repair lower bounds above −2 points for each family and source environment. These are claims about new readout-weight updates after consolidation. They do not establish a general alignment property.

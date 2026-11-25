@@ -1,0 +1,418 @@
+[
+  {
+    "seed": 141,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.3,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 141,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.3,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 141,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 3.0,
+      "uniform": 10.0,
+      "adam": 10.0,
+      "prior": 10.0,
+      "conventional": 10.0
+    }
+  },
+  {
+    "seed": 141,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.3,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 142,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 142,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 142,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 3.0,
+      "uniform": 3.0,
+      "adam": 3.0,
+      "prior": 3.0,
+      "conventional": 3.0
+    }
+  },
+  {
+    "seed": 142,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 143,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 143,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 143,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 3.0,
+      "uniform": 10.0,
+      "adam": 10.0,
+      "prior": 10.0,
+      "conventional": 10.0
+    }
+  },
+  {
+    "seed": 143,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 144,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 144,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 144,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 1.0,
+      "uniform": 3.0,
+      "adam": 3.0,
+      "prior": 3.0,
+      "conventional": 3.0
+    }
+  },
+  {
+    "seed": 144,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 145,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.03,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 145,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.03,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 145,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 3.0,
+      "uniform": 3.0,
+      "adam": 3.0,
+      "prior": 3.0,
+      "conventional": 3.0
+    }
+  },
+  {
+    "seed": 145,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.03,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 146,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.03,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 146,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.03,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 146,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 1.0,
+      "uniform": 10.0,
+      "adam": 3.0,
+      "prior": 10.0,
+      "conventional": 10.0
+    }
+  },
+  {
+    "seed": 146,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.1,
+      "uniform": 0.3,
+      "adam": 0.03,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 147,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.3,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 147,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.3,
+      "adam": 0.3,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 147,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 1.0,
+      "uniform": 3.0,
+      "adam": 1.0,
+      "prior": 10.0,
+      "conventional": 3.0
+    }
+  },
+  {
+    "seed": 147,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.03,
+      "uniform": 0.3,
+      "adam": 0.3,
+      "prior": 0.3,
+      "conventional": 0.3
+    }
+  },
+  {
+    "seed": 148,
+    "t": 0,
+    "boundary": "carry",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.03,
+      "uniform": 0.03,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.03
+    }
+  },
+  {
+    "seed": 148,
+    "t": 0,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.03,
+      "uniform": 0.03,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.03
+    }
+  },
+  {
+    "seed": 148,
+    "t": 100,
+    "boundary": "carry",
+    "winner": "adam",
+    "rates": {
+      "gate": 1.0,
+      "uniform": 10.0,
+      "adam": 10.0,
+      "prior": 3.0,
+      "conventional": 10.0
+    }
+  },
+  {
+    "seed": 148,
+    "t": 100,
+    "boundary": "clear",
+    "winner": "uniform",
+    "rates": {
+      "gate": 0.3,
+      "uniform": 0.03,
+      "adam": 0.1,
+      "prior": 0.3,
+      "conventional": 0.03
+    }
+  }
+]
