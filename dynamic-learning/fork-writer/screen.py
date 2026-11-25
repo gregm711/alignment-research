@@ -6,7 +6,6 @@ from pathlib import Path
 import time
 
 from dev import episodes
-from reader import Reader
 
 HERE = Path(__file__).resolve().parent
 
@@ -27,6 +26,10 @@ def summarize(rows):
 
 def run(args):
     fixtures = episodes(args.seed, args.count)
+    if args.mlx:
+        from reader_mlx import Reader
+    else:
+        from reader import Reader
     model = Reader(args.model, args.revision)
     result = dict(model=args.model, revision=args.revision, seed=args.seed, modes={})
     for mode in args.modes:
@@ -66,4 +69,5 @@ if __name__ == "__main__":
     p.add_argument("--count", type=int, default=24)
     p.add_argument("--modes", nargs="+", choices=("full","empty","suffix"), default=("full","empty"))
     p.add_argument("--bytes", type=int)
+    p.add_argument("--mlx", action="store_true")
     run(p.parse_args())
