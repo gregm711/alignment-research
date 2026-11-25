@@ -1,0 +1,398 @@
+{
+  "configs": {
+    "vote": [
+      0,
+      0
+    ],
+    "oracle": [
+      0,
+      2
+    ],
+    "frozen": [
+      1,
+      2
+    ],
+    "rolling": [
+      1,
+      2
+    ],
+    "check_only": [
+      0,
+      0
+    ]
+  },
+  "panels": {
+    "fixed": {
+      "policies": {
+        "vote": {
+          "accuracy": 0.656005859375,
+          "bits_per_event": 50.0,
+          "cells_per_event": 35.0,
+          "calibration_bits_per_network": 0,
+          "checks_per_event": 0.0,
+          "bit_accuracy": 0.6279296875,
+          "severed_accuracy": 0.0670166015625,
+          "severing_loss": [
+            0.5889892578125,
+            0.5770263671875,
+            0.60009765625
+          ],
+          "timing": {
+            "repeats": 385,
+            "trials": [
+              {
+                "cpu_joules": 0.408625845,
+                "wall_seconds": 0.11428245902061462,
+                "cpu_seconds": 0.10078700000000002
+              },
+              {
+                "cpu_joules": 0.418137915,
+                "wall_seconds": 0.14619658299488947,
+                "cpu_seconds": 0.11747200000000002
+              },
+              {
+                "cpu_joules": 0.422308695,
+                "wall_seconds": 0.12878633401123807,
+                "cpu_seconds": 0.11457600000000001
+              }
+            ]
+          }
+        },
+        "oracle": {
+          "accuracy": 0.8709716796875,
+          "bits_per_event": 50.573974609375,
+          "cells_per_event": 35.2869873046875,
+          "calibration_bits_per_network": 0,
+          "checks_per_event": 0.2869873046875,
+          "bit_accuracy": 0.8612060546875,
+          "severed_accuracy": 0.061767578125,
+          "severing_loss": [
+            0.8092041015625,
+            0.7991943359375,
+            0.8187255859375
+          ],
+          "timing": {
+            "repeats": 252,
+            "trials": [
+              {
+                "cpu_joules": 0.51039184,
+                "wall_seconds": 0.1615180000080727,
+                "cpu_seconds": 0.145301
+              },
+              {
+                "cpu_joules": 0.529086414,
+                "wall_seconds": 0.13573733298107982,
+                "cpu_seconds": 0.13157399999999997
+              },
+              {
+                "cpu_joules": 0.518021774,
+                "wall_seconds": 0.1412480830331333,
+                "cpu_seconds": 0.134722
+              }
+            ]
+          }
+        },
+        "frozen": {
+          "accuracy": 0.85986328125,
+          "bits_per_event": 54.745361328125,
+          "cells_per_event": 39.3726806640625,
+          "calibration_bits_per_network": 256,
+          "checks_per_event": 0.3726806640625,
+          "bit_accuracy": 0.848876953125,
+          "severed_accuracy": 0.062744140625,
+          "severing_loss": [
+            0.797119140625,
+            0.787353515625,
+            0.8063995361328125
+          ],
+          "timing": {
+            "repeats": 147,
+            "trials": [
+              {
+                "cpu_joules": 0.719197229,
+                "wall_seconds": 0.19341966701904312,
+                "cpu_seconds": 0.18887699999999996
+              },
+              {
+                "cpu_joules": 0.702930679,
+                "wall_seconds": 0.19304179202299565,
+                "cpu_seconds": 0.18879400000000013
+              },
+              {
+                "cpu_joules": 0.703906536,
+                "wall_seconds": 0.20150595903396606,
+                "cpu_seconds": 0.19362499999999994
+              }
+            ]
+          }
+        },
+        "rolling": {
+          "accuracy": 0.8597412109375,
+          "bits_per_event": 54.747802734375,
+          "cells_per_event": 39.3739013671875,
+          "calibration_bits_per_network": 256,
+          "checks_per_event": 0.3739013671875,
+          "bit_accuracy": 0.8492431640625,
+          "severed_accuracy": 0.0638427734375,
+          "severing_loss": [
+            0.7958984375,
+            0.7862548828125,
+            0.804931640625
+          ],
+          "timing": {
+            "repeats": 10,
+            "trials": [
+              {
+                "cpu_joules": 0.830386167,
+                "wall_seconds": 0.2146832079743035,
+                "cpu_seconds": 0.204407
+              },
+              {
+                "cpu_joules": 0.82371394,
+                "wall_seconds": 0.20772620796924457,
+                "cpu_seconds": 0.20162400000000003
+              },
+              {
+                "cpu_joules": 0.822515,
+                "wall_seconds": 0.19945937499869615,
+                "cpu_seconds": 0.1977359999999999
+              }
+            ]
+          }
+        },
+        "check_only": {
+          "accuracy": 0.8133544921875,
+          "bits_per_event": 20.0,
+          "cells_per_event": 4.0,
+          "calibration_bits_per_network": 0,
+          "checks_per_event": 1.0,
+          "bit_accuracy": 0.7998046875,
+          "severed_accuracy": 0.0616455078125,
+          "severing_loss": [
+            0.751708984375,
+            0.7423095703125,
+            0.7608642578125
+          ],
+          "timing": {
+            "repeats": 865,
+            "trials": [
+              {
+                "cpu_joules": 0.5165778,
+                "wall_seconds": 0.13706649997038767,
+                "cpu_seconds": 0.13572999999999968
+              },
+              {
+                "cpu_joules": 0.509819791,
+                "wall_seconds": 0.13552100001834333,
+                "cpu_seconds": 0.13459699999999986
+              },
+              {
+                "cpu_joules": 0.495847307,
+                "wall_seconds": 0.13906374998623505,
+                "cpu_seconds": 0.13812700000000033
+              }
+            ]
+          }
+        }
+      },
+      "rolling_vs_vote": [
+        0.2037353515625,
+        0.1932373046875,
+        0.2142333984375
+      ],
+      "late_rolling_vs_frozen": [
+        6.505213034913027e-19,
+        -0.010099283854166665,
+        0.010416666666666666
+      ],
+      "worlds": 128,
+      "events_per_world": 64
+    },
+    "drift": {
+      "policies": {
+        "vote": {
+          "accuracy": 0.656005859375,
+          "bits_per_event": 50.0,
+          "cells_per_event": 35.0,
+          "calibration_bits_per_network": 0,
+          "checks_per_event": 0.0,
+          "bit_accuracy": 0.6279296875,
+          "severed_accuracy": 0.0670166015625,
+          "severing_loss": [
+            0.5889892578125,
+            0.5770263671875,
+            0.60009765625
+          ],
+          "timing": {
+            "repeats": 582,
+            "trials": [
+              {
+                "cpu_joules": 0.625458356,
+                "wall_seconds": 0.1468083750223741,
+                "cpu_seconds": 0.14554999999999962
+              },
+              {
+                "cpu_joules": 0.6291649,
+                "wall_seconds": 0.14684179105097428,
+                "cpu_seconds": 0.1457200000000003
+              },
+              {
+                "cpu_joules": 0.587791371,
+                "wall_seconds": 0.14257662504678592,
+                "cpu_seconds": 0.14192099999999996
+              }
+            ]
+          }
+        },
+        "oracle": {
+          "accuracy": 0.8748779296875,
+          "bits_per_event": 50.581787109375,
+          "cells_per_event": 35.2908935546875,
+          "calibration_bits_per_network": 0,
+          "checks_per_event": 0.2908935546875,
+          "bit_accuracy": 0.8662109375,
+          "severed_accuracy": 0.062744140625,
+          "severing_loss": [
+            0.8121337890625,
+            0.8030975341796875,
+            0.821044921875
+          ],
+          "timing": {
+            "repeats": 383,
+            "trials": [
+              {
+                "cpu_joules": 0.757782158,
+                "wall_seconds": 0.19402791699394584,
+                "cpu_seconds": 0.19297699999999995
+              },
+              {
+                "cpu_joules": 0.771414815,
+                "wall_seconds": 0.19713387498632073,
+                "cpu_seconds": 0.19575500000000012
+              },
+              {
+                "cpu_joules": 0.807174789,
+                "wall_seconds": 0.20728041703114286,
+                "cpu_seconds": 0.20478299999999994
+              }
+            ]
+          }
+        },
+        "frozen": {
+          "accuracy": 0.7681884765625,
+          "bits_per_event": 54.4169921875,
+          "cells_per_event": 39.20849609375,
+          "calibration_bits_per_network": 256,
+          "checks_per_event": 0.20849609375,
+          "bit_accuracy": 0.75,
+          "severed_accuracy": 0.0654296875,
+          "severing_loss": [
+            0.7027587890625,
+            0.6909149169921875,
+            0.7138671875
+          ],
+          "timing": {
+            "repeats": 158,
+            "trials": [
+              {
+                "cpu_joules": 0.745423649,
+                "wall_seconds": 0.19174116698559374,
+                "cpu_seconds": 0.19002600000000003
+              },
+              {
+                "cpu_joules": 0.722463625,
+                "wall_seconds": 0.18151304096681997,
+                "cpu_seconds": 0.18073300000000003
+              },
+              {
+                "cpu_joules": 0.706676158,
+                "wall_seconds": 0.1881825000164099,
+                "cpu_seconds": 0.18561099999999975
+              }
+            ]
+          }
+        },
+        "rolling": {
+          "accuracy": 0.8526611328125,
+          "bits_per_event": 54.707763671875,
+          "cells_per_event": 39.3538818359375,
+          "calibration_bits_per_network": 256,
+          "checks_per_event": 0.3538818359375,
+          "bit_accuracy": 0.8419189453125,
+          "severed_accuracy": 0.065673828125,
+          "severing_loss": [
+            0.7869873046875,
+            0.777587890625,
+            0.7965087890625
+          ],
+          "timing": {
+            "repeats": 11,
+            "trials": [
+              {
+                "cpu_joules": 0.917797065,
+                "wall_seconds": 0.21835416700923815,
+                "cpu_seconds": 0.21668600000000016
+              },
+              {
+                "cpu_joules": 0.926769058,
+                "wall_seconds": 0.224695208016783,
+                "cpu_seconds": 0.22208900000000042
+              },
+              {
+                "cpu_joules": 0.897946387,
+                "wall_seconds": 0.23403279203921556,
+                "cpu_seconds": 0.22425600000000045
+              }
+            ]
+          }
+        },
+        "check_only": {
+          "accuracy": 0.8133544921875,
+          "bits_per_event": 20.0,
+          "cells_per_event": 4.0,
+          "calibration_bits_per_network": 0,
+          "checks_per_event": 1.0,
+          "bit_accuracy": 0.7998046875,
+          "severed_accuracy": 0.0616455078125,
+          "severing_loss": [
+            0.751708984375,
+            0.7423095703125,
+            0.7608642578125
+          ],
+          "timing": {
+            "repeats": 1096,
+            "trials": [
+              {
+                "cpu_joules": 0.638270699,
+                "wall_seconds": 0.1626068750047125,
+                "cpu_seconds": 0.1614059999999995
+              },
+              {
+                "cpu_joules": 0.625292002,
+                "wall_seconds": 0.1696592079824768,
+                "cpu_seconds": 0.16714800000000007
+              },
+              {
+                "cpu_joules": 0.700986511,
+                "wall_seconds": 0.21337383397622034,
+                "cpu_seconds": 0.19526099999999946
+              }
+            ]
+          }
+        }
+      },
+      "rolling_vs_vote": [
+        0.1966552734375,
+        0.1866455078125,
+        0.2064208984375
+      ],
+      "late_rolling_vs_frozen": [
+        0.19075520833333334,
+        0.1728515625,
+        0.208984375
+      ],
+      "worlds": 128,
+      "events_per_world": 64
+    }
+  }
+}

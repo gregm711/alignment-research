@@ -1,0 +1,5281 @@
+{
+  "queries_per_world": 240,
+  "worlds_per_width": 12,
+  "training_cost": {
+    "cpu_joules": 0.017800441,
+    "wall_seconds": 0.005442375026177615,
+    "cpu_seconds": 0.0051059999999999856
+  },
+  "learned_parameters": 18,
+  "summaries": [
+    {
+      "width": 8,
+      "depth": 1,
+      "accuracy": {
+        "learned": 0.9934027777777779,
+        "analytic": 0.9940972222222223,
+        "central": 0.9940972222222223,
+        "severed": 0.9934027777777779,
+        "first": 1.0
+      },
+      "learned_minus_severed": [
+        0.0,
+        -0.001041666666666663,
+        0.001041666666666663
+      ],
+      "learned_minus_analytic": [
+        -0.0006944444444444328,
+        -0.002083333333333326,
+        0.0006944444444444697
+      ],
+      "learned_bits_per_query": 20.34722222222222,
+      "learned_cells_per_query": 1.017361111111111
+    },
+    {
+      "width": 8,
+      "depth": 3,
+      "accuracy": {
+        "learned": 0.9906250000000001,
+        "analytic": 0.9906250000000001,
+        "central": 0.9906250000000001,
+        "severed": 0.06180555555555556,
+        "first": 0.06145833333333333
+      },
+      "learned_minus_severed": [
+        0.9288194444444443,
+        0.9194444444444444,
+        0.9395833333333333
+      ],
+      "learned_minus_analytic": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "learned_bits_per_query": 60.02777777777778,
+      "learned_cells_per_query": 3.0013888888888896
+    },
+    {
+      "width": 8,
+      "depth": 5,
+      "accuracy": {
+        "learned": 0.9871527777777777,
+        "analytic": 0.9878472222222222,
+        "central": 0.9878472222222222,
+        "severed": 0.06770833333333333,
+        "first": 0.06631944444444444
+      },
+      "learned_minus_severed": [
+        0.9194444444444444,
+        0.9121527777777777,
+        0.9256944444444445
+      ],
+      "learned_minus_analytic": [
+        -0.000694444444444442,
+        -0.002777777777777768,
+        0.0010416666666666814
+      ],
+      "learned_bits_per_query": 99.65277777777777,
+      "learned_cells_per_query": 4.982638888888888
+    },
+    {
+      "width": 32,
+      "depth": 1,
+      "accuracy": {
+        "learned": 0.9944444444444445,
+        "analytic": 0.9944444444444445,
+        "central": 0.9944444444444445,
+        "severed": 0.9947916666666669,
+        "first": 1.0
+      },
+      "learned_minus_severed": [
+        -0.000347222222222221,
+        -0.001388888888888884,
+        0.000694444444444442
+      ],
+      "learned_minus_analytic": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "learned_bits_per_query": 24.333333333333332,
+      "learned_cells_per_query": 1.0138888888888888
+    },
+    {
+      "width": 32,
+      "depth": 3,
+      "accuracy": {
+        "learned": 0.9909722222222221,
+        "analytic": 0.990625,
+        "central": 0.990625,
+        "severed": 0.060763888888888895,
+        "first": 0.057986111111111106
+      },
+      "learned_minus_severed": [
+        0.9302083333333334,
+        0.920138888888889,
+        0.9392361111111112
+      ],
+      "learned_minus_analytic": [
+        0.00034722222222223026,
+        0.0,
+        0.0010416666666666907
+      ],
+      "learned_bits_per_query": 72.0,
+      "learned_cells_per_query": 3.0
+    },
+    {
+      "width": 32,
+      "depth": 5,
+      "accuracy": {
+        "learned": 0.9878472222222222,
+        "analytic": 0.9878472222222222,
+        "central": 0.9878472222222222,
+        "severed": 0.06145833333333333,
+        "first": 0.05694444444444444
+      },
+      "learned_minus_severed": [
+        0.9263888888888888,
+        0.9138888888888888,
+        0.9392361111111112
+      ],
+      "learned_minus_analytic": [
+        0.0,
+        -0.001041666666666663,
+        0.001041666666666663
+      ],
+      "learned_bits_per_query": 119.58333333333331,
+      "learned_cells_per_query": 4.982638888888889
+    },
+    {
+      "width": 128,
+      "depth": 1,
+      "accuracy": {
+        "learned": 0.9958333333333336,
+        "analytic": 0.9961805555555557,
+        "central": 0.9961805555555557,
+        "severed": 0.9961805555555557,
+        "first": 1.0
+      },
+      "learned_minus_severed": [
+        -0.000347222222222221,
+        -0.001041666666666663,
+        0.0
+      ],
+      "learned_minus_analytic": [
+        -0.000347222222222221,
+        -0.001041666666666663,
+        0.0
+      ],
+      "learned_bits_per_query": 28.25277777777778,
+      "learned_cells_per_query": 1.0090277777777776
+    },
+    {
+      "width": 128,
+      "depth": 3,
+      "accuracy": {
+        "learned": 0.9874999999999999,
+        "analytic": 0.9874999999999999,
+        "central": 0.9874999999999999,
+        "severed": 0.05625,
+        "first": 0.06215277777777777
+      },
+      "learned_minus_severed": [
+        0.93125,
+        0.9211805555555554,
+        0.9399305555555554
+      ],
+      "learned_minus_analytic": [
+        0.0,
+        -0.001041666666666663,
+        0.001041666666666663
+      ],
+      "learned_bits_per_query": 84.07777777777778,
+      "learned_cells_per_query": 3.0027777777777778
+    },
+    {
+      "width": 128,
+      "depth": 5,
+      "accuracy": {
+        "learned": 0.9881944444444445,
+        "analytic": 0.9878472222222223,
+        "central": 0.9878472222222223,
+        "severed": 0.059722222222222225,
+        "first": 0.06493055555555556
+      },
+      "learned_minus_severed": [
+        0.9284722222222221,
+        0.9187500000000002,
+        0.9378472222222222
+      ],
+      "learned_minus_analytic": [
+        0.000347222222222221,
+        -0.000694444444444442,
+        0.001388888888888884
+      ],
+      "learned_bits_per_query": 139.67916666666667,
+      "learned_cells_per_query": 4.988541666666666
+    }
+  ],
+  "worlds": [
+    {
+      "world": 0,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 248,
+          "messages": 496,
+          "bits": 4960,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 248,
+          "messages": 496,
+          "bits": 4960,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 248,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 248,
+          "messages": 496,
+          "bits": 4960,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 4820,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 4820,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 4820,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 4820,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 4920,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 4920,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 4920,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 4880,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 4880,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 247,
+          "messages": 494,
+          "bits": 4940,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 251,
+          "messages": 502,
+          "bits": 5020,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 251,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 237,
+          "worker_lookups": 247,
+          "messages": 494,
+          "bits": 4940,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 4880,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 4880,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 4840,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 4840,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 4840,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 4920,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 4920,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 237,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 4920,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 8,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 4860,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 15,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 8,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 7,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 19,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 15,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 16,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 23,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 14360,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 14360,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 718,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 14360,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 12,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 721,
+          "messages": 1442,
+          "bits": 14420,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 721,
+          "messages": 1442,
+          "bits": 14420,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 721,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 7,
+          "worker_lookups": 721,
+          "messages": 1442,
+          "bits": 14420,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 14460,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 14460,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 723,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 14460,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 11,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 14440,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 14440,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 722,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 17,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 14440,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 12,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 14380,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 14380,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 719,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 14380,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 26,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 21,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 19,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 17,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 14400,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 6,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 8,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 721,
+          "messages": 1442,
+          "bits": 14420,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 721,
+          "messages": 1442,
+          "bits": 14420,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 721,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 721,
+          "messages": 1442,
+          "bits": 14420,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 15,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 235,
+          "worker_lookups": 1191,
+          "messages": 2382,
+          "bits": 23820,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 1191,
+          "messages": 2382,
+          "bits": 23820,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 1191,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 21,
+          "worker_lookups": 1191,
+          "messages": 2382,
+          "bits": 23820,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 23900,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 23900,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1195,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 16,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 23900,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 19,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1198,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 20,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 18,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1198,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 20,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 234,
+          "worker_lookups": 1191,
+          "messages": 2382,
+          "bits": 23820,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 23880,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 1191,
+          "messages": 2382,
+          "bits": 23820,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 17,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 21,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 234,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 23980,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 233,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 23980,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 233,
+          "worker_lookups": 1199,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 14,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 23980,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 17,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 23900,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 23900,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 1195,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 14,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 23900,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 8,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 23920,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 23920,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1196,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 16,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 23920,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 21,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 23880,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 23880,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 12,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 23880,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 23940,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 23940,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1197,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 19,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 23940,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 8,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1198,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 1198,
+          "messages": 2396,
+          "bits": 23960,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 4800,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 245,
+          "messages": 490,
+          "bits": 5880,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 245,
+          "messages": 490,
+          "bits": 5880,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 245,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 237,
+          "worker_lookups": 245,
+          "messages": 490,
+          "bits": 5880,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 245,
+          "messages": 490,
+          "bits": 5880,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 245,
+          "messages": 490,
+          "bits": 5880,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 245,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 245,
+          "messages": 490,
+          "bits": 5880,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 5808,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 32,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 5904,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 20,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 17,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 17352,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 17352,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 723,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 12,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 17352,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 718,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 19,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 11,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 717,
+          "messages": 1434,
+          "bits": 17208,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 717,
+          "messages": 1434,
+          "bits": 17208,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 717,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 717,
+          "messages": 1434,
+          "bits": 17208,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 17,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 8,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 718,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 21,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 724,
+          "messages": 1448,
+          "bits": 17376,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 724,
+          "messages": 1448,
+          "bits": 17376,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 724,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 14,
+          "worker_lookups": 724,
+          "messages": 1448,
+          "bits": 17376,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 9,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 17232,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 18,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 17328,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 17328,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 722,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 17328,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 9,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 11,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 235,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 12,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 15,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 32,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 14,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 17280,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 18,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 28656,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 28656,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1194,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 18,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 28656,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 8,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 28800,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 9,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 28728,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 28728,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1197,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 21,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 28728,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 28776,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 28776,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1199,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 25,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 28776,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 233,
+          "worker_lookups": 1189,
+          "messages": 2378,
+          "bits": 28536,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 233,
+          "worker_lookups": 1189,
+          "messages": 2378,
+          "bits": 28536,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 233,
+          "worker_lookups": 1189,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 1189,
+          "messages": 2378,
+          "bits": 28536,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 6,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1190,
+          "messages": 2380,
+          "bits": 28560,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1190,
+          "messages": 2380,
+          "bits": 28560,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1190,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 1190,
+          "messages": 2380,
+          "bits": 28560,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 28608,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 28608,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1192,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 17,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 28608,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 12,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 28704,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 28704,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 1196,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 28704,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 235,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 28728,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 28728,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1197,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 10,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 28728,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 8,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 32,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 28704,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 28704,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1196,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 7,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 28704,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 26,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 5760,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 6776,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 6776,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 6776,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 247,
+          "messages": 494,
+          "bits": 6916,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 6888,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 237,
+          "worker_lookups": 247,
+          "messages": 494,
+          "bits": 6916,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 6832,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 6832,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 244,
+          "messages": 488,
+          "bits": 6832,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 6748,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 6748,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 6748,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 6776,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 6776,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 242,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 242,
+          "messages": 484,
+          "bits": 6776,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 6748,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 6748,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 239,
+          "worker_lookups": 241,
+          "messages": 482,
+          "bits": 6748,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 6804,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 6804,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 243,
+          "messages": 486,
+          "bits": 6804,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 6888,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 6888,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 238,
+          "worker_lookups": 246,
+          "messages": 492,
+          "bits": 6888,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 128,
+      "depth": 1,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 240,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 718,
+          "messages": 1436,
+          "bits": 20104,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 718,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 16,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 11,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 719,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 11,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 15,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 235,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 722,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 22,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 18,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 722,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 10,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 20,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 20244,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 20244,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 723,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 723,
+          "messages": 1446,
+          "bits": 20244,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 15,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 16,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 719,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 9,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 722,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 10,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 719,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 719,
+          "messages": 1438,
+          "bits": 20132,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 10,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 17,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 720,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 720,
+          "messages": 1440,
+          "bits": 20160,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 11,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 128,
+      "depth": 3,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 722,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 14,
+          "worker_lookups": 722,
+          "messages": 1444,
+          "bits": 20216,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 18,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 0,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 14,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 1,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 234,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 33376,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 234,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 33376,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 234,
+          "worker_lookups": 1192,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 33376,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 2,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 235,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 33432,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 236,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 33488,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 236,
+          "worker_lookups": 1196,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 12,
+          "worker_lookups": 1194,
+          "messages": 2388,
+          "bits": 33432,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 21,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 3,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 239,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 33572,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 239,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 33572,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 239,
+          "worker_lookups": 1199,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 15,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 33572,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 14,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 4,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 11,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 5,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 240,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 10,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 6,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 33460,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 1191,
+          "messages": 2382,
+          "bits": 33348,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 1191,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 17,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 33460,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 19,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 7,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 236,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 33460,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 1192,
+          "messages": 2384,
+          "bits": 33376,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 1192,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 18,
+          "worker_lookups": 1195,
+          "messages": 2390,
+          "bits": 33460,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 10,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 8,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 235,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 33488,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 235,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 33488,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 235,
+          "worker_lookups": 1196,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 20,
+          "worker_lookups": 1196,
+          "messages": 2392,
+          "bits": 33488,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 16,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 9,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1200,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 1200,
+          "messages": 2400,
+          "bits": 33600,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 10,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 238,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 33516,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 238,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 33516,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 238,
+          "worker_lookups": 1197,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 13,
+          "worker_lookups": 1197,
+          "messages": 2394,
+          "bits": 33516,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 13,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    },
+    {
+      "world": 11,
+      "width": 128,
+      "depth": 5,
+      "queries": 240,
+      "arms": {
+        "learned": {
+          "correct": 237,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 33572,
+          "verification_checks": 0
+        },
+        "analytic": {
+          "correct": 237,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 33572,
+          "verification_checks": 0
+        },
+        "central": {
+          "correct": 237,
+          "worker_lookups": 1199,
+          "messages": 0,
+          "bits": 0,
+          "verification_checks": 0
+        },
+        "severed": {
+          "correct": 16,
+          "worker_lookups": 1199,
+          "messages": 2398,
+          "bits": 33572,
+          "verification_checks": 0
+        },
+        "first": {
+          "correct": 20,
+          "worker_lookups": 240,
+          "messages": 480,
+          "bits": 6720,
+          "verification_checks": 0
+        }
+      }
+    }
+  ],
+  "timings": [
+    {
+      "width": 8,
+      "depth": 1,
+      "method": "learned",
+      "queries_per_interval": 636720,
+      "readings": [
+        {
+          "cpu_joules": 0.587488927,
+          "wall_seconds": 0.1953254579566419,
+          "cpu_seconds": 0.16473900000000002
+        },
+        {
+          "cpu_joules": 0.559737228,
+          "wall_seconds": 0.16577825002605096,
+          "cpu_seconds": 0.16102899999999998
+        },
+        {
+          "cpu_joules": 0.573052244,
+          "wall_seconds": 0.15730870800325647,
+          "cpu_seconds": 0.15481699999999998
+        }
+      ]
+    },
+    {
+      "width": 8,
+      "depth": 1,
+      "method": "analytic",
+      "queries_per_interval": 822720,
+      "readings": [
+        {
+          "cpu_joules": 0.554254738,
+          "wall_seconds": 0.1584101669723168,
+          "cpu_seconds": 0.152852
+        },
+        {
+          "cpu_joules": 0.521474814,
+          "wall_seconds": 0.14901062502758577,
+          "cpu_seconds": 0.1472230000000001
+        },
+        {
+          "cpu_joules": 0.560115661,
+          "wall_seconds": 0.15294266701675951,
+          "cpu_seconds": 0.15027600000000008
+        }
+      ]
+    },
+    {
+      "width": 8,
+      "depth": 3,
+      "method": "analytic",
+      "queries_per_interval": 548880,
+      "readings": [
+        {
+          "cpu_joules": 0.592863065,
+          "wall_seconds": 0.15421679097926244,
+          "cpu_seconds": 0.15329700000000002
+        },
+        {
+          "cpu_joules": 0.555595621,
+          "wall_seconds": 0.1555177079862915,
+          "cpu_seconds": 0.1544509999999999
+        },
+        {
+          "cpu_joules": 0.566893007,
+          "wall_seconds": 0.15345658297883347,
+          "cpu_seconds": 0.152358
+        }
+      ]
+    },
+    {
+      "width": 8,
+      "depth": 3,
+      "method": "learned",
+      "queries_per_interval": 405600,
+      "readings": [
+        {
+          "cpu_joules": 0.560423476,
+          "wall_seconds": 0.15290408302098513,
+          "cpu_seconds": 0.15219699999999992
+        },
+        {
+          "cpu_joules": 0.601467357,
+          "wall_seconds": 0.15681483299704269,
+          "cpu_seconds": 0.1553469999999999
+        },
+        {
+          "cpu_joules": 0.569725468,
+          "wall_seconds": 0.15406208398053423,
+          "cpu_seconds": 0.15305400000000002
+        }
+      ]
+    },
+    {
+      "width": 8,
+      "depth": 5,
+      "method": "learned",
+      "queries_per_interval": 247200,
+      "readings": [
+        {
+          "cpu_joules": 0.398746854,
+          "wall_seconds": 0.14655183302238584,
+          "cpu_seconds": 0.12119999999999997
+        },
+        {
+          "cpu_joules": 0.441110383,
+          "wall_seconds": 0.11578920803731307,
+          "cpu_seconds": 0.114344
+        },
+        {
+          "cpu_joules": 0.437006308,
+          "wall_seconds": 0.14172137499554083,
+          "cpu_seconds": 0.12498599999999982
+        }
+      ]
+    },
+    {
+      "width": 8,
+      "depth": 5,
+      "method": "analytic",
+      "queries_per_interval": 420960,
+      "readings": [
+        {
+          "cpu_joules": 0.528293017,
+          "wall_seconds": 0.16278908296953887,
+          "cpu_seconds": 0.15312499999999973
+        },
+        {
+          "cpu_joules": 0.520973336,
+          "wall_seconds": 0.14850454195402563,
+          "cpu_seconds": 0.14385899999999996
+        },
+        {
+          "cpu_joules": 0.524402512,
+          "wall_seconds": 0.14063970796996728,
+          "cpu_seconds": 0.13969000000000031
+        }
+      ]
+    },
+    {
+      "width": 32,
+      "depth": 1,
+      "method": "analytic",
+      "queries_per_interval": 766080,
+      "readings": [
+        {
+          "cpu_joules": 0.563784905,
+          "wall_seconds": 0.15236604103120044,
+          "cpu_seconds": 0.15144199999999985
+        },
+        {
+          "cpu_joules": 0.548351098,
+          "wall_seconds": 0.1517087079701014,
+          "cpu_seconds": 0.15079400000000032
+        },
+        {
+          "cpu_joules": 0.554613288,
+          "wall_seconds": 0.15541841700905934,
+          "cpu_seconds": 0.15342900000000004
+        }
+      ]
+    },
+    {
+      "width": 32,
+      "depth": 1,
+      "method": "learned",
+      "queries_per_interval": 595440,
+      "readings": [
+        {
+          "cpu_joules": 0.568119361,
+          "wall_seconds": 0.15255779202561826,
+          "cpu_seconds": 0.15168999999999988
+        },
+        {
+          "cpu_joules": 0.557179483,
+          "wall_seconds": 0.1504281249945052,
+          "cpu_seconds": 0.14984900000000012
+        },
+        {
+          "cpu_joules": 0.548348798,
+          "wall_seconds": 0.15318116697017103,
+          "cpu_seconds": 0.15213799999999988
+        }
+      ]
+    },
+    {
+      "width": 32,
+      "depth": 3,
+      "method": "learned",
+      "queries_per_interval": 490320,
+      "readings": [
+        {
+          "cpu_joules": 0.572851977,
+          "wall_seconds": 0.15671333397040144,
+          "cpu_seconds": 0.15510400000000013
+        },
+        {
+          "cpu_joules": 0.585938582,
+          "wall_seconds": 0.15263841598061845,
+          "cpu_seconds": 0.15188200000000007
+        },
+        {
+          "cpu_joules": 0.563219942,
+          "wall_seconds": 0.15745504200458527,
+          "cpu_seconds": 0.15532099999999982
+        }
+      ]
+    },
+    {
+      "width": 32,
+      "depth": 3,
+      "method": "analytic",
+      "queries_per_interval": 684720,
+      "readings": [
+        {
+          "cpu_joules": 0.585508303,
+          "wall_seconds": 0.15342666598735377,
+          "cpu_seconds": 0.1524289999999997
+        },
+        {
+          "cpu_joules": 0.543829537,
+          "wall_seconds": 0.1542925420217216,
+          "cpu_seconds": 0.15312899999999985
+        },
+        {
+          "cpu_joules": 0.58334129,
+          "wall_seconds": 0.15219570801127702,
+          "cpu_seconds": 0.15139600000000009
+        }
+      ]
+    },
+    {
+      "width": 32,
+      "depth": 5,
+      "method": "analytic",
+      "queries_per_interval": 389760,
+      "readings": [
+        {
+          "cpu_joules": 0.474032914,
+          "wall_seconds": 0.12977741699432954,
+          "cpu_seconds": 0.12856500000000004
+        },
+        {
+          "cpu_joules": 0.478281044,
+          "wall_seconds": 0.12876841699471697,
+          "cpu_seconds": 0.1281460000000001
+        },
+        {
+          "cpu_joules": 0.486317169,
+          "wall_seconds": 0.12992400000803173,
+          "cpu_seconds": 0.12904800000000005
+        }
+      ]
+    },
+    {
+      "width": 32,
+      "depth": 5,
+      "method": "learned",
+      "queries_per_interval": 337680,
+      "readings": [
+        {
+          "cpu_joules": 0.541026027,
+          "wall_seconds": 0.15553391602588817,
+          "cpu_seconds": 0.15446199999999966
+        },
+        {
+          "cpu_joules": 0.591832259,
+          "wall_seconds": 0.1564041250385344,
+          "cpu_seconds": 0.15483099999999972
+        },
+        {
+          "cpu_joules": 0.585436441,
+          "wall_seconds": 0.15367354202317074,
+          "cpu_seconds": 0.15268499999999996
+        }
+      ]
+    },
+    {
+      "width": 128,
+      "depth": 1,
+      "method": "learned",
+      "queries_per_interval": 1424160,
+      "readings": [
+        {
+          "cpu_joules": 0.564623645,
+          "wall_seconds": 0.14716474997112527,
+          "cpu_seconds": 0.14582799999999985
+        },
+        {
+          "cpu_joules": 0.533369622,
+          "wall_seconds": 0.14591250004014,
+          "cpu_seconds": 0.14458900000000074
+        },
+        {
+          "cpu_joules": 0.537587489,
+          "wall_seconds": 0.14846637495793402,
+          "cpu_seconds": 0.1456660000000003
+        }
+      ]
+    },
+    {
+      "width": 128,
+      "depth": 1,
+      "method": "analytic",
+      "queries_per_interval": 2027520,
+      "readings": [
+        {
+          "cpu_joules": 0.531097283,
+          "wall_seconds": 0.147584457998164,
+          "cpu_seconds": 0.14517700000000033
+        },
+        {
+          "cpu_joules": 0.548950406,
+          "wall_seconds": 0.1463434170000255,
+          "cpu_seconds": 0.14470799999999961
+        },
+        {
+          "cpu_joules": 0.538825548,
+          "wall_seconds": 0.14861420897068456,
+          "cpu_seconds": 0.14665399999999984
+        }
+      ]
+    },
+    {
+      "width": 128,
+      "depth": 3,
+      "method": "analytic",
+      "queries_per_interval": 505200,
+      "readings": [
+        {
+          "cpu_joules": 0.516138382,
+          "wall_seconds": 0.14064787502866238,
+          "cpu_seconds": 0.13971300000000042
+        },
+        {
+          "cpu_joules": 0.520214552,
+          "wall_seconds": 0.14725983294192702,
+          "cpu_seconds": 0.14414699999999936
+        },
+        {
+          "cpu_joules": 0.484370516,
+          "wall_seconds": 0.13923754199640825,
+          "cpu_seconds": 0.13855899999999988
+        }
+      ]
+    },
+    {
+      "width": 128,
+      "depth": 3,
+      "method": "learned",
+      "queries_per_interval": 322320,
+      "readings": [
+        {
+          "cpu_joules": 0.454691222,
+          "wall_seconds": 0.1220211669569835,
+          "cpu_seconds": 0.12109000000000059
+        },
+        {
+          "cpu_joules": 0.453584793,
+          "wall_seconds": 0.12314375001005828,
+          "cpu_seconds": 0.12181899999999946
+        },
+        {
+          "cpu_joules": 0.434127578,
+          "wall_seconds": 0.12114562495844439,
+          "cpu_seconds": 0.12048700000000068
+        }
+      ]
+    },
+    {
+      "width": 128,
+      "depth": 5,
+      "method": "learned",
+      "queries_per_interval": 340800,
+      "readings": [
+        {
+          "cpu_joules": 0.563364067,
+          "wall_seconds": 0.1547685000114143,
+          "cpu_seconds": 0.15393299999999943
+        },
+        {
+          "cpu_joules": 0.619671978,
+          "wall_seconds": 0.17676337499869987,
+          "cpu_seconds": 0.16546800000000061
+        },
+        {
+          "cpu_joules": 0.584850082,
+          "wall_seconds": 0.16892858396749943,
+          "cpu_seconds": 0.16373800000000038
+        }
+      ]
+    },
+    {
+      "width": 128,
+      "depth": 5,
+      "method": "analytic",
+      "queries_per_interval": 403440,
+      "readings": [
+        {
+          "cpu_joules": 0.502527442,
+          "wall_seconds": 0.14858458400703967,
+          "cpu_seconds": 0.14188699999999965
+        },
+        {
+          "cpu_joules": 0.503879436,
+          "wall_seconds": 0.14483775000553578,
+          "cpu_seconds": 0.1389269999999998
+        },
+        {
+          "cpu_joules": 0.493149026,
+          "wall_seconds": 0.13885954197030514,
+          "cpu_seconds": 0.13646400000000014
+        }
+      ]
+    }
+  ]
+}

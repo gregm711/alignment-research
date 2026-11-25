@@ -1,0 +1,292 @@
+{
+  "fixed": {
+    "arms": {
+      "continuous": {
+        "accuracy": 0.858154296875,
+        "checks_per_event": 0.3792724609375,
+        "post_setup_refreshes": 63.0,
+        "bits_per_event": 54.758544921875,
+        "active_cells_per_event": 39.3792724609375,
+        "timing": {
+          "repeats": 5,
+          "trials": [
+            {
+              "cpu_joules": 0.808408836,
+              "wall_seconds": 0.19255979196168482,
+              "cpu_seconds": 0.191395
+            },
+            {
+              "cpu_joules": 0.818992857,
+              "wall_seconds": 0.1923004169948399,
+              "cpu_seconds": 0.19145200000000007
+            },
+            {
+              "cpu_joules": 0.831807425,
+              "wall_seconds": 0.307648791000247,
+              "cpu_seconds": 0.221924
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 9.997471398925782e-06,
+          "wall_seconds": 2.3505833979697856e-06
+        }
+      },
+      "periodic": {
+        "accuracy": 0.85675048828125,
+        "checks_per_event": 0.37451171875,
+        "post_setup_refreshes": 7.0,
+        "bits_per_event": 54.7490234375,
+        "active_cells_per_event": 39.37451171875,
+        "timing": {
+          "repeats": 12,
+          "trials": [
+            {
+              "cpu_joules": 0.369810659,
+              "wall_seconds": 0.1515881250379607,
+              "cpu_seconds": 0.11211900000000008
+            },
+            {
+              "cpu_joules": 0.356750003,
+              "wall_seconds": 0.12360720802098513,
+              "cpu_seconds": 0.10585300000000009
+            },
+            {
+              "cpu_joules": 0.363554649,
+              "wall_seconds": 0.09020487498492002,
+              "cpu_seconds": 0.08932900000000021
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 1.8491345672607423e-06,
+          "wall_seconds": 6.2869877126559e-07
+        }
+      },
+      "frozen": {
+        "accuracy": 0.857421875,
+        "checks_per_event": 0.38629150390625,
+        "post_setup_refreshes": 0.0,
+        "bits_per_event": 54.7725830078125,
+        "active_cells_per_event": 39.38629150390625,
+        "timing": {
+          "repeats": 90,
+          "trials": [
+            {
+              "cpu_joules": 0.922088966,
+              "wall_seconds": 0.26570245798211545,
+              "cpu_seconds": 0.251077
+            },
+            {
+              "cpu_joules": 0.836356518,
+              "wall_seconds": 0.22063554200576618,
+              "cpu_seconds": 0.218696
+            },
+            {
+              "cpu_joules": 0.838260583,
+              "wall_seconds": 0.22574004100169986,
+              "cpu_seconds": 0.22439199999999992
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 5.684818406846788e-07,
+          "wall_seconds": 1.5308976304911287e-07
+        }
+      },
+      "gated": {
+        "accuracy": 0.856689453125,
+        "checks_per_event": 0.3780517578125,
+        "post_setup_refreshes": 0.62890625,
+        "bits_per_event": 54.756103515625,
+        "active_cells_per_event": 39.3780517578125,
+        "timing": {
+          "repeats": 27,
+          "trials": [
+            {
+              "cpu_joules": 0.667505451,
+              "wall_seconds": 0.17582320800283924,
+              "cpu_seconds": 0.17427900000000007
+            },
+            {
+              "cpu_joules": 0.639100627,
+              "wall_seconds": 0.17799399996874854,
+              "cpu_seconds": 0.175678
+            },
+            {
+              "cpu_joules": 0.652521799,
+              "wall_seconds": 0.17199999996228144,
+              "cpu_seconds": 0.1710440000000002
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 1.4750655540183737e-06,
+          "wall_seconds": 3.974591471418349e-07
+        }
+      }
+    },
+    "gated_minus": {
+      "continuous": [
+        -0.00146484375,
+        -0.0057373046875,
+        0.0028076171875
+      ],
+      "periodic": [
+        -6.103515625e-05,
+        -0.0042724609375,
+        0.0037857055664062556
+      ],
+      "frozen": [
+        -0.000732421875,
+        -0.003173828125,
+        0.0016494750976562556
+      ]
+    }
+  },
+  "drift": {
+    "arms": {
+      "continuous": {
+        "accuracy": 0.8505859375,
+        "checks_per_event": 0.36199951171875,
+        "post_setup_refreshes": 63.0,
+        "bits_per_event": 54.7239990234375,
+        "active_cells_per_event": 39.36199951171875,
+        "timing": {
+          "repeats": 6,
+          "trials": [
+            {
+              "cpu_joules": 1.012048336,
+              "wall_seconds": 0.25355050002690405,
+              "cpu_seconds": 0.24225699999999994
+            },
+            {
+              "cpu_joules": 1.006167507,
+              "wall_seconds": 0.24251379095949233,
+              "cpu_seconds": 0.240078
+            },
+            {
+              "cpu_joules": 1.005676289,
+              "wall_seconds": 0.2528286250308156,
+              "cpu_seconds": 0.24707800000000013
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 1.0235265167236328e-05,
+          "wall_seconds": 2.5719057722047487e-06
+        }
+      },
+      "periodic": {
+        "accuracy": 0.8370361328125,
+        "checks_per_event": 0.33258056640625,
+        "post_setup_refreshes": 7.0,
+        "bits_per_event": 54.6651611328125,
+        "active_cells_per_event": 39.33258056640625,
+        "timing": {
+          "repeats": 26,
+          "trials": [
+            {
+              "cpu_joules": 0.764566599,
+              "wall_seconds": 0.18542283296119422,
+              "cpu_seconds": 0.184434
+            },
+            {
+              "cpu_joules": 0.749012921,
+              "wall_seconds": 0.18813920801039785,
+              "cpu_seconds": 0.18714399999999998
+            },
+            {
+              "cpu_joules": 0.739143317,
+              "wall_seconds": 0.18215283402241766,
+              "cpu_seconds": 0.18130099999999993
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 1.7583123333270734e-06,
+          "wall_seconds": 4.3528121469631304e-07
+        }
+      },
+      "frozen": {
+        "accuracy": 0.76519775390625,
+        "checks_per_event": 0.21875,
+        "post_setup_refreshes": 0.0,
+        "bits_per_event": 54.4375,
+        "active_cells_per_event": 39.21875,
+        "timing": {
+          "repeats": 102,
+          "trials": [
+            {
+              "cpu_joules": 0.976685838,
+              "wall_seconds": 0.25710654200520366,
+              "cpu_seconds": 0.2556280000000002
+            },
+            {
+              "cpu_joules": 0.981959169,
+              "wall_seconds": 0.2634655419969931,
+              "cpu_seconds": 0.2622290000000005
+            },
+            {
+              "cpu_joules": 0.908514001,
+              "wall_seconds": 0.24018729099771008,
+              "cpu_seconds": 0.23791800000000052
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 5.844330659754135e-07,
+          "wall_seconds": 1.538484114135764e-07
+        }
+      },
+      "gated": {
+        "accuracy": 0.838134765625,
+        "checks_per_event": 0.34356689453125,
+        "post_setup_refreshes": 2.546875,
+        "bits_per_event": 54.6871337890625,
+        "active_cells_per_event": 39.34356689453125,
+        "timing": {
+          "repeats": 30,
+          "trials": [
+            {
+              "cpu_joules": 0.937035588,
+              "wall_seconds": 0.2530054579838179,
+              "cpu_seconds": 0.24951900000000027
+            },
+            {
+              "cpu_joules": 0.865743276,
+              "wall_seconds": 0.23593399999663234,
+              "cpu_seconds": 0.233136
+            },
+            {
+              "cpu_joules": 0.880756081,
+              "wall_seconds": 0.2498414579895325,
+              "cpu_seconds": 0.24641599999999997
+            }
+          ]
+        },
+        "per_event": {
+          "cpu_joules": 1.7919028340657552e-06,
+          "wall_seconds": 5.083037475372976e-07
+        }
+      }
+    },
+    "gated_minus": {
+      "continuous": [
+        -0.012451171875,
+        -0.016845703125,
+        -0.008056640625
+      ],
+      "periodic": [
+        0.0010986328125,
+        -0.0028076171875,
+        0.00494384765625
+      ],
+      "frozen": [
+        0.07293701171875,
+        0.06793060302734374,
+        0.0780029296875
+      ]
+    }
+  }
+}

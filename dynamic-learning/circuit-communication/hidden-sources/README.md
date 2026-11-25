@@ -17,3 +17,26 @@ With the original panels open, compare the unweighted voter on the rolling recei
 ### Can disagreement trigger a cheaper refresh?
 
 After reading the periodic results, fix a gate before testing a new seed (60914, 256 worlds per condition). At setup estimate redundancy as before. Treat sensors within Hamming radius one of at least eight sensors including themselves as the suspected common group. Flag an event when their absolute mean sign is below 0.75; an empty group is also flagged. If two of the last four events were flagged, and at least six events have elapsed since the last refresh, recompute pairwise redundancy from the latest eight readings for those networks only, effective on the next decision. No state labels, drift notices or new types of evidence. Compare against continuous refreshing, a frozen map, and the fixed eight-event schedule, all with the same fitted check policy. Count setup and subsequent refreshes separately. Predict at least threefold lower process CPU energy than continuous refresh with a drift-accuracy deficit below 1.5 points on the fresh seed. The gate is an analyst-designed heuristic; its thresholds remain frozen even if it misses. Resource comparisons use the actual masked implementation. On the fixed worlds a frozen map is the cheap baseline to beat.
+
+## Results
+
+With hidden source identities and a fixed topology, refreshing estimates from the last eight unlabeled events solved 85.97% of two-operation queries. Ordinary voting solved 65.60%, the voter given true groups solved 87.10%, and purchasing an independent check every time solved 81.34%. Replaying the same independent checks to the ordinary voter preserved the 20.37-point advantage [19.32, 21.42]. Even with checks disabled for both, the gain was 14.84 points [13.79, 15.93]. Severing the intermediate argument cut the rolling learner to 6.38%. Across events 9–32 after a source swap, rolling inference beat freezing by 19.08 points [17.29, 20.90]. This method estimates redundancy from repeated joint observations and assumes stable relay identities between observations. Arbitrary hidden dependence on a first encounter remains unresolved.
+
+Repeated correlation calculations have a price. On the second 128-world drift panel, computing them every eighth event used 1.74 µJ per decision versus 9.96 µJ for recomputing every event. Accuracy fell from 85.27% to 83.81%, a paired difference of −1.45 points [−1.99, −0.92]. On the original drift panel the deficit was 2.10 points. Periodic refresh therefore missed the specified 1.5-point target on the original panel; the fresh interval also includes losses above that margin. [Receipt replay and periodic refresh costs](refresh-results.json)
+
+### Refreshing on disagreement
+
+On the separate 256-network drift panel, the gate recomputed its grouping an average 2.55 times after setup; the continuous learner did so 63 times. Both followed the same communication protocol and saw all sensor packets. Measured costs are per decision, amortized over batches. Logical bits and active-cell counts include calibration and optional checks.
+
+| Drift policy | Exact answer | Bits | Active cells | Checks | CPU µJ | Wall µs |
+|---|---:|---:|---:|---:|---:|---:|
+| Freeze after calibration | 76.52% | 54.44 | 39.22 | .219 | .58 | .15 |
+| Recompute every event | 85.06% | 54.72 | 39.36 | .362 | 10.24 | 2.57 |
+| Recompute every eighth event | 83.70% | 54.67 | 39.33 | .333 | 1.76 | .44 |
+| Recompute on disagreement | 83.81% | 54.69 | 39.34 | .344 | 1.79 | .51 |
+
+The gate saved 5.7× in process CPU energy against continuous refreshing. Its 1.25-point accuracy deficit met the point prediction, with a paired interval for the deficit of 0.81–1.68 points. Against the periodic schedule the gain was 0.11 points [−0.28, 0.49], with slightly higher CPU energy on this run. On fixed topologies the frozen estimator reached 85.74% using 0.57 µJ versus 85.67% and 1.48 µJ for the gate. Frequent refresh buys accuracy when groups change. The additional logic of adaptive refreshing has yet to earn a clear advantage over the simple schedule.
+
+The tests use synthetic near-copy channels, a known reliability model, two supplied operations and a single abrupt topology change. The check-only policy spends an external measurement on every event and needs no relay packets. The CPU meter excludes the energy of physical sensors and wires. The calibrated receiver uses quadratic pairwise comparisons on refresh, so the 32-relay result does not establish favorable large-network scaling. [Primary results](results.json) · [Fresh gate results and raw timings](gate-results.json)
+
+Run `python3 run.py`, `python3 refresh.py`, and `python3 gate.py` in this directory using NumPy 2. The common meter returns an unavailable energy field where the macOS per-process counter is unsupported.

@@ -38,7 +38,12 @@ def worlds(seed, count, drift):
                 perms=perms, arg=arg), truth
 
 
-def vote(data, arm, radius):
+def neighbors(history, radius):
+    distance = POPCOUNT[history[:, :, None] ^ history[:, None, :]]
+    return (distance <= radius).sum(axis=2)
+
+
+def vote(data, arm, radius, refresh=1):
     readings = data["readings"]
     signals = readings[:, WARM:]
     if arm == "check_only":
@@ -49,14 +54,13 @@ def vote(data, arm, radius):
         group = data["groups"]
         return (signals * ~group).sum(axis=2) + np.sign((signals * group).sum(axis=2))
 
-    history = np.zeros(readings.shape[::2], dtype=np.uint8)
+    history = np.zeros((len(readings), N), dtype=np.uint8)
     for t in range(WARM):
         history = (history << 1) | (readings[:, t] > 0)
     margins = []
     for t in range(EVENTS):
-        if t == 0 or arm == "rolling":
-            distance = POPCOUNT[history[:, :, None] ^ history[:, None, :]]
-            duplicates = (distance <= radius).sum(axis=2)
+        if t == 0 or (arm == "rolling" and t % refresh == 0):
+            duplicates = neighbors(history, radius)
         margins.append((signals[:, t] / duplicates).sum(axis=1))
         if arm == "rolling":
             history = (history << 1) | (signals[:, t] > 0)
