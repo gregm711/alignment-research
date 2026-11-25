@@ -73,9 +73,9 @@ def infer(obs, w, repeat, policy, replay=False):
     tags, signals, origins = obs["tag"], obs["reading"], obs["source"]
     batch, n = tags.shape
     limit = BLOCK * math.ceil(n * fraction / BLOCK)
-    seen = np.zeros((batch, n), dtype=bool)
+    seen = np.zeros((batch, n), dtype=bool) if repeat != 1 else None
     posterior = np.zeros(batch)
-    blind = np.zeros(batch)
+    blind = np.zeros(batch) if replay else None
     active = np.zeros(batch, dtype=int)
     bits = np.zeros(batch, dtype=int)
     messages = np.zeros(batch, dtype=int)
@@ -89,10 +89,13 @@ def infer(obs, w, repeat, policy, replay=False):
             senders = rows[tags[rows, j] >= minimum]
             origin = origins[senders, j]
             sign_weight = signals[senders, j] * w[tags[senders, j]]
-            posterior[senders] += sign_weight * np.where(seen[senders, origin], repeat, 1.)
+            if seen is None:
+                posterior[senders] += sign_weight
+            else:
+                posterior[senders] += sign_weight * np.where(seen[senders, origin], repeat, 1.)
+                seen[senders, origin] = True
             if replay:
                 blind[senders] += sign_weight
-            seen[senders, origin] = True
             messages[senders] += 1
             bits[senders] += 3 + (n - 1).bit_length()
         rows = rows[np.abs(posterior[rows]) < stop]
@@ -177,7 +180,7 @@ def timings(models):
     result = {}
     for arm, (w, repeat, policy) in models.items():
         infer(obs, w, repeat, policy)
-        loops = 36
+        loops = 192
         def work():
             for _ in range(loops):
                 infer(obs, w, repeat, policy)
@@ -215,4 +218,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["--timing"]:
+        target = HERE / "results.json"
+        out = json.loads(target.read_text())
+        params = {arm: (np.array(w), repeat, policy) for arm, (w, repeat, policy) in out["models"].items()}
+        out["timing"] = timings(params)
+        target.write_text(json.dumps(out, indent=2) + "\n")
+    elif len(sys.argv) == 1:
+        main()
+    else:
+        raise SystemExit("usage: run.py [--timing]")
