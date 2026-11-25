@@ -1,0 +1,75 @@
+{
+  "torch": "2.11.0",
+  "transformers": "5.3.0",
+  "batch_size": 2,
+  "smoke_queries": [
+    "Return exactly this character: A",
+    "An order names a destination. The destination is B. Output just its letter, A or B."
+  ],
+  "checkpoints": [
+    {
+      "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "weight_archive_bytes": 269060552,
+      "mps_dtype": "float16",
+      "mps_memory_gradient_norm": 0.7117059826850891,
+      "single_choices": [
+        "A",
+        "B"
+      ],
+      "batch_choices": [
+        "A",
+        "B"
+      ],
+      "second_smoke_query": "The destination is B. Output just its letter, A or B."
+    },
+    {
+      "model": "LiquidAI/LFM2.5-1.2B-Instruct",
+      "revision": "b9d816ab510f9a28dca37cb182e9da8b0226e13c",
+      "weight_archive_bytes": 2340697936,
+      "mps_dtype": "float16",
+      "mps_memory_gradient_norm": 63.769744873046875,
+      "single_choices": [
+        "A",
+        "B"
+      ],
+      "batch_choices": [
+        "A",
+        "B"
+      ],
+      "second_smoke_query": "The destination is B. Output just its letter, A or B."
+    },
+    {
+      "model": "LiquidAI/LFM2.5-350M",
+      "revision": "9921cd4d82c0e3986887aa4b376f9446729ef8a3",
+      "weight_archive_bytes": 708984464,
+      "mps_dtype": "float16",
+      "mps_memory_gradient_norm": 36.11136245727539,
+      "single_choices": [
+        "A",
+        "B"
+      ],
+      "batch_choices": [
+        "A",
+        "B"
+      ],
+      "cpu_float32_memory_gradient_norm": 35.99797058105469
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "weight_archive_bytes": 4063515592,
+      "mps_dtype": "float16",
+      "mps_memory_gradient_norm": 64.9380874633789,
+      "single_choices": [
+        "A",
+        "B"
+      ],
+      "batch_choices": [
+        "A",
+        "B"
+      ],
+      "second_smoke_query": "The destination is B. Output just its letter, A or B."
+    }
+  ]
+}
