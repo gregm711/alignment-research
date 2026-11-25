@@ -236,6 +236,42 @@ def date_control(ep):
     return out, ties
 
 
+@lru_cache(maxsize=1)
+def semantic_signatures():
+    import numpy as np
+    corpus = json.loads((CACHE / "clinc-minilm-v1/data_full.json").read_bytes())
+    keys = {}
+    for split in ("test", "val", "train"):
+        for utterance, _ in corpus[split]:
+            key = " ".join(utterance.casefold().split())
+            keys.setdefault(key, len(keys))
+    with np.load(CACHE / "clinc-minilm-v1/embedded.npz") as data:
+        vectors = data["features"]
+    assert sha256(vectors.tobytes()).hexdigest() == "baa29a91f5588105d8b58e0617c1f9e2a243c064860dd70aa154520e36c19ffa"
+    assert vectors.shape == (len(keys), 384)
+    planes = np.random.default_rng(20261125).standard_normal((384, 56), dtype=np.float32)
+    packed = np.packbits(vectors @ planes > 0, axis=1)
+    return {key: packed[i].tobytes() for key, i in keys.items()}
+
+
+def semantic_control(ep):
+    signatures = semantic_signatures()
+    _, *rows = ep["history"].splitlines()
+    records = dict(row.split(": ", 1) for row in rows)
+    state = b"".join(signatures[records[name].casefold()] for name in SOURCES)
+    assert len(state) == 56
+    out, ties = [], 0
+    for question in [ep["present"], *ep["forks"]]:
+        intro, *options = question.splitlines()
+        i = SOURCES.index(intro.split(". ", 1)[0].split()[-1])
+        previous = int.from_bytes(state[7*i:7*i+7], "little")
+        distances = [(previous ^ int.from_bytes(signatures[s[3:].casefold()], "little")).bit_count()
+                     for s in options]
+        ties += distances[0] == distances[1]
+        out.append("B" if distances[1] < distances[0] else "A")
+    return out, ties
+
+
 if __name__ == "__main__":
     b = select_budget()
     for seed, count in ((4701,24),(4702,48)):
@@ -259,3 +295,10 @@ if __name__ == "__main__":
                    date_grammar_forks=sum(sum(r[1:]) for r in ok),
                    date_grammar_both=sum(all(r[1:]) for r in ok),
                    tie_decisions=sum(t for _, t in runs)))
+        cl = [ep for ep in panel if ep["domain"] == "clinc"]
+        runs = [semantic_control(ep) for ep in cl]
+        ok = [[a==b for a,b in zip(pred, ep["answers"])] for (pred,_), ep in zip(runs, cl)]
+        print(dict(seed=seed, semantic_present=sum(r[0] for r in ok),
+                   semantic_forks=sum(sum(r[1:]) for r in ok),
+                   semantic_both=sum(all(r[1:]) for r in ok),
+                   semantic_ties=sum(t for _, t in runs)))
