@@ -16,7 +16,7 @@ CHECK_ODDS = np.log(4)
 ARMS = ("vote", "oracle", "frozen", "rolling", "check_only")
 
 
-def worlds(seed, count, drift):
+def worlds(seed, count, drift, *, audit=None):
     rng = np.random.default_rng(seed)
     steps = WARM + EVENTS
     before = rng.random((count, N)).argsort(axis=1) < 20
@@ -30,6 +30,8 @@ def worlds(seed, count, drift):
     inherited = ancestor[:, :, None] * np.where(rng.random(groups.shape) < .96, 1, -1)
     readings = np.where(groups, inherited, private).astype(np.int8)
     truth = truth[:, WARM:]
+    if audit is not None:
+        audit["wrong_ancestor"] = ancestor[:, WARM:] != truth
     check = truth * np.where(rng.random(truth.shape) < .80, 1, -1)
     shape = (count, EVENTS, 2, SYMBOLS)
     perms = rng.random(shape).argsort(axis=-1).astype(np.uint8)
