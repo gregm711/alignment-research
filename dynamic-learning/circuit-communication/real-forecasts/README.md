@@ -15,3 +15,29 @@ Sources: [CDC FluSight archive](https://github.com/cdcepi/FluSight-forecast-hub/
 Use named teams from the issue files and exclude all `FluSight-` hub-operated submissions, including its alternate ensembles. A reliability weight is the positive part of smoothed log odds, `max(0, log((correct+1)/(wrong+1)))`; uniform voting is the fallback if all available weights vanish. Inference starts from raw forecast medians and issue thresholds. Count one availability bit per roster member plus one vote bit per available forecast, with prearranged identities. Continuous-value controls need the forecast values themselves. No policy purchases an extra outcome check. Report the majority-margin diagnostic for a tie or absolute margin at most two votes. Signed votes and model-panel selection are inspectable. A paired temporal block interval spanning zero leaves the positive result unsettled.
 
 A pre-scoring source-integrity assertion caught four folder dates that differ from the entire file's internal reference date and one missing issue snapshot. Two archived surveillance snapshots contained nonmissing values for the reference week or later. Exclude any issue with these conditions before selecting the first eight eligible dates. This ensures matching issue and target horizons and a strictly historical surveillance window. Rows were not relabeled to force coverage. The archive cannot establish the precise data vintage each team actually saw.
+
+## Results
+
+The disagreement trigger solved 1,226/1,683 held-out state-weeks (72.85%). Majority solved 1,269 (75.40%) and the raw mean of team medians solved 1,295 (76.95%). The paired difference for the trigger was −2.55 percentage points against majority [−4.04, −1.07], −2.44 against calibration reliability [−4.16, −0.77], and −4.10 against the raw mean [−5.77, −2.38]. The positive transfer criterion failed. Freezing the initial redundancy weights yielded both higher accuracy and lower measured CPU cost than maintaining them reactively. Every-step refreshing was even less accurate than reactive refreshing. The gate fixed 85 wrong majority decisions and broke 128 right ones.
+
+| Pooling rule | Correct / 1,683 | Accuracy | Map refreshes after setup | CPU µJ per state-week | Wall µs per state-week |
+|---|---:|---:|---:|---:|---:|
+| Raw mean of medians | 1,295 | 76.95% | 0 | 0.22 | 0.07 |
+| Raw median of medians | 1,278 | 75.94% | 0 | 2.25 | 0.67 |
+| Majority | 1,269 | 75.40% | 0 | 0.30 | 0.09 |
+| Calibration reliability | 1,267 | 75.28% | 0 | 0.59 | 0.15 |
+| Frozen similarity weights | 1,237 | 73.50% | 0 | 1.08 | 0.27 |
+| Refresh every issue | 1,164 | 69.16% | 1,581 | 6.31 | 1.58 |
+| Every 2 issues | 1,174 | 69.76% | 765 | 3.82 | 0.95 |
+| Every 4 issues | 1,202 | 71.42% | 357 | 2.47 | 0.62 |
+| Every 8 issues | 1,199 | 71.24% | 153 | 1.84 | 0.47 |
+| Every 16 issues | 1,223 | 72.67% | 51 | 1.55 | 0.39 |
+| Disagreement trigger | 1,226 | 72.85% | 125 | 3.44 | 1.09 |
+
+The first season supplied 13 scored issues and 663 state-weeks, with 15.9% of forecast slots absent; the second supplied 20 issues and 1,020 state-weeks with 2.2% absent. The gate fell behind majority in both (501 vs. 538 correct, then 725 vs. 731). Rising admissions were less frequent in these post-calibration windows (453/1,683). Always predicting no increase got 1,230/1,683, four more than the gate. The difference was −0.24 points [−1.60, +1.25]. With a majority margin of at most two, the trigger did better than majority (72 vs. 59 correct out of 122) and the numeric mean did better still (81/122). These 33 held-out issue dates are temporally dependent. Block intervals describe this two-season record.
+
+All binary votes for deployment consume 26,928 scheduled availability bits plus 24,886 submitted vote bits. Each history-based policy additionally uses 26,112 calibration bits and 102 initial location-specific maps. Logical costs assume stable model IDs and synchronized issue times; headers and physical network energy are outside the measurement. Reliability fitting also uses up to 306 matured state-week outcomes per season from the calibration snapshot. Numeric pooling requires the forecast magnitudes. Measured CPU costs start from prepared medians and thresholds, process all state streams in batches, and include actual inference and initial map construction. They exclude file I/O, panel selection, obtaining forecasts or labels, and reliability fitting.
+
+Forecasts share a prediction target and overlapping public information. Repeated agreement can be informative when the underlying admission trajectory persists. This archive contains no adjudicated upstream-copy labels. The data permit an accuracy comparison across real forecast streams, not attribution of any particular forecast to another model. Exact named teams can also be aliases for overlapping research groups. The archived issue dates and final target snapshot can incorporate subsequent corrections. Classification thresholds use matching issue-surveillance snapshots with strictly earlier dates, and have no estimated outcomes.
+
+[Raw weekly scores, rosters, dates, timing samples and block intervals](results.json) · [Paired fixes and breaks](audit.json). Run `python3 fetch.py`, `python3 run.py`, then `python3 audit.py` from this directory with NumPy and pandas. Replaying verified the per-issue correct counts for all 11 arms, and truncating later forecasts left earlier decisions unchanged for every arm. Each downloaded source was checked against its blob in the pinned Git tree. The energy column requires an Apple Silicon process-energy counter on this implementation.

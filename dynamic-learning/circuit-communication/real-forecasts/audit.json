@@ -1,0 +1,9 @@
+{
+  "reactive_fixes_over_majority": 85,
+  "reactive_breaks_over_majority": 128,
+  "reactive_minus_no_increase": [
+    -0.0023767082590612004,
+    -0.016042780748663103,
+    0.012477718360071301
+  ]
+}
