@@ -1,0 +1,123 @@
+{
+  "source": "https://raw.githubusercontent.com/LC-John/RNN2DFA/ffa40c0a3c295e6e991dc983aa8c89c9fac928db/tomita/tomita.py",
+  "sha256": "fba1378a198edb8521e2c6f1d15ffa26c152bea4896bf3b06c8eed56a3410cc0",
+  "machines": [
+    {
+      "steps": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "output": 1
+    },
+    {
+      "steps": [
+        [
+          3,
+          2,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          1,
+          3
+        ]
+      ],
+      "output": 5
+    },
+    {
+      "steps": [
+        [
+          0,
+          2,
+          3,
+          2,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          3,
+          4
+        ]
+      ],
+      "output": 11
+    },
+    {
+      "steps": [
+        [
+          1,
+          2,
+          3,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          3
+        ]
+      ],
+      "output": 7
+    },
+    {
+      "steps": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          1
+        ]
+      ],
+      "output": 1
+    },
+    {
+      "steps": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "output": 1
+    },
+    {
+      "steps": [
+        [
+          0,
+          2,
+          2,
+          4,
+          4
+        ],
+        [
+          1,
+          1,
+          3,
+          3,
+          4
+        ]
+      ],
+      "output": 15
+    }
+  ]
+}
