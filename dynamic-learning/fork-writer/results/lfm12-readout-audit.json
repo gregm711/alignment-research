@@ -1,0 +1,119 @@
+{
+  "model": "LiquidAI/LFM2.5-1.2B-Instruct",
+  "revision": "b9d816ab510f9a28dca37cb182e9da8b0226e13c",
+  "seed": 4701,
+  "rows": [
+    {
+      "domain": "clinc",
+      "id": 0,
+      "question": 0,
+      "gold": "A",
+      "forced_batch": "B",
+      "forced_single": "B",
+      "single_a_minus_b": -1.25,
+      "greedy_output": "B",
+      "new_token_ids": [
+        543,
+        7
+      ]
+    },
+    {
+      "domain": "clinc",
+      "id": 4,
+      "question": 1,
+      "gold": "B",
+      "forced_batch": "A",
+      "forced_single": "A",
+      "single_a_minus_b": 1.96875,
+      "greedy_output": "A",
+      "new_token_ids": [
+        542,
+        7
+      ]
+    },
+    {
+      "domain": "clinc",
+      "id": 5,
+      "question": 2,
+      "gold": "A",
+      "forced_batch": "A",
+      "forced_single": "A",
+      "single_a_minus_b": 1.1875,
+      "greedy_output": "A",
+      "new_token_ids": [
+        542,
+        7
+      ]
+    },
+    {
+      "domain": "clinc",
+      "id": 2,
+      "question": 0,
+      "gold": "B",
+      "forced_batch": "B",
+      "forced_single": "B",
+      "single_a_minus_b": -15.1875,
+      "greedy_output": "B",
+      "new_token_ids": [
+        543,
+        7
+      ]
+    },
+    {
+      "domain": "dates",
+      "id": 3,
+      "question": 0,
+      "gold": "A",
+      "forced_batch": "A",
+      "forced_single": "A",
+      "single_a_minus_b": 0.09375,
+      "greedy_output": "A",
+      "new_token_ids": [
+        542,
+        7
+      ]
+    },
+    {
+      "domain": "dates",
+      "id": 7,
+      "question": 1,
+      "gold": "B",
+      "forced_batch": "B",
+      "forced_single": "B",
+      "single_a_minus_b": -2.53125,
+      "greedy_output": "B",
+      "new_token_ids": [
+        543,
+        7
+      ]
+    },
+    {
+      "domain": "dates",
+      "id": 9,
+      "question": 2,
+      "gold": "A",
+      "forced_batch": "B",
+      "forced_single": "B",
+      "single_a_minus_b": -1.546875,
+      "greedy_output": "B",
+      "new_token_ids": [
+        543,
+        7
+      ]
+    },
+    {
+      "domain": "dates",
+      "id": 1,
+      "question": 0,
+      "gold": "B",
+      "forced_batch": "B",
+      "forced_single": "B",
+      "single_a_minus_b": -0.109375,
+      "greedy_output": "B",
+      "new_token_ids": [
+        543,
+        7
+      ]
+    }
+  ]
+}
