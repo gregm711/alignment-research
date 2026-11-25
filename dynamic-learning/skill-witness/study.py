@@ -104,10 +104,13 @@ def run(panel, project, arm, k):
                              previously_correct=eligible, broken=broken, accepted=accepted,
                              false_accept=accepted and not success, changed=changed))
     memory = agent.bytes() if explicit else agent.state.nbytes
-    return dict(project=project, arm=arm, k=k, rows=rows, state_bytes=memory,
+    result = dict(project=project, arm=arm, k=k, rows=rows, state_bytes=memory,
                 query_weight_bytes=0 if explicit or arm == "ordered" else weights.nbytes,
                 model_calls=getattr(agent,"calls",0), model_tokens=getattr(agent,"tokens",0),
                 duration_seconds=round(time.monotonic()-start,2))
+    if arm == "codegen":
+        result["codegen_cost"] = agent.codegen_cost()
+    return result
 
 
 if __name__ == "__main__":

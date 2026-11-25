@@ -18,6 +18,15 @@ class Comparator:
         self.calls = 0
         self.tokens = 0
         self.prompt_tokens = 0
+        self.actual_calls = 0
+        self.actual_tokens = 0
+        self.actual_prompt_tokens = 0
+
+    def codegen_cost(self):
+        return dict(calls=self.calls, actual_calls=self.actual_calls,
+                    prompt_tokens=self.prompt_tokens, generated_tokens=self.tokens,
+                    actual_prompt_tokens=self.actual_prompt_tokens,
+                    actual_generated_tokens=self.actual_tokens)
 
     def bytes(self):
         return len(json.dumps(self.memory, separators=(",", ":"), ensure_ascii=False).encode())
@@ -49,6 +58,10 @@ class Comparator:
             self.calls += metadata["generation_calls"]
             self.tokens += metadata["generated_tokens"] or 0
             self.prompt_tokens += metadata["prompt_tokens"] or 0
+            if metadata["actual_generation_calls"]:
+                self.actual_calls += 1
+                self.actual_tokens += metadata["generated_tokens"] or 0
+                self.actual_prompt_tokens += metadata["prompt_tokens"] or 0
             candidates.append(op)
         available = [op for op in candidates if op is not None]
         # Stable ties favor an incumbent, followed by the short ordinary synthesis.
