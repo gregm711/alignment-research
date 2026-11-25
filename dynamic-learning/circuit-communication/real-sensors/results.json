@@ -1,0 +1,1353 @@
+{
+  "source_sha256": "8b6323b801363e11343ba1a5a7718e76666b715e753b3a40dbdfd1838d953fe7",
+  "panels": {
+    "ethylene_CO": {
+      "calibration_rows": 2104,
+      "rows": 6314,
+      "positives": 3212,
+      "test_start_s": 10520.0,
+      "test_end_s": 42085.0,
+      "sampling_period_s": [
+        4.940000000000509,
+        5.0,
+        5.0,
+        5.0,
+        5.059999999999491
+      ],
+      "binary_changes": 103,
+      "transition_events": 618,
+      "complete_dwell_s": [
+        80.0,
+        100.0,
+        112.4950000000008,
+        205.0,
+        3460.0099999999984
+      ],
+      "blocks": 106,
+      "calibration": {
+        "cuts": [
+          2848.8819999999996,
+          1971.6119999999999,
+          4532.896000000001,
+          5206.5485,
+          1871.251,
+          2143.778,
+          5336.2074999999995,
+          5631.46,
+          816.3299999999999,
+          950.40725,
+          4722.499,
+          4106.715999999999,
+          956.36,
+          1071.105,
+          4930.745000000001,
+          4546.14
+        ],
+        "signs": [
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "competence_weights": [
+          0.36235664032200116,
+          1.1183547885704208,
+          1.423279562361265,
+          1.4074221139481191,
+          0.6639290507400594,
+          0.6200886722110773,
+          1.5434820238811857,
+          1.5369214163666334,
+          0.9199684561815508,
+          0.904176982328973,
+          1.3811577047921573,
+          1.3423094896530003,
+          0.462901149609833,
+          0.6301068156265809,
+          1.665016217160207,
+          1.339614930835326
+        ],
+        "single_sensor": 15
+      },
+      "arms": {
+        "majority": {
+          "accuracy": 0.796484003801077,
+          "balanced_accuracy": 0.7962152124568329,
+          "conditional_accuracy": [
+            0.7807865892972276,
+            0.8116438356164384
+          ],
+          "near_change_accuracy": 0.14724919093851133,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 0,
+          "reports_per_event": 16,
+          "historical_report_bits": 0,
+          "checks": 0,
+          "pairwise_comparisons": 0,
+          "microjoules_per_decision": 0.04368643183199306,
+          "timing": {
+            "reps": 1141,
+            "trials": [
+              {
+                "cpu_joules": 0.291100438,
+                "wall_seconds": 0.07719312503468245,
+                "cpu_seconds": 0.076826
+              },
+              {
+                "cpu_joules": 0.328238734,
+                "wall_seconds": 0.08428516599815339,
+                "cpu_seconds": 0.07898700000000003
+              },
+              {
+                "cpu_joules": 0.314729025,
+                "wall_seconds": 0.07901266601402313,
+                "cpu_seconds": 0.078517
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010967470978203095
+        },
+        "clock-4": {
+          "accuracy": 0.6702565726955971,
+          "balanced_accuracy": 0.6721933706049125,
+          "conditional_accuracy": [
+            0.7833655705996132,
+            0.5610211706102117
+          ],
+          "near_change_accuracy": 0.3478964401294498,
+          "refreshes_after_setup": 1578,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 404224,
+          "microjoules_per_decision": 0.08000369476164688,
+          "timing": {
+            "reps": 651,
+            "trials": [
+              {
+                "cpu_joules": 0.328848307,
+                "wall_seconds": 0.0776483750087209,
+                "cpu_seconds": 0.07705099999999998
+              },
+              {
+                "cpu_joules": 0.305867648,
+                "wall_seconds": 0.07666316698305309,
+                "cpu_seconds": 0.07614800000000005
+              },
+              {
+                "cpu_joules": 0.347243279,
+                "wall_seconds": 0.07871166698168963,
+                "cpu_seconds": 0.07834200000000002
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.018890645810548747
+        },
+        "competence": {
+          "accuracy": 0.8045612923661705,
+          "balanced_accuracy": 0.8041983519249623,
+          "conditional_accuracy": [
+            0.7833655705996132,
+            0.8250311332503113
+          ],
+          "near_change_accuracy": 0.11650485436893204,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 0,
+          "reports_per_event": 16,
+          "historical_report_bits": 0,
+          "checks": 0,
+          "pairwise_comparisons": 0,
+          "microjoules_per_decision": 0.05036523973010991,
+          "timing": {
+            "reps": 1116,
+            "trials": [
+              {
+                "cpu_joules": 0.354894834,
+                "wall_seconds": 0.08167749998392537,
+                "cpu_seconds": 0.07810600000000001
+              },
+              {
+                "cpu_joules": 0.356790376,
+                "wall_seconds": 0.07953533402178437,
+                "cpu_seconds": 0.07859099999999997
+              },
+              {
+                "cpu_joules": 0.346335188,
+                "wall_seconds": 0.07833133300300688,
+                "cpu_seconds": 0.07789599999999997
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.011287332982202655
+        },
+        "clock-64": {
+          "accuracy": 0.6593284764016472,
+          "balanced_accuracy": 0.6595755721010749,
+          "conditional_accuracy": [
+            0.6737588652482269,
+            0.6453922789539228
+          ],
+          "near_change_accuracy": 0.19093851132686085,
+          "refreshes_after_setup": 98,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 25344,
+          "microjoules_per_decision": 0.05000271513457691,
+          "timing": {
+            "reps": 1137,
+            "trials": [
+              {
+                "cpu_joules": 0.339897673,
+                "wall_seconds": 0.07600208400981501,
+                "cpu_seconds": 0.07569099999999995
+              },
+              {
+                "cpu_joules": 0.370108713,
+                "wall_seconds": 0.0837551670265384,
+                "cpu_seconds": 0.08018600000000009
+              },
+              {
+                "cpu_joules": 0.358970392,
+                "wall_seconds": 0.09552616701694205,
+                "cpu_seconds": 0.08597800000000011
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.01166666068068619
+        },
+        "single": {
+          "accuracy": 0.8070953436807096,
+          "balanced_accuracy": 0.8057229979774427,
+          "conditional_accuracy": [
+            0.7269503546099291,
+            0.8844956413449564
+          ],
+          "near_change_accuracy": 0.043689320388349516,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 0,
+          "reports_per_event": 1,
+          "historical_report_bits": 0,
+          "checks": 0,
+          "pairwise_comparisons": 0,
+          "microjoules_per_decision": 0.00929709016999261,
+          "timing": {
+            "reps": 1500,
+            "trials": [
+              {
+                "cpu_joules": 0.088052741,
+                "wall_seconds": 0.027291874983347952,
+                "cpu_seconds": 0.025012999999999952
+              },
+              {
+                "cpu_joules": 0.082977275,
+                "wall_seconds": 0.027836374996695668,
+                "cpu_seconds": 0.025215999999999905
+              },
+              {
+                "cpu_joules": 0.094769915,
+                "wall_seconds": 0.032158790971152484,
+                "cpu_seconds": 0.027470000000000105
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.002939116777182522
+        },
+        "reactive": {
+          "accuracy": 0.7727272727272727,
+          "balanced_accuracy": 0.7728266341644365,
+          "conditional_accuracy": [
+            0.7785299806576402,
+            0.7671232876712328
+          ],
+          "near_change_accuracy": 0.127831715210356,
+          "refreshes_after_setup": 35,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 9216,
+          "microjoules_per_decision": 0.047463537603194,
+          "timing": {
+            "reps": 1069,
+            "trials": [
+              {
+                "cpu_joules": 0.308168983,
+                "wall_seconds": 0.09765687497565523,
+                "cpu_seconds": 0.08747700000000003
+              },
+              {
+                "cpu_joules": 0.343415189,
+                "wall_seconds": 0.10180729202693328,
+                "cpu_seconds": 0.08520800000000017
+              },
+              {
+                "cpu_joules": 0.320363026,
+                "wall_seconds": 0.08213737502228469,
+                "cpu_seconds": 0.07692499999999991
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.014468401099499624
+        },
+        "clock-2": {
+          "accuracy": 0.6662971175166297,
+          "balanced_accuracy": 0.6684397163120568,
+          "conditional_accuracy": [
+            0.791424887169568,
+            0.5454545454545454
+          ],
+          "near_change_accuracy": 0.35760517799352753,
+          "refreshes_after_setup": 3156,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 808192,
+          "microjoules_per_decision": 0.11101933315888776,
+          "timing": {
+            "reps": 460,
+            "trials": [
+              {
+                "cpu_joules": 0.326248085,
+                "wall_seconds": 0.08047654101392254,
+                "cpu_seconds": 0.07798400000000005
+              },
+              {
+                "cpu_joules": 0.322448992,
+                "wall_seconds": 0.08266887505305931,
+                "cpu_seconds": 0.07908300000000001
+              },
+              {
+                "cpu_joules": 0.297502171,
+                "wall_seconds": 0.07963425002526492,
+                "cpu_seconds": 0.07747100000000007
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.027708109313300516
+        },
+        "clock-256": {
+          "accuracy": 0.5980361102312322,
+          "balanced_accuracy": 0.5970584598535633,
+          "conditional_accuracy": [
+            0.5409413281753708,
+            0.6531755915317559
+          ],
+          "near_change_accuracy": 0.20388349514563106,
+          "refreshes_after_setup": 24,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 6400,
+          "microjoules_per_decision": 0.050872469871261726,
+          "timing": {
+            "reps": 1181,
+            "trials": [
+              {
+                "cpu_joules": 0.381909815,
+                "wall_seconds": 0.0789083749987185,
+                "cpu_seconds": 0.07712300000000005
+              },
+              {
+                "cpu_joules": 0.325314287,
+                "wall_seconds": 0.07826195895904675,
+                "cpu_seconds": 0.07666400000000007
+              },
+              {
+                "cpu_joules": 0.379347563,
+                "wall_seconds": 0.07571025000652298,
+                "cpu_seconds": 0.07502899999999979
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.01049533340276138
+        },
+        "clock-128": {
+          "accuracy": 0.6350966107063668,
+          "balanced_accuracy": 0.634190932937654,
+          "conditional_accuracy": [
+            0.5822050290135397,
+            0.6861768368617683
+          ],
+          "near_change_accuracy": 0.1650485436893204,
+          "refreshes_after_setup": 49,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 12800,
+          "microjoules_per_decision": 0.04825391011121492,
+          "timing": {
+            "reps": 1194,
+            "trials": [
+              {
+                "cpu_joules": 0.34072528,
+                "wall_seconds": 0.07715395803097636,
+                "cpu_seconds": 0.07613800000000004
+              },
+              {
+                "cpu_joules": 0.363782175,
+                "wall_seconds": 0.07604554202407598,
+                "cpu_seconds": 0.07553300000000007
+              },
+              {
+                "cpu_joules": 0.365302846,
+                "wall_seconds": 0.07666683301795274,
+                "cpu_seconds": 0.07605400000000007
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010169477020032154
+        },
+        "clock-32": {
+          "accuracy": 0.6797592651251188,
+          "balanced_accuracy": 0.6801422855780186,
+          "conditional_accuracy": [
+            0.7021276595744681,
+            0.6581569115815691
+          ],
+          "near_change_accuracy": 0.1796116504854369,
+          "refreshes_after_setup": 197,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 50688,
+          "microjoules_per_decision": 0.05050125137117731,
+          "timing": {
+            "reps": 1123,
+            "trials": [
+              {
+                "cpu_joules": 0.358085284,
+                "wall_seconds": 0.07798250002088025,
+                "cpu_seconds": 0.07739200000000013
+              },
+              {
+                "cpu_joules": 0.368763953,
+                "wall_seconds": 0.07846870797220618,
+                "cpu_seconds": 0.07771700000000026
+              },
+              {
+                "cpu_joules": 0.354584617,
+                "wall_seconds": 0.07964970800094306,
+                "cpu_seconds": 0.0788789999999997
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.011066547895545153
+        },
+        "frozen": {
+          "accuracy": 0.5658853341780171,
+          "balanced_accuracy": 0.5709451701509412,
+          "conditional_accuracy": [
+            0.8613797549967763,
+            0.28051058530510586
+          ],
+          "near_change_accuracy": 0.46763754045307443,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 256,
+          "microjoules_per_decision": 0.049735303884646045,
+          "timing": {
+            "reps": 951,
+            "trials": [
+              {
+                "cpu_joules": 0.298641302,
+                "wall_seconds": 0.07438358396757394,
+                "cpu_seconds": 0.07391699999999979
+              },
+              {
+                "cpu_joules": 0.330355087,
+                "wall_seconds": 0.07323687500320375,
+                "cpu_seconds": 0.07289600000000007
+              },
+              {
+                "cpu_joules": 0.286321096,
+                "wall_seconds": 0.07305679202545434,
+                "cpu_seconds": 0.07273899999999989
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.012196766520413094
+        },
+        "clock-8": {
+          "accuracy": 0.6721571111815015,
+          "balanced_accuracy": 0.6736363194757249,
+          "conditional_accuracy": [
+            0.7585428755641521,
+            0.5887297633872977
+          ],
+          "near_change_accuracy": 0.30906148867313915,
+          "refreshes_after_setup": 789,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 202240,
+          "microjoules_per_decision": 0.06801400579415105,
+          "timing": {
+            "reps": 890,
+            "trials": [
+              {
+                "cpu_joules": 0.382201985,
+                "wall_seconds": 0.07789787498768419,
+                "cpu_seconds": 0.07743399999999978
+              },
+              {
+                "cpu_joules": 0.317762531,
+                "wall_seconds": 0.07794979104073718,
+                "cpu_seconds": 0.07746200000000014
+              },
+              {
+                "cpu_joules": 0.386690402,
+                "wall_seconds": 0.08102412498556077,
+                "cpu_seconds": 0.07983900000000022
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.013871402419580738
+        },
+        "clock-16": {
+          "accuracy": 0.6764333227747862,
+          "balanced_accuracy": 0.6772486597246142,
+          "conditional_accuracy": [
+            0.7240490006447453,
+            0.6304483188044832
+          ],
+          "near_change_accuracy": 0.23786407766990292,
+          "refreshes_after_setup": 394,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 101120,
+          "microjoules_per_decision": 0.05361647397318129,
+          "timing": {
+            "reps": 1044,
+            "trials": [
+              {
+                "cpu_joules": 0.353429931,
+                "wall_seconds": 0.08078204200137407,
+                "cpu_seconds": 0.07930100000000007
+              },
+              {
+                "cpu_joules": 0.364837158,
+                "wall_seconds": 0.07977487496100366,
+                "cpu_seconds": 0.07918999999999965
+              },
+              {
+                "cpu_joules": 0.339212441,
+                "wall_seconds": 0.07904904097085819,
+                "cpu_seconds": 0.07821800000000012
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.012102108881832208
+        },
+        "clock-1": {
+          "accuracy": 0.6629711751662971,
+          "balanced_accuracy": 0.6652259258277912,
+          "conditional_accuracy": [
+            0.7946486137975499,
+            0.5358032378580324
+          ],
+          "near_change_accuracy": 0.3592233009708738,
+          "refreshes_after_setup": 6313,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 1616384,
+          "microjoules_per_decision": 0.17123948687699442,
+          "timing": {
+            "reps": 283,
+            "trials": [
+              {
+                "cpu_joules": 0.305981332,
+                "wall_seconds": 0.07071916700806469,
+                "cpu_seconds": 0.07020800000000005
+              },
+              {
+                "cpu_joules": 0.280153306,
+                "wall_seconds": 0.07105683302506804,
+                "cpu_seconds": 0.07041200000000014
+              },
+              {
+                "cpu_joules": 0.326159559,
+                "wall_seconds": 0.07156387501163408,
+                "cpu_seconds": 0.07059199999999999
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.03976626791832164
+        }
+      },
+      "paired_gate_minus_other_balanced_accuracy": {
+        "majority": [
+          -0.023388578292396378,
+          -0.05260846123186134,
+          0.0017136779917789724
+        ],
+        "clock-4": [
+          0.10063326355952407,
+          0.056611861492253515,
+          0.1433695788870361
+        ],
+        "competence": [
+          -0.03137171776052572,
+          -0.06357878782075428,
+          -0.0053014852305617146
+        ],
+        "clock-64": [
+          0.11325106206336166,
+          0.07119571468493568,
+          0.15729972561025837
+        ],
+        "single": [
+          -0.0328963638130062,
+          -0.07080558555028864,
+          -0.0013474665294814778
+        ],
+        "clock-2": [
+          0.10438691785237975,
+          0.06010644380151459,
+          0.1481746202775572
+        ],
+        "clock-256": [
+          0.17576817431087322,
+          0.1190987051712181,
+          0.23355309363066187
+        ],
+        "clock-128": [
+          0.13863570122678248,
+          0.0887231357904934,
+          0.19009516454149364
+        ],
+        "clock-32": [
+          0.09268434858641794,
+          0.05044921046756447,
+          0.13470975724083722
+        ],
+        "frozen": [
+          0.20188146401349538,
+          0.16047821028836098,
+          0.2429004649833454
+        ],
+        "clock-8": [
+          0.09919031468871164,
+          0.05658866897507579,
+          0.1420137537024926
+        ],
+        "clock-16": [
+          0.0955779744398223,
+          0.0526752278535428,
+          0.13875799732995256
+        ],
+        "clock-1": [
+          0.10760070833664537,
+          0.06402973223977845,
+          0.15102198278985426
+        ]
+      },
+      "agreement_audit": {
+        "unanimous": 921,
+        "unanimous_correct": 790,
+        "majority_errors_corrected": 137,
+        "correct_majorities_lost": 287
+      }
+    },
+    "ethylene_methane": {
+      "calibration_rows": 2089,
+      "rows": 6270,
+      "positives": 2605,
+      "test_start_s": 10445.0,
+      "test_end_s": 41790.0,
+      "sampling_period_s": [
+        4.899999999999636,
+        5.0,
+        5.0,
+        5.0,
+        5.100000000000364
+      ],
+      "binary_changes": 102,
+      "transition_events": 612,
+      "complete_dwell_s": [
+        85.0,
+        100.0,
+        110.0,
+        325.0,
+        1635.0
+      ],
+      "blocks": 105,
+      "calibration": {
+        "cuts": [
+          2438.0,
+          1811.52,
+          3324.08,
+          3693.9880000000003,
+          968.1,
+          1111.43,
+          2919.8880000000004,
+          3514.58,
+          3537.3920000000003,
+          2817.514,
+          2463.69,
+          2180.08,
+          880.88,
+          2308.334,
+          2483.032,
+          2157.478
+        ],
+        "signs": [
+          1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "competence_weights": [
+          1.4531398227808392,
+          0.939866023892464,
+          1.0899729260774018,
+          1.0447227725144317,
+          0.44003232561586464,
+          0.4306085744299026,
+          1.4241340111306569,
+          1.1421559717644993,
+          1.415637988127274,
+          1.3974664950740012,
+          1.7041087217506419,
+          1.4393779720035424,
+          0.4320034884334355,
+          0.43706353350031657,
+          1.9010029264151505,
+          1.6885317189747768
+        ],
+        "single_sensor": 15
+      },
+      "arms": {
+        "majority": {
+          "accuracy": 0.772408293460925,
+          "balanced_accuracy": 0.7729010481993648,
+          "conditional_accuracy": [
+            0.7699863574351978,
+            0.7758157389635316
+          ],
+          "near_change_accuracy": 0.0915032679738562,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 0,
+          "reports_per_event": 16,
+          "historical_report_bits": 0,
+          "checks": 0,
+          "pairwise_comparisons": 0,
+          "microjoules_per_decision": 0.04457002480949849,
+          "timing": {
+            "reps": 846,
+            "trials": [
+              {
+                "cpu_joules": 0.236418131,
+                "wall_seconds": 0.056229458015877753,
+                "cpu_seconds": 0.05587199999999992
+              },
+              {
+                "cpu_joules": 0.221875857,
+                "wall_seconds": 0.056525500025600195,
+                "cpu_seconds": 0.056003000000000025
+              },
+              {
+                "cpu_joules": 0.242883471,
+                "wall_seconds": 0.057263834052719176,
+                "cpu_seconds": 0.056617999999999835
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010656301730556818
+        },
+        "clock-4": {
+          "accuracy": 0.6904306220095694,
+          "balanced_accuracy": 0.6750773122314366,
+          "conditional_accuracy": [
+            0.765893587994543,
+            0.5842610364683302
+          ],
+          "near_change_accuracy": 0.29248366013071897,
+          "refreshes_after_setup": 1567,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 401408,
+          "microjoules_per_decision": 0.07586403092087303,
+          "timing": {
+            "reps": 555,
+            "trials": [
+              {
+                "cpu_joules": 0.269901266,
+                "wall_seconds": 0.06175970804179087,
+                "cpu_seconds": 0.061514999999999986
+              },
+              {
+                "cpu_joules": 0.257906298,
+                "wall_seconds": 0.06228999997256324,
+                "cpu_seconds": 0.0618420000000004
+              },
+              {
+                "cpu_joules": 0.263995448,
+                "wall_seconds": 0.061114916985388845,
+                "cpu_seconds": 0.06089000000000011
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.01774780753244849
+        },
+        "competence": {
+          "accuracy": 0.8146730462519937,
+          "balanced_accuracy": 0.8102751294210682,
+          "conditional_accuracy": [
+            0.8362892223738063,
+            0.7842610364683301
+          ],
+          "near_change_accuracy": 0.07679738562091504,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 0,
+          "reports_per_event": 16,
+          "historical_report_bits": 0,
+          "checks": 0,
+          "pairwise_comparisons": 0,
+          "microjoules_per_decision": 0.04908696298161672,
+          "timing": {
+            "reps": 1140,
+            "trials": [
+              {
+                "cpu_joules": 0.334326166,
+                "wall_seconds": 0.07719787501264364,
+                "cpu_seconds": 0.07673899999999989
+              },
+              {
+                "cpu_joules": 0.350863794,
+                "wall_seconds": 0.07865833304822445,
+                "cpu_seconds": 0.07781100000000007
+              },
+              {
+                "cpu_joules": 0.355427723,
+                "wall_seconds": 0.07842649996746331,
+                "cpu_seconds": 0.07809600000000039
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.01097211729027999
+        },
+        "clock-64": {
+          "accuracy": 0.7114832535885167,
+          "balanced_accuracy": 0.7093507867386939,
+          "conditional_accuracy": [
+            0.7219645293315143,
+            0.6967370441458733
+          ],
+          "near_change_accuracy": 0.22712418300653595,
+          "refreshes_after_setup": 97,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 25088,
+          "microjoules_per_decision": 0.04880920734464654,
+          "timing": {
+            "reps": 1178,
+            "trials": [
+              {
+                "cpu_joules": 0.371414214,
+                "wall_seconds": 0.07730950001860037,
+                "cpu_seconds": 0.07681200000000032
+              },
+              {
+                "cpu_joules": 0.360507734,
+                "wall_seconds": 0.07603237504372373,
+                "cpu_seconds": 0.07574699999999979
+              },
+              {
+                "cpu_joules": 0.354464451,
+                "wall_seconds": 0.07684762502321973,
+                "cpu_seconds": 0.07632200000000022
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010404413858433282
+        },
+        "single": {
+          "accuracy": 0.8583732057416268,
+          "balanced_accuracy": 0.8515971751249696,
+          "conditional_accuracy": [
+            0.8916780354706685,
+            0.8115163147792707
+          ],
+          "near_change_accuracy": 0.024509803921568627,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 0,
+          "reports_per_event": 1,
+          "historical_report_bits": 0,
+          "checks": 0,
+          "pairwise_comparisons": 0,
+          "microjoules_per_decision": 0.008152875598086124,
+          "timing": {
+            "reps": 1500,
+            "trials": [
+              {
+                "cpu_joules": 0.09109077,
+                "wall_seconds": 0.021210959006566554,
+                "cpu_seconds": 0.02106700000000039
+              },
+              {
+                "cpu_joules": 0.071179155,
+                "wall_seconds": 0.02094924997072667,
+                "cpu_seconds": 0.020829999999999238
+              },
+              {
+                "cpu_joules": 0.076677795,
+                "wall_seconds": 0.020586333004757762,
+                "cpu_seconds": 0.020491999999999955
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.0022274587953989016
+        },
+        "reactive": {
+          "accuracy": 0.672408293460925,
+          "balanced_accuracy": 0.6964662876774383,
+          "conditional_accuracy": [
+            0.5541609822646657,
+            0.8387715930902111
+          ],
+          "near_change_accuracy": 0.1895424836601307,
+          "refreshes_after_setup": 5,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 1536,
+          "microjoules_per_decision": 0.04707592845750741,
+          "timing": {
+            "reps": 1162,
+            "trials": [
+              {
+                "cpu_joules": 0.345334608,
+                "wall_seconds": 0.07745183299994096,
+                "cpu_seconds": 0.07704700000000031
+              },
+              {
+                "cpu_joules": 0.342982975,
+                "wall_seconds": 0.07654516602633521,
+                "cpu_seconds": 0.07626899999999992
+              },
+              {
+                "cpu_joules": 0.307832485,
+                "wall_seconds": 0.07681050000246614,
+                "cpu_seconds": 0.0765589999999996
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010542580438289885
+        },
+        "clock-2": {
+          "accuracy": 0.6926634768740032,
+          "balanced_accuracy": 0.6750443186965982,
+          "conditional_accuracy": [
+            0.7792633015006821,
+            0.5708253358925144
+          ],
+          "near_change_accuracy": 0.31209150326797386,
+          "refreshes_after_setup": 3134,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 802560,
+          "microjoules_per_decision": 0.11488778345657531,
+          "timing": {
+            "reps": 440,
+            "trials": [
+              {
+                "cpu_joules": 0.316952417,
+                "wall_seconds": 0.07024816703051329,
+                "cpu_seconds": 0.06959900000000019
+              },
+              {
+                "cpu_joules": 0.285071146,
+                "wall_seconds": 0.0701932089868933,
+                "cpu_seconds": 0.06976899999999997
+              },
+              {
+                "cpu_joules": 0.320659947,
+                "wall_seconds": 0.07010629097931087,
+                "cpu_seconds": 0.06972999999999985
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.025443384437760366
+        },
+        "clock-256": {
+          "accuracy": 0.6917065390749602,
+          "balanced_accuracy": 0.6964309374615403,
+          "conditional_accuracy": [
+            0.6684856753069577,
+            0.7243761996161229
+          ],
+          "near_change_accuracy": 0.21895424836601307,
+          "refreshes_after_setup": 24,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 6400,
+          "microjoules_per_decision": 0.048235674229562174,
+          "timing": {
+            "reps": 1116,
+            "trials": [
+              {
+                "cpu_joules": 0.289909136,
+                "wall_seconds": 0.06883437500800937,
+                "cpu_seconds": 0.06857600000000019
+              },
+              {
+                "cpu_joules": 0.337520448,
+                "wall_seconds": 0.06948474998353049,
+                "cpu_seconds": 0.06923199999999952
+              },
+              {
+                "cpu_joules": 0.351667367,
+                "wall_seconds": 0.07039966701995581,
+                "cpu_seconds": 0.06979199999999963
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.00993019470076122
+        },
+        "clock-128": {
+          "accuracy": 0.6905901116427432,
+          "balanced_accuracy": 0.6949763415406933,
+          "conditional_accuracy": [
+            0.669031377899045,
+            0.7209213051823417
+          ],
+          "near_change_accuracy": 0.238562091503268,
+          "refreshes_after_setup": 48,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 12544,
+          "microjoules_per_decision": 0.0458719081503292,
+          "timing": {
+            "reps": 1170,
+            "trials": [
+              {
+                "cpu_joules": 0.34825107,
+                "wall_seconds": 0.07442395901307464,
+                "cpu_seconds": 0.07390900000000045
+              },
+              {
+                "cpu_joules": 0.33209662,
+                "wall_seconds": 0.0738818749669008,
+                "cpu_seconds": 0.07347500000000018
+              },
+              {
+                "cpu_joules": 0.336511731,
+                "wall_seconds": 0.07391108403680846,
+                "cpu_seconds": 0.07361400000000007
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010075257846591211
+        },
+        "clock-32": {
+          "accuracy": 0.7017543859649122,
+          "balanced_accuracy": 0.6973649687216052,
+          "conditional_accuracy": [
+            0.7233287858117327,
+            0.671401151631478
+          ],
+          "near_change_accuracy": 0.20261437908496732,
+          "refreshes_after_setup": 195,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 50176,
+          "microjoules_per_decision": 0.04837413255188072,
+          "timing": {
+            "reps": 1027,
+            "trials": [
+              {
+                "cpu_joules": 0.323486798,
+                "wall_seconds": 0.06913587497547269,
+                "cpu_seconds": 0.06884299999999932
+              },
+              {
+                "cpu_joules": 0.300892242,
+                "wall_seconds": 0.06917716597672552,
+                "cpu_seconds": 0.06887199999999982
+              },
+              {
+                "cpu_joules": 0.311495068,
+                "wall_seconds": 0.06874649995006621,
+                "cpu_seconds": 0.06853800000000021
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.010736568002912228
+        },
+        "frozen": {
+          "accuracy": 0.8521531100478469,
+          "balanced_accuracy": 0.8455549067408934,
+          "conditional_accuracy": [
+            0.8845839017735334,
+            0.8065259117082534
+          ],
+          "near_change_accuracy": 0.03594771241830065,
+          "refreshes_after_setup": 0,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 256,
+          "microjoules_per_decision": 0.05312808952181422,
+          "timing": {
+            "reps": 1014,
+            "trials": [
+              {
+                "cpu_joules": 0.337152966,
+                "wall_seconds": 0.07975895900744945,
+                "cpu_seconds": 0.0788379999999993
+              },
+              {
+                "cpu_joules": 0.35072557,
+                "wall_seconds": 0.07818900002166629,
+                "cpu_seconds": 0.07779300000000067
+              },
+              {
+                "cpu_joules": 0.337776705,
+                "wall_seconds": 0.07731329102534801,
+                "cpu_seconds": 0.07695200000000035
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.012298160682135318
+        },
+        "clock-8": {
+          "accuracy": 0.6845295055821372,
+          "balanced_accuracy": 0.6715284124087113,
+          "conditional_accuracy": [
+            0.748431105047749,
+            0.5946257197696737
+          ],
+          "near_change_accuracy": 0.25980392156862747,
+          "refreshes_after_setup": 783,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 200704,
+          "microjoules_per_decision": 0.06398981348221447,
+          "timing": {
+            "reps": 881,
+            "trials": [
+              {
+                "cpu_joules": 0.353471411,
+                "wall_seconds": 0.07587645802414045,
+                "cpu_seconds": 0.075577
+              },
+              {
+                "cpu_joules": 0.329419495,
+                "wall_seconds": 0.07562308298656717,
+                "cpu_seconds": 0.07526299999999964
+              },
+              {
+                "cpu_joules": 0.356817869,
+                "wall_seconds": 0.07623691600747406,
+                "cpu_seconds": 0.07560399999999934
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.01373610494529025
+        },
+        "clock-16": {
+          "accuracy": 0.6872408293460925,
+          "balanced_accuracy": 0.6792324027934526,
+          "conditional_accuracy": [
+            0.7266030013642565,
+            0.6318618042226487
+          ],
+          "near_change_accuracy": 0.20098039215686275,
+          "refreshes_after_setup": 391,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 100352,
+          "microjoules_per_decision": 0.053336703577124625,
+          "timing": {
+            "reps": 1050,
+            "trials": [
+              {
+                "cpu_joules": 0.362786618,
+                "wall_seconds": 0.07769524998730049,
+                "cpu_seconds": 0.07735100000000017
+              },
+              {
+                "cpu_joules": 0.346848792,
+                "wall_seconds": 0.07672920799814165,
+                "cpu_seconds": 0.07643799999999956
+              },
+              {
+                "cpu_joules": 0.351142188,
+                "wall_seconds": 0.07750258297892287,
+                "cpu_seconds": 0.0771379999999997
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.011772246218413133
+        },
+        "clock-1": {
+          "accuracy": 0.6933014354066985,
+          "balanced_accuracy": 0.6745907885192973,
+          "conditional_accuracy": [
+            0.7852660300136426,
+            0.5639155470249521
+          ],
+          "near_change_accuracy": 0.31862745098039214,
+          "refreshes_after_setup": 6269,
+          "setup_refreshes": 1,
+          "reports_per_event": 16,
+          "historical_report_bits": 128,
+          "checks": 0,
+          "pairwise_comparisons": 1605120,
+          "microjoules_per_decision": 0.1786717135586834,
+          "timing": {
+            "reps": 309,
+            "trials": [
+              {
+                "cpu_joules": 0.355488717,
+                "wall_seconds": 0.07609029102604836,
+                "cpu_seconds": 0.0757109999999992
+              },
+              {
+                "cpu_joules": 0.346163938,
+                "wall_seconds": 0.07898358296370134,
+                "cpu_seconds": 0.07750400000000024
+              },
+              {
+                "cpu_joules": 0.333975149,
+                "wall_seconds": 0.08310795802390203,
+                "cpu_seconds": 0.07974499999999995
+              }
+            ]
+          },
+          "microseconds_per_decision": 0.04076719311856498
+        }
+      },
+      "paired_gate_minus_other_balanced_accuracy": {
+        "majority": [
+          -0.07643476052192644,
+          -0.10431717526958224,
+          -0.049537914973271105
+        ],
+        "clock-4": [
+          0.021388975446001712,
+          -0.024839778258283273,
+          0.06856670375906841
+        ],
+        "competence": [
+          -0.11380884174362982,
+          -0.1421848282167754,
+          -0.08539677046977824
+        ],
+        "clock-64": [
+          -0.01288449906125555,
+          -0.05336111885567403,
+          0.030801108149233463
+        ],
+        "single": [
+          -0.15513088744753123,
+          -0.18576826673118568,
+          -0.12257299087510684
+        ],
+        "clock-2": [
+          0.021421968980840145,
+          -0.025217572971099254,
+          0.06844834645733476
+        ],
+        "clock-256": [
+          3.535021589806675e-05,
+          -0.03397671742478273,
+          0.03313142327846794
+        ],
+        "clock-128": [
+          0.001489946136745024,
+          -0.03362955370297333,
+          0.03740337172083456
+        ],
+        "clock-32": [
+          -0.0008986810441669046,
+          -0.04150639708728956,
+          0.04061872542823131
+        ],
+        "frozen": [
+          -0.14908861906345505,
+          -0.1799059076873472,
+          -0.11590004323124813
+        ],
+        "clock-8": [
+          0.02493787526872704,
+          -0.02085041255677347,
+          0.07247553201028013
+        ],
+        "clock-16": [
+          0.017233884883985695,
+          -0.025526041783379333,
+          0.060032725804557686
+        ],
+        "clock-1": [
+          0.02187549915814102,
+          -0.025158851190519936,
+          0.06973896690892585
+        ]
+      },
+      "agreement_audit": {
+        "unanimous": 1003,
+        "unanimous_correct": 895,
+        "majority_errors_corrected": 181,
+        "correct_majorities_lost": 808
+      }
+    }
+  }
+}
